@@ -1,0 +1,1798 @@
+/api/v1/access/datafile/bundle/{fileId}:
+  get:
+    operation_id: getDatafileBundle
+    summary: Retrieve a zip of the datafile bundle identified by the file ID.
+/api/v1/access/datafile/{fileId}:
+  get:
+    operation_id: getDatafile
+    summary: Retrieves datafile details based on given fileId
+/api/v1/access/datafile/{fileId}/auxiliary:
+  get:
+    operation_id: getDatafileAuxiliary
+    summary: Retrieve auxiliary data for a specific datafile.
+/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}:
+  delete:
+    operation_id: accessDatafileAuxiliaryDelete
+    summary: Delete a specific auxiliary data file
+  get:
+    operation_id: accessDatafileAuxiliaryGet
+    summary: Retrieve details of a specific auxiliary data file
+  post:
+    operation_id: accessDatafileAuxiliaryCreate
+    summary: Create a new auxiliary data file for a particular data file
+/api/v1/access/datafile/{fileId}/auxiliary/{origin}:
+  get:
+    operation_id: getDatafileAuxiliaryInfo
+    summary: Retrieve auxiliary information of specific datafile
+/api/v1/access/datafile/{fileId}/metadata:
+  get:
+    operation_id: getDatafileMetadata
+    summary: Retrieve metadata for a specific datafile
+/api/v1/access/datafile/{fileId}/metadata/ddi:
+  get:
+    operation_id: getDatafileMetaDDI
+    summary: Retrieve DDI metadata for a specific datafile.
+/api/v1/access/datafile/{id}/grantAccess/{identifier}:
+  put:
+    operation_id: grantDatafileAccess
+    summary: Grants access to a specific datafile using its ID and the identifier
+      of the user
+/api/v1/access/datafile/{id}/listRequests:
+  get:
+    operation_id: getDatafileRequests
+    summary: Retrieves a list of all requests relevant to a specified datafile
+/api/v1/access/datafile/{id}/rejectAccess/{identifier}:
+  put:
+    operation_id: rejectDataAccess
+    summary: Reject access to specified datafile using ids
+/api/v1/access/datafile/{id}/requestAccess:
+  put:
+    operation_id: requestFileAccess
+    summary: Requests access to a specific datafile by ID.
+/api/v1/access/datafile/{id}/revokeAccess/{identifier}:
+  delete:
+    operation_id: deleteFileAccess
+    summary: Revoke access to a specific file using its ID and an identifier
+/api/v1/access/datafile/{id}/userFileAccessRequested:
+  get:
+    operation_id: getUserFileAccessRequested
+    summary: Retrieve the status of a user file access request
+/api/v1/access/datafile/{id}/userPermissions:
+  get:
+    operation_id: getUserFilePermissions
+    summary: Retrieve user permissions for a specific datafile.
+/api/v1/access/datafiles:
+  post:
+    operation_id: postDataFileAccess
+    summary: Uploads access details of a data file
+/api/v1/access/datafiles/{fileIds}:
+  get:
+    operation_id: getAccessDataFiles
+    summary: Retrieve access data for specified files
+/api/v1/access/dataset/{id}:
+  get:
+    operation_id: getDatasetAccess
+    summary: Retrieve access information for a specific dataset
+/api/v1/access/dataset/{id}/versions/{versionId}:
+  get:
+    operation_id: getDatasetVersionAccess
+    summary: Retrieve specific version of an accessible dataset by ID
+/api/v1/access/dsCardImage/{versionId}:
+  get:
+    operation_id: getDsCardImage
+    summary: Retrieves the version-specific Data Card image
+/api/v1/access/dvCardImage/{dataverseId}:
+  get:
+    operation_id: getDataverseCardImage
+    summary: Fetch the Dataverse card image
+/api/v1/access/fileCardImage/{fileId}:
+  get:
+    operation_id: getFileCardImage
+    summary: Retrieves the card image for the specified file ID.
+/api/v1/access/{id}/allowAccessRequest:
+  put:
+    operation_id: allowAccessRequest
+    summary: Update permission to allow access request based on the provided ID
+/api/v1/admin/archiveAllUnarchivedDatasetVersions:
+  post:
+    operation_id: archiveAllUnarchivedVersions
+    summary: Archives all unarchived dataset versions. Allows options to limit the
+      number of versions archived, archive only the latest versions, or simply list
+      the versions that would be archived without actually doing it.
+/api/v1/admin/assignee/{idtf}:
+  get:
+    operation_id: getAdminAssignee
+    summary: Retrieve a specific assignee detail by ID.
+/api/v1/admin/assignments/assignees/{raIdtf}:
+  get:
+    operation_id: getAssigneesDetail
+    summary: Retrieve details of a specific assignee by raIdtf
+/api/v1/admin/authenticatedUsers:
+  get:
+    operation_id: getAuthenticatedUsers
+    summary: Retrieves a list of authenticated users. This endpoint is deprecated.
+  post:
+    operation_id: createAuthenticatedUser
+    summary: Creates a new authenticated user.
+/api/v1/admin/authenticatedUsers/convert/builtin2oauth:
+  put:
+    operation_id: convertUserToOAuth
+    summary: Convert an authenticated user from built-in to OAuth
+/api/v1/admin/authenticatedUsers/convert/builtin2shib:
+  put:
+    operation_id: convertAuthUsers
+    summary: Convert Authenticated Users from Built-in system to Shibboleth
+/api/v1/admin/authenticatedUsers/id/{id}:
+  delete:
+    operation_id: deleteAuthenticatedUser
+    summary: Delete an authenticated user by ID
+/api/v1/admin/authenticatedUsers/id/{id}/convertRemoteToBuiltIn:
+  put:
+    operation_id: convertRemoteToBuiltIn
+    summary: Converts a remote user to a built-in user by their ID
+/api/v1/admin/authenticatedUsers/id/{id}/convertShibToBuiltIn:
+  put:
+    operation_id: convertUserAuthenticationMethod
+    summary: Converts the authentication method of an authenticated user from Shibboleth
+      to Built-In.
+/api/v1/admin/authenticatedUsers/id/{id}/deactivate:
+  post:
+    operation_id: deactivateUser
+    summary: Deactivates an authenticated user by ID
+/api/v1/admin/authenticatedUsers/{identifier}:
+  delete:
+    operation_id: deleteAuthenticatedUser
+    summary: Delete a specified authenticated user
+  get:
+    operation_id: getAuthenticatedUser
+    summary: Retrieve details of a specified authenticated user
+/api/v1/admin/authenticatedUsers/{identifier}/deactivate:
+  post:
+    operation_id: deactivateUser
+    summary: Deactivate an authenticated user by identifier
+/api/v1/admin/authenticationProviderFactories:
+  get:
+    operation_id: getAuthProviderFactories
+    summary: Retrieve all authentication provider factories
+/api/v1/admin/authenticationProviders:
+  get:
+    operation_id: getAuthProviders
+    summary: Retrieve list of authentication providers
+  post:
+    operation_id: addAuthProvider
+    summary: Add a new authentication provider
+/api/v1/admin/authenticationProviders/{id}:
+  delete:
+    operation_id: removeAuthProvidersById
+    summary: Delete specific authentication provider using ID
+  get:
+    operation_id: getAuthProvidersById
+    summary: Fetch specific authentication provider using ID
+/api/v1/admin/authenticationProviders/{id}/:enabled:
+  post:
+    operation_id: enableAuthProvider
+    summary: Enable a specific authentication provider by its ID
+/api/v1/admin/authenticationProviders/{id}/enabled:
+  get:
+    operation_id: getAuthProviderStatus
+    summary: Retrieves the status of a specific authentication provider
+  put:
+    operation_id: updateAuthProviderStatus
+    summary: Updates the status of a specific authentication provider
+/api/v1/admin/bannerMessage:
+  get:
+    operation_id: getBannerMessage
+    summary: Retrieve a current banner message
+  post:
+    operation_id: postBannerMessage
+    summary: Add a new banner message
+/api/v1/admin/bannerMessage/{id}:
+  delete:
+    operation_id: deleteBannerMessage
+    summary: Delete a specific banner message by ID
+/api/v1/admin/bannerMessage/{id}/deactivate:
+  put:
+    operation_id: deactivateBannerMessage
+    summary: Deactivates a specific banner message
+/api/v1/admin/batch/jobs:
+  get:
+    operation_id: getBatchJobs
+    summary: Retrieve all batch jobs
+/api/v1/admin/batch/jobs/name/{jobName}:
+  get:
+    operation_id: getJobByName
+    summary: Retrieve details for a job given its name
+/api/v1/admin/batch/jobs/{jobId}:
+  get:
+    operation_id: getAdminJobById
+    summary: Retrieve details of a specific admin batch job
+/api/v1/admin/clearMetricsCache:
+  delete:
+    operation_id: deleteMetricsCache
+    summary: Deletes the metrics cache for admin
+/api/v1/admin/clearMetricsCache/{name}:
+  delete:
+    operation_id: deleteMetricsCache
+    summary: Deletes a specific metric cache.
+/api/v1/admin/clearThumbnailFailureFlag:
+  delete:
+    operation_id: deleteThumbnailFailureFlag
+    summary: Deletes a thumbnail failure flag
+/api/v1/admin/clearThumbnailFailureFlag/{id}:
+  delete:
+    operation_id: adminClearThumbnailFailureFlag
+    summary: Delete the thumbnail failure flag for a specified Dataverse id
+/api/v1/admin/computeDataFileHashValue/{fileId}/algorithm/{alg}:
+  post:
+    operation_id: computeFileHashValue
+    summary: Computes the hash value of the specified file using the given algorithm
+/api/v1/admin/confirmEmail/{userId}:
+  get:
+    operation_id: getUserIdConfEmail
+    summary: Retrieve Confirmation Email Associated with User ID
+  post:
+    operation_id: postUserIdConfEmail
+    summary: Send Confirmation Email to User ID
+/api/v1/admin/convertUserFromBcryptToSha1:
+  post:
+    operation_id: admin_convertUserEncryption
+    summary: Convert a user's encryption scheme from Bcrypt to Sha1
+/api/v1/admin/datafiles/integrity/fixmissingoriginalsizes:
+  get:
+    operation_id: getFixMissingOriginalSizes
+    summary: Retrieve a limited number of records with missing original sizes and
+      fix them
+/api/v1/admin/datafiles/integrity/fixmissingoriginaltypes:
+  get:
+    operation_id: fixMissingOriginalTypes
+    summary: Retrieve a report of datafiles with missing original types and apply
+      fixes
+/api/v1/admin/datasetfield:
+  get:
+    operation_id: getAdminDatasetField
+    summary: Retrieve the dataset fields available to administrators
+/api/v1/admin/datasetfield/controlledVocabulary/subject:
+  get:
+    operation_id: getControlledVocabulary
+    summary: Retrieve a list of controlled vocabulary subjects
+/api/v1/admin/datasetfield/load:
+  post:
+    operation_id: load_dataset_field_admin
+    summary: Load dataset field as an admin
+/api/v1/admin/datasetfield/loadNAControlledVocabularyValue:
+  get:
+    operation_id: getNAControlledVocabValue
+    summary: Retrieve North American controlled vocabulary value
+/api/v1/admin/datasetfield/loadpropertyfiles:
+  post:
+    operation_id: adminLoadPropertyFiles
+    summary: Load dataset field property files as a ZIP.
+/api/v1/admin/datasetfield/{name}:
+  get:
+    operation_id: getDatasetFieldName
+    summary: Retrieve information of the specified dataset field
+/api/v1/admin/datasets/integrity/{datasetVersionId}/fixmissingunf:
+  post:
+    operation_id: postFixMissingUnf
+    summary: Update or recalculate dataset integrity by fixing missing UNF in specified
+      dataset version
+/api/v1/admin/datasets/thumbnailMetadata/{id}:
+  get:
+    operation_id: getThumbnailMetadataById
+    summary: Retrieves thumbnail metadata for a specific dataset using its ID
+/api/v1/admin/dataverse/curationLabelSets:
+  get:
+    operation_id: getCurationLabelSets
+    summary: Retrieve all curation label sets
+/api/v1/admin/dataverse/storageDrivers:
+  get:
+    operation_id: getStorageDrivers
+    summary: Retrieves all storage drivers
+/api/v1/admin/dataverse/{alias}/addRoleAssignmentsToChildren:
+  get:
+    operation_id: getRoleAssignments
+    summary: Retrieve role assignments associated with a dataverse
+/api/v1/admin/dataverse/{alias}/curationLabelSet:
+  delete:
+    operation_id: deleteCurationLabelSet
+    summary: Remove the curation label set from the specified Dataverse
+  get:
+    operation_id: getCurationLabelSet
+    summary: Retrieve the curation label set of the specified Dataverse
+  put:
+    operation_id: updateCurationLabelSet
+    summary: Update or create a curation label set for the specified Dataverse
+/api/v1/admin/dataverse/{alias}/storageDriver:
+  delete:
+    operation_id: deleteStorageDriver
+    summary: Remove the storage driver of a specific dataverse
+  get:
+    operation_id: getStorageDriver
+    summary: Retrieve the storage driver of a specific dataverse
+  put:
+    operation_id: updateStorageDriver
+    summary: Update the storage driver of a specific dataverse
+/api/v1/admin/downloadTmpFile:
+  get:
+    operation_id: getTmpFile
+    summary: Retrieve a temporary file via its fully qualified path
+/api/v1/admin/externalTools:
+  get:
+    operation_id: getExternalTools
+    summary: Retrieve a list of all external tools
+  post:
+    operation_id: createExternalTool
+    summary: Create a new external tool
+/api/v1/admin/externalTools/{id}:
+  delete:
+    operation_id: deleteExternalTool
+    summary: Delete an external tool by its ID
+  get:
+    operation_id: getExternalTool
+    summary: Retrieve an external tool by its ID
+/api/v1/admin/feedback:
+  post:
+    operation_id: postAdminFeedback
+    summary: Create or post feedback as an admin
+/api/v1/admin/groups/domain:
+  get:
+    operation_id: getAdminGroupsDomain
+    summary: Retrieve domain-related groups information from the admin endpoint
+  post:
+    operation_id: postAdminGroupsDomain
+    summary: Submit new domain-related groups information to the admin endpoint
+/api/v1/admin/groups/domain/{groupAlias}:
+  delete:
+    operation_id: deleteGroupAlias
+    summary: Deletes the group alias specified in the path
+  get:
+    operation_id: getGroupAlias
+    summary: Retrieves information of the group alias specified in the path
+  put:
+    operation_id: updateGroupAlias
+    summary: Updates the group alias specified in the path
+/api/v1/admin/groups/ip:
+  get:
+    operation_id: getAdminGroupsIP
+    summary: Retrieve IP-based groups information
+  post:
+    operation_id: postAdminGroupsIP
+    summary: Create a new IP-based group
+/api/v1/admin/groups/ip/{groupIdtf}:
+  delete:
+    operation_id: deleteGroupByGroupIdtf
+    summary: Deletes a group by the groupIdtf provided in the path
+  get:
+    operation_id: getGroupByGroupIdtf
+    summary: Fetches a group by the groupIdtf provided in the path
+/api/v1/admin/groups/shib:
+  get:
+    operation_id: getShibGroupInfo
+    summary: Retrieve information about Shibboleth groups
+  post:
+    operation_id: createShibGroup
+    summary: Create a new Shibboleth group
+/api/v1/admin/groups/shib/{primaryKey}:
+  delete:
+    operation_id: deleteShibGroup
+    summary: Delete a Shibboleth Group by given Primary Key
+/api/v1/admin/index:
+  get:
+    operation_id: getAdminIndex
+    summary: Retrieve details of admin index with queried parameters
+/api/v1/admin/index/clear:
+  get:
+    operation_id: clearAdminIndex
+    summary: Clears the admin index
+/api/v1/admin/index/clear-orphans:
+  get:
+    operation_id: clearOrphansIndex
+    summary: Retrieve and clear orphans from the admin index
+/api/v1/admin/index/continue:
+  get:
+    operation_id: continueIndexProcessing
+    summary: Continues the process of indexing partitions based on given parameters.
+/api/v1/admin/index/dataset:
+  get:
+    operation_id: getDatasetIndex
+    summary: Retrieve the index of a dataset given its persistentId
+/api/v1/admin/index/datasets/{id}:
+  delete:
+    operation_id: deleteDatasetById
+    summary: Delete a specific dataset by its ID
+/api/v1/admin/index/filemetadata/{dataset_id}:
+  get:
+    operation_id: get_fileMetadata
+    summary: Retrieve file metadata for a specific dataset
+/api/v1/admin/index/filesearch:
+  get:
+    operation_id: fileSearchIndexGET
+    summary: This endpoint retrieves data about file search index by persistentId,
+      q, and/or semanticVersion.
+/api/v1/admin/index/mod:
+  get:
+    operation_id: getAdminIndexMod
+    summary: Retrieves modification of the admin index based on provided query parameters
+/api/v1/admin/index/perms:
+  get:
+    operation_id: getAdminIndexPerms
+    summary: Retrieve permissions for the admin index
+/api/v1/admin/index/perms/{id}:
+  get:
+    operation_id: getAdminIndexPerms
+    summary: Retrieve a specific admin index permissions by ID
+/api/v1/admin/index/permsDebug:
+  get:
+    operation_id: getPermsDebugInfo
+    summary: Retrieves permission debug info for specified id and key
+/api/v1/admin/index/solr/schema:
+  get:
+    operation_id: getSolrSchema
+    summary: Retrieve the Solr schema configuration.
+/api/v1/admin/index/status:
+  get:
+    operation_id: getAdminIndexStatus
+    summary: Retrieve status of the admin index
+/api/v1/admin/index/test:
+  get:
+    operation_id: getAdminTestIndex
+    summary: Obtain specific parameters from the Admin Test Index
+/api/v1/admin/index/timestamps:
+  delete:
+    operation_id: deleteAdminIndexTimestamps
+    summary: Delete timestamps from the admin index
+/api/v1/admin/index/timestamps/{dvObjectId}:
+  delete:
+    operation_id: deleteIndexTimestamp
+    summary: Delete index timestamp by dvObjectId
+/api/v1/admin/index/{type}/{id}:
+  get:
+    operation_id: getAdminIndexTypeById
+    summary: Retrieves specific type and ID details in admin index
+/api/v1/admin/isOrcid:
+  get:
+    operation_id: getOrcidStatus
+    summary: Retrieve ORCID status for a specific admin
+/api/v1/admin/list-users:
+  get:
+    operation_id: listUsers
+    summary: Retrieve a list of all users
+/api/v1/admin/makeDataCount/addUsageMetricsFromSushiReport:
+  post:
+    operation_id: addMetricsFromReport
+    summary: Add usage metrics from a SUSHI report
+/api/v1/admin/makeDataCount/sendToHub:
+  post:
+    operation_id: adminSendToHub
+    summary: Send data count to the admin hub.
+/api/v1/admin/makeDataCount/{id}/addUsageMetricsFromSushiReport:
+  post:
+    operation_id: addUsageMetricsFromSushiRepo
+    summary: Add usage metrics for a specific Dataverse file from a SUSHI Report
+/api/v1/admin/makeDataCount/{id}/updateCitationsForDataset:
+  post:
+    operation_id: updateDatasetCitations
+    summary: Updates the citation count for a specified dataset
+/api/v1/admin/metadata/clearExportTimestamps:
+  get:
+    operation_id: getExportTimestamps
+    summary: Retrieve the export timestamps
+/api/v1/admin/metadata/exportAll:
+  get:
+    operation_id: getMetadataExportAll
+    summary: Fetches all metadata for export by admin
+/api/v1/admin/metadata/exportOAI/{specname}:
+  put:
+    operation_id: adminMetadataExportOAISpec
+    summary: Update the OAI export specification using provided 'specname'
+/api/v1/admin/metadata/reExportAll:
+  get:
+    operation_id: reExportAllMetadata
+    summary: Retrieves and exports all metadata
+/api/v1/admin/metadata/{id}/reExportDataset:
+  get:
+    operation_id: getMetadataReExport
+    summary: Retrieves and re-exports the specific metadata for the dataset using
+      dataset ID
+/api/v1/admin/permissions/{dvo}:
+  get:
+    operation_id: getAdminPermissions
+    summary: Retrieve specific admin permission details
+/api/v1/admin/publishDataverseAsCreator/{id}:
+  post:
+    operation_id: publishDataverseAsCreator
+    summary: Publish Dataverse as creator using the given ID
+/api/v1/admin/registerDataFileAll:
+  get:
+    operation_id: getRegisterDataFileAll
+    summary: Retrieve all registered data files from the admin.
+/api/v1/admin/registerDataFiles/{alias}:
+  get:
+    operation_id: getRegisterDataFilesByAlias
+    summary: Retrieve data file registration details for a given alias
+/api/v1/admin/requestSignedUrl:
+  post:
+    operation_id: postAdminSignedUrl
+    summary: Admin sends a request to receive a signed URL.
+/api/v1/admin/roles:
+  get:
+    operation_id: getAdminRoles
+    summary: Retrieve a list of all admin roles
+  post:
+    operation_id: createAdminRole
+    summary: Create a new admin role
+/api/v1/admin/roles/{id}:
+  delete:
+    operation_id: deleteAdminRole
+    summary: Delete a specific admin role
+/api/v1/admin/savedsearches:
+  get:
+    operation_id: getSavedSearches
+    summary: Retrieves all saved searches in the system.
+  post:
+    operation_id: addSavedSearch
+    summary: Adds a new saved search to the system.
+/api/v1/admin/savedsearches/list:
+  get:
+    operation_id: getSavedSearchesList
+    summary: Retrieve a list of all saved searches by the administrator
+/api/v1/admin/savedsearches/makelinks/all:
+  put:
+    operation_id: updateAllSavedSearchLinks
+    summary: Updates all saved search links
+/api/v1/admin/savedsearches/makelinks/{id}:
+  put:
+    operation_id: makeLinksForSavedSearch
+    summary: Updates the link for a specific saved search by ID
+/api/v1/admin/savedsearches/{id}:
+  delete:
+    operation_id: deleteSavedSearch
+    summary: Deletes a saved search by ID
+  get:
+    operation_id: getSavedSearch
+    summary: Retrieves a saved search by ID
+/api/v1/admin/settings:
+  get:
+    operation_id: getAdminSettings
+    summary: Retrieve administrator settings
+/api/v1/admin/settings/{name}:
+  delete:
+    operation_id: deleteAdminSetting
+    summary: Delete a specified admin setting
+  get:
+    operation_id: getAdminSetting
+    summary: Retrieve a specified admin setting
+  put:
+    operation_id: updateAdminSetting
+    summary: Update a specified admin setting
+/api/v1/admin/settings/{name}/lang/{lang}:
+  delete:
+    operation_id: deleteAdminSettingsLang
+    summary: Delete a specific Admin setting for a given language
+  put:
+    operation_id: updateAdminSettingsLang
+    summary: Update a specific Admin setting for a given language
+/api/v1/admin/sitemap:
+  post:
+    operation_id: generateSitemap
+    summary: Generate a new sitemap for the application
+/api/v1/admin/storageSites:
+  get:
+    operation_id: getStorageSites
+    summary: Fetches all storage sites
+  post:
+    operation_id: createStorageSite
+    summary: Creates a new storage site
+/api/v1/admin/storageSites/{id}:
+  delete:
+    operation_id: deleteStorageSite
+    summary: Deletes a specific storage site by its unique identifier
+  get:
+    operation_id: fetchStorageSite
+    summary: Retrieves details of a specific storage site by its unique identifier
+/api/v1/admin/storageSites/{id}/primaryStorage:
+  put:
+    operation_id: updatePrimaryStorage
+    summary: Update the primary storage of a storage site by ID
+/api/v1/admin/submitDatasetVersionToArchive/{id}/{version}:
+  post:
+    operation_id: submitDatasetVersionToArchive
+    summary: Submit a specific dataset version to the archive by using provided dataset
+      ID and version number
+/api/v1/admin/superuser/{identifier}:
+  post:
+    operation_id: admin_createSuperUser
+    summary: Creates a new superuser with the provided identifier
+/api/v1/admin/template/{id}:
+  delete:
+    operation_id: deleteAdminTemplate
+    summary: Delete an admin template by ID
+/api/v1/admin/templates:
+  get:
+    operation_id: getAdminTemplates
+    summary: Retrieve all admin templates
+/api/v1/admin/templates/{alias}:
+  get:
+    operation_id: getAdminTemplate
+    summary: Retrieve a specific admin template using its alias.
+/api/v1/admin/test/datasets/{id}/externalTools:
+  get:
+    operation_id: getExternalTools
+    summary: Gets an external tool associated with a specific dataset identified by
+      its id
+/api/v1/admin/test/files/{id}/externalTool/{toolId}:
+  get:
+    operation_id: getExternalToolById
+    summary: Retrieve the details of a specific external tool by its ID for a given
+      file
+/api/v1/admin/test/files/{id}/externalTools:
+  get:
+    operation_id: getExternalTools
+    summary: Retrieve the external tools of a specific test file.
+/api/v1/admin/updateHashValues/{alg}:
+  get:
+    operation_id: getHashValues
+    summary: Retrieve hash values based on specified algorithm
+/api/v1/admin/validate/dataset/files/{id}:
+  get:
+    operation_id: get_validate_dataset_files
+    summary: Retrieve and validate specified dataset files
+/api/v1/admin/validate/dataset/{id}:
+  get:
+    operation_id: validateDataset
+    summary: Validate a dataset with a specified ID
+/api/v1/admin/validate/datasets:
+  get:
+    operation_id: adminValidateDatasets
+    summary: Validate datasets in the system
+/api/v1/admin/validateDataFileHashValue/{fileId}:
+  post:
+    operation_id: ValidateDataFileHash
+    summary: Validate hash value of the specified data file
+/api/v1/admin/validatePassword:
+  post:
+    operation_id: validateAdminPassword
+    summary: Validates the password of an admin user
+/api/v1/admin/workflows:
+  get:
+    operation_id: getAdminWorkflows
+    summary: Retrieve all workflows associated with the admin
+  post:
+    operation_id: createAdminWorkflow
+    summary: Create a new workflow for the admin
+/api/v1/admin/workflows/default:
+  get:
+    operation_id: getDefaultWorkflow
+    summary: Fetch default workflow configured for admin
+/api/v1/admin/workflows/default/{triggerType}:
+  delete:
+    operation_id: deleteTriggerType
+    summary: Delete a specific trigger type from workflows
+  get:
+    operation_id: getTriggerType
+    summary: Retrieve a specific trigger type from workflows
+  put:
+    operation_id: updateTriggerType
+    summary: Update a specific trigger type in workflows
+/api/v1/admin/workflows/ip-whitelist:
+  delete:
+    operation_id: deleteIPWhitelist
+    summary: Remove the IP Whitelist for admin workflows
+  get:
+    operation_id: getIPWhitelist
+    summary: Retrieve current IP Whitelist for admin workflows
+  put:
+    operation_id: updateIPWhitelist
+    summary: Update the IP Whitelist for admin workflows
+/api/v1/admin/workflows/{identifier}:
+  get:
+    operation_id: getWorkflowByIdentifier
+    summary: Retrieve a specific workflow using its identifier
+/api/v1/admin/{id}/registerDataFile:
+  get:
+    operation_id: getAdminDataFile
+    summary: Retrieve data file details registered by a specific admin
+/api/v1/admin/{id}/reregisterHDLToPID:
+  post:
+    operation_id: adminReregisterHDLToPID
+    summary: Admin reruns the HDL to PID registration for a specific admin ID.
+/api/v1/application.wadl:
+  get:
+    operation_id: getApplicationWadl
+    summary: Retrieves the application WADL
+/api/v1/application.wadl/{path}:
+  get:
+    operation_id: getApplicationWadl
+    summary: Retrieve the application WADL
+/api/v1/batch/harvest:
+  get:
+    operation_id: getBatchHarvest
+    summary: Retrieves information about a batch harvest based on provided parameters
+/api/v1/batch/import:
+  get:
+    operation_id: getBatchImportStatus
+    summary: Retrieve status of a batch import request
+  post:
+    operation_id: createBatchImport
+    summary: Initiate a new batch import request
+/api/v1/batch/jobs/import/datasets/files/{identifier}:
+  post:
+    operation_id: postBatchJobImportDatasets
+    summary: Initiate a batch job for importing datasets using the provided identifier
+/api/v1/builtin-users:
+  post:
+    operation_id: postBuiltinUsers
+    summary: Create a new builtin user
+/api/v1/builtin-users/{password}/{key}:
+  post:
+    operation_id: createBuiltinUser
+    summary: Create a new built-in user using a password and key
+/api/v1/builtin-users/{password}/{key}/{sendEmailNotification}:
+  post:
+    operation_id: createBuiltinUser
+    summary: Create a new builtin-user with a specific key, password and email notification
+      preference.
+/api/v1/builtin-users/{username}/api-token:
+  get:
+    operation_id: getApiTokenByUsername
+    summary: Gets the API token for the specified built-in user
+/api/v1/datasets/export:
+  get:
+    operation_id: getDatasetsExport
+    summary: Retrieves export information of a dataset given its exporter and persistent
+      ID
+/api/v1/datasets/listCurationStates:
+  get:
+    operation_id: getCurationStates
+    summary: Retrieve a list of curation states for datasets
+/api/v1/datasets/locks:
+  get:
+    operation_id: getDatasetLocks
+    summary: Retrieve information about locks on datasets
+/api/v1/datasets/modifyRegistrationAll:
+  post:
+    operation_id: modifyAllRegistrations
+    summary: Modifies registration details for all datasets
+/api/v1/datasets/modifyRegistrationPIDMetadataAll:
+  get:
+    operation_id: getRegistrationPIDMetadata
+    summary: Retrieve registration PID metadata of all datasets
+/api/v1/datasets/mpupload:
+  delete:
+    operation_id: deleteDatasetUpload
+    summary: Delete a multi-part upload for a dataset using the provided global ID,
+      storage identifier, and upload ID
+  put:
+    operation_id: updateDatasetUpload
+    summary: Update a multi-part upload for a dataset using the provided global ID,
+      storage identifier, and upload ID
+/api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}:
+  get:
+    operation_id: getPrivateUrlDatasetVersion
+    summary: Retrieves a dataset version using a private URL token
+/api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}/citation:
+  get:
+    operation_id: getCitationByPrivateUrl
+    summary: Retrieve citation information for a dataset version via a private URL
+      token
+/api/v1/datasets/summaryFieldNames:
+  get:
+    operation_id: getSummaryFieldNames
+    summary: Retrieve names of summary fields in the dataset
+/api/v1/datasets/{datasetId}/deleteLink/{linkedDataverseId}:
+  delete:
+    operation_id: deleteDatasetLink
+    summary: Delete a link between a dataset and a dataverse
+/api/v1/datasets/{identifier}/allowedCurationLabels:
+  get:
+    operation_id: getAllowedCurationLabels
+    summary: Retrieve a list of allowed curation labels for a specific dataset
+/api/v1/datasets/{identifier}/assignments:
+  get:
+    operation_id: getDatasetAssignments
+    summary: Retrieves assignments for a specific dataset
+  post:
+    operation_id: createDatasetAssignment
+    summary: Creates an assignment for a specific dataset
+/api/v1/datasets/{identifier}/assignments/{id}:
+  delete:
+    operation_id: deleteAssignment
+    summary: Delete a specific assignment for a dataset
+/api/v1/datasets/{identifier}/curationLabelSet:
+  delete:
+    operation_id: deleteCurationLabelSet
+    summary: Deletes the curation label set for the specified dataset
+  get:
+    operation_id: getCurationLabelSet
+    summary: Retrieves the curation label set of the specified dataset
+  put:
+    operation_id: updateCurationLabelSet
+    summary: Updates the curation label set of the specified dataset
+/api/v1/datasets/{identifier}/dataCaptureModule/checksumValidation:
+  post:
+    operation_id: validateChecksum
+    summary: Validate checksum for specified dataset
+/api/v1/datasets/{identifier}/dataCaptureModule/rsync:
+  get:
+    operation_id: getRsyncDataModule
+    summary: Retrieve the Rsync data capture module for a specific dataset
+/api/v1/datasets/{identifier}/guestbookEntryAtRequest:
+  delete:
+    operation_id: deleteGuestbookEntry
+    summary: Deletes a guestbook entry for a specific dataset
+  get:
+    operation_id: getGuestbookEntry
+    summary: Retrieves a guestbook entry for a specific dataset
+  put:
+    operation_id: updateGuestbookEntry
+    summary: Updates a guestbook entry for a specific dataset
+/api/v1/datasets/{identifier}/lock/{type}:
+  post:
+    operation_id: lockDataset
+    summary: Lock a specific dataset identified by the given identifier and type
+/api/v1/datasets/{identifier}/locks:
+  delete:
+    operation_id: deleteDatasetLocks
+    summary: Deletes specific dataset locks
+  get:
+    operation_id: getDatasetLocks
+    summary: Retrieves specific dataset locks
+/api/v1/datasets/{identifier}/storageDriver:
+  delete:
+    operation_id: deleteStorageDriver
+    summary: Delete a specific storage driver based on the provided identifier
+  get:
+    operation_id: getStorageDriver
+    summary: Retrieve the details of a specific storage driver based on the provided
+      identifier
+  put:
+    operation_id: updateStorageDriver
+    summary: Update the details of a specific storage driver based on the provided
+      identifier
+/api/v1/datasets/{identifier}/storagesize:
+  get:
+    operation_id: getDatasetStorageSize
+    summary: Retrieves the storage size of a dataset based on its identifier. An optional
+      query parameter can be used to include cached files.
+/api/v1/datasets/{identifier}/timestamps:
+  get:
+    operation_id: getDatasetTimestamps
+    summary: Retrieves the timestamps for a given dataset identified by the path parameter
+      'identifier'
+/api/v1/datasets/{identifier}/versions/{versionId}/downloadsize:
+  get:
+    operation_id: getDownloadSize
+    summary: Retrieve the download size of a specific version of a dataset
+/api/v1/datasets/{id}:
+  delete:
+    operation_id: deleteDataset
+    summary: Delete the specified dataset
+  get:
+    operation_id: getDataset
+    summary: Retrieve the specified dataset
+/api/v1/datasets/{id}/actions/:publish:
+  get:
+    operation_id: getPublishDataset
+    summary: Retrieve publishing details of a designated dataset
+  post:
+    operation_id: initiatePublishing
+    summary: Publish a designated dataset with optional assurances
+/api/v1/datasets/{id}/actions/:releasemigrated:
+  post:
+    operation_id: releaseMigratedDataset
+    summary: Release a migrated dataset with a specified ID
+/api/v1/datasets/{id}/add:
+  post:
+    operation_id: addDataset
+    summary: Add a new dataset to the existing record
+/api/v1/datasets/{id}/addFiles:
+  post:
+    operation_id: addFilesToDataset
+    summary: Adds files to a specified dataset
+/api/v1/datasets/{id}/addGlobusFiles:
+  post:
+    operation_id: addGlobusFilesToDataset
+    summary: Add globus files to a specific dataset
+/api/v1/datasets/{id}/citationdate:
+  delete:
+    operation_id: deleteCitationDate
+    summary: Delete citation date of a dataset based on dataset ID
+  put:
+    operation_id: updateCitationDate
+    summary: Update the citation date of a dataset based on dataset ID
+/api/v1/datasets/{id}/cleanStorage:
+  get:
+    operation_id: getCleanStorageStatus
+    summary: Get the status of the clean storage task for the specified dataset
+/api/v1/datasets/{id}/curationStatus:
+  delete:
+    operation_id: deleteCurationStatus
+    summary: Deletes the curation status of the specified dataset
+  get:
+    operation_id: getCurationStatus
+    summary: Fetches the curation status of the specified dataset
+  put:
+    operation_id: updateCurationStatus
+    summary: Updates the curation status of the specified dataset
+/api/v1/datasets/{id}/deleteMetadata:
+  put:
+    operation_id: updateDatasetMetadata
+    summary: Update the metadata of a specific dataset
+/api/v1/datasets/{id}/destroy:
+  delete:
+    operation_id: deleteDataset
+    summary: Delete a specific dataset by its ID.
+/api/v1/datasets/{id}/dirindex:
+  get:
+    operation_id: getDatasetDirectoryIndex
+    summary: Retrieve directory index of a dataset
+/api/v1/datasets/{id}/editMetadata:
+  put:
+    operation_id: editDatasetMetadata
+    summary: Updates the metadata of a specific dataset represented by its ID
+/api/v1/datasets/{id}/files/actions/:set-embargo:
+  post:
+    operation_id: setDatasetEmbargo
+    summary: Set an embargo on a specific dataset's files
+/api/v1/datasets/{id}/files/actions/:unset-embargo:
+  post:
+    operation_id: unsetEmbargoOnDatasetFiles
+    summary: Unset embargo on files for a specific dataset
+/api/v1/datasets/{id}/globusDownloadParameters:
+  get:
+    operation_id: getGlobusDownloadParameters
+    summary: Retrieve the parameters for Globus download for a specified dataset
+/api/v1/datasets/{id}/globusUploadParameters:
+  get:
+    operation_id: getGlobusUploadParameters
+    summary: Retrieves Globus upload parameters for a specific dataset
+/api/v1/datasets/{id}/links:
+  get:
+    operation_id: getDatasetLinks
+    summary: Retrieves the links of a specified dataset
+/api/v1/datasets/{id}/logo:
+  get:
+    operation_id: getDatasetLogo
+    summary: Retrieve the logo of a specific dataset
+/api/v1/datasets/{id}/makeDataCount/citations:
+  get:
+    operation_id: datasetCitationCountGet
+    summary: Retrieves the citation count for a specific dataset
+/api/v1/datasets/{id}/makeDataCount/{metric}:
+  get:
+    operation_id: getDatasetMetrics
+    summary: Retrieve specific metrics for a specified dataset
+/api/v1/datasets/{id}/makeDataCount/{metric}/{yyyymm}:
+  get:
+    operation_id: getDatasetMetric
+    summary: Fetches a specific metric for a specific dataset
+/api/v1/datasets/{id}/metadata:
+  get:
+    operation_id: getDatasetMetadata
+    summary: Retrieves the metadata of a dataset by its ID
+  put:
+    operation_id: updateDatasetMetadata
+    summary: Updates the metadata of a dataset by its ID, with an option to replace
+      the existing metadata
+/api/v1/datasets/{id}/metadata/delete:
+  put:
+    operation_id: updateMetadataDeletion
+    summary: Update the deletion status of the metadata of a specific dataset
+/api/v1/datasets/{id}/modifyRegistration:
+  get:
+    operation_id: getRegistrationModification
+    summary: Retrieve the modification details of a specific dataset registration
+/api/v1/datasets/{id}/modifyRegistrationMetadata:
+  post:
+    operation_id: modifyDatasetRegistrationMetadata
+    summary: Modify the registration metadata of a specific dataset
+/api/v1/datasets/{id}/monitorGlobusDownload:
+  post:
+    operation_id: monitorGlobusDownload
+    summary: Initiate the process to monitor a Globus download operation for a specific
+      dataset
+/api/v1/datasets/{id}/move/{targetDataverseAlias}:
+  post:
+    operation_id: moveDatasetToTarget
+    summary: Moves a specific dataset to a target dataverse
+/api/v1/datasets/{id}/privateUrl:
+  delete:
+    operation_id: deletePrivateUrl
+    summary: Delete a specific dataset's private URL
+  get:
+    operation_id: getPrivateUrl
+    summary: Retrieve a specific dataset's private URL
+  post:
+    operation_id: createPrivateUrl
+    summary: Create a private URL for a specific dataset
+/api/v1/datasets/{id}/replaceFiles:
+  post:
+    operation_id: replaceDatasetFiles
+    summary: Replace files in a specified dataset
+/api/v1/datasets/{id}/requestGlobusDownload:
+  post:
+    operation_id: submitGlobusDownloadRequest
+    summary: Submit a request for Globus download for a specific dataset
+/api/v1/datasets/{id}/requestGlobusUploadPaths:
+  post:
+    operation_id: postGlobusUploadPathsRequest
+    summary: Submit a request to get the paths for Globus file upload for a specified
+      dataset
+/api/v1/datasets/{id}/returnToAuthor:
+  post:
+    operation_id: returnDatasetToAuthor
+    summary: Returns the specified dataset back to its author
+/api/v1/datasets/{id}/submitForReview:
+  post:
+    operation_id: submitDatasetForReview
+    summary: Submits a specified dataset for review
+/api/v1/datasets/{id}/thumbnail:
+  delete:
+    operation_id: deleteDatasetThumbnail
+    summary: Deletes a thumbnail from a specific dataset
+  get:
+    operation_id: getDatasetThumbnail
+    summary: Retrieves a thumbnail from a specific dataset
+  post:
+    operation_id: postDatasetThumbnail
+    summary: Adds a thumbnail to a specific dataset
+/api/v1/datasets/{id}/thumbnail/candidates:
+  get:
+    operation_id: getThumbnailCandidates
+    summary: Retrieve the list of thumbnail candidates for a specific dataset
+/api/v1/datasets/{id}/thumbnail/{dataFileId}:
+  post:
+    operation_id: postThumbnailData
+    summary: Upload a new thumbnail for a specific dataset
+/api/v1/datasets/{id}/uploadsid:
+  get:
+    operation_id: getUploadId
+    summary: Retrieve the upload ID for the specified dataset
+/api/v1/datasets/{id}/uploadurls:
+  get:
+    operation_id: getUploadURLs
+    summary: Retrieve upload URLs for a specific dataset
+/api/v1/datasets/{id}/userPermissions:
+  get:
+    operation_id: getUserPermissions
+    summary: Retrieve user permissions for a specific dataset
+/api/v1/datasets/{id}/versions:
+  get:
+    operation_id: getDatasetVersions
+    summary: Retrieve versions of a specific dataset
+/api/v1/datasets/{id}/versions/{versionId}:
+  delete:
+    operation_id: deleteDatasetVersion
+    summary: Deletes the specified version of a dataset
+  get:
+    operation_id: getDatasetVersion
+    summary: Fetches the dataset version details, with options to exclude files or
+      include deaccessioned ones
+  put:
+    operation_id: updateDatasetVersion
+    summary: Updates the dataset version with the given ID
+/api/v1/datasets/{id}/versions/{versionId}/canDownloadAtLeastOneFile:
+  get:
+    operation_id: checkDatasetFileDownloadPermission
+    summary: Checks if a user has permission to download at least one file from a
+      specific dataset version
+/api/v1/datasets/{id}/versions/{versionId}/citation:
+  get:
+    operation_id: getCitation
+    summary: Retrieve the citation of a specific dataset version
+/api/v1/datasets/{id}/versions/{versionId}/customlicense:
+  get:
+    operation_id: getCustomLicense
+    summary: Retrieve a specific dataset version's custom license
+/api/v1/datasets/{id}/versions/{versionId}/deaccession:
+  post:
+    operation_id: postDeaccessionDatasetByVersionId
+    summary: Remove access to a specific version of a dataset
+/api/v1/datasets/{id}/versions/{versionId}/files:
+  get:
+    operation_id: getDatasetVersionFiles
+    summary: Fetches files within a specific version of a dataset
+/api/v1/datasets/{id}/versions/{versionId}/files/counts:
+  get:
+    operation_id: getDatasetFilesCount
+    summary: Retrieve counts of various types of files in a specified dataset version
+/api/v1/datasets/{id}/versions/{versionId}/linkset:
+  get:
+    operation_id: getDatasetVersionLinkset
+    summary: Retrieve linkset of a specific dataset version
+/api/v1/datasets/{id}/versions/{versionId}/metadata:
+  get:
+    operation_id: getDatasetVersionMetadata
+    summary: Retrieve the metadata of a specific version of a dataset
+/api/v1/datasets/{id}/versions/{versionNumber}/metadata/{block}:
+  get:
+    operation_id: getDatasetVersionMetadata
+    summary: Retrieve metadata of a specified version of a dataset
+/api/v1/datasets/{id}/versions/{version}/toolparams/{tid}:
+  get:
+    operation_id: getDatasetVersionToolParam
+    summary: Retrieve tool parameters of a specific version of a dataset
+/api/v1/datasets/{id}/{version}/archivalStatus:
+  delete:
+    operation_id: deleteDatasetArchivalStatus
+    summary: Remove the archival status of a specific version of a dataset
+  get:
+    operation_id: getDatasetArchivalStatus
+    summary: Retrieve the archival status of a specific version of a dataset
+  put:
+    operation_id: updateDatasetArchivalStatus
+    summary: Update the archival status of a specific version of a dataset
+/api/v1/datasets/{linkedDatasetId}/link/{linkingDataverseAlias}:
+  put:
+    operation_id: updateDatasetLink
+    summary: Updates the link between a dataset and a Dataverse alias
+/api/v1/datatags/receiveTags/{uniqueCacheId}:
+  post:
+    operation_id: postReceiveTags
+    summary: Create a new datatag and associate it with the specified unique cache
+      ID
+/api/v1/dataverses:
+  post:
+    operation_id: createDataverse
+    summary: Create a new Dataverse
+/api/v1/dataverses/{identifier}:
+  delete:
+    operation_id: deleteDataverse
+    summary: Deletes a specified dataverse with the given identifier
+  get:
+    operation_id: getDataverse
+    summary: Retrieves a specified dataverse with the given identifier
+  post:
+    operation_id: createDataverse
+    summary: Creates a new dataverse with the given identifier
+/api/v1/dataverses/{identifier}/actions/:publish:
+  post:
+    operation_id: publishDataverseById
+    summary: Publishes the identified Dataverse
+/api/v1/dataverses/{identifier}/assignments:
+  get:
+    operation_id: getDataverseAssignments
+    summary: Retrieves assignments of specified Dataverse
+  post:
+    operation_id: postDataverseAssignments
+    summary: Assigns new user or role to specified Dataverse
+/api/v1/dataverses/{identifier}/assignments/{id}:
+  delete:
+    operation_id: deleteDataverseAssignment
+    summary: Delete a specific assignment from a specific dataverse
+/api/v1/dataverses/{identifier}/attribute/{attribute}:
+  put:
+    operation_id: updateDataverseAttribute
+    summary: Update a specific attribute of a Dataverse identified by the given identifier
+/api/v1/dataverses/{identifier}/contents:
+  get:
+    operation_id: getDataverseContents
+    summary: Retrieve contents of the specified Dataverse
+/api/v1/dataverses/{identifier}/datasetSchema:
+  get:
+    operation_id: getDatasetSchema
+    summary: Retrieve the schema of a specific dataset in the dataverse identified
+      by the given identifier
+/api/v1/dataverses/{identifier}/datasets:
+  post:
+    operation_id: createDatasetInDataverse
+    summary: Create a new dataset in the specified dataverse
+/api/v1/dataverses/{identifier}/datasets/:import:
+  post:
+    operation_id: importDataset
+    summary: Imports a dataset into a given Dataverse identifier
+/api/v1/dataverses/{identifier}/datasets/:importddi:
+  post:
+    operation_id: importDdiToDataset
+    summary: Imports DDI metadata to a dataset in the specified dataverse.
+/api/v1/dataverses/{identifier}/datasets/:startmigration:
+  post:
+    operation_id: startMigration
+    summary: Begins the migration process of datasets in a specific Dataverse identified
+      by the provided identifier
+/api/v1/dataverses/{identifier}/defaultContributorRole/{roleAlias}:
+  put:
+    operation_id: updateDefaultContributorRole
+    summary: Update the default contributor role of a specific dataverse
+/api/v1/dataverses/{identifier}/facets:
+  get:
+    operation_id: getFacets
+    summary: Retrieves the facets of the specified dataverse
+  post:
+    operation_id: postFacets
+    summary: Updates the facets of the specified dataverse
+/api/v1/dataverses/{identifier}/groups:
+  get:
+    operation_id: getDataverseGroups
+    summary: Retrieves groups associated with a specified dataverse
+  post:
+    operation_id: createDataverseGroup
+    summary: Creates a new group in the specified dataverse
+/api/v1/dataverses/{identifier}/groups/{aliasInOwner}:
+  delete:
+    operation_id: deleteGroupInDataverse
+    summary: Delete a specific group from the specified Dataverse
+  get:
+    operation_id: getGroupInDataverse
+    summary: Retrieve details of a specific group within the given Dataverse
+  put:
+    operation_id: updateGroupInDataverse
+    summary: Update the details of a group within the specified Dataverse
+/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees:
+  post:
+    operation_id: assignRole
+    summary: Assign a role to role assignees in a specified group within a dataverse
+/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees/{roleAssigneeIdentifier}:
+  delete:
+    operation_id: deleteRoleAssignee
+    summary: Delete a specific role assignee from a dataverse group
+  put:
+    operation_id: updateRoleAssignee
+    summary: Update a specific role assignee in a dataverse group
+/api/v1/dataverses/{identifier}/guestbookResponses:
+  get:
+    operation_id: getGuestbookResponses
+    summary: Retrieve all guestbook responses for a specific dataverse
+/api/v1/dataverses/{identifier}/links:
+  get:
+    operation_id: getDataverseLinks
+    summary: Retrieve all links associated with a specific dataverse identified by
+      ID
+/api/v1/dataverses/{identifier}/metadatablockfacets:
+  get:
+    operation_id: getMetadatablockFacets
+    summary: Retrieve metadatablock facets for a specific dataverse
+  post:
+    operation_id: postMetadatablockFacets
+    summary: Add metadatablock facets to a specific dataverse
+/api/v1/dataverses/{identifier}/metadatablockfacets/isRoot:
+  post:
+    operation_id: updateRootStatus
+    summary: Updates the root status of a Dataverse
+/api/v1/dataverses/{identifier}/metadatablocks:
+  get:
+    operation_id: getMetadatablock
+    summary: Retrieve the metadatablock of a Dataverse.
+  post:
+    operation_id: createMetadatablock
+    summary: Create a new metadatablock for a Dataverse.
+/api/v1/dataverses/{identifier}/metadatablocks/:isRoot:
+  get:
+    operation_id: getMetadatablock
+    summary: Retrieve metadata blocks for a specific dataverse identified by its unique
+      identifier
+  post:
+    operation_id: postMetadatablock
+    summary: Add or update metadata block associated with the specified dataverse
+      identifier
+/api/v1/dataverses/{identifier}/roles:
+  get:
+    operation_id: getRolesByIdentifier
+    summary: Retrieve the roles for a given Dataverse identifier
+  post:
+    operation_id: createRoleByIdentifier
+    summary: Create a new role for a given Dataverse identifier
+/api/v1/dataverses/{identifier}/storage/quota:
+  delete:
+    operation_id: deleteStorageQuota
+    summary: Delete the storage quota configuration for the dataverse identified by
+      the given identifier
+  get:
+    operation_id: getStorageQuota
+    summary: Retrieve storage quota of the dataverse identified by the given identifier
+/api/v1/dataverses/{identifier}/storage/quota/{bytesAllocated}:
+  post:
+    operation_id: setStorageQuota
+    summary: Sets the storage quota for a specific Dataverse
+/api/v1/dataverses/{identifier}/storage/use:
+  get:
+    operation_id: getDataverseStorageUsage
+    summary: Retrieve storage usage of a specific dataverse
+/api/v1/dataverses/{identifier}/storagesize:
+  get:
+    operation_id: getDataverseStorageSize
+    summary: Retrieve the storage size of a specific Dataverse
+/api/v1/dataverses/{identifier}/validateDatasetJson:
+  post:
+    operation_id: validateDatasetJson
+    summary: Validate the JSON of a dataset in a specific Dataverse
+/api/v1/dataverses/{id}/move/{targetDataverseAlias}:
+  post:
+    operation_id: moveDataverse
+    summary: Moves a Dataverse to a target Dataverse
+/api/v1/dataverses/{linkedDataverseAlias}/link/{linkingDataverseAlias}:
+  put:
+    operation_id: linkDataverses
+    summary: Links one Dataverse to another
+/api/v1/dataverses/{linkingDataverseId}/deleteLink/{linkedDataverseId}:
+  delete:
+    operation_id: deleteDataverseLink
+    summary: Delete a link between two dataverses
+/api/v1/edit/{fileId}:
+  put:
+    operation_id: editFile
+    summary: Edits the content of a specified file
+/api/v1/files/fixityAlgorithm:
+  get:
+    operation_id: getFixityAlgorithm
+    summary: Retrieve the fixity algorithm of a file
+/api/v1/files/{id}:
+  delete:
+    operation_id: deleteFile
+    summary: Delete a specific file by ID.
+  get:
+    operation_id: getFile
+    summary: Retrieve a specific file by ID.
+/api/v1/files/{id}/dataTables:
+  get:
+    operation_id: getFileDataTables
+    summary: Retrieve the data tables of a given file
+/api/v1/files/{id}/downloadCount:
+  get:
+    operation_id: getDownloadCount
+    summary: Retrieve the download count of a file
+/api/v1/files/{id}/draft:
+  get:
+    operation_id: getFileDraft
+    summary: Retrieve a file in draft mode by its ID
+/api/v1/files/{id}/extractNcml:
+  post:
+    operation_id: extractNcmlById
+    summary: Extract Ncml information of a file based on the provided id
+/api/v1/files/{id}/hasBeenDeleted:
+  get:
+    operation_id: checkFileDeletionStatus
+    summary: Check if specified file has been deleted
+/api/v1/files/{id}/metadata:
+  get:
+    operation_id: get_file_metadata
+    summary: Retrieves metadata for a specific file
+  post:
+    operation_id: update_file_metadata
+    summary: Updates metadata for a specific file
+/api/v1/files/{id}/metadata/categories:
+  post:
+    operation_id: postFileMetadataCategories
+    summary: Adds new metadata categories for a specific file.
+/api/v1/files/{id}/metadata/draft:
+  get:
+    operation_id: getDraftMetaData
+    summary: Retrieve the metadata of a draft file
+/api/v1/files/{id}/metadata/tabularTags:
+  post:
+    operation_id: postTabularTags
+    summary: Add tabular tags to a file metadata
+/api/v1/files/{id}/metadata/{fmid}/toolparams/{tid}:
+  get:
+    operation_id: getFileMetadataToolParams
+    summary: Retrieves tool parameters for a specific file metadata ID
+/api/v1/files/{id}/prov-freeform:
+  get:
+    operation_id: getFileProvFreeform
+    summary: Retrieves the freeform provenance data for a specific file
+  post:
+    operation_id: postFileProvFreeform
+    summary: Posts freeform provenance data for a specific file
+/api/v1/files/{id}/prov-json:
+  delete:
+    operation_id: deleteFileProvJSON
+    summary: Delete the PROV JSON of a specific file
+  get:
+    operation_id: getFileProvJSON
+    summary: Retrieving the PROV JSON of a specific file
+  post:
+    operation_id: postFileProvJSON
+    summary: Submit a new PROV JSON for a specific file
+/api/v1/files/{id}/redetect:
+  post:
+    operation_id: redetectFile
+    summary: Invoke redetection process for the specified file
+/api/v1/files/{id}/reingest:
+  post:
+    operation_id: reingestFile
+    summary: Reingest a file using its ID
+/api/v1/files/{id}/replace:
+  post:
+    operation_id: replaceFile
+    summary: Replace an existing file with a new version
+/api/v1/files/{id}/restrict:
+  put:
+    operation_id: restrictFileAccess
+    summary: Restrict access to a specific file
+/api/v1/files/{id}/uningest:
+  post:
+    operation_id: postFileUningest
+    summary: Uningest a file with the specified ID
+/api/v1/harvest/clients:
+  get:
+    operation_id: getHarvestClients
+    summary: Retrieve all harvest clients based on the provided key
+/api/v1/harvest/clients/{nickName}:
+  delete:
+    operation_id: deleteHarvestClient
+    summary: Deletes a harvest client based on the provided unique nickname
+  get:
+    operation_id: getHarvestClient
+    summary: Retrieves a harvest client details based on the provided unique nickname
+      and key
+  post:
+    operation_id: createHarvestClient
+    summary: Creates a new harvest client using the provided unique nickname and key
+  put:
+    operation_id: updateHarvestClient
+    summary: Updates an existing harvest client's details using the provided unique
+      nickname and key
+/api/v1/harvest/clients/{nickName}/run:
+  post:
+    operation_id: runHarvestClient
+    summary: Initiate a run for a specified Harvest client
+/api/v1/harvest/server/oaisets:
+  get:
+    operation_id: getOaiSets
+    summary: Retrieve the OAISets from the harvest server
+/api/v1/harvest/server/oaisets/add:
+  post:
+    operation_id: addOaiSet
+    summary: Adds a new OAI set to the harvest server
+/api/v1/harvest/server/oaisets/{specname}:
+  delete:
+    operation_id: deleteOaiSets
+    summary: Remove a specific OAI set
+  get:
+    operation_id: getOaiSets
+    summary: Retrieve details of a specific OAI set
+  put:
+    operation_id: updateOaiSets
+    summary: Update details of a specific OAI set
+/api/v1/harvest/server/oaisets/{specname}/datasets:
+  get:
+    operation_id: getHarvestDatasetsBySpecName
+    summary: Retrieve datasets related to a specified OAISet
+/api/v1/inbox:
+  post:
+    operation_id: postInbox
+    summary: Create a new inbox message
+/api/v1/info/apiTermsOfUse:
+  get:
+    operation_id: getApiTermsOfUseInfo
+    summary: Retrieve the terms of use of the API
+/api/v1/info/metrics/datasets:
+  get:
+    operation_id: getDatasetMetrics
+    summary: Retrieve dataset metrics based on the data location and parent alias
+/api/v1/info/metrics/datasets/bySubject:
+  get:
+    operation_id: getDatasetsBySubject
+    summary: Retrieve datasets by subject according to specified data location and
+      parent alias
+/api/v1/info/metrics/datasets/bySubject/toMonth/{yyyymm}:
+  get:
+    operation_id: getMonthlySubjectMetrics
+    summary: Retrieve monthly metrics for datasets by subject
+/api/v1/info/metrics/datasets/monthly:
+  get:
+    operation_id: getMonthlyDatasetMetrics
+    summary: Retrieve monthly metrics of datasets based on data location and parent
+      alias.
+/api/v1/info/metrics/datasets/pastDays/{days}:
+  get:
+    operation_id: getPastDaysMetrics
+    summary: Retrieve metrics of datasets from past specified days
+/api/v1/info/metrics/datasets/toMonth/{yyyymm}:
+  get:
+    operation_id: getMonthlyDatasetMetrics
+    summary: Retrieve dataset metrics for a specific month
+/api/v1/info/metrics/dataverses:
+  get:
+    operation_id: getMetricsDataverses
+    summary: Retrieves metrics of dataverses based on parent alias
+/api/v1/info/metrics/dataverses/byCategory:
+  get:
+    operation_id: getMetricsByCategory
+    summary: Retrieves metrics of dataverses sorted by category
+/api/v1/info/metrics/dataverses/bySubject:
+  get:
+    operation_id: getMetricsBySubject
+    summary: Retrieve metrics of dataverses by subject
+/api/v1/info/metrics/dataverses/monthly:
+  get:
+    operation_id: getMonthlyDataverseMetrics
+    summary: Retrieve the monthly metrics of a specific dataverse
+/api/v1/info/metrics/dataverses/pastDays/{days}:
+  get:
+    operation_id: getMetricsPastDays
+    summary: Retrieves the number of dataverses created over the past specified number
+      of days
+/api/v1/info/metrics/dataverses/toMonth/{yyyymm}:
+  get:
+    operation_id: getMonthlyMetricsForDataverses
+    summary: Retrieve the metrics for dataverses up to the specified month.
+/api/v1/info/metrics/downloads:
+  get:
+    operation_id: getDownloadMetrics
+    summary: Retrieve download metrics based on a parent alias.
+/api/v1/info/metrics/downloads/monthly:
+  get:
+    operation_id: getMonthlyDownloads
+    summary: Retrieve monthly download metrics
+/api/v1/info/metrics/downloads/pastDays/{days}:
+  get:
+    operation_id: getPastDaysDownloads
+    summary: Retrieve download metrics for the past specified number of days
+/api/v1/info/metrics/downloads/toMonth/{yyyymm}:
+  get:
+    operation_id: getDownloadMetricsToMonth
+    summary: Retrieve download metrics till a specific month
+/api/v1/info/metrics/filedownloads:
+  get:
+    operation_id: getFileDownloadsMetrics
+    summary: Retrieve File Downloads Metrics
+/api/v1/info/metrics/filedownloads/monthly:
+  get:
+    operation_id: getMonthlyFileDownloads
+    summary: Retrieve the monthly count of file downloads
+/api/v1/info/metrics/filedownloads/toMonth/{yyyymm}:
+  get:
+    operation_id: getFileDownloadsToMonth
+    summary: Retrieve file download metrics for a specific month
+/api/v1/info/metrics/files:
+  get:
+    operation_id: getFileInfoMetrics
+    summary: Retrieve metrics information for files
+/api/v1/info/metrics/files/byType:
+  get:
+    operation_id: getMetricsByFileType
+    summary: Retrieve file metrics information categorized by file type
+/api/v1/info/metrics/files/byType/monthly:
+  get:
+    operation_id: getFilesByTypeMonthly
+    summary: Retrieve monthly metrics for files by type
+/api/v1/info/metrics/files/monthly:
+  get:
+    operation_id: getMonthlyFilesMetrics
+    summary: Retrieve monthly metrics for files
+/api/v1/info/metrics/files/pastDays/{days}:
+  get:
+    operation_id: getFilesMetrics
+    summary: Retrieve metrics for files from the past specified number of days
+/api/v1/info/metrics/files/toMonth/{yyyymm}:
+  get:
+    operation_id: getMonthlyFilesInfo
+    summary: Retrieve files metrics information for a specific month
+/api/v1/info/metrics/makeDataCount/{metric}:
+  get:
+    operation_id: getMetricData
+    summary: Retrieve specific metric data by country and parentAlias
+/api/v1/info/metrics/makeDataCount/{metric}/monthly:
+  get:
+    operation_id: getMonthlyDataCountMetrics
+    summary: Retrieve the monthly data count metrics identified by the provided metric
+      name
+/api/v1/info/metrics/makeDataCount/{metric}/toMonth/{yyyymm}:
+  get:
+    operation_id: getMetricsByMonth
+    summary: Retrieves data metrics for a specific month
+/api/v1/info/metrics/tree:
+  get:
+    operation_id: getMetricsTree
+    summary: Fetches the metrics tree based on the provided parent alias
+/api/v1/info/metrics/tree/toMonth/{yyyymm}:
+  get:
+    operation_id: getMonthlyMetricsByAlias
+    summary: Retrieve monthly metrics for a specific alias
+/api/v1/info/metrics/uniquedownloads:
+  get:
+    operation_id: getUniqueDownloads
+    summary: Retrieve unique download metrics data for a particular alias
+/api/v1/info/metrics/uniquedownloads/monthly:
+  get:
+    operation_id: getMonthlyUniqueDownloads
+    summary: Retrieve monthly unique downloads metrics
+/api/v1/info/metrics/uniquedownloads/toMonth/{yyyymm}:
+  get:
+    operation_id: getMonthlyUniqueDownloads
+    summary: Retrieve the number of unique downloads for a specified month
+/api/v1/info/metrics/uniquefiledownloads:
+  get:
+    operation_id: getUniqueFileDownloads
+    summary: Retrieve the number of unique file downloads
+/api/v1/info/metrics/uniquefiledownloads/monthly:
+  get:
+    operation_id: getMonthlyUniqueFileDownloads
+    summary: Retrieve the count of unique file downloads per month
+/api/v1/info/metrics/uniquefiledownloads/toMonth/{yyyymm}:
+  get:
+    operation_id: getUniqueFileDownloads
+    summary: Fetches unique file downloads up to a specific month
+/api/v1/info/openapi/{outputFormat}:
+  get:
+    operation_id: getOpenApiInfo
+    summary: Retrieve OpenAPI info in specified output format
+/api/v1/info/server:
+  get:
+    operation_id: getServerInfo
+    summary: Retrieve server information
+/api/v1/info/settings/:DatasetPublishPopupCustomText:
+  get:
+    operation_id: getDatasetPublishPopupCustomText
+    summary: Retrieve the custom text for dataset publish popup.
+/api/v1/info/settings/:MaxEmbargoDurationInMonths:
+  get:
+    operation_id: getMaxEmbargoDurationInMonths
+    summary: Retrieve the maximum duration of embargo in months from the settings
+/api/v1/info/settings/incompleteMetadataViaApi:
+  get:
+    operation_id: getIncompleteMetadataSettings
+    summary: Retrieves the status of incomplete metadata settings
+/api/v1/info/version:
+  get:
+    operation_id: getVersionInfo
+    summary: Retrieve the current version information
+/api/v1/info/zipDownloadLimit:
+  get:
+    operation_id: getZipDownloadLimit
+    summary: Retrieve the current zip file download limit
+/api/v1/ingest/test/file:
+  get:
+    operation_id: getIngestTestFile
+    summary: Retrieve details of a specific test file in the ingest process by filename
+      and filetype
+/api/v1/licenses:
+  get:
+    operation_id: getLicenses
+    summary: Retrieve all the licenses
+  post:
+    operation_id: addLicense
+    summary: Add a new license
+/api/v1/licenses/default:
+  get:
+    operation_id: get_default_license
+    summary: Fetch the current default license
+/api/v1/licenses/default/{id}:
+  put:
+    operation_id: updateDefaultLicense
+    summary: Update a default license by ID
+/api/v1/licenses/{id}:
+  delete:
+    operation_id: deleteLicense
+    summary: Delete a specific license by its ID
+  get:
+    operation_id: getLicense
+    summary: Retrieve a specific license by its ID
+/api/v1/licenses/{id}/:active/{activeState}:
+  put:
+    operation_id: updateLicenseActiveState
+    summary: Updates the activity state of a specific license
+/api/v1/licenses/{id}/:sortOrder/{sortOrder}:
+  put:
+    operation_id: updateLicenseSortOrder
+    summary: Update the sort order of a given license
+/api/v1/logout:
+  post:
+    operation_id: logoutUser
+    summary: Log out the current user
+/api/v1/mail/notifications:
+  get:
+    operation_id: getMailNotifications
+    summary: Retrieve a list of mail notifications
+/api/v1/meta/datafile/{fileId}:
+  get:
+    operation_id: getDatafileMeta
+    summary: Get metadata of a specific datafile by file id
+/api/v1/meta/dataset/{datasetId}:
+  get:
+    operation_id: getDatasetMetadata
+    summary: Retrieves the metadata of a specific dataset by its ID
+/api/v1/metadatablocks:
+  get:
+    operation_id: getMetadatablocks
+    summary: Retrieve metadata blocks available in the system
+/api/v1/metadatablocks/{identifier}:
+  get:
+    operation_id: getMetadatablock
+    summary: Retrieve a specific Metadatablock by its identifier
+/api/v1/mydata/retrieve:
+  get:
+    operation_id: myDataRetrieve
+    summary: Retrieve specific set of my data based on the provided filters
+/api/v1/notifications/all:
+  get:
+    operation_id: getAllNotifications
+    summary: Retrieve all notifications
+/api/v1/notifications/mutedEmails:
+  get:
+    operation_id: getMutedEmails
+    summary: Retrieve a list of muted email notifications
+/api/v1/notifications/mutedEmails/{typeName}:
+  delete:
+    operation_id: deleteMutedEmailNotification
+    summary: Deletes a muted email notification by type name
+  put:
+    operation_id: updateMutedEmailNotification
+    summary: Updates a muted email notification by type name
+/api/v1/notifications/mutedNotifications:
+  get:
+    operation_id: getMutedNotifications
+    summary: Retrieve all muted notifications
+/api/v1/notifications/mutedNotifications/{typeName}:
+  delete:
+    operation_id: deleteMutedNotification
+    summary: Delete a specific muted notification
+  put:
+    operation_id: updateMutedNotification
+    summary: Update details of a specific muted notification
+/api/v1/notifications/{id}:
+  delete:
+    operation_id: deleteNotification
+    summary: Delete a notification by ID
+/api/v1/pids:
+  get:
+    operation_id: getPersistentId
+    summary: Retrieve a specific persistent identifier
+/api/v1/pids/unreserved:
+  get:
+    operation_id: getUnreservedPersistentIds
+    summary: Retrieves unreserved persistent identifiers
+/api/v1/pids/{id}/delete:
+  delete:
+    operation_id: deletePid
+    summary: Delete a specific persistent identifier (PID)
+/api/v1/pids/{id}/reserve:
+  post:
+    operation_id: reservePid
+    summary: Reserve a specific PID
+/api/v1/roles:
+  post:
+    operation_id: createRole
+    summary: Create a new role in the system
+/api/v1/roles/{id}:
+  delete:
+    operation_id: deleteRole
+    summary: Delete a specific role by id
+  get:
+    operation_id: getRole
+    summary: Retrieve details of a specific role by id
+/api/v1/search:
+  get:
+    operation_id: searchQuery
+    summary: Executes a search query with various parameters and returns the matching
+      records.
+/api/v1/users/:me:
+  get:
+    operation_id: getUserDetails
+    summary: Retrieve the details of the logged-in user
+/api/v1/users/token:
+  delete:
+    operation_id: deleteUserToken
+    summary: Deletes a user's authentication token
+  get:
+    operation_id: getUserToken
+    summary: Retrieves a user's authentication token
+/api/v1/users/token/recreate:
+  post:
+    operation_id: recreateUserToken
+    summary: Recreates the authentication token for a given user
+/api/v1/users/{consumedIdentifier}/mergeIntoUser/{baseIdentifier}:
+  post:
+    operation_id: mergeUsers
+    summary: Merge the user with consumedIdentifier into the user with baseIdentifier
+/api/v1/users/{identifier}/changeIdentifier/{newIdentifier}:
+  post:
+    operation_id: changeUserIdentifier
+    summary: Change the identifier of a given user
+/api/v1/users/{identifier}/removeRoles:
+  post:
+    operation_id: removeUserRoles
+    summary: Remove roles from a specific user
+/api/v1/users/{identifier}/traces:
+  get:
+    operation_id: getUserTraces
+    summary: Retrieve a user's traces
+/api/v1/users/{identifier}/traces/{element}:
+  get:
+    operation_id: getUserTraceElement
+    summary: Retrieve a specific trace element for a given user
+/api/v1/workflows/{invocationId}:
+  post:
+    operation_id: startWorkflow
+    summary: Initiate a workflow using the given invocation id
