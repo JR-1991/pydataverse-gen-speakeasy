@@ -3,164 +3,166 @@
 
 ### Available Operations
 
-* [post_api_v1_admin_archive_all_unarchived_dataset_versions](#post_api_v1_admin_archive_all_unarchived_dataset_versions)
-* [get_api_v1_admin_assignee_idtf_](#get_api_v1_admin_assignee_idtf_)
-* [get_api_v1_admin_assignments_assignees_ra_idtf_](#get_api_v1_admin_assignments_assignees_ra_idtf_)
-* [~~get_api_v1_admin_authenticated_users~~](#get_api_v1_admin_authenticated_users) - :warning: **Deprecated**
-* [post_api_v1_admin_authenticated_users](#post_api_v1_admin_authenticated_users)
-* [put_api_v1_admin_authenticated_users_convert_builtin2oauth](#put_api_v1_admin_authenticated_users_convert_builtin2oauth)
-* [put_api_v1_admin_authenticated_users_convert_builtin2shib](#put_api_v1_admin_authenticated_users_convert_builtin2shib)
-* [delete_api_v1_admin_authenticated_users_id_id_](#delete_api_v1_admin_authenticated_users_id_id_)
-* [put_api_v1_admin_authenticated_users_id_id_convert_remote_to_built_in](#put_api_v1_admin_authenticated_users_id_id_convert_remote_to_built_in)
-* [~~put_api_v1_admin_authenticated_users_id_id_convert_shib_to_built_in~~](#put_api_v1_admin_authenticated_users_id_id_convert_shib_to_built_in) - :warning: **Deprecated**
-* [post_api_v1_admin_authenticated_users_id_id_deactivate](#post_api_v1_admin_authenticated_users_id_id_deactivate)
-* [get_api_v1_admin_authenticated_users_identifier_](#get_api_v1_admin_authenticated_users_identifier_)
-* [delete_api_v1_admin_authenticated_users_identifier_](#delete_api_v1_admin_authenticated_users_identifier_)
-* [post_api_v1_admin_authenticated_users_identifier_deactivate](#post_api_v1_admin_authenticated_users_identifier_deactivate)
-* [get_api_v1_admin_authentication_provider_factories](#get_api_v1_admin_authentication_provider_factories)
-* [get_api_v1_admin_authentication_providers](#get_api_v1_admin_authentication_providers)
-* [post_api_v1_admin_authentication_providers](#post_api_v1_admin_authentication_providers)
-* [get_api_v1_admin_authentication_providers_id_](#get_api_v1_admin_authentication_providers_id_)
-* [delete_api_v1_admin_authentication_providers_id_](#delete_api_v1_admin_authentication_providers_id_)
-* [post_api_v1_admin_authentication_providers_id_enabled](#post_api_v1_admin_authentication_providers_id_enabled)
-* [get_api_v1_admin_authentication_providers_id_enabled](#get_api_v1_admin_authentication_providers_id_enabled)
-* [put_api_v1_admin_authentication_providers_id_enabled](#put_api_v1_admin_authentication_providers_id_enabled)
-* [get_api_v1_admin_banner_message](#get_api_v1_admin_banner_message)
-* [post_api_v1_admin_banner_message](#post_api_v1_admin_banner_message)
-* [delete_api_v1_admin_banner_message_id_](#delete_api_v1_admin_banner_message_id_)
-* [put_api_v1_admin_banner_message_id_deactivate](#put_api_v1_admin_banner_message_id_deactivate)
-* [get_api_v1_admin_batch_jobs](#get_api_v1_admin_batch_jobs)
-* [get_api_v1_admin_batch_jobs_name_job_name_](#get_api_v1_admin_batch_jobs_name_job_name_)
-* [get_api_v1_admin_batch_jobs_job_id_](#get_api_v1_admin_batch_jobs_job_id_)
-* [delete_api_v1_admin_clear_metrics_cache](#delete_api_v1_admin_clear_metrics_cache)
-* [delete_api_v1_admin_clear_metrics_cache_name_](#delete_api_v1_admin_clear_metrics_cache_name_)
-* [delete_api_v1_admin_clear_thumbnail_failure_flag](#delete_api_v1_admin_clear_thumbnail_failure_flag)
-* [delete_api_v1_admin_clear_thumbnail_failure_flag_id_](#delete_api_v1_admin_clear_thumbnail_failure_flag_id_)
-* [post_api_v1_admin_compute_data_file_hash_value_file_id_algorithm_alg_](#post_api_v1_admin_compute_data_file_hash_value_file_id_algorithm_alg_)
-* [get_api_v1_admin_confirm_email_user_id_](#get_api_v1_admin_confirm_email_user_id_)
-* [post_api_v1_admin_confirm_email_user_id_](#post_api_v1_admin_confirm_email_user_id_)
-* [post_api_v1_admin_convert_user_from_bcrypt_to_sha1](#post_api_v1_admin_convert_user_from_bcrypt_to_sha1)
-* [get_api_v1_admin_datafiles_integrity_fixmissingoriginalsizes](#get_api_v1_admin_datafiles_integrity_fixmissingoriginalsizes)
-* [get_api_v1_admin_datafiles_integrity_fixmissingoriginaltypes](#get_api_v1_admin_datafiles_integrity_fixmissingoriginaltypes)
-* [get_api_v1_admin_datasetfield](#get_api_v1_admin_datasetfield)
-* [get_api_v1_admin_datasetfield_controlled_vocabulary_subject](#get_api_v1_admin_datasetfield_controlled_vocabulary_subject)
-* [post_api_v1_admin_datasetfield_load](#post_api_v1_admin_datasetfield_load)
-* [get_api_v1_admin_datasetfield_load_na_controlled_vocabulary_value](#get_api_v1_admin_datasetfield_load_na_controlled_vocabulary_value)
-* [post_api_v1_admin_datasetfield_loadpropertyfiles](#post_api_v1_admin_datasetfield_loadpropertyfiles)
-* [get_api_v1_admin_datasetfield_name_](#get_api_v1_admin_datasetfield_name_)
-* [post_api_v1_admin_datasets_integrity_dataset_version_id_fixmissingunf](#post_api_v1_admin_datasets_integrity_dataset_version_id_fixmissingunf)
-* [get_api_v1_admin_datasets_thumbnail_metadata_id_](#get_api_v1_admin_datasets_thumbnail_metadata_id_)
-* [get_api_v1_admin_dataverse_curation_label_sets](#get_api_v1_admin_dataverse_curation_label_sets)
-* [get_api_v1_admin_dataverse_storage_drivers](#get_api_v1_admin_dataverse_storage_drivers)
-* [get_api_v1_admin_dataverse_alias_add_role_assignments_to_children](#get_api_v1_admin_dataverse_alias_add_role_assignments_to_children)
-* [get_api_v1_admin_dataverse_alias_curation_label_set](#get_api_v1_admin_dataverse_alias_curation_label_set)
-* [put_api_v1_admin_dataverse_alias_curation_label_set](#put_api_v1_admin_dataverse_alias_curation_label_set)
-* [delete_api_v1_admin_dataverse_alias_curation_label_set](#delete_api_v1_admin_dataverse_alias_curation_label_set)
-* [get_api_v1_admin_dataverse_alias_storage_driver](#get_api_v1_admin_dataverse_alias_storage_driver)
-* [put_api_v1_admin_dataverse_alias_storage_driver](#put_api_v1_admin_dataverse_alias_storage_driver)
-* [delete_api_v1_admin_dataverse_alias_storage_driver](#delete_api_v1_admin_dataverse_alias_storage_driver)
-* [get_api_v1_admin_download_tmp_file](#get_api_v1_admin_download_tmp_file)
-* [get_api_v1_admin_external_tools](#get_api_v1_admin_external_tools)
-* [post_api_v1_admin_external_tools](#post_api_v1_admin_external_tools)
-* [get_api_v1_admin_external_tools_id_](#get_api_v1_admin_external_tools_id_)
-* [delete_api_v1_admin_external_tools_id_](#delete_api_v1_admin_external_tools_id_)
-* [post_api_v1_admin_feedback](#post_api_v1_admin_feedback)
-* [get_api_v1_admin_groups_domain](#get_api_v1_admin_groups_domain)
-* [post_api_v1_admin_groups_domain](#post_api_v1_admin_groups_domain)
-* [get_api_v1_admin_groups_domain_group_alias_](#get_api_v1_admin_groups_domain_group_alias_)
-* [put_api_v1_admin_groups_domain_group_alias_](#put_api_v1_admin_groups_domain_group_alias_)
-* [delete_api_v1_admin_groups_domain_group_alias_](#delete_api_v1_admin_groups_domain_group_alias_)
-* [get_api_v1_admin_groups_ip](#get_api_v1_admin_groups_ip)
-* [post_api_v1_admin_groups_ip](#post_api_v1_admin_groups_ip)
-* [get_api_v1_admin_groups_ip_group_idtf_](#get_api_v1_admin_groups_ip_group_idtf_)
-* [delete_api_v1_admin_groups_ip_group_idtf_](#delete_api_v1_admin_groups_ip_group_idtf_)
-* [get_api_v1_admin_groups_shib](#get_api_v1_admin_groups_shib)
-* [post_api_v1_admin_groups_shib](#post_api_v1_admin_groups_shib)
-* [delete_api_v1_admin_groups_shib_primary_key_](#delete_api_v1_admin_groups_shib_primary_key_)
-* [get_api_v1_admin_index](#get_api_v1_admin_index)
-* [get_api_v1_admin_index_clear](#get_api_v1_admin_index_clear)
-* [get_api_v1_admin_index_clear_orphans](#get_api_v1_admin_index_clear_orphans)
-* [get_api_v1_admin_index_continue](#get_api_v1_admin_index_continue)
-* [get_api_v1_admin_index_dataset](#get_api_v1_admin_index_dataset)
-* [delete_api_v1_admin_index_datasets_id_](#delete_api_v1_admin_index_datasets_id_)
-* [get_api_v1_admin_index_filemetadata_dataset_id_](#get_api_v1_admin_index_filemetadata_dataset_id_)
-* [get_api_v1_admin_index_filesearch](#get_api_v1_admin_index_filesearch)
-* [get_api_v1_admin_index_mod](#get_api_v1_admin_index_mod)
-* [get_api_v1_admin_index_perms](#get_api_v1_admin_index_perms)
-* [get_api_v1_admin_index_perms_id_](#get_api_v1_admin_index_perms_id_)
-* [get_api_v1_admin_index_perms_debug](#get_api_v1_admin_index_perms_debug)
-* [get_api_v1_admin_index_solr_schema](#get_api_v1_admin_index_solr_schema)
-* [get_api_v1_admin_index_status](#get_api_v1_admin_index_status)
-* [get_api_v1_admin_index_test](#get_api_v1_admin_index_test)
-* [delete_api_v1_admin_index_timestamps](#delete_api_v1_admin_index_timestamps)
-* [delete_api_v1_admin_index_timestamps_dv_object_id_](#delete_api_v1_admin_index_timestamps_dv_object_id_)
-* [get_api_v1_admin_index_type_id_](#get_api_v1_admin_index_type_id_)
-* [get_api_v1_admin_is_orcid](#get_api_v1_admin_is_orcid)
-* [get_api_v1_admin_list_users](#get_api_v1_admin_list_users)
-* [post_api_v1_admin_make_data_count_add_usage_metrics_from_sushi_report](#post_api_v1_admin_make_data_count_add_usage_metrics_from_sushi_report)
-* [post_api_v1_admin_make_data_count_send_to_hub](#post_api_v1_admin_make_data_count_send_to_hub)
-* [post_api_v1_admin_make_data_count_id_add_usage_metrics_from_sushi_report](#post_api_v1_admin_make_data_count_id_add_usage_metrics_from_sushi_report)
-* [post_api_v1_admin_make_data_count_id_update_citations_for_dataset](#post_api_v1_admin_make_data_count_id_update_citations_for_dataset)
-* [get_api_v1_admin_metadata_clear_export_timestamps](#get_api_v1_admin_metadata_clear_export_timestamps)
-* [get_api_v1_admin_metadata_export_all](#get_api_v1_admin_metadata_export_all)
-* [put_api_v1_admin_metadata_export_oai_specname_](#put_api_v1_admin_metadata_export_oai_specname_)
-* [get_api_v1_admin_metadata_re_export_all](#get_api_v1_admin_metadata_re_export_all)
-* [get_api_v1_admin_metadata_id_re_export_dataset](#get_api_v1_admin_metadata_id_re_export_dataset)
-* [get_api_v1_admin_permissions_dvo_](#get_api_v1_admin_permissions_dvo_)
-* [post_api_v1_admin_publish_dataverse_as_creator_id_](#post_api_v1_admin_publish_dataverse_as_creator_id_)
-* [get_api_v1_admin_register_data_file_all](#get_api_v1_admin_register_data_file_all)
-* [get_api_v1_admin_register_data_files_alias_](#get_api_v1_admin_register_data_files_alias_)
-* [post_api_v1_admin_request_signed_url](#post_api_v1_admin_request_signed_url)
-* [get_api_v1_admin_roles](#get_api_v1_admin_roles)
-* [post_api_v1_admin_roles](#post_api_v1_admin_roles)
-* [delete_api_v1_admin_roles_id_](#delete_api_v1_admin_roles_id_)
-* [get_api_v1_admin_savedsearches](#get_api_v1_admin_savedsearches)
-* [post_api_v1_admin_savedsearches](#post_api_v1_admin_savedsearches)
-* [get_api_v1_admin_savedsearches_list](#get_api_v1_admin_savedsearches_list)
-* [put_api_v1_admin_savedsearches_makelinks_all](#put_api_v1_admin_savedsearches_makelinks_all)
-* [put_api_v1_admin_savedsearches_makelinks_id_](#put_api_v1_admin_savedsearches_makelinks_id_)
-* [get_api_v1_admin_savedsearches_id_](#get_api_v1_admin_savedsearches_id_)
-* [delete_api_v1_admin_savedsearches_id_](#delete_api_v1_admin_savedsearches_id_)
-* [get_api_v1_admin_settings](#get_api_v1_admin_settings)
-* [get_api_v1_admin_settings_name_](#get_api_v1_admin_settings_name_)
-* [put_api_v1_admin_settings_name_](#put_api_v1_admin_settings_name_)
-* [delete_api_v1_admin_settings_name_](#delete_api_v1_admin_settings_name_)
-* [put_api_v1_admin_settings_name_lang_lang_](#put_api_v1_admin_settings_name_lang_lang_)
-* [delete_api_v1_admin_settings_name_lang_lang_](#delete_api_v1_admin_settings_name_lang_lang_)
-* [post_api_v1_admin_sitemap](#post_api_v1_admin_sitemap)
-* [get_api_v1_admin_storage_sites](#get_api_v1_admin_storage_sites)
-* [post_api_v1_admin_storage_sites](#post_api_v1_admin_storage_sites)
-* [get_api_v1_admin_storage_sites_id_](#get_api_v1_admin_storage_sites_id_)
-* [delete_api_v1_admin_storage_sites_id_](#delete_api_v1_admin_storage_sites_id_)
-* [put_api_v1_admin_storage_sites_id_primary_storage](#put_api_v1_admin_storage_sites_id_primary_storage)
-* [post_api_v1_admin_submit_dataset_version_to_archive_id_version_](#post_api_v1_admin_submit_dataset_version_to_archive_id_version_)
-* [post_api_v1_admin_superuser_identifier_](#post_api_v1_admin_superuser_identifier_)
-* [delete_api_v1_admin_template_id_](#delete_api_v1_admin_template_id_)
-* [get_api_v1_admin_templates](#get_api_v1_admin_templates)
-* [get_api_v1_admin_templates_alias_](#get_api_v1_admin_templates_alias_)
-* [get_api_v1_admin_test_datasets_id_external_tools](#get_api_v1_admin_test_datasets_id_external_tools)
-* [get_api_v1_admin_test_files_id_external_tool_tool_id_](#get_api_v1_admin_test_files_id_external_tool_tool_id_)
-* [get_api_v1_admin_test_files_id_external_tools](#get_api_v1_admin_test_files_id_external_tools)
-* [get_api_v1_admin_update_hash_values_alg_](#get_api_v1_admin_update_hash_values_alg_)
-* [get_api_v1_admin_validate_dataset_files_id_](#get_api_v1_admin_validate_dataset_files_id_)
-* [get_api_v1_admin_validate_dataset_id_](#get_api_v1_admin_validate_dataset_id_)
-* [get_api_v1_admin_validate_datasets](#get_api_v1_admin_validate_datasets)
-* [post_api_v1_admin_validate_data_file_hash_value_file_id_](#post_api_v1_admin_validate_data_file_hash_value_file_id_)
-* [post_api_v1_admin_validate_password](#post_api_v1_admin_validate_password)
-* [get_api_v1_admin_workflows](#get_api_v1_admin_workflows)
-* [post_api_v1_admin_workflows](#post_api_v1_admin_workflows)
-* [get_api_v1_admin_workflows_default](#get_api_v1_admin_workflows_default)
-* [get_api_v1_admin_workflows_default_trigger_type_](#get_api_v1_admin_workflows_default_trigger_type_)
-* [put_api_v1_admin_workflows_default_trigger_type_](#put_api_v1_admin_workflows_default_trigger_type_)
-* [delete_api_v1_admin_workflows_default_trigger_type_](#delete_api_v1_admin_workflows_default_trigger_type_)
-* [get_api_v1_admin_workflows_ip_whitelist](#get_api_v1_admin_workflows_ip_whitelist)
-* [put_api_v1_admin_workflows_ip_whitelist](#put_api_v1_admin_workflows_ip_whitelist)
-* [delete_api_v1_admin_workflows_ip_whitelist](#delete_api_v1_admin_workflows_ip_whitelist)
-* [get_api_v1_admin_workflows_identifier_](#get_api_v1_admin_workflows_identifier_)
-* [get_api_v1_admin_id_register_data_file](#get_api_v1_admin_id_register_data_file)
-* [post_api_v1_admin_id_reregister_hdl_to_pid](#post_api_v1_admin_id_reregister_hdl_to_pid)
+* [archive_all_unarchived_versions](#archive_all_unarchived_versions) - Archives all unarchived dataset versions. Allows options to limit the number of versions archived, archive only the latest versions, or simply list the versions that would be archived without actually doing it.
+* [get_admin_assignee](#get_admin_assignee) - Retrieve a specific assignee detail by ID.
+* [get_assignees_detail](#get_assignees_detail) - Retrieve details of a specific assignee by raIdtf
+* [~~get_authenticated_users~~](#get_authenticated_users) - Retrieves a list of authenticated users. This endpoint is deprecated. :warning: **Deprecated**
+* [create_authenticated_user](#create_authenticated_user) - Creates a new authenticated user.
+* [convert_user_to_o_auth](#convert_user_to_o_auth) - Convert an authenticated user from built-in to OAuth
+* [convert_auth_users](#convert_auth_users) - Convert Authenticated Users from Built-in system to Shibboleth
+* [delete_authenticated_user](#delete_authenticated_user) - Delete an authenticated user by ID
+* [convert_remote_to_built_in](#convert_remote_to_built_in) - Converts a remote user to a built-in user by their ID
+* [~~convert_user_authentication_method~~](#convert_user_authentication_method) - Converts the authentication method of an authenticated user from Shibboleth to Built-In. :warning: **Deprecated**
+* [deactivate_user](#deactivate_user) - Deactivates an authenticated user by ID
+* [get_authenticated_user](#get_authenticated_user) - Retrieve details of a specified authenticated user
+* [delete_authenticated_user_1](#delete_authenticated_user_1) - Delete a specified authenticated user
+* [deactivate_user_1](#deactivate_user_1) - Deactivate an authenticated user by identifier
+* [get_auth_provider_factories](#get_auth_provider_factories) - Retrieve all authentication provider factories
+* [get_auth_providers](#get_auth_providers) - Retrieve list of authentication providers
+* [add_auth_provider](#add_auth_provider) - Add a new authentication provider
+* [get_auth_providers_by_id](#get_auth_providers_by_id) - Fetch specific authentication provider using ID
+* [remove_auth_providers_by_id](#remove_auth_providers_by_id) - Delete specific authentication provider using ID
+* [enable_auth_provider](#enable_auth_provider) - Enable a specific authentication provider by its ID
+* [get_auth_provider_status](#get_auth_provider_status) - Retrieves the status of a specific authentication provider
+* [update_auth_provider_status](#update_auth_provider_status) - Updates the status of a specific authentication provider
+* [get_banner_message](#get_banner_message) - Retrieve a current banner message
+* [post_banner_message](#post_banner_message) - Add a new banner message
+* [delete_banner_message](#delete_banner_message) - Delete a specific banner message by ID
+* [deactivate_banner_message](#deactivate_banner_message) - Deactivates a specific banner message
+* [get_batch_jobs](#get_batch_jobs) - Retrieve all batch jobs
+* [get_job_by_name](#get_job_by_name) - Retrieve details for a job given its name
+* [get_admin_job_by_id](#get_admin_job_by_id) - Retrieve details of a specific admin batch job
+* [delete_metrics_cache](#delete_metrics_cache) - Deletes the metrics cache for admin
+* [delete_metrics_cache_1](#delete_metrics_cache_1) - Deletes a specific metric cache.
+* [delete_thumbnail_failure_flag](#delete_thumbnail_failure_flag) - Deletes a thumbnail failure flag
+* [admin_clear_thumbnail_failure_flag](#admin_clear_thumbnail_failure_flag) - Delete the thumbnail failure flag for a specified Dataverse id
+* [compute_file_hash_value](#compute_file_hash_value) - Computes the hash value of the specified file using the given algorithm
+* [get_user_id_conf_email](#get_user_id_conf_email) - Retrieve Confirmation Email Associated with User ID
+* [post_user_id_conf_email](#post_user_id_conf_email) - Send Confirmation Email to User ID
+* [admin_convert_user_encryption](#admin_convert_user_encryption) - Convert a user's encryption scheme from Bcrypt to Sha1
+* [get_fix_missing_original_sizes](#get_fix_missing_original_sizes) - Retrieve a limited number of records with missing original sizes and fix them
+* [fix_missing_original_types](#fix_missing_original_types) - Retrieve a report of datafiles with missing original types and apply fixes
+* [get_admin_dataset_field](#get_admin_dataset_field) - Retrieve the dataset fields available to administrators
+* [get_controlled_vocabulary](#get_controlled_vocabulary) - Retrieve a list of controlled vocabulary subjects
+* [load_dataset_field_admin](#load_dataset_field_admin) - Load dataset field as an admin
+* [get_na_controlled_vocab_value](#get_na_controlled_vocab_value) - Retrieve North American controlled vocabulary value
+* [admin_load_property_files](#admin_load_property_files) - Load dataset field property files as a ZIP.
+* [get_dataset_field_name](#get_dataset_field_name) - Retrieve information of the specified dataset field
+* [post_fix_missing_unf](#post_fix_missing_unf) - Update or recalculate dataset integrity by fixing missing UNF in specified dataset version
+* [get_thumbnail_metadata_by_id](#get_thumbnail_metadata_by_id) - Retrieves thumbnail metadata for a specific dataset using its ID
+* [get_curation_label_sets](#get_curation_label_sets) - Retrieve all curation label sets
+* [get_storage_drivers](#get_storage_drivers) - Retrieves all storage drivers
+* [get_role_assignments](#get_role_assignments) - Retrieve role assignments associated with a dataverse
+* [get_curation_label_set](#get_curation_label_set) - Retrieve the curation label set of the specified Dataverse
+* [update_curation_label_set](#update_curation_label_set) - Update or create a curation label set for the specified Dataverse
+* [delete_curation_label_set](#delete_curation_label_set) - Remove the curation label set from the specified Dataverse
+* [get_storage_driver](#get_storage_driver) - Retrieve the storage driver of a specific dataverse
+* [update_storage_driver](#update_storage_driver) - Update the storage driver of a specific dataverse
+* [delete_storage_driver](#delete_storage_driver) - Remove the storage driver of a specific dataverse
+* [get_tmp_file](#get_tmp_file) - Retrieve a temporary file via its fully qualified path
+* [get_external_tools](#get_external_tools) - Retrieve a list of all external tools
+* [create_external_tool](#create_external_tool) - Create a new external tool
+* [get_external_tool](#get_external_tool) - Retrieve an external tool by its ID
+* [delete_external_tool](#delete_external_tool) - Delete an external tool by its ID
+* [post_admin_feedback](#post_admin_feedback) - Create or post feedback as an admin
+* [get_admin_groups_domain](#get_admin_groups_domain) - Retrieve domain-related groups information from the admin endpoint
+* [post_admin_groups_domain](#post_admin_groups_domain) - Submit new domain-related groups information to the admin endpoint
+* [get_group_alias](#get_group_alias) - Retrieves information of the group alias specified in the path
+* [update_group_alias](#update_group_alias) - Updates the group alias specified in the path
+* [delete_group_alias](#delete_group_alias) - Deletes the group alias specified in the path
+* [get_admin_groups_ip](#get_admin_groups_ip) - Retrieve IP-based groups information
+* [post_admin_groups_ip](#post_admin_groups_ip) - Create a new IP-based group
+* [get_group_by_group_idtf](#get_group_by_group_idtf) - Fetches a group by the groupIdtf provided in the path
+* [delete_group_by_group_idtf](#delete_group_by_group_idtf) - Deletes a group by the groupIdtf provided in the path
+* [get_shib_group_info](#get_shib_group_info) - Retrieve information about Shibboleth groups
+* [create_shib_group](#create_shib_group) - Create a new Shibboleth group
+* [delete_shib_group](#delete_shib_group) - Delete a Shibboleth Group by given Primary Key
+* [get_admin_index](#get_admin_index) - Retrieve details of admin index with queried parameters
+* [clear_admin_index](#clear_admin_index) - Clears the admin index
+* [clear_orphans_index](#clear_orphans_index) - Retrieve and clear orphans from the admin index
+* [continue_index_processing](#continue_index_processing) - Continues the process of indexing partitions based on given parameters.
+* [get_dataset_index](#get_dataset_index) - Retrieve the index of a dataset given its persistentId
+* [delete_dataset_by_id](#delete_dataset_by_id) - Delete a specific dataset by its ID
+* [get_file_metadata1](#get_file_metadata1) - Retrieve file metadata for a specific dataset
+* [file_search_index_get](#file_search_index_get) - This endpoint retrieves data about file search index by persistentId, q, and/or semanticVersion.
+* [get_admin_index_mod](#get_admin_index_mod) - Retrieves modification of the admin index based on provided query parameters
+* [get_admin_index_perms](#get_admin_index_perms) - Retrieve permissions for the admin index
+* [get_admin_index_perms_1](#get_admin_index_perms_1) - Retrieve a specific admin index permissions by ID
+* [get_perms_debug_info](#get_perms_debug_info) - Retrieves permission debug info for specified id and key
+* [get_solr_schema](#get_solr_schema) - Retrieve the Solr schema configuration.
+* [get_admin_index_status](#get_admin_index_status) - Retrieve status of the admin index
+* [get_admin_test_index](#get_admin_test_index) - Obtain specific parameters from the Admin Test Index
+* [delete_admin_index_timestamps](#delete_admin_index_timestamps) - Delete timestamps from the admin index
+* [delete_index_timestamp](#delete_index_timestamp) - Delete index timestamp by dvObjectId
+* [get_admin_index_type_by_id](#get_admin_index_type_by_id) - Retrieves specific type and ID details in admin index
+* [get_orcid_status](#get_orcid_status) - Retrieve ORCID status for a specific admin
+* [list_users](#list_users) - Retrieve a list of all users
+* [add_metrics_from_report](#add_metrics_from_report) - Add usage metrics from a SUSHI report
+* [admin_send_to_hub](#admin_send_to_hub) - Send data count to the admin hub.
+* [add_usage_metrics_from_sushi_repo](#add_usage_metrics_from_sushi_repo) - Add usage metrics for a specific Dataverse file from a SUSHI Report
+* [update_dataset_citations](#update_dataset_citations) - Updates the citation count for a specified dataset
+* [get_export_timestamps](#get_export_timestamps) - Retrieve the export timestamps
+* [get_metadata_export_all](#get_metadata_export_all) - Fetches all metadata for export by admin
+* [admin_metadata_export_oai_spec](#admin_metadata_export_oai_spec) - Update the OAI export specification using provided 'specname'
+* [re_export_all_metadata](#re_export_all_metadata) - Retrieves and exports all metadata
+* [get_metadata_re_export](#get_metadata_re_export) - Retrieves and re-exports the specific metadata for the dataset using dataset ID
+* [get_admin_permissions](#get_admin_permissions) - Retrieve specific admin permission details
+* [publish_dataverse_as_creator](#publish_dataverse_as_creator) - Publish Dataverse as creator using the given ID
+* [get_register_data_file_all](#get_register_data_file_all) - Retrieve all registered data files from the admin.
+* [get_register_data_files_by_alias](#get_register_data_files_by_alias) - Retrieve data file registration details for a given alias
+* [post_admin_signed_url](#post_admin_signed_url) - Admin sends a request to receive a signed URL.
+* [get_admin_roles](#get_admin_roles) - Retrieve a list of all admin roles
+* [create_admin_role](#create_admin_role) - Create a new admin role
+* [delete_admin_role](#delete_admin_role) - Delete a specific admin role
+* [get_saved_searches](#get_saved_searches) - Retrieves all saved searches in the system.
+* [add_saved_search](#add_saved_search) - Adds a new saved search to the system.
+* [get_saved_searches_list](#get_saved_searches_list) - Retrieve a list of all saved searches by the administrator
+* [update_all_saved_search_links](#update_all_saved_search_links) - Updates all saved search links
+* [make_links_for_saved_search](#make_links_for_saved_search) - Updates the link for a specific saved search by ID
+* [get_saved_search](#get_saved_search) - Retrieves a saved search by ID
+* [delete_saved_search](#delete_saved_search) - Deletes a saved search by ID
+* [get_admin_settings](#get_admin_settings) - Retrieve administrator settings
+* [get_admin_setting](#get_admin_setting) - Retrieve a specified admin setting
+* [update_admin_setting](#update_admin_setting) - Update a specified admin setting
+* [delete_admin_setting](#delete_admin_setting) - Delete a specified admin setting
+* [update_admin_settings_lang](#update_admin_settings_lang) - Update a specific Admin setting for a given language
+* [delete_admin_settings_lang](#delete_admin_settings_lang) - Delete a specific Admin setting for a given language
+* [generate_sitemap](#generate_sitemap) - Generate a new sitemap for the application
+* [get_storage_sites](#get_storage_sites) - Fetches all storage sites
+* [create_storage_site](#create_storage_site) - Creates a new storage site
+* [fetch_storage_site](#fetch_storage_site) - Retrieves details of a specific storage site by its unique identifier
+* [delete_storage_site](#delete_storage_site) - Deletes a specific storage site by its unique identifier
+* [update_primary_storage](#update_primary_storage) - Update the primary storage of a storage site by ID
+* [submit_dataset_version_to_archive](#submit_dataset_version_to_archive) - Submit a specific dataset version to the archive by using provided dataset ID and version number
+* [admin_create_super_user](#admin_create_super_user) - Creates a new superuser with the provided identifier
+* [delete_admin_template](#delete_admin_template) - Delete an admin template by ID
+* [get_admin_templates](#get_admin_templates) - Retrieve all admin templates
+* [get_admin_template](#get_admin_template) - Retrieve a specific admin template using its alias.
+* [get_external_tools_1](#get_external_tools_1) - Gets an external tool associated with a specific dataset identified by its id
+* [get_external_tool_by_id](#get_external_tool_by_id) - Retrieve the details of a specific external tool by its ID for a given file
+* [get_external_tools_1_1](#get_external_tools_1_1) - Retrieve the external tools of a specific test file.
+* [get_hash_values](#get_hash_values) - Retrieve hash values based on specified algorithm
+* [get_validate_dataset_files](#get_validate_dataset_files) - Retrieve and validate specified dataset files
+* [validate_dataset](#validate_dataset) - Validate a dataset with a specified ID
+* [admin_validate_datasets](#admin_validate_datasets) - Validate datasets in the system
+* [validate_data_file_hash](#validate_data_file_hash) - Validate hash value of the specified data file
+* [validate_admin_password](#validate_admin_password) - Validates the password of an admin user
+* [get_admin_workflows](#get_admin_workflows) - Retrieve all workflows associated with the admin
+* [create_admin_workflow](#create_admin_workflow) - Create a new workflow for the admin
+* [get_default_workflow](#get_default_workflow) - Fetch default workflow configured for admin
+* [get_trigger_type](#get_trigger_type) - Retrieve a specific trigger type from workflows
+* [update_trigger_type](#update_trigger_type) - Update a specific trigger type in workflows
+* [delete_trigger_type](#delete_trigger_type) - Delete a specific trigger type from workflows
+* [get_ip_whitelist](#get_ip_whitelist) - Retrieve current IP Whitelist for admin workflows
+* [update_ip_whitelist](#update_ip_whitelist) - Update the IP Whitelist for admin workflows
+* [delete_ip_whitelist](#delete_ip_whitelist) - Remove the IP Whitelist for admin workflows
+* [get_workflow_by_identifier](#get_workflow_by_identifier) - Retrieve a specific workflow using its identifier
+* [get_admin_data_file](#get_admin_data_file) - Retrieve data file details registered by a specific admin
+* [admin_reregister_hdl_to_pid](#admin_reregister_hdl_to_pid) - Admin reruns the HDL to PID registration for a specific admin ID.
 
-## post_api_v1_admin_archive_all_unarchived_dataset_versions
+## archive_all_unarchived_versions
+
+Archives all unarchived dataset versions. Allows options to limit the number of versions archived, archive only the latest versions, or simply list the versions that would be archived without actually doing it.
 
 ### Example Usage
 
@@ -170,7 +172,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_archive_all_unarchived_dataset_versions(latestonly=False, limit=908714, listonly=False)
+res = s.admin.archive_all_unarchived_versions(latestonly=False, limit=452296, listonly=False)
 
 if res.status_code == 200:
     # handle response
@@ -188,14 +190,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminArchiveAllUnarchivedDatasetVersionsResponse](../../models/operations/postapiv1adminarchiveallunarchiveddatasetversionsresponse.md)**
+**[operations.ArchiveAllUnarchivedVersionsResponse](../../models/operations/archiveallunarchivedversionsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_assignee_idtf_
+## get_admin_assignee
+
+Retrieve a specific assignee detail by ID.
 
 ### Example Usage
 
@@ -205,7 +209,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_assignee_idtf_(idtf='<value>')
+res = s.admin.get_admin_assignee(idtf='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -221,14 +225,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminAssigneeIdtfResponse](../../models/operations/getapiv1adminassigneeidtfresponse.md)**
+**[operations.GetAdminAssigneeResponse](../../models/operations/getadminassigneeresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_assignments_assignees_ra_idtf_
+## get_assignees_detail
+
+Retrieve details of a specific assignee by raIdtf
 
 ### Example Usage
 
@@ -238,7 +244,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_assignments_assignees_ra_idtf_(ra_idtf='<value>')
+res = s.admin.get_assignees_detail(ra_idtf='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -254,14 +260,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminAssignmentsAssigneesRaIdtfResponse](../../models/operations/getapiv1adminassignmentsassigneesraidtfresponse.md)**
+**[operations.GetAssigneesDetailResponse](../../models/operations/getassigneesdetailresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## ~~get_api_v1_admin_authenticated_users~~
+## ~~get_authenticated_users~~
+
+Retrieves a list of authenticated users. This endpoint is deprecated.
 
 > :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
@@ -273,7 +281,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_authenticated_users()
+res = s.admin.get_authenticated_users()
 
 if res.status_code == 200:
     # handle response
@@ -283,14 +291,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminAuthenticatedUsersResponse](../../models/operations/getapiv1adminauthenticatedusersresponse.md)**
+**[operations.GetAuthenticatedUsersResponse](../../models/operations/getauthenticatedusersresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_authenticated_users
+## create_authenticated_user
+
+Creates a new authenticated user.
 
 ### Example Usage
 
@@ -300,7 +310,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_authenticated_users()
+res = s.admin.create_authenticated_user()
 
 if res.status_code == 200:
     # handle response
@@ -310,14 +320,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminAuthenticatedUsersResponse](../../models/operations/postapiv1adminauthenticatedusersresponse.md)**
+**[operations.CreateAuthenticatedUserResponse](../../models/operations/createauthenticateduserresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_admin_authenticated_users_convert_builtin2oauth
+## convert_user_to_o_auth
+
+Convert an authenticated user from built-in to OAuth
 
 ### Example Usage
 
@@ -327,7 +339,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.put_api_v1_admin_authenticated_users_convert_builtin2oauth()
+res = s.admin.convert_user_to_o_auth()
 
 if res.status_code == 200:
     # handle response
@@ -337,14 +349,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminAuthenticatedUsersConvertBuiltin2oauthResponse](../../models/operations/putapiv1adminauthenticatedusersconvertbuiltin2oauthresponse.md)**
+**[operations.ConvertUserToOAuthResponse](../../models/operations/convertusertooauthresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_admin_authenticated_users_convert_builtin2shib
+## convert_auth_users
+
+Convert Authenticated Users from Built-in system to Shibboleth
 
 ### Example Usage
 
@@ -354,7 +368,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.put_api_v1_admin_authenticated_users_convert_builtin2shib()
+res = s.admin.convert_auth_users()
 
 if res.status_code == 200:
     # handle response
@@ -364,14 +378,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminAuthenticatedUsersConvertBuiltin2shibResponse](../../models/operations/putapiv1adminauthenticatedusersconvertbuiltin2shibresponse.md)**
+**[operations.ConvertAuthUsersResponse](../../models/operations/convertauthusersresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_authenticated_users_id_id_
+## delete_authenticated_user
+
+Delete an authenticated user by ID
 
 ### Example Usage
 
@@ -381,7 +397,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_authenticated_users_id_id_(id=835361)
+res = s.admin.delete_authenticated_user(id=972068)
 
 if res.status_code == 200:
     # handle response
@@ -397,14 +413,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminAuthenticatedUsersIDIDResponse](../../models/operations/deleteapiv1adminauthenticatedusersididresponse.md)**
+**[operations.DeleteAuthenticatedUserResponse](../../models/operations/deleteauthenticateduserresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_admin_authenticated_users_id_id_convert_remote_to_built_in
+## convert_remote_to_built_in
+
+Converts a remote user to a built-in user by their ID
 
 ### Example Usage
 
@@ -414,7 +432,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.put_api_v1_admin_authenticated_users_id_id_convert_remote_to_built_in(id=834419)
+res = s.admin.convert_remote_to_built_in(id=306142)
 
 if res.status_code == 200:
     # handle response
@@ -430,14 +448,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminAuthenticatedUsersIDIDConvertRemoteToBuiltInResponse](../../models/operations/putapiv1adminauthenticatedusersididconvertremotetobuiltinresponse.md)**
+**[operations.ConvertRemoteToBuiltInResponse](../../models/operations/convertremotetobuiltinresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## ~~put_api_v1_admin_authenticated_users_id_id_convert_shib_to_built_in~~
+## ~~convert_user_authentication_method~~
+
+Converts the authentication method of an authenticated user from Shibboleth to Built-In.
 
 > :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
@@ -449,7 +469,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.put_api_v1_admin_authenticated_users_id_id_convert_shib_to_built_in(id=301232)
+res = s.admin.convert_user_authentication_method(id=261670)
 
 if res.status_code == 200:
     # handle response
@@ -465,14 +485,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminAuthenticatedUsersIDIDConvertShibToBuiltInResponse](../../models/operations/putapiv1adminauthenticatedusersididconvertshibtobuiltinresponse.md)**
+**[operations.ConvertUserAuthenticationMethodResponse](../../models/operations/convertuserauthenticationmethodresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_authenticated_users_id_id_deactivate
+## deactivate_user
+
+Deactivates an authenticated user by ID
 
 ### Example Usage
 
@@ -482,7 +504,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_authenticated_users_id_id_deactivate(id=7229)
+res = s.admin.deactivate_user(id=143950)
 
 if res.status_code == 200:
     # handle response
@@ -498,14 +520,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminAuthenticatedUsersIDIDDeactivateResponse](../../models/operations/postapiv1adminauthenticatedusersididdeactivateresponse.md)**
+**[operations.DeactivateUserResponse](../../models/operations/deactivateuserresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_authenticated_users_identifier_
+## get_authenticated_user
+
+Retrieve details of a specified authenticated user
 
 ### Example Usage
 
@@ -515,7 +539,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_authenticated_users_identifier_(identifier='<value>')
+res = s.admin.get_authenticated_user(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -531,14 +555,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminAuthenticatedUsersIdentifierResponse](../../models/operations/getapiv1adminauthenticatedusersidentifierresponse.md)**
+**[operations.GetAuthenticatedUserResponse](../../models/operations/getauthenticateduserresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_authenticated_users_identifier_
+## delete_authenticated_user_1
+
+Delete a specified authenticated user
 
 ### Example Usage
 
@@ -548,7 +574,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_authenticated_users_identifier_(identifier='<value>')
+res = s.admin.delete_authenticated_user_1(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -564,14 +590,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminAuthenticatedUsersIdentifierResponse](../../models/operations/deleteapiv1adminauthenticatedusersidentifierresponse.md)**
+**[operations.DeleteAuthenticatedUser1Response](../../models/operations/deleteauthenticateduser1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_authenticated_users_identifier_deactivate
+## deactivate_user_1
+
+Deactivate an authenticated user by identifier
 
 ### Example Usage
 
@@ -581,7 +609,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_authenticated_users_identifier_deactivate(identifier='<value>')
+res = s.admin.deactivate_user_1(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -597,14 +625,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminAuthenticatedUsersIdentifierDeactivateResponse](../../models/operations/postapiv1adminauthenticatedusersidentifierdeactivateresponse.md)**
+**[operations.DeactivateUser1Response](../../models/operations/deactivateuser1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_authentication_provider_factories
+## get_auth_provider_factories
+
+Retrieve all authentication provider factories
 
 ### Example Usage
 
@@ -614,7 +644,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_authentication_provider_factories()
+res = s.admin.get_auth_provider_factories()
 
 if res.status_code == 200:
     # handle response
@@ -624,14 +654,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminAuthenticationProviderFactoriesResponse](../../models/operations/getapiv1adminauthenticationproviderfactoriesresponse.md)**
+**[operations.GetAuthProviderFactoriesResponse](../../models/operations/getauthproviderfactoriesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_authentication_providers
+## get_auth_providers
+
+Retrieve list of authentication providers
 
 ### Example Usage
 
@@ -641,7 +673,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_authentication_providers()
+res = s.admin.get_auth_providers()
 
 if res.status_code == 200:
     # handle response
@@ -651,14 +683,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminAuthenticationProvidersResponse](../../models/operations/getapiv1adminauthenticationprovidersresponse.md)**
+**[operations.GetAuthProvidersResponse](../../models/operations/getauthprovidersresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_authentication_providers
+## add_auth_provider
+
+Add a new authentication provider
 
 ### Example Usage
 
@@ -668,7 +702,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_authentication_providers()
+res = s.admin.add_auth_provider()
 
 if res.status_code == 200:
     # handle response
@@ -678,14 +712,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminAuthenticationProvidersResponse](../../models/operations/postapiv1adminauthenticationprovidersresponse.md)**
+**[operations.AddAuthProviderResponse](../../models/operations/addauthproviderresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_authentication_providers_id_
+## get_auth_providers_by_id
+
+Fetch specific authentication provider using ID
 
 ### Example Usage
 
@@ -695,40 +731,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_authentication_providers_id_(id='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *str*              | :heavy_check_mark: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1AdminAuthenticationProvidersIDResponse](../../models/operations/getapiv1adminauthenticationprovidersidresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## delete_api_v1_admin_authentication_providers_id_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.admin.delete_api_v1_admin_authentication_providers_id_(id='<value>')
+res = s.admin.get_auth_providers_by_id(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -744,14 +747,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminAuthenticationProvidersIDResponse](../../models/operations/deleteapiv1adminauthenticationprovidersidresponse.md)**
+**[operations.GetAuthProvidersByIDResponse](../../models/operations/getauthprovidersbyidresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_authentication_providers_id_enabled
+## remove_auth_providers_by_id
+
+Delete specific authentication provider using ID
 
 ### Example Usage
 
@@ -761,7 +766,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_authentication_providers_id_enabled(id='<value>')
+res = s.admin.remove_auth_providers_by_id(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -777,14 +782,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminAuthenticationProvidersIDEnabledResponse](../../models/operations/postapiv1adminauthenticationprovidersidenabledresponse.md)**
+**[operations.RemoveAuthProvidersByIDResponse](../../models/operations/removeauthprovidersbyidresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_authentication_providers_id_enabled
+## enable_auth_provider
+
+Enable a specific authentication provider by its ID
 
 ### Example Usage
 
@@ -794,7 +801,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_authentication_providers_id_enabled(id='<value>')
+res = s.admin.enable_auth_provider(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -810,14 +817,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminAuthenticationProvidersIDEnabledResponse](../../models/operations/getapiv1adminauthenticationprovidersidenabledresponse.md)**
+**[operations.EnableAuthProviderResponse](../../models/operations/enableauthproviderresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_admin_authentication_providers_id_enabled
+## get_auth_provider_status
+
+Retrieves the status of a specific authentication provider
 
 ### Example Usage
 
@@ -827,7 +836,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.put_api_v1_admin_authentication_providers_id_enabled(id='<value>')
+res = s.admin.get_auth_provider_status(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -843,14 +852,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminAuthenticationProvidersIDEnabledResponse](../../models/operations/putapiv1adminauthenticationprovidersidenabledresponse.md)**
+**[operations.GetAuthProviderStatusResponse](../../models/operations/getauthproviderstatusresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_banner_message
+## update_auth_provider_status
+
+Updates the status of a specific authentication provider
 
 ### Example Usage
 
@@ -860,7 +871,42 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_banner_message()
+res = s.admin.update_auth_provider_status(id='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `id`               | *str*              | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[operations.UpdateAuthProviderStatusResponse](../../models/operations/updateauthproviderstatusresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_banner_message
+
+Retrieve a current banner message
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.admin.get_banner_message()
 
 if res.status_code == 200:
     # handle response
@@ -870,14 +916,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminBannerMessageResponse](../../models/operations/getapiv1adminbannermessageresponse.md)**
+**[operations.GetBannerMessageResponse](../../models/operations/getbannermessageresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_banner_message
+## post_banner_message
+
+Add a new banner message
 
 ### Example Usage
 
@@ -887,7 +935,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_banner_message()
+res = s.admin.post_banner_message()
 
 if res.status_code == 200:
     # handle response
@@ -897,14 +945,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminBannerMessageResponse](../../models/operations/postapiv1adminbannermessageresponse.md)**
+**[operations.PostBannerMessageResponse](../../models/operations/postbannermessageresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_banner_message_id_
+## delete_banner_message
+
+Delete a specific banner message by ID
 
 ### Example Usage
 
@@ -914,7 +964,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_banner_message_id_(id=154896)
+res = s.admin.delete_banner_message(id=314460)
 
 if res.status_code == 200:
     # handle response
@@ -930,14 +980,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminBannerMessageIDResponse](../../models/operations/deleteapiv1adminbannermessageidresponse.md)**
+**[operations.DeleteBannerMessageResponse](../../models/operations/deletebannermessageresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_admin_banner_message_id_deactivate
+## deactivate_banner_message
+
+Deactivates a specific banner message
 
 ### Example Usage
 
@@ -947,7 +999,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.put_api_v1_admin_banner_message_id_deactivate(id=803304)
+res = s.admin.deactivate_banner_message(id=723548)
 
 if res.status_code == 200:
     # handle response
@@ -963,14 +1015,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminBannerMessageIDDeactivateResponse](../../models/operations/putapiv1adminbannermessageiddeactivateresponse.md)**
+**[operations.DeactivateBannerMessageResponse](../../models/operations/deactivatebannermessageresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_batch_jobs
+## get_batch_jobs
+
+Retrieve all batch jobs
 
 ### Example Usage
 
@@ -980,7 +1034,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_batch_jobs()
+res = s.admin.get_batch_jobs()
 
 if res.status_code == 200:
     # handle response
@@ -990,14 +1044,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminBatchJobsResponse](../../models/operations/getapiv1adminbatchjobsresponse.md)**
+**[operations.GetBatchJobsResponse](../../models/operations/getbatchjobsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_batch_jobs_name_job_name_
+## get_job_by_name
+
+Retrieve details for a job given its name
 
 ### Example Usage
 
@@ -1007,7 +1063,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_batch_jobs_name_job_name_(job_name='<value>')
+res = s.admin.get_job_by_name(job_name='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1023,14 +1079,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminBatchJobsNameJobNameResponse](../../models/operations/getapiv1adminbatchjobsnamejobnameresponse.md)**
+**[operations.GetJobByNameResponse](../../models/operations/getjobbynameresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_batch_jobs_job_id_
+## get_admin_job_by_id
+
+Retrieve details of a specific admin batch job
 
 ### Example Usage
 
@@ -1040,7 +1098,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_batch_jobs_job_id_(job_id='<value>')
+res = s.admin.get_admin_job_by_id(job_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1056,14 +1114,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminBatchJobsJobIDResponse](../../models/operations/getapiv1adminbatchjobsjobidresponse.md)**
+**[operations.GetAdminJobByIDResponse](../../models/operations/getadminjobbyidresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_clear_metrics_cache
+## delete_metrics_cache
+
+Deletes the metrics cache for admin
 
 ### Example Usage
 
@@ -1073,7 +1133,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_clear_metrics_cache()
+res = s.admin.delete_metrics_cache()
 
 if res.status_code == 200:
     # handle response
@@ -1083,14 +1143,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminClearMetricsCacheResponse](../../models/operations/deleteapiv1adminclearmetricscacheresponse.md)**
+**[operations.DeleteMetricsCacheResponse](../../models/operations/deletemetricscacheresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_clear_metrics_cache_name_
+## delete_metrics_cache_1
+
+Deletes a specific metric cache.
 
 ### Example Usage
 
@@ -1100,7 +1162,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_clear_metrics_cache_name_(name='<value>')
+res = s.admin.delete_metrics_cache_1(name='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1116,14 +1178,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminClearMetricsCacheNameResponse](../../models/operations/deleteapiv1adminclearmetricscachenameresponse.md)**
+**[operations.DeleteMetricsCache1Response](../../models/operations/deletemetricscache1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_clear_thumbnail_failure_flag
+## delete_thumbnail_failure_flag
+
+Deletes a thumbnail failure flag
 
 ### Example Usage
 
@@ -1133,7 +1197,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_clear_thumbnail_failure_flag()
+res = s.admin.delete_thumbnail_failure_flag()
 
 if res.status_code == 200:
     # handle response
@@ -1143,14 +1207,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminClearThumbnailFailureFlagResponse](../../models/operations/deleteapiv1adminclearthumbnailfailureflagresponse.md)**
+**[operations.DeleteThumbnailFailureFlagResponse](../../models/operations/deletethumbnailfailureflagresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_clear_thumbnail_failure_flag_id_
+## admin_clear_thumbnail_failure_flag
+
+Delete the thumbnail failure flag for a specified Dataverse id
 
 ### Example Usage
 
@@ -1160,7 +1226,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_clear_thumbnail_failure_flag_id_(id='<value>')
+res = s.admin.admin_clear_thumbnail_failure_flag(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1176,14 +1242,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminClearThumbnailFailureFlagIDResponse](../../models/operations/deleteapiv1adminclearthumbnailfailureflagidresponse.md)**
+**[operations.AdminClearThumbnailFailureFlagResponse](../../models/operations/adminclearthumbnailfailureflagresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_compute_data_file_hash_value_file_id_algorithm_alg_
+## compute_file_hash_value
+
+Computes the hash value of the specified file using the given algorithm
 
 ### Example Usage
 
@@ -1193,7 +1261,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_compute_data_file_hash_value_file_id_algorithm_alg_(alg='<value>', file_id='<value>')
+res = s.admin.compute_file_hash_value(alg='<value>', file_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1210,14 +1278,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminComputeDataFileHashValueFileIDAlgorithmAlgResponse](../../models/operations/postapiv1admincomputedatafilehashvaluefileidalgorithmalgresponse.md)**
+**[operations.ComputeFileHashValueResponse](../../models/operations/computefilehashvalueresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_confirm_email_user_id_
+## get_user_id_conf_email
+
+Retrieve Confirmation Email Associated with User ID
 
 ### Example Usage
 
@@ -1227,7 +1297,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_confirm_email_user_id_(user_id=857129)
+res = s.admin.get_user_id_conf_email(user_id=47374)
 
 if res.status_code == 200:
     # handle response
@@ -1243,14 +1313,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminConfirmEmailUserIDResponse](../../models/operations/getapiv1adminconfirmemailuseridresponse.md)**
+**[operations.GetUserIDConfEmailResponse](../../models/operations/getuseridconfemailresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_confirm_email_user_id_
+## post_user_id_conf_email
+
+Send Confirmation Email to User ID
 
 ### Example Usage
 
@@ -1260,7 +1332,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_confirm_email_user_id_(user_id=461984)
+res = s.admin.post_user_id_conf_email(user_id=163013)
 
 if res.status_code == 200:
     # handle response
@@ -1276,14 +1348,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminConfirmEmailUserIDResponse](../../models/operations/postapiv1adminconfirmemailuseridresponse.md)**
+**[operations.PostUserIDConfEmailResponse](../../models/operations/postuseridconfemailresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_convert_user_from_bcrypt_to_sha1
+## admin_convert_user_encryption
+
+Convert a user's encryption scheme from Bcrypt to Sha1
 
 ### Example Usage
 
@@ -1293,7 +1367,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_convert_user_from_bcrypt_to_sha1()
+res = s.admin.admin_convert_user_encryption()
 
 if res.status_code == 200:
     # handle response
@@ -1303,14 +1377,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminConvertUserFromBcryptToSha1Response](../../models/operations/postapiv1adminconvertuserfrombcrypttosha1response.md)**
+**[operations.AdminConvertUserEncryptionResponse](../../models/operations/adminconvertuserencryptionresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_datafiles_integrity_fixmissingoriginalsizes
+## get_fix_missing_original_sizes
+
+Retrieve a limited number of records with missing original sizes and fix them
 
 ### Example Usage
 
@@ -1320,7 +1396,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_datafiles_integrity_fixmissingoriginalsizes(limit=27070)
+res = s.admin.get_fix_missing_original_sizes(limit=413519)
 
 if res.status_code == 200:
     # handle response
@@ -1336,14 +1412,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminDatafilesIntegrityFixmissingoriginalsizesResponse](../../models/operations/getapiv1admindatafilesintegrityfixmissingoriginalsizesresponse.md)**
+**[operations.GetFixMissingOriginalSizesResponse](../../models/operations/getfixmissingoriginalsizesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_datafiles_integrity_fixmissingoriginaltypes
+## fix_missing_original_types
+
+Retrieve a report of datafiles with missing original types and apply fixes
 
 ### Example Usage
 
@@ -1353,7 +1431,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_datafiles_integrity_fixmissingoriginaltypes()
+res = s.admin.fix_missing_original_types()
 
 if res.status_code == 200:
     # handle response
@@ -1363,14 +1441,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminDatafilesIntegrityFixmissingoriginaltypesResponse](../../models/operations/getapiv1admindatafilesintegrityfixmissingoriginaltypesresponse.md)**
+**[operations.FixMissingOriginalTypesResponse](../../models/operations/fixmissingoriginaltypesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_datasetfield
+## get_admin_dataset_field
+
+Retrieve the dataset fields available to administrators
 
 ### Example Usage
 
@@ -1380,7 +1460,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_datasetfield()
+res = s.admin.get_admin_dataset_field()
 
 if res.status_code == 200:
     # handle response
@@ -1390,14 +1470,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminDatasetfieldResponse](../../models/operations/getapiv1admindatasetfieldresponse.md)**
+**[operations.GetAdminDatasetFieldResponse](../../models/operations/getadmindatasetfieldresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_datasetfield_controlled_vocabulary_subject
+## get_controlled_vocabulary
+
+Retrieve a list of controlled vocabulary subjects
 
 ### Example Usage
 
@@ -1407,7 +1489,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_datasetfield_controlled_vocabulary_subject()
+res = s.admin.get_controlled_vocabulary()
 
 if res.status_code == 200:
     # handle response
@@ -1417,14 +1499,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminDatasetfieldControlledVocabularySubjectResponse](../../models/operations/getapiv1admindatasetfieldcontrolledvocabularysubjectresponse.md)**
+**[operations.GetControlledVocabularyResponse](../../models/operations/getcontrolledvocabularyresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_datasetfield_load
+## load_dataset_field_admin
+
+Load dataset field as an admin
 
 ### Example Usage
 
@@ -1435,7 +1519,7 @@ s = pydataverse.PyDataverse()
 
 req = '<value>'
 
-res = s.admin.post_api_v1_admin_datasetfield_load(req)
+res = s.admin.load_dataset_field_admin(req)
 
 if res.status_code == 200:
     # handle response
@@ -1451,14 +1535,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminDatasetfieldLoadResponse](../../models/operations/postapiv1admindatasetfieldloadresponse.md)**
+**[operations.LoadDatasetFieldAdminResponse](../../models/operations/loaddatasetfieldadminresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_datasetfield_load_na_controlled_vocabulary_value
+## get_na_controlled_vocab_value
+
+Retrieve North American controlled vocabulary value
 
 ### Example Usage
 
@@ -1468,7 +1554,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_datasetfield_load_na_controlled_vocabulary_value()
+res = s.admin.get_na_controlled_vocab_value()
 
 if res.status_code == 200:
     # handle response
@@ -1478,14 +1564,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminDatasetfieldLoadNAControlledVocabularyValueResponse](../../models/operations/getapiv1admindatasetfieldloadnacontrolledvocabularyvalueresponse.md)**
+**[operations.GetNAControlledVocabValueResponse](../../models/operations/getnacontrolledvocabvalueresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_datasetfield_loadpropertyfiles
+## admin_load_property_files
+
+Load dataset field property files as a ZIP.
 
 ### Example Usage
 
@@ -1496,7 +1584,7 @@ s = pydataverse.PyDataverse()
 
 req = '<value>'
 
-res = s.admin.post_api_v1_admin_datasetfield_loadpropertyfiles(req)
+res = s.admin.admin_load_property_files(req)
 
 if res.status_code == 200:
     # handle response
@@ -1512,14 +1600,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminDatasetfieldLoadpropertyfilesResponse](../../models/operations/postapiv1admindatasetfieldloadpropertyfilesresponse.md)**
+**[operations.AdminLoadPropertyFilesResponse](../../models/operations/adminloadpropertyfilesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_datasetfield_name_
+## get_dataset_field_name
+
+Retrieve information of the specified dataset field
 
 ### Example Usage
 
@@ -1529,7 +1619,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_datasetfield_name_(name='<value>')
+res = s.admin.get_dataset_field_name(name='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1545,14 +1635,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminDatasetfieldNameResponse](../../models/operations/getapiv1admindatasetfieldnameresponse.md)**
+**[operations.GetDatasetFieldNameResponse](../../models/operations/getdatasetfieldnameresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_datasets_integrity_dataset_version_id_fixmissingunf
+## post_fix_missing_unf
+
+Update or recalculate dataset integrity by fixing missing UNF in specified dataset version
 
 ### Example Usage
 
@@ -1562,7 +1654,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_datasets_integrity_dataset_version_id_fixmissingunf(dataset_version_id='<value>', force_recalculate=False)
+res = s.admin.post_fix_missing_unf(dataset_version_id='<value>', force_recalculate=False)
 
 if res.status_code == 200:
     # handle response
@@ -1579,14 +1671,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminDatasetsIntegrityDatasetVersionIDFixmissingunfResponse](../../models/operations/postapiv1admindatasetsintegritydatasetversionidfixmissingunfresponse.md)**
+**[operations.PostFixMissingUnfResponse](../../models/operations/postfixmissingunfresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_datasets_thumbnail_metadata_id_
+## get_thumbnail_metadata_by_id
+
+Retrieves thumbnail metadata for a specific dataset using its ID
 
 ### Example Usage
 
@@ -1596,7 +1690,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_datasets_thumbnail_metadata_id_(id=310755)
+res = s.admin.get_thumbnail_metadata_by_id(id=860637)
 
 if res.status_code == 200:
     # handle response
@@ -1612,14 +1706,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminDatasetsThumbnailMetadataIDResponse](../../models/operations/getapiv1admindatasetsthumbnailmetadataidresponse.md)**
+**[operations.GetThumbnailMetadataByIDResponse](../../models/operations/getthumbnailmetadatabyidresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_dataverse_curation_label_sets
+## get_curation_label_sets
+
+Retrieve all curation label sets
 
 ### Example Usage
 
@@ -1629,7 +1725,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_dataverse_curation_label_sets()
+res = s.admin.get_curation_label_sets()
 
 if res.status_code == 200:
     # handle response
@@ -1639,14 +1735,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminDataverseCurationLabelSetsResponse](../../models/operations/getapiv1admindataversecurationlabelsetsresponse.md)**
+**[operations.GetCurationLabelSetsResponse](../../models/operations/getcurationlabelsetsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_dataverse_storage_drivers
+## get_storage_drivers
+
+Retrieves all storage drivers
 
 ### Example Usage
 
@@ -1656,7 +1754,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_dataverse_storage_drivers()
+res = s.admin.get_storage_drivers()
 
 if res.status_code == 200:
     # handle response
@@ -1666,14 +1764,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminDataverseStorageDriversResponse](../../models/operations/getapiv1admindataversestoragedriversresponse.md)**
+**[operations.GetStorageDriversResponse](../../models/operations/getstoragedriversresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_dataverse_alias_add_role_assignments_to_children
+## get_role_assignments
+
+Retrieve role assignments associated with a dataverse
 
 ### Example Usage
 
@@ -1683,40 +1783,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_dataverse_alias_add_role_assignments_to_children(alias='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `alias`            | *str*              | :heavy_check_mark: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1AdminDataverseAliasAddRoleAssignmentsToChildrenResponse](../../models/operations/getapiv1admindataversealiasaddroleassignmentstochildrenresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_admin_dataverse_alias_curation_label_set
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.admin.get_api_v1_admin_dataverse_alias_curation_label_set(alias='<value>')
+res = s.admin.get_role_assignments(alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1732,14 +1799,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminDataverseAliasCurationLabelSetResponse](../../models/operations/getapiv1admindataversealiascurationlabelsetresponse.md)**
+**[operations.GetRoleAssignmentsResponse](../../models/operations/getroleassignmentsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_admin_dataverse_alias_curation_label_set
+## get_curation_label_set
+
+Retrieve the curation label set of the specified Dataverse
 
 ### Example Usage
 
@@ -1749,7 +1818,42 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.put_api_v1_admin_dataverse_alias_curation_label_set(alias='<value>', name='<value>')
+res = s.admin.get_curation_label_set(alias='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `alias`            | *str*              | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[operations.GetCurationLabelSetResponse](../../models/operations/getcurationlabelsetresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## update_curation_label_set
+
+Update or create a curation label set for the specified Dataverse
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.admin.update_curation_label_set(alias='<value>', name='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1766,14 +1870,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminDataverseAliasCurationLabelSetResponse](../../models/operations/putapiv1admindataversealiascurationlabelsetresponse.md)**
+**[operations.UpdateCurationLabelSetResponse](../../models/operations/updatecurationlabelsetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_dataverse_alias_curation_label_set
+## delete_curation_label_set
+
+Remove the curation label set from the specified Dataverse
 
 ### Example Usage
 
@@ -1783,7 +1889,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_dataverse_alias_curation_label_set(alias='<value>')
+res = s.admin.delete_curation_label_set(alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1799,14 +1905,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminDataverseAliasCurationLabelSetResponse](../../models/operations/deleteapiv1admindataversealiascurationlabelsetresponse.md)**
+**[operations.DeleteCurationLabelSetResponse](../../models/operations/deletecurationlabelsetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_dataverse_alias_storage_driver
+## get_storage_driver
+
+Retrieve the storage driver of a specific dataverse
 
 ### Example Usage
 
@@ -1816,7 +1924,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_dataverse_alias_storage_driver(alias='<value>')
+res = s.admin.get_storage_driver(alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1832,14 +1940,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminDataverseAliasStorageDriverResponse](../../models/operations/getapiv1admindataversealiasstoragedriverresponse.md)**
+**[operations.GetStorageDriverResponse](../../models/operations/getstoragedriverresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_admin_dataverse_alias_storage_driver
+## update_storage_driver
+
+Update the storage driver of a specific dataverse
 
 ### Example Usage
 
@@ -1849,7 +1959,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.put_api_v1_admin_dataverse_alias_storage_driver(alias='<value>')
+res = s.admin.update_storage_driver(alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1865,14 +1975,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminDataverseAliasStorageDriverResponse](../../models/operations/putapiv1admindataversealiasstoragedriverresponse.md)**
+**[operations.UpdateStorageDriverResponse](../../models/operations/updatestoragedriverresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_dataverse_alias_storage_driver
+## delete_storage_driver
+
+Remove the storage driver of a specific dataverse
 
 ### Example Usage
 
@@ -1882,7 +1994,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_dataverse_alias_storage_driver(alias='<value>')
+res = s.admin.delete_storage_driver(alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1898,14 +2010,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminDataverseAliasStorageDriverResponse](../../models/operations/deleteapiv1admindataversealiasstoragedriverresponse.md)**
+**[operations.DeleteStorageDriverResponse](../../models/operations/deletestoragedriverresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_download_tmp_file
+## get_tmp_file
+
+Retrieve a temporary file via its fully qualified path
 
 ### Example Usage
 
@@ -1915,7 +2029,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_download_tmp_file(fully_qualified_path_to_file='<value>')
+res = s.admin.get_tmp_file(fully_qualified_path_to_file='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1931,14 +2045,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminDownloadTmpFileResponse](../../models/operations/getapiv1admindownloadtmpfileresponse.md)**
+**[operations.GetTmpFileResponse](../../models/operations/gettmpfileresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_external_tools
+## get_external_tools
+
+Retrieve a list of all external tools
 
 ### Example Usage
 
@@ -1948,7 +2064,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_external_tools()
+res = s.admin.get_external_tools()
 
 if res.status_code == 200:
     # handle response
@@ -1958,14 +2074,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminExternalToolsResponse](../../models/operations/getapiv1adminexternaltoolsresponse.md)**
+**[operations.GetExternalToolsResponse](../../models/operations/getexternaltoolsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_external_tools
+## create_external_tool
+
+Create a new external tool
 
 ### Example Usage
 
@@ -1975,7 +2093,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_external_tools()
+res = s.admin.create_external_tool()
 
 if res.status_code == 200:
     # handle response
@@ -1985,14 +2103,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminExternalToolsResponse](../../models/operations/postapiv1adminexternaltoolsresponse.md)**
+**[operations.CreateExternalToolResponse](../../models/operations/createexternaltoolresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_external_tools_id_
+## get_external_tool
+
+Retrieve an external tool by its ID
 
 ### Example Usage
 
@@ -2002,40 +2122,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_external_tools_id_(id=452780)
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *int*              | :heavy_check_mark: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1AdminExternalToolsIDResponse](../../models/operations/getapiv1adminexternaltoolsidresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## delete_api_v1_admin_external_tools_id_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.admin.delete_api_v1_admin_external_tools_id_(id=301046)
+res = s.admin.get_external_tool(id=835857)
 
 if res.status_code == 200:
     # handle response
@@ -2051,14 +2138,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminExternalToolsIDResponse](../../models/operations/deleteapiv1adminexternaltoolsidresponse.md)**
+**[operations.GetExternalToolResponse](../../models/operations/getexternaltoolresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_feedback
+## delete_external_tool
+
+Delete an external tool by its ID
 
 ### Example Usage
 
@@ -2068,7 +2157,42 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_feedback()
+res = s.admin.delete_external_tool(id=423055)
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `id`               | *int*              | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[operations.DeleteExternalToolResponse](../../models/operations/deleteexternaltoolresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## post_admin_feedback
+
+Create or post feedback as an admin
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.admin.post_admin_feedback()
 
 if res.status_code == 200:
     # handle response
@@ -2078,14 +2202,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminFeedbackResponse](../../models/operations/postapiv1adminfeedbackresponse.md)**
+**[operations.PostAdminFeedbackResponse](../../models/operations/postadminfeedbackresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_groups_domain
+## get_admin_groups_domain
+
+Retrieve domain-related groups information from the admin endpoint
 
 ### Example Usage
 
@@ -2095,7 +2221,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_groups_domain()
+res = s.admin.get_admin_groups_domain()
 
 if res.status_code == 200:
     # handle response
@@ -2105,14 +2231,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminGroupsDomainResponse](../../models/operations/getapiv1admingroupsdomainresponse.md)**
+**[operations.GetAdminGroupsDomainResponse](../../models/operations/getadmingroupsdomainresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_groups_domain
+## post_admin_groups_domain
+
+Submit new domain-related groups information to the admin endpoint
 
 ### Example Usage
 
@@ -2122,7 +2250,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_groups_domain()
+res = s.admin.post_admin_groups_domain()
 
 if res.status_code == 200:
     # handle response
@@ -2132,14 +2260,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminGroupsDomainResponse](../../models/operations/postapiv1admingroupsdomainresponse.md)**
+**[operations.PostAdminGroupsDomainResponse](../../models/operations/postadmingroupsdomainresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_groups_domain_group_alias_
+## get_group_alias
+
+Retrieves information of the group alias specified in the path
 
 ### Example Usage
 
@@ -2149,7 +2279,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_groups_domain_group_alias_(group_alias='<value>')
+res = s.admin.get_group_alias(group_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2165,14 +2295,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminGroupsDomainGroupAliasResponse](../../models/operations/getapiv1admingroupsdomaingroupaliasresponse.md)**
+**[operations.GetGroupAliasResponse](../../models/operations/getgroupaliasresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_admin_groups_domain_group_alias_
+## update_group_alias
+
+Updates the group alias specified in the path
 
 ### Example Usage
 
@@ -2182,7 +2314,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.put_api_v1_admin_groups_domain_group_alias_(group_alias='<value>')
+res = s.admin.update_group_alias(group_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2198,14 +2330,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminGroupsDomainGroupAliasResponse](../../models/operations/putapiv1admingroupsdomaingroupaliasresponse.md)**
+**[operations.UpdateGroupAliasResponse](../../models/operations/updategroupaliasresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_groups_domain_group_alias_
+## delete_group_alias
+
+Deletes the group alias specified in the path
 
 ### Example Usage
 
@@ -2215,7 +2349,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_groups_domain_group_alias_(group_alias='<value>')
+res = s.admin.delete_group_alias(group_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2231,14 +2365,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminGroupsDomainGroupAliasResponse](../../models/operations/deleteapiv1admingroupsdomaingroupaliasresponse.md)**
+**[operations.DeleteGroupAliasResponse](../../models/operations/deletegroupaliasresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_groups_ip
+## get_admin_groups_ip
+
+Retrieve IP-based groups information
 
 ### Example Usage
 
@@ -2248,7 +2384,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_groups_ip()
+res = s.admin.get_admin_groups_ip()
 
 if res.status_code == 200:
     # handle response
@@ -2258,14 +2394,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminGroupsIPResponse](../../models/operations/getapiv1admingroupsipresponse.md)**
+**[operations.GetAdminGroupsIPResponse](../../models/operations/getadmingroupsipresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_groups_ip
+## post_admin_groups_ip
+
+Create a new IP-based group
 
 ### Example Usage
 
@@ -2275,7 +2413,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_groups_ip()
+res = s.admin.post_admin_groups_ip()
 
 if res.status_code == 200:
     # handle response
@@ -2285,14 +2423,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminGroupsIPResponse](../../models/operations/postapiv1admingroupsipresponse.md)**
+**[operations.PostAdminGroupsIPResponse](../../models/operations/postadmingroupsipresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_groups_ip_group_idtf_
+## get_group_by_group_idtf
+
+Fetches a group by the groupIdtf provided in the path
 
 ### Example Usage
 
@@ -2302,7 +2442,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_groups_ip_group_idtf_(group_idtf='<value>')
+res = s.admin.get_group_by_group_idtf(group_idtf='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2318,14 +2458,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminGroupsIPGroupIdtfResponse](../../models/operations/getapiv1admingroupsipgroupidtfresponse.md)**
+**[operations.GetGroupByGroupIdtfResponse](../../models/operations/getgroupbygroupidtfresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_groups_ip_group_idtf_
+## delete_group_by_group_idtf
+
+Deletes a group by the groupIdtf provided in the path
 
 ### Example Usage
 
@@ -2335,7 +2477,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_groups_ip_group_idtf_(group_idtf='<value>')
+res = s.admin.delete_group_by_group_idtf(group_idtf='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2351,14 +2493,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminGroupsIPGroupIdtfResponse](../../models/operations/deleteapiv1admingroupsipgroupidtfresponse.md)**
+**[operations.DeleteGroupByGroupIdtfResponse](../../models/operations/deletegroupbygroupidtfresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_groups_shib
+## get_shib_group_info
+
+Retrieve information about Shibboleth groups
 
 ### Example Usage
 
@@ -2368,7 +2512,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_groups_shib()
+res = s.admin.get_shib_group_info()
 
 if res.status_code == 200:
     # handle response
@@ -2378,14 +2522,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminGroupsShibResponse](../../models/operations/getapiv1admingroupsshibresponse.md)**
+**[operations.GetShibGroupInfoResponse](../../models/operations/getshibgroupinforesponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_groups_shib
+## create_shib_group
+
+Create a new Shibboleth group
 
 ### Example Usage
 
@@ -2395,7 +2541,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_groups_shib()
+res = s.admin.create_shib_group()
 
 if res.status_code == 200:
     # handle response
@@ -2405,14 +2551,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminGroupsShibResponse](../../models/operations/postapiv1admingroupsshibresponse.md)**
+**[operations.CreateShibGroupResponse](../../models/operations/createshibgroupresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_groups_shib_primary_key_
+## delete_shib_group
+
+Delete a Shibboleth Group by given Primary Key
 
 ### Example Usage
 
@@ -2422,7 +2570,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_groups_shib_primary_key_(primary_key='<value>')
+res = s.admin.delete_shib_group(primary_key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2438,14 +2586,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminGroupsShibPrimaryKeyResponse](../../models/operations/deleteapiv1admingroupsshibprimarykeyresponse.md)**
+**[operations.DeleteShibGroupResponse](../../models/operations/deleteshibgroupresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_index
+## get_admin_index
+
+Retrieve details of admin index with queried parameters
 
 ### Example Usage
 
@@ -2455,7 +2605,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_index(num_partitions=597765, partition_id_to_process=422747, preview_only=False)
+res = s.admin.get_admin_index(num_partitions=966288, partition_id_to_process=875880, preview_only=False)
 
 if res.status_code == 200:
     # handle response
@@ -2473,14 +2623,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIndexResponse](../../models/operations/getapiv1adminindexresponse.md)**
+**[operations.GetAdminIndexResponse](../../models/operations/getadminindexresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_index_clear
+## clear_admin_index
+
+Clears the admin index
 
 ### Example Usage
 
@@ -2490,7 +2642,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_index_clear()
+res = s.admin.clear_admin_index()
 
 if res.status_code == 200:
     # handle response
@@ -2500,14 +2652,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIndexClearResponse](../../models/operations/getapiv1adminindexclearresponse.md)**
+**[operations.ClearAdminIndexResponse](../../models/operations/clearadminindexresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_index_clear_orphans
+## clear_orphans_index
+
+Retrieve and clear orphans from the admin index
 
 ### Example Usage
 
@@ -2517,7 +2671,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_index_clear_orphans(sync='<value>')
+res = s.admin.clear_orphans_index(sync='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2533,14 +2687,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIndexClearOrphansResponse](../../models/operations/getapiv1adminindexclearorphansresponse.md)**
+**[operations.ClearOrphansIndexResponse](../../models/operations/clearorphansindexresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_index_continue
+## continue_index_processing
+
+Continues the process of indexing partitions based on given parameters.
 
 ### Example Usage
 
@@ -2550,7 +2706,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_index_continue(num_partitions=348834, partition_id_to_process=472601, preview_only=False)
+res = s.admin.continue_index_processing(num_partitions=385791, partition_id_to_process=791191, preview_only=False)
 
 if res.status_code == 200:
     # handle response
@@ -2568,14 +2724,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIndexContinueResponse](../../models/operations/getapiv1adminindexcontinueresponse.md)**
+**[operations.ContinueIndexProcessingResponse](../../models/operations/continueindexprocessingresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_index_dataset
+## get_dataset_index
+
+Retrieve the index of a dataset given its persistentId
 
 ### Example Usage
 
@@ -2585,7 +2743,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_index_dataset(persistent_id='<value>')
+res = s.admin.get_dataset_index(persistent_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2601,14 +2759,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIndexDatasetResponse](../../models/operations/getapiv1adminindexdatasetresponse.md)**
+**[operations.GetDatasetIndexResponse](../../models/operations/getdatasetindexresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_index_datasets_id_
+## delete_dataset_by_id
+
+Delete a specific dataset by its ID
 
 ### Example Usage
 
@@ -2618,7 +2778,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_index_datasets_id_(id=916249)
+res = s.admin.delete_dataset_by_id(id=57539)
 
 if res.status_code == 200:
     # handle response
@@ -2634,14 +2794,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminIndexDatasetsIDResponse](../../models/operations/deleteapiv1adminindexdatasetsidresponse.md)**
+**[operations.DeleteDatasetByIDResponse](../../models/operations/deletedatasetbyidresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_index_filemetadata_dataset_id_
+## get_file_metadata1
+
+Retrieve file metadata for a specific dataset
 
 ### Example Usage
 
@@ -2651,7 +2813,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_index_filemetadata_dataset_id_(dataset_id=211814, max_results=779895, order='<value>', sort='<value>')
+res = s.admin.get_file_metadata1(dataset_id=442844, max_results=115835, order='<value>', sort='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2670,14 +2832,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIndexFilemetadataDatasetIDResponse](../../models/operations/getapiv1adminindexfilemetadatadatasetidresponse.md)**
+**[operations.GetFileMetadata1Response](../../models/operations/getfilemetadata1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_index_filesearch
+## file_search_index_get
+
+This endpoint retrieves data about file search index by persistentId, q, and/or semanticVersion.
 
 ### Example Usage
 
@@ -2687,7 +2851,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_index_filesearch(persistent_id='<value>', q='<value>', semantic_version='<value>')
+res = s.admin.file_search_index_get(persistent_id='<value>', q='<value>', semantic_version='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2705,14 +2869,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIndexFilesearchResponse](../../models/operations/getapiv1adminindexfilesearchresponse.md)**
+**[operations.FileSearchIndexGETResponse](../../models/operations/filesearchindexgetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_index_mod
+## get_admin_index_mod
+
+Retrieves modification of the admin index based on provided query parameters
 
 ### Example Usage
 
@@ -2722,7 +2888,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_index_mod(partitions=781631, which=303721)
+res = s.admin.get_admin_index_mod(partitions=500680, which=91223)
 
 if res.status_code == 200:
     # handle response
@@ -2739,14 +2905,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIndexModResponse](../../models/operations/getapiv1adminindexmodresponse.md)**
+**[operations.GetAdminIndexModResponse](../../models/operations/getadminindexmodresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_index_perms
+## get_admin_index_perms
+
+Retrieve permissions for the admin index
 
 ### Example Usage
 
@@ -2756,7 +2924,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_index_perms()
+res = s.admin.get_admin_index_perms()
 
 if res.status_code == 200:
     # handle response
@@ -2766,14 +2934,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIndexPermsResponse](../../models/operations/getapiv1adminindexpermsresponse.md)**
+**[operations.GetAdminIndexPermsResponse](../../models/operations/getadminindexpermsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_index_perms_id_
+## get_admin_index_perms_1
+
+Retrieve a specific admin index permissions by ID
 
 ### Example Usage
 
@@ -2783,7 +2953,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_index_perms_id_(id=812197)
+res = s.admin.get_admin_index_perms_1(id=536096)
 
 if res.status_code == 200:
     # handle response
@@ -2799,14 +2969,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIndexPermsIDResponse](../../models/operations/getapiv1adminindexpermsidresponse.md)**
+**[operations.GetAdminIndexPerms1Response](../../models/operations/getadminindexperms1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_index_perms_debug
+## get_perms_debug_info
+
+Retrieves permission debug info for specified id and key
 
 ### Example Usage
 
@@ -2816,7 +2988,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_index_perms_debug(id=34985, key='<value>')
+res = s.admin.get_perms_debug_info(id=680308, key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2833,14 +3005,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIndexPermsDebugResponse](../../models/operations/getapiv1adminindexpermsdebugresponse.md)**
+**[operations.GetPermsDebugInfoResponse](../../models/operations/getpermsdebuginforesponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_index_solr_schema
+## get_solr_schema
+
+Retrieve the Solr schema configuration.
 
 ### Example Usage
 
@@ -2850,7 +3024,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_index_solr_schema()
+res = s.admin.get_solr_schema()
 
 if res.res is not None:
     # handle response
@@ -2860,14 +3034,16 @@ if res.res is not None:
 
 ### Response
 
-**[operations.GetAPIV1AdminIndexSolrSchemaResponse](../../models/operations/getapiv1adminindexsolrschemaresponse.md)**
+**[operations.GetSolrSchemaResponse](../../models/operations/getsolrschemaresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_index_status
+## get_admin_index_status
+
+Retrieve status of the admin index
 
 ### Example Usage
 
@@ -2877,7 +3053,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_index_status(sync='<value>')
+res = s.admin.get_admin_index_status(sync='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2893,14 +3069,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIndexStatusResponse](../../models/operations/getapiv1adminindexstatusresponse.md)**
+**[operations.GetAdminIndexStatusResponse](../../models/operations/getadminindexstatusresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_index_test
+## get_admin_test_index
+
+Obtain specific parameters from the Admin Test Index
 
 ### Example Usage
 
@@ -2910,7 +3088,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_index_test(fq=[
+res = s.admin.get_admin_test_index(fq=[
     '<value>',
 ], key='<value>', q='<value>')
 
@@ -2930,14 +3108,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIndexTestResponse](../../models/operations/getapiv1adminindextestresponse.md)**
+**[operations.GetAdminTestIndexResponse](../../models/operations/getadmintestindexresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_index_timestamps
+## delete_admin_index_timestamps
+
+Delete timestamps from the admin index
 
 ### Example Usage
 
@@ -2947,7 +3127,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_index_timestamps()
+res = s.admin.delete_admin_index_timestamps()
 
 if res.status_code == 200:
     # handle response
@@ -2957,14 +3137,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminIndexTimestampsResponse](../../models/operations/deleteapiv1adminindextimestampsresponse.md)**
+**[operations.DeleteAdminIndexTimestampsResponse](../../models/operations/deleteadminindextimestampsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_index_timestamps_dv_object_id_
+## delete_index_timestamp
+
+Delete index timestamp by dvObjectId
 
 ### Example Usage
 
@@ -2974,7 +3156,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_index_timestamps_dv_object_id_(dv_object_id=305557)
+res = s.admin.delete_index_timestamp(dv_object_id=378575)
 
 if res.status_code == 200:
     # handle response
@@ -2990,14 +3172,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminIndexTimestampsDvObjectIDResponse](../../models/operations/deleteapiv1adminindextimestampsdvobjectidresponse.md)**
+**[operations.DeleteIndexTimestampResponse](../../models/operations/deleteindextimestampresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_index_type_id_
+## get_admin_index_type_by_id
+
+Retrieves specific type and ID details in admin index
 
 ### Example Usage
 
@@ -3007,7 +3191,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_index_type_id_(id=577939, type='<value>')
+res = s.admin.get_admin_index_type_by_id(id=292538, type='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3024,14 +3208,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIndexTypeIDResponse](../../models/operations/getapiv1adminindextypeidresponse.md)**
+**[operations.GetAdminIndexTypeByIDResponse](../../models/operations/getadminindextypebyidresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_is_orcid
+## get_orcid_status
+
+Retrieve ORCID status for a specific admin
 
 ### Example Usage
 
@@ -3041,7 +3227,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_is_orcid()
+res = s.admin.get_orcid_status()
 
 if res.status_code == 200:
     # handle response
@@ -3051,14 +3237,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIsOrcidResponse](../../models/operations/getapiv1adminisorcidresponse.md)**
+**[operations.GetOrcidStatusResponse](../../models/operations/getorcidstatusresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_list_users
+## list_users
+
+Retrieve a list of all users
 
 ### Example Usage
 
@@ -3068,7 +3256,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_list_users(items_per_page=15866, search_term='<value>', selected_page=731659, sort_key='<value>')
+res = s.admin.list_users(items_per_page=526212, search_term='<value>', selected_page=540061, sort_key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3087,14 +3275,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminListUsersResponse](../../models/operations/getapiv1adminlistusersresponse.md)**
+**[operations.ListUsersResponse](../../models/operations/listusersresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_make_data_count_add_usage_metrics_from_sushi_report
+## add_metrics_from_report
+
+Add usage metrics from a SUSHI report
 
 ### Example Usage
 
@@ -3104,7 +3294,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_make_data_count_add_usage_metrics_from_sushi_report(report_on_disk='<value>')
+res = s.admin.add_metrics_from_report(report_on_disk='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3120,14 +3310,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminMakeDataCountAddUsageMetricsFromSushiReportResponse](../../models/operations/postapiv1adminmakedatacountaddusagemetricsfromsushireportresponse.md)**
+**[operations.AddMetricsFromReportResponse](../../models/operations/addmetricsfromreportresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_make_data_count_send_to_hub
+## admin_send_to_hub
+
+Send data count to the admin hub.
 
 ### Example Usage
 
@@ -3137,7 +3329,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_make_data_count_send_to_hub()
+res = s.admin.admin_send_to_hub()
 
 if res.status_code == 200:
     # handle response
@@ -3147,14 +3339,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminMakeDataCountSendToHubResponse](../../models/operations/postapiv1adminmakedatacountsendtohubresponse.md)**
+**[operations.AdminSendToHubResponse](../../models/operations/adminsendtohubresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_make_data_count_id_add_usage_metrics_from_sushi_report
+## add_usage_metrics_from_sushi_repo
+
+Add usage metrics for a specific Dataverse file from a SUSHI Report
 
 ### Example Usage
 
@@ -3164,7 +3358,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_make_data_count_id_add_usage_metrics_from_sushi_report(id='<value>', report_on_disk='<value>')
+res = s.admin.add_usage_metrics_from_sushi_repo(id='<value>', report_on_disk='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3181,14 +3375,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminMakeDataCountIDAddUsageMetricsFromSushiReportResponse](../../models/operations/postapiv1adminmakedatacountidaddusagemetricsfromsushireportresponse.md)**
+**[operations.AddUsageMetricsFromSushiRepoResponse](../../models/operations/addusagemetricsfromsushireporesponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_make_data_count_id_update_citations_for_dataset
+## update_dataset_citations
+
+Updates the citation count for a specified dataset
 
 ### Example Usage
 
@@ -3198,7 +3394,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_make_data_count_id_update_citations_for_dataset(id='<value>')
+res = s.admin.update_dataset_citations(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3214,14 +3410,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminMakeDataCountIDUpdateCitationsForDatasetResponse](../../models/operations/postapiv1adminmakedatacountidupdatecitationsfordatasetresponse.md)**
+**[operations.UpdateDatasetCitationsResponse](../../models/operations/updatedatasetcitationsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_metadata_clear_export_timestamps
+## get_export_timestamps
+
+Retrieve the export timestamps
 
 ### Example Usage
 
@@ -3231,7 +3429,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_metadata_clear_export_timestamps()
+res = s.admin.get_export_timestamps()
 
 if res.status_code == 200:
     # handle response
@@ -3241,14 +3439,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminMetadataClearExportTimestampsResponse](../../models/operations/getapiv1adminmetadataclearexporttimestampsresponse.md)**
+**[operations.GetExportTimestampsResponse](../../models/operations/getexporttimestampsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_metadata_export_all
+## get_metadata_export_all
+
+Fetches all metadata for export by admin
 
 ### Example Usage
 
@@ -3258,7 +3458,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_metadata_export_all()
+res = s.admin.get_metadata_export_all()
 
 if res.status_code == 200:
     # handle response
@@ -3268,14 +3468,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminMetadataExportAllResponse](../../models/operations/getapiv1adminmetadataexportallresponse.md)**
+**[operations.GetMetadataExportAllResponse](../../models/operations/getmetadataexportallresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_admin_metadata_export_oai_specname_
+## admin_metadata_export_oai_spec
+
+Update the OAI export specification using provided 'specname'
 
 ### Example Usage
 
@@ -3285,7 +3487,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.put_api_v1_admin_metadata_export_oai_specname_(specname='<value>')
+res = s.admin.admin_metadata_export_oai_spec(specname='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3301,14 +3503,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminMetadataExportOAISpecnameResponse](../../models/operations/putapiv1adminmetadataexportoaispecnameresponse.md)**
+**[operations.AdminMetadataExportOAISpecResponse](../../models/operations/adminmetadataexportoaispecresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_metadata_re_export_all
+## re_export_all_metadata
+
+Retrieves and exports all metadata
 
 ### Example Usage
 
@@ -3318,7 +3522,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_metadata_re_export_all()
+res = s.admin.re_export_all_metadata()
 
 if res.status_code == 200:
     # handle response
@@ -3328,14 +3532,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminMetadataReExportAllResponse](../../models/operations/getapiv1adminmetadatareexportallresponse.md)**
+**[operations.ReExportAllMetadataResponse](../../models/operations/reexportallmetadataresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_metadata_id_re_export_dataset
+## get_metadata_re_export
+
+Retrieves and re-exports the specific metadata for the dataset using dataset ID
 
 ### Example Usage
 
@@ -3345,7 +3551,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_metadata_id_re_export_dataset(id='<value>')
+res = s.admin.get_metadata_re_export(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3361,14 +3567,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminMetadataIDReExportDatasetResponse](../../models/operations/getapiv1adminmetadataidreexportdatasetresponse.md)**
+**[operations.GetMetadataReExportResponse](../../models/operations/getmetadatareexportresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_permissions_dvo_
+## get_admin_permissions
+
+Retrieve specific admin permission details
 
 ### Example Usage
 
@@ -3378,7 +3586,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_permissions_dvo_(dvo='<value>')
+res = s.admin.get_admin_permissions(dvo='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3394,14 +3602,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminPermissionsDvoResponse](../../models/operations/getapiv1adminpermissionsdvoresponse.md)**
+**[operations.GetAdminPermissionsResponse](../../models/operations/getadminpermissionsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_publish_dataverse_as_creator_id_
+## publish_dataverse_as_creator
+
+Publish Dataverse as creator using the given ID
 
 ### Example Usage
 
@@ -3411,7 +3621,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_publish_dataverse_as_creator_id_(id=430649)
+res = s.admin.publish_dataverse_as_creator(id=453435)
 
 if res.status_code == 200:
     # handle response
@@ -3427,14 +3637,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminPublishDataverseAsCreatorIDResponse](../../models/operations/postapiv1adminpublishdataverseascreatoridresponse.md)**
+**[operations.PublishDataverseAsCreatorResponse](../../models/operations/publishdataverseascreatorresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_register_data_file_all
+## get_register_data_file_all
+
+Retrieve all registered data files from the admin.
 
 ### Example Usage
 
@@ -3444,7 +3656,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_register_data_file_all()
+res = s.admin.get_register_data_file_all()
 
 if res.status_code == 200:
     # handle response
@@ -3454,14 +3666,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminRegisterDataFileAllResponse](../../models/operations/getapiv1adminregisterdatafileallresponse.md)**
+**[operations.GetRegisterDataFileAllResponse](../../models/operations/getregisterdatafileallresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_register_data_files_alias_
+## get_register_data_files_by_alias
+
+Retrieve data file registration details for a given alias
 
 ### Example Usage
 
@@ -3471,7 +3685,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_register_data_files_alias_(alias='<value>', sleep=754924)
+res = s.admin.get_register_data_files_by_alias(alias='<value>', sleep=973941)
 
 if res.status_code == 200:
     # handle response
@@ -3488,14 +3702,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminRegisterDataFilesAliasResponse](../../models/operations/getapiv1adminregisterdatafilesaliasresponse.md)**
+**[operations.GetRegisterDataFilesByAliasResponse](../../models/operations/getregisterdatafilesbyaliasresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_request_signed_url
+## post_admin_signed_url
+
+Admin sends a request to receive a signed URL.
 
 ### Example Usage
 
@@ -3505,9 +3721,9 @@ from pydataverse.models import operations
 
 s = pydataverse.PyDataverse()
 
-req = operations.PostAPIV1AdminRequestSignedURLRequestBody()
+req = operations.PostAdminSignedURLRequestBody()
 
-res = s.admin.post_api_v1_admin_request_signed_url(req)
+res = s.admin.post_admin_signed_url(req)
 
 if res.status_code == 200:
     # handle response
@@ -3516,21 +3732,23 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                    | [operations.PostAPIV1AdminRequestSignedURLRequestBody](../../models/operations/postapiv1adminrequestsignedurlrequestbody.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.PostAdminSignedURLRequestBody](../../models/operations/postadminsignedurlrequestbody.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 
 
 ### Response
 
-**[operations.PostAPIV1AdminRequestSignedURLResponse](../../models/operations/postapiv1adminrequestsignedurlresponse.md)**
+**[operations.PostAdminSignedURLResponse](../../models/operations/postadminsignedurlresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_roles
+## get_admin_roles
+
+Retrieve a list of all admin roles
 
 ### Example Usage
 
@@ -3540,7 +3758,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_roles()
+res = s.admin.get_admin_roles()
 
 if res.status_code == 200:
     # handle response
@@ -3550,14 +3768,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminRolesResponse](../../models/operations/getapiv1adminrolesresponse.md)**
+**[operations.GetAdminRolesResponse](../../models/operations/getadminrolesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_roles
+## create_admin_role
+
+Create a new admin role
 
 ### Example Usage
 
@@ -3567,7 +3787,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_roles()
+res = s.admin.create_admin_role()
 
 if res.status_code == 200:
     # handle response
@@ -3577,14 +3797,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminRolesResponse](../../models/operations/postapiv1adminrolesresponse.md)**
+**[operations.CreateAdminRoleResponse](../../models/operations/createadminroleresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_roles_id_
+## delete_admin_role
+
+Delete a specific admin role
 
 ### Example Usage
 
@@ -3594,7 +3816,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_roles_id_(id='<value>')
+res = s.admin.delete_admin_role(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3610,14 +3832,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminRolesIDResponse](../../models/operations/deleteapiv1adminrolesidresponse.md)**
+**[operations.DeleteAdminRoleResponse](../../models/operations/deleteadminroleresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_savedsearches
+## get_saved_searches
+
+Retrieves all saved searches in the system.
 
 ### Example Usage
 
@@ -3627,7 +3851,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_savedsearches()
+res = s.admin.get_saved_searches()
 
 if res.status_code == 200:
     # handle response
@@ -3637,14 +3861,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminSavedsearchesResponse](../../models/operations/getapiv1adminsavedsearchesresponse.md)**
+**[operations.GetSavedSearchesResponse](../../models/operations/getsavedsearchesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_savedsearches
+## add_saved_search
+
+Adds a new saved search to the system.
 
 ### Example Usage
 
@@ -3654,7 +3880,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_savedsearches()
+res = s.admin.add_saved_search()
 
 if res.status_code == 200:
     # handle response
@@ -3664,14 +3890,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminSavedsearchesResponse](../../models/operations/postapiv1adminsavedsearchesresponse.md)**
+**[operations.AddSavedSearchResponse](../../models/operations/addsavedsearchresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_savedsearches_list
+## get_saved_searches_list
+
+Retrieve a list of all saved searches by the administrator
 
 ### Example Usage
 
@@ -3681,7 +3909,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_savedsearches_list()
+res = s.admin.get_saved_searches_list()
 
 if res.status_code == 200:
     # handle response
@@ -3691,14 +3919,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminSavedsearchesListResponse](../../models/operations/getapiv1adminsavedsearcheslistresponse.md)**
+**[operations.GetSavedSearchesListResponse](../../models/operations/getsavedsearcheslistresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_admin_savedsearches_makelinks_all
+## update_all_saved_search_links
+
+Updates all saved search links
 
 ### Example Usage
 
@@ -3708,7 +3938,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.put_api_v1_admin_savedsearches_makelinks_all(debug=False)
+res = s.admin.update_all_saved_search_links(debug=False)
 
 if res.status_code == 200:
     # handle response
@@ -3724,14 +3954,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminSavedsearchesMakelinksAllResponse](../../models/operations/putapiv1adminsavedsearchesmakelinksallresponse.md)**
+**[operations.UpdateAllSavedSearchLinksResponse](../../models/operations/updateallsavedsearchlinksresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_admin_savedsearches_makelinks_id_
+## make_links_for_saved_search
+
+Updates the link for a specific saved search by ID
 
 ### Example Usage
 
@@ -3741,7 +3973,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.put_api_v1_admin_savedsearches_makelinks_id_(id=291653, debug=False)
+res = s.admin.make_links_for_saved_search(id=882350, debug=False)
 
 if res.status_code == 200:
     # handle response
@@ -3758,14 +3990,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminSavedsearchesMakelinksIDResponse](../../models/operations/putapiv1adminsavedsearchesmakelinksidresponse.md)**
+**[operations.MakeLinksForSavedSearchResponse](../../models/operations/makelinksforsavedsearchresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_savedsearches_id_
+## get_saved_search
+
+Retrieves a saved search by ID
 
 ### Example Usage
 
@@ -3775,7 +4009,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_savedsearches_id_(id=682230)
+res = s.admin.get_saved_search(id=731650)
 
 if res.status_code == 200:
     # handle response
@@ -3791,14 +4025,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminSavedsearchesIDResponse](../../models/operations/getapiv1adminsavedsearchesidresponse.md)**
+**[operations.GetSavedSearchResponse](../../models/operations/getsavedsearchresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_savedsearches_id_
+## delete_saved_search
+
+Deletes a saved search by ID
 
 ### Example Usage
 
@@ -3808,7 +4044,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_savedsearches_id_(id=841646)
+res = s.admin.delete_saved_search(id=364122)
 
 if res.status_code == 200:
     # handle response
@@ -3824,14 +4060,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminSavedsearchesIDResponse](../../models/operations/deleteapiv1adminsavedsearchesidresponse.md)**
+**[operations.DeleteSavedSearchResponse](../../models/operations/deletesavedsearchresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_settings
+## get_admin_settings
+
+Retrieve administrator settings
 
 ### Example Usage
 
@@ -3841,7 +4079,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_settings()
+res = s.admin.get_admin_settings()
 
 if res.status_code == 200:
     # handle response
@@ -3851,14 +4089,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminSettingsResponse](../../models/operations/getapiv1adminsettingsresponse.md)**
+**[operations.GetAdminSettingsResponse](../../models/operations/getadminsettingsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_settings_name_
+## get_admin_setting
+
+Retrieve a specified admin setting
 
 ### Example Usage
 
@@ -3868,40 +4108,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_settings_name_(name='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `name`             | *str*              | :heavy_check_mark: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1AdminSettingsNameResponse](../../models/operations/getapiv1adminsettingsnameresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## put_api_v1_admin_settings_name_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.admin.put_api_v1_admin_settings_name_(name='<value>')
+res = s.admin.get_admin_setting(name='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3917,14 +4124,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminSettingsNameResponse](../../models/operations/putapiv1adminsettingsnameresponse.md)**
+**[operations.GetAdminSettingResponse](../../models/operations/getadminsettingresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_settings_name_
+## update_admin_setting
+
+Update a specified admin setting
 
 ### Example Usage
 
@@ -3934,7 +4143,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_settings_name_(name='<value>')
+res = s.admin.update_admin_setting(name='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3950,14 +4159,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminSettingsNameResponse](../../models/operations/deleteapiv1adminsettingsnameresponse.md)**
+**[operations.UpdateAdminSettingResponse](../../models/operations/updateadminsettingresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_admin_settings_name_lang_lang_
+## delete_admin_setting
+
+Delete a specified admin setting
 
 ### Example Usage
 
@@ -3967,7 +4178,42 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.put_api_v1_admin_settings_name_lang_lang_(lang='<value>', name='<value>')
+res = s.admin.delete_admin_setting(name='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `name`             | *str*              | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[operations.DeleteAdminSettingResponse](../../models/operations/deleteadminsettingresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## update_admin_settings_lang
+
+Update a specific Admin setting for a given language
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.admin.update_admin_settings_lang(lang='<value>', name='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3984,14 +4230,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminSettingsNameLangLangResponse](../../models/operations/putapiv1adminsettingsnamelanglangresponse.md)**
+**[operations.UpdateAdminSettingsLangResponse](../../models/operations/updateadminsettingslangresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_settings_name_lang_lang_
+## delete_admin_settings_lang
+
+Delete a specific Admin setting for a given language
 
 ### Example Usage
 
@@ -4001,7 +4249,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_settings_name_lang_lang_(lang='<value>', name='<value>')
+res = s.admin.delete_admin_settings_lang(lang='<value>', name='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -4018,14 +4266,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminSettingsNameLangLangResponse](../../models/operations/deleteapiv1adminsettingsnamelanglangresponse.md)**
+**[operations.DeleteAdminSettingsLangResponse](../../models/operations/deleteadminsettingslangresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_sitemap
+## generate_sitemap
+
+Generate a new sitemap for the application
 
 ### Example Usage
 
@@ -4035,7 +4285,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_sitemap()
+res = s.admin.generate_sitemap()
 
 if res.status_code == 200:
     # handle response
@@ -4045,14 +4295,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminSitemapResponse](../../models/operations/postapiv1adminsitemapresponse.md)**
+**[operations.GenerateSitemapResponse](../../models/operations/generatesitemapresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_storage_sites
+## get_storage_sites
+
+Fetches all storage sites
 
 ### Example Usage
 
@@ -4062,7 +4314,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_storage_sites()
+res = s.admin.get_storage_sites()
 
 if res.status_code == 200:
     # handle response
@@ -4072,14 +4324,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminStorageSitesResponse](../../models/operations/getapiv1adminstoragesitesresponse.md)**
+**[operations.GetStorageSitesResponse](../../models/operations/getstoragesitesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_storage_sites
+## create_storage_site
+
+Creates a new storage site
 
 ### Example Usage
 
@@ -4089,7 +4343,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_storage_sites()
+res = s.admin.create_storage_site()
 
 if res.status_code == 200:
     # handle response
@@ -4099,14 +4353,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminStorageSitesResponse](../../models/operations/postapiv1adminstoragesitesresponse.md)**
+**[operations.CreateStorageSiteResponse](../../models/operations/createstoragesiteresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_storage_sites_id_
+## fetch_storage_site
+
+Retrieves details of a specific storage site by its unique identifier
 
 ### Example Usage
 
@@ -4116,40 +4372,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_storage_sites_id_(id=165440)
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *int*              | :heavy_check_mark: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1AdminStorageSitesIDResponse](../../models/operations/getapiv1adminstoragesitesidresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## delete_api_v1_admin_storage_sites_id_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.admin.delete_api_v1_admin_storage_sites_id_(id=639030)
+res = s.admin.fetch_storage_site(id=259428)
 
 if res.status_code == 200:
     # handle response
@@ -4165,14 +4388,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminStorageSitesIDResponse](../../models/operations/deleteapiv1adminstoragesitesidresponse.md)**
+**[operations.FetchStorageSiteResponse](../../models/operations/fetchstoragesiteresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_admin_storage_sites_id_primary_storage
+## delete_storage_site
+
+Deletes a specific storage site by its unique identifier
 
 ### Example Usage
 
@@ -4182,7 +4407,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.put_api_v1_admin_storage_sites_id_primary_storage(id=994453)
+res = s.admin.delete_storage_site(id=969351)
 
 if res.status_code == 200:
     # handle response
@@ -4198,14 +4423,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminStorageSitesIDPrimaryStorageResponse](../../models/operations/putapiv1adminstoragesitesidprimarystorageresponse.md)**
+**[operations.DeleteStorageSiteResponse](../../models/operations/deletestoragesiteresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_submit_dataset_version_to_archive_id_version_
+## update_primary_storage
+
+Update the primary storage of a storage site by ID
 
 ### Example Usage
 
@@ -4215,7 +4442,42 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_submit_dataset_version_to_archive_id_version_(id='<value>', version='<value>')
+res = s.admin.update_primary_storage(id=206518)
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `id`               | *int*              | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[operations.UpdatePrimaryStorageResponse](../../models/operations/updateprimarystorageresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## submit_dataset_version_to_archive
+
+Submit a specific dataset version to the archive by using provided dataset ID and version number
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.admin.submit_dataset_version_to_archive(id='<value>', version='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -4232,14 +4494,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminSubmitDatasetVersionToArchiveIDVersionResponse](../../models/operations/postapiv1adminsubmitdatasetversiontoarchiveidversionresponse.md)**
+**[operations.SubmitDatasetVersionToArchiveResponse](../../models/operations/submitdatasetversiontoarchiveresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_superuser_identifier_
+## admin_create_super_user
+
+Creates a new superuser with the provided identifier
 
 ### Example Usage
 
@@ -4249,7 +4513,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_superuser_identifier_(identifier='<value>')
+res = s.admin.admin_create_super_user(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -4265,14 +4529,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminSuperuserIdentifierResponse](../../models/operations/postapiv1adminsuperuseridentifierresponse.md)**
+**[operations.AdminCreateSuperUserResponse](../../models/operations/admincreatesuperuserresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_template_id_
+## delete_admin_template
+
+Delete an admin template by ID
 
 ### Example Usage
 
@@ -4282,7 +4548,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_template_id_(id=695743)
+res = s.admin.delete_admin_template(id=195565)
 
 if res.status_code == 200:
     # handle response
@@ -4298,14 +4564,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminTemplateIDResponse](../../models/operations/deleteapiv1admintemplateidresponse.md)**
+**[operations.DeleteAdminTemplateResponse](../../models/operations/deleteadmintemplateresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_templates
+## get_admin_templates
+
+Retrieve all admin templates
 
 ### Example Usage
 
@@ -4315,7 +4583,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_templates()
+res = s.admin.get_admin_templates()
 
 if res.status_code == 200:
     # handle response
@@ -4325,14 +4593,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminTemplatesResponse](../../models/operations/getapiv1admintemplatesresponse.md)**
+**[operations.GetAdminTemplatesResponse](../../models/operations/getadmintemplatesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_templates_alias_
+## get_admin_template
+
+Retrieve a specific admin template using its alias.
 
 ### Example Usage
 
@@ -4342,7 +4612,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_templates_alias_(alias='<value>')
+res = s.admin.get_admin_template(alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -4358,14 +4628,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminTemplatesAliasResponse](../../models/operations/getapiv1admintemplatesaliasresponse.md)**
+**[operations.GetAdminTemplateResponse](../../models/operations/getadmintemplateresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_test_datasets_id_external_tools
+## get_external_tools_1
+
+Gets an external tool associated with a specific dataset identified by its id
 
 ### Example Usage
 
@@ -4375,7 +4647,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_test_datasets_id_external_tools(id='<value>', type='<value>')
+res = s.admin.get_external_tools_1(id='<value>', type='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -4392,14 +4664,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminTestDatasetsIDExternalToolsResponse](../../models/operations/getapiv1admintestdatasetsidexternaltoolsresponse.md)**
+**[operations.GetExternalTools1Response](../../models/operations/getexternaltools1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_test_files_id_external_tool_tool_id_
+## get_external_tool_by_id
+
+Retrieve the details of a specific external tool by its ID for a given file
 
 ### Example Usage
 
@@ -4409,7 +4683,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_test_files_id_external_tool_tool_id_(id='<value>', tool_id='<value>', type='<value>')
+res = s.admin.get_external_tool_by_id(id='<value>', tool_id='<value>', type='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -4427,14 +4701,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminTestFilesIDExternalToolToolIDResponse](../../models/operations/getapiv1admintestfilesidexternaltooltoolidresponse.md)**
+**[operations.GetExternalToolByIDResponse](../../models/operations/getexternaltoolbyidresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_test_files_id_external_tools
+## get_external_tools_1_1
+
+Retrieve the external tools of a specific test file.
 
 ### Example Usage
 
@@ -4444,7 +4720,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_test_files_id_external_tools(id='<value>', type='<value>')
+res = s.admin.get_external_tools_1_1(id='<value>', type='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -4461,14 +4737,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminTestFilesIDExternalToolsResponse](../../models/operations/getapiv1admintestfilesidexternaltoolsresponse.md)**
+**[operations.GetExternalTools11Response](../../models/operations/getexternaltools11response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_update_hash_values_alg_
+## get_hash_values
+
+Retrieve hash values based on specified algorithm
 
 ### Example Usage
 
@@ -4478,7 +4756,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_update_hash_values_alg_(alg='<value>', num=68479)
+res = s.admin.get_hash_values(alg='<value>', num=972785)
 
 if res.status_code == 200:
     # handle response
@@ -4495,14 +4773,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminUpdateHashValuesAlgResponse](../../models/operations/getapiv1adminupdatehashvaluesalgresponse.md)**
+**[operations.GetHashValuesResponse](../../models/operations/gethashvaluesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_validate_dataset_files_id_
+## get_validate_dataset_files
+
+Retrieve and validate specified dataset files
 
 ### Example Usage
 
@@ -4512,7 +4792,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_validate_dataset_files_id_(id='<value>')
+res = s.admin.get_validate_dataset_files(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -4528,14 +4808,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminValidateDatasetFilesIDResponse](../../models/operations/getapiv1adminvalidatedatasetfilesidresponse.md)**
+**[operations.GetValidateDatasetFilesResponse](../../models/operations/getvalidatedatasetfilesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_validate_dataset_id_
+## validate_dataset
+
+Validate a dataset with a specified ID
 
 ### Example Usage
 
@@ -4545,7 +4827,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_validate_dataset_id_(id='<value>', variables=False)
+res = s.admin.validate_dataset(id='<value>', variables=False)
 
 if res.status_code == 200:
     # handle response
@@ -4562,14 +4844,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminValidateDatasetIDResponse](../../models/operations/getapiv1adminvalidatedatasetidresponse.md)**
+**[operations.ValidateDatasetResponse](../../models/operations/validatedatasetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_validate_datasets
+## admin_validate_datasets
+
+Validate datasets in the system
 
 ### Example Usage
 
@@ -4579,7 +4863,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_validate_datasets(variables=False)
+res = s.admin.admin_validate_datasets(variables=False)
 
 if res.status_code == 200:
     # handle response
@@ -4595,14 +4879,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminValidateDatasetsResponse](../../models/operations/getapiv1adminvalidatedatasetsresponse.md)**
+**[operations.AdminValidateDatasetsResponse](../../models/operations/adminvalidatedatasetsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_validate_data_file_hash_value_file_id_
+## validate_data_file_hash
+
+Validate hash value of the specified data file
 
 ### Example Usage
 
@@ -4612,7 +4898,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_validate_data_file_hash_value_file_id_(file_id='<value>')
+res = s.admin.validate_data_file_hash(file_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -4628,14 +4914,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminValidateDataFileHashValueFileIDResponse](../../models/operations/postapiv1adminvalidatedatafilehashvaluefileidresponse.md)**
+**[operations.ValidateDataFileHashResponse](../../models/operations/validatedatafilehashresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_validate_password
+## validate_admin_password
+
+Validates the password of an admin user
 
 ### Example Usage
 
@@ -4645,7 +4933,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_validate_password()
+res = s.admin.validate_admin_password()
 
 if res.status_code == 200:
     # handle response
@@ -4655,14 +4943,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminValidatePasswordResponse](../../models/operations/postapiv1adminvalidatepasswordresponse.md)**
+**[operations.ValidateAdminPasswordResponse](../../models/operations/validateadminpasswordresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_workflows
+## get_admin_workflows
+
+Retrieve all workflows associated with the admin
 
 ### Example Usage
 
@@ -4672,7 +4962,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_workflows()
+res = s.admin.get_admin_workflows()
 
 if res.status_code == 200:
     # handle response
@@ -4682,14 +4972,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminWorkflowsResponse](../../models/operations/getapiv1adminworkflowsresponse.md)**
+**[operations.GetAdminWorkflowsResponse](../../models/operations/getadminworkflowsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_workflows
+## create_admin_workflow
+
+Create a new workflow for the admin
 
 ### Example Usage
 
@@ -4699,7 +4991,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_workflows()
+res = s.admin.create_admin_workflow()
 
 if res.status_code == 200:
     # handle response
@@ -4709,14 +5001,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminWorkflowsResponse](../../models/operations/postapiv1adminworkflowsresponse.md)**
+**[operations.CreateAdminWorkflowResponse](../../models/operations/createadminworkflowresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_workflows_default
+## get_default_workflow
+
+Fetch default workflow configured for admin
 
 ### Example Usage
 
@@ -4726,7 +5020,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_workflows_default()
+res = s.admin.get_default_workflow()
 
 if res.status_code == 200:
     # handle response
@@ -4736,14 +5030,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminWorkflowsDefaultResponse](../../models/operations/getapiv1adminworkflowsdefaultresponse.md)**
+**[operations.GetDefaultWorkflowResponse](../../models/operations/getdefaultworkflowresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_workflows_default_trigger_type_
+## get_trigger_type
+
+Retrieve a specific trigger type from workflows
 
 ### Example Usage
 
@@ -4753,40 +5049,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_workflows_default_trigger_type_(trigger_type='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `trigger_type`     | *str*              | :heavy_check_mark: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1AdminWorkflowsDefaultTriggerTypeResponse](../../models/operations/getapiv1adminworkflowsdefaulttriggertyperesponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## put_api_v1_admin_workflows_default_trigger_type_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.admin.put_api_v1_admin_workflows_default_trigger_type_(trigger_type='<value>')
+res = s.admin.get_trigger_type(trigger_type='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -4802,14 +5065,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminWorkflowsDefaultTriggerTypeResponse](../../models/operations/putapiv1adminworkflowsdefaulttriggertyperesponse.md)**
+**[operations.GetTriggerTypeResponse](../../models/operations/gettriggertyperesponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_workflows_default_trigger_type_
+## update_trigger_type
+
+Update a specific trigger type in workflows
 
 ### Example Usage
 
@@ -4819,7 +5084,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_workflows_default_trigger_type_(trigger_type='<value>')
+res = s.admin.update_trigger_type(trigger_type='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -4835,14 +5100,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminWorkflowsDefaultTriggerTypeResponse](../../models/operations/deleteapiv1adminworkflowsdefaulttriggertyperesponse.md)**
+**[operations.UpdateTriggerTypeResponse](../../models/operations/updatetriggertyperesponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_workflows_ip_whitelist
+## delete_trigger_type
+
+Delete a specific trigger type from workflows
 
 ### Example Usage
 
@@ -4852,7 +5119,42 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_workflows_ip_whitelist()
+res = s.admin.delete_trigger_type(trigger_type='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `trigger_type`     | *str*              | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[operations.DeleteTriggerTypeResponse](../../models/operations/deletetriggertyperesponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_ip_whitelist
+
+Retrieve current IP Whitelist for admin workflows
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.admin.get_ip_whitelist()
 
 if res.status_code == 200:
     # handle response
@@ -4862,14 +5164,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminWorkflowsIPWhitelistResponse](../../models/operations/getapiv1adminworkflowsipwhitelistresponse.md)**
+**[operations.GetIPWhitelistResponse](../../models/operations/getipwhitelistresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_admin_workflows_ip_whitelist
+## update_ip_whitelist
+
+Update the IP Whitelist for admin workflows
 
 ### Example Usage
 
@@ -4879,7 +5183,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.put_api_v1_admin_workflows_ip_whitelist()
+res = s.admin.update_ip_whitelist()
 
 if res.status_code == 200:
     # handle response
@@ -4889,14 +5193,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AdminWorkflowsIPWhitelistResponse](../../models/operations/putapiv1adminworkflowsipwhitelistresponse.md)**
+**[operations.UpdateIPWhitelistResponse](../../models/operations/updateipwhitelistresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_admin_workflows_ip_whitelist
+## delete_ip_whitelist
+
+Remove the IP Whitelist for admin workflows
 
 ### Example Usage
 
@@ -4906,7 +5212,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.delete_api_v1_admin_workflows_ip_whitelist()
+res = s.admin.delete_ip_whitelist()
 
 if res.status_code == 200:
     # handle response
@@ -4916,14 +5222,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AdminWorkflowsIPWhitelistResponse](../../models/operations/deleteapiv1adminworkflowsipwhitelistresponse.md)**
+**[operations.DeleteIPWhitelistResponse](../../models/operations/deleteipwhitelistresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_workflows_identifier_
+## get_workflow_by_identifier
+
+Retrieve a specific workflow using its identifier
 
 ### Example Usage
 
@@ -4933,7 +5241,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_workflows_identifier_(identifier='<value>')
+res = s.admin.get_workflow_by_identifier(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -4949,14 +5257,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminWorkflowsIdentifierResponse](../../models/operations/getapiv1adminworkflowsidentifierresponse.md)**
+**[operations.GetWorkflowByIdentifierResponse](../../models/operations/getworkflowbyidentifierresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_admin_id_register_data_file
+## get_admin_data_file
+
+Retrieve data file details registered by a specific admin
 
 ### Example Usage
 
@@ -4966,7 +5276,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.get_api_v1_admin_id_register_data_file(id='<value>')
+res = s.admin.get_admin_data_file(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -4982,14 +5292,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AdminIDRegisterDataFileResponse](../../models/operations/getapiv1adminidregisterdatafileresponse.md)**
+**[operations.GetAdminDataFileResponse](../../models/operations/getadmindatafileresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_admin_id_reregister_hdl_to_pid
+## admin_reregister_hdl_to_pid
+
+Admin reruns the HDL to PID registration for a specific admin ID.
 
 ### Example Usage
 
@@ -4999,7 +5311,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.admin.post_api_v1_admin_id_reregister_hdl_to_pid(id='<value>')
+res = s.admin.admin_reregister_hdl_to_pid(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -5015,7 +5327,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AdminIDReregisterHDLToPIDResponse](../../models/operations/postapiv1adminidreregisterhdltopidresponse.md)**
+**[operations.AdminReregisterHDLToPIDResponse](../../models/operations/adminreregisterhdltopidresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

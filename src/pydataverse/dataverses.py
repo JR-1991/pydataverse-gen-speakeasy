@@ -15,8 +15,9 @@ class Dataverses:
         
     
     
-    def post_api_v1_dataverses(self) -> operations.PostAPIV1DataversesResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses', oauth2_scopes=[], security_source=None)
+    def create_dataverse(self) -> operations.CreateDataverseResponse:
+        r"""Create a new Dataverse"""
+        hook_ctx = HookContext(operation_id='createDataverse', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/dataverses'
@@ -49,7 +50,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateDataverseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -60,15 +61,16 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_(self, identifier: str) -> operations.GetAPIV1DataversesIdentifierResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierRequest(
+    def get_dataverse(self, identifier: str) -> operations.GetDataverseResponse:
+        r"""Retrieves a specified dataverse with the given identifier"""
+        hook_ctx = HookContext(operation_id='getDataverse', oauth2_scopes=[], security_source=None)
+        request = operations.GetDataverseRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierRequest, base_url, '/api/v1/dataverses/{identifier}', request)
+        url = utils.generate_url(operations.GetDataverseRequest, base_url, '/api/v1/dataverses/{identifier}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -98,7 +100,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDataverseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -109,15 +111,16 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_(self, identifier: str) -> operations.PostAPIV1DataversesIdentifierResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierRequest(
+    def create_dataverse_1(self, identifier: str) -> operations.CreateDataverse1Response:
+        r"""Creates a new dataverse with the given identifier"""
+        hook_ctx = HookContext(operation_id='createDataverse_1', oauth2_scopes=[], security_source=None)
+        request = operations.CreateDataverse1Request(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierRequest, base_url, '/api/v1/dataverses/{identifier}', request)
+        url = utils.generate_url(operations.CreateDataverse1Request, base_url, '/api/v1/dataverses/{identifier}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -147,7 +150,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateDataverse1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -158,15 +161,16 @@ class Dataverses:
 
     
     
-    def delete_api_v1_dataverses_identifier_(self, identifier: str) -> operations.DeleteAPIV1DataversesIdentifierResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/dataverses/{identifier}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DataversesIdentifierRequest(
+    def delete_dataverse(self, identifier: str) -> operations.DeleteDataverseResponse:
+        r"""Deletes a specified dataverse with the given identifier"""
+        hook_ctx = HookContext(operation_id='deleteDataverse', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteDataverseRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DataversesIdentifierRequest, base_url, '/api/v1/dataverses/{identifier}', request)
+        url = utils.generate_url(operations.DeleteDataverseRequest, base_url, '/api/v1/dataverses/{identifier}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -196,7 +200,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DataversesIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteDataverseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -207,15 +211,16 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_actions_publish(self, identifier: str) -> operations.PostAPIV1DataversesIdentifierActionsPublishResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/actions/:publish', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierActionsPublishRequest(
+    def publish_dataverse_by_id(self, identifier: str) -> operations.PublishDataverseByIDResponse:
+        r"""Publishes the identified Dataverse"""
+        hook_ctx = HookContext(operation_id='publishDataverseById', oauth2_scopes=[], security_source=None)
+        request = operations.PublishDataverseByIDRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierActionsPublishRequest, base_url, '/api/v1/dataverses/{identifier}/actions/:publish', request)
+        url = utils.generate_url(operations.PublishDataverseByIDRequest, base_url, '/api/v1/dataverses/{identifier}/actions/:publish', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -245,7 +250,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierActionsPublishResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PublishDataverseByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -256,15 +261,16 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_assignments(self, identifier: str) -> operations.GetAPIV1DataversesIdentifierAssignmentsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}/assignments', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierAssignmentsRequest(
+    def get_dataverse_assignments(self, identifier: str) -> operations.GetDataverseAssignmentsResponse:
+        r"""Retrieves assignments of specified Dataverse"""
+        hook_ctx = HookContext(operation_id='getDataverseAssignments', oauth2_scopes=[], security_source=None)
+        request = operations.GetDataverseAssignmentsRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierAssignmentsRequest, base_url, '/api/v1/dataverses/{identifier}/assignments', request)
+        url = utils.generate_url(operations.GetDataverseAssignmentsRequest, base_url, '/api/v1/dataverses/{identifier}/assignments', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -294,7 +300,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierAssignmentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDataverseAssignmentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -305,18 +311,19 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_assignments(self, identifier: str, key: Optional[str] = None) -> operations.PostAPIV1DataversesIdentifierAssignmentsResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/assignments', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierAssignmentsRequest(
+    def post_dataverse_assignments(self, identifier: str, key: Optional[str] = None) -> operations.PostDataverseAssignmentsResponse:
+        r"""Assigns new user or role to specified Dataverse"""
+        hook_ctx = HookContext(operation_id='postDataverseAssignments', oauth2_scopes=[], security_source=None)
+        request = operations.PostDataverseAssignmentsRequest(
             identifier=identifier,
             key=key,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierAssignmentsRequest, base_url, '/api/v1/dataverses/{identifier}/assignments', request)
+        url = utils.generate_url(operations.PostDataverseAssignmentsRequest, base_url, '/api/v1/dataverses/{identifier}/assignments', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1DataversesIdentifierAssignmentsRequest, request)
+        query_params = utils.get_query_params(operations.PostDataverseAssignmentsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -345,7 +352,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierAssignmentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostDataverseAssignmentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -356,16 +363,17 @@ class Dataverses:
 
     
     
-    def delete_api_v1_dataverses_identifier_assignments_id_(self, id: int, identifier: str) -> operations.DeleteAPIV1DataversesIdentifierAssignmentsIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/dataverses/{identifier}/assignments/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DataversesIdentifierAssignmentsIDRequest(
+    def delete_dataverse_assignment(self, id: int, identifier: str) -> operations.DeleteDataverseAssignmentResponse:
+        r"""Delete a specific assignment from a specific dataverse"""
+        hook_ctx = HookContext(operation_id='deleteDataverseAssignment', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteDataverseAssignmentRequest(
             id=id,
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DataversesIdentifierAssignmentsIDRequest, base_url, '/api/v1/dataverses/{identifier}/assignments/{id}', request)
+        url = utils.generate_url(operations.DeleteDataverseAssignmentRequest, base_url, '/api/v1/dataverses/{identifier}/assignments/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -395,7 +403,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DataversesIdentifierAssignmentsIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteDataverseAssignmentResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -406,9 +414,10 @@ class Dataverses:
 
     
     
-    def put_api_v1_dataverses_identifier_attribute_attribute_(self, attribute: str, identifier: str, value: Optional[str] = None) -> operations.PutAPIV1DataversesIdentifierAttributeAttributeResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/dataverses/{identifier}/attribute/{attribute}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DataversesIdentifierAttributeAttributeRequest(
+    def update_dataverse_attribute(self, attribute: str, identifier: str, value: Optional[str] = None) -> operations.UpdateDataverseAttributeResponse:
+        r"""Update a specific attribute of a Dataverse identified by the given identifier"""
+        hook_ctx = HookContext(operation_id='updateDataverseAttribute', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateDataverseAttributeRequest(
             attribute=attribute,
             identifier=identifier,
             value=value,
@@ -416,9 +425,9 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DataversesIdentifierAttributeAttributeRequest, base_url, '/api/v1/dataverses/{identifier}/attribute/{attribute}', request)
+        url = utils.generate_url(operations.UpdateDataverseAttributeRequest, base_url, '/api/v1/dataverses/{identifier}/attribute/{attribute}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PutAPIV1DataversesIdentifierAttributeAttributeRequest, request)
+        query_params = utils.get_query_params(operations.UpdateDataverseAttributeRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -447,7 +456,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DataversesIdentifierAttributeAttributeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateDataverseAttributeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -458,15 +467,16 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_contents(self, identifier: str) -> operations.GetAPIV1DataversesIdentifierContentsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}/contents', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierContentsRequest(
+    def get_dataverse_contents(self, identifier: str) -> operations.GetDataverseContentsResponse:
+        r"""Retrieve contents of the specified Dataverse"""
+        hook_ctx = HookContext(operation_id='getDataverseContents', oauth2_scopes=[], security_source=None)
+        request = operations.GetDataverseContentsRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierContentsRequest, base_url, '/api/v1/dataverses/{identifier}/contents', request)
+        url = utils.generate_url(operations.GetDataverseContentsRequest, base_url, '/api/v1/dataverses/{identifier}/contents', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -496,7 +506,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierContentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDataverseContentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -507,15 +517,16 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_dataset_schema(self, identifier: str) -> operations.GetAPIV1DataversesIdentifierDatasetSchemaResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}/datasetSchema', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierDatasetSchemaRequest(
+    def get_dataset_schema(self, identifier: str) -> operations.GetDatasetSchemaResponse:
+        r"""Retrieve the schema of a specific dataset in the dataverse identified by the given identifier"""
+        hook_ctx = HookContext(operation_id='getDatasetSchema', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetSchemaRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierDatasetSchemaRequest, base_url, '/api/v1/dataverses/{identifier}/datasetSchema', request)
+        url = utils.generate_url(operations.GetDatasetSchemaRequest, base_url, '/api/v1/dataverses/{identifier}/datasetSchema', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -545,7 +556,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierDatasetSchemaResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetSchemaResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -556,9 +567,10 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_datasets(self, identifier: str, do_not_validate: Optional[str] = None, request_body: Optional[str] = None) -> operations.PostAPIV1DataversesIdentifierDatasetsResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/datasets', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierDatasetsRequest(
+    def create_dataset_in_dataverse(self, identifier: str, do_not_validate: Optional[str] = None, request_body: Optional[str] = None) -> operations.CreateDatasetInDataverseResponse:
+        r"""Create a new dataset in the specified dataverse"""
+        hook_ctx = HookContext(operation_id='createDatasetInDataverse', oauth2_scopes=[], security_source=None)
+        request = operations.CreateDatasetInDataverseRequest(
             identifier=identifier,
             do_not_validate=do_not_validate,
             request_body=request_body,
@@ -566,12 +578,12 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierDatasetsRequest, base_url, '/api/v1/dataverses/{identifier}/datasets', request)
+        url = utils.generate_url(operations.CreateDatasetInDataverseRequest, base_url, '/api/v1/dataverses/{identifier}/datasets', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DataversesIdentifierDatasetsRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateDatasetInDataverseRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = utils.get_query_params(operations.PostAPIV1DataversesIdentifierDatasetsRequest, request)
+        query_params = utils.get_query_params(operations.CreateDatasetInDataverseRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -600,7 +612,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierDatasetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateDatasetInDataverseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -611,9 +623,10 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_datasets_import(self, identifier: str, pid: Optional[str] = None, release: Optional[str] = None) -> operations.PostAPIV1DataversesIdentifierDatasetsImportResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/datasets/:import', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierDatasetsImportRequest(
+    def import_dataset(self, identifier: str, pid: Optional[str] = None, release: Optional[str] = None) -> operations.ImportDatasetResponse:
+        r"""Imports a dataset into a given Dataverse identifier"""
+        hook_ctx = HookContext(operation_id='importDataset', oauth2_scopes=[], security_source=None)
+        request = operations.ImportDatasetRequest(
             identifier=identifier,
             pid=pid,
             release=release,
@@ -621,9 +634,9 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierDatasetsImportRequest, base_url, '/api/v1/dataverses/{identifier}/datasets/:import', request)
+        url = utils.generate_url(operations.ImportDatasetRequest, base_url, '/api/v1/dataverses/{identifier}/datasets/:import', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1DataversesIdentifierDatasetsImportRequest, request)
+        query_params = utils.get_query_params(operations.ImportDatasetRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -652,7 +665,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierDatasetsImportResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ImportDatasetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -663,9 +676,10 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_datasets_importddi(self, identifier: str, pid: Optional[str] = None, release: Optional[str] = None) -> operations.PostAPIV1DataversesIdentifierDatasetsImportddiResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/datasets/:importddi', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierDatasetsImportddiRequest(
+    def import_ddi_to_dataset(self, identifier: str, pid: Optional[str] = None, release: Optional[str] = None) -> operations.ImportDdiToDatasetResponse:
+        r"""Imports DDI metadata to a dataset in the specified dataverse."""
+        hook_ctx = HookContext(operation_id='importDdiToDataset', oauth2_scopes=[], security_source=None)
+        request = operations.ImportDdiToDatasetRequest(
             identifier=identifier,
             pid=pid,
             release=release,
@@ -673,9 +687,9 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierDatasetsImportddiRequest, base_url, '/api/v1/dataverses/{identifier}/datasets/:importddi', request)
+        url = utils.generate_url(operations.ImportDdiToDatasetRequest, base_url, '/api/v1/dataverses/{identifier}/datasets/:importddi', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1DataversesIdentifierDatasetsImportddiRequest, request)
+        query_params = utils.get_query_params(operations.ImportDdiToDatasetRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -704,7 +718,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierDatasetsImportddiResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ImportDdiToDatasetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -715,18 +729,19 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_datasets_startmigration(self, identifier: str, request_body: Optional[str] = None) -> operations.PostAPIV1DataversesIdentifierDatasetsStartmigrationResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/datasets/:startmigration', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierDatasetsStartmigrationRequest(
+    def start_migration(self, identifier: str, request_body: Optional[str] = None) -> operations.StartMigrationResponse:
+        r"""Begins the migration process of datasets in a specific Dataverse identified by the provided identifier"""
+        hook_ctx = HookContext(operation_id='startMigration', oauth2_scopes=[], security_source=None)
+        request = operations.StartMigrationRequest(
             identifier=identifier,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierDatasetsStartmigrationRequest, base_url, '/api/v1/dataverses/{identifier}/datasets/:startmigration', request)
+        url = utils.generate_url(operations.StartMigrationRequest, base_url, '/api/v1/dataverses/{identifier}/datasets/:startmigration', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DataversesIdentifierDatasetsStartmigrationRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.StartMigrationRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -757,7 +772,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierDatasetsStartmigrationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.StartMigrationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -768,16 +783,17 @@ class Dataverses:
 
     
     
-    def put_api_v1_dataverses_identifier_default_contributor_role_role_alias_(self, identifier: str, role_alias: str) -> operations.PutAPIV1DataversesIdentifierDefaultContributorRoleRoleAliasResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/dataverses/{identifier}/defaultContributorRole/{roleAlias}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DataversesIdentifierDefaultContributorRoleRoleAliasRequest(
+    def update_default_contributor_role(self, identifier: str, role_alias: str) -> operations.UpdateDefaultContributorRoleResponse:
+        r"""Update the default contributor role of a specific dataverse"""
+        hook_ctx = HookContext(operation_id='updateDefaultContributorRole', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateDefaultContributorRoleRequest(
             identifier=identifier,
             role_alias=role_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DataversesIdentifierDefaultContributorRoleRoleAliasRequest, base_url, '/api/v1/dataverses/{identifier}/defaultContributorRole/{roleAlias}', request)
+        url = utils.generate_url(operations.UpdateDefaultContributorRoleRequest, base_url, '/api/v1/dataverses/{identifier}/defaultContributorRole/{roleAlias}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -807,7 +823,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DataversesIdentifierDefaultContributorRoleRoleAliasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateDefaultContributorRoleResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -818,15 +834,16 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_facets(self, identifier: str) -> operations.GetAPIV1DataversesIdentifierFacetsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}/facets', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierFacetsRequest(
+    def get_facets(self, identifier: str) -> operations.GetFacetsResponse:
+        r"""Retrieves the facets of the specified dataverse"""
+        hook_ctx = HookContext(operation_id='getFacets', oauth2_scopes=[], security_source=None)
+        request = operations.GetFacetsRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierFacetsRequest, base_url, '/api/v1/dataverses/{identifier}/facets', request)
+        url = utils.generate_url(operations.GetFacetsRequest, base_url, '/api/v1/dataverses/{identifier}/facets', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -856,7 +873,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierFacetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFacetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -867,15 +884,16 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_facets(self, identifier: str) -> operations.PostAPIV1DataversesIdentifierFacetsResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/facets', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierFacetsRequest(
+    def post_facets(self, identifier: str) -> operations.PostFacetsResponse:
+        r"""Updates the facets of the specified dataverse"""
+        hook_ctx = HookContext(operation_id='postFacets', oauth2_scopes=[], security_source=None)
+        request = operations.PostFacetsRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierFacetsRequest, base_url, '/api/v1/dataverses/{identifier}/facets', request)
+        url = utils.generate_url(operations.PostFacetsRequest, base_url, '/api/v1/dataverses/{identifier}/facets', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -905,7 +923,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierFacetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostFacetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -916,18 +934,19 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_groups(self, identifier: str, key: Optional[str] = None) -> operations.GetAPIV1DataversesIdentifierGroupsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}/groups', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierGroupsRequest(
+    def get_dataverse_groups(self, identifier: str, key: Optional[str] = None) -> operations.GetDataverseGroupsResponse:
+        r"""Retrieves groups associated with a specified dataverse"""
+        hook_ctx = HookContext(operation_id='getDataverseGroups', oauth2_scopes=[], security_source=None)
+        request = operations.GetDataverseGroupsRequest(
             identifier=identifier,
             key=key,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierGroupsRequest, base_url, '/api/v1/dataverses/{identifier}/groups', request)
+        url = utils.generate_url(operations.GetDataverseGroupsRequest, base_url, '/api/v1/dataverses/{identifier}/groups', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DataversesIdentifierGroupsRequest, request)
+        query_params = utils.get_query_params(operations.GetDataverseGroupsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -956,7 +975,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierGroupsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDataverseGroupsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -967,15 +986,16 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_groups(self, identifier: str) -> operations.PostAPIV1DataversesIdentifierGroupsResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/groups', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierGroupsRequest(
+    def create_dataverse_group(self, identifier: str) -> operations.CreateDataverseGroupResponse:
+        r"""Creates a new group in the specified dataverse"""
+        hook_ctx = HookContext(operation_id='createDataverseGroup', oauth2_scopes=[], security_source=None)
+        request = operations.CreateDataverseGroupRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierGroupsRequest, base_url, '/api/v1/dataverses/{identifier}/groups', request)
+        url = utils.generate_url(operations.CreateDataverseGroupRequest, base_url, '/api/v1/dataverses/{identifier}/groups', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1005,7 +1025,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierGroupsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateDataverseGroupResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1016,16 +1036,17 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_groups_alias_in_owner_(self, alias_in_owner: str, identifier: str) -> operations.GetAPIV1DataversesIdentifierGroupsAliasInOwnerResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}/groups/{aliasInOwner}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierGroupsAliasInOwnerRequest(
+    def get_group_in_dataverse(self, alias_in_owner: str, identifier: str) -> operations.GetGroupInDataverseResponse:
+        r"""Retrieve details of a specific group within the given Dataverse"""
+        hook_ctx = HookContext(operation_id='getGroupInDataverse', oauth2_scopes=[], security_source=None)
+        request = operations.GetGroupInDataverseRequest(
             alias_in_owner=alias_in_owner,
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierGroupsAliasInOwnerRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}', request)
+        url = utils.generate_url(operations.GetGroupInDataverseRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1055,7 +1076,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierGroupsAliasInOwnerResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetGroupInDataverseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1066,16 +1087,17 @@ class Dataverses:
 
     
     
-    def put_api_v1_dataverses_identifier_groups_alias_in_owner_(self, alias_in_owner: str, identifier: str) -> operations.PutAPIV1DataversesIdentifierGroupsAliasInOwnerResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/dataverses/{identifier}/groups/{aliasInOwner}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DataversesIdentifierGroupsAliasInOwnerRequest(
+    def update_group_in_dataverse(self, alias_in_owner: str, identifier: str) -> operations.UpdateGroupInDataverseResponse:
+        r"""Update the details of a group within the specified Dataverse"""
+        hook_ctx = HookContext(operation_id='updateGroupInDataverse', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateGroupInDataverseRequest(
             alias_in_owner=alias_in_owner,
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DataversesIdentifierGroupsAliasInOwnerRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}', request)
+        url = utils.generate_url(operations.UpdateGroupInDataverseRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1105,7 +1127,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DataversesIdentifierGroupsAliasInOwnerResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateGroupInDataverseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1116,16 +1138,17 @@ class Dataverses:
 
     
     
-    def delete_api_v1_dataverses_identifier_groups_alias_in_owner_(self, alias_in_owner: str, identifier: str) -> operations.DeleteAPIV1DataversesIdentifierGroupsAliasInOwnerResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/dataverses/{identifier}/groups/{aliasInOwner}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DataversesIdentifierGroupsAliasInOwnerRequest(
+    def delete_group_in_dataverse(self, alias_in_owner: str, identifier: str) -> operations.DeleteGroupInDataverseResponse:
+        r"""Delete a specific group from the specified Dataverse"""
+        hook_ctx = HookContext(operation_id='deleteGroupInDataverse', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteGroupInDataverseRequest(
             alias_in_owner=alias_in_owner,
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DataversesIdentifierGroupsAliasInOwnerRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}', request)
+        url = utils.generate_url(operations.DeleteGroupInDataverseRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1155,7 +1178,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DataversesIdentifierGroupsAliasInOwnerResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteGroupInDataverseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1166,9 +1189,10 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_groups_alias_in_owner_role_assignees(self, alias_in_owner: str, identifier: str, request_body: Optional[List[str]] = None) -> operations.PostAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesRequest(
+    def assign_role(self, alias_in_owner: str, identifier: str, request_body: Optional[List[str]] = None) -> operations.AssignRoleResponse:
+        r"""Assign a role to role assignees in a specified group within a dataverse"""
+        hook_ctx = HookContext(operation_id='assignRole', oauth2_scopes=[], security_source=None)
+        request = operations.AssignRoleRequest(
             alias_in_owner=alias_in_owner,
             identifier=identifier,
             request_body=request_body,
@@ -1176,9 +1200,9 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees', request)
+        url = utils.generate_url(operations.AssignRoleRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.AssignRoleRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -1209,7 +1233,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AssignRoleResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1220,9 +1244,10 @@ class Dataverses:
 
     
     
-    def put_api_v1_dataverses_identifier_groups_alias_in_owner_role_assignees_role_assignee_identifier_(self, alias_in_owner: str, identifier: str, role_assignee_identifier: str) -> operations.PutAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesRoleAssigneeIdentifierResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees/{roleAssigneeIdentifier}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesRoleAssigneeIdentifierRequest(
+    def update_role_assignee(self, alias_in_owner: str, identifier: str, role_assignee_identifier: str) -> operations.UpdateRoleAssigneeResponse:
+        r"""Update a specific role assignee in a dataverse group"""
+        hook_ctx = HookContext(operation_id='updateRoleAssignee', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateRoleAssigneeRequest(
             alias_in_owner=alias_in_owner,
             identifier=identifier,
             role_assignee_identifier=role_assignee_identifier,
@@ -1230,7 +1255,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesRoleAssigneeIdentifierRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees/{roleAssigneeIdentifier}', request)
+        url = utils.generate_url(operations.UpdateRoleAssigneeRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees/{roleAssigneeIdentifier}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1260,7 +1285,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesRoleAssigneeIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateRoleAssigneeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1271,9 +1296,10 @@ class Dataverses:
 
     
     
-    def delete_api_v1_dataverses_identifier_groups_alias_in_owner_role_assignees_role_assignee_identifier_(self, alias_in_owner: str, identifier: str, role_assignee_identifier: str) -> operations.DeleteAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesRoleAssigneeIdentifierResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees/{roleAssigneeIdentifier}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesRoleAssigneeIdentifierRequest(
+    def delete_role_assignee(self, alias_in_owner: str, identifier: str, role_assignee_identifier: str) -> operations.DeleteRoleAssigneeResponse:
+        r"""Delete a specific role assignee from a dataverse group"""
+        hook_ctx = HookContext(operation_id='deleteRoleAssignee', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteRoleAssigneeRequest(
             alias_in_owner=alias_in_owner,
             identifier=identifier,
             role_assignee_identifier=role_assignee_identifier,
@@ -1281,7 +1307,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesRoleAssigneeIdentifierRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees/{roleAssigneeIdentifier}', request)
+        url = utils.generate_url(operations.DeleteRoleAssigneeRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees/{roleAssigneeIdentifier}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1311,7 +1337,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesRoleAssigneeIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteRoleAssigneeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1322,18 +1348,19 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_guestbook_responses(self, identifier: str, guestbook_id: Optional[int] = None) -> operations.GetAPIV1DataversesIdentifierGuestbookResponsesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}/guestbookResponses', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierGuestbookResponsesRequest(
+    def get_guestbook_responses(self, identifier: str, guestbook_id: Optional[int] = None) -> operations.GetGuestbookResponsesResponse:
+        r"""Retrieve all guestbook responses for a specific dataverse"""
+        hook_ctx = HookContext(operation_id='getGuestbookResponses', oauth2_scopes=[], security_source=None)
+        request = operations.GetGuestbookResponsesRequest(
             identifier=identifier,
             guestbook_id=guestbook_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierGuestbookResponsesRequest, base_url, '/api/v1/dataverses/{identifier}/guestbookResponses', request)
+        url = utils.generate_url(operations.GetGuestbookResponsesRequest, base_url, '/api/v1/dataverses/{identifier}/guestbookResponses', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DataversesIdentifierGuestbookResponsesRequest, request)
+        query_params = utils.get_query_params(operations.GetGuestbookResponsesRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1362,7 +1389,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierGuestbookResponsesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetGuestbookResponsesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1373,15 +1400,16 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_links(self, identifier: str) -> operations.GetAPIV1DataversesIdentifierLinksResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}/links', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierLinksRequest(
+    def get_dataverse_links(self, identifier: str) -> operations.GetDataverseLinksResponse:
+        r"""Retrieve all links associated with a specific dataverse identified by ID"""
+        hook_ctx = HookContext(operation_id='getDataverseLinks', oauth2_scopes=[], security_source=None)
+        request = operations.GetDataverseLinksRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierLinksRequest, base_url, '/api/v1/dataverses/{identifier}/links', request)
+        url = utils.generate_url(operations.GetDataverseLinksRequest, base_url, '/api/v1/dataverses/{identifier}/links', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1411,7 +1439,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierLinksResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDataverseLinksResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1422,15 +1450,16 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_metadatablockfacets(self, identifier: str) -> operations.GetAPIV1DataversesIdentifierMetadatablockfacetsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}/metadatablockfacets', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierMetadatablockfacetsRequest(
+    def get_metadatablock_facets(self, identifier: str) -> operations.GetMetadatablockFacetsResponse:
+        r"""Retrieve metadatablock facets for a specific dataverse"""
+        hook_ctx = HookContext(operation_id='getMetadatablockFacets', oauth2_scopes=[], security_source=None)
+        request = operations.GetMetadatablockFacetsRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierMetadatablockfacetsRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablockfacets', request)
+        url = utils.generate_url(operations.GetMetadatablockFacetsRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablockfacets', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1460,7 +1489,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierMetadatablockfacetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetadatablockFacetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1471,18 +1500,19 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_metadatablockfacets(self, identifier: str, request_body: Optional[List[str]] = None) -> operations.PostAPIV1DataversesIdentifierMetadatablockfacetsResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/metadatablockfacets', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierMetadatablockfacetsRequest(
+    def post_metadatablock_facets(self, identifier: str, request_body: Optional[List[str]] = None) -> operations.PostMetadatablockFacetsResponse:
+        r"""Add metadatablock facets to a specific dataverse"""
+        hook_ctx = HookContext(operation_id='postMetadatablockFacets', oauth2_scopes=[], security_source=None)
+        request = operations.PostMetadatablockFacetsRequest(
             identifier=identifier,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierMetadatablockfacetsRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablockfacets', request)
+        url = utils.generate_url(operations.PostMetadatablockFacetsRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablockfacets', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DataversesIdentifierMetadatablockfacetsRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostMetadatablockFacetsRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -1513,7 +1543,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierMetadatablockfacetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostMetadatablockFacetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1524,18 +1554,19 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_metadatablockfacets_is_root(self, identifier: str, request_body: Optional[str] = None) -> operations.PostAPIV1DataversesIdentifierMetadatablockfacetsIsRootResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/metadatablockfacets/isRoot', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierMetadatablockfacetsIsRootRequest(
+    def update_root_status(self, identifier: str, request_body: Optional[str] = None) -> operations.UpdateRootStatusResponse:
+        r"""Updates the root status of a Dataverse"""
+        hook_ctx = HookContext(operation_id='updateRootStatus', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateRootStatusRequest(
             identifier=identifier,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierMetadatablockfacetsIsRootRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablockfacets/isRoot', request)
+        url = utils.generate_url(operations.UpdateRootStatusRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablockfacets/isRoot', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DataversesIdentifierMetadatablockfacetsIsRootRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateRootStatusRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -1566,7 +1597,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierMetadatablockfacetsIsRootResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateRootStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1577,15 +1608,16 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_metadatablocks(self, identifier: str) -> operations.GetAPIV1DataversesIdentifierMetadatablocksResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}/metadatablocks', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierMetadatablocksRequest(
+    def get_metadatablock(self, identifier: str) -> operations.GetMetadatablockResponse:
+        r"""Retrieve the metadatablock of a Dataverse."""
+        hook_ctx = HookContext(operation_id='getMetadatablock', oauth2_scopes=[], security_source=None)
+        request = operations.GetMetadatablockRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierMetadatablocksRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablocks', request)
+        url = utils.generate_url(operations.GetMetadatablockRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablocks', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1615,7 +1647,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierMetadatablocksResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetadatablockResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1626,15 +1658,16 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_metadatablocks(self, identifier: str) -> operations.PostAPIV1DataversesIdentifierMetadatablocksResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/metadatablocks', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierMetadatablocksRequest(
+    def create_metadatablock(self, identifier: str) -> operations.CreateMetadatablockResponse:
+        r"""Create a new metadatablock for a Dataverse."""
+        hook_ctx = HookContext(operation_id='createMetadatablock', oauth2_scopes=[], security_source=None)
+        request = operations.CreateMetadatablockRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierMetadatablocksRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablocks', request)
+        url = utils.generate_url(operations.CreateMetadatablockRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablocks', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1664,7 +1697,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierMetadatablocksResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateMetadatablockResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1675,15 +1708,16 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_metadatablocks_is_root(self, identifier: str) -> operations.GetAPIV1DataversesIdentifierMetadatablocksIsRootResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}/metadatablocks/:isRoot', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierMetadatablocksIsRootRequest(
+    def get_metadatablock_1(self, identifier: str) -> operations.GetMetadatablock1Response:
+        r"""Retrieve metadata blocks for a specific dataverse identified by its unique identifier"""
+        hook_ctx = HookContext(operation_id='getMetadatablock_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetMetadatablock1Request(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierMetadatablocksIsRootRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablocks/:isRoot', request)
+        url = utils.generate_url(operations.GetMetadatablock1Request, base_url, '/api/v1/dataverses/{identifier}/metadatablocks/:isRoot', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1713,7 +1747,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierMetadatablocksIsRootResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetadatablock1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1724,18 +1758,19 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_metadatablocks_is_root(self, identifier: str, request_body: Optional[str] = None) -> operations.PostAPIV1DataversesIdentifierMetadatablocksIsRootResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/metadatablocks/:isRoot', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierMetadatablocksIsRootRequest(
+    def post_metadatablock(self, identifier: str, request_body: Optional[str] = None) -> operations.PostMetadatablockResponse:
+        r"""Add or update metadata block associated with the specified dataverse identifier"""
+        hook_ctx = HookContext(operation_id='postMetadatablock', oauth2_scopes=[], security_source=None)
+        request = operations.PostMetadatablockRequest(
             identifier=identifier,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierMetadatablocksIsRootRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablocks/:isRoot', request)
+        url = utils.generate_url(operations.PostMetadatablockRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablocks/:isRoot', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DataversesIdentifierMetadatablocksIsRootRequest, "request_body", False, True, 'string')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostMetadatablockRequest, "request_body", False, True, 'string')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -1766,7 +1801,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierMetadatablocksIsRootResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostMetadatablockResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1777,15 +1812,16 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_roles(self, identifier: str) -> operations.GetAPIV1DataversesIdentifierRolesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}/roles', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierRolesRequest(
+    def get_roles_by_identifier(self, identifier: str) -> operations.GetRolesByIdentifierResponse:
+        r"""Retrieve the roles for a given Dataverse identifier"""
+        hook_ctx = HookContext(operation_id='getRolesByIdentifier', oauth2_scopes=[], security_source=None)
+        request = operations.GetRolesByIdentifierRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierRolesRequest, base_url, '/api/v1/dataverses/{identifier}/roles', request)
+        url = utils.generate_url(operations.GetRolesByIdentifierRequest, base_url, '/api/v1/dataverses/{identifier}/roles', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1815,7 +1851,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierRolesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetRolesByIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1826,15 +1862,16 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_roles(self, identifier: str) -> operations.PostAPIV1DataversesIdentifierRolesResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/roles', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierRolesRequest(
+    def create_role_by_identifier(self, identifier: str) -> operations.CreateRoleByIdentifierResponse:
+        r"""Create a new role for a given Dataverse identifier"""
+        hook_ctx = HookContext(operation_id='createRoleByIdentifier', oauth2_scopes=[], security_source=None)
+        request = operations.CreateRoleByIdentifierRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierRolesRequest, base_url, '/api/v1/dataverses/{identifier}/roles', request)
+        url = utils.generate_url(operations.CreateRoleByIdentifierRequest, base_url, '/api/v1/dataverses/{identifier}/roles', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1864,7 +1901,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierRolesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateRoleByIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1875,15 +1912,16 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_storage_quota(self, identifier: str) -> operations.GetAPIV1DataversesIdentifierStorageQuotaResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}/storage/quota', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierStorageQuotaRequest(
+    def get_storage_quota(self, identifier: str) -> operations.GetStorageQuotaResponse:
+        r"""Retrieve storage quota of the dataverse identified by the given identifier"""
+        hook_ctx = HookContext(operation_id='getStorageQuota', oauth2_scopes=[], security_source=None)
+        request = operations.GetStorageQuotaRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierStorageQuotaRequest, base_url, '/api/v1/dataverses/{identifier}/storage/quota', request)
+        url = utils.generate_url(operations.GetStorageQuotaRequest, base_url, '/api/v1/dataverses/{identifier}/storage/quota', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1913,7 +1951,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierStorageQuotaResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetStorageQuotaResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1924,15 +1962,16 @@ class Dataverses:
 
     
     
-    def delete_api_v1_dataverses_identifier_storage_quota(self, identifier: str) -> operations.DeleteAPIV1DataversesIdentifierStorageQuotaResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/dataverses/{identifier}/storage/quota', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DataversesIdentifierStorageQuotaRequest(
+    def delete_storage_quota(self, identifier: str) -> operations.DeleteStorageQuotaResponse:
+        r"""Delete the storage quota configuration for the dataverse identified by the given identifier"""
+        hook_ctx = HookContext(operation_id='deleteStorageQuota', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteStorageQuotaRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DataversesIdentifierStorageQuotaRequest, base_url, '/api/v1/dataverses/{identifier}/storage/quota', request)
+        url = utils.generate_url(operations.DeleteStorageQuotaRequest, base_url, '/api/v1/dataverses/{identifier}/storage/quota', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1962,7 +2001,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DataversesIdentifierStorageQuotaResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteStorageQuotaResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1973,16 +2012,17 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_storage_quota_bytes_allocated_(self, bytes_allocated: int, identifier: str) -> operations.PostAPIV1DataversesIdentifierStorageQuotaBytesAllocatedResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/storage/quota/{bytesAllocated}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierStorageQuotaBytesAllocatedRequest(
+    def set_storage_quota(self, bytes_allocated: int, identifier: str) -> operations.SetStorageQuotaResponse:
+        r"""Sets the storage quota for a specific Dataverse"""
+        hook_ctx = HookContext(operation_id='setStorageQuota', oauth2_scopes=[], security_source=None)
+        request = operations.SetStorageQuotaRequest(
             bytes_allocated=bytes_allocated,
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierStorageQuotaBytesAllocatedRequest, base_url, '/api/v1/dataverses/{identifier}/storage/quota/{bytesAllocated}', request)
+        url = utils.generate_url(operations.SetStorageQuotaRequest, base_url, '/api/v1/dataverses/{identifier}/storage/quota/{bytesAllocated}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2012,7 +2052,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierStorageQuotaBytesAllocatedResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.SetStorageQuotaResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2023,15 +2063,16 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_storage_use(self, identifier: str) -> operations.GetAPIV1DataversesIdentifierStorageUseResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}/storage/use', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierStorageUseRequest(
+    def get_dataverse_storage_usage(self, identifier: str) -> operations.GetDataverseStorageUsageResponse:
+        r"""Retrieve storage usage of a specific dataverse"""
+        hook_ctx = HookContext(operation_id='getDataverseStorageUsage', oauth2_scopes=[], security_source=None)
+        request = operations.GetDataverseStorageUsageRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierStorageUseRequest, base_url, '/api/v1/dataverses/{identifier}/storage/use', request)
+        url = utils.generate_url(operations.GetDataverseStorageUsageRequest, base_url, '/api/v1/dataverses/{identifier}/storage/use', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2061,7 +2102,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierStorageUseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDataverseStorageUsageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2072,18 +2113,19 @@ class Dataverses:
 
     
     
-    def get_api_v1_dataverses_identifier_storagesize(self, identifier: str, include_cached: Optional[bool] = None) -> operations.GetAPIV1DataversesIdentifierStoragesizeResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/dataverses/{identifier}/storagesize', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DataversesIdentifierStoragesizeRequest(
+    def get_dataverse_storage_size(self, identifier: str, include_cached: Optional[bool] = None) -> operations.GetDataverseStorageSizeResponse:
+        r"""Retrieve the storage size of a specific Dataverse"""
+        hook_ctx = HookContext(operation_id='getDataverseStorageSize', oauth2_scopes=[], security_source=None)
+        request = operations.GetDataverseStorageSizeRequest(
             identifier=identifier,
             include_cached=include_cached,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DataversesIdentifierStoragesizeRequest, base_url, '/api/v1/dataverses/{identifier}/storagesize', request)
+        url = utils.generate_url(operations.GetDataverseStorageSizeRequest, base_url, '/api/v1/dataverses/{identifier}/storagesize', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DataversesIdentifierStoragesizeRequest, request)
+        query_params = utils.get_query_params(operations.GetDataverseStorageSizeRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -2112,7 +2154,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DataversesIdentifierStoragesizeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDataverseStorageSizeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2123,18 +2165,19 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_identifier_validate_dataset_json(self, identifier: str, request_body: Optional[str] = None) -> operations.PostAPIV1DataversesIdentifierValidateDatasetJSONResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{identifier}/validateDatasetJson', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIdentifierValidateDatasetJSONRequest(
+    def validate_dataset_json(self, identifier: str, request_body: Optional[str] = None) -> operations.ValidateDatasetJSONResponse:
+        r"""Validate the JSON of a dataset in a specific Dataverse"""
+        hook_ctx = HookContext(operation_id='validateDatasetJson', oauth2_scopes=[], security_source=None)
+        request = operations.ValidateDatasetJSONRequest(
             identifier=identifier,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIdentifierValidateDatasetJSONRequest, base_url, '/api/v1/dataverses/{identifier}/validateDatasetJson', request)
+        url = utils.generate_url(operations.ValidateDatasetJSONRequest, base_url, '/api/v1/dataverses/{identifier}/validateDatasetJson', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DataversesIdentifierValidateDatasetJSONRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.ValidateDatasetJSONRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -2165,7 +2208,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIdentifierValidateDatasetJSONResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ValidateDatasetJSONResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2176,9 +2219,10 @@ class Dataverses:
 
     
     
-    def post_api_v1_dataverses_id_move_target_dataverse_alias_(self, id: str, target_dataverse_alias: str, force_move: Optional[bool] = None) -> operations.PostAPIV1DataversesIDMoveTargetDataverseAliasResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/dataverses/{id}/move/{targetDataverseAlias}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DataversesIDMoveTargetDataverseAliasRequest(
+    def move_dataverse(self, id: str, target_dataverse_alias: str, force_move: Optional[bool] = None) -> operations.MoveDataverseResponse:
+        r"""Moves a Dataverse to a target Dataverse"""
+        hook_ctx = HookContext(operation_id='moveDataverse', oauth2_scopes=[], security_source=None)
+        request = operations.MoveDataverseRequest(
             id=id,
             target_dataverse_alias=target_dataverse_alias,
             force_move=force_move,
@@ -2186,9 +2230,9 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DataversesIDMoveTargetDataverseAliasRequest, base_url, '/api/v1/dataverses/{id}/move/{targetDataverseAlias}', request)
+        url = utils.generate_url(operations.MoveDataverseRequest, base_url, '/api/v1/dataverses/{id}/move/{targetDataverseAlias}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1DataversesIDMoveTargetDataverseAliasRequest, request)
+        query_params = utils.get_query_params(operations.MoveDataverseRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -2217,7 +2261,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DataversesIDMoveTargetDataverseAliasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.MoveDataverseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2228,16 +2272,17 @@ class Dataverses:
 
     
     
-    def put_api_v1_dataverses_linked_dataverse_alias_link_linking_dataverse_alias_(self, linked_dataverse_alias: str, linking_dataverse_alias: str) -> operations.PutAPIV1DataversesLinkedDataverseAliasLinkLinkingDataverseAliasResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/dataverses/{linkedDataverseAlias}/link/{linkingDataverseAlias}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DataversesLinkedDataverseAliasLinkLinkingDataverseAliasRequest(
+    def link_dataverses(self, linked_dataverse_alias: str, linking_dataverse_alias: str) -> operations.LinkDataversesResponse:
+        r"""Links one Dataverse to another"""
+        hook_ctx = HookContext(operation_id='linkDataverses', oauth2_scopes=[], security_source=None)
+        request = operations.LinkDataversesRequest(
             linked_dataverse_alias=linked_dataverse_alias,
             linking_dataverse_alias=linking_dataverse_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DataversesLinkedDataverseAliasLinkLinkingDataverseAliasRequest, base_url, '/api/v1/dataverses/{linkedDataverseAlias}/link/{linkingDataverseAlias}', request)
+        url = utils.generate_url(operations.LinkDataversesRequest, base_url, '/api/v1/dataverses/{linkedDataverseAlias}/link/{linkingDataverseAlias}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2267,7 +2312,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DataversesLinkedDataverseAliasLinkLinkingDataverseAliasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.LinkDataversesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2278,16 +2323,17 @@ class Dataverses:
 
     
     
-    def delete_api_v1_dataverses_linking_dataverse_id_delete_link_linked_dataverse_id_(self, linked_dataverse_id: str, linking_dataverse_id: str) -> operations.DeleteAPIV1DataversesLinkingDataverseIDDeleteLinkLinkedDataverseIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/dataverses/{linkingDataverseId}/deleteLink/{linkedDataverseId}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DataversesLinkingDataverseIDDeleteLinkLinkedDataverseIDRequest(
+    def delete_dataverse_link(self, linked_dataverse_id: str, linking_dataverse_id: str) -> operations.DeleteDataverseLinkResponse:
+        r"""Delete a link between two dataverses"""
+        hook_ctx = HookContext(operation_id='deleteDataverseLink', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteDataverseLinkRequest(
             linked_dataverse_id=linked_dataverse_id,
             linking_dataverse_id=linking_dataverse_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DataversesLinkingDataverseIDDeleteLinkLinkedDataverseIDRequest, base_url, '/api/v1/dataverses/{linkingDataverseId}/deleteLink/{linkedDataverseId}', request)
+        url = utils.generate_url(operations.DeleteDataverseLinkRequest, base_url, '/api/v1/dataverses/{linkingDataverseId}/deleteLink/{linkedDataverseId}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2317,7 +2363,7 @@ class Dataverses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DataversesLinkingDataverseIDDeleteLinkLinkedDataverseIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteDataverseLinkResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

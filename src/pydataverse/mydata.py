@@ -14,13 +14,14 @@ class Mydata:
         
     
     
-    def get_api_v1_mydata_retrieve(self, request: operations.GetAPIV1MydataRetrieveRequest) -> operations.GetAPIV1MydataRetrieveResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/mydata/retrieve', oauth2_scopes=[], security_source=None)
+    def my_data_retrieve(self, request: operations.MyDataRetrieveRequest) -> operations.MyDataRetrieveResponse:
+        r"""Retrieve specific set of my data based on the provided filters"""
+        hook_ctx = HookContext(operation_id='myDataRetrieve', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/mydata/retrieve'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1MydataRetrieveRequest, request)
+        query_params = utils.get_query_params(operations.MyDataRetrieveRequest, request)
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -49,7 +50,7 @@ class Mydata:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1MydataRetrieveResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.MyDataRetrieveResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):

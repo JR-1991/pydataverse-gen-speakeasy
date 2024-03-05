@@ -15,9 +15,10 @@ class Admin:
         
     
     
-    def post_api_v1_admin_archive_all_unarchived_dataset_versions(self, latestonly: Optional[bool] = None, limit: Optional[int] = None, listonly: Optional[bool] = None) -> operations.PostAPIV1AdminArchiveAllUnarchivedDatasetVersionsResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/archiveAllUnarchivedDatasetVersions', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AdminArchiveAllUnarchivedDatasetVersionsRequest(
+    def archive_all_unarchived_versions(self, latestonly: Optional[bool] = None, limit: Optional[int] = None, listonly: Optional[bool] = None) -> operations.ArchiveAllUnarchivedVersionsResponse:
+        r"""Archives all unarchived dataset versions. Allows options to limit the number of versions archived, archive only the latest versions, or simply list the versions that would be archived without actually doing it."""
+        hook_ctx = HookContext(operation_id='archiveAllUnarchivedVersions', oauth2_scopes=[], security_source=None)
+        request = operations.ArchiveAllUnarchivedVersionsRequest(
             latestonly=latestonly,
             limit=limit,
             listonly=listonly,
@@ -27,7 +28,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/archiveAllUnarchivedDatasetVersions'
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1AdminArchiveAllUnarchivedDatasetVersionsRequest, request)
+        query_params = utils.get_query_params(operations.ArchiveAllUnarchivedVersionsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -56,7 +57,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminArchiveAllUnarchivedDatasetVersionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ArchiveAllUnarchivedVersionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -67,15 +68,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_assignee_idtf_(self, idtf: str) -> operations.GetAPIV1AdminAssigneeIdtfResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/assignee/{idtf}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminAssigneeIdtfRequest(
+    def get_admin_assignee(self, idtf: str) -> operations.GetAdminAssigneeResponse:
+        r"""Retrieve a specific assignee detail by ID."""
+        hook_ctx = HookContext(operation_id='getAdminAssignee', oauth2_scopes=[], security_source=None)
+        request = operations.GetAdminAssigneeRequest(
             idtf=idtf,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminAssigneeIdtfRequest, base_url, '/api/v1/admin/assignee/{idtf}', request)
+        url = utils.generate_url(operations.GetAdminAssigneeRequest, base_url, '/api/v1/admin/assignee/{idtf}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -105,7 +107,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminAssigneeIdtfResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminAssigneeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -116,15 +118,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_assignments_assignees_ra_idtf_(self, ra_idtf: str) -> operations.GetAPIV1AdminAssignmentsAssigneesRaIdtfResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/assignments/assignees/{raIdtf}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminAssignmentsAssigneesRaIdtfRequest(
+    def get_assignees_detail(self, ra_idtf: str) -> operations.GetAssigneesDetailResponse:
+        r"""Retrieve details of a specific assignee by raIdtf"""
+        hook_ctx = HookContext(operation_id='getAssigneesDetail', oauth2_scopes=[], security_source=None)
+        request = operations.GetAssigneesDetailRequest(
             ra_idtf=ra_idtf,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminAssignmentsAssigneesRaIdtfRequest, base_url, '/api/v1/admin/assignments/assignees/{raIdtf}', request)
+        url = utils.generate_url(operations.GetAssigneesDetailRequest, base_url, '/api/v1/admin/assignments/assignees/{raIdtf}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -154,7 +157,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminAssignmentsAssigneesRaIdtfResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAssigneesDetailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -165,9 +168,12 @@ class Admin:
 
     
     
-    def get_api_v1_admin_authenticated_users(self) -> operations.GetAPIV1AdminAuthenticatedUsersResponse:
-        r"""Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible."""
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/authenticatedUsers', oauth2_scopes=[], security_source=None)
+    def get_authenticated_users(self) -> operations.GetAuthenticatedUsersResponse:
+        r"""Retrieves a list of authenticated users. This endpoint is deprecated.
+
+        Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
+        """
+        hook_ctx = HookContext(operation_id='getAuthenticatedUsers', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/authenticatedUsers'
@@ -200,7 +206,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminAuthenticatedUsersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAuthenticatedUsersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -211,8 +217,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_authenticated_users(self) -> operations.PostAPIV1AdminAuthenticatedUsersResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/authenticatedUsers', oauth2_scopes=[], security_source=None)
+    def create_authenticated_user(self) -> operations.CreateAuthenticatedUserResponse:
+        r"""Creates a new authenticated user."""
+        hook_ctx = HookContext(operation_id='createAuthenticatedUser', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/authenticatedUsers'
@@ -245,7 +252,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminAuthenticatedUsersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateAuthenticatedUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -256,8 +263,9 @@ class Admin:
 
     
     
-    def put_api_v1_admin_authenticated_users_convert_builtin2oauth(self) -> operations.PutAPIV1AdminAuthenticatedUsersConvertBuiltin2oauthResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/authenticatedUsers/convert/builtin2oauth', oauth2_scopes=[], security_source=None)
+    def convert_user_to_o_auth(self) -> operations.ConvertUserToOAuthResponse:
+        r"""Convert an authenticated user from built-in to OAuth"""
+        hook_ctx = HookContext(operation_id='convertUserToOAuth', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/authenticatedUsers/convert/builtin2oauth'
@@ -290,7 +298,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminAuthenticatedUsersConvertBuiltin2oauthResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ConvertUserToOAuthResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -301,8 +309,9 @@ class Admin:
 
     
     
-    def put_api_v1_admin_authenticated_users_convert_builtin2shib(self) -> operations.PutAPIV1AdminAuthenticatedUsersConvertBuiltin2shibResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/authenticatedUsers/convert/builtin2shib', oauth2_scopes=[], security_source=None)
+    def convert_auth_users(self) -> operations.ConvertAuthUsersResponse:
+        r"""Convert Authenticated Users from Built-in system to Shibboleth"""
+        hook_ctx = HookContext(operation_id='convertAuthUsers', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/authenticatedUsers/convert/builtin2shib'
@@ -335,7 +344,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminAuthenticatedUsersConvertBuiltin2shibResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ConvertAuthUsersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -346,15 +355,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_authenticated_users_id_id_(self, id: int) -> operations.DeleteAPIV1AdminAuthenticatedUsersIDIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/authenticatedUsers/id/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminAuthenticatedUsersIDIDRequest(
+    def delete_authenticated_user(self, id: int) -> operations.DeleteAuthenticatedUserResponse:
+        r"""Delete an authenticated user by ID"""
+        hook_ctx = HookContext(operation_id='deleteAuthenticatedUser', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteAuthenticatedUserRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminAuthenticatedUsersIDIDRequest, base_url, '/api/v1/admin/authenticatedUsers/id/{id}', request)
+        url = utils.generate_url(operations.DeleteAuthenticatedUserRequest, base_url, '/api/v1/admin/authenticatedUsers/id/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -384,7 +394,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminAuthenticatedUsersIDIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteAuthenticatedUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -395,15 +405,16 @@ class Admin:
 
     
     
-    def put_api_v1_admin_authenticated_users_id_id_convert_remote_to_built_in(self, id: int) -> operations.PutAPIV1AdminAuthenticatedUsersIDIDConvertRemoteToBuiltInResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/authenticatedUsers/id/{id}/convertRemoteToBuiltIn', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AdminAuthenticatedUsersIDIDConvertRemoteToBuiltInRequest(
+    def convert_remote_to_built_in(self, id: int) -> operations.ConvertRemoteToBuiltInResponse:
+        r"""Converts a remote user to a built-in user by their ID"""
+        hook_ctx = HookContext(operation_id='convertRemoteToBuiltIn', oauth2_scopes=[], security_source=None)
+        request = operations.ConvertRemoteToBuiltInRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AdminAuthenticatedUsersIDIDConvertRemoteToBuiltInRequest, base_url, '/api/v1/admin/authenticatedUsers/id/{id}/convertRemoteToBuiltIn', request)
+        url = utils.generate_url(operations.ConvertRemoteToBuiltInRequest, base_url, '/api/v1/admin/authenticatedUsers/id/{id}/convertRemoteToBuiltIn', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -433,7 +444,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminAuthenticatedUsersIDIDConvertRemoteToBuiltInResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ConvertRemoteToBuiltInResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -444,16 +455,19 @@ class Admin:
 
     
     
-    def put_api_v1_admin_authenticated_users_id_id_convert_shib_to_built_in(self, id: int) -> operations.PutAPIV1AdminAuthenticatedUsersIDIDConvertShibToBuiltInResponse:
-        r"""Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible."""
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/authenticatedUsers/id/{id}/convertShibToBuiltIn', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AdminAuthenticatedUsersIDIDConvertShibToBuiltInRequest(
+    def convert_user_authentication_method(self, id: int) -> operations.ConvertUserAuthenticationMethodResponse:
+        r"""Converts the authentication method of an authenticated user from Shibboleth to Built-In.
+
+        Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
+        """
+        hook_ctx = HookContext(operation_id='convertUserAuthenticationMethod', oauth2_scopes=[], security_source=None)
+        request = operations.ConvertUserAuthenticationMethodRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AdminAuthenticatedUsersIDIDConvertShibToBuiltInRequest, base_url, '/api/v1/admin/authenticatedUsers/id/{id}/convertShibToBuiltIn', request)
+        url = utils.generate_url(operations.ConvertUserAuthenticationMethodRequest, base_url, '/api/v1/admin/authenticatedUsers/id/{id}/convertShibToBuiltIn', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -483,7 +497,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminAuthenticatedUsersIDIDConvertShibToBuiltInResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ConvertUserAuthenticationMethodResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -494,15 +508,16 @@ class Admin:
 
     
     
-    def post_api_v1_admin_authenticated_users_id_id_deactivate(self, id: int) -> operations.PostAPIV1AdminAuthenticatedUsersIDIDDeactivateResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/authenticatedUsers/id/{id}/deactivate', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AdminAuthenticatedUsersIDIDDeactivateRequest(
+    def deactivate_user(self, id: int) -> operations.DeactivateUserResponse:
+        r"""Deactivates an authenticated user by ID"""
+        hook_ctx = HookContext(operation_id='deactivateUser', oauth2_scopes=[], security_source=None)
+        request = operations.DeactivateUserRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1AdminAuthenticatedUsersIDIDDeactivateRequest, base_url, '/api/v1/admin/authenticatedUsers/id/{id}/deactivate', request)
+        url = utils.generate_url(operations.DeactivateUserRequest, base_url, '/api/v1/admin/authenticatedUsers/id/{id}/deactivate', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -532,7 +547,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminAuthenticatedUsersIDIDDeactivateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeactivateUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -543,15 +558,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_authenticated_users_identifier_(self, identifier: str) -> operations.GetAPIV1AdminAuthenticatedUsersIdentifierResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/authenticatedUsers/{identifier}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminAuthenticatedUsersIdentifierRequest(
+    def get_authenticated_user(self, identifier: str) -> operations.GetAuthenticatedUserResponse:
+        r"""Retrieve details of a specified authenticated user"""
+        hook_ctx = HookContext(operation_id='getAuthenticatedUser', oauth2_scopes=[], security_source=None)
+        request = operations.GetAuthenticatedUserRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminAuthenticatedUsersIdentifierRequest, base_url, '/api/v1/admin/authenticatedUsers/{identifier}', request)
+        url = utils.generate_url(operations.GetAuthenticatedUserRequest, base_url, '/api/v1/admin/authenticatedUsers/{identifier}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -581,7 +597,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminAuthenticatedUsersIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAuthenticatedUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -592,15 +608,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_authenticated_users_identifier_(self, identifier: str) -> operations.DeleteAPIV1AdminAuthenticatedUsersIdentifierResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/authenticatedUsers/{identifier}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminAuthenticatedUsersIdentifierRequest(
+    def delete_authenticated_user_1(self, identifier: str) -> operations.DeleteAuthenticatedUser1Response:
+        r"""Delete a specified authenticated user"""
+        hook_ctx = HookContext(operation_id='deleteAuthenticatedUser_1', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteAuthenticatedUser1Request(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminAuthenticatedUsersIdentifierRequest, base_url, '/api/v1/admin/authenticatedUsers/{identifier}', request)
+        url = utils.generate_url(operations.DeleteAuthenticatedUser1Request, base_url, '/api/v1/admin/authenticatedUsers/{identifier}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -630,7 +647,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminAuthenticatedUsersIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteAuthenticatedUser1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -641,15 +658,16 @@ class Admin:
 
     
     
-    def post_api_v1_admin_authenticated_users_identifier_deactivate(self, identifier: str) -> operations.PostAPIV1AdminAuthenticatedUsersIdentifierDeactivateResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/authenticatedUsers/{identifier}/deactivate', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AdminAuthenticatedUsersIdentifierDeactivateRequest(
+    def deactivate_user_1(self, identifier: str) -> operations.DeactivateUser1Response:
+        r"""Deactivate an authenticated user by identifier"""
+        hook_ctx = HookContext(operation_id='deactivateUser_1', oauth2_scopes=[], security_source=None)
+        request = operations.DeactivateUser1Request(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1AdminAuthenticatedUsersIdentifierDeactivateRequest, base_url, '/api/v1/admin/authenticatedUsers/{identifier}/deactivate', request)
+        url = utils.generate_url(operations.DeactivateUser1Request, base_url, '/api/v1/admin/authenticatedUsers/{identifier}/deactivate', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -679,7 +697,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminAuthenticatedUsersIdentifierDeactivateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeactivateUser1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -690,8 +708,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_authentication_provider_factories(self) -> operations.GetAPIV1AdminAuthenticationProviderFactoriesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/authenticationProviderFactories', oauth2_scopes=[], security_source=None)
+    def get_auth_provider_factories(self) -> operations.GetAuthProviderFactoriesResponse:
+        r"""Retrieve all authentication provider factories"""
+        hook_ctx = HookContext(operation_id='getAuthProviderFactories', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/authenticationProviderFactories'
@@ -724,7 +743,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminAuthenticationProviderFactoriesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAuthProviderFactoriesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -735,8 +754,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_authentication_providers(self) -> operations.GetAPIV1AdminAuthenticationProvidersResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/authenticationProviders', oauth2_scopes=[], security_source=None)
+    def get_auth_providers(self) -> operations.GetAuthProvidersResponse:
+        r"""Retrieve list of authentication providers"""
+        hook_ctx = HookContext(operation_id='getAuthProviders', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/authenticationProviders'
@@ -769,7 +789,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminAuthenticationProvidersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAuthProvidersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -780,8 +800,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_authentication_providers(self) -> operations.PostAPIV1AdminAuthenticationProvidersResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/authenticationProviders', oauth2_scopes=[], security_source=None)
+    def add_auth_provider(self) -> operations.AddAuthProviderResponse:
+        r"""Add a new authentication provider"""
+        hook_ctx = HookContext(operation_id='addAuthProvider', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/authenticationProviders'
@@ -814,7 +835,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminAuthenticationProvidersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AddAuthProviderResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -825,15 +846,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_authentication_providers_id_(self, id: str) -> operations.GetAPIV1AdminAuthenticationProvidersIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/authenticationProviders/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminAuthenticationProvidersIDRequest(
+    def get_auth_providers_by_id(self, id: str) -> operations.GetAuthProvidersByIDResponse:
+        r"""Fetch specific authentication provider using ID"""
+        hook_ctx = HookContext(operation_id='getAuthProvidersById', oauth2_scopes=[], security_source=None)
+        request = operations.GetAuthProvidersByIDRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminAuthenticationProvidersIDRequest, base_url, '/api/v1/admin/authenticationProviders/{id}', request)
+        url = utils.generate_url(operations.GetAuthProvidersByIDRequest, base_url, '/api/v1/admin/authenticationProviders/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -863,7 +885,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminAuthenticationProvidersIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAuthProvidersByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -874,15 +896,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_authentication_providers_id_(self, id: str) -> operations.DeleteAPIV1AdminAuthenticationProvidersIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/authenticationProviders/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminAuthenticationProvidersIDRequest(
+    def remove_auth_providers_by_id(self, id: str) -> operations.RemoveAuthProvidersByIDResponse:
+        r"""Delete specific authentication provider using ID"""
+        hook_ctx = HookContext(operation_id='removeAuthProvidersById', oauth2_scopes=[], security_source=None)
+        request = operations.RemoveAuthProvidersByIDRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminAuthenticationProvidersIDRequest, base_url, '/api/v1/admin/authenticationProviders/{id}', request)
+        url = utils.generate_url(operations.RemoveAuthProvidersByIDRequest, base_url, '/api/v1/admin/authenticationProviders/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -912,7 +935,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminAuthenticationProvidersIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.RemoveAuthProvidersByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -923,15 +946,16 @@ class Admin:
 
     
     
-    def post_api_v1_admin_authentication_providers_id_enabled(self, id: str) -> operations.PostAPIV1AdminAuthenticationProvidersIDEnabledResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/authenticationProviders/{id}/:enabled', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AdminAuthenticationProvidersIDEnabledRequest(
+    def enable_auth_provider(self, id: str) -> operations.EnableAuthProviderResponse:
+        r"""Enable a specific authentication provider by its ID"""
+        hook_ctx = HookContext(operation_id='enableAuthProvider', oauth2_scopes=[], security_source=None)
+        request = operations.EnableAuthProviderRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1AdminAuthenticationProvidersIDEnabledRequest, base_url, '/api/v1/admin/authenticationProviders/{id}/:enabled', request)
+        url = utils.generate_url(operations.EnableAuthProviderRequest, base_url, '/api/v1/admin/authenticationProviders/{id}/:enabled', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -961,7 +985,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminAuthenticationProvidersIDEnabledResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.EnableAuthProviderResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -972,15 +996,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_authentication_providers_id_enabled(self, id: str) -> operations.GetAPIV1AdminAuthenticationProvidersIDEnabledResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/authenticationProviders/{id}/enabled', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminAuthenticationProvidersIDEnabledRequest(
+    def get_auth_provider_status(self, id: str) -> operations.GetAuthProviderStatusResponse:
+        r"""Retrieves the status of a specific authentication provider"""
+        hook_ctx = HookContext(operation_id='getAuthProviderStatus', oauth2_scopes=[], security_source=None)
+        request = operations.GetAuthProviderStatusRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminAuthenticationProvidersIDEnabledRequest, base_url, '/api/v1/admin/authenticationProviders/{id}/enabled', request)
+        url = utils.generate_url(operations.GetAuthProviderStatusRequest, base_url, '/api/v1/admin/authenticationProviders/{id}/enabled', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1010,7 +1035,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminAuthenticationProvidersIDEnabledResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAuthProviderStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1021,15 +1046,16 @@ class Admin:
 
     
     
-    def put_api_v1_admin_authentication_providers_id_enabled(self, id: str) -> operations.PutAPIV1AdminAuthenticationProvidersIDEnabledResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/authenticationProviders/{id}/enabled', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AdminAuthenticationProvidersIDEnabledRequest(
+    def update_auth_provider_status(self, id: str) -> operations.UpdateAuthProviderStatusResponse:
+        r"""Updates the status of a specific authentication provider"""
+        hook_ctx = HookContext(operation_id='updateAuthProviderStatus', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateAuthProviderStatusRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AdminAuthenticationProvidersIDEnabledRequest, base_url, '/api/v1/admin/authenticationProviders/{id}/enabled', request)
+        url = utils.generate_url(operations.UpdateAuthProviderStatusRequest, base_url, '/api/v1/admin/authenticationProviders/{id}/enabled', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1059,7 +1085,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminAuthenticationProvidersIDEnabledResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateAuthProviderStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1070,8 +1096,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_banner_message(self) -> operations.GetAPIV1AdminBannerMessageResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/bannerMessage', oauth2_scopes=[], security_source=None)
+    def get_banner_message(self) -> operations.GetBannerMessageResponse:
+        r"""Retrieve a current banner message"""
+        hook_ctx = HookContext(operation_id='getBannerMessage', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/bannerMessage'
@@ -1104,7 +1131,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminBannerMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetBannerMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1115,8 +1142,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_banner_message(self) -> operations.PostAPIV1AdminBannerMessageResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/bannerMessage', oauth2_scopes=[], security_source=None)
+    def post_banner_message(self) -> operations.PostBannerMessageResponse:
+        r"""Add a new banner message"""
+        hook_ctx = HookContext(operation_id='postBannerMessage', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/bannerMessage'
@@ -1149,7 +1177,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminBannerMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostBannerMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1160,15 +1188,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_banner_message_id_(self, id: int) -> operations.DeleteAPIV1AdminBannerMessageIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/bannerMessage/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminBannerMessageIDRequest(
+    def delete_banner_message(self, id: int) -> operations.DeleteBannerMessageResponse:
+        r"""Delete a specific banner message by ID"""
+        hook_ctx = HookContext(operation_id='deleteBannerMessage', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteBannerMessageRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminBannerMessageIDRequest, base_url, '/api/v1/admin/bannerMessage/{id}', request)
+        url = utils.generate_url(operations.DeleteBannerMessageRequest, base_url, '/api/v1/admin/bannerMessage/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1198,7 +1227,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminBannerMessageIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteBannerMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1209,15 +1238,16 @@ class Admin:
 
     
     
-    def put_api_v1_admin_banner_message_id_deactivate(self, id: int) -> operations.PutAPIV1AdminBannerMessageIDDeactivateResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/bannerMessage/{id}/deactivate', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AdminBannerMessageIDDeactivateRequest(
+    def deactivate_banner_message(self, id: int) -> operations.DeactivateBannerMessageResponse:
+        r"""Deactivates a specific banner message"""
+        hook_ctx = HookContext(operation_id='deactivateBannerMessage', oauth2_scopes=[], security_source=None)
+        request = operations.DeactivateBannerMessageRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AdminBannerMessageIDDeactivateRequest, base_url, '/api/v1/admin/bannerMessage/{id}/deactivate', request)
+        url = utils.generate_url(operations.DeactivateBannerMessageRequest, base_url, '/api/v1/admin/bannerMessage/{id}/deactivate', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1247,7 +1277,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminBannerMessageIDDeactivateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeactivateBannerMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1258,8 +1288,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_batch_jobs(self) -> operations.GetAPIV1AdminBatchJobsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/batch/jobs', oauth2_scopes=[], security_source=None)
+    def get_batch_jobs(self) -> operations.GetBatchJobsResponse:
+        r"""Retrieve all batch jobs"""
+        hook_ctx = HookContext(operation_id='getBatchJobs', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/batch/jobs'
@@ -1292,7 +1323,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminBatchJobsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetBatchJobsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1303,15 +1334,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_batch_jobs_name_job_name_(self, job_name: str) -> operations.GetAPIV1AdminBatchJobsNameJobNameResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/batch/jobs/name/{jobName}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminBatchJobsNameJobNameRequest(
+    def get_job_by_name(self, job_name: str) -> operations.GetJobByNameResponse:
+        r"""Retrieve details for a job given its name"""
+        hook_ctx = HookContext(operation_id='getJobByName', oauth2_scopes=[], security_source=None)
+        request = operations.GetJobByNameRequest(
             job_name=job_name,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminBatchJobsNameJobNameRequest, base_url, '/api/v1/admin/batch/jobs/name/{jobName}', request)
+        url = utils.generate_url(operations.GetJobByNameRequest, base_url, '/api/v1/admin/batch/jobs/name/{jobName}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1341,7 +1373,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminBatchJobsNameJobNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetJobByNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1352,15 +1384,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_batch_jobs_job_id_(self, job_id: str) -> operations.GetAPIV1AdminBatchJobsJobIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/batch/jobs/{jobId}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminBatchJobsJobIDRequest(
+    def get_admin_job_by_id(self, job_id: str) -> operations.GetAdminJobByIDResponse:
+        r"""Retrieve details of a specific admin batch job"""
+        hook_ctx = HookContext(operation_id='getAdminJobById', oauth2_scopes=[], security_source=None)
+        request = operations.GetAdminJobByIDRequest(
             job_id=job_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminBatchJobsJobIDRequest, base_url, '/api/v1/admin/batch/jobs/{jobId}', request)
+        url = utils.generate_url(operations.GetAdminJobByIDRequest, base_url, '/api/v1/admin/batch/jobs/{jobId}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1390,7 +1423,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminBatchJobsJobIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminJobByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1401,8 +1434,9 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_clear_metrics_cache(self) -> operations.DeleteAPIV1AdminClearMetricsCacheResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/clearMetricsCache', oauth2_scopes=[], security_source=None)
+    def delete_metrics_cache(self) -> operations.DeleteMetricsCacheResponse:
+        r"""Deletes the metrics cache for admin"""
+        hook_ctx = HookContext(operation_id='deleteMetricsCache', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/clearMetricsCache'
@@ -1435,7 +1469,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminClearMetricsCacheResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteMetricsCacheResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1446,15 +1480,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_clear_metrics_cache_name_(self, name: str) -> operations.DeleteAPIV1AdminClearMetricsCacheNameResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/clearMetricsCache/{name}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminClearMetricsCacheNameRequest(
+    def delete_metrics_cache_1(self, name: str) -> operations.DeleteMetricsCache1Response:
+        r"""Deletes a specific metric cache."""
+        hook_ctx = HookContext(operation_id='deleteMetricsCache_1', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteMetricsCache1Request(
             name=name,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminClearMetricsCacheNameRequest, base_url, '/api/v1/admin/clearMetricsCache/{name}', request)
+        url = utils.generate_url(operations.DeleteMetricsCache1Request, base_url, '/api/v1/admin/clearMetricsCache/{name}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1484,7 +1519,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminClearMetricsCacheNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteMetricsCache1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1495,8 +1530,9 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_clear_thumbnail_failure_flag(self) -> operations.DeleteAPIV1AdminClearThumbnailFailureFlagResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/clearThumbnailFailureFlag', oauth2_scopes=[], security_source=None)
+    def delete_thumbnail_failure_flag(self) -> operations.DeleteThumbnailFailureFlagResponse:
+        r"""Deletes a thumbnail failure flag"""
+        hook_ctx = HookContext(operation_id='deleteThumbnailFailureFlag', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/clearThumbnailFailureFlag'
@@ -1529,7 +1565,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminClearThumbnailFailureFlagResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteThumbnailFailureFlagResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1540,15 +1576,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_clear_thumbnail_failure_flag_id_(self, id: str) -> operations.DeleteAPIV1AdminClearThumbnailFailureFlagIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/clearThumbnailFailureFlag/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminClearThumbnailFailureFlagIDRequest(
+    def admin_clear_thumbnail_failure_flag(self, id: str) -> operations.AdminClearThumbnailFailureFlagResponse:
+        r"""Delete the thumbnail failure flag for a specified Dataverse id"""
+        hook_ctx = HookContext(operation_id='adminClearThumbnailFailureFlag', oauth2_scopes=[], security_source=None)
+        request = operations.AdminClearThumbnailFailureFlagRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminClearThumbnailFailureFlagIDRequest, base_url, '/api/v1/admin/clearThumbnailFailureFlag/{id}', request)
+        url = utils.generate_url(operations.AdminClearThumbnailFailureFlagRequest, base_url, '/api/v1/admin/clearThumbnailFailureFlag/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1578,7 +1615,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminClearThumbnailFailureFlagIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AdminClearThumbnailFailureFlagResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1589,16 +1626,17 @@ class Admin:
 
     
     
-    def post_api_v1_admin_compute_data_file_hash_value_file_id_algorithm_alg_(self, alg: str, file_id: str) -> operations.PostAPIV1AdminComputeDataFileHashValueFileIDAlgorithmAlgResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/computeDataFileHashValue/{fileId}/algorithm/{alg}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AdminComputeDataFileHashValueFileIDAlgorithmAlgRequest(
+    def compute_file_hash_value(self, alg: str, file_id: str) -> operations.ComputeFileHashValueResponse:
+        r"""Computes the hash value of the specified file using the given algorithm"""
+        hook_ctx = HookContext(operation_id='computeFileHashValue', oauth2_scopes=[], security_source=None)
+        request = operations.ComputeFileHashValueRequest(
             alg=alg,
             file_id=file_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1AdminComputeDataFileHashValueFileIDAlgorithmAlgRequest, base_url, '/api/v1/admin/computeDataFileHashValue/{fileId}/algorithm/{alg}', request)
+        url = utils.generate_url(operations.ComputeFileHashValueRequest, base_url, '/api/v1/admin/computeDataFileHashValue/{fileId}/algorithm/{alg}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1628,7 +1666,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminComputeDataFileHashValueFileIDAlgorithmAlgResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ComputeFileHashValueResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1639,15 +1677,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_confirm_email_user_id_(self, user_id: int) -> operations.GetAPIV1AdminConfirmEmailUserIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/confirmEmail/{userId}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminConfirmEmailUserIDRequest(
+    def get_user_id_conf_email(self, user_id: int) -> operations.GetUserIDConfEmailResponse:
+        r"""Retrieve Confirmation Email Associated with User ID"""
+        hook_ctx = HookContext(operation_id='getUserIdConfEmail', oauth2_scopes=[], security_source=None)
+        request = operations.GetUserIDConfEmailRequest(
             user_id=user_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminConfirmEmailUserIDRequest, base_url, '/api/v1/admin/confirmEmail/{userId}', request)
+        url = utils.generate_url(operations.GetUserIDConfEmailRequest, base_url, '/api/v1/admin/confirmEmail/{userId}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1677,7 +1716,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminConfirmEmailUserIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetUserIDConfEmailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1688,15 +1727,16 @@ class Admin:
 
     
     
-    def post_api_v1_admin_confirm_email_user_id_(self, user_id: int) -> operations.PostAPIV1AdminConfirmEmailUserIDResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/confirmEmail/{userId}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AdminConfirmEmailUserIDRequest(
+    def post_user_id_conf_email(self, user_id: int) -> operations.PostUserIDConfEmailResponse:
+        r"""Send Confirmation Email to User ID"""
+        hook_ctx = HookContext(operation_id='postUserIdConfEmail', oauth2_scopes=[], security_source=None)
+        request = operations.PostUserIDConfEmailRequest(
             user_id=user_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1AdminConfirmEmailUserIDRequest, base_url, '/api/v1/admin/confirmEmail/{userId}', request)
+        url = utils.generate_url(operations.PostUserIDConfEmailRequest, base_url, '/api/v1/admin/confirmEmail/{userId}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1726,7 +1766,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminConfirmEmailUserIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostUserIDConfEmailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1737,8 +1777,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_convert_user_from_bcrypt_to_sha1(self) -> operations.PostAPIV1AdminConvertUserFromBcryptToSha1Response:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/convertUserFromBcryptToSha1', oauth2_scopes=[], security_source=None)
+    def admin_convert_user_encryption(self) -> operations.AdminConvertUserEncryptionResponse:
+        r"""Convert a user's encryption scheme from Bcrypt to Sha1"""
+        hook_ctx = HookContext(operation_id='admin_convertUserEncryption', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/convertUserFromBcryptToSha1'
@@ -1771,7 +1812,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminConvertUserFromBcryptToSha1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AdminConvertUserEncryptionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1782,9 +1823,10 @@ class Admin:
 
     
     
-    def get_api_v1_admin_datafiles_integrity_fixmissingoriginalsizes(self, limit: Optional[int] = None) -> operations.GetAPIV1AdminDatafilesIntegrityFixmissingoriginalsizesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/datafiles/integrity/fixmissingoriginalsizes', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminDatafilesIntegrityFixmissingoriginalsizesRequest(
+    def get_fix_missing_original_sizes(self, limit: Optional[int] = None) -> operations.GetFixMissingOriginalSizesResponse:
+        r"""Retrieve a limited number of records with missing original sizes and fix them"""
+        hook_ctx = HookContext(operation_id='getFixMissingOriginalSizes', oauth2_scopes=[], security_source=None)
+        request = operations.GetFixMissingOriginalSizesRequest(
             limit=limit,
         )
         
@@ -1792,7 +1834,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/datafiles/integrity/fixmissingoriginalsizes'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminDatafilesIntegrityFixmissingoriginalsizesRequest, request)
+        query_params = utils.get_query_params(operations.GetFixMissingOriginalSizesRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1821,7 +1863,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminDatafilesIntegrityFixmissingoriginalsizesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFixMissingOriginalSizesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1832,8 +1874,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_datafiles_integrity_fixmissingoriginaltypes(self) -> operations.GetAPIV1AdminDatafilesIntegrityFixmissingoriginaltypesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/datafiles/integrity/fixmissingoriginaltypes', oauth2_scopes=[], security_source=None)
+    def fix_missing_original_types(self) -> operations.FixMissingOriginalTypesResponse:
+        r"""Retrieve a report of datafiles with missing original types and apply fixes"""
+        hook_ctx = HookContext(operation_id='fixMissingOriginalTypes', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/datafiles/integrity/fixmissingoriginaltypes'
@@ -1866,7 +1909,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminDatafilesIntegrityFixmissingoriginaltypesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.FixMissingOriginalTypesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1877,8 +1920,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_datasetfield(self) -> operations.GetAPIV1AdminDatasetfieldResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/datasetfield', oauth2_scopes=[], security_source=None)
+    def get_admin_dataset_field(self) -> operations.GetAdminDatasetFieldResponse:
+        r"""Retrieve the dataset fields available to administrators"""
+        hook_ctx = HookContext(operation_id='getAdminDatasetField', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/datasetfield'
@@ -1911,7 +1955,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminDatasetfieldResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminDatasetFieldResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1922,8 +1966,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_datasetfield_controlled_vocabulary_subject(self) -> operations.GetAPIV1AdminDatasetfieldControlledVocabularySubjectResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/datasetfield/controlledVocabulary/subject', oauth2_scopes=[], security_source=None)
+    def get_controlled_vocabulary(self) -> operations.GetControlledVocabularyResponse:
+        r"""Retrieve a list of controlled vocabulary subjects"""
+        hook_ctx = HookContext(operation_id='getControlledVocabulary', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/datasetfield/controlledVocabulary/subject'
@@ -1956,7 +2001,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminDatasetfieldControlledVocabularySubjectResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetControlledVocabularyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1967,8 +2012,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_datasetfield_load(self, request: Optional[str]) -> operations.PostAPIV1AdminDatasetfieldLoadResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/datasetfield/load', oauth2_scopes=[], security_source=None)
+    def load_dataset_field_admin(self, request: Optional[str]) -> operations.LoadDatasetFieldAdminResponse:
+        r"""Load dataset field as an admin"""
+        hook_ctx = HookContext(operation_id='load_dataset_field_admin', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/datasetfield/load'
@@ -2004,7 +2050,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminDatasetfieldLoadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.LoadDatasetFieldAdminResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2015,8 +2061,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_datasetfield_load_na_controlled_vocabulary_value(self) -> operations.GetAPIV1AdminDatasetfieldLoadNAControlledVocabularyValueResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/datasetfield/loadNAControlledVocabularyValue', oauth2_scopes=[], security_source=None)
+    def get_na_controlled_vocab_value(self) -> operations.GetNAControlledVocabValueResponse:
+        r"""Retrieve North American controlled vocabulary value"""
+        hook_ctx = HookContext(operation_id='getNAControlledVocabValue', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/datasetfield/loadNAControlledVocabularyValue'
@@ -2049,7 +2096,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminDatasetfieldLoadNAControlledVocabularyValueResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetNAControlledVocabValueResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2060,8 +2107,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_datasetfield_loadpropertyfiles(self, request: Optional[str]) -> operations.PostAPIV1AdminDatasetfieldLoadpropertyfilesResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/datasetfield/loadpropertyfiles', oauth2_scopes=[], security_source=None)
+    def admin_load_property_files(self, request: Optional[str]) -> operations.AdminLoadPropertyFilesResponse:
+        r"""Load dataset field property files as a ZIP."""
+        hook_ctx = HookContext(operation_id='adminLoadPropertyFiles', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/datasetfield/loadpropertyfiles'
@@ -2097,7 +2145,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminDatasetfieldLoadpropertyfilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AdminLoadPropertyFilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2108,15 +2156,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_datasetfield_name_(self, name: str) -> operations.GetAPIV1AdminDatasetfieldNameResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/datasetfield/{name}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminDatasetfieldNameRequest(
+    def get_dataset_field_name(self, name: str) -> operations.GetDatasetFieldNameResponse:
+        r"""Retrieve information of the specified dataset field"""
+        hook_ctx = HookContext(operation_id='getDatasetFieldName', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetFieldNameRequest(
             name=name,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminDatasetfieldNameRequest, base_url, '/api/v1/admin/datasetfield/{name}', request)
+        url = utils.generate_url(operations.GetDatasetFieldNameRequest, base_url, '/api/v1/admin/datasetfield/{name}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2146,7 +2195,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminDatasetfieldNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetFieldNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2157,18 +2206,19 @@ class Admin:
 
     
     
-    def post_api_v1_admin_datasets_integrity_dataset_version_id_fixmissingunf(self, dataset_version_id: str, force_recalculate: Optional[bool] = None) -> operations.PostAPIV1AdminDatasetsIntegrityDatasetVersionIDFixmissingunfResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/datasets/integrity/{datasetVersionId}/fixmissingunf', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AdminDatasetsIntegrityDatasetVersionIDFixmissingunfRequest(
+    def post_fix_missing_unf(self, dataset_version_id: str, force_recalculate: Optional[bool] = None) -> operations.PostFixMissingUnfResponse:
+        r"""Update or recalculate dataset integrity by fixing missing UNF in specified dataset version"""
+        hook_ctx = HookContext(operation_id='postFixMissingUnf', oauth2_scopes=[], security_source=None)
+        request = operations.PostFixMissingUnfRequest(
             dataset_version_id=dataset_version_id,
             force_recalculate=force_recalculate,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1AdminDatasetsIntegrityDatasetVersionIDFixmissingunfRequest, base_url, '/api/v1/admin/datasets/integrity/{datasetVersionId}/fixmissingunf', request)
+        url = utils.generate_url(operations.PostFixMissingUnfRequest, base_url, '/api/v1/admin/datasets/integrity/{datasetVersionId}/fixmissingunf', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1AdminDatasetsIntegrityDatasetVersionIDFixmissingunfRequest, request)
+        query_params = utils.get_query_params(operations.PostFixMissingUnfRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -2197,7 +2247,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminDatasetsIntegrityDatasetVersionIDFixmissingunfResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostFixMissingUnfResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2208,15 +2258,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_datasets_thumbnail_metadata_id_(self, id: int) -> operations.GetAPIV1AdminDatasetsThumbnailMetadataIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/datasets/thumbnailMetadata/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminDatasetsThumbnailMetadataIDRequest(
+    def get_thumbnail_metadata_by_id(self, id: int) -> operations.GetThumbnailMetadataByIDResponse:
+        r"""Retrieves thumbnail metadata for a specific dataset using its ID"""
+        hook_ctx = HookContext(operation_id='getThumbnailMetadataById', oauth2_scopes=[], security_source=None)
+        request = operations.GetThumbnailMetadataByIDRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminDatasetsThumbnailMetadataIDRequest, base_url, '/api/v1/admin/datasets/thumbnailMetadata/{id}', request)
+        url = utils.generate_url(operations.GetThumbnailMetadataByIDRequest, base_url, '/api/v1/admin/datasets/thumbnailMetadata/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2246,7 +2297,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminDatasetsThumbnailMetadataIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetThumbnailMetadataByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2257,8 +2308,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_dataverse_curation_label_sets(self) -> operations.GetAPIV1AdminDataverseCurationLabelSetsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/dataverse/curationLabelSets', oauth2_scopes=[], security_source=None)
+    def get_curation_label_sets(self) -> operations.GetCurationLabelSetsResponse:
+        r"""Retrieve all curation label sets"""
+        hook_ctx = HookContext(operation_id='getCurationLabelSets', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/dataverse/curationLabelSets'
@@ -2291,7 +2343,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminDataverseCurationLabelSetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetCurationLabelSetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2302,8 +2354,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_dataverse_storage_drivers(self) -> operations.GetAPIV1AdminDataverseStorageDriversResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/dataverse/storageDrivers', oauth2_scopes=[], security_source=None)
+    def get_storage_drivers(self) -> operations.GetStorageDriversResponse:
+        r"""Retrieves all storage drivers"""
+        hook_ctx = HookContext(operation_id='getStorageDrivers', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/dataverse/storageDrivers'
@@ -2336,7 +2389,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminDataverseStorageDriversResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetStorageDriversResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2347,15 +2400,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_dataverse_alias_add_role_assignments_to_children(self, alias: str) -> operations.GetAPIV1AdminDataverseAliasAddRoleAssignmentsToChildrenResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/dataverse/{alias}/addRoleAssignmentsToChildren', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminDataverseAliasAddRoleAssignmentsToChildrenRequest(
+    def get_role_assignments(self, alias: str) -> operations.GetRoleAssignmentsResponse:
+        r"""Retrieve role assignments associated with a dataverse"""
+        hook_ctx = HookContext(operation_id='getRoleAssignments', oauth2_scopes=[], security_source=None)
+        request = operations.GetRoleAssignmentsRequest(
             alias=alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminDataverseAliasAddRoleAssignmentsToChildrenRequest, base_url, '/api/v1/admin/dataverse/{alias}/addRoleAssignmentsToChildren', request)
+        url = utils.generate_url(operations.GetRoleAssignmentsRequest, base_url, '/api/v1/admin/dataverse/{alias}/addRoleAssignmentsToChildren', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2385,7 +2439,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminDataverseAliasAddRoleAssignmentsToChildrenResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetRoleAssignmentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2396,15 +2450,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_dataverse_alias_curation_label_set(self, alias: str) -> operations.GetAPIV1AdminDataverseAliasCurationLabelSetResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/dataverse/{alias}/curationLabelSet', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminDataverseAliasCurationLabelSetRequest(
+    def get_curation_label_set(self, alias: str) -> operations.GetCurationLabelSetResponse:
+        r"""Retrieve the curation label set of the specified Dataverse"""
+        hook_ctx = HookContext(operation_id='getCurationLabelSet', oauth2_scopes=[], security_source=None)
+        request = operations.GetCurationLabelSetRequest(
             alias=alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminDataverseAliasCurationLabelSetRequest, base_url, '/api/v1/admin/dataverse/{alias}/curationLabelSet', request)
+        url = utils.generate_url(operations.GetCurationLabelSetRequest, base_url, '/api/v1/admin/dataverse/{alias}/curationLabelSet', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2434,7 +2489,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminDataverseAliasCurationLabelSetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetCurationLabelSetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2445,18 +2500,19 @@ class Admin:
 
     
     
-    def put_api_v1_admin_dataverse_alias_curation_label_set(self, alias: str, name: Optional[str] = None) -> operations.PutAPIV1AdminDataverseAliasCurationLabelSetResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/dataverse/{alias}/curationLabelSet', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AdminDataverseAliasCurationLabelSetRequest(
+    def update_curation_label_set(self, alias: str, name: Optional[str] = None) -> operations.UpdateCurationLabelSetResponse:
+        r"""Update or create a curation label set for the specified Dataverse"""
+        hook_ctx = HookContext(operation_id='updateCurationLabelSet', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateCurationLabelSetRequest(
             alias=alias,
             name=name,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AdminDataverseAliasCurationLabelSetRequest, base_url, '/api/v1/admin/dataverse/{alias}/curationLabelSet', request)
+        url = utils.generate_url(operations.UpdateCurationLabelSetRequest, base_url, '/api/v1/admin/dataverse/{alias}/curationLabelSet', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PutAPIV1AdminDataverseAliasCurationLabelSetRequest, request)
+        query_params = utils.get_query_params(operations.UpdateCurationLabelSetRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -2485,7 +2541,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminDataverseAliasCurationLabelSetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateCurationLabelSetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2496,15 +2552,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_dataverse_alias_curation_label_set(self, alias: str) -> operations.DeleteAPIV1AdminDataverseAliasCurationLabelSetResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/dataverse/{alias}/curationLabelSet', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminDataverseAliasCurationLabelSetRequest(
+    def delete_curation_label_set(self, alias: str) -> operations.DeleteCurationLabelSetResponse:
+        r"""Remove the curation label set from the specified Dataverse"""
+        hook_ctx = HookContext(operation_id='deleteCurationLabelSet', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteCurationLabelSetRequest(
             alias=alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminDataverseAliasCurationLabelSetRequest, base_url, '/api/v1/admin/dataverse/{alias}/curationLabelSet', request)
+        url = utils.generate_url(operations.DeleteCurationLabelSetRequest, base_url, '/api/v1/admin/dataverse/{alias}/curationLabelSet', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2534,7 +2591,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminDataverseAliasCurationLabelSetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteCurationLabelSetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2545,15 +2602,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_dataverse_alias_storage_driver(self, alias: str) -> operations.GetAPIV1AdminDataverseAliasStorageDriverResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/dataverse/{alias}/storageDriver', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminDataverseAliasStorageDriverRequest(
+    def get_storage_driver(self, alias: str) -> operations.GetStorageDriverResponse:
+        r"""Retrieve the storage driver of a specific dataverse"""
+        hook_ctx = HookContext(operation_id='getStorageDriver', oauth2_scopes=[], security_source=None)
+        request = operations.GetStorageDriverRequest(
             alias=alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminDataverseAliasStorageDriverRequest, base_url, '/api/v1/admin/dataverse/{alias}/storageDriver', request)
+        url = utils.generate_url(operations.GetStorageDriverRequest, base_url, '/api/v1/admin/dataverse/{alias}/storageDriver', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2583,7 +2641,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminDataverseAliasStorageDriverResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetStorageDriverResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2594,15 +2652,16 @@ class Admin:
 
     
     
-    def put_api_v1_admin_dataverse_alias_storage_driver(self, alias: str) -> operations.PutAPIV1AdminDataverseAliasStorageDriverResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/dataverse/{alias}/storageDriver', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AdminDataverseAliasStorageDriverRequest(
+    def update_storage_driver(self, alias: str) -> operations.UpdateStorageDriverResponse:
+        r"""Update the storage driver of a specific dataverse"""
+        hook_ctx = HookContext(operation_id='updateStorageDriver', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateStorageDriverRequest(
             alias=alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AdminDataverseAliasStorageDriverRequest, base_url, '/api/v1/admin/dataverse/{alias}/storageDriver', request)
+        url = utils.generate_url(operations.UpdateStorageDriverRequest, base_url, '/api/v1/admin/dataverse/{alias}/storageDriver', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2632,7 +2691,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminDataverseAliasStorageDriverResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateStorageDriverResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2643,15 +2702,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_dataverse_alias_storage_driver(self, alias: str) -> operations.DeleteAPIV1AdminDataverseAliasStorageDriverResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/dataverse/{alias}/storageDriver', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminDataverseAliasStorageDriverRequest(
+    def delete_storage_driver(self, alias: str) -> operations.DeleteStorageDriverResponse:
+        r"""Remove the storage driver of a specific dataverse"""
+        hook_ctx = HookContext(operation_id='deleteStorageDriver', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteStorageDriverRequest(
             alias=alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminDataverseAliasStorageDriverRequest, base_url, '/api/v1/admin/dataverse/{alias}/storageDriver', request)
+        url = utils.generate_url(operations.DeleteStorageDriverRequest, base_url, '/api/v1/admin/dataverse/{alias}/storageDriver', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2681,7 +2741,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminDataverseAliasStorageDriverResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteStorageDriverResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2692,9 +2752,10 @@ class Admin:
 
     
     
-    def get_api_v1_admin_download_tmp_file(self, fully_qualified_path_to_file: Optional[str] = None) -> operations.GetAPIV1AdminDownloadTmpFileResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/downloadTmpFile', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminDownloadTmpFileRequest(
+    def get_tmp_file(self, fully_qualified_path_to_file: Optional[str] = None) -> operations.GetTmpFileResponse:
+        r"""Retrieve a temporary file via its fully qualified path"""
+        hook_ctx = HookContext(operation_id='getTmpFile', oauth2_scopes=[], security_source=None)
+        request = operations.GetTmpFileRequest(
             fully_qualified_path_to_file=fully_qualified_path_to_file,
         )
         
@@ -2702,7 +2763,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/downloadTmpFile'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminDownloadTmpFileRequest, request)
+        query_params = utils.get_query_params(operations.GetTmpFileRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -2731,7 +2792,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminDownloadTmpFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetTmpFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2742,8 +2803,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_external_tools(self) -> operations.GetAPIV1AdminExternalToolsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/externalTools', oauth2_scopes=[], security_source=None)
+    def get_external_tools(self) -> operations.GetExternalToolsResponse:
+        r"""Retrieve a list of all external tools"""
+        hook_ctx = HookContext(operation_id='getExternalTools', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/externalTools'
@@ -2776,7 +2838,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminExternalToolsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetExternalToolsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2787,8 +2849,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_external_tools(self) -> operations.PostAPIV1AdminExternalToolsResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/externalTools', oauth2_scopes=[], security_source=None)
+    def create_external_tool(self) -> operations.CreateExternalToolResponse:
+        r"""Create a new external tool"""
+        hook_ctx = HookContext(operation_id='createExternalTool', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/externalTools'
@@ -2821,7 +2884,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminExternalToolsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateExternalToolResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2832,15 +2895,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_external_tools_id_(self, id: int) -> operations.GetAPIV1AdminExternalToolsIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/externalTools/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminExternalToolsIDRequest(
+    def get_external_tool(self, id: int) -> operations.GetExternalToolResponse:
+        r"""Retrieve an external tool by its ID"""
+        hook_ctx = HookContext(operation_id='getExternalTool', oauth2_scopes=[], security_source=None)
+        request = operations.GetExternalToolRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminExternalToolsIDRequest, base_url, '/api/v1/admin/externalTools/{id}', request)
+        url = utils.generate_url(operations.GetExternalToolRequest, base_url, '/api/v1/admin/externalTools/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2870,7 +2934,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminExternalToolsIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetExternalToolResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2881,15 +2945,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_external_tools_id_(self, id: int) -> operations.DeleteAPIV1AdminExternalToolsIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/externalTools/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminExternalToolsIDRequest(
+    def delete_external_tool(self, id: int) -> operations.DeleteExternalToolResponse:
+        r"""Delete an external tool by its ID"""
+        hook_ctx = HookContext(operation_id='deleteExternalTool', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteExternalToolRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminExternalToolsIDRequest, base_url, '/api/v1/admin/externalTools/{id}', request)
+        url = utils.generate_url(operations.DeleteExternalToolRequest, base_url, '/api/v1/admin/externalTools/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2919,7 +2984,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminExternalToolsIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteExternalToolResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2930,8 +2995,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_feedback(self) -> operations.PostAPIV1AdminFeedbackResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/feedback', oauth2_scopes=[], security_source=None)
+    def post_admin_feedback(self) -> operations.PostAdminFeedbackResponse:
+        r"""Create or post feedback as an admin"""
+        hook_ctx = HookContext(operation_id='postAdminFeedback', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/feedback'
@@ -2964,7 +3030,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminFeedbackResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostAdminFeedbackResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2975,8 +3041,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_groups_domain(self) -> operations.GetAPIV1AdminGroupsDomainResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/groups/domain', oauth2_scopes=[], security_source=None)
+    def get_admin_groups_domain(self) -> operations.GetAdminGroupsDomainResponse:
+        r"""Retrieve domain-related groups information from the admin endpoint"""
+        hook_ctx = HookContext(operation_id='getAdminGroupsDomain', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/groups/domain'
@@ -3009,7 +3076,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminGroupsDomainResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminGroupsDomainResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3020,8 +3087,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_groups_domain(self) -> operations.PostAPIV1AdminGroupsDomainResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/groups/domain', oauth2_scopes=[], security_source=None)
+    def post_admin_groups_domain(self) -> operations.PostAdminGroupsDomainResponse:
+        r"""Submit new domain-related groups information to the admin endpoint"""
+        hook_ctx = HookContext(operation_id='postAdminGroupsDomain', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/groups/domain'
@@ -3054,7 +3122,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminGroupsDomainResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostAdminGroupsDomainResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3065,15 +3133,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_groups_domain_group_alias_(self, group_alias: str) -> operations.GetAPIV1AdminGroupsDomainGroupAliasResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/groups/domain/{groupAlias}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminGroupsDomainGroupAliasRequest(
+    def get_group_alias(self, group_alias: str) -> operations.GetGroupAliasResponse:
+        r"""Retrieves information of the group alias specified in the path"""
+        hook_ctx = HookContext(operation_id='getGroupAlias', oauth2_scopes=[], security_source=None)
+        request = operations.GetGroupAliasRequest(
             group_alias=group_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminGroupsDomainGroupAliasRequest, base_url, '/api/v1/admin/groups/domain/{groupAlias}', request)
+        url = utils.generate_url(operations.GetGroupAliasRequest, base_url, '/api/v1/admin/groups/domain/{groupAlias}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3103,7 +3172,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminGroupsDomainGroupAliasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetGroupAliasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3114,15 +3183,16 @@ class Admin:
 
     
     
-    def put_api_v1_admin_groups_domain_group_alias_(self, group_alias: str) -> operations.PutAPIV1AdminGroupsDomainGroupAliasResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/groups/domain/{groupAlias}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AdminGroupsDomainGroupAliasRequest(
+    def update_group_alias(self, group_alias: str) -> operations.UpdateGroupAliasResponse:
+        r"""Updates the group alias specified in the path"""
+        hook_ctx = HookContext(operation_id='updateGroupAlias', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateGroupAliasRequest(
             group_alias=group_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AdminGroupsDomainGroupAliasRequest, base_url, '/api/v1/admin/groups/domain/{groupAlias}', request)
+        url = utils.generate_url(operations.UpdateGroupAliasRequest, base_url, '/api/v1/admin/groups/domain/{groupAlias}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3152,7 +3222,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminGroupsDomainGroupAliasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateGroupAliasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3163,15 +3233,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_groups_domain_group_alias_(self, group_alias: str) -> operations.DeleteAPIV1AdminGroupsDomainGroupAliasResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/groups/domain/{groupAlias}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminGroupsDomainGroupAliasRequest(
+    def delete_group_alias(self, group_alias: str) -> operations.DeleteGroupAliasResponse:
+        r"""Deletes the group alias specified in the path"""
+        hook_ctx = HookContext(operation_id='deleteGroupAlias', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteGroupAliasRequest(
             group_alias=group_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminGroupsDomainGroupAliasRequest, base_url, '/api/v1/admin/groups/domain/{groupAlias}', request)
+        url = utils.generate_url(operations.DeleteGroupAliasRequest, base_url, '/api/v1/admin/groups/domain/{groupAlias}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3201,7 +3272,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminGroupsDomainGroupAliasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteGroupAliasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3212,8 +3283,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_groups_ip(self) -> operations.GetAPIV1AdminGroupsIPResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/groups/ip', oauth2_scopes=[], security_source=None)
+    def get_admin_groups_ip(self) -> operations.GetAdminGroupsIPResponse:
+        r"""Retrieve IP-based groups information"""
+        hook_ctx = HookContext(operation_id='getAdminGroupsIP', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/groups/ip'
@@ -3246,7 +3318,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminGroupsIPResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminGroupsIPResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3257,8 +3329,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_groups_ip(self) -> operations.PostAPIV1AdminGroupsIPResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/groups/ip', oauth2_scopes=[], security_source=None)
+    def post_admin_groups_ip(self) -> operations.PostAdminGroupsIPResponse:
+        r"""Create a new IP-based group"""
+        hook_ctx = HookContext(operation_id='postAdminGroupsIP', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/groups/ip'
@@ -3291,7 +3364,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminGroupsIPResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostAdminGroupsIPResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3302,15 +3375,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_groups_ip_group_idtf_(self, group_idtf: str) -> operations.GetAPIV1AdminGroupsIPGroupIdtfResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/groups/ip/{groupIdtf}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminGroupsIPGroupIdtfRequest(
+    def get_group_by_group_idtf(self, group_idtf: str) -> operations.GetGroupByGroupIdtfResponse:
+        r"""Fetches a group by the groupIdtf provided in the path"""
+        hook_ctx = HookContext(operation_id='getGroupByGroupIdtf', oauth2_scopes=[], security_source=None)
+        request = operations.GetGroupByGroupIdtfRequest(
             group_idtf=group_idtf,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminGroupsIPGroupIdtfRequest, base_url, '/api/v1/admin/groups/ip/{groupIdtf}', request)
+        url = utils.generate_url(operations.GetGroupByGroupIdtfRequest, base_url, '/api/v1/admin/groups/ip/{groupIdtf}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3340,7 +3414,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminGroupsIPGroupIdtfResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetGroupByGroupIdtfResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3351,15 +3425,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_groups_ip_group_idtf_(self, group_idtf: str) -> operations.DeleteAPIV1AdminGroupsIPGroupIdtfResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/groups/ip/{groupIdtf}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminGroupsIPGroupIdtfRequest(
+    def delete_group_by_group_idtf(self, group_idtf: str) -> operations.DeleteGroupByGroupIdtfResponse:
+        r"""Deletes a group by the groupIdtf provided in the path"""
+        hook_ctx = HookContext(operation_id='deleteGroupByGroupIdtf', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteGroupByGroupIdtfRequest(
             group_idtf=group_idtf,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminGroupsIPGroupIdtfRequest, base_url, '/api/v1/admin/groups/ip/{groupIdtf}', request)
+        url = utils.generate_url(operations.DeleteGroupByGroupIdtfRequest, base_url, '/api/v1/admin/groups/ip/{groupIdtf}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3389,7 +3464,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminGroupsIPGroupIdtfResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteGroupByGroupIdtfResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3400,8 +3475,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_groups_shib(self) -> operations.GetAPIV1AdminGroupsShibResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/groups/shib', oauth2_scopes=[], security_source=None)
+    def get_shib_group_info(self) -> operations.GetShibGroupInfoResponse:
+        r"""Retrieve information about Shibboleth groups"""
+        hook_ctx = HookContext(operation_id='getShibGroupInfo', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/groups/shib'
@@ -3434,7 +3510,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminGroupsShibResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetShibGroupInfoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3445,8 +3521,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_groups_shib(self) -> operations.PostAPIV1AdminGroupsShibResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/groups/shib', oauth2_scopes=[], security_source=None)
+    def create_shib_group(self) -> operations.CreateShibGroupResponse:
+        r"""Create a new Shibboleth group"""
+        hook_ctx = HookContext(operation_id='createShibGroup', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/groups/shib'
@@ -3479,7 +3556,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminGroupsShibResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateShibGroupResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3490,15 +3567,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_groups_shib_primary_key_(self, primary_key: str) -> operations.DeleteAPIV1AdminGroupsShibPrimaryKeyResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/groups/shib/{primaryKey}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminGroupsShibPrimaryKeyRequest(
+    def delete_shib_group(self, primary_key: str) -> operations.DeleteShibGroupResponse:
+        r"""Delete a Shibboleth Group by given Primary Key"""
+        hook_ctx = HookContext(operation_id='deleteShibGroup', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteShibGroupRequest(
             primary_key=primary_key,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminGroupsShibPrimaryKeyRequest, base_url, '/api/v1/admin/groups/shib/{primaryKey}', request)
+        url = utils.generate_url(operations.DeleteShibGroupRequest, base_url, '/api/v1/admin/groups/shib/{primaryKey}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3528,7 +3606,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminGroupsShibPrimaryKeyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteShibGroupResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3539,9 +3617,10 @@ class Admin:
 
     
     
-    def get_api_v1_admin_index(self, num_partitions: Optional[int] = None, partition_id_to_process: Optional[int] = None, preview_only: Optional[bool] = None) -> operations.GetAPIV1AdminIndexResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/index', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminIndexRequest(
+    def get_admin_index(self, num_partitions: Optional[int] = None, partition_id_to_process: Optional[int] = None, preview_only: Optional[bool] = None) -> operations.GetAdminIndexResponse:
+        r"""Retrieve details of admin index with queried parameters"""
+        hook_ctx = HookContext(operation_id='getAdminIndex', oauth2_scopes=[], security_source=None)
+        request = operations.GetAdminIndexRequest(
             num_partitions=num_partitions,
             partition_id_to_process=partition_id_to_process,
             preview_only=preview_only,
@@ -3551,7 +3630,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/index'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminIndexRequest, request)
+        query_params = utils.get_query_params(operations.GetAdminIndexRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -3580,7 +3659,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIndexResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminIndexResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3591,8 +3670,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_index_clear(self) -> operations.GetAPIV1AdminIndexClearResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/index/clear', oauth2_scopes=[], security_source=None)
+    def clear_admin_index(self) -> operations.ClearAdminIndexResponse:
+        r"""Clears the admin index"""
+        hook_ctx = HookContext(operation_id='clearAdminIndex', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/index/clear'
@@ -3625,7 +3705,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIndexClearResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ClearAdminIndexResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3636,9 +3716,10 @@ class Admin:
 
     
     
-    def get_api_v1_admin_index_clear_orphans(self, sync: Optional[str] = None) -> operations.GetAPIV1AdminIndexClearOrphansResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/index/clear-orphans', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminIndexClearOrphansRequest(
+    def clear_orphans_index(self, sync: Optional[str] = None) -> operations.ClearOrphansIndexResponse:
+        r"""Retrieve and clear orphans from the admin index"""
+        hook_ctx = HookContext(operation_id='clearOrphansIndex', oauth2_scopes=[], security_source=None)
+        request = operations.ClearOrphansIndexRequest(
             sync=sync,
         )
         
@@ -3646,7 +3727,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/index/clear-orphans'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminIndexClearOrphansRequest, request)
+        query_params = utils.get_query_params(operations.ClearOrphansIndexRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -3675,7 +3756,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIndexClearOrphansResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ClearOrphansIndexResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3686,9 +3767,10 @@ class Admin:
 
     
     
-    def get_api_v1_admin_index_continue(self, num_partitions: Optional[int] = None, partition_id_to_process: Optional[int] = None, preview_only: Optional[bool] = None) -> operations.GetAPIV1AdminIndexContinueResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/index/continue', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminIndexContinueRequest(
+    def continue_index_processing(self, num_partitions: Optional[int] = None, partition_id_to_process: Optional[int] = None, preview_only: Optional[bool] = None) -> operations.ContinueIndexProcessingResponse:
+        r"""Continues the process of indexing partitions based on given parameters."""
+        hook_ctx = HookContext(operation_id='continueIndexProcessing', oauth2_scopes=[], security_source=None)
+        request = operations.ContinueIndexProcessingRequest(
             num_partitions=num_partitions,
             partition_id_to_process=partition_id_to_process,
             preview_only=preview_only,
@@ -3698,7 +3780,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/index/continue'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminIndexContinueRequest, request)
+        query_params = utils.get_query_params(operations.ContinueIndexProcessingRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -3727,7 +3809,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIndexContinueResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ContinueIndexProcessingResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3738,9 +3820,10 @@ class Admin:
 
     
     
-    def get_api_v1_admin_index_dataset(self, persistent_id: Optional[str] = None) -> operations.GetAPIV1AdminIndexDatasetResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/index/dataset', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminIndexDatasetRequest(
+    def get_dataset_index(self, persistent_id: Optional[str] = None) -> operations.GetDatasetIndexResponse:
+        r"""Retrieve the index of a dataset given its persistentId"""
+        hook_ctx = HookContext(operation_id='getDatasetIndex', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetIndexRequest(
             persistent_id=persistent_id,
         )
         
@@ -3748,7 +3831,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/index/dataset'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminIndexDatasetRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetIndexRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -3777,7 +3860,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIndexDatasetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetIndexResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3788,15 +3871,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_index_datasets_id_(self, id: int) -> operations.DeleteAPIV1AdminIndexDatasetsIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/index/datasets/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminIndexDatasetsIDRequest(
+    def delete_dataset_by_id(self, id: int) -> operations.DeleteDatasetByIDResponse:
+        r"""Delete a specific dataset by its ID"""
+        hook_ctx = HookContext(operation_id='deleteDatasetById', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteDatasetByIDRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminIndexDatasetsIDRequest, base_url, '/api/v1/admin/index/datasets/{id}', request)
+        url = utils.generate_url(operations.DeleteDatasetByIDRequest, base_url, '/api/v1/admin/index/datasets/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3826,7 +3910,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminIndexDatasetsIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteDatasetByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3837,9 +3921,10 @@ class Admin:
 
     
     
-    def get_api_v1_admin_index_filemetadata_dataset_id_(self, dataset_id: int, max_results: Optional[int] = None, order: Optional[str] = None, sort: Optional[str] = None) -> operations.GetAPIV1AdminIndexFilemetadataDatasetIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/index/filemetadata/{dataset_id}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminIndexFilemetadataDatasetIDRequest(
+    def get_file_metadata1(self, dataset_id: int, max_results: Optional[int] = None, order: Optional[str] = None, sort: Optional[str] = None) -> operations.GetFileMetadata1Response:
+        r"""Retrieve file metadata for a specific dataset"""
+        hook_ctx = HookContext(operation_id='get_fileMetadata1', oauth2_scopes=[], security_source=None)
+        request = operations.GetFileMetadata1Request(
             dataset_id=dataset_id,
             max_results=max_results,
             order=order,
@@ -3848,9 +3933,9 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminIndexFilemetadataDatasetIDRequest, base_url, '/api/v1/admin/index/filemetadata/{dataset_id}', request)
+        url = utils.generate_url(operations.GetFileMetadata1Request, base_url, '/api/v1/admin/index/filemetadata/{dataset_id}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminIndexFilemetadataDatasetIDRequest, request)
+        query_params = utils.get_query_params(operations.GetFileMetadata1Request, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -3879,7 +3964,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIndexFilemetadataDatasetIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFileMetadata1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3890,9 +3975,10 @@ class Admin:
 
     
     
-    def get_api_v1_admin_index_filesearch(self, persistent_id: Optional[str] = None, q: Optional[str] = None, semantic_version: Optional[str] = None) -> operations.GetAPIV1AdminIndexFilesearchResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/index/filesearch', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminIndexFilesearchRequest(
+    def file_search_index_get(self, persistent_id: Optional[str] = None, q: Optional[str] = None, semantic_version: Optional[str] = None) -> operations.FileSearchIndexGETResponse:
+        r"""This endpoint retrieves data about file search index by persistentId, q, and/or semanticVersion."""
+        hook_ctx = HookContext(operation_id='fileSearchIndexGET', oauth2_scopes=[], security_source=None)
+        request = operations.FileSearchIndexGETRequest(
             persistent_id=persistent_id,
             q=q,
             semantic_version=semantic_version,
@@ -3902,7 +3988,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/index/filesearch'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminIndexFilesearchRequest, request)
+        query_params = utils.get_query_params(operations.FileSearchIndexGETRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -3931,7 +4017,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIndexFilesearchResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.FileSearchIndexGETResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3942,9 +4028,10 @@ class Admin:
 
     
     
-    def get_api_v1_admin_index_mod(self, partitions: Optional[int] = None, which: Optional[int] = None) -> operations.GetAPIV1AdminIndexModResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/index/mod', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminIndexModRequest(
+    def get_admin_index_mod(self, partitions: Optional[int] = None, which: Optional[int] = None) -> operations.GetAdminIndexModResponse:
+        r"""Retrieves modification of the admin index based on provided query parameters"""
+        hook_ctx = HookContext(operation_id='getAdminIndexMod', oauth2_scopes=[], security_source=None)
+        request = operations.GetAdminIndexModRequest(
             partitions=partitions,
             which=which,
         )
@@ -3953,7 +4040,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/index/mod'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminIndexModRequest, request)
+        query_params = utils.get_query_params(operations.GetAdminIndexModRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -3982,7 +4069,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIndexModResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminIndexModResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3993,8 +4080,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_index_perms(self) -> operations.GetAPIV1AdminIndexPermsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/index/perms', oauth2_scopes=[], security_source=None)
+    def get_admin_index_perms(self) -> operations.GetAdminIndexPermsResponse:
+        r"""Retrieve permissions for the admin index"""
+        hook_ctx = HookContext(operation_id='getAdminIndexPerms', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/index/perms'
@@ -4027,7 +4115,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIndexPermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminIndexPermsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4038,15 +4126,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_index_perms_id_(self, id: int) -> operations.GetAPIV1AdminIndexPermsIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/index/perms/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminIndexPermsIDRequest(
+    def get_admin_index_perms_1(self, id: int) -> operations.GetAdminIndexPerms1Response:
+        r"""Retrieve a specific admin index permissions by ID"""
+        hook_ctx = HookContext(operation_id='getAdminIndexPerms_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetAdminIndexPerms1Request(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminIndexPermsIDRequest, base_url, '/api/v1/admin/index/perms/{id}', request)
+        url = utils.generate_url(operations.GetAdminIndexPerms1Request, base_url, '/api/v1/admin/index/perms/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4076,7 +4165,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIndexPermsIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminIndexPerms1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4087,9 +4176,10 @@ class Admin:
 
     
     
-    def get_api_v1_admin_index_perms_debug(self, id: Optional[int] = None, key: Optional[str] = None) -> operations.GetAPIV1AdminIndexPermsDebugResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/index/permsDebug', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminIndexPermsDebugRequest(
+    def get_perms_debug_info(self, id: Optional[int] = None, key: Optional[str] = None) -> operations.GetPermsDebugInfoResponse:
+        r"""Retrieves permission debug info for specified id and key"""
+        hook_ctx = HookContext(operation_id='getPermsDebugInfo', oauth2_scopes=[], security_source=None)
+        request = operations.GetPermsDebugInfoRequest(
             id=id,
             key=key,
         )
@@ -4098,7 +4188,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/index/permsDebug'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminIndexPermsDebugRequest, request)
+        query_params = utils.get_query_params(operations.GetPermsDebugInfoRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -4127,7 +4217,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIndexPermsDebugResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetPermsDebugInfoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4138,8 +4228,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_index_solr_schema(self) -> operations.GetAPIV1AdminIndexSolrSchemaResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/index/solr/schema', oauth2_scopes=[], security_source=None)
+    def get_solr_schema(self) -> operations.GetSolrSchemaResponse:
+        r"""Retrieve the Solr schema configuration."""
+        hook_ctx = HookContext(operation_id='getSolrSchema', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/index/solr/schema'
@@ -4172,7 +4263,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIndexSolrSchemaResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetSolrSchemaResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, '*/*'):
@@ -4186,9 +4277,10 @@ class Admin:
 
     
     
-    def get_api_v1_admin_index_status(self, sync: Optional[str] = None) -> operations.GetAPIV1AdminIndexStatusResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/index/status', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminIndexStatusRequest(
+    def get_admin_index_status(self, sync: Optional[str] = None) -> operations.GetAdminIndexStatusResponse:
+        r"""Retrieve status of the admin index"""
+        hook_ctx = HookContext(operation_id='getAdminIndexStatus', oauth2_scopes=[], security_source=None)
+        request = operations.GetAdminIndexStatusRequest(
             sync=sync,
         )
         
@@ -4196,7 +4288,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/index/status'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminIndexStatusRequest, request)
+        query_params = utils.get_query_params(operations.GetAdminIndexStatusRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -4225,7 +4317,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIndexStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminIndexStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4236,9 +4328,10 @@ class Admin:
 
     
     
-    def get_api_v1_admin_index_test(self, fq: Optional[List[str]] = None, key: Optional[str] = None, q: Optional[str] = None) -> operations.GetAPIV1AdminIndexTestResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/index/test', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminIndexTestRequest(
+    def get_admin_test_index(self, fq: Optional[List[str]] = None, key: Optional[str] = None, q: Optional[str] = None) -> operations.GetAdminTestIndexResponse:
+        r"""Obtain specific parameters from the Admin Test Index"""
+        hook_ctx = HookContext(operation_id='getAdminTestIndex', oauth2_scopes=[], security_source=None)
+        request = operations.GetAdminTestIndexRequest(
             fq=fq,
             key=key,
             q=q,
@@ -4248,7 +4341,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/index/test'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminIndexTestRequest, request)
+        query_params = utils.get_query_params(operations.GetAdminTestIndexRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -4277,7 +4370,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIndexTestResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminTestIndexResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4288,8 +4381,9 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_index_timestamps(self) -> operations.DeleteAPIV1AdminIndexTimestampsResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/index/timestamps', oauth2_scopes=[], security_source=None)
+    def delete_admin_index_timestamps(self) -> operations.DeleteAdminIndexTimestampsResponse:
+        r"""Delete timestamps from the admin index"""
+        hook_ctx = HookContext(operation_id='deleteAdminIndexTimestamps', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/index/timestamps'
@@ -4322,7 +4416,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminIndexTimestampsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteAdminIndexTimestampsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4333,15 +4427,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_index_timestamps_dv_object_id_(self, dv_object_id: int) -> operations.DeleteAPIV1AdminIndexTimestampsDvObjectIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/index/timestamps/{dvObjectId}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminIndexTimestampsDvObjectIDRequest(
+    def delete_index_timestamp(self, dv_object_id: int) -> operations.DeleteIndexTimestampResponse:
+        r"""Delete index timestamp by dvObjectId"""
+        hook_ctx = HookContext(operation_id='deleteIndexTimestamp', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteIndexTimestampRequest(
             dv_object_id=dv_object_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminIndexTimestampsDvObjectIDRequest, base_url, '/api/v1/admin/index/timestamps/{dvObjectId}', request)
+        url = utils.generate_url(operations.DeleteIndexTimestampRequest, base_url, '/api/v1/admin/index/timestamps/{dvObjectId}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4371,7 +4466,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminIndexTimestampsDvObjectIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteIndexTimestampResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4382,16 +4477,17 @@ class Admin:
 
     
     
-    def get_api_v1_admin_index_type_id_(self, id: int, type_: str) -> operations.GetAPIV1AdminIndexTypeIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/index/{type}/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminIndexTypeIDRequest(
+    def get_admin_index_type_by_id(self, id: int, type_: str) -> operations.GetAdminIndexTypeByIDResponse:
+        r"""Retrieves specific type and ID details in admin index"""
+        hook_ctx = HookContext(operation_id='getAdminIndexTypeById', oauth2_scopes=[], security_source=None)
+        request = operations.GetAdminIndexTypeByIDRequest(
             id=id,
             type=type_,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminIndexTypeIDRequest, base_url, '/api/v1/admin/index/{type}/{id}', request)
+        url = utils.generate_url(operations.GetAdminIndexTypeByIDRequest, base_url, '/api/v1/admin/index/{type}/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4421,7 +4517,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIndexTypeIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminIndexTypeByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4432,8 +4528,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_is_orcid(self) -> operations.GetAPIV1AdminIsOrcidResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/isOrcid', oauth2_scopes=[], security_source=None)
+    def get_orcid_status(self) -> operations.GetOrcidStatusResponse:
+        r"""Retrieve ORCID status for a specific admin"""
+        hook_ctx = HookContext(operation_id='getOrcidStatus', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/isOrcid'
@@ -4466,7 +4563,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIsOrcidResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetOrcidStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4477,9 +4574,10 @@ class Admin:
 
     
     
-    def get_api_v1_admin_list_users(self, items_per_page: Optional[int] = None, search_term: Optional[str] = None, selected_page: Optional[int] = None, sort_key: Optional[str] = None) -> operations.GetAPIV1AdminListUsersResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/list-users', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminListUsersRequest(
+    def list_users(self, items_per_page: Optional[int] = None, search_term: Optional[str] = None, selected_page: Optional[int] = None, sort_key: Optional[str] = None) -> operations.ListUsersResponse:
+        r"""Retrieve a list of all users"""
+        hook_ctx = HookContext(operation_id='listUsers', oauth2_scopes=[], security_source=None)
+        request = operations.ListUsersRequest(
             items_per_page=items_per_page,
             search_term=search_term,
             selected_page=selected_page,
@@ -4490,7 +4588,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/list-users'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminListUsersRequest, request)
+        query_params = utils.get_query_params(operations.ListUsersRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -4519,7 +4617,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminListUsersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ListUsersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4530,9 +4628,10 @@ class Admin:
 
     
     
-    def post_api_v1_admin_make_data_count_add_usage_metrics_from_sushi_report(self, report_on_disk: Optional[str] = None) -> operations.PostAPIV1AdminMakeDataCountAddUsageMetricsFromSushiReportResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/makeDataCount/addUsageMetricsFromSushiReport', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AdminMakeDataCountAddUsageMetricsFromSushiReportRequest(
+    def add_metrics_from_report(self, report_on_disk: Optional[str] = None) -> operations.AddMetricsFromReportResponse:
+        r"""Add usage metrics from a SUSHI report"""
+        hook_ctx = HookContext(operation_id='addMetricsFromReport', oauth2_scopes=[], security_source=None)
+        request = operations.AddMetricsFromReportRequest(
             report_on_disk=report_on_disk,
         )
         
@@ -4540,7 +4639,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/makeDataCount/addUsageMetricsFromSushiReport'
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1AdminMakeDataCountAddUsageMetricsFromSushiReportRequest, request)
+        query_params = utils.get_query_params(operations.AddMetricsFromReportRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -4569,7 +4668,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminMakeDataCountAddUsageMetricsFromSushiReportResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AddMetricsFromReportResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4580,8 +4679,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_make_data_count_send_to_hub(self) -> operations.PostAPIV1AdminMakeDataCountSendToHubResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/makeDataCount/sendToHub', oauth2_scopes=[], security_source=None)
+    def admin_send_to_hub(self) -> operations.AdminSendToHubResponse:
+        r"""Send data count to the admin hub."""
+        hook_ctx = HookContext(operation_id='adminSendToHub', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/makeDataCount/sendToHub'
@@ -4614,7 +4714,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminMakeDataCountSendToHubResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AdminSendToHubResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4625,18 +4725,19 @@ class Admin:
 
     
     
-    def post_api_v1_admin_make_data_count_id_add_usage_metrics_from_sushi_report(self, id: str, report_on_disk: Optional[str] = None) -> operations.PostAPIV1AdminMakeDataCountIDAddUsageMetricsFromSushiReportResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/makeDataCount/{id}/addUsageMetricsFromSushiReport', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AdminMakeDataCountIDAddUsageMetricsFromSushiReportRequest(
+    def add_usage_metrics_from_sushi_repo(self, id: str, report_on_disk: Optional[str] = None) -> operations.AddUsageMetricsFromSushiRepoResponse:
+        r"""Add usage metrics for a specific Dataverse file from a SUSHI Report"""
+        hook_ctx = HookContext(operation_id='addUsageMetricsFromSushiRepo', oauth2_scopes=[], security_source=None)
+        request = operations.AddUsageMetricsFromSushiRepoRequest(
             id=id,
             report_on_disk=report_on_disk,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1AdminMakeDataCountIDAddUsageMetricsFromSushiReportRequest, base_url, '/api/v1/admin/makeDataCount/{id}/addUsageMetricsFromSushiReport', request)
+        url = utils.generate_url(operations.AddUsageMetricsFromSushiRepoRequest, base_url, '/api/v1/admin/makeDataCount/{id}/addUsageMetricsFromSushiReport', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1AdminMakeDataCountIDAddUsageMetricsFromSushiReportRequest, request)
+        query_params = utils.get_query_params(operations.AddUsageMetricsFromSushiRepoRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -4665,7 +4766,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminMakeDataCountIDAddUsageMetricsFromSushiReportResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AddUsageMetricsFromSushiRepoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4676,15 +4777,16 @@ class Admin:
 
     
     
-    def post_api_v1_admin_make_data_count_id_update_citations_for_dataset(self, id: str) -> operations.PostAPIV1AdminMakeDataCountIDUpdateCitationsForDatasetResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/makeDataCount/{id}/updateCitationsForDataset', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AdminMakeDataCountIDUpdateCitationsForDatasetRequest(
+    def update_dataset_citations(self, id: str) -> operations.UpdateDatasetCitationsResponse:
+        r"""Updates the citation count for a specified dataset"""
+        hook_ctx = HookContext(operation_id='updateDatasetCitations', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateDatasetCitationsRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1AdminMakeDataCountIDUpdateCitationsForDatasetRequest, base_url, '/api/v1/admin/makeDataCount/{id}/updateCitationsForDataset', request)
+        url = utils.generate_url(operations.UpdateDatasetCitationsRequest, base_url, '/api/v1/admin/makeDataCount/{id}/updateCitationsForDataset', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4714,7 +4816,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminMakeDataCountIDUpdateCitationsForDatasetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateDatasetCitationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4725,8 +4827,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_metadata_clear_export_timestamps(self) -> operations.GetAPIV1AdminMetadataClearExportTimestampsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/metadata/clearExportTimestamps', oauth2_scopes=[], security_source=None)
+    def get_export_timestamps(self) -> operations.GetExportTimestampsResponse:
+        r"""Retrieve the export timestamps"""
+        hook_ctx = HookContext(operation_id='getExportTimestamps', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/metadata/clearExportTimestamps'
@@ -4759,7 +4862,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminMetadataClearExportTimestampsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetExportTimestampsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4770,8 +4873,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_metadata_export_all(self) -> operations.GetAPIV1AdminMetadataExportAllResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/metadata/exportAll', oauth2_scopes=[], security_source=None)
+    def get_metadata_export_all(self) -> operations.GetMetadataExportAllResponse:
+        r"""Fetches all metadata for export by admin"""
+        hook_ctx = HookContext(operation_id='getMetadataExportAll', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/metadata/exportAll'
@@ -4804,7 +4908,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminMetadataExportAllResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetadataExportAllResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4815,15 +4919,16 @@ class Admin:
 
     
     
-    def put_api_v1_admin_metadata_export_oai_specname_(self, specname: str) -> operations.PutAPIV1AdminMetadataExportOAISpecnameResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/metadata/exportOAI/{specname}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AdminMetadataExportOAISpecnameRequest(
+    def admin_metadata_export_oai_spec(self, specname: str) -> operations.AdminMetadataExportOAISpecResponse:
+        r"""Update the OAI export specification using provided 'specname'"""
+        hook_ctx = HookContext(operation_id='adminMetadataExportOAISpec', oauth2_scopes=[], security_source=None)
+        request = operations.AdminMetadataExportOAISpecRequest(
             specname=specname,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AdminMetadataExportOAISpecnameRequest, base_url, '/api/v1/admin/metadata/exportOAI/{specname}', request)
+        url = utils.generate_url(operations.AdminMetadataExportOAISpecRequest, base_url, '/api/v1/admin/metadata/exportOAI/{specname}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4853,7 +4958,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminMetadataExportOAISpecnameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AdminMetadataExportOAISpecResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4864,8 +4969,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_metadata_re_export_all(self) -> operations.GetAPIV1AdminMetadataReExportAllResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/metadata/reExportAll', oauth2_scopes=[], security_source=None)
+    def re_export_all_metadata(self) -> operations.ReExportAllMetadataResponse:
+        r"""Retrieves and exports all metadata"""
+        hook_ctx = HookContext(operation_id='reExportAllMetadata', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/metadata/reExportAll'
@@ -4898,7 +5004,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminMetadataReExportAllResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ReExportAllMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4909,15 +5015,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_metadata_id_re_export_dataset(self, id: str) -> operations.GetAPIV1AdminMetadataIDReExportDatasetResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/metadata/{id}/reExportDataset', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminMetadataIDReExportDatasetRequest(
+    def get_metadata_re_export(self, id: str) -> operations.GetMetadataReExportResponse:
+        r"""Retrieves and re-exports the specific metadata for the dataset using dataset ID"""
+        hook_ctx = HookContext(operation_id='getMetadataReExport', oauth2_scopes=[], security_source=None)
+        request = operations.GetMetadataReExportRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminMetadataIDReExportDatasetRequest, base_url, '/api/v1/admin/metadata/{id}/reExportDataset', request)
+        url = utils.generate_url(operations.GetMetadataReExportRequest, base_url, '/api/v1/admin/metadata/{id}/reExportDataset', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4947,7 +5054,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminMetadataIDReExportDatasetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetadataReExportResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4958,15 +5065,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_permissions_dvo_(self, dvo: str) -> operations.GetAPIV1AdminPermissionsDvoResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/permissions/{dvo}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminPermissionsDvoRequest(
+    def get_admin_permissions(self, dvo: str) -> operations.GetAdminPermissionsResponse:
+        r"""Retrieve specific admin permission details"""
+        hook_ctx = HookContext(operation_id='getAdminPermissions', oauth2_scopes=[], security_source=None)
+        request = operations.GetAdminPermissionsRequest(
             dvo=dvo,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminPermissionsDvoRequest, base_url, '/api/v1/admin/permissions/{dvo}', request)
+        url = utils.generate_url(operations.GetAdminPermissionsRequest, base_url, '/api/v1/admin/permissions/{dvo}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4996,7 +5104,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminPermissionsDvoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminPermissionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5007,15 +5115,16 @@ class Admin:
 
     
     
-    def post_api_v1_admin_publish_dataverse_as_creator_id_(self, id: int) -> operations.PostAPIV1AdminPublishDataverseAsCreatorIDResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/publishDataverseAsCreator/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AdminPublishDataverseAsCreatorIDRequest(
+    def publish_dataverse_as_creator(self, id: int) -> operations.PublishDataverseAsCreatorResponse:
+        r"""Publish Dataverse as creator using the given ID"""
+        hook_ctx = HookContext(operation_id='publishDataverseAsCreator', oauth2_scopes=[], security_source=None)
+        request = operations.PublishDataverseAsCreatorRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1AdminPublishDataverseAsCreatorIDRequest, base_url, '/api/v1/admin/publishDataverseAsCreator/{id}', request)
+        url = utils.generate_url(operations.PublishDataverseAsCreatorRequest, base_url, '/api/v1/admin/publishDataverseAsCreator/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -5045,7 +5154,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminPublishDataverseAsCreatorIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PublishDataverseAsCreatorResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5056,8 +5165,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_register_data_file_all(self) -> operations.GetAPIV1AdminRegisterDataFileAllResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/registerDataFileAll', oauth2_scopes=[], security_source=None)
+    def get_register_data_file_all(self) -> operations.GetRegisterDataFileAllResponse:
+        r"""Retrieve all registered data files from the admin."""
+        hook_ctx = HookContext(operation_id='getRegisterDataFileAll', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/registerDataFileAll'
@@ -5090,7 +5200,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminRegisterDataFileAllResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetRegisterDataFileAllResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5101,18 +5211,19 @@ class Admin:
 
     
     
-    def get_api_v1_admin_register_data_files_alias_(self, alias: str, sleep: Optional[int] = None) -> operations.GetAPIV1AdminRegisterDataFilesAliasResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/registerDataFiles/{alias}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminRegisterDataFilesAliasRequest(
+    def get_register_data_files_by_alias(self, alias: str, sleep: Optional[int] = None) -> operations.GetRegisterDataFilesByAliasResponse:
+        r"""Retrieve data file registration details for a given alias"""
+        hook_ctx = HookContext(operation_id='getRegisterDataFilesByAlias', oauth2_scopes=[], security_source=None)
+        request = operations.GetRegisterDataFilesByAliasRequest(
             alias=alias,
             sleep=sleep,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminRegisterDataFilesAliasRequest, base_url, '/api/v1/admin/registerDataFiles/{alias}', request)
+        url = utils.generate_url(operations.GetRegisterDataFilesByAliasRequest, base_url, '/api/v1/admin/registerDataFiles/{alias}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminRegisterDataFilesAliasRequest, request)
+        query_params = utils.get_query_params(operations.GetRegisterDataFilesByAliasRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -5141,7 +5252,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminRegisterDataFilesAliasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetRegisterDataFilesByAliasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5152,13 +5263,14 @@ class Admin:
 
     
     
-    def post_api_v1_admin_request_signed_url(self, request: Optional[operations.PostAPIV1AdminRequestSignedURLRequestBody]) -> operations.PostAPIV1AdminRequestSignedURLResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/requestSignedUrl', oauth2_scopes=[], security_source=None)
+    def post_admin_signed_url(self, request: Optional[operations.PostAdminSignedURLRequestBody]) -> operations.PostAdminSignedURLResponse:
+        r"""Admin sends a request to receive a signed URL."""
+        hook_ctx = HookContext(operation_id='postAdminSignedUrl', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/requestSignedUrl'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PostAPIV1AdminRequestSignedURLRequestBody], "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PostAdminSignedURLRequestBody], "request", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -5189,7 +5301,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminRequestSignedURLResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostAdminSignedURLResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5200,8 +5312,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_roles(self) -> operations.GetAPIV1AdminRolesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/roles', oauth2_scopes=[], security_source=None)
+    def get_admin_roles(self) -> operations.GetAdminRolesResponse:
+        r"""Retrieve a list of all admin roles"""
+        hook_ctx = HookContext(operation_id='getAdminRoles', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/roles'
@@ -5234,7 +5347,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminRolesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminRolesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5245,8 +5358,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_roles(self) -> operations.PostAPIV1AdminRolesResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/roles', oauth2_scopes=[], security_source=None)
+    def create_admin_role(self) -> operations.CreateAdminRoleResponse:
+        r"""Create a new admin role"""
+        hook_ctx = HookContext(operation_id='createAdminRole', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/roles'
@@ -5279,7 +5393,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminRolesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateAdminRoleResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5290,15 +5404,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_roles_id_(self, id: str) -> operations.DeleteAPIV1AdminRolesIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/roles/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminRolesIDRequest(
+    def delete_admin_role(self, id: str) -> operations.DeleteAdminRoleResponse:
+        r"""Delete a specific admin role"""
+        hook_ctx = HookContext(operation_id='deleteAdminRole', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteAdminRoleRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminRolesIDRequest, base_url, '/api/v1/admin/roles/{id}', request)
+        url = utils.generate_url(operations.DeleteAdminRoleRequest, base_url, '/api/v1/admin/roles/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -5328,7 +5443,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminRolesIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteAdminRoleResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5339,8 +5454,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_savedsearches(self) -> operations.GetAPIV1AdminSavedsearchesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/savedsearches', oauth2_scopes=[], security_source=None)
+    def get_saved_searches(self) -> operations.GetSavedSearchesResponse:
+        r"""Retrieves all saved searches in the system."""
+        hook_ctx = HookContext(operation_id='getSavedSearches', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/savedsearches'
@@ -5373,7 +5489,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminSavedsearchesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetSavedSearchesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5384,8 +5500,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_savedsearches(self) -> operations.PostAPIV1AdminSavedsearchesResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/savedsearches', oauth2_scopes=[], security_source=None)
+    def add_saved_search(self) -> operations.AddSavedSearchResponse:
+        r"""Adds a new saved search to the system."""
+        hook_ctx = HookContext(operation_id='addSavedSearch', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/savedsearches'
@@ -5418,7 +5535,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminSavedsearchesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AddSavedSearchResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5429,8 +5546,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_savedsearches_list(self) -> operations.GetAPIV1AdminSavedsearchesListResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/savedsearches/list', oauth2_scopes=[], security_source=None)
+    def get_saved_searches_list(self) -> operations.GetSavedSearchesListResponse:
+        r"""Retrieve a list of all saved searches by the administrator"""
+        hook_ctx = HookContext(operation_id='getSavedSearchesList', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/savedsearches/list'
@@ -5463,7 +5581,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminSavedsearchesListResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetSavedSearchesListResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5474,9 +5592,10 @@ class Admin:
 
     
     
-    def put_api_v1_admin_savedsearches_makelinks_all(self, debug: Optional[bool] = None) -> operations.PutAPIV1AdminSavedsearchesMakelinksAllResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/savedsearches/makelinks/all', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AdminSavedsearchesMakelinksAllRequest(
+    def update_all_saved_search_links(self, debug: Optional[bool] = None) -> operations.UpdateAllSavedSearchLinksResponse:
+        r"""Updates all saved search links"""
+        hook_ctx = HookContext(operation_id='updateAllSavedSearchLinks', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateAllSavedSearchLinksRequest(
             debug=debug,
         )
         
@@ -5484,7 +5603,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/savedsearches/makelinks/all'
         headers = {}
-        query_params = utils.get_query_params(operations.PutAPIV1AdminSavedsearchesMakelinksAllRequest, request)
+        query_params = utils.get_query_params(operations.UpdateAllSavedSearchLinksRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -5513,7 +5632,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminSavedsearchesMakelinksAllResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateAllSavedSearchLinksResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5524,18 +5643,19 @@ class Admin:
 
     
     
-    def put_api_v1_admin_savedsearches_makelinks_id_(self, id: int, debug: Optional[bool] = None) -> operations.PutAPIV1AdminSavedsearchesMakelinksIDResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/savedsearches/makelinks/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AdminSavedsearchesMakelinksIDRequest(
+    def make_links_for_saved_search(self, id: int, debug: Optional[bool] = None) -> operations.MakeLinksForSavedSearchResponse:
+        r"""Updates the link for a specific saved search by ID"""
+        hook_ctx = HookContext(operation_id='makeLinksForSavedSearch', oauth2_scopes=[], security_source=None)
+        request = operations.MakeLinksForSavedSearchRequest(
             id=id,
             debug=debug,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AdminSavedsearchesMakelinksIDRequest, base_url, '/api/v1/admin/savedsearches/makelinks/{id}', request)
+        url = utils.generate_url(operations.MakeLinksForSavedSearchRequest, base_url, '/api/v1/admin/savedsearches/makelinks/{id}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PutAPIV1AdminSavedsearchesMakelinksIDRequest, request)
+        query_params = utils.get_query_params(operations.MakeLinksForSavedSearchRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -5564,7 +5684,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminSavedsearchesMakelinksIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.MakeLinksForSavedSearchResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5575,15 +5695,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_savedsearches_id_(self, id: int) -> operations.GetAPIV1AdminSavedsearchesIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/savedsearches/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminSavedsearchesIDRequest(
+    def get_saved_search(self, id: int) -> operations.GetSavedSearchResponse:
+        r"""Retrieves a saved search by ID"""
+        hook_ctx = HookContext(operation_id='getSavedSearch', oauth2_scopes=[], security_source=None)
+        request = operations.GetSavedSearchRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminSavedsearchesIDRequest, base_url, '/api/v1/admin/savedsearches/{id}', request)
+        url = utils.generate_url(operations.GetSavedSearchRequest, base_url, '/api/v1/admin/savedsearches/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -5613,7 +5734,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminSavedsearchesIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetSavedSearchResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5624,15 +5745,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_savedsearches_id_(self, id: int) -> operations.DeleteAPIV1AdminSavedsearchesIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/savedsearches/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminSavedsearchesIDRequest(
+    def delete_saved_search(self, id: int) -> operations.DeleteSavedSearchResponse:
+        r"""Deletes a saved search by ID"""
+        hook_ctx = HookContext(operation_id='deleteSavedSearch', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteSavedSearchRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminSavedsearchesIDRequest, base_url, '/api/v1/admin/savedsearches/{id}', request)
+        url = utils.generate_url(operations.DeleteSavedSearchRequest, base_url, '/api/v1/admin/savedsearches/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -5662,7 +5784,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminSavedsearchesIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteSavedSearchResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5673,8 +5795,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_settings(self) -> operations.GetAPIV1AdminSettingsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/settings', oauth2_scopes=[], security_source=None)
+    def get_admin_settings(self) -> operations.GetAdminSettingsResponse:
+        r"""Retrieve administrator settings"""
+        hook_ctx = HookContext(operation_id='getAdminSettings', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/settings'
@@ -5707,7 +5830,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminSettingsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminSettingsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5718,15 +5841,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_settings_name_(self, name: str) -> operations.GetAPIV1AdminSettingsNameResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/settings/{name}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminSettingsNameRequest(
+    def get_admin_setting(self, name: str) -> operations.GetAdminSettingResponse:
+        r"""Retrieve a specified admin setting"""
+        hook_ctx = HookContext(operation_id='getAdminSetting', oauth2_scopes=[], security_source=None)
+        request = operations.GetAdminSettingRequest(
             name=name,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminSettingsNameRequest, base_url, '/api/v1/admin/settings/{name}', request)
+        url = utils.generate_url(operations.GetAdminSettingRequest, base_url, '/api/v1/admin/settings/{name}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -5756,7 +5880,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminSettingsNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminSettingResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5767,15 +5891,16 @@ class Admin:
 
     
     
-    def put_api_v1_admin_settings_name_(self, name: str) -> operations.PutAPIV1AdminSettingsNameResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/settings/{name}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AdminSettingsNameRequest(
+    def update_admin_setting(self, name: str) -> operations.UpdateAdminSettingResponse:
+        r"""Update a specified admin setting"""
+        hook_ctx = HookContext(operation_id='updateAdminSetting', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateAdminSettingRequest(
             name=name,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AdminSettingsNameRequest, base_url, '/api/v1/admin/settings/{name}', request)
+        url = utils.generate_url(operations.UpdateAdminSettingRequest, base_url, '/api/v1/admin/settings/{name}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -5805,7 +5930,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminSettingsNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateAdminSettingResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5816,15 +5941,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_settings_name_(self, name: str) -> operations.DeleteAPIV1AdminSettingsNameResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/settings/{name}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminSettingsNameRequest(
+    def delete_admin_setting(self, name: str) -> operations.DeleteAdminSettingResponse:
+        r"""Delete a specified admin setting"""
+        hook_ctx = HookContext(operation_id='deleteAdminSetting', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteAdminSettingRequest(
             name=name,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminSettingsNameRequest, base_url, '/api/v1/admin/settings/{name}', request)
+        url = utils.generate_url(operations.DeleteAdminSettingRequest, base_url, '/api/v1/admin/settings/{name}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -5854,7 +5980,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminSettingsNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteAdminSettingResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5865,16 +5991,17 @@ class Admin:
 
     
     
-    def put_api_v1_admin_settings_name_lang_lang_(self, lang: str, name: str) -> operations.PutAPIV1AdminSettingsNameLangLangResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/settings/{name}/lang/{lang}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AdminSettingsNameLangLangRequest(
+    def update_admin_settings_lang(self, lang: str, name: str) -> operations.UpdateAdminSettingsLangResponse:
+        r"""Update a specific Admin setting for a given language"""
+        hook_ctx = HookContext(operation_id='updateAdminSettingsLang', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateAdminSettingsLangRequest(
             lang=lang,
             name=name,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AdminSettingsNameLangLangRequest, base_url, '/api/v1/admin/settings/{name}/lang/{lang}', request)
+        url = utils.generate_url(operations.UpdateAdminSettingsLangRequest, base_url, '/api/v1/admin/settings/{name}/lang/{lang}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -5904,7 +6031,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminSettingsNameLangLangResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateAdminSettingsLangResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5915,16 +6042,17 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_settings_name_lang_lang_(self, lang: str, name: str) -> operations.DeleteAPIV1AdminSettingsNameLangLangResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/settings/{name}/lang/{lang}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminSettingsNameLangLangRequest(
+    def delete_admin_settings_lang(self, lang: str, name: str) -> operations.DeleteAdminSettingsLangResponse:
+        r"""Delete a specific Admin setting for a given language"""
+        hook_ctx = HookContext(operation_id='deleteAdminSettingsLang', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteAdminSettingsLangRequest(
             lang=lang,
             name=name,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminSettingsNameLangLangRequest, base_url, '/api/v1/admin/settings/{name}/lang/{lang}', request)
+        url = utils.generate_url(operations.DeleteAdminSettingsLangRequest, base_url, '/api/v1/admin/settings/{name}/lang/{lang}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -5954,7 +6082,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminSettingsNameLangLangResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteAdminSettingsLangResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -5965,8 +6093,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_sitemap(self) -> operations.PostAPIV1AdminSitemapResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/sitemap', oauth2_scopes=[], security_source=None)
+    def generate_sitemap(self) -> operations.GenerateSitemapResponse:
+        r"""Generate a new sitemap for the application"""
+        hook_ctx = HookContext(operation_id='generateSitemap', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/sitemap'
@@ -5999,7 +6128,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminSitemapResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GenerateSitemapResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6010,8 +6139,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_storage_sites(self) -> operations.GetAPIV1AdminStorageSitesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/storageSites', oauth2_scopes=[], security_source=None)
+    def get_storage_sites(self) -> operations.GetStorageSitesResponse:
+        r"""Fetches all storage sites"""
+        hook_ctx = HookContext(operation_id='getStorageSites', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/storageSites'
@@ -6044,7 +6174,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminStorageSitesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetStorageSitesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6055,8 +6185,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_storage_sites(self) -> operations.PostAPIV1AdminStorageSitesResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/storageSites', oauth2_scopes=[], security_source=None)
+    def create_storage_site(self) -> operations.CreateStorageSiteResponse:
+        r"""Creates a new storage site"""
+        hook_ctx = HookContext(operation_id='createStorageSite', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/storageSites'
@@ -6089,7 +6220,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminStorageSitesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateStorageSiteResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6100,15 +6231,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_storage_sites_id_(self, id: int) -> operations.GetAPIV1AdminStorageSitesIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/storageSites/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminStorageSitesIDRequest(
+    def fetch_storage_site(self, id: int) -> operations.FetchStorageSiteResponse:
+        r"""Retrieves details of a specific storage site by its unique identifier"""
+        hook_ctx = HookContext(operation_id='fetchStorageSite', oauth2_scopes=[], security_source=None)
+        request = operations.FetchStorageSiteRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminStorageSitesIDRequest, base_url, '/api/v1/admin/storageSites/{id}', request)
+        url = utils.generate_url(operations.FetchStorageSiteRequest, base_url, '/api/v1/admin/storageSites/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -6138,7 +6270,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminStorageSitesIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.FetchStorageSiteResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6149,15 +6281,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_storage_sites_id_(self, id: int) -> operations.DeleteAPIV1AdminStorageSitesIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/storageSites/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminStorageSitesIDRequest(
+    def delete_storage_site(self, id: int) -> operations.DeleteStorageSiteResponse:
+        r"""Deletes a specific storage site by its unique identifier"""
+        hook_ctx = HookContext(operation_id='deleteStorageSite', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteStorageSiteRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminStorageSitesIDRequest, base_url, '/api/v1/admin/storageSites/{id}', request)
+        url = utils.generate_url(operations.DeleteStorageSiteRequest, base_url, '/api/v1/admin/storageSites/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -6187,7 +6320,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminStorageSitesIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteStorageSiteResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6198,15 +6331,16 @@ class Admin:
 
     
     
-    def put_api_v1_admin_storage_sites_id_primary_storage(self, id: int) -> operations.PutAPIV1AdminStorageSitesIDPrimaryStorageResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/storageSites/{id}/primaryStorage', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AdminStorageSitesIDPrimaryStorageRequest(
+    def update_primary_storage(self, id: int) -> operations.UpdatePrimaryStorageResponse:
+        r"""Update the primary storage of a storage site by ID"""
+        hook_ctx = HookContext(operation_id='updatePrimaryStorage', oauth2_scopes=[], security_source=None)
+        request = operations.UpdatePrimaryStorageRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AdminStorageSitesIDPrimaryStorageRequest, base_url, '/api/v1/admin/storageSites/{id}/primaryStorage', request)
+        url = utils.generate_url(operations.UpdatePrimaryStorageRequest, base_url, '/api/v1/admin/storageSites/{id}/primaryStorage', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -6236,7 +6370,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminStorageSitesIDPrimaryStorageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdatePrimaryStorageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6247,16 +6381,17 @@ class Admin:
 
     
     
-    def post_api_v1_admin_submit_dataset_version_to_archive_id_version_(self, id: str, version: str) -> operations.PostAPIV1AdminSubmitDatasetVersionToArchiveIDVersionResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/submitDatasetVersionToArchive/{id}/{version}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AdminSubmitDatasetVersionToArchiveIDVersionRequest(
+    def submit_dataset_version_to_archive(self, id: str, version: str) -> operations.SubmitDatasetVersionToArchiveResponse:
+        r"""Submit a specific dataset version to the archive by using provided dataset ID and version number"""
+        hook_ctx = HookContext(operation_id='submitDatasetVersionToArchive', oauth2_scopes=[], security_source=None)
+        request = operations.SubmitDatasetVersionToArchiveRequest(
             id=id,
             version=version,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1AdminSubmitDatasetVersionToArchiveIDVersionRequest, base_url, '/api/v1/admin/submitDatasetVersionToArchive/{id}/{version}', request)
+        url = utils.generate_url(operations.SubmitDatasetVersionToArchiveRequest, base_url, '/api/v1/admin/submitDatasetVersionToArchive/{id}/{version}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -6286,7 +6421,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminSubmitDatasetVersionToArchiveIDVersionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.SubmitDatasetVersionToArchiveResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6297,15 +6432,16 @@ class Admin:
 
     
     
-    def post_api_v1_admin_superuser_identifier_(self, identifier: str) -> operations.PostAPIV1AdminSuperuserIdentifierResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/superuser/{identifier}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AdminSuperuserIdentifierRequest(
+    def admin_create_super_user(self, identifier: str) -> operations.AdminCreateSuperUserResponse:
+        r"""Creates a new superuser with the provided identifier"""
+        hook_ctx = HookContext(operation_id='admin_createSuperUser', oauth2_scopes=[], security_source=None)
+        request = operations.AdminCreateSuperUserRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1AdminSuperuserIdentifierRequest, base_url, '/api/v1/admin/superuser/{identifier}', request)
+        url = utils.generate_url(operations.AdminCreateSuperUserRequest, base_url, '/api/v1/admin/superuser/{identifier}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -6335,7 +6471,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminSuperuserIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AdminCreateSuperUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6346,15 +6482,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_template_id_(self, id: int) -> operations.DeleteAPIV1AdminTemplateIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/template/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminTemplateIDRequest(
+    def delete_admin_template(self, id: int) -> operations.DeleteAdminTemplateResponse:
+        r"""Delete an admin template by ID"""
+        hook_ctx = HookContext(operation_id='deleteAdminTemplate', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteAdminTemplateRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminTemplateIDRequest, base_url, '/api/v1/admin/template/{id}', request)
+        url = utils.generate_url(operations.DeleteAdminTemplateRequest, base_url, '/api/v1/admin/template/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -6384,7 +6521,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminTemplateIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteAdminTemplateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6395,8 +6532,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_templates(self) -> operations.GetAPIV1AdminTemplatesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/templates', oauth2_scopes=[], security_source=None)
+    def get_admin_templates(self) -> operations.GetAdminTemplatesResponse:
+        r"""Retrieve all admin templates"""
+        hook_ctx = HookContext(operation_id='getAdminTemplates', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/templates'
@@ -6429,7 +6567,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminTemplatesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminTemplatesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6440,15 +6578,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_templates_alias_(self, alias: str) -> operations.GetAPIV1AdminTemplatesAliasResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/templates/{alias}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminTemplatesAliasRequest(
+    def get_admin_template(self, alias: str) -> operations.GetAdminTemplateResponse:
+        r"""Retrieve a specific admin template using its alias."""
+        hook_ctx = HookContext(operation_id='getAdminTemplate', oauth2_scopes=[], security_source=None)
+        request = operations.GetAdminTemplateRequest(
             alias=alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminTemplatesAliasRequest, base_url, '/api/v1/admin/templates/{alias}', request)
+        url = utils.generate_url(operations.GetAdminTemplateRequest, base_url, '/api/v1/admin/templates/{alias}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -6478,7 +6617,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminTemplatesAliasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminTemplateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6489,18 +6628,19 @@ class Admin:
 
     
     
-    def get_api_v1_admin_test_datasets_id_external_tools(self, id: str, type_: Optional[str] = None) -> operations.GetAPIV1AdminTestDatasetsIDExternalToolsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/test/datasets/{id}/externalTools', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminTestDatasetsIDExternalToolsRequest(
+    def get_external_tools_1(self, id: str, type_: Optional[str] = None) -> operations.GetExternalTools1Response:
+        r"""Gets an external tool associated with a specific dataset identified by its id"""
+        hook_ctx = HookContext(operation_id='getExternalTools_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetExternalTools1Request(
             id=id,
             type=type_,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminTestDatasetsIDExternalToolsRequest, base_url, '/api/v1/admin/test/datasets/{id}/externalTools', request)
+        url = utils.generate_url(operations.GetExternalTools1Request, base_url, '/api/v1/admin/test/datasets/{id}/externalTools', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminTestDatasetsIDExternalToolsRequest, request)
+        query_params = utils.get_query_params(operations.GetExternalTools1Request, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -6529,7 +6669,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminTestDatasetsIDExternalToolsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetExternalTools1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6540,9 +6680,10 @@ class Admin:
 
     
     
-    def get_api_v1_admin_test_files_id_external_tool_tool_id_(self, id: str, tool_id: str, type_: Optional[str] = None) -> operations.GetAPIV1AdminTestFilesIDExternalToolToolIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/test/files/{id}/externalTool/{toolId}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminTestFilesIDExternalToolToolIDRequest(
+    def get_external_tool_by_id(self, id: str, tool_id: str, type_: Optional[str] = None) -> operations.GetExternalToolByIDResponse:
+        r"""Retrieve the details of a specific external tool by its ID for a given file"""
+        hook_ctx = HookContext(operation_id='getExternalToolById', oauth2_scopes=[], security_source=None)
+        request = operations.GetExternalToolByIDRequest(
             id=id,
             tool_id=tool_id,
             type=type_,
@@ -6550,9 +6691,9 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminTestFilesIDExternalToolToolIDRequest, base_url, '/api/v1/admin/test/files/{id}/externalTool/{toolId}', request)
+        url = utils.generate_url(operations.GetExternalToolByIDRequest, base_url, '/api/v1/admin/test/files/{id}/externalTool/{toolId}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminTestFilesIDExternalToolToolIDRequest, request)
+        query_params = utils.get_query_params(operations.GetExternalToolByIDRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -6581,7 +6722,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminTestFilesIDExternalToolToolIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetExternalToolByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6592,18 +6733,19 @@ class Admin:
 
     
     
-    def get_api_v1_admin_test_files_id_external_tools(self, id: str, type_: Optional[str] = None) -> operations.GetAPIV1AdminTestFilesIDExternalToolsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/test/files/{id}/externalTools', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminTestFilesIDExternalToolsRequest(
+    def get_external_tools_1_1(self, id: str, type_: Optional[str] = None) -> operations.GetExternalTools11Response:
+        r"""Retrieve the external tools of a specific test file."""
+        hook_ctx = HookContext(operation_id='getExternalTools_1_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetExternalTools11Request(
             id=id,
             type=type_,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminTestFilesIDExternalToolsRequest, base_url, '/api/v1/admin/test/files/{id}/externalTools', request)
+        url = utils.generate_url(operations.GetExternalTools11Request, base_url, '/api/v1/admin/test/files/{id}/externalTools', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminTestFilesIDExternalToolsRequest, request)
+        query_params = utils.get_query_params(operations.GetExternalTools11Request, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -6632,7 +6774,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminTestFilesIDExternalToolsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetExternalTools11Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6643,18 +6785,19 @@ class Admin:
 
     
     
-    def get_api_v1_admin_update_hash_values_alg_(self, alg: str, num: Optional[int] = None) -> operations.GetAPIV1AdminUpdateHashValuesAlgResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/updateHashValues/{alg}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminUpdateHashValuesAlgRequest(
+    def get_hash_values(self, alg: str, num: Optional[int] = None) -> operations.GetHashValuesResponse:
+        r"""Retrieve hash values based on specified algorithm"""
+        hook_ctx = HookContext(operation_id='getHashValues', oauth2_scopes=[], security_source=None)
+        request = operations.GetHashValuesRequest(
             alg=alg,
             num=num,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminUpdateHashValuesAlgRequest, base_url, '/api/v1/admin/updateHashValues/{alg}', request)
+        url = utils.generate_url(operations.GetHashValuesRequest, base_url, '/api/v1/admin/updateHashValues/{alg}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminUpdateHashValuesAlgRequest, request)
+        query_params = utils.get_query_params(operations.GetHashValuesRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -6683,7 +6826,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminUpdateHashValuesAlgResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetHashValuesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6694,15 +6837,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_validate_dataset_files_id_(self, id: str) -> operations.GetAPIV1AdminValidateDatasetFilesIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/validate/dataset/files/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminValidateDatasetFilesIDRequest(
+    def get_validate_dataset_files(self, id: str) -> operations.GetValidateDatasetFilesResponse:
+        r"""Retrieve and validate specified dataset files"""
+        hook_ctx = HookContext(operation_id='get_validate_dataset_files', oauth2_scopes=[], security_source=None)
+        request = operations.GetValidateDatasetFilesRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminValidateDatasetFilesIDRequest, base_url, '/api/v1/admin/validate/dataset/files/{id}', request)
+        url = utils.generate_url(operations.GetValidateDatasetFilesRequest, base_url, '/api/v1/admin/validate/dataset/files/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -6732,7 +6876,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminValidateDatasetFilesIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetValidateDatasetFilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6743,18 +6887,19 @@ class Admin:
 
     
     
-    def get_api_v1_admin_validate_dataset_id_(self, id: str, variables: Optional[bool] = None) -> operations.GetAPIV1AdminValidateDatasetIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/validate/dataset/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminValidateDatasetIDRequest(
+    def validate_dataset(self, id: str, variables: Optional[bool] = None) -> operations.ValidateDatasetResponse:
+        r"""Validate a dataset with a specified ID"""
+        hook_ctx = HookContext(operation_id='validateDataset', oauth2_scopes=[], security_source=None)
+        request = operations.ValidateDatasetRequest(
             id=id,
             variables=variables,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminValidateDatasetIDRequest, base_url, '/api/v1/admin/validate/dataset/{id}', request)
+        url = utils.generate_url(operations.ValidateDatasetRequest, base_url, '/api/v1/admin/validate/dataset/{id}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminValidateDatasetIDRequest, request)
+        query_params = utils.get_query_params(operations.ValidateDatasetRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -6783,7 +6928,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminValidateDatasetIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ValidateDatasetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6794,9 +6939,10 @@ class Admin:
 
     
     
-    def get_api_v1_admin_validate_datasets(self, variables: Optional[bool] = None) -> operations.GetAPIV1AdminValidateDatasetsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/validate/datasets', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminValidateDatasetsRequest(
+    def admin_validate_datasets(self, variables: Optional[bool] = None) -> operations.AdminValidateDatasetsResponse:
+        r"""Validate datasets in the system"""
+        hook_ctx = HookContext(operation_id='adminValidateDatasets', oauth2_scopes=[], security_source=None)
+        request = operations.AdminValidateDatasetsRequest(
             variables=variables,
         )
         
@@ -6804,7 +6950,7 @@ class Admin:
         
         url = base_url + '/api/v1/admin/validate/datasets'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AdminValidateDatasetsRequest, request)
+        query_params = utils.get_query_params(operations.AdminValidateDatasetsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -6833,7 +6979,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminValidateDatasetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AdminValidateDatasetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6844,15 +6990,16 @@ class Admin:
 
     
     
-    def post_api_v1_admin_validate_data_file_hash_value_file_id_(self, file_id: str) -> operations.PostAPIV1AdminValidateDataFileHashValueFileIDResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/validateDataFileHashValue/{fileId}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AdminValidateDataFileHashValueFileIDRequest(
+    def validate_data_file_hash(self, file_id: str) -> operations.ValidateDataFileHashResponse:
+        r"""Validate hash value of the specified data file"""
+        hook_ctx = HookContext(operation_id='ValidateDataFileHash', oauth2_scopes=[], security_source=None)
+        request = operations.ValidateDataFileHashRequest(
             file_id=file_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1AdminValidateDataFileHashValueFileIDRequest, base_url, '/api/v1/admin/validateDataFileHashValue/{fileId}', request)
+        url = utils.generate_url(operations.ValidateDataFileHashRequest, base_url, '/api/v1/admin/validateDataFileHashValue/{fileId}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -6882,7 +7029,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminValidateDataFileHashValueFileIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ValidateDataFileHashResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6893,8 +7040,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_validate_password(self) -> operations.PostAPIV1AdminValidatePasswordResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/validatePassword', oauth2_scopes=[], security_source=None)
+    def validate_admin_password(self) -> operations.ValidateAdminPasswordResponse:
+        r"""Validates the password of an admin user"""
+        hook_ctx = HookContext(operation_id='validateAdminPassword', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/validatePassword'
@@ -6927,7 +7075,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminValidatePasswordResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ValidateAdminPasswordResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6938,8 +7086,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_workflows(self) -> operations.GetAPIV1AdminWorkflowsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/workflows', oauth2_scopes=[], security_source=None)
+    def get_admin_workflows(self) -> operations.GetAdminWorkflowsResponse:
+        r"""Retrieve all workflows associated with the admin"""
+        hook_ctx = HookContext(operation_id='getAdminWorkflows', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/workflows'
@@ -6972,7 +7121,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminWorkflowsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminWorkflowsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -6983,8 +7132,9 @@ class Admin:
 
     
     
-    def post_api_v1_admin_workflows(self) -> operations.PostAPIV1AdminWorkflowsResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/workflows', oauth2_scopes=[], security_source=None)
+    def create_admin_workflow(self) -> operations.CreateAdminWorkflowResponse:
+        r"""Create a new workflow for the admin"""
+        hook_ctx = HookContext(operation_id='createAdminWorkflow', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/workflows'
@@ -7017,7 +7167,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminWorkflowsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateAdminWorkflowResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -7028,8 +7178,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_workflows_default(self) -> operations.GetAPIV1AdminWorkflowsDefaultResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/workflows/default', oauth2_scopes=[], security_source=None)
+    def get_default_workflow(self) -> operations.GetDefaultWorkflowResponse:
+        r"""Fetch default workflow configured for admin"""
+        hook_ctx = HookContext(operation_id='getDefaultWorkflow', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/workflows/default'
@@ -7062,7 +7213,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminWorkflowsDefaultResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDefaultWorkflowResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -7073,15 +7224,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_workflows_default_trigger_type_(self, trigger_type: str) -> operations.GetAPIV1AdminWorkflowsDefaultTriggerTypeResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/workflows/default/{triggerType}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminWorkflowsDefaultTriggerTypeRequest(
+    def get_trigger_type(self, trigger_type: str) -> operations.GetTriggerTypeResponse:
+        r"""Retrieve a specific trigger type from workflows"""
+        hook_ctx = HookContext(operation_id='getTriggerType', oauth2_scopes=[], security_source=None)
+        request = operations.GetTriggerTypeRequest(
             trigger_type=trigger_type,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminWorkflowsDefaultTriggerTypeRequest, base_url, '/api/v1/admin/workflows/default/{triggerType}', request)
+        url = utils.generate_url(operations.GetTriggerTypeRequest, base_url, '/api/v1/admin/workflows/default/{triggerType}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -7111,7 +7263,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminWorkflowsDefaultTriggerTypeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetTriggerTypeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -7122,15 +7274,16 @@ class Admin:
 
     
     
-    def put_api_v1_admin_workflows_default_trigger_type_(self, trigger_type: str) -> operations.PutAPIV1AdminWorkflowsDefaultTriggerTypeResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/workflows/default/{triggerType}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AdminWorkflowsDefaultTriggerTypeRequest(
+    def update_trigger_type(self, trigger_type: str) -> operations.UpdateTriggerTypeResponse:
+        r"""Update a specific trigger type in workflows"""
+        hook_ctx = HookContext(operation_id='updateTriggerType', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateTriggerTypeRequest(
             trigger_type=trigger_type,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AdminWorkflowsDefaultTriggerTypeRequest, base_url, '/api/v1/admin/workflows/default/{triggerType}', request)
+        url = utils.generate_url(operations.UpdateTriggerTypeRequest, base_url, '/api/v1/admin/workflows/default/{triggerType}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -7160,7 +7313,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminWorkflowsDefaultTriggerTypeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateTriggerTypeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -7171,15 +7324,16 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_workflows_default_trigger_type_(self, trigger_type: str) -> operations.DeleteAPIV1AdminWorkflowsDefaultTriggerTypeResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/workflows/default/{triggerType}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AdminWorkflowsDefaultTriggerTypeRequest(
+    def delete_trigger_type(self, trigger_type: str) -> operations.DeleteTriggerTypeResponse:
+        r"""Delete a specific trigger type from workflows"""
+        hook_ctx = HookContext(operation_id='deleteTriggerType', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteTriggerTypeRequest(
             trigger_type=trigger_type,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AdminWorkflowsDefaultTriggerTypeRequest, base_url, '/api/v1/admin/workflows/default/{triggerType}', request)
+        url = utils.generate_url(operations.DeleteTriggerTypeRequest, base_url, '/api/v1/admin/workflows/default/{triggerType}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -7209,7 +7363,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminWorkflowsDefaultTriggerTypeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteTriggerTypeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -7220,8 +7374,9 @@ class Admin:
 
     
     
-    def get_api_v1_admin_workflows_ip_whitelist(self) -> operations.GetAPIV1AdminWorkflowsIPWhitelistResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/workflows/ip-whitelist', oauth2_scopes=[], security_source=None)
+    def get_ip_whitelist(self) -> operations.GetIPWhitelistResponse:
+        r"""Retrieve current IP Whitelist for admin workflows"""
+        hook_ctx = HookContext(operation_id='getIPWhitelist', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/workflows/ip-whitelist'
@@ -7254,7 +7409,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminWorkflowsIPWhitelistResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetIPWhitelistResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -7265,8 +7420,9 @@ class Admin:
 
     
     
-    def put_api_v1_admin_workflows_ip_whitelist(self) -> operations.PutAPIV1AdminWorkflowsIPWhitelistResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/admin/workflows/ip-whitelist', oauth2_scopes=[], security_source=None)
+    def update_ip_whitelist(self) -> operations.UpdateIPWhitelistResponse:
+        r"""Update the IP Whitelist for admin workflows"""
+        hook_ctx = HookContext(operation_id='updateIPWhitelist', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/workflows/ip-whitelist'
@@ -7299,7 +7455,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AdminWorkflowsIPWhitelistResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateIPWhitelistResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -7310,8 +7466,9 @@ class Admin:
 
     
     
-    def delete_api_v1_admin_workflows_ip_whitelist(self) -> operations.DeleteAPIV1AdminWorkflowsIPWhitelistResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/admin/workflows/ip-whitelist', oauth2_scopes=[], security_source=None)
+    def delete_ip_whitelist(self) -> operations.DeleteIPWhitelistResponse:
+        r"""Remove the IP Whitelist for admin workflows"""
+        hook_ctx = HookContext(operation_id='deleteIPWhitelist', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/workflows/ip-whitelist'
@@ -7344,7 +7501,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AdminWorkflowsIPWhitelistResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteIPWhitelistResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -7355,15 +7512,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_workflows_identifier_(self, identifier: str) -> operations.GetAPIV1AdminWorkflowsIdentifierResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/workflows/{identifier}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminWorkflowsIdentifierRequest(
+    def get_workflow_by_identifier(self, identifier: str) -> operations.GetWorkflowByIdentifierResponse:
+        r"""Retrieve a specific workflow using its identifier"""
+        hook_ctx = HookContext(operation_id='getWorkflowByIdentifier', oauth2_scopes=[], security_source=None)
+        request = operations.GetWorkflowByIdentifierRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminWorkflowsIdentifierRequest, base_url, '/api/v1/admin/workflows/{identifier}', request)
+        url = utils.generate_url(operations.GetWorkflowByIdentifierRequest, base_url, '/api/v1/admin/workflows/{identifier}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -7393,7 +7551,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminWorkflowsIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetWorkflowByIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -7404,15 +7562,16 @@ class Admin:
 
     
     
-    def get_api_v1_admin_id_register_data_file(self, id: str) -> operations.GetAPIV1AdminIDRegisterDataFileResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/admin/{id}/registerDataFile', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AdminIDRegisterDataFileRequest(
+    def get_admin_data_file(self, id: str) -> operations.GetAdminDataFileResponse:
+        r"""Retrieve data file details registered by a specific admin"""
+        hook_ctx = HookContext(operation_id='getAdminDataFile', oauth2_scopes=[], security_source=None)
+        request = operations.GetAdminDataFileRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AdminIDRegisterDataFileRequest, base_url, '/api/v1/admin/{id}/registerDataFile', request)
+        url = utils.generate_url(operations.GetAdminDataFileRequest, base_url, '/api/v1/admin/{id}/registerDataFile', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -7442,7 +7601,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AdminIDRegisterDataFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAdminDataFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -7453,15 +7612,16 @@ class Admin:
 
     
     
-    def post_api_v1_admin_id_reregister_hdl_to_pid(self, id: str) -> operations.PostAPIV1AdminIDReregisterHDLToPIDResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/admin/{id}/reregisterHDLToPID', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AdminIDReregisterHDLToPIDRequest(
+    def admin_reregister_hdl_to_pid(self, id: str) -> operations.AdminReregisterHDLToPIDResponse:
+        r"""Admin reruns the HDL to PID registration for a specific admin ID."""
+        hook_ctx = HookContext(operation_id='adminReregisterHDLToPID', oauth2_scopes=[], security_source=None)
+        request = operations.AdminReregisterHDLToPIDRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1AdminIDReregisterHDLToPIDRequest, base_url, '/api/v1/admin/{id}/reregisterHDLToPID', request)
+        url = utils.generate_url(operations.AdminReregisterHDLToPIDRequest, base_url, '/api/v1/admin/{id}/reregisterHDLToPID', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -7491,7 +7651,7 @@ class Admin:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AdminIDReregisterHDLToPIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AdminReregisterHDLToPIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

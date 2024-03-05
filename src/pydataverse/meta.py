@@ -15,10 +15,13 @@ class Meta:
         
     
     
-    def get_api_v1_meta_datafile_file_id_(self, file_id: int, exclude: Optional[str] = None, file_metadata_id: Optional[int] = None, include: Optional[str] = None) -> operations.GetAPIV1MetaDatafileFileIDResponse:
-        r"""Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible."""
-        hook_ctx = HookContext(operation_id='get_/api/v1/meta/datafile/{fileId}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1MetaDatafileFileIDRequest(
+    def get_datafile_meta(self, file_id: int, exclude: Optional[str] = None, file_metadata_id: Optional[int] = None, include: Optional[str] = None) -> operations.GetDatafileMetaResponse:
+        r"""Get metadata of a specific datafile by file id
+
+        Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
+        """
+        hook_ctx = HookContext(operation_id='getDatafileMeta', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatafileMetaRequest(
             file_id=file_id,
             exclude=exclude,
             file_metadata_id=file_metadata_id,
@@ -27,9 +30,9 @@ class Meta:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1MetaDatafileFileIDRequest, base_url, '/api/v1/meta/datafile/{fileId}', request)
+        url = utils.generate_url(operations.GetDatafileMetaRequest, base_url, '/api/v1/meta/datafile/{fileId}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1MetaDatafileFileIDRequest, request)
+        query_params = utils.get_query_params(operations.GetDatafileMetaRequest, request)
         headers['Accept'] = 'text/xml'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -58,7 +61,7 @@ class Meta:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1MetaDatafileFileIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatafileMetaResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'text/xml'):
@@ -72,10 +75,13 @@ class Meta:
 
     
     
-    def get_api_v1_meta_dataset_dataset_id_(self, dataset_id: int, exclude: Optional[str] = None, include: Optional[str] = None) -> operations.GetAPIV1MetaDatasetDatasetIDResponse:
-        r"""Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible."""
-        hook_ctx = HookContext(operation_id='get_/api/v1/meta/dataset/{datasetId}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1MetaDatasetDatasetIDRequest(
+    def get_dataset_metadata_1(self, dataset_id: int, exclude: Optional[str] = None, include: Optional[str] = None) -> operations.GetDatasetMetadata1Response:
+        r"""Retrieves the metadata of a specific dataset by its ID
+
+        Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
+        """
+        hook_ctx = HookContext(operation_id='getDatasetMetadata_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetMetadata1Request(
             dataset_id=dataset_id,
             exclude=exclude,
             include=include,
@@ -83,9 +89,9 @@ class Meta:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1MetaDatasetDatasetIDRequest, base_url, '/api/v1/meta/dataset/{datasetId}', request)
+        url = utils.generate_url(operations.GetDatasetMetadata1Request, base_url, '/api/v1/meta/dataset/{datasetId}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1MetaDatasetDatasetIDRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetMetadata1Request, request)
         headers['Accept'] = 'application/xml'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -114,7 +120,7 @@ class Meta:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1MetaDatasetDatasetIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetMetadata1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/xml'):

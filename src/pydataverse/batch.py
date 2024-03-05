@@ -15,9 +15,10 @@ class Batch:
         
     
     
-    def get_api_v1_batch_harvest(self, create_dv: Optional[bool] = None, dv: Optional[str] = None, key: Optional[str] = None, path: Optional[str] = None) -> operations.GetAPIV1BatchHarvestResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/batch/harvest', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1BatchHarvestRequest(
+    def get_batch_harvest(self, create_dv: Optional[bool] = None, dv: Optional[str] = None, key: Optional[str] = None, path: Optional[str] = None) -> operations.GetBatchHarvestResponse:
+        r"""Retrieves information about a batch harvest based on provided parameters"""
+        hook_ctx = HookContext(operation_id='getBatchHarvest', oauth2_scopes=[], security_source=None)
+        request = operations.GetBatchHarvestRequest(
             create_dv=create_dv,
             dv=dv,
             key=key,
@@ -28,7 +29,7 @@ class Batch:
         
         url = base_url + '/api/v1/batch/harvest'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1BatchHarvestRequest, request)
+        query_params = utils.get_query_params(operations.GetBatchHarvestRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -57,7 +58,7 @@ class Batch:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1BatchHarvestResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetBatchHarvestResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -68,9 +69,10 @@ class Batch:
 
     
     
-    def get_api_v1_batch_import(self, create_dv: Optional[bool] = None, dv: Optional[str] = None, key: Optional[str] = None, path: Optional[str] = None) -> operations.GetAPIV1BatchImportResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/batch/import', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1BatchImportRequest(
+    def get_batch_import_status(self, create_dv: Optional[bool] = None, dv: Optional[str] = None, key: Optional[str] = None, path: Optional[str] = None) -> operations.GetBatchImportStatusResponse:
+        r"""Retrieve status of a batch import request"""
+        hook_ctx = HookContext(operation_id='getBatchImportStatus', oauth2_scopes=[], security_source=None)
+        request = operations.GetBatchImportStatusRequest(
             create_dv=create_dv,
             dv=dv,
             key=key,
@@ -81,7 +83,7 @@ class Batch:
         
         url = base_url + '/api/v1/batch/import'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1BatchImportRequest, request)
+        query_params = utils.get_query_params(operations.GetBatchImportStatusRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -110,7 +112,7 @@ class Batch:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1BatchImportResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetBatchImportStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -121,9 +123,10 @@ class Batch:
 
     
     
-    def post_api_v1_batch_import(self, dv: Optional[str] = None, key: Optional[str] = None) -> operations.PostAPIV1BatchImportResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/batch/import', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1BatchImportRequest(
+    def create_batch_import(self, dv: Optional[str] = None, key: Optional[str] = None) -> operations.CreateBatchImportResponse:
+        r"""Initiate a new batch import request"""
+        hook_ctx = HookContext(operation_id='createBatchImport', oauth2_scopes=[], security_source=None)
+        request = operations.CreateBatchImportRequest(
             dv=dv,
             key=key,
         )
@@ -132,7 +135,7 @@ class Batch:
         
         url = base_url + '/api/v1/batch/import'
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1BatchImportRequest, request)
+        query_params = utils.get_query_params(operations.CreateBatchImportRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -161,7 +164,7 @@ class Batch:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1BatchImportResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateBatchImportResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -172,9 +175,10 @@ class Batch:
 
     
     
-    def post_api_v1_batch_jobs_import_datasets_files_identifier_(self, identifier: str, mode: Optional[str] = None, total_size: Optional[int] = None, upload_folder: Optional[str] = None) -> operations.PostAPIV1BatchJobsImportDatasetsFilesIdentifierResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/batch/jobs/import/datasets/files/{identifier}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1BatchJobsImportDatasetsFilesIdentifierRequest(
+    def post_batch_job_import_datasets(self, identifier: str, mode: Optional[str] = None, total_size: Optional[int] = None, upload_folder: Optional[str] = None) -> operations.PostBatchJobImportDatasetsResponse:
+        r"""Initiate a batch job for importing datasets using the provided identifier"""
+        hook_ctx = HookContext(operation_id='postBatchJobImportDatasets', oauth2_scopes=[], security_source=None)
+        request = operations.PostBatchJobImportDatasetsRequest(
             identifier=identifier,
             mode=mode,
             total_size=total_size,
@@ -183,9 +187,9 @@ class Batch:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1BatchJobsImportDatasetsFilesIdentifierRequest, base_url, '/api/v1/batch/jobs/import/datasets/files/{identifier}', request)
+        url = utils.generate_url(operations.PostBatchJobImportDatasetsRequest, base_url, '/api/v1/batch/jobs/import/datasets/files/{identifier}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1BatchJobsImportDatasetsFilesIdentifierRequest, request)
+        query_params = utils.get_query_params(operations.PostBatchJobImportDatasetsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -214,7 +218,7 @@ class Batch:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1BatchJobsImportDatasetsFilesIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostBatchJobImportDatasetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

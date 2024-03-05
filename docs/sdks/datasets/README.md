@@ -3,108 +3,110 @@
 
 ### Available Operations
 
-* [get_api_v1_datasets_export](#get_api_v1_datasets_export)
-* [get_api_v1_datasets_list_curation_states](#get_api_v1_datasets_list_curation_states)
-* [get_api_v1_datasets_locks](#get_api_v1_datasets_locks)
-* [post_api_v1_datasets_modify_registration_all](#post_api_v1_datasets_modify_registration_all)
-* [get_api_v1_datasets_modify_registration_pid_metadata_all](#get_api_v1_datasets_modify_registration_pid_metadata_all)
-* [put_api_v1_datasets_mpupload](#put_api_v1_datasets_mpupload)
-* [delete_api_v1_datasets_mpupload](#delete_api_v1_datasets_mpupload)
-* [get_api_v1_datasets_private_url_dataset_version_private_url_token_](#get_api_v1_datasets_private_url_dataset_version_private_url_token_)
-* [get_api_v1_datasets_private_url_dataset_version_private_url_token_citation](#get_api_v1_datasets_private_url_dataset_version_private_url_token_citation)
-* [get_api_v1_datasets_summary_field_names](#get_api_v1_datasets_summary_field_names)
-* [delete_api_v1_datasets_dataset_id_delete_link_linked_dataverse_id_](#delete_api_v1_datasets_dataset_id_delete_link_linked_dataverse_id_)
-* [get_api_v1_datasets_identifier_allowed_curation_labels](#get_api_v1_datasets_identifier_allowed_curation_labels)
-* [get_api_v1_datasets_identifier_assignments](#get_api_v1_datasets_identifier_assignments)
-* [post_api_v1_datasets_identifier_assignments](#post_api_v1_datasets_identifier_assignments)
-* [delete_api_v1_datasets_identifier_assignments_id_](#delete_api_v1_datasets_identifier_assignments_id_)
-* [get_api_v1_datasets_identifier_curation_label_set](#get_api_v1_datasets_identifier_curation_label_set)
-* [put_api_v1_datasets_identifier_curation_label_set](#put_api_v1_datasets_identifier_curation_label_set)
-* [delete_api_v1_datasets_identifier_curation_label_set](#delete_api_v1_datasets_identifier_curation_label_set)
-* [post_api_v1_datasets_identifier_data_capture_module_checksum_validation](#post_api_v1_datasets_identifier_data_capture_module_checksum_validation)
-* [get_api_v1_datasets_identifier_data_capture_module_rsync](#get_api_v1_datasets_identifier_data_capture_module_rsync)
-* [get_api_v1_datasets_identifier_guestbook_entry_at_request](#get_api_v1_datasets_identifier_guestbook_entry_at_request)
-* [put_api_v1_datasets_identifier_guestbook_entry_at_request](#put_api_v1_datasets_identifier_guestbook_entry_at_request)
-* [delete_api_v1_datasets_identifier_guestbook_entry_at_request](#delete_api_v1_datasets_identifier_guestbook_entry_at_request)
-* [post_api_v1_datasets_identifier_lock_type_](#post_api_v1_datasets_identifier_lock_type_)
-* [get_api_v1_datasets_identifier_locks](#get_api_v1_datasets_identifier_locks)
-* [delete_api_v1_datasets_identifier_locks](#delete_api_v1_datasets_identifier_locks)
-* [get_api_v1_datasets_identifier_storage_driver](#get_api_v1_datasets_identifier_storage_driver)
-* [put_api_v1_datasets_identifier_storage_driver](#put_api_v1_datasets_identifier_storage_driver)
-* [delete_api_v1_datasets_identifier_storage_driver](#delete_api_v1_datasets_identifier_storage_driver)
-* [get_api_v1_datasets_identifier_storagesize](#get_api_v1_datasets_identifier_storagesize)
-* [get_api_v1_datasets_identifier_timestamps](#get_api_v1_datasets_identifier_timestamps)
-* [get_api_v1_datasets_identifier_versions_version_id_downloadsize](#get_api_v1_datasets_identifier_versions_version_id_downloadsize)
-* [get_api_v1_datasets_id_](#get_api_v1_datasets_id_)
-* [delete_api_v1_datasets_id_](#delete_api_v1_datasets_id_)
-* [~~get_api_v1_datasets_id_actions_publish~~](#get_api_v1_datasets_id_actions_publish) - :warning: **Deprecated**
-* [post_api_v1_datasets_id_actions_publish](#post_api_v1_datasets_id_actions_publish)
-* [post_api_v1_datasets_id_actions_releasemigrated](#post_api_v1_datasets_id_actions_releasemigrated)
-* [post_api_v1_datasets_id_add](#post_api_v1_datasets_id_add)
-* [post_api_v1_datasets_id_add_files](#post_api_v1_datasets_id_add_files)
-* [post_api_v1_datasets_id_add_globus_files](#post_api_v1_datasets_id_add_globus_files)
-* [put_api_v1_datasets_id_citationdate](#put_api_v1_datasets_id_citationdate)
-* [delete_api_v1_datasets_id_citationdate](#delete_api_v1_datasets_id_citationdate)
-* [get_api_v1_datasets_id_clean_storage](#get_api_v1_datasets_id_clean_storage)
-* [get_api_v1_datasets_id_curation_status](#get_api_v1_datasets_id_curation_status)
-* [put_api_v1_datasets_id_curation_status](#put_api_v1_datasets_id_curation_status)
-* [delete_api_v1_datasets_id_curation_status](#delete_api_v1_datasets_id_curation_status)
-* [put_api_v1_datasets_id_delete_metadata](#put_api_v1_datasets_id_delete_metadata)
-* [delete_api_v1_datasets_id_destroy](#delete_api_v1_datasets_id_destroy)
-* [get_api_v1_datasets_id_dirindex](#get_api_v1_datasets_id_dirindex)
-* [put_api_v1_datasets_id_edit_metadata](#put_api_v1_datasets_id_edit_metadata)
-* [post_api_v1_datasets_id_files_actions_set_embargo](#post_api_v1_datasets_id_files_actions_set_embargo)
-* [post_api_v1_datasets_id_files_actions_unset_embargo](#post_api_v1_datasets_id_files_actions_unset_embargo)
-* [get_api_v1_datasets_id_globus_download_parameters](#get_api_v1_datasets_id_globus_download_parameters)
-* [get_api_v1_datasets_id_globus_upload_parameters](#get_api_v1_datasets_id_globus_upload_parameters)
-* [get_api_v1_datasets_id_links](#get_api_v1_datasets_id_links)
-* [get_api_v1_datasets_id_logo](#get_api_v1_datasets_id_logo)
-* [get_api_v1_datasets_id_make_data_count_citations](#get_api_v1_datasets_id_make_data_count_citations)
-* [get_api_v1_datasets_id_make_data_count_metric_](#get_api_v1_datasets_id_make_data_count_metric_)
-* [get_api_v1_datasets_id_make_data_count_metric_yyyymm_](#get_api_v1_datasets_id_make_data_count_metric_yyyymm_)
-* [get_api_v1_datasets_id_metadata](#get_api_v1_datasets_id_metadata)
-* [put_api_v1_datasets_id_metadata](#put_api_v1_datasets_id_metadata)
-* [put_api_v1_datasets_id_metadata_delete](#put_api_v1_datasets_id_metadata_delete)
-* [get_api_v1_datasets_id_modify_registration](#get_api_v1_datasets_id_modify_registration)
-* [post_api_v1_datasets_id_modify_registration_metadata](#post_api_v1_datasets_id_modify_registration_metadata)
-* [post_api_v1_datasets_id_monitor_globus_download](#post_api_v1_datasets_id_monitor_globus_download)
-* [post_api_v1_datasets_id_move_target_dataverse_alias_](#post_api_v1_datasets_id_move_target_dataverse_alias_)
-* [get_api_v1_datasets_id_private_url](#get_api_v1_datasets_id_private_url)
-* [post_api_v1_datasets_id_private_url](#post_api_v1_datasets_id_private_url)
-* [delete_api_v1_datasets_id_private_url](#delete_api_v1_datasets_id_private_url)
-* [post_api_v1_datasets_id_replace_files](#post_api_v1_datasets_id_replace_files)
-* [post_api_v1_datasets_id_request_globus_download](#post_api_v1_datasets_id_request_globus_download)
-* [post_api_v1_datasets_id_request_globus_upload_paths](#post_api_v1_datasets_id_request_globus_upload_paths)
-* [post_api_v1_datasets_id_return_to_author](#post_api_v1_datasets_id_return_to_author)
-* [post_api_v1_datasets_id_submit_for_review](#post_api_v1_datasets_id_submit_for_review)
-* [get_api_v1_datasets_id_thumbnail](#get_api_v1_datasets_id_thumbnail)
-* [post_api_v1_datasets_id_thumbnail](#post_api_v1_datasets_id_thumbnail)
-* [delete_api_v1_datasets_id_thumbnail](#delete_api_v1_datasets_id_thumbnail)
-* [get_api_v1_datasets_id_thumbnail_candidates](#get_api_v1_datasets_id_thumbnail_candidates)
-* [post_api_v1_datasets_id_thumbnail_data_file_id_](#post_api_v1_datasets_id_thumbnail_data_file_id_)
-* [~~get_api_v1_datasets_id_uploadsid~~](#get_api_v1_datasets_id_uploadsid) - :warning: **Deprecated**
-* [get_api_v1_datasets_id_uploadurls](#get_api_v1_datasets_id_uploadurls)
-* [get_api_v1_datasets_id_user_permissions](#get_api_v1_datasets_id_user_permissions)
-* [get_api_v1_datasets_id_versions](#get_api_v1_datasets_id_versions)
-* [get_api_v1_datasets_id_versions_version_id_](#get_api_v1_datasets_id_versions_version_id_)
-* [put_api_v1_datasets_id_versions_version_id_](#put_api_v1_datasets_id_versions_version_id_)
-* [delete_api_v1_datasets_id_versions_version_id_](#delete_api_v1_datasets_id_versions_version_id_)
-* [get_api_v1_datasets_id_versions_version_id_can_download_at_least_one_file](#get_api_v1_datasets_id_versions_version_id_can_download_at_least_one_file)
-* [get_api_v1_datasets_id_versions_version_id_citation](#get_api_v1_datasets_id_versions_version_id_citation)
-* [get_api_v1_datasets_id_versions_version_id_customlicense](#get_api_v1_datasets_id_versions_version_id_customlicense)
-* [post_api_v1_datasets_id_versions_version_id_deaccession](#post_api_v1_datasets_id_versions_version_id_deaccession)
-* [get_api_v1_datasets_id_versions_version_id_files](#get_api_v1_datasets_id_versions_version_id_files)
-* [get_api_v1_datasets_id_versions_version_id_files_counts](#get_api_v1_datasets_id_versions_version_id_files_counts)
-* [get_api_v1_datasets_id_versions_version_id_linkset](#get_api_v1_datasets_id_versions_version_id_linkset)
-* [get_api_v1_datasets_id_versions_version_id_metadata](#get_api_v1_datasets_id_versions_version_id_metadata)
-* [get_api_v1_datasets_id_versions_version_number_metadata_block_](#get_api_v1_datasets_id_versions_version_number_metadata_block_)
-* [get_api_v1_datasets_id_versions_version_toolparams_tid_](#get_api_v1_datasets_id_versions_version_toolparams_tid_)
-* [get_api_v1_datasets_id_version_archival_status](#get_api_v1_datasets_id_version_archival_status)
-* [put_api_v1_datasets_id_version_archival_status](#put_api_v1_datasets_id_version_archival_status)
-* [delete_api_v1_datasets_id_version_archival_status](#delete_api_v1_datasets_id_version_archival_status)
-* [put_api_v1_datasets_linked_dataset_id_link_linking_dataverse_alias_](#put_api_v1_datasets_linked_dataset_id_link_linking_dataverse_alias_)
+* [get_datasets_export](#get_datasets_export) - Retrieves export information of a dataset given its exporter and persistent ID
+* [get_curation_states](#get_curation_states) - Retrieve a list of curation states for datasets
+* [get_dataset_locks](#get_dataset_locks) - Retrieve information about locks on datasets
+* [modify_all_registrations](#modify_all_registrations) - Modifies registration details for all datasets
+* [get_registration_pid_metadata](#get_registration_pid_metadata) - Retrieve registration PID metadata of all datasets
+* [update_dataset_upload](#update_dataset_upload) - Update a multi-part upload for a dataset using the provided global ID, storage identifier, and upload ID
+* [delete_dataset_upload](#delete_dataset_upload) - Delete a multi-part upload for a dataset using the provided global ID, storage identifier, and upload ID
+* [get_private_url_dataset_version](#get_private_url_dataset_version) - Retrieves a dataset version using a private URL token
+* [get_citation_by_private_url](#get_citation_by_private_url) - Retrieve citation information for a dataset version via a private URL token
+* [get_summary_field_names](#get_summary_field_names) - Retrieve names of summary fields in the dataset
+* [delete_dataset_link](#delete_dataset_link) - Delete a link between a dataset and a dataverse
+* [get_allowed_curation_labels](#get_allowed_curation_labels) - Retrieve a list of allowed curation labels for a specific dataset
+* [get_dataset_assignments](#get_dataset_assignments) - Retrieves assignments for a specific dataset
+* [create_dataset_assignment](#create_dataset_assignment) - Creates an assignment for a specific dataset
+* [delete_assignment](#delete_assignment) - Delete a specific assignment for a dataset
+* [get_curation_label_set_1](#get_curation_label_set_1) - Retrieves the curation label set of the specified dataset
+* [update_curation_label_set_1](#update_curation_label_set_1) - Updates the curation label set of the specified dataset
+* [delete_curation_label_set_1](#delete_curation_label_set_1) - Deletes the curation label set for the specified dataset
+* [validate_checksum](#validate_checksum) - Validate checksum for specified dataset
+* [get_rsync_data_module](#get_rsync_data_module) - Retrieve the Rsync data capture module for a specific dataset
+* [get_guestbook_entry](#get_guestbook_entry) - Retrieves a guestbook entry for a specific dataset
+* [update_guestbook_entry](#update_guestbook_entry) - Updates a guestbook entry for a specific dataset
+* [delete_guestbook_entry](#delete_guestbook_entry) - Deletes a guestbook entry for a specific dataset
+* [lock_dataset](#lock_dataset) - Lock a specific dataset identified by the given identifier and type
+* [get_dataset_locks_1](#get_dataset_locks_1) - Retrieves specific dataset locks
+* [delete_dataset_locks](#delete_dataset_locks) - Deletes specific dataset locks
+* [get_storage_driver_1](#get_storage_driver_1) - Retrieve the details of a specific storage driver based on the provided identifier
+* [update_storage_driver_1](#update_storage_driver_1) - Update the details of a specific storage driver based on the provided identifier
+* [delete_storage_driver_1](#delete_storage_driver_1) - Delete a specific storage driver based on the provided identifier
+* [get_dataset_storage_size](#get_dataset_storage_size) - Retrieves the storage size of a dataset based on its identifier. An optional query parameter can be used to include cached files.
+* [get_dataset_timestamps](#get_dataset_timestamps) - Retrieves the timestamps for a given dataset identified by the path parameter 'identifier'
+* [get_download_size](#get_download_size) - Retrieve the download size of a specific version of a dataset
+* [get_dataset](#get_dataset) - Retrieve the specified dataset
+* [delete_dataset](#delete_dataset) - Delete the specified dataset
+* [~~get_publish_dataset~~](#get_publish_dataset) - Retrieve publishing details of a designated dataset :warning: **Deprecated**
+* [initiate_publishing](#initiate_publishing) - Publish a designated dataset with optional assurances
+* [release_migrated_dataset](#release_migrated_dataset) - Release a migrated dataset with a specified ID
+* [add_dataset](#add_dataset) - Add a new dataset to the existing record
+* [add_files_to_dataset](#add_files_to_dataset) - Adds files to a specified dataset
+* [add_globus_files_to_dataset](#add_globus_files_to_dataset) - Add globus files to a specific dataset
+* [update_citation_date](#update_citation_date) - Update the citation date of a dataset based on dataset ID
+* [delete_citation_date](#delete_citation_date) - Delete citation date of a dataset based on dataset ID
+* [get_clean_storage_status](#get_clean_storage_status) - Get the status of the clean storage task for the specified dataset
+* [get_curation_status](#get_curation_status) - Fetches the curation status of the specified dataset
+* [update_curation_status](#update_curation_status) - Updates the curation status of the specified dataset
+* [delete_curation_status](#delete_curation_status) - Deletes the curation status of the specified dataset
+* [update_dataset_metadata](#update_dataset_metadata) - Update the metadata of a specific dataset
+* [delete_dataset_1](#delete_dataset_1) - Delete a specific dataset by its ID.
+* [get_dataset_directory_index](#get_dataset_directory_index) - Retrieve directory index of a dataset
+* [edit_dataset_metadata](#edit_dataset_metadata) - Updates the metadata of a specific dataset represented by its ID
+* [set_dataset_embargo](#set_dataset_embargo) - Set an embargo on a specific dataset's files
+* [unset_embargo_on_dataset_files](#unset_embargo_on_dataset_files) - Unset embargo on files for a specific dataset
+* [get_globus_download_parameters](#get_globus_download_parameters) - Retrieve the parameters for Globus download for a specified dataset
+* [get_globus_upload_parameters](#get_globus_upload_parameters) - Retrieves Globus upload parameters for a specific dataset
+* [get_dataset_links](#get_dataset_links) - Retrieves the links of a specified dataset
+* [get_dataset_logo](#get_dataset_logo) - Retrieve the logo of a specific dataset
+* [dataset_citation_count_get](#dataset_citation_count_get) - Retrieves the citation count for a specific dataset
+* [get_dataset_metrics](#get_dataset_metrics) - Retrieve specific metrics for a specified dataset
+* [get_dataset_metric](#get_dataset_metric) - Fetches a specific metric for a specific dataset
+* [get_dataset_metadata](#get_dataset_metadata) - Retrieves the metadata of a dataset by its ID
+* [update_dataset_metadata_1](#update_dataset_metadata_1) - Updates the metadata of a dataset by its ID, with an option to replace the existing metadata
+* [update_metadata_deletion](#update_metadata_deletion) - Update the deletion status of the metadata of a specific dataset
+* [get_registration_modification](#get_registration_modification) - Retrieve the modification details of a specific dataset registration
+* [modify_dataset_registration_metadata](#modify_dataset_registration_metadata) - Modify the registration metadata of a specific dataset
+* [monitor_globus_download](#monitor_globus_download) - Initiate the process to monitor a Globus download operation for a specific dataset
+* [move_dataset_to_target](#move_dataset_to_target) - Moves a specific dataset to a target dataverse
+* [get_private_url](#get_private_url) - Retrieve a specific dataset's private URL
+* [create_private_url](#create_private_url) - Create a private URL for a specific dataset
+* [delete_private_url](#delete_private_url) - Delete a specific dataset's private URL
+* [replace_dataset_files](#replace_dataset_files) - Replace files in a specified dataset
+* [submit_globus_download_request](#submit_globus_download_request) - Submit a request for Globus download for a specific dataset
+* [post_globus_upload_paths_request](#post_globus_upload_paths_request) - Submit a request to get the paths for Globus file upload for a specified dataset
+* [return_dataset_to_author](#return_dataset_to_author) - Returns the specified dataset back to its author
+* [submit_dataset_for_review](#submit_dataset_for_review) - Submits a specified dataset for review
+* [get_dataset_thumbnail](#get_dataset_thumbnail) - Retrieves a thumbnail from a specific dataset
+* [post_dataset_thumbnail](#post_dataset_thumbnail) - Adds a thumbnail to a specific dataset
+* [delete_dataset_thumbnail](#delete_dataset_thumbnail) - Deletes a thumbnail from a specific dataset
+* [get_thumbnail_candidates](#get_thumbnail_candidates) - Retrieve the list of thumbnail candidates for a specific dataset
+* [post_thumbnail_data](#post_thumbnail_data) - Upload a new thumbnail for a specific dataset
+* [~~get_upload_id~~](#get_upload_id) - Retrieve the upload ID for the specified dataset :warning: **Deprecated**
+* [get_upload_ur_ls](#get_upload_ur_ls) - Retrieve upload URLs for a specific dataset
+* [get_user_permissions](#get_user_permissions) - Retrieve user permissions for a specific dataset
+* [get_dataset_versions](#get_dataset_versions) - Retrieve versions of a specific dataset
+* [get_dataset_version](#get_dataset_version) - Fetches the dataset version details, with options to exclude files or include deaccessioned ones
+* [update_dataset_version](#update_dataset_version) - Updates the dataset version with the given ID
+* [delete_dataset_version](#delete_dataset_version) - Deletes the specified version of a dataset
+* [check_dataset_file_download_permission](#check_dataset_file_download_permission) - Checks if a user has permission to download at least one file from a specific dataset version
+* [get_citation](#get_citation) - Retrieve the citation of a specific dataset version
+* [get_custom_license](#get_custom_license) - Retrieve a specific dataset version's custom license
+* [post_deaccession_dataset_by_version_id](#post_deaccession_dataset_by_version_id) - Remove access to a specific version of a dataset
+* [get_dataset_version_files](#get_dataset_version_files) - Fetches files within a specific version of a dataset
+* [get_dataset_files_count](#get_dataset_files_count) - Retrieve counts of various types of files in a specified dataset version
+* [get_dataset_version_linkset](#get_dataset_version_linkset) - Retrieve linkset of a specific dataset version
+* [get_dataset_version_metadata](#get_dataset_version_metadata) - Retrieve the metadata of a specific version of a dataset
+* [get_dataset_version_metadata_1](#get_dataset_version_metadata_1) - Retrieve metadata of a specified version of a dataset
+* [get_dataset_version_tool_param](#get_dataset_version_tool_param) - Retrieve tool parameters of a specific version of a dataset
+* [get_dataset_archival_status](#get_dataset_archival_status) - Retrieve the archival status of a specific version of a dataset
+* [update_dataset_archival_status](#update_dataset_archival_status) - Update the archival status of a specific version of a dataset
+* [delete_dataset_archival_status](#delete_dataset_archival_status) - Remove the archival status of a specific version of a dataset
+* [update_dataset_link](#update_dataset_link) - Updates the link between a dataset and a Dataverse alias
 
-## get_api_v1_datasets_export
+## get_datasets_export
+
+Retrieves export information of a dataset given its exporter and persistent ID
 
 ### Example Usage
 
@@ -114,7 +116,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_export(exporter='<value>', persistent_id='<value>')
+res = s.datasets.get_datasets_export(exporter='<value>', persistent_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -131,14 +133,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsExportResponse](../../models/operations/getapiv1datasetsexportresponse.md)**
+**[operations.GetDatasetsExportResponse](../../models/operations/getdatasetsexportresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_list_curation_states
+## get_curation_states
+
+Retrieve a list of curation states for datasets
 
 ### Example Usage
 
@@ -148,7 +152,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_list_curation_states()
+res = s.datasets.get_curation_states()
 
 if res.status_code == 200:
     # handle response
@@ -158,14 +162,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsListCurationStatesResponse](../../models/operations/getapiv1datasetslistcurationstatesresponse.md)**
+**[operations.GetCurationStatesResponse](../../models/operations/getcurationstatesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_locks
+## get_dataset_locks
+
+Retrieve information about locks on datasets
 
 ### Example Usage
 
@@ -175,7 +181,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_locks(type='<value>', user_identifier='<value>')
+res = s.datasets.get_dataset_locks(type='<value>', user_identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -192,14 +198,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsLocksResponse](../../models/operations/getapiv1datasetslocksresponse.md)**
+**[operations.GetDatasetLocksResponse](../../models/operations/getdatasetlocksresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_modify_registration_all
+## modify_all_registrations
+
+Modifies registration details for all datasets
 
 ### Example Usage
 
@@ -209,7 +217,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_modify_registration_all()
+res = s.datasets.modify_all_registrations()
 
 if res.status_code == 200:
     # handle response
@@ -219,14 +227,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsModifyRegistrationAllResponse](../../models/operations/postapiv1datasetsmodifyregistrationallresponse.md)**
+**[operations.ModifyAllRegistrationsResponse](../../models/operations/modifyallregistrationsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_modify_registration_pid_metadata_all
+## get_registration_pid_metadata
+
+Retrieve registration PID metadata of all datasets
 
 ### Example Usage
 
@@ -236,7 +246,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_modify_registration_pid_metadata_all()
+res = s.datasets.get_registration_pid_metadata()
 
 if res.status_code == 200:
     # handle response
@@ -246,14 +256,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsModifyRegistrationPIDMetadataAllResponse](../../models/operations/getapiv1datasetsmodifyregistrationpidmetadataallresponse.md)**
+**[operations.GetRegistrationPIDMetadataResponse](../../models/operations/getregistrationpidmetadataresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_datasets_mpupload
+## update_dataset_upload
+
+Update a multi-part upload for a dataset using the provided global ID, storage identifier, and upload ID
 
 ### Example Usage
 
@@ -263,42 +275,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.put_api_v1_datasets_mpupload(globalid='<value>', storageidentifier='<value>', uploadid='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter           | Type                | Required            | Description         |
-| ------------------- | ------------------- | ------------------- | ------------------- |
-| `globalid`          | *Optional[str]*     | :heavy_minus_sign:  | N/A                 |
-| `storageidentifier` | *Optional[str]*     | :heavy_minus_sign:  | N/A                 |
-| `uploadid`          | *Optional[str]*     | :heavy_minus_sign:  | N/A                 |
-
-
-### Response
-
-**[operations.PutAPIV1DatasetsMpuploadResponse](../../models/operations/putapiv1datasetsmpuploadresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## delete_api_v1_datasets_mpupload
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.datasets.delete_api_v1_datasets_mpupload(globalid='<value>', storageidentifier='<value>', uploadid='<value>')
+res = s.datasets.update_dataset_upload(globalid='<value>', storageidentifier='<value>', uploadid='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -316,14 +293,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DatasetsMpuploadResponse](../../models/operations/deleteapiv1datasetsmpuploadresponse.md)**
+**[operations.UpdateDatasetUploadResponse](../../models/operations/updatedatasetuploadresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_private_url_dataset_version_private_url_token_
+## delete_dataset_upload
+
+Delete a multi-part upload for a dataset using the provided global ID, storage identifier, and upload ID
 
 ### Example Usage
 
@@ -333,7 +312,44 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_private_url_dataset_version_private_url_token_(private_url_token='<value>')
+res = s.datasets.delete_dataset_upload(globalid='<value>', storageidentifier='<value>', uploadid='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter           | Type                | Required            | Description         |
+| ------------------- | ------------------- | ------------------- | ------------------- |
+| `globalid`          | *Optional[str]*     | :heavy_minus_sign:  | N/A                 |
+| `storageidentifier` | *Optional[str]*     | :heavy_minus_sign:  | N/A                 |
+| `uploadid`          | *Optional[str]*     | :heavy_minus_sign:  | N/A                 |
+
+
+### Response
+
+**[operations.DeleteDatasetUploadResponse](../../models/operations/deletedatasetuploadresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_private_url_dataset_version
+
+Retrieves a dataset version using a private URL token
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.datasets.get_private_url_dataset_version(private_url_token='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -349,14 +365,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsPrivateURLDatasetVersionPrivateURLTokenResponse](../../models/operations/getapiv1datasetsprivateurldatasetversionprivateurltokenresponse.md)**
+**[operations.GetPrivateURLDatasetVersionResponse](../../models/operations/getprivateurldatasetversionresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_private_url_dataset_version_private_url_token_citation
+## get_citation_by_private_url
+
+Retrieve citation information for a dataset version via a private URL token
 
 ### Example Usage
 
@@ -366,7 +384,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_private_url_dataset_version_private_url_token_citation(private_url_token='<value>')
+res = s.datasets.get_citation_by_private_url(private_url_token='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -382,14 +400,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsPrivateURLDatasetVersionPrivateURLTokenCitationResponse](../../models/operations/getapiv1datasetsprivateurldatasetversionprivateurltokencitationresponse.md)**
+**[operations.GetCitationByPrivateURLResponse](../../models/operations/getcitationbyprivateurlresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_summary_field_names
+## get_summary_field_names
+
+Retrieve names of summary fields in the dataset
 
 ### Example Usage
 
@@ -399,7 +419,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_summary_field_names()
+res = s.datasets.get_summary_field_names()
 
 if res.status_code == 200:
     # handle response
@@ -409,14 +429,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsSummaryFieldNamesResponse](../../models/operations/getapiv1datasetssummaryfieldnamesresponse.md)**
+**[operations.GetSummaryFieldNamesResponse](../../models/operations/getsummaryfieldnamesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_datasets_dataset_id_delete_link_linked_dataverse_id_
+## delete_dataset_link
+
+Delete a link between a dataset and a dataverse
 
 ### Example Usage
 
@@ -426,7 +448,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.delete_api_v1_datasets_dataset_id_delete_link_linked_dataverse_id_(dataset_id='<value>', linked_dataverse_id='<value>')
+res = s.datasets.delete_dataset_link(dataset_id='<value>', linked_dataverse_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -443,14 +465,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DatasetsDatasetIDDeleteLinkLinkedDataverseIDResponse](../../models/operations/deleteapiv1datasetsdatasetiddeletelinklinkeddataverseidresponse.md)**
+**[operations.DeleteDatasetLinkResponse](../../models/operations/deletedatasetlinkresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_identifier_allowed_curation_labels
+## get_allowed_curation_labels
+
+Retrieve a list of allowed curation labels for a specific dataset
 
 ### Example Usage
 
@@ -460,7 +484,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_identifier_allowed_curation_labels(identifier='<value>')
+res = s.datasets.get_allowed_curation_labels(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -476,14 +500,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIdentifierAllowedCurationLabelsResponse](../../models/operations/getapiv1datasetsidentifierallowedcurationlabelsresponse.md)**
+**[operations.GetAllowedCurationLabelsResponse](../../models/operations/getallowedcurationlabelsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_identifier_assignments
+## get_dataset_assignments
+
+Retrieves assignments for a specific dataset
 
 ### Example Usage
 
@@ -493,7 +519,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_identifier_assignments(identifier='<value>')
+res = s.datasets.get_dataset_assignments(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -509,14 +535,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIdentifierAssignmentsResponse](../../models/operations/getapiv1datasetsidentifierassignmentsresponse.md)**
+**[operations.GetDatasetAssignmentsResponse](../../models/operations/getdatasetassignmentsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_identifier_assignments
+## create_dataset_assignment
+
+Creates an assignment for a specific dataset
 
 ### Example Usage
 
@@ -526,7 +554,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_identifier_assignments(identifier='<value>', key='<value>')
+res = s.datasets.create_dataset_assignment(identifier='<value>', key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -543,14 +571,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIdentifierAssignmentsResponse](../../models/operations/postapiv1datasetsidentifierassignmentsresponse.md)**
+**[operations.CreateDatasetAssignmentResponse](../../models/operations/createdatasetassignmentresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_datasets_identifier_assignments_id_
+## delete_assignment
+
+Delete a specific assignment for a dataset
 
 ### Example Usage
 
@@ -560,7 +590,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.delete_api_v1_datasets_identifier_assignments_id_(id=984967, identifier='<value>')
+res = s.datasets.delete_assignment(id=246530, identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -577,14 +607,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DatasetsIdentifierAssignmentsIDResponse](../../models/operations/deleteapiv1datasetsidentifierassignmentsidresponse.md)**
+**[operations.DeleteAssignmentResponse](../../models/operations/deleteassignmentresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_identifier_curation_label_set
+## get_curation_label_set_1
+
+Retrieves the curation label set of the specified dataset
 
 ### Example Usage
 
@@ -594,7 +626,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_identifier_curation_label_set(identifier='<value>')
+res = s.datasets.get_curation_label_set_1(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -610,14 +642,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIdentifierCurationLabelSetResponse](../../models/operations/getapiv1datasetsidentifiercurationlabelsetresponse.md)**
+**[operations.GetCurationLabelSet1Response](../../models/operations/getcurationlabelset1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_datasets_identifier_curation_label_set
+## update_curation_label_set_1
+
+Updates the curation label set of the specified dataset
 
 ### Example Usage
 
@@ -627,7 +661,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.put_api_v1_datasets_identifier_curation_label_set(identifier='<value>', name='<value>')
+res = s.datasets.update_curation_label_set_1(identifier='<value>', name='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -644,14 +678,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DatasetsIdentifierCurationLabelSetResponse](../../models/operations/putapiv1datasetsidentifiercurationlabelsetresponse.md)**
+**[operations.UpdateCurationLabelSet1Response](../../models/operations/updatecurationlabelset1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_datasets_identifier_curation_label_set
+## delete_curation_label_set_1
+
+Deletes the curation label set for the specified dataset
 
 ### Example Usage
 
@@ -661,7 +697,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.delete_api_v1_datasets_identifier_curation_label_set(identifier='<value>')
+res = s.datasets.delete_curation_label_set_1(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -677,14 +713,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DatasetsIdentifierCurationLabelSetResponse](../../models/operations/deleteapiv1datasetsidentifiercurationlabelsetresponse.md)**
+**[operations.DeleteCurationLabelSet1Response](../../models/operations/deletecurationlabelset1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_identifier_data_capture_module_checksum_validation
+## validate_checksum
+
+Validate checksum for specified dataset
 
 ### Example Usage
 
@@ -694,7 +732,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_identifier_data_capture_module_checksum_validation(identifier='<value>')
+res = s.datasets.validate_checksum(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -710,14 +748,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIdentifierDataCaptureModuleChecksumValidationResponse](../../models/operations/postapiv1datasetsidentifierdatacapturemodulechecksumvalidationresponse.md)**
+**[operations.ValidateChecksumResponse](../../models/operations/validatechecksumresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_identifier_data_capture_module_rsync
+## get_rsync_data_module
+
+Retrieve the Rsync data capture module for a specific dataset
 
 ### Example Usage
 
@@ -727,7 +767,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_identifier_data_capture_module_rsync(identifier='<value>')
+res = s.datasets.get_rsync_data_module(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -743,14 +783,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIdentifierDataCaptureModuleRsyncResponse](../../models/operations/getapiv1datasetsidentifierdatacapturemodulersyncresponse.md)**
+**[operations.GetRsyncDataModuleResponse](../../models/operations/getrsyncdatamoduleresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_identifier_guestbook_entry_at_request
+## get_guestbook_entry
+
+Retrieves a guestbook entry for a specific dataset
 
 ### Example Usage
 
@@ -760,7 +802,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_identifier_guestbook_entry_at_request(identifier='<value>')
+res = s.datasets.get_guestbook_entry(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -776,14 +818,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIdentifierGuestbookEntryAtRequestResponse](../../models/operations/getapiv1datasetsidentifierguestbookentryatrequestresponse.md)**
+**[operations.GetGuestbookEntryResponse](../../models/operations/getguestbookentryresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_datasets_identifier_guestbook_entry_at_request
+## update_guestbook_entry
+
+Updates a guestbook entry for a specific dataset
 
 ### Example Usage
 
@@ -793,7 +837,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.put_api_v1_datasets_identifier_guestbook_entry_at_request(identifier='<value>')
+res = s.datasets.update_guestbook_entry(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -809,14 +853,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DatasetsIdentifierGuestbookEntryAtRequestResponse](../../models/operations/putapiv1datasetsidentifierguestbookentryatrequestresponse.md)**
+**[operations.UpdateGuestbookEntryResponse](../../models/operations/updateguestbookentryresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_datasets_identifier_guestbook_entry_at_request
+## delete_guestbook_entry
+
+Deletes a guestbook entry for a specific dataset
 
 ### Example Usage
 
@@ -826,7 +872,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.delete_api_v1_datasets_identifier_guestbook_entry_at_request(identifier='<value>')
+res = s.datasets.delete_guestbook_entry(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -842,14 +888,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DatasetsIdentifierGuestbookEntryAtRequestResponse](../../models/operations/deleteapiv1datasetsidentifierguestbookentryatrequestresponse.md)**
+**[operations.DeleteGuestbookEntryResponse](../../models/operations/deleteguestbookentryresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_identifier_lock_type_
+## lock_dataset
+
+Lock a specific dataset identified by the given identifier and type
 
 ### Example Usage
 
@@ -859,7 +907,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_identifier_lock_type_(identifier='<value>', type='<value>')
+res = s.datasets.lock_dataset(identifier='<value>', type='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -876,14 +924,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIdentifierLockTypeResponse](../../models/operations/postapiv1datasetsidentifierlocktyperesponse.md)**
+**[operations.LockDatasetResponse](../../models/operations/lockdatasetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_identifier_locks
+## get_dataset_locks_1
+
+Retrieves specific dataset locks
 
 ### Example Usage
 
@@ -893,7 +943,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_identifier_locks(identifier='<value>', type='<value>')
+res = s.datasets.get_dataset_locks_1(identifier='<value>', type='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -910,14 +960,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIdentifierLocksResponse](../../models/operations/getapiv1datasetsidentifierlocksresponse.md)**
+**[operations.GetDatasetLocks1Response](../../models/operations/getdatasetlocks1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_datasets_identifier_locks
+## delete_dataset_locks
+
+Deletes specific dataset locks
 
 ### Example Usage
 
@@ -927,7 +979,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.delete_api_v1_datasets_identifier_locks(identifier='<value>', type='<value>')
+res = s.datasets.delete_dataset_locks(identifier='<value>', type='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -944,14 +996,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DatasetsIdentifierLocksResponse](../../models/operations/deleteapiv1datasetsidentifierlocksresponse.md)**
+**[operations.DeleteDatasetLocksResponse](../../models/operations/deletedatasetlocksresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_identifier_storage_driver
+## get_storage_driver_1
+
+Retrieve the details of a specific storage driver based on the provided identifier
 
 ### Example Usage
 
@@ -961,7 +1015,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_identifier_storage_driver(identifier='<value>')
+res = s.datasets.get_storage_driver_1(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -977,14 +1031,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIdentifierStorageDriverResponse](../../models/operations/getapiv1datasetsidentifierstoragedriverresponse.md)**
+**[operations.GetStorageDriver1Response](../../models/operations/getstoragedriver1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_datasets_identifier_storage_driver
+## update_storage_driver_1
+
+Update the details of a specific storage driver based on the provided identifier
 
 ### Example Usage
 
@@ -994,7 +1050,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.put_api_v1_datasets_identifier_storage_driver(identifier='<value>')
+res = s.datasets.update_storage_driver_1(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1010,14 +1066,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DatasetsIdentifierStorageDriverResponse](../../models/operations/putapiv1datasetsidentifierstoragedriverresponse.md)**
+**[operations.UpdateStorageDriver1Response](../../models/operations/updatestoragedriver1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_datasets_identifier_storage_driver
+## delete_storage_driver_1
+
+Delete a specific storage driver based on the provided identifier
 
 ### Example Usage
 
@@ -1027,7 +1085,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.delete_api_v1_datasets_identifier_storage_driver(identifier='<value>')
+res = s.datasets.delete_storage_driver_1(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1043,14 +1101,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DatasetsIdentifierStorageDriverResponse](../../models/operations/deleteapiv1datasetsidentifierstoragedriverresponse.md)**
+**[operations.DeleteStorageDriver1Response](../../models/operations/deletestoragedriver1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_identifier_storagesize
+## get_dataset_storage_size
+
+Retrieves the storage size of a dataset based on its identifier. An optional query parameter can be used to include cached files.
 
 ### Example Usage
 
@@ -1060,7 +1120,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_identifier_storagesize(identifier='<value>', include_cached=False)
+res = s.datasets.get_dataset_storage_size(identifier='<value>', include_cached=False)
 
 if res.status_code == 200:
     # handle response
@@ -1077,14 +1137,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIdentifierStoragesizeResponse](../../models/operations/getapiv1datasetsidentifierstoragesizeresponse.md)**
+**[operations.GetDatasetStorageSizeResponse](../../models/operations/getdatasetstoragesizeresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_identifier_timestamps
+## get_dataset_timestamps
+
+Retrieves the timestamps for a given dataset identified by the path parameter 'identifier'
 
 ### Example Usage
 
@@ -1094,7 +1156,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_identifier_timestamps(identifier='<value>')
+res = s.datasets.get_dataset_timestamps(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1110,14 +1172,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIdentifierTimestampsResponse](../../models/operations/getapiv1datasetsidentifiertimestampsresponse.md)**
+**[operations.GetDatasetTimestampsResponse](../../models/operations/getdatasettimestampsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_identifier_versions_version_id_downloadsize
+## get_download_size
+
+Retrieve the download size of a specific version of a dataset
 
 ### Example Usage
 
@@ -1127,12 +1191,12 @@ from pydataverse.models import operations
 
 s = pydataverse.PyDataverse()
 
-req = operations.GetAPIV1DatasetsIdentifierVersionsVersionIDDownloadsizeRequest(
+req = operations.GetDownloadSizeRequest(
     identifier='<value>',
     version_id='<value>',
 )
 
-res = s.datasets.get_api_v1_datasets_identifier_versions_version_id_downloadsize(req)
+res = s.datasets.get_download_size(req)
 
 if res.status_code == 200:
     # handle response
@@ -1141,21 +1205,23 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                                                                              | Type                                                                                                                                                                   | Required                                                                                                                                                               | Description                                                                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                                              | [operations.GetAPIV1DatasetsIdentifierVersionsVersionIDDownloadsizeRequest](../../models/operations/getapiv1datasetsidentifierversionsversioniddownloadsizerequest.md) | :heavy_check_mark:                                                                                                                                                     | The request object to use for the request.                                                                                                                             |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetDownloadSizeRequest](../../models/operations/getdownloadsizerequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIdentifierVersionsVersionIDDownloadsizeResponse](../../models/operations/getapiv1datasetsidentifierversionsversioniddownloadsizeresponse.md)**
+**[operations.GetDownloadSizeResponse](../../models/operations/getdownloadsizeresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_
+## get_dataset
+
+Retrieve the specified dataset
 
 ### Example Usage
 
@@ -1165,7 +1231,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_(id='<value>')
+res = s.datasets.get_dataset(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1181,14 +1247,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDResponse](../../models/operations/getapiv1datasetsidresponse.md)**
+**[operations.GetDatasetResponse](../../models/operations/getdatasetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_datasets_id_
+## delete_dataset
+
+Delete the specified dataset
 
 ### Example Usage
 
@@ -1198,7 +1266,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.delete_api_v1_datasets_id_(id='<value>')
+res = s.datasets.delete_dataset(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1214,14 +1282,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DatasetsIDResponse](../../models/operations/deleteapiv1datasetsidresponse.md)**
+**[operations.DeleteDatasetResponse](../../models/operations/deletedatasetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## ~~get_api_v1_datasets_id_actions_publish~~
+## ~~get_publish_dataset~~
+
+Retrieve publishing details of a designated dataset
 
 > :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
@@ -1233,7 +1303,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_actions_publish(id='<value>', type='<value>')
+res = s.datasets.get_publish_dataset(id='<value>', type='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1250,14 +1320,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDActionsPublishResponse](../../models/operations/getapiv1datasetsidactionspublishresponse.md)**
+**[operations.GetPublishDatasetResponse](../../models/operations/getpublishdatasetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_actions_publish
+## initiate_publishing
+
+Publish a designated dataset with optional assurances
 
 ### Example Usage
 
@@ -1267,7 +1339,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_actions_publish(id='<value>', assure_is_indexed=False, type='<value>')
+res = s.datasets.initiate_publishing(id='<value>', assure_is_indexed=False, type='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1285,14 +1357,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDActionsPublishResponse](../../models/operations/postapiv1datasetsidactionspublishresponse.md)**
+**[operations.InitiatePublishingResponse](../../models/operations/initiatepublishingresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_actions_releasemigrated
+## release_migrated_dataset
+
+Release a migrated dataset with a specified ID
 
 ### Example Usage
 
@@ -1302,7 +1376,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_actions_releasemigrated(id='<value>', updatepidatprovider=False, request_body='<value>')
+res = s.datasets.release_migrated_dataset(id='<value>', updatepidatprovider=False, request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1320,14 +1394,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDActionsReleasemigratedResponse](../../models/operations/postapiv1datasetsidactionsreleasemigratedresponse.md)**
+**[operations.ReleaseMigratedDatasetResponse](../../models/operations/releasemigrateddatasetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_add
+## add_dataset
+
+Add a new dataset to the existing record
 
 ### Example Usage
 
@@ -1338,7 +1414,7 @@ from pydataverse.models import operations
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_add(id='<value>', request_body=operations.PostAPIV1DatasetsIDAddRequestBody())
+res = s.datasets.add_dataset(id='<value>', request_body=operations.AddDatasetRequestBody())
 
 if res.status_code == 200:
     # handle response
@@ -1347,22 +1423,24 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `id`                                                                                                                   | *str*                                                                                                                  | :heavy_check_mark:                                                                                                     | N/A                                                                                                                    |
-| `request_body`                                                                                                         | [Optional[operations.PostAPIV1DatasetsIDAddRequestBody]](../../models/operations/postapiv1datasetsidaddrequestbody.md) | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `id`                                                                                           | *str*                                                                                          | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `request_body`                                                                                 | [Optional[operations.AddDatasetRequestBody]](../../models/operations/adddatasetrequestbody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
 
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDAddResponse](../../models/operations/postapiv1datasetsidaddresponse.md)**
+**[operations.AddDatasetResponse](../../models/operations/adddatasetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_add_files
+## add_files_to_dataset
+
+Adds files to a specified dataset
 
 ### Example Usage
 
@@ -1373,7 +1451,7 @@ from pydataverse.models import operations
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_add_files(id='<value>', request_body=operations.PostAPIV1DatasetsIDAddFilesRequestBody())
+res = s.datasets.add_files_to_dataset(id='<value>', request_body=operations.AddFilesToDatasetRequestBody())
 
 if res.status_code == 200:
     # handle response
@@ -1382,22 +1460,24 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `id`                                                                                                                             | *str*                                                                                                                            | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |
-| `request_body`                                                                                                                   | [Optional[operations.PostAPIV1DatasetsIDAddFilesRequestBody]](../../models/operations/postapiv1datasetsidaddfilesrequestbody.md) | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                         | *str*                                                                                                        | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
+| `request_body`                                                                                               | [Optional[operations.AddFilesToDatasetRequestBody]](../../models/operations/addfilestodatasetrequestbody.md) | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |
 
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDAddFilesResponse](../../models/operations/postapiv1datasetsidaddfilesresponse.md)**
+**[operations.AddFilesToDatasetResponse](../../models/operations/addfilestodatasetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_add_globus_files
+## add_globus_files_to_dataset
+
+Add globus files to a specific dataset
 
 ### Example Usage
 
@@ -1408,7 +1488,7 @@ from pydataverse.models import operations
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_add_globus_files(id='<value>', request_body=operations.PostAPIV1DatasetsIDAddGlobusFilesRequestBody())
+res = s.datasets.add_globus_files_to_dataset(id='<value>', request_body=operations.AddGlobusFilesToDatasetRequestBody())
 
 if res.status_code == 200:
     # handle response
@@ -1417,22 +1497,24 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                                                    | Type                                                                                                                                         | Required                                                                                                                                     | Description                                                                                                                                  |
-| -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`                                                                                                                                         | *str*                                                                                                                                        | :heavy_check_mark:                                                                                                                           | N/A                                                                                                                                          |
-| `request_body`                                                                                                                               | [Optional[operations.PostAPIV1DatasetsIDAddGlobusFilesRequestBody]](../../models/operations/postapiv1datasetsidaddglobusfilesrequestbody.md) | :heavy_minus_sign:                                                                                                                           | N/A                                                                                                                                          |
+| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                     | *str*                                                                                                                    | :heavy_check_mark:                                                                                                       | N/A                                                                                                                      |
+| `request_body`                                                                                                           | [Optional[operations.AddGlobusFilesToDatasetRequestBody]](../../models/operations/addglobusfilestodatasetrequestbody.md) | :heavy_minus_sign:                                                                                                       | N/A                                                                                                                      |
 
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDAddGlobusFilesResponse](../../models/operations/postapiv1datasetsidaddglobusfilesresponse.md)**
+**[operations.AddGlobusFilesToDatasetResponse](../../models/operations/addglobusfilestodatasetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_datasets_id_citationdate
+## update_citation_date
+
+Update the citation date of a dataset based on dataset ID
 
 ### Example Usage
 
@@ -1442,7 +1524,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.put_api_v1_datasets_id_citationdate(id='<value>')
+res = s.datasets.update_citation_date(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1458,14 +1540,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DatasetsIDCitationdateResponse](../../models/operations/putapiv1datasetsidcitationdateresponse.md)**
+**[operations.UpdateCitationDateResponse](../../models/operations/updatecitationdateresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_datasets_id_citationdate
+## delete_citation_date
+
+Delete citation date of a dataset based on dataset ID
 
 ### Example Usage
 
@@ -1475,7 +1559,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.delete_api_v1_datasets_id_citationdate(id='<value>')
+res = s.datasets.delete_citation_date(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1491,14 +1575,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DatasetsIDCitationdateResponse](../../models/operations/deleteapiv1datasetsidcitationdateresponse.md)**
+**[operations.DeleteCitationDateResponse](../../models/operations/deletecitationdateresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_clean_storage
+## get_clean_storage_status
+
+Get the status of the clean storage task for the specified dataset
 
 ### Example Usage
 
@@ -1508,7 +1594,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_clean_storage(id='<value>', dryrun=False)
+res = s.datasets.get_clean_storage_status(id='<value>', dryrun=False)
 
 if res.status_code == 200:
     # handle response
@@ -1525,14 +1611,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDCleanStorageResponse](../../models/operations/getapiv1datasetsidcleanstorageresponse.md)**
+**[operations.GetCleanStorageStatusResponse](../../models/operations/getcleanstoragestatusresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_curation_status
+## get_curation_status
+
+Fetches the curation status of the specified dataset
 
 ### Example Usage
 
@@ -1542,7 +1630,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_curation_status(id='<value>')
+res = s.datasets.get_curation_status(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1558,14 +1646,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDCurationStatusResponse](../../models/operations/getapiv1datasetsidcurationstatusresponse.md)**
+**[operations.GetCurationStatusResponse](../../models/operations/getcurationstatusresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_datasets_id_curation_status
+## update_curation_status
+
+Updates the curation status of the specified dataset
 
 ### Example Usage
 
@@ -1575,7 +1665,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.put_api_v1_datasets_id_curation_status(id='<value>', label='<value>')
+res = s.datasets.update_curation_status(id='<value>', label='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1592,14 +1682,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DatasetsIDCurationStatusResponse](../../models/operations/putapiv1datasetsidcurationstatusresponse.md)**
+**[operations.UpdateCurationStatusResponse](../../models/operations/updatecurationstatusresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_datasets_id_curation_status
+## delete_curation_status
+
+Deletes the curation status of the specified dataset
 
 ### Example Usage
 
@@ -1609,7 +1701,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.delete_api_v1_datasets_id_curation_status(id='<value>')
+res = s.datasets.delete_curation_status(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1625,14 +1717,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DatasetsIDCurationStatusResponse](../../models/operations/deleteapiv1datasetsidcurationstatusresponse.md)**
+**[operations.DeleteCurationStatusResponse](../../models/operations/deletecurationstatusresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_datasets_id_delete_metadata
+## update_dataset_metadata
+
+Update the metadata of a specific dataset
 
 ### Example Usage
 
@@ -1642,7 +1736,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.put_api_v1_datasets_id_delete_metadata(id='<value>')
+res = s.datasets.update_dataset_metadata(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1658,14 +1752,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DatasetsIDDeleteMetadataResponse](../../models/operations/putapiv1datasetsiddeletemetadataresponse.md)**
+**[operations.UpdateDatasetMetadataResponse](../../models/operations/updatedatasetmetadataresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_datasets_id_destroy
+## delete_dataset_1
+
+Delete a specific dataset by its ID.
 
 ### Example Usage
 
@@ -1675,7 +1771,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.delete_api_v1_datasets_id_destroy(id='<value>')
+res = s.datasets.delete_dataset_1(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1691,14 +1787,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DatasetsIDDestroyResponse](../../models/operations/deleteapiv1datasetsiddestroyresponse.md)**
+**[operations.DeleteDataset1Response](../../models/operations/deletedataset1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_dirindex
+## get_dataset_directory_index
+
+Retrieve directory index of a dataset
 
 ### Example Usage
 
@@ -1708,7 +1806,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_dirindex(id='<value>', folder='<value>', original=False, version='<value>')
+res = s.datasets.get_dataset_directory_index(id='<value>', folder='<value>', original=False, version='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1727,14 +1825,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDDirindexResponse](../../models/operations/getapiv1datasetsiddirindexresponse.md)**
+**[operations.GetDatasetDirectoryIndexResponse](../../models/operations/getdatasetdirectoryindexresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_datasets_id_edit_metadata
+## edit_dataset_metadata
+
+Updates the metadata of a specific dataset represented by its ID
 
 ### Example Usage
 
@@ -1744,7 +1844,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.put_api_v1_datasets_id_edit_metadata(id='<value>', replace=False)
+res = s.datasets.edit_dataset_metadata(id='<value>', replace=False)
 
 if res.status_code == 200:
     # handle response
@@ -1761,14 +1861,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DatasetsIDEditMetadataResponse](../../models/operations/putapiv1datasetsideditmetadataresponse.md)**
+**[operations.EditDatasetMetadataResponse](../../models/operations/editdatasetmetadataresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_files_actions_set_embargo
+## set_dataset_embargo
+
+Set an embargo on a specific dataset's files
 
 ### Example Usage
 
@@ -1778,7 +1880,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_files_actions_set_embargo(id='<value>')
+res = s.datasets.set_dataset_embargo(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1794,14 +1896,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDFilesActionsSetEmbargoResponse](../../models/operations/postapiv1datasetsidfilesactionssetembargoresponse.md)**
+**[operations.SetDatasetEmbargoResponse](../../models/operations/setdatasetembargoresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_files_actions_unset_embargo
+## unset_embargo_on_dataset_files
+
+Unset embargo on files for a specific dataset
 
 ### Example Usage
 
@@ -1811,7 +1915,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_files_actions_unset_embargo(id='<value>')
+res = s.datasets.unset_embargo_on_dataset_files(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1827,14 +1931,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDFilesActionsUnsetEmbargoResponse](../../models/operations/postapiv1datasetsidfilesactionsunsetembargoresponse.md)**
+**[operations.UnsetEmbargoOnDatasetFilesResponse](../../models/operations/unsetembargoondatasetfilesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_globus_download_parameters
+## get_globus_download_parameters
+
+Retrieve the parameters for Globus download for a specified dataset
 
 ### Example Usage
 
@@ -1844,7 +1950,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_globus_download_parameters(id='<value>', download_id='<value>', locale='<value>')
+res = s.datasets.get_globus_download_parameters(id='<value>', download_id='<value>', locale='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1862,14 +1968,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDGlobusDownloadParametersResponse](../../models/operations/getapiv1datasetsidglobusdownloadparametersresponse.md)**
+**[operations.GetGlobusDownloadParametersResponse](../../models/operations/getglobusdownloadparametersresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_globus_upload_parameters
+## get_globus_upload_parameters
+
+Retrieves Globus upload parameters for a specific dataset
 
 ### Example Usage
 
@@ -1879,7 +1987,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_globus_upload_parameters(id='<value>', locale='<value>')
+res = s.datasets.get_globus_upload_parameters(id='<value>', locale='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1896,14 +2004,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDGlobusUploadParametersResponse](../../models/operations/getapiv1datasetsidglobusuploadparametersresponse.md)**
+**[operations.GetGlobusUploadParametersResponse](../../models/operations/getglobusuploadparametersresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_links
+## get_dataset_links
+
+Retrieves the links of a specified dataset
 
 ### Example Usage
 
@@ -1913,7 +2023,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_links(id='<value>')
+res = s.datasets.get_dataset_links(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1929,14 +2039,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDLinksResponse](../../models/operations/getapiv1datasetsidlinksresponse.md)**
+**[operations.GetDatasetLinksResponse](../../models/operations/getdatasetlinksresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_logo
+## get_dataset_logo
+
+Retrieve the logo of a specific dataset
 
 ### Example Usage
 
@@ -1946,7 +2058,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_logo(id='<value>')
+res = s.datasets.get_dataset_logo(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1962,14 +2074,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDLogoResponse](../../models/operations/getapiv1datasetsidlogoresponse.md)**
+**[operations.GetDatasetLogoResponse](../../models/operations/getdatasetlogoresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_make_data_count_citations
+## dataset_citation_count_get
+
+Retrieves the citation count for a specific dataset
 
 ### Example Usage
 
@@ -1979,7 +2093,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_make_data_count_citations(id='<value>')
+res = s.datasets.dataset_citation_count_get(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1995,14 +2109,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDMakeDataCountCitationsResponse](../../models/operations/getapiv1datasetsidmakedatacountcitationsresponse.md)**
+**[operations.DatasetCitationCountGetResponse](../../models/operations/datasetcitationcountgetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_make_data_count_metric_
+## get_dataset_metrics
+
+Retrieve specific metrics for a specified dataset
 
 ### Example Usage
 
@@ -2012,7 +2128,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_make_data_count_metric_(id='<value>', metric='<value>', country='<value>')
+res = s.datasets.get_dataset_metrics(id='<value>', metric='<value>', country='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2030,14 +2146,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDMakeDataCountMetricResponse](../../models/operations/getapiv1datasetsidmakedatacountmetricresponse.md)**
+**[operations.GetDatasetMetricsResponse](../../models/operations/getdatasetmetricsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_make_data_count_metric_yyyymm_
+## get_dataset_metric
+
+Fetches a specific metric for a specific dataset
 
 ### Example Usage
 
@@ -2047,7 +2165,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_make_data_count_metric_yyyymm_(id='<value>', metric='<value>', yyyymm='<value>', country='<value>')
+res = s.datasets.get_dataset_metric(id='<value>', metric='<value>', yyyymm='<value>', country='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2066,14 +2184,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDMakeDataCountMetricYyyymmResponse](../../models/operations/getapiv1datasetsidmakedatacountmetricyyyymmresponse.md)**
+**[operations.GetDatasetMetricResponse](../../models/operations/getdatasetmetricresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_metadata
+## get_dataset_metadata
+
+Retrieves the metadata of a dataset by its ID
 
 ### Example Usage
 
@@ -2083,7 +2203,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_metadata(id='<value>')
+res = s.datasets.get_dataset_metadata(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2099,14 +2219,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDMetadataResponse](../../models/operations/getapiv1datasetsidmetadataresponse.md)**
+**[operations.GetDatasetMetadataResponse](../../models/operations/getdatasetmetadataresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_datasets_id_metadata
+## update_dataset_metadata_1
+
+Updates the metadata of a dataset by its ID, with an option to replace the existing metadata
 
 ### Example Usage
 
@@ -2116,7 +2238,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.put_api_v1_datasets_id_metadata(id='<value>', replace=False, request_body='<value>')
+res = s.datasets.update_dataset_metadata_1(id='<value>', replace=False, request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2134,14 +2256,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DatasetsIDMetadataResponse](../../models/operations/putapiv1datasetsidmetadataresponse.md)**
+**[operations.UpdateDatasetMetadata1Response](../../models/operations/updatedatasetmetadata1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_datasets_id_metadata_delete
+## update_metadata_deletion
+
+Update the deletion status of the metadata of a specific dataset
 
 ### Example Usage
 
@@ -2151,7 +2275,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.put_api_v1_datasets_id_metadata_delete(id='<value>', request_body='<value>')
+res = s.datasets.update_metadata_deletion(id='<value>', request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2168,14 +2292,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DatasetsIDMetadataDeleteResponse](../../models/operations/putapiv1datasetsidmetadatadeleteresponse.md)**
+**[operations.UpdateMetadataDeletionResponse](../../models/operations/updatemetadatadeletionresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_modify_registration
+## get_registration_modification
+
+Retrieve the modification details of a specific dataset registration
 
 ### Example Usage
 
@@ -2185,7 +2311,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_modify_registration(id='<value>')
+res = s.datasets.get_registration_modification(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2201,14 +2327,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDModifyRegistrationResponse](../../models/operations/getapiv1datasetsidmodifyregistrationresponse.md)**
+**[operations.GetRegistrationModificationResponse](../../models/operations/getregistrationmodificationresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_modify_registration_metadata
+## modify_dataset_registration_metadata
+
+Modify the registration metadata of a specific dataset
 
 ### Example Usage
 
@@ -2218,7 +2346,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_modify_registration_metadata(id='<value>')
+res = s.datasets.modify_dataset_registration_metadata(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2234,14 +2362,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDModifyRegistrationMetadataResponse](../../models/operations/postapiv1datasetsidmodifyregistrationmetadataresponse.md)**
+**[operations.ModifyDatasetRegistrationMetadataResponse](../../models/operations/modifydatasetregistrationmetadataresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_monitor_globus_download
+## monitor_globus_download
+
+Initiate the process to monitor a Globus download operation for a specific dataset
 
 ### Example Usage
 
@@ -2251,7 +2381,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_monitor_globus_download(id='<value>', request_body='<value>')
+res = s.datasets.monitor_globus_download(id='<value>', request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2268,14 +2398,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDMonitorGlobusDownloadResponse](../../models/operations/postapiv1datasetsidmonitorglobusdownloadresponse.md)**
+**[operations.MonitorGlobusDownloadResponse](../../models/operations/monitorglobusdownloadresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_move_target_dataverse_alias_
+## move_dataset_to_target
+
+Moves a specific dataset to a target dataverse
 
 ### Example Usage
 
@@ -2285,7 +2417,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_move_target_dataverse_alias_(id='<value>', target_dataverse_alias='<value>', force_move=False)
+res = s.datasets.move_dataset_to_target(id='<value>', target_dataverse_alias='<value>', force_move=False)
 
 if res.status_code == 200:
     # handle response
@@ -2303,14 +2435,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDMoveTargetDataverseAliasResponse](../../models/operations/postapiv1datasetsidmovetargetdataversealiasresponse.md)**
+**[operations.MoveDatasetToTargetResponse](../../models/operations/movedatasettotargetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_private_url
+## get_private_url
+
+Retrieve a specific dataset's private URL
 
 ### Example Usage
 
@@ -2320,7 +2454,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_private_url(id='<value>')
+res = s.datasets.get_private_url(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2336,14 +2470,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDPrivateURLResponse](../../models/operations/getapiv1datasetsidprivateurlresponse.md)**
+**[operations.GetPrivateURLResponse](../../models/operations/getprivateurlresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_private_url
+## create_private_url
+
+Create a private URL for a specific dataset
 
 ### Example Usage
 
@@ -2353,7 +2489,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_private_url(id='<value>', anonymized_access=False)
+res = s.datasets.create_private_url(id='<value>', anonymized_access=False)
 
 if res.status_code == 200:
     # handle response
@@ -2370,14 +2506,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDPrivateURLResponse](../../models/operations/postapiv1datasetsidprivateurlresponse.md)**
+**[operations.CreatePrivateURLResponse](../../models/operations/createprivateurlresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_datasets_id_private_url
+## delete_private_url
+
+Delete a specific dataset's private URL
 
 ### Example Usage
 
@@ -2387,7 +2525,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.delete_api_v1_datasets_id_private_url(id='<value>')
+res = s.datasets.delete_private_url(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2403,14 +2541,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DatasetsIDPrivateURLResponse](../../models/operations/deleteapiv1datasetsidprivateurlresponse.md)**
+**[operations.DeletePrivateURLResponse](../../models/operations/deleteprivateurlresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_replace_files
+## replace_dataset_files
+
+Replace files in a specified dataset
 
 ### Example Usage
 
@@ -2421,7 +2561,7 @@ from pydataverse.models import operations
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_replace_files(id='<value>', request_body=operations.PostAPIV1DatasetsIDReplaceFilesRequestBody())
+res = s.datasets.replace_dataset_files(id='<value>', request_body=operations.ReplaceDatasetFilesRequestBody())
 
 if res.status_code == 200:
     # handle response
@@ -2430,22 +2570,24 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`                                                                                                                                     | *str*                                                                                                                                    | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |
-| `request_body`                                                                                                                           | [Optional[operations.PostAPIV1DatasetsIDReplaceFilesRequestBody]](../../models/operations/postapiv1datasetsidreplacefilesrequestbody.md) | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                             | *str*                                                                                                            | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `request_body`                                                                                                   | [Optional[operations.ReplaceDatasetFilesRequestBody]](../../models/operations/replacedatasetfilesrequestbody.md) | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
 
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDReplaceFilesResponse](../../models/operations/postapiv1datasetsidreplacefilesresponse.md)**
+**[operations.ReplaceDatasetFilesResponse](../../models/operations/replacedatasetfilesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_request_globus_download
+## submit_globus_download_request
+
+Submit a request for Globus download for a specific dataset
 
 ### Example Usage
 
@@ -2455,7 +2597,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_request_globus_download(id='<value>', download_id='<value>', request_body='<value>')
+res = s.datasets.submit_globus_download_request(id='<value>', download_id='<value>', request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2473,14 +2615,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDRequestGlobusDownloadResponse](../../models/operations/postapiv1datasetsidrequestglobusdownloadresponse.md)**
+**[operations.SubmitGlobusDownloadRequestResponse](../../models/operations/submitglobusdownloadrequestresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_request_globus_upload_paths
+## post_globus_upload_paths_request
+
+Submit a request to get the paths for Globus file upload for a specified dataset
 
 ### Example Usage
 
@@ -2490,7 +2634,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_request_globus_upload_paths(id='<value>', request_body='<value>')
+res = s.datasets.post_globus_upload_paths_request(id='<value>', request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2507,14 +2651,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDRequestGlobusUploadPathsResponse](../../models/operations/postapiv1datasetsidrequestglobusuploadpathsresponse.md)**
+**[operations.PostGlobusUploadPathsRequestResponse](../../models/operations/postglobusuploadpathsrequestresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_return_to_author
+## return_dataset_to_author
+
+Returns the specified dataset back to its author
 
 ### Example Usage
 
@@ -2524,7 +2670,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_return_to_author(id='<value>')
+res = s.datasets.return_dataset_to_author(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2540,14 +2686,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDReturnToAuthorResponse](../../models/operations/postapiv1datasetsidreturntoauthorresponse.md)**
+**[operations.ReturnDatasetToAuthorResponse](../../models/operations/returndatasettoauthorresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_submit_for_review
+## submit_dataset_for_review
+
+Submits a specified dataset for review
 
 ### Example Usage
 
@@ -2557,7 +2705,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_submit_for_review(id='<value>')
+res = s.datasets.submit_dataset_for_review(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2573,14 +2721,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDSubmitForReviewResponse](../../models/operations/postapiv1datasetsidsubmitforreviewresponse.md)**
+**[operations.SubmitDatasetForReviewResponse](../../models/operations/submitdatasetforreviewresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_thumbnail
+## get_dataset_thumbnail
+
+Retrieves a thumbnail from a specific dataset
 
 ### Example Usage
 
@@ -2590,7 +2740,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_thumbnail(id='<value>')
+res = s.datasets.get_dataset_thumbnail(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2606,14 +2756,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDThumbnailResponse](../../models/operations/getapiv1datasetsidthumbnailresponse.md)**
+**[operations.GetDatasetThumbnailResponse](../../models/operations/getdatasetthumbnailresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_thumbnail
+## post_dataset_thumbnail
+
+Adds a thumbnail to a specific dataset
 
 ### Example Usage
 
@@ -2624,7 +2776,7 @@ from pydataverse.models import operations
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_thumbnail(id='<value>', request_body=operations.PostAPIV1DatasetsIDThumbnailRequestBody())
+res = s.datasets.post_dataset_thumbnail(id='<value>', request_body=operations.PostDatasetThumbnailRequestBody())
 
 if res.status_code == 200:
     # handle response
@@ -2633,22 +2785,24 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                                          | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `id`                                                                                                                               | *str*                                                                                                                              | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |
-| `request_body`                                                                                                                     | [Optional[operations.PostAPIV1DatasetsIDThumbnailRequestBody]](../../models/operations/postapiv1datasetsidthumbnailrequestbody.md) | :heavy_minus_sign:                                                                                                                 | N/A                                                                                                                                |
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                               | *str*                                                                                                              | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
+| `request_body`                                                                                                     | [Optional[operations.PostDatasetThumbnailRequestBody]](../../models/operations/postdatasetthumbnailrequestbody.md) | :heavy_minus_sign:                                                                                                 | N/A                                                                                                                |
 
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDThumbnailResponse](../../models/operations/postapiv1datasetsidthumbnailresponse.md)**
+**[operations.PostDatasetThumbnailResponse](../../models/operations/postdatasetthumbnailresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_datasets_id_thumbnail
+## delete_dataset_thumbnail
+
+Deletes a thumbnail from a specific dataset
 
 ### Example Usage
 
@@ -2658,40 +2812,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.delete_api_v1_datasets_id_thumbnail(id='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *str*              | :heavy_check_mark: | N/A                |
-
-
-### Response
-
-**[operations.DeleteAPIV1DatasetsIDThumbnailResponse](../../models/operations/deleteapiv1datasetsidthumbnailresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_datasets_id_thumbnail_candidates
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.datasets.get_api_v1_datasets_id_thumbnail_candidates(id='<value>')
+res = s.datasets.delete_dataset_thumbnail(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2707,14 +2828,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDThumbnailCandidatesResponse](../../models/operations/getapiv1datasetsidthumbnailcandidatesresponse.md)**
+**[operations.DeleteDatasetThumbnailResponse](../../models/operations/deletedatasetthumbnailresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_thumbnail_data_file_id_
+## get_thumbnail_candidates
+
+Retrieve the list of thumbnail candidates for a specific dataset
 
 ### Example Usage
 
@@ -2724,7 +2847,42 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_thumbnail_data_file_id_(data_file_id=298276, id='<value>')
+res = s.datasets.get_thumbnail_candidates(id='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `id`               | *str*              | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[operations.GetThumbnailCandidatesResponse](../../models/operations/getthumbnailcandidatesresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## post_thumbnail_data
+
+Upload a new thumbnail for a specific dataset
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.datasets.post_thumbnail_data(data_file_id=907375, id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2741,14 +2899,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDThumbnailDataFileIDResponse](../../models/operations/postapiv1datasetsidthumbnaildatafileidresponse.md)**
+**[operations.PostThumbnailDataResponse](../../models/operations/postthumbnaildataresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## ~~get_api_v1_datasets_id_uploadsid~~
+## ~~get_upload_id~~
+
+Retrieve the upload ID for the specified dataset
 
 > :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
@@ -2760,7 +2920,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_uploadsid(id='<value>')
+res = s.datasets.get_upload_id(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2776,14 +2936,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDUploadsidResponse](../../models/operations/getapiv1datasetsiduploadsidresponse.md)**
+**[operations.GetUploadIDResponse](../../models/operations/getuploadidresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_uploadurls
+## get_upload_ur_ls
+
+Retrieve upload URLs for a specific dataset
 
 ### Example Usage
 
@@ -2793,7 +2955,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_uploadurls(id='<value>', size=710763)
+res = s.datasets.get_upload_ur_ls(id='<value>', size=272233)
 
 if res.status_code == 200:
     # handle response
@@ -2810,14 +2972,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDUploadurlsResponse](../../models/operations/getapiv1datasetsiduploadurlsresponse.md)**
+**[operations.GetUploadURLsResponse](../../models/operations/getuploadurlsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_user_permissions
+## get_user_permissions
+
+Retrieve user permissions for a specific dataset
 
 ### Example Usage
 
@@ -2827,7 +2991,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_user_permissions(id='<value>')
+res = s.datasets.get_user_permissions(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2843,14 +3007,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDUserPermissionsResponse](../../models/operations/getapiv1datasetsiduserpermissionsresponse.md)**
+**[operations.GetUserPermissionsResponse](../../models/operations/getuserpermissionsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_versions
+## get_dataset_versions
+
+Retrieve versions of a specific dataset
 
 ### Example Usage
 
@@ -2860,7 +3026,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_versions(id='<value>', exclude_files=False, limit=648579, offset=579730)
+res = s.datasets.get_dataset_versions(id='<value>', exclude_files=False, limit=953940, offset=665447)
 
 if res.status_code == 200:
     # handle response
@@ -2879,14 +3045,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDVersionsResponse](../../models/operations/getapiv1datasetsidversionsresponse.md)**
+**[operations.GetDatasetVersionsResponse](../../models/operations/getdatasetversionsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_versions_version_id_
+## get_dataset_version
+
+Fetches the dataset version details, with options to exclude files or include deaccessioned ones
 
 ### Example Usage
 
@@ -2896,7 +3064,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_versions_version_id_(id='<value>', version_id='<value>', exclude_files=False, include_deaccessioned=False)
+res = s.datasets.get_dataset_version(id='<value>', version_id='<value>', exclude_files=False, include_deaccessioned=False)
 
 if res.status_code == 200:
     # handle response
@@ -2915,14 +3083,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDVersionsVersionIDResponse](../../models/operations/getapiv1datasetsidversionsversionidresponse.md)**
+**[operations.GetDatasetVersionResponse](../../models/operations/getdatasetversionresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_datasets_id_versions_version_id_
+## update_dataset_version
+
+Updates the dataset version with the given ID
 
 ### Example Usage
 
@@ -2932,7 +3102,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.put_api_v1_datasets_id_versions_version_id_(id='<value>', version_id='<value>', request_body='<value>')
+res = s.datasets.update_dataset_version(id='<value>', version_id='<value>', request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2950,14 +3120,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DatasetsIDVersionsVersionIDResponse](../../models/operations/putapiv1datasetsidversionsversionidresponse.md)**
+**[operations.UpdateDatasetVersionResponse](../../models/operations/updatedatasetversionresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_datasets_id_versions_version_id_
+## delete_dataset_version
+
+Deletes the specified version of a dataset
 
 ### Example Usage
 
@@ -2967,7 +3139,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.delete_api_v1_datasets_id_versions_version_id_(id='<value>', version_id='<value>')
+res = s.datasets.delete_dataset_version(id='<value>', version_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -2984,14 +3156,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DatasetsIDVersionsVersionIDResponse](../../models/operations/deleteapiv1datasetsidversionsversionidresponse.md)**
+**[operations.DeleteDatasetVersionResponse](../../models/operations/deletedatasetversionresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_versions_version_id_can_download_at_least_one_file
+## check_dataset_file_download_permission
+
+Checks if a user has permission to download at least one file from a specific dataset version
 
 ### Example Usage
 
@@ -3001,7 +3175,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_versions_version_id_can_download_at_least_one_file(id='<value>', version_id='<value>', include_deaccessioned=False)
+res = s.datasets.check_dataset_file_download_permission(id='<value>', version_id='<value>', include_deaccessioned=False)
 
 if res.status_code == 200:
     # handle response
@@ -3019,14 +3193,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDVersionsVersionIDCanDownloadAtLeastOneFileResponse](../../models/operations/getapiv1datasetsidversionsversionidcandownloadatleastonefileresponse.md)**
+**[operations.CheckDatasetFileDownloadPermissionResponse](../../models/operations/checkdatasetfiledownloadpermissionresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_versions_version_id_citation
+## get_citation
+
+Retrieve the citation of a specific dataset version
 
 ### Example Usage
 
@@ -3036,7 +3212,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_versions_version_id_citation(id='<value>', version_id='<value>', include_deaccessioned=False)
+res = s.datasets.get_citation(id='<value>', version_id='<value>', include_deaccessioned=False)
 
 if res.status_code == 200:
     # handle response
@@ -3054,14 +3230,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDVersionsVersionIDCitationResponse](../../models/operations/getapiv1datasetsidversionsversionidcitationresponse.md)**
+**[operations.GetCitationResponse](../../models/operations/getcitationresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_versions_version_id_customlicense
+## get_custom_license
+
+Retrieve a specific dataset version's custom license
 
 ### Example Usage
 
@@ -3071,7 +3249,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_versions_version_id_customlicense(id='<value>', version_id='<value>')
+res = s.datasets.get_custom_license(id='<value>', version_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3088,14 +3266,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDVersionsVersionIDCustomlicenseResponse](../../models/operations/getapiv1datasetsidversionsversionidcustomlicenseresponse.md)**
+**[operations.GetCustomLicenseResponse](../../models/operations/getcustomlicenseresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_datasets_id_versions_version_id_deaccession
+## post_deaccession_dataset_by_version_id
+
+Remove access to a specific version of a dataset
 
 ### Example Usage
 
@@ -3105,7 +3285,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.post_api_v1_datasets_id_versions_version_id_deaccession(id='<value>', version_id='<value>')
+res = s.datasets.post_deaccession_dataset_by_version_id(id='<value>', version_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3122,14 +3302,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatasetsIDVersionsVersionIDDeaccessionResponse](../../models/operations/postapiv1datasetsidversionsversioniddeaccessionresponse.md)**
+**[operations.PostDeaccessionDatasetByVersionIDResponse](../../models/operations/postdeaccessiondatasetbyversionidresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_versions_version_id_files
+## get_dataset_version_files
+
+Fetches files within a specific version of a dataset
 
 ### Example Usage
 
@@ -3139,12 +3321,12 @@ from pydataverse.models import operations
 
 s = pydataverse.PyDataverse()
 
-req = operations.GetAPIV1DatasetsIDVersionsVersionIDFilesRequest(
+req = operations.GetDatasetVersionFilesRequest(
     id='<id>',
     version_id='<value>',
 )
 
-res = s.datasets.get_api_v1_datasets_id_versions_version_id_files(req)
+res = s.datasets.get_dataset_version_files(req)
 
 if res.status_code == 200:
     # handle response
@@ -3153,21 +3335,23 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                | [operations.GetAPIV1DatasetsIDVersionsVersionIDFilesRequest](../../models/operations/getapiv1datasetsidversionsversionidfilesrequest.md) | :heavy_check_mark:                                                                                                                       | The request object to use for the request.                                                                                               |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetDatasetVersionFilesRequest](../../models/operations/getdatasetversionfilesrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDVersionsVersionIDFilesResponse](../../models/operations/getapiv1datasetsidversionsversionidfilesresponse.md)**
+**[operations.GetDatasetVersionFilesResponse](../../models/operations/getdatasetversionfilesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_versions_version_id_files_counts
+## get_dataset_files_count
+
+Retrieve counts of various types of files in a specified dataset version
 
 ### Example Usage
 
@@ -3177,12 +3361,12 @@ from pydataverse.models import operations
 
 s = pydataverse.PyDataverse()
 
-req = operations.GetAPIV1DatasetsIDVersionsVersionIDFilesCountsRequest(
+req = operations.GetDatasetFilesCountRequest(
     id='<id>',
     version_id='<value>',
 )
 
-res = s.datasets.get_api_v1_datasets_id_versions_version_id_files_counts(req)
+res = s.datasets.get_dataset_files_count(req)
 
 if res.status_code == 200:
     # handle response
@@ -3191,21 +3375,23 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                                                            | Type                                                                                                                                                 | Required                                                                                                                                             | Description                                                                                                                                          |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                            | [operations.GetAPIV1DatasetsIDVersionsVersionIDFilesCountsRequest](../../models/operations/getapiv1datasetsidversionsversionidfilescountsrequest.md) | :heavy_check_mark:                                                                                                                                   | The request object to use for the request.                                                                                                           |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.GetDatasetFilesCountRequest](../../models/operations/getdatasetfilescountrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
 
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDVersionsVersionIDFilesCountsResponse](../../models/operations/getapiv1datasetsidversionsversionidfilescountsresponse.md)**
+**[operations.GetDatasetFilesCountResponse](../../models/operations/getdatasetfilescountresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_versions_version_id_linkset
+## get_dataset_version_linkset
+
+Retrieve linkset of a specific dataset version
 
 ### Example Usage
 
@@ -3215,41 +3401,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_versions_version_id_linkset(id='<value>', version_id='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *str*              | :heavy_check_mark: | N/A                |
-| `version_id`       | *str*              | :heavy_check_mark: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1DatasetsIDVersionsVersionIDLinksetResponse](../../models/operations/getapiv1datasetsidversionsversionidlinksetresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_datasets_id_versions_version_id_metadata
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.datasets.get_api_v1_datasets_id_versions_version_id_metadata(id='<value>', version_id='<value>')
+res = s.datasets.get_dataset_version_linkset(id='<value>', version_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3266,14 +3418,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDVersionsVersionIDMetadataResponse](../../models/operations/getapiv1datasetsidversionsversionidmetadataresponse.md)**
+**[operations.GetDatasetVersionLinksetResponse](../../models/operations/getdatasetversionlinksetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_versions_version_number_metadata_block_
+## get_dataset_version_metadata
+
+Retrieve the metadata of a specific version of a dataset
 
 ### Example Usage
 
@@ -3283,7 +3437,43 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_versions_version_number_metadata_block_(block='<value>', id='<value>', version_number='<value>')
+res = s.datasets.get_dataset_version_metadata(id='<value>', version_id='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `id`               | *str*              | :heavy_check_mark: | N/A                |
+| `version_id`       | *str*              | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[operations.GetDatasetVersionMetadataResponse](../../models/operations/getdatasetversionmetadataresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_dataset_version_metadata_1
+
+Retrieve metadata of a specified version of a dataset
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.datasets.get_dataset_version_metadata_1(block='<value>', id='<value>', version_number='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3301,14 +3491,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDVersionsVersionNumberMetadataBlockResponse](../../models/operations/getapiv1datasetsidversionsversionnumbermetadatablockresponse.md)**
+**[operations.GetDatasetVersionMetadata1Response](../../models/operations/getdatasetversionmetadata1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_versions_version_toolparams_tid_
+## get_dataset_version_tool_param
+
+Retrieve tool parameters of a specific version of a dataset
 
 ### Example Usage
 
@@ -3318,7 +3510,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_versions_version_toolparams_tid_(id='<value>', tid=784864, version='<value>', locale='<value>')
+res = s.datasets.get_dataset_version_tool_param(id='<value>', tid=660939, version='<value>', locale='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3337,14 +3529,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDVersionsVersionToolparamsTidResponse](../../models/operations/getapiv1datasetsidversionsversiontoolparamstidresponse.md)**
+**[operations.GetDatasetVersionToolParamResponse](../../models/operations/getdatasetversiontoolparamresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_datasets_id_version_archival_status
+## get_dataset_archival_status
+
+Retrieve the archival status of a specific version of a dataset
 
 ### Example Usage
 
@@ -3354,7 +3548,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.get_api_v1_datasets_id_version_archival_status(id='<value>', version='<value>')
+res = s.datasets.get_dataset_archival_status(id='<value>', version='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3371,14 +3565,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DatasetsIDVersionArchivalStatusResponse](../../models/operations/getapiv1datasetsidversionarchivalstatusresponse.md)**
+**[operations.GetDatasetArchivalStatusResponse](../../models/operations/getdatasetarchivalstatusresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_datasets_id_version_archival_status
+## update_dataset_archival_status
+
+Update the archival status of a specific version of a dataset
 
 ### Example Usage
 
@@ -3388,7 +3584,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.put_api_v1_datasets_id_version_archival_status(id='<value>', version='<value>', request_body='<value>')
+res = s.datasets.update_dataset_archival_status(id='<value>', version='<value>', request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3406,14 +3602,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DatasetsIDVersionArchivalStatusResponse](../../models/operations/putapiv1datasetsidversionarchivalstatusresponse.md)**
+**[operations.UpdateDatasetArchivalStatusResponse](../../models/operations/updatedatasetarchivalstatusresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_datasets_id_version_archival_status
+## delete_dataset_archival_status
+
+Remove the archival status of a specific version of a dataset
 
 ### Example Usage
 
@@ -3423,7 +3621,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.delete_api_v1_datasets_id_version_archival_status(id='<value>', version='<value>')
+res = s.datasets.delete_dataset_archival_status(id='<value>', version='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3440,14 +3638,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DatasetsIDVersionArchivalStatusResponse](../../models/operations/deleteapiv1datasetsidversionarchivalstatusresponse.md)**
+**[operations.DeleteDatasetArchivalStatusResponse](../../models/operations/deletedatasetarchivalstatusresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_datasets_linked_dataset_id_link_linking_dataverse_alias_
+## update_dataset_link
+
+Updates the link between a dataset and a Dataverse alias
 
 ### Example Usage
 
@@ -3457,7 +3657,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datasets.put_api_v1_datasets_linked_dataset_id_link_linking_dataverse_alias_(linked_dataset_id='<value>', linking_dataverse_alias='<value>')
+res = s.datasets.update_dataset_link(linked_dataset_id='<value>', linking_dataverse_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -3474,7 +3674,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DatasetsLinkedDatasetIDLinkLinkingDataverseAliasResponse](../../models/operations/putapiv1datasetslinkeddatasetidlinklinkingdataversealiasresponse.md)**
+**[operations.UpdateDatasetLinkResponse](../../models/operations/updatedatasetlinkresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

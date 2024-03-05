@@ -3,9 +3,11 @@
 
 ### Available Operations
 
-* [get_api_v1_mydata_retrieve](#get_api_v1_mydata_retrieve)
+* [my_data_retrieve](#my_data_retrieve) - Retrieve specific set of my data based on the provided filters
 
-## get_api_v1_mydata_retrieve
+## my_data_retrieve
+
+Retrieve specific set of my data based on the provided filters
 
 ### Example Usage
 
@@ -15,9 +17,9 @@ from pydataverse.models import operations
 
 s = pydataverse.PyDataverse()
 
-req = operations.GetAPIV1MydataRetrieveRequest()
+req = operations.MyDataRetrieveRequest()
 
-res = s.mydata.get_api_v1_mydata_retrieve(req)
+res = s.mydata.my_data_retrieve(req)
 
 if res.res is not None:
     # handle response
@@ -26,14 +28,14 @@ if res.res is not None:
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetAPIV1MydataRetrieveRequest](../../models/operations/getapiv1mydataretrieverequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.MyDataRetrieveRequest](../../models/operations/mydataretrieverequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
 
-**[operations.GetAPIV1MydataRetrieveResponse](../../models/operations/getapiv1mydataretrieveresponse.md)**
+**[operations.MyDataRetrieveResponse](../../models/operations/mydataretrieveresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

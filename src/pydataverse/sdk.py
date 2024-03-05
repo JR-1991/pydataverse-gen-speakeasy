@@ -32,7 +32,6 @@ from pydataverse import utils
 from pydataverse._hooks import SDKHooks
 from typing import Dict
 
-
 class PyDataverse:
     access: Access
     admin: Admin
@@ -63,18 +62,17 @@ class PyDataverse:
 
     sdk_configuration: SDKConfiguration
 
-    def __init__(
-        self,
-        protocol: ServerProtocol = None,
-        base_url: str = None,
-        server_idx: int = None,
-        server_url: str = None,
-        url_params: Dict[str, str] = None,
-        client: requests_http.Session = None,
-        retry_config: utils.RetryConfig = None,
-    ) -> None:
+    def __init__(self,
+                 protocol: ServerProtocol = None,
+                 base_url: str = None,
+                 server_idx: int = None,
+                 server_url: str = None,
+                 url_params: Dict[str, str] = None,
+                 client: requests_http.Session = None,
+                 retry_config: utils.RetryConfig = None
+                 ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
-
+        
         :param protocol: Allows setting the protocol variable for url substitution
         :type protocol: ServerProtocol
         :param base_url: Allows setting the base_url variable for url substitution
@@ -92,35 +90,31 @@ class PyDataverse:
         """
         if client is None:
             client = requests_http.Session()
-
+        
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
         server_defaults = [
             {
-                "protocol": protocol or "https",
-                "base_url": base_url or "demo.dataverse.org",
+                'protocol': protocol or 'https',
+                'base_url': base_url or 'demo.dataverse.org',
             },
         ]
 
-        self.sdk_configuration = SDKConfiguration(
-            client, server_url, server_idx, server_defaults, retry_config=retry_config
-        )
+        self.sdk_configuration = SDKConfiguration(client, None, server_url, server_idx, server_defaults, retry_config=retry_config)
 
         hooks = SDKHooks()
 
         current_server_url, *_ = self.sdk_configuration.get_server_details()
-        server_url, self.sdk_configuration.client = hooks.sdk_init(
-            current_server_url, self.sdk_configuration.client
-        )
+        server_url, self.sdk_configuration.client = hooks.sdk_init(current_server_url, self.sdk_configuration.client)
         if current_server_url != server_url:
             self.sdk_configuration.server_url = server_url
 
         # pylint: disable=protected-access
-        self.sdk_configuration._hooks = hooks
-
+        self.sdk_configuration._hooks=hooks
+       
         self._init_sdks()
-
+    
     def _init_sdks(self):
         self.access = Access(self.sdk_configuration)
         self.admin = Admin(self.sdk_configuration)
@@ -148,3 +142,4 @@ class PyDataverse:
         self.search = Search(self.sdk_configuration)
         self.users = Users(self.sdk_configuration)
         self.workflows = Workflows(self.sdk_configuration)
+    

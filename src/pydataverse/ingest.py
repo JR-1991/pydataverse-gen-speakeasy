@@ -15,9 +15,10 @@ class Ingest:
         
     
     
-    def get_api_v1_ingest_test_file(self, file_name: Optional[str] = None, file_type: Optional[str] = None) -> operations.GetAPIV1IngestTestFileResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/ingest/test/file', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1IngestTestFileRequest(
+    def get_ingest_test_file(self, file_name: Optional[str] = None, file_type: Optional[str] = None) -> operations.GetIngestTestFileResponse:
+        r"""Retrieve details of a specific test file in the ingest process by filename and filetype"""
+        hook_ctx = HookContext(operation_id='getIngestTestFile', oauth2_scopes=[], security_source=None)
+        request = operations.GetIngestTestFileRequest(
             file_name=file_name,
             file_type=file_type,
         )
@@ -26,7 +27,7 @@ class Ingest:
         
         url = base_url + '/api/v1/ingest/test/file'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1IngestTestFileRequest, request)
+        query_params = utils.get_query_params(operations.GetIngestTestFileRequest, request)
         headers['Accept'] = 'text/plain'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -55,7 +56,7 @@ class Ingest:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1IngestTestFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetIngestTestFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'text/plain'):

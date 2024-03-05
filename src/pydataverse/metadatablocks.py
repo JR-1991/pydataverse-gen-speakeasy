@@ -14,8 +14,9 @@ class Metadatablocks:
         
     
     
-    def get_api_v1_metadatablocks(self) -> operations.GetAPIV1MetadatablocksResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/metadatablocks', oauth2_scopes=[], security_source=None)
+    def get_metadatablocks(self) -> operations.GetMetadatablocksResponse:
+        r"""Retrieve metadata blocks available in the system"""
+        hook_ctx = HookContext(operation_id='getMetadatablocks', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/metadatablocks'
@@ -48,7 +49,7 @@ class Metadatablocks:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1MetadatablocksResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetadatablocksResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -59,15 +60,16 @@ class Metadatablocks:
 
     
     
-    def get_api_v1_metadatablocks_identifier_(self, identifier: str) -> operations.GetAPIV1MetadatablocksIdentifierResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/metadatablocks/{identifier}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1MetadatablocksIdentifierRequest(
+    def get_metadatablock_1_1(self, identifier: str) -> operations.GetMetadatablock11Response:
+        r"""Retrieve a specific Metadatablock by its identifier"""
+        hook_ctx = HookContext(operation_id='getMetadatablock_1_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetMetadatablock11Request(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1MetadatablocksIdentifierRequest, base_url, '/api/v1/metadatablocks/{identifier}', request)
+        url = utils.generate_url(operations.GetMetadatablock11Request, base_url, '/api/v1/metadatablocks/{identifier}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -97,7 +99,7 @@ class Metadatablocks:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1MetadatablocksIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetadatablock11Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

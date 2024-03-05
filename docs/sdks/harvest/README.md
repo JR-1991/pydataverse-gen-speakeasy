@@ -3,20 +3,22 @@
 
 ### Available Operations
 
-* [get_api_v1_harvest_clients](#get_api_v1_harvest_clients)
-* [get_api_v1_harvest_clients_nick_name_](#get_api_v1_harvest_clients_nick_name_)
-* [put_api_v1_harvest_clients_nick_name_](#put_api_v1_harvest_clients_nick_name_)
-* [post_api_v1_harvest_clients_nick_name_](#post_api_v1_harvest_clients_nick_name_)
-* [delete_api_v1_harvest_clients_nick_name_](#delete_api_v1_harvest_clients_nick_name_)
-* [post_api_v1_harvest_clients_nick_name_run](#post_api_v1_harvest_clients_nick_name_run)
-* [get_api_v1_harvest_server_oaisets](#get_api_v1_harvest_server_oaisets)
-* [post_api_v1_harvest_server_oaisets_add](#post_api_v1_harvest_server_oaisets_add)
-* [get_api_v1_harvest_server_oaisets_specname_](#get_api_v1_harvest_server_oaisets_specname_)
-* [put_api_v1_harvest_server_oaisets_specname_](#put_api_v1_harvest_server_oaisets_specname_)
-* [delete_api_v1_harvest_server_oaisets_specname_](#delete_api_v1_harvest_server_oaisets_specname_)
-* [get_api_v1_harvest_server_oaisets_specname_datasets](#get_api_v1_harvest_server_oaisets_specname_datasets)
+* [get_harvest_clients](#get_harvest_clients) - Retrieve all harvest clients based on the provided key
+* [get_harvest_client](#get_harvest_client) - Retrieves a harvest client details based on the provided unique nickname and key
+* [update_harvest_client](#update_harvest_client) - Updates an existing harvest client's details using the provided unique nickname and key
+* [create_harvest_client](#create_harvest_client) - Creates a new harvest client using the provided unique nickname and key
+* [delete_harvest_client](#delete_harvest_client) - Deletes a harvest client based on the provided unique nickname
+* [run_harvest_client](#run_harvest_client) - Initiate a run for a specified Harvest client
+* [get_oai_sets](#get_oai_sets) - Retrieve the OAISets from the harvest server
+* [add_oai_set](#add_oai_set) - Adds a new OAI set to the harvest server
+* [get_oai_sets_1](#get_oai_sets_1) - Retrieve details of a specific OAI set
+* [update_oai_sets](#update_oai_sets) - Update details of a specific OAI set
+* [delete_oai_sets](#delete_oai_sets) - Remove a specific OAI set
+* [get_harvest_datasets_by_spec_name](#get_harvest_datasets_by_spec_name) - Retrieve datasets related to a specified OAISet
 
-## get_api_v1_harvest_clients
+## get_harvest_clients
+
+Retrieve all harvest clients based on the provided key
 
 ### Example Usage
 
@@ -26,7 +28,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.harvest.get_api_v1_harvest_clients(key='<value>')
+res = s.harvest.get_harvest_clients(key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -42,14 +44,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1HarvestClientsResponse](../../models/operations/getapiv1harvestclientsresponse.md)**
+**[operations.GetHarvestClientsResponse](../../models/operations/getharvestclientsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_harvest_clients_nick_name_
+## get_harvest_client
+
+Retrieves a harvest client details based on the provided unique nickname and key
 
 ### Example Usage
 
@@ -59,7 +63,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.harvest.get_api_v1_harvest_clients_nick_name_(nick_name='<value>', key='<value>')
+res = s.harvest.get_harvest_client(nick_name='<value>', key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -76,14 +80,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1HarvestClientsNickNameResponse](../../models/operations/getapiv1harvestclientsnicknameresponse.md)**
+**[operations.GetHarvestClientResponse](../../models/operations/getharvestclientresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_harvest_clients_nick_name_
+## update_harvest_client
+
+Updates an existing harvest client's details using the provided unique nickname and key
 
 ### Example Usage
 
@@ -93,7 +99,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.harvest.put_api_v1_harvest_clients_nick_name_(nick_name='<value>', key='<value>')
+res = s.harvest.update_harvest_client(nick_name='<value>', key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -110,14 +116,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1HarvestClientsNickNameResponse](../../models/operations/putapiv1harvestclientsnicknameresponse.md)**
+**[operations.UpdateHarvestClientResponse](../../models/operations/updateharvestclientresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_harvest_clients_nick_name_
+## create_harvest_client
+
+Creates a new harvest client using the provided unique nickname and key
 
 ### Example Usage
 
@@ -127,7 +135,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.harvest.post_api_v1_harvest_clients_nick_name_(nick_name='<value>', key='<value>')
+res = s.harvest.create_harvest_client(nick_name='<value>', key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -144,14 +152,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1HarvestClientsNickNameResponse](../../models/operations/postapiv1harvestclientsnicknameresponse.md)**
+**[operations.CreateHarvestClientResponse](../../models/operations/createharvestclientresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_harvest_clients_nick_name_
+## delete_harvest_client
+
+Deletes a harvest client based on the provided unique nickname
 
 ### Example Usage
 
@@ -161,7 +171,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.harvest.delete_api_v1_harvest_clients_nick_name_(nick_name='<value>')
+res = s.harvest.delete_harvest_client(nick_name='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -177,14 +187,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1HarvestClientsNickNameResponse](../../models/operations/deleteapiv1harvestclientsnicknameresponse.md)**
+**[operations.DeleteHarvestClientResponse](../../models/operations/deleteharvestclientresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_harvest_clients_nick_name_run
+## run_harvest_client
+
+Initiate a run for a specified Harvest client
 
 ### Example Usage
 
@@ -194,7 +206,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.harvest.post_api_v1_harvest_clients_nick_name_run(nick_name='<value>', key='<value>')
+res = s.harvest.run_harvest_client(nick_name='<value>', key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -211,14 +223,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1HarvestClientsNickNameRunResponse](../../models/operations/postapiv1harvestclientsnicknamerunresponse.md)**
+**[operations.RunHarvestClientResponse](../../models/operations/runharvestclientresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_harvest_server_oaisets
+## get_oai_sets
+
+Retrieve the OAISets from the harvest server
 
 ### Example Usage
 
@@ -228,7 +242,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.harvest.get_api_v1_harvest_server_oaisets(key='<value>')
+res = s.harvest.get_oai_sets(key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -244,14 +258,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1HarvestServerOaisetsResponse](../../models/operations/getapiv1harvestserveroaisetsresponse.md)**
+**[operations.GetOaiSetsResponse](../../models/operations/getoaisetsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_harvest_server_oaisets_add
+## add_oai_set
+
+Adds a new OAI set to the harvest server
 
 ### Example Usage
 
@@ -261,7 +277,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.harvest.post_api_v1_harvest_server_oaisets_add(key='<value>')
+res = s.harvest.add_oai_set(key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -277,14 +293,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1HarvestServerOaisetsAddResponse](../../models/operations/postapiv1harvestserveroaisetsaddresponse.md)**
+**[operations.AddOaiSetResponse](../../models/operations/addoaisetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_harvest_server_oaisets_specname_
+## get_oai_sets_1
+
+Retrieve details of a specific OAI set
 
 ### Example Usage
 
@@ -294,7 +312,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.harvest.get_api_v1_harvest_server_oaisets_specname_(specname='<value>', key='<value>')
+res = s.harvest.get_oai_sets_1(specname='<value>', key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -311,14 +329,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1HarvestServerOaisetsSpecnameResponse](../../models/operations/getapiv1harvestserveroaisetsspecnameresponse.md)**
+**[operations.GetOaiSets1Response](../../models/operations/getoaisets1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_harvest_server_oaisets_specname_
+## update_oai_sets
+
+Update details of a specific OAI set
 
 ### Example Usage
 
@@ -328,7 +348,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.harvest.put_api_v1_harvest_server_oaisets_specname_(specname='<value>', key='<value>')
+res = s.harvest.update_oai_sets(specname='<value>', key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -345,14 +365,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1HarvestServerOaisetsSpecnameResponse](../../models/operations/putapiv1harvestserveroaisetsspecnameresponse.md)**
+**[operations.UpdateOaiSetsResponse](../../models/operations/updateoaisetsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_harvest_server_oaisets_specname_
+## delete_oai_sets
+
+Remove a specific OAI set
 
 ### Example Usage
 
@@ -362,7 +384,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.harvest.delete_api_v1_harvest_server_oaisets_specname_(specname='<value>', key='<value>')
+res = s.harvest.delete_oai_sets(specname='<value>', key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -379,14 +401,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1HarvestServerOaisetsSpecnameResponse](../../models/operations/deleteapiv1harvestserveroaisetsspecnameresponse.md)**
+**[operations.DeleteOaiSetsResponse](../../models/operations/deleteoaisetsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_harvest_server_oaisets_specname_datasets
+## get_harvest_datasets_by_spec_name
+
+Retrieve datasets related to a specified OAISet
 
 ### Example Usage
 
@@ -396,7 +420,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.harvest.get_api_v1_harvest_server_oaisets_specname_datasets(specname='<value>', key='<value>')
+res = s.harvest.get_harvest_datasets_by_spec_name(specname='<value>', key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -413,7 +437,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1HarvestServerOaisetsSpecnameDatasetsResponse](../../models/operations/getapiv1harvestserveroaisetsspecnamedatasetsresponse.md)**
+**[operations.GetHarvestDatasetsBySpecNameResponse](../../models/operations/getharvestdatasetsbyspecnameresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

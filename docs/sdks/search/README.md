@@ -3,9 +3,11 @@
 
 ### Available Operations
 
-* [get_api_v1_search](#get_api_v1_search)
+* [search_query](#search_query) - Executes a search query with various parameters and returns the matching records.
 
-## get_api_v1_search
+## search_query
+
+Executes a search query with various parameters and returns the matching records.
 
 ### Example Usage
 
@@ -15,9 +17,9 @@ from pydataverse.models import operations
 
 s = pydataverse.PyDataverse()
 
-req = operations.GetAPIV1SearchRequest()
+req = operations.SearchQueryRequest()
 
-res = s.search.get_api_v1_search(req)
+res = s.search.search_query(req)
 
 if res.status_code == 200:
     # handle response
@@ -26,14 +28,14 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.GetAPIV1SearchRequest](../../models/operations/getapiv1searchrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.SearchQueryRequest](../../models/operations/searchqueryrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
 
-**[operations.GetAPIV1SearchResponse](../../models/operations/getapiv1searchresponse.md)**
+**[operations.SearchQueryResponse](../../models/operations/searchqueryresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

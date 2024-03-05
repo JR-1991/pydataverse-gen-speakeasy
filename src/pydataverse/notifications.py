@@ -14,8 +14,9 @@ class Notifications:
         
     
     
-    def get_api_v1_notifications_all(self) -> operations.GetAPIV1NotificationsAllResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/notifications/all', oauth2_scopes=[], security_source=None)
+    def get_all_notifications(self) -> operations.GetAllNotificationsResponse:
+        r"""Retrieve all notifications"""
+        hook_ctx = HookContext(operation_id='getAllNotifications', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/notifications/all'
@@ -48,7 +49,7 @@ class Notifications:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1NotificationsAllResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAllNotificationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -59,8 +60,9 @@ class Notifications:
 
     
     
-    def get_api_v1_notifications_muted_emails(self) -> operations.GetAPIV1NotificationsMutedEmailsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/notifications/mutedEmails', oauth2_scopes=[], security_source=None)
+    def get_muted_emails(self) -> operations.GetMutedEmailsResponse:
+        r"""Retrieve a list of muted email notifications"""
+        hook_ctx = HookContext(operation_id='getMutedEmails', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/notifications/mutedEmails'
@@ -93,7 +95,7 @@ class Notifications:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1NotificationsMutedEmailsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMutedEmailsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -104,15 +106,16 @@ class Notifications:
 
     
     
-    def put_api_v1_notifications_muted_emails_type_name_(self, type_name: str) -> operations.PutAPIV1NotificationsMutedEmailsTypeNameResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/notifications/mutedEmails/{typeName}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1NotificationsMutedEmailsTypeNameRequest(
+    def update_muted_email_notification(self, type_name: str) -> operations.UpdateMutedEmailNotificationResponse:
+        r"""Updates a muted email notification by type name"""
+        hook_ctx = HookContext(operation_id='updateMutedEmailNotification', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateMutedEmailNotificationRequest(
             type_name=type_name,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1NotificationsMutedEmailsTypeNameRequest, base_url, '/api/v1/notifications/mutedEmails/{typeName}', request)
+        url = utils.generate_url(operations.UpdateMutedEmailNotificationRequest, base_url, '/api/v1/notifications/mutedEmails/{typeName}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -142,7 +145,7 @@ class Notifications:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1NotificationsMutedEmailsTypeNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateMutedEmailNotificationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -153,15 +156,16 @@ class Notifications:
 
     
     
-    def delete_api_v1_notifications_muted_emails_type_name_(self, type_name: str) -> operations.DeleteAPIV1NotificationsMutedEmailsTypeNameResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/notifications/mutedEmails/{typeName}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1NotificationsMutedEmailsTypeNameRequest(
+    def delete_muted_email_notification(self, type_name: str) -> operations.DeleteMutedEmailNotificationResponse:
+        r"""Deletes a muted email notification by type name"""
+        hook_ctx = HookContext(operation_id='deleteMutedEmailNotification', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteMutedEmailNotificationRequest(
             type_name=type_name,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1NotificationsMutedEmailsTypeNameRequest, base_url, '/api/v1/notifications/mutedEmails/{typeName}', request)
+        url = utils.generate_url(operations.DeleteMutedEmailNotificationRequest, base_url, '/api/v1/notifications/mutedEmails/{typeName}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -191,7 +195,7 @@ class Notifications:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1NotificationsMutedEmailsTypeNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteMutedEmailNotificationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -202,8 +206,9 @@ class Notifications:
 
     
     
-    def get_api_v1_notifications_muted_notifications(self) -> operations.GetAPIV1NotificationsMutedNotificationsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/notifications/mutedNotifications', oauth2_scopes=[], security_source=None)
+    def get_muted_notifications(self) -> operations.GetMutedNotificationsResponse:
+        r"""Retrieve all muted notifications"""
+        hook_ctx = HookContext(operation_id='getMutedNotifications', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/notifications/mutedNotifications'
@@ -236,7 +241,7 @@ class Notifications:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1NotificationsMutedNotificationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMutedNotificationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -247,15 +252,16 @@ class Notifications:
 
     
     
-    def put_api_v1_notifications_muted_notifications_type_name_(self, type_name: str) -> operations.PutAPIV1NotificationsMutedNotificationsTypeNameResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/notifications/mutedNotifications/{typeName}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1NotificationsMutedNotificationsTypeNameRequest(
+    def update_muted_notification(self, type_name: str) -> operations.UpdateMutedNotificationResponse:
+        r"""Update details of a specific muted notification"""
+        hook_ctx = HookContext(operation_id='updateMutedNotification', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateMutedNotificationRequest(
             type_name=type_name,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1NotificationsMutedNotificationsTypeNameRequest, base_url, '/api/v1/notifications/mutedNotifications/{typeName}', request)
+        url = utils.generate_url(operations.UpdateMutedNotificationRequest, base_url, '/api/v1/notifications/mutedNotifications/{typeName}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -285,7 +291,7 @@ class Notifications:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1NotificationsMutedNotificationsTypeNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateMutedNotificationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -296,15 +302,16 @@ class Notifications:
 
     
     
-    def delete_api_v1_notifications_muted_notifications_type_name_(self, type_name: str) -> operations.DeleteAPIV1NotificationsMutedNotificationsTypeNameResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/notifications/mutedNotifications/{typeName}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1NotificationsMutedNotificationsTypeNameRequest(
+    def delete_muted_notification(self, type_name: str) -> operations.DeleteMutedNotificationResponse:
+        r"""Delete a specific muted notification"""
+        hook_ctx = HookContext(operation_id='deleteMutedNotification', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteMutedNotificationRequest(
             type_name=type_name,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1NotificationsMutedNotificationsTypeNameRequest, base_url, '/api/v1/notifications/mutedNotifications/{typeName}', request)
+        url = utils.generate_url(operations.DeleteMutedNotificationRequest, base_url, '/api/v1/notifications/mutedNotifications/{typeName}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -334,7 +341,7 @@ class Notifications:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1NotificationsMutedNotificationsTypeNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteMutedNotificationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -345,15 +352,16 @@ class Notifications:
 
     
     
-    def delete_api_v1_notifications_id_(self, id: int) -> operations.DeleteAPIV1NotificationsIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/notifications/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1NotificationsIDRequest(
+    def delete_notification(self, id: int) -> operations.DeleteNotificationResponse:
+        r"""Delete a notification by ID"""
+        hook_ctx = HookContext(operation_id='deleteNotification', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteNotificationRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1NotificationsIDRequest, base_url, '/api/v1/notifications/{id}', request)
+        url = utils.generate_url(operations.DeleteNotificationRequest, base_url, '/api/v1/notifications/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -383,7 +391,7 @@ class Notifications:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1NotificationsIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteNotificationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

@@ -14,8 +14,9 @@ class Licenses:
         
     
     
-    def get_api_v1_licenses(self) -> operations.GetAPIV1LicensesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/licenses', oauth2_scopes=[], security_source=None)
+    def get_licenses(self) -> operations.GetLicensesResponse:
+        r"""Retrieve all the licenses"""
+        hook_ctx = HookContext(operation_id='getLicenses', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/licenses'
@@ -48,7 +49,7 @@ class Licenses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1LicensesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetLicensesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -59,8 +60,9 @@ class Licenses:
 
     
     
-    def post_api_v1_licenses(self) -> operations.PostAPIV1LicensesResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/licenses', oauth2_scopes=[], security_source=None)
+    def add_license(self) -> operations.AddLicenseResponse:
+        r"""Add a new license"""
+        hook_ctx = HookContext(operation_id='addLicense', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/licenses'
@@ -93,7 +95,7 @@ class Licenses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1LicensesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AddLicenseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -104,8 +106,9 @@ class Licenses:
 
     
     
-    def get_api_v1_licenses_default(self) -> operations.GetAPIV1LicensesDefaultResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/licenses/default', oauth2_scopes=[], security_source=None)
+    def get_default_license(self) -> operations.GetDefaultLicenseResponse:
+        r"""Fetch the current default license"""
+        hook_ctx = HookContext(operation_id='get_default_license', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/licenses/default'
@@ -138,7 +141,7 @@ class Licenses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1LicensesDefaultResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDefaultLicenseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -149,15 +152,16 @@ class Licenses:
 
     
     
-    def put_api_v1_licenses_default_id_(self, id: int) -> operations.PutAPIV1LicensesDefaultIDResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/licenses/default/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1LicensesDefaultIDRequest(
+    def update_default_license(self, id: int) -> operations.UpdateDefaultLicenseResponse:
+        r"""Update a default license by ID"""
+        hook_ctx = HookContext(operation_id='updateDefaultLicense', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateDefaultLicenseRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1LicensesDefaultIDRequest, base_url, '/api/v1/licenses/default/{id}', request)
+        url = utils.generate_url(operations.UpdateDefaultLicenseRequest, base_url, '/api/v1/licenses/default/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -187,7 +191,7 @@ class Licenses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1LicensesDefaultIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateDefaultLicenseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -198,15 +202,16 @@ class Licenses:
 
     
     
-    def get_api_v1_licenses_id_(self, id: int) -> operations.GetAPIV1LicensesIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/licenses/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1LicensesIDRequest(
+    def get_license(self, id: int) -> operations.GetLicenseResponse:
+        r"""Retrieve a specific license by its ID"""
+        hook_ctx = HookContext(operation_id='getLicense', oauth2_scopes=[], security_source=None)
+        request = operations.GetLicenseRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1LicensesIDRequest, base_url, '/api/v1/licenses/{id}', request)
+        url = utils.generate_url(operations.GetLicenseRequest, base_url, '/api/v1/licenses/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -236,7 +241,7 @@ class Licenses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1LicensesIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetLicenseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -247,15 +252,16 @@ class Licenses:
 
     
     
-    def delete_api_v1_licenses_id_(self, id: int) -> operations.DeleteAPIV1LicensesIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/licenses/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1LicensesIDRequest(
+    def delete_license(self, id: int) -> operations.DeleteLicenseResponse:
+        r"""Delete a specific license by its ID"""
+        hook_ctx = HookContext(operation_id='deleteLicense', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteLicenseRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1LicensesIDRequest, base_url, '/api/v1/licenses/{id}', request)
+        url = utils.generate_url(operations.DeleteLicenseRequest, base_url, '/api/v1/licenses/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -285,7 +291,7 @@ class Licenses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1LicensesIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteLicenseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -296,16 +302,17 @@ class Licenses:
 
     
     
-    def put_api_v1_licenses_id_active_active_state_(self, active_state: bool, id: int) -> operations.PutAPIV1LicensesIDActiveActiveStateResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/licenses/{id}/:active/{activeState}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1LicensesIDActiveActiveStateRequest(
+    def update_license_active_state(self, active_state: bool, id: int) -> operations.UpdateLicenseActiveStateResponse:
+        r"""Updates the activity state of a specific license"""
+        hook_ctx = HookContext(operation_id='updateLicenseActiveState', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateLicenseActiveStateRequest(
             active_state=active_state,
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1LicensesIDActiveActiveStateRequest, base_url, '/api/v1/licenses/{id}/:active/{activeState}', request)
+        url = utils.generate_url(operations.UpdateLicenseActiveStateRequest, base_url, '/api/v1/licenses/{id}/:active/{activeState}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -335,7 +342,7 @@ class Licenses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1LicensesIDActiveActiveStateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateLicenseActiveStateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -346,16 +353,17 @@ class Licenses:
 
     
     
-    def put_api_v1_licenses_id_sort_order_sort_order_(self, id: int, sort_order: int) -> operations.PutAPIV1LicensesIDSortOrderSortOrderResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/licenses/{id}/:sortOrder/{sortOrder}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1LicensesIDSortOrderSortOrderRequest(
+    def update_license_sort_order(self, id: int, sort_order: int) -> operations.UpdateLicenseSortOrderResponse:
+        r"""Update the sort order of a given license"""
+        hook_ctx = HookContext(operation_id='updateLicenseSortOrder', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateLicenseSortOrderRequest(
             id=id,
             sort_order=sort_order,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1LicensesIDSortOrderSortOrderRequest, base_url, '/api/v1/licenses/{id}/:sortOrder/{sortOrder}', request)
+        url = utils.generate_url(operations.UpdateLicenseSortOrderRequest, base_url, '/api/v1/licenses/{id}/:sortOrder/{sortOrder}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -385,7 +393,7 @@ class Licenses:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1LicensesIDSortOrderSortOrderResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateLicenseSortOrderResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

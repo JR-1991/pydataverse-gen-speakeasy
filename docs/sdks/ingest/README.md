@@ -3,9 +3,11 @@
 
 ### Available Operations
 
-* [get_api_v1_ingest_test_file](#get_api_v1_ingest_test_file)
+* [get_ingest_test_file](#get_ingest_test_file) - Retrieve details of a specific test file in the ingest process by filename and filetype
 
-## get_api_v1_ingest_test_file
+## get_ingest_test_file
+
+Retrieve details of a specific test file in the ingest process by filename and filetype
 
 ### Example Usage
 
@@ -15,7 +17,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.ingest.get_api_v1_ingest_test_file(file_name='<value>', file_type='<value>')
+res = s.ingest.get_ingest_test_file(file_name='<value>', file_type='<value>')
 
 if res.res is not None:
     # handle response
@@ -32,7 +34,7 @@ if res.res is not None:
 
 ### Response
 
-**[operations.GetAPIV1IngestTestFileResponse](../../models/operations/getapiv1ingesttestfileresponse.md)**
+**[operations.GetIngestTestFileResponse](../../models/operations/getingesttestfileresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

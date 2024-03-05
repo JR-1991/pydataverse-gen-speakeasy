@@ -14,13 +14,14 @@ class Search:
         
     
     
-    def get_api_v1_search(self, request: operations.GetAPIV1SearchRequest) -> operations.GetAPIV1SearchResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/search', oauth2_scopes=[], security_source=None)
+    def search_query(self, request: operations.SearchQueryRequest) -> operations.SearchQueryResponse:
+        r"""Executes a search query with various parameters and returns the matching records."""
+        hook_ctx = HookContext(operation_id='searchQuery', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/search'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1SearchRequest, request)
+        query_params = utils.get_query_params(operations.SearchQueryRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -49,7 +50,7 @@ class Search:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1SearchResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.SearchQueryResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

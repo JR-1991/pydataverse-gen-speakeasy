@@ -15,8 +15,9 @@ class Files:
         
     
     
-    def get_api_v1_files_fixity_algorithm(self) -> operations.GetAPIV1FilesFixityAlgorithmResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/files/fixityAlgorithm', oauth2_scopes=[], security_source=None)
+    def get_fixity_algorithm(self) -> operations.GetFixityAlgorithmResponse:
+        r"""Retrieve the fixity algorithm of a file"""
+        hook_ctx = HookContext(operation_id='getFixityAlgorithm', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/files/fixityAlgorithm'
@@ -49,7 +50,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1FilesFixityAlgorithmResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFixityAlgorithmResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -60,15 +61,16 @@ class Files:
 
     
     
-    def get_api_v1_files_id_(self, id: str) -> operations.GetAPIV1FilesIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/files/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1FilesIDRequest(
+    def get_file(self, id: str) -> operations.GetFileResponse:
+        r"""Retrieve a specific file by ID."""
+        hook_ctx = HookContext(operation_id='getFile', oauth2_scopes=[], security_source=None)
+        request = operations.GetFileRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1FilesIDRequest, base_url, '/api/v1/files/{id}', request)
+        url = utils.generate_url(operations.GetFileRequest, base_url, '/api/v1/files/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -98,7 +100,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1FilesIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -109,15 +111,16 @@ class Files:
 
     
     
-    def delete_api_v1_files_id_(self, id: str) -> operations.DeleteAPIV1FilesIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/files/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1FilesIDRequest(
+    def delete_file(self, id: str) -> operations.DeleteFileResponse:
+        r"""Delete a specific file by ID."""
+        hook_ctx = HookContext(operation_id='deleteFile', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteFileRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1FilesIDRequest, base_url, '/api/v1/files/{id}', request)
+        url = utils.generate_url(operations.DeleteFileRequest, base_url, '/api/v1/files/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -147,7 +150,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1FilesIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -158,15 +161,16 @@ class Files:
 
     
     
-    def get_api_v1_files_id_data_tables(self, id: str) -> operations.GetAPIV1FilesIDDataTablesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/files/{id}/dataTables', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1FilesIDDataTablesRequest(
+    def get_file_data_tables(self, id: str) -> operations.GetFileDataTablesResponse:
+        r"""Retrieve the data tables of a given file"""
+        hook_ctx = HookContext(operation_id='getFileDataTables', oauth2_scopes=[], security_source=None)
+        request = operations.GetFileDataTablesRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1FilesIDDataTablesRequest, base_url, '/api/v1/files/{id}/dataTables', request)
+        url = utils.generate_url(operations.GetFileDataTablesRequest, base_url, '/api/v1/files/{id}/dataTables', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -196,7 +200,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1FilesIDDataTablesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFileDataTablesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -207,15 +211,16 @@ class Files:
 
     
     
-    def get_api_v1_files_id_download_count(self, id: str) -> operations.GetAPIV1FilesIDDownloadCountResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/files/{id}/downloadCount', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1FilesIDDownloadCountRequest(
+    def get_download_count(self, id: str) -> operations.GetDownloadCountResponse:
+        r"""Retrieve the download count of a file"""
+        hook_ctx = HookContext(operation_id='getDownloadCount', oauth2_scopes=[], security_source=None)
+        request = operations.GetDownloadCountRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1FilesIDDownloadCountRequest, base_url, '/api/v1/files/{id}/downloadCount', request)
+        url = utils.generate_url(operations.GetDownloadCountRequest, base_url, '/api/v1/files/{id}/downloadCount', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -245,7 +250,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1FilesIDDownloadCountResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDownloadCountResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -256,15 +261,16 @@ class Files:
 
     
     
-    def get_api_v1_files_id_draft(self, id: str) -> operations.GetAPIV1FilesIDDraftResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/files/{id}/draft', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1FilesIDDraftRequest(
+    def get_file_draft(self, id: str) -> operations.GetFileDraftResponse:
+        r"""Retrieve a file in draft mode by its ID"""
+        hook_ctx = HookContext(operation_id='getFileDraft', oauth2_scopes=[], security_source=None)
+        request = operations.GetFileDraftRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1FilesIDDraftRequest, base_url, '/api/v1/files/{id}/draft', request)
+        url = utils.generate_url(operations.GetFileDraftRequest, base_url, '/api/v1/files/{id}/draft', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -294,7 +300,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1FilesIDDraftResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFileDraftResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -305,15 +311,16 @@ class Files:
 
     
     
-    def post_api_v1_files_id_extract_ncml(self, id: str) -> operations.PostAPIV1FilesIDExtractNcmlResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/files/{id}/extractNcml', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1FilesIDExtractNcmlRequest(
+    def extract_ncml_by_id(self, id: str) -> operations.ExtractNcmlByIDResponse:
+        r"""Extract Ncml information of a file based on the provided id"""
+        hook_ctx = HookContext(operation_id='extractNcmlById', oauth2_scopes=[], security_source=None)
+        request = operations.ExtractNcmlByIDRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1FilesIDExtractNcmlRequest, base_url, '/api/v1/files/{id}/extractNcml', request)
+        url = utils.generate_url(operations.ExtractNcmlByIDRequest, base_url, '/api/v1/files/{id}/extractNcml', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -343,7 +350,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1FilesIDExtractNcmlResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ExtractNcmlByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -354,15 +361,16 @@ class Files:
 
     
     
-    def get_api_v1_files_id_has_been_deleted(self, id: str) -> operations.GetAPIV1FilesIDHasBeenDeletedResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/files/{id}/hasBeenDeleted', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1FilesIDHasBeenDeletedRequest(
+    def check_file_deletion_status(self, id: str) -> operations.CheckFileDeletionStatusResponse:
+        r"""Check if specified file has been deleted"""
+        hook_ctx = HookContext(operation_id='checkFileDeletionStatus', oauth2_scopes=[], security_source=None)
+        request = operations.CheckFileDeletionStatusRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1FilesIDHasBeenDeletedRequest, base_url, '/api/v1/files/{id}/hasBeenDeleted', request)
+        url = utils.generate_url(operations.CheckFileDeletionStatusRequest, base_url, '/api/v1/files/{id}/hasBeenDeleted', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -392,7 +400,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1FilesIDHasBeenDeletedResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CheckFileDeletionStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -403,15 +411,16 @@ class Files:
 
     
     
-    def get_api_v1_files_id_metadata(self, id: str) -> operations.GetAPIV1FilesIDMetadataResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/files/{id}/metadata', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1FilesIDMetadataRequest(
+    def get_file_metadata(self, id: str) -> operations.GetFileMetadataResponse:
+        r"""Retrieves metadata for a specific file"""
+        hook_ctx = HookContext(operation_id='get_file_metadata', oauth2_scopes=[], security_source=None)
+        request = operations.GetFileMetadataRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1FilesIDMetadataRequest, base_url, '/api/v1/files/{id}/metadata', request)
+        url = utils.generate_url(operations.GetFileMetadataRequest, base_url, '/api/v1/files/{id}/metadata', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -441,7 +450,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1FilesIDMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFileMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -452,15 +461,16 @@ class Files:
 
     
     
-    def post_api_v1_files_id_metadata(self, id: str) -> operations.PostAPIV1FilesIDMetadataResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/files/{id}/metadata', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1FilesIDMetadataRequest(
+    def update_file_metadata(self, id: str) -> operations.UpdateFileMetadataResponse:
+        r"""Updates metadata for a specific file"""
+        hook_ctx = HookContext(operation_id='update_file_metadata', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateFileMetadataRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1FilesIDMetadataRequest, base_url, '/api/v1/files/{id}/metadata', request)
+        url = utils.generate_url(operations.UpdateFileMetadataRequest, base_url, '/api/v1/files/{id}/metadata', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -490,7 +500,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1FilesIDMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateFileMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -501,15 +511,16 @@ class Files:
 
     
     
-    def post_api_v1_files_id_metadata_categories(self, id: str) -> operations.PostAPIV1FilesIDMetadataCategoriesResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/files/{id}/metadata/categories', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1FilesIDMetadataCategoriesRequest(
+    def post_file_metadata_categories(self, id: str) -> operations.PostFileMetadataCategoriesResponse:
+        r"""Adds new metadata categories for a specific file."""
+        hook_ctx = HookContext(operation_id='postFileMetadataCategories', oauth2_scopes=[], security_source=None)
+        request = operations.PostFileMetadataCategoriesRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1FilesIDMetadataCategoriesRequest, base_url, '/api/v1/files/{id}/metadata/categories', request)
+        url = utils.generate_url(operations.PostFileMetadataCategoriesRequest, base_url, '/api/v1/files/{id}/metadata/categories', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -539,7 +550,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1FilesIDMetadataCategoriesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostFileMetadataCategoriesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -550,15 +561,16 @@ class Files:
 
     
     
-    def get_api_v1_files_id_metadata_draft(self, id: str) -> operations.GetAPIV1FilesIDMetadataDraftResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/files/{id}/metadata/draft', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1FilesIDMetadataDraftRequest(
+    def get_draft_meta_data(self, id: str) -> operations.GetDraftMetaDataResponse:
+        r"""Retrieve the metadata of a draft file"""
+        hook_ctx = HookContext(operation_id='getDraftMetaData', oauth2_scopes=[], security_source=None)
+        request = operations.GetDraftMetaDataRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1FilesIDMetadataDraftRequest, base_url, '/api/v1/files/{id}/metadata/draft', request)
+        url = utils.generate_url(operations.GetDraftMetaDataRequest, base_url, '/api/v1/files/{id}/metadata/draft', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -588,7 +600,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1FilesIDMetadataDraftResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDraftMetaDataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -599,15 +611,16 @@ class Files:
 
     
     
-    def post_api_v1_files_id_metadata_tabular_tags(self, id: str) -> operations.PostAPIV1FilesIDMetadataTabularTagsResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/files/{id}/metadata/tabularTags', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1FilesIDMetadataTabularTagsRequest(
+    def post_tabular_tags(self, id: str) -> operations.PostTabularTagsResponse:
+        r"""Add tabular tags to a file metadata"""
+        hook_ctx = HookContext(operation_id='postTabularTags', oauth2_scopes=[], security_source=None)
+        request = operations.PostTabularTagsRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1FilesIDMetadataTabularTagsRequest, base_url, '/api/v1/files/{id}/metadata/tabularTags', request)
+        url = utils.generate_url(operations.PostTabularTagsRequest, base_url, '/api/v1/files/{id}/metadata/tabularTags', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -637,7 +650,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1FilesIDMetadataTabularTagsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostTabularTagsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -648,9 +661,10 @@ class Files:
 
     
     
-    def get_api_v1_files_id_metadata_fmid_toolparams_tid_(self, fmid: int, id: str, tid: int, locale: Optional[str] = None) -> operations.GetAPIV1FilesIDMetadataFmidToolparamsTidResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/files/{id}/metadata/{fmid}/toolparams/{tid}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1FilesIDMetadataFmidToolparamsTidRequest(
+    def get_file_metadata_tool_params(self, fmid: int, id: str, tid: int, locale: Optional[str] = None) -> operations.GetFileMetadataToolParamsResponse:
+        r"""Retrieves tool parameters for a specific file metadata ID"""
+        hook_ctx = HookContext(operation_id='getFileMetadataToolParams', oauth2_scopes=[], security_source=None)
+        request = operations.GetFileMetadataToolParamsRequest(
             fmid=fmid,
             id=id,
             tid=tid,
@@ -659,9 +673,9 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1FilesIDMetadataFmidToolparamsTidRequest, base_url, '/api/v1/files/{id}/metadata/{fmid}/toolparams/{tid}', request)
+        url = utils.generate_url(operations.GetFileMetadataToolParamsRequest, base_url, '/api/v1/files/{id}/metadata/{fmid}/toolparams/{tid}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1FilesIDMetadataFmidToolparamsTidRequest, request)
+        query_params = utils.get_query_params(operations.GetFileMetadataToolParamsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -690,7 +704,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1FilesIDMetadataFmidToolparamsTidResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFileMetadataToolParamsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -701,15 +715,16 @@ class Files:
 
     
     
-    def get_api_v1_files_id_prov_freeform(self, id: str) -> operations.GetAPIV1FilesIDProvFreeformResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/files/{id}/prov-freeform', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1FilesIDProvFreeformRequest(
+    def get_file_prov_freeform(self, id: str) -> operations.GetFileProvFreeformResponse:
+        r"""Retrieves the freeform provenance data for a specific file"""
+        hook_ctx = HookContext(operation_id='getFileProvFreeform', oauth2_scopes=[], security_source=None)
+        request = operations.GetFileProvFreeformRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1FilesIDProvFreeformRequest, base_url, '/api/v1/files/{id}/prov-freeform', request)
+        url = utils.generate_url(operations.GetFileProvFreeformRequest, base_url, '/api/v1/files/{id}/prov-freeform', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -739,7 +754,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1FilesIDProvFreeformResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFileProvFreeformResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -750,18 +765,19 @@ class Files:
 
     
     
-    def post_api_v1_files_id_prov_freeform(self, id: str, request_body: Optional[str] = None) -> operations.PostAPIV1FilesIDProvFreeformResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/files/{id}/prov-freeform', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1FilesIDProvFreeformRequest(
+    def post_file_prov_freeform(self, id: str, request_body: Optional[str] = None) -> operations.PostFileProvFreeformResponse:
+        r"""Posts freeform provenance data for a specific file"""
+        hook_ctx = HookContext(operation_id='postFileProvFreeform', oauth2_scopes=[], security_source=None)
+        request = operations.PostFileProvFreeformRequest(
             id=id,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1FilesIDProvFreeformRequest, base_url, '/api/v1/files/{id}/prov-freeform', request)
+        url = utils.generate_url(operations.PostFileProvFreeformRequest, base_url, '/api/v1/files/{id}/prov-freeform', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1FilesIDProvFreeformRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostFileProvFreeformRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -792,7 +808,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1FilesIDProvFreeformResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostFileProvFreeformResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -803,15 +819,16 @@ class Files:
 
     
     
-    def get_api_v1_files_id_prov_json(self, id: str) -> operations.GetAPIV1FilesIDProvJSONResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/files/{id}/prov-json', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1FilesIDProvJSONRequest(
+    def get_file_prov_json(self, id: str) -> operations.GetFileProvJSONResponse:
+        r"""Retrieving the PROV JSON of a specific file"""
+        hook_ctx = HookContext(operation_id='getFileProvJSON', oauth2_scopes=[], security_source=None)
+        request = operations.GetFileProvJSONRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1FilesIDProvJSONRequest, base_url, '/api/v1/files/{id}/prov-json', request)
+        url = utils.generate_url(operations.GetFileProvJSONRequest, base_url, '/api/v1/files/{id}/prov-json', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -841,7 +858,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1FilesIDProvJSONResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFileProvJSONResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -852,9 +869,10 @@ class Files:
 
     
     
-    def post_api_v1_files_id_prov_json(self, id: str, entity_name: Optional[str] = None, request_body: Optional[str] = None) -> operations.PostAPIV1FilesIDProvJSONResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/files/{id}/prov-json', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1FilesIDProvJSONRequest(
+    def post_file_prov_json(self, id: str, entity_name: Optional[str] = None, request_body: Optional[str] = None) -> operations.PostFileProvJSONResponse:
+        r"""Submit a new PROV JSON for a specific file"""
+        hook_ctx = HookContext(operation_id='postFileProvJSON', oauth2_scopes=[], security_source=None)
+        request = operations.PostFileProvJSONRequest(
             id=id,
             entity_name=entity_name,
             request_body=request_body,
@@ -862,12 +880,12 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1FilesIDProvJSONRequest, base_url, '/api/v1/files/{id}/prov-json', request)
+        url = utils.generate_url(operations.PostFileProvJSONRequest, base_url, '/api/v1/files/{id}/prov-json', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1FilesIDProvJSONRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostFileProvJSONRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = utils.get_query_params(operations.PostAPIV1FilesIDProvJSONRequest, request)
+        query_params = utils.get_query_params(operations.PostFileProvJSONRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -896,7 +914,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1FilesIDProvJSONResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostFileProvJSONResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -907,15 +925,16 @@ class Files:
 
     
     
-    def delete_api_v1_files_id_prov_json(self, id: str) -> operations.DeleteAPIV1FilesIDProvJSONResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/files/{id}/prov-json', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1FilesIDProvJSONRequest(
+    def delete_file_prov_json(self, id: str) -> operations.DeleteFileProvJSONResponse:
+        r"""Delete the PROV JSON of a specific file"""
+        hook_ctx = HookContext(operation_id='deleteFileProvJSON', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteFileProvJSONRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1FilesIDProvJSONRequest, base_url, '/api/v1/files/{id}/prov-json', request)
+        url = utils.generate_url(operations.DeleteFileProvJSONRequest, base_url, '/api/v1/files/{id}/prov-json', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -945,7 +964,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1FilesIDProvJSONResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteFileProvJSONResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -956,18 +975,19 @@ class Files:
 
     
     
-    def post_api_v1_files_id_redetect(self, id: str, dry_run: Optional[bool] = None) -> operations.PostAPIV1FilesIDRedetectResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/files/{id}/redetect', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1FilesIDRedetectRequest(
+    def redetect_file(self, id: str, dry_run: Optional[bool] = None) -> operations.RedetectFileResponse:
+        r"""Invoke redetection process for the specified file"""
+        hook_ctx = HookContext(operation_id='redetectFile', oauth2_scopes=[], security_source=None)
+        request = operations.RedetectFileRequest(
             id=id,
             dry_run=dry_run,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1FilesIDRedetectRequest, base_url, '/api/v1/files/{id}/redetect', request)
+        url = utils.generate_url(operations.RedetectFileRequest, base_url, '/api/v1/files/{id}/redetect', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1FilesIDRedetectRequest, request)
+        query_params = utils.get_query_params(operations.RedetectFileRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -996,7 +1016,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1FilesIDRedetectResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.RedetectFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1007,15 +1027,16 @@ class Files:
 
     
     
-    def post_api_v1_files_id_reingest(self, id: str) -> operations.PostAPIV1FilesIDReingestResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/files/{id}/reingest', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1FilesIDReingestRequest(
+    def reingest_file(self, id: str) -> operations.ReingestFileResponse:
+        r"""Reingest a file using its ID"""
+        hook_ctx = HookContext(operation_id='reingestFile', oauth2_scopes=[], security_source=None)
+        request = operations.ReingestFileRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1FilesIDReingestRequest, base_url, '/api/v1/files/{id}/reingest', request)
+        url = utils.generate_url(operations.ReingestFileRequest, base_url, '/api/v1/files/{id}/reingest', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1045,7 +1066,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1FilesIDReingestResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ReingestFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1056,18 +1077,19 @@ class Files:
 
     
     
-    def post_api_v1_files_id_replace(self, id: str, request_body: Optional[operations.PostAPIV1FilesIDReplaceRequestBody] = None) -> operations.PostAPIV1FilesIDReplaceResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/files/{id}/replace', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1FilesIDReplaceRequest(
+    def replace_file(self, id: str, request_body: Optional[operations.ReplaceFileRequestBody] = None) -> operations.ReplaceFileResponse:
+        r"""Replace an existing file with a new version"""
+        hook_ctx = HookContext(operation_id='replaceFile', oauth2_scopes=[], security_source=None)
+        request = operations.ReplaceFileRequest(
             id=id,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1FilesIDReplaceRequest, base_url, '/api/v1/files/{id}/replace', request)
+        url = utils.generate_url(operations.ReplaceFileRequest, base_url, '/api/v1/files/{id}/replace', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1FilesIDReplaceRequest, "request_body", False, True, 'multipart')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.ReplaceFileRequest, "request_body", False, True, 'multipart')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -1098,7 +1120,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1FilesIDReplaceResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ReplaceFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1109,15 +1131,16 @@ class Files:
 
     
     
-    def put_api_v1_files_id_restrict(self, id: str) -> operations.PutAPIV1FilesIDRestrictResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/files/{id}/restrict', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1FilesIDRestrictRequest(
+    def restrict_file_access(self, id: str) -> operations.RestrictFileAccessResponse:
+        r"""Restrict access to a specific file"""
+        hook_ctx = HookContext(operation_id='restrictFileAccess', oauth2_scopes=[], security_source=None)
+        request = operations.RestrictFileAccessRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1FilesIDRestrictRequest, base_url, '/api/v1/files/{id}/restrict', request)
+        url = utils.generate_url(operations.RestrictFileAccessRequest, base_url, '/api/v1/files/{id}/restrict', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1147,7 +1170,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1FilesIDRestrictResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.RestrictFileAccessResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1158,15 +1181,16 @@ class Files:
 
     
     
-    def post_api_v1_files_id_uningest(self, id: str) -> operations.PostAPIV1FilesIDUningestResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/files/{id}/uningest', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1FilesIDUningestRequest(
+    def post_file_uningest(self, id: str) -> operations.PostFileUningestResponse:
+        r"""Uningest a file with the specified ID"""
+        hook_ctx = HookContext(operation_id='postFileUningest', oauth2_scopes=[], security_source=None)
+        request = operations.PostFileUningestRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1FilesIDUningestRequest, base_url, '/api/v1/files/{id}/uningest', request)
+        url = utils.generate_url(operations.PostFileUningestRequest, base_url, '/api/v1/files/{id}/uningest', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1196,7 +1220,7 @@ class Files:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1FilesIDUningestResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostFileUningestResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

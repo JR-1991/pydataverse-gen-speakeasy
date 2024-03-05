@@ -3,10 +3,12 @@
 
 ### Available Operations
 
-* [get_api_v1_metadatablocks](#get_api_v1_metadatablocks)
-* [get_api_v1_metadatablocks_identifier_](#get_api_v1_metadatablocks_identifier_)
+* [get_metadatablocks](#get_metadatablocks) - Retrieve metadata blocks available in the system
+* [get_metadatablock_1_1](#get_metadatablock_1_1) - Retrieve a specific Metadatablock by its identifier
 
-## get_api_v1_metadatablocks
+## get_metadatablocks
+
+Retrieve metadata blocks available in the system
 
 ### Example Usage
 
@@ -16,7 +18,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.metadatablocks.get_api_v1_metadatablocks()
+res = s.metadatablocks.get_metadatablocks()
 
 if res.status_code == 200:
     # handle response
@@ -26,14 +28,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1MetadatablocksResponse](../../models/operations/getapiv1metadatablocksresponse.md)**
+**[operations.GetMetadatablocksResponse](../../models/operations/getmetadatablocksresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_metadatablocks_identifier_
+## get_metadatablock_1_1
+
+Retrieve a specific Metadatablock by its identifier
 
 ### Example Usage
 
@@ -43,7 +47,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.metadatablocks.get_api_v1_metadatablocks_identifier_(identifier='<value>')
+res = s.metadatablocks.get_metadatablock_1_1(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -59,7 +63,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1MetadatablocksIdentifierResponse](../../models/operations/getapiv1metadatablocksidentifierresponse.md)**
+**[operations.GetMetadatablock11Response](../../models/operations/getmetadatablock11response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

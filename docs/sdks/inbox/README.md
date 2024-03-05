@@ -3,9 +3,11 @@
 
 ### Available Operations
 
-* [post_api_v1_inbox](#post_api_v1_inbox)
+* [post_inbox](#post_inbox) - Create a new inbox message
 
-## post_api_v1_inbox
+## post_inbox
+
+Create a new inbox message
 
 ### Example Usage
 
@@ -16,7 +18,7 @@ s = pydataverse.PyDataverse()
 
 req = '<value>'
 
-res = s.inbox.post_api_v1_inbox(req)
+res = s.inbox.post_inbox(req)
 
 if res.status_code == 200:
     # handle response
@@ -32,7 +34,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1InboxResponse](../../models/operations/postapiv1inboxresponse.md)**
+**[operations.PostInboxResponse](../../models/operations/postinboxresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

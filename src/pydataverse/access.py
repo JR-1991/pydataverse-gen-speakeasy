@@ -15,9 +15,10 @@ class Access:
         
     
     
-    def get_api_v1_access_datafile_bundle_file_id_(self, file_id: str, file_metadata_id: Optional[int] = None, gbrecs: Optional[bool] = None) -> operations.GetAPIV1AccessDatafileBundleFileIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/datafile/bundle/{fileId}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessDatafileBundleFileIDRequest(
+    def get_datafile_bundle(self, file_id: str, file_metadata_id: Optional[int] = None, gbrecs: Optional[bool] = None) -> operations.GetDatafileBundleResponse:
+        r"""Retrieve a zip of the datafile bundle identified by the file ID."""
+        hook_ctx = HookContext(operation_id='getDatafileBundle', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatafileBundleRequest(
             file_id=file_id,
             file_metadata_id=file_metadata_id,
             gbrecs=gbrecs,
@@ -25,9 +26,9 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessDatafileBundleFileIDRequest, base_url, '/api/v1/access/datafile/bundle/{fileId}', request)
+        url = utils.generate_url(operations.GetDatafileBundleRequest, base_url, '/api/v1/access/datafile/bundle/{fileId}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AccessDatafileBundleFileIDRequest, request)
+        query_params = utils.get_query_params(operations.GetDatafileBundleRequest, request)
         headers['Accept'] = 'application/zip'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -56,7 +57,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessDatafileBundleFileIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatafileBundleResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/zip'):
@@ -70,18 +71,19 @@ class Access:
 
     
     
-    def get_api_v1_access_datafile_file_id_(self, file_id: str, gbrecs: Optional[bool] = None) -> operations.GetAPIV1AccessDatafileFileIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/datafile/{fileId}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessDatafileFileIDRequest(
+    def get_datafile(self, file_id: str, gbrecs: Optional[bool] = None) -> operations.GetDatafileResponse:
+        r"""Retrieves datafile details based on given fileId"""
+        hook_ctx = HookContext(operation_id='getDatafile', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatafileRequest(
             file_id=file_id,
             gbrecs=gbrecs,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessDatafileFileIDRequest, base_url, '/api/v1/access/datafile/{fileId}', request)
+        url = utils.generate_url(operations.GetDatafileRequest, base_url, '/api/v1/access/datafile/{fileId}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AccessDatafileFileIDRequest, request)
+        query_params = utils.get_query_params(operations.GetDatafileRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -110,7 +112,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessDatafileFileIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatafileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -121,15 +123,16 @@ class Access:
 
     
     
-    def get_api_v1_access_datafile_file_id_auxiliary(self, file_id: str) -> operations.GetAPIV1AccessDatafileFileIDAuxiliaryResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/datafile/{fileId}/auxiliary', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessDatafileFileIDAuxiliaryRequest(
+    def get_datafile_auxiliary(self, file_id: str) -> operations.GetDatafileAuxiliaryResponse:
+        r"""Retrieve auxiliary data for a specific datafile."""
+        hook_ctx = HookContext(operation_id='getDatafileAuxiliary', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatafileAuxiliaryRequest(
             file_id=file_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessDatafileFileIDAuxiliaryRequest, base_url, '/api/v1/access/datafile/{fileId}/auxiliary', request)
+        url = utils.generate_url(operations.GetDatafileAuxiliaryRequest, base_url, '/api/v1/access/datafile/{fileId}/auxiliary', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -159,7 +162,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessDatafileFileIDAuxiliaryResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatafileAuxiliaryResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -170,9 +173,10 @@ class Access:
 
     
     
-    def get_api_v1_access_datafile_file_id_auxiliary_format_tag_format_version_(self, file_id: str, format_tag: str, format_version: str) -> operations.GetAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionRequest(
+    def access_datafile_auxiliary_get(self, file_id: str, format_tag: str, format_version: str) -> operations.AccessDatafileAuxiliaryGetResponse:
+        r"""Retrieve details of a specific auxiliary data file"""
+        hook_ctx = HookContext(operation_id='accessDatafileAuxiliaryGet', oauth2_scopes=[], security_source=None)
+        request = operations.AccessDatafileAuxiliaryGetRequest(
             file_id=file_id,
             format_tag=format_tag,
             format_version=format_version,
@@ -180,7 +184,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionRequest, base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}', request)
+        url = utils.generate_url(operations.AccessDatafileAuxiliaryGetRequest, base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -210,7 +214,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AccessDatafileAuxiliaryGetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, '*/*'):
@@ -224,9 +228,10 @@ class Access:
 
     
     
-    def post_api_v1_access_datafile_file_id_auxiliary_format_tag_format_version_(self, file_id: int, format_tag: str, format_version: str, request_body: Optional[operations.PostAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionRequestBody] = None) -> operations.PostAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionRequest(
+    def access_datafile_auxiliary_create(self, file_id: int, format_tag: str, format_version: str, request_body: Optional[operations.AccessDatafileAuxiliaryCreateRequestBody] = None) -> operations.AccessDatafileAuxiliaryCreateResponse:
+        r"""Create a new auxiliary data file for a particular data file"""
+        hook_ctx = HookContext(operation_id='accessDatafileAuxiliaryCreate', oauth2_scopes=[], security_source=None)
+        request = operations.AccessDatafileAuxiliaryCreateRequest(
             file_id=file_id,
             format_tag=format_tag,
             format_version=format_version,
@@ -235,9 +240,9 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionRequest, base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}', request)
+        url = utils.generate_url(operations.AccessDatafileAuxiliaryCreateRequest, base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionRequest, "request_body", False, True, 'multipart')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.AccessDatafileAuxiliaryCreateRequest, "request_body", False, True, 'multipart')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -268,7 +273,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AccessDatafileAuxiliaryCreateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -279,9 +284,10 @@ class Access:
 
     
     
-    def delete_api_v1_access_datafile_file_id_auxiliary_format_tag_format_version_(self, file_id: int, format_tag: str, format_version: str) -> operations.DeleteAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionRequest(
+    def access_datafile_auxiliary_delete(self, file_id: int, format_tag: str, format_version: str) -> operations.AccessDatafileAuxiliaryDeleteResponse:
+        r"""Delete a specific auxiliary data file"""
+        hook_ctx = HookContext(operation_id='accessDatafileAuxiliaryDelete', oauth2_scopes=[], security_source=None)
+        request = operations.AccessDatafileAuxiliaryDeleteRequest(
             file_id=file_id,
             format_tag=format_tag,
             format_version=format_version,
@@ -289,7 +295,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionRequest, base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}', request)
+        url = utils.generate_url(operations.AccessDatafileAuxiliaryDeleteRequest, base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -319,7 +325,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AccessDatafileAuxiliaryDeleteResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -330,16 +336,17 @@ class Access:
 
     
     
-    def get_api_v1_access_datafile_file_id_auxiliary_origin_(self, file_id: str, origin: str) -> operations.GetAPIV1AccessDatafileFileIDAuxiliaryOriginResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/datafile/{fileId}/auxiliary/{origin}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessDatafileFileIDAuxiliaryOriginRequest(
+    def get_datafile_auxiliary_info(self, file_id: str, origin: str) -> operations.GetDatafileAuxiliaryInfoResponse:
+        r"""Retrieve auxiliary information of specific datafile"""
+        hook_ctx = HookContext(operation_id='getDatafileAuxiliaryInfo', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatafileAuxiliaryInfoRequest(
             file_id=file_id,
             origin=origin,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessDatafileFileIDAuxiliaryOriginRequest, base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{origin}', request)
+        url = utils.generate_url(operations.GetDatafileAuxiliaryInfoRequest, base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{origin}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -369,7 +376,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessDatafileFileIDAuxiliaryOriginResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatafileAuxiliaryInfoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -380,9 +387,10 @@ class Access:
 
     
     
-    def get_api_v1_access_datafile_file_id_metadata(self, file_id: str, exclude: Optional[str] = None, file_metadata_id: Optional[int] = None, include: Optional[str] = None) -> operations.GetAPIV1AccessDatafileFileIDMetadataResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/datafile/{fileId}/metadata', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessDatafileFileIDMetadataRequest(
+    def get_datafile_metadata(self, file_id: str, exclude: Optional[str] = None, file_metadata_id: Optional[int] = None, include: Optional[str] = None) -> operations.GetDatafileMetadataResponse:
+        r"""Retrieve metadata for a specific datafile"""
+        hook_ctx = HookContext(operation_id='getDatafileMetadata', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatafileMetadataRequest(
             file_id=file_id,
             exclude=exclude,
             file_metadata_id=file_metadata_id,
@@ -391,9 +399,9 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessDatafileFileIDMetadataRequest, base_url, '/api/v1/access/datafile/{fileId}/metadata', request)
+        url = utils.generate_url(operations.GetDatafileMetadataRequest, base_url, '/api/v1/access/datafile/{fileId}/metadata', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AccessDatafileFileIDMetadataRequest, request)
+        query_params = utils.get_query_params(operations.GetDatafileMetadataRequest, request)
         headers['Accept'] = 'text/xml'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -422,7 +430,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessDatafileFileIDMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatafileMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'text/xml'):
@@ -436,9 +444,10 @@ class Access:
 
     
     
-    def get_api_v1_access_datafile_file_id_metadata_ddi(self, file_id: str, exclude: Optional[str] = None, file_metadata_id: Optional[int] = None, include: Optional[str] = None) -> operations.GetAPIV1AccessDatafileFileIDMetadataDdiResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/datafile/{fileId}/metadata/ddi', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessDatafileFileIDMetadataDdiRequest(
+    def get_datafile_meta_ddi(self, file_id: str, exclude: Optional[str] = None, file_metadata_id: Optional[int] = None, include: Optional[str] = None) -> operations.GetDatafileMetaDDIResponse:
+        r"""Retrieve DDI metadata for a specific datafile."""
+        hook_ctx = HookContext(operation_id='getDatafileMetaDDI', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatafileMetaDDIRequest(
             file_id=file_id,
             exclude=exclude,
             file_metadata_id=file_metadata_id,
@@ -447,9 +456,9 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessDatafileFileIDMetadataDdiRequest, base_url, '/api/v1/access/datafile/{fileId}/metadata/ddi', request)
+        url = utils.generate_url(operations.GetDatafileMetaDDIRequest, base_url, '/api/v1/access/datafile/{fileId}/metadata/ddi', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AccessDatafileFileIDMetadataDdiRequest, request)
+        query_params = utils.get_query_params(operations.GetDatafileMetaDDIRequest, request)
         headers['Accept'] = 'text/xml'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -478,7 +487,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessDatafileFileIDMetadataDdiResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatafileMetaDDIResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'text/xml'):
@@ -492,16 +501,17 @@ class Access:
 
     
     
-    def put_api_v1_access_datafile_id_grant_access_identifier_(self, id: str, identifier: str) -> operations.PutAPIV1AccessDatafileIDGrantAccessIdentifierResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/access/datafile/{id}/grantAccess/{identifier}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AccessDatafileIDGrantAccessIdentifierRequest(
+    def grant_datafile_access(self, id: str, identifier: str) -> operations.GrantDatafileAccessResponse:
+        r"""Grants access to a specific datafile using its ID and the identifier of the user"""
+        hook_ctx = HookContext(operation_id='grantDatafileAccess', oauth2_scopes=[], security_source=None)
+        request = operations.GrantDatafileAccessRequest(
             id=id,
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AccessDatafileIDGrantAccessIdentifierRequest, base_url, '/api/v1/access/datafile/{id}/grantAccess/{identifier}', request)
+        url = utils.generate_url(operations.GrantDatafileAccessRequest, base_url, '/api/v1/access/datafile/{id}/grantAccess/{identifier}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -531,7 +541,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AccessDatafileIDGrantAccessIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GrantDatafileAccessResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -542,15 +552,16 @@ class Access:
 
     
     
-    def get_api_v1_access_datafile_id_list_requests(self, id: str) -> operations.GetAPIV1AccessDatafileIDListRequestsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/datafile/{id}/listRequests', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessDatafileIDListRequestsRequest(
+    def get_datafile_requests(self, id: str) -> operations.GetDatafileRequestsResponse:
+        r"""Retrieves a list of all requests relevant to a specified datafile"""
+        hook_ctx = HookContext(operation_id='getDatafileRequests', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatafileRequestsRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessDatafileIDListRequestsRequest, base_url, '/api/v1/access/datafile/{id}/listRequests', request)
+        url = utils.generate_url(operations.GetDatafileRequestsRequest, base_url, '/api/v1/access/datafile/{id}/listRequests', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -580,7 +591,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessDatafileIDListRequestsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatafileRequestsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -591,16 +602,17 @@ class Access:
 
     
     
-    def put_api_v1_access_datafile_id_reject_access_identifier_(self, id: str, identifier: str) -> operations.PutAPIV1AccessDatafileIDRejectAccessIdentifierResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/access/datafile/{id}/rejectAccess/{identifier}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AccessDatafileIDRejectAccessIdentifierRequest(
+    def reject_data_access(self, id: str, identifier: str) -> operations.RejectDataAccessResponse:
+        r"""Reject access to specified datafile using ids"""
+        hook_ctx = HookContext(operation_id='rejectDataAccess', oauth2_scopes=[], security_source=None)
+        request = operations.RejectDataAccessRequest(
             id=id,
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AccessDatafileIDRejectAccessIdentifierRequest, base_url, '/api/v1/access/datafile/{id}/rejectAccess/{identifier}', request)
+        url = utils.generate_url(operations.RejectDataAccessRequest, base_url, '/api/v1/access/datafile/{id}/rejectAccess/{identifier}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -630,7 +642,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AccessDatafileIDRejectAccessIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.RejectDataAccessResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -641,15 +653,16 @@ class Access:
 
     
     
-    def put_api_v1_access_datafile_id_request_access(self, id: str) -> operations.PutAPIV1AccessDatafileIDRequestAccessResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/access/datafile/{id}/requestAccess', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AccessDatafileIDRequestAccessRequest(
+    def request_file_access(self, id: str) -> operations.RequestFileAccessResponse:
+        r"""Requests access to a specific datafile by ID."""
+        hook_ctx = HookContext(operation_id='requestFileAccess', oauth2_scopes=[], security_source=None)
+        request = operations.RequestFileAccessRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AccessDatafileIDRequestAccessRequest, base_url, '/api/v1/access/datafile/{id}/requestAccess', request)
+        url = utils.generate_url(operations.RequestFileAccessRequest, base_url, '/api/v1/access/datafile/{id}/requestAccess', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -679,7 +692,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AccessDatafileIDRequestAccessResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.RequestFileAccessResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -690,16 +703,17 @@ class Access:
 
     
     
-    def delete_api_v1_access_datafile_id_revoke_access_identifier_(self, id: str, identifier: str) -> operations.DeleteAPIV1AccessDatafileIDRevokeAccessIdentifierResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/access/datafile/{id}/revokeAccess/{identifier}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1AccessDatafileIDRevokeAccessIdentifierRequest(
+    def delete_file_access(self, id: str, identifier: str) -> operations.DeleteFileAccessResponse:
+        r"""Revoke access to a specific file using its ID and an identifier"""
+        hook_ctx = HookContext(operation_id='deleteFileAccess', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteFileAccessRequest(
             id=id,
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1AccessDatafileIDRevokeAccessIdentifierRequest, base_url, '/api/v1/access/datafile/{id}/revokeAccess/{identifier}', request)
+        url = utils.generate_url(operations.DeleteFileAccessRequest, base_url, '/api/v1/access/datafile/{id}/revokeAccess/{identifier}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -729,7 +743,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1AccessDatafileIDRevokeAccessIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteFileAccessResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -740,15 +754,16 @@ class Access:
 
     
     
-    def get_api_v1_access_datafile_id_user_file_access_requested(self, id: str) -> operations.GetAPIV1AccessDatafileIDUserFileAccessRequestedResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/datafile/{id}/userFileAccessRequested', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessDatafileIDUserFileAccessRequestedRequest(
+    def get_user_file_access_requested(self, id: str) -> operations.GetUserFileAccessRequestedResponse:
+        r"""Retrieve the status of a user file access request"""
+        hook_ctx = HookContext(operation_id='getUserFileAccessRequested', oauth2_scopes=[], security_source=None)
+        request = operations.GetUserFileAccessRequestedRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessDatafileIDUserFileAccessRequestedRequest, base_url, '/api/v1/access/datafile/{id}/userFileAccessRequested', request)
+        url = utils.generate_url(operations.GetUserFileAccessRequestedRequest, base_url, '/api/v1/access/datafile/{id}/userFileAccessRequested', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -778,7 +793,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessDatafileIDUserFileAccessRequestedResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetUserFileAccessRequestedResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -789,15 +804,16 @@ class Access:
 
     
     
-    def get_api_v1_access_datafile_id_user_permissions(self, id: str) -> operations.GetAPIV1AccessDatafileIDUserPermissionsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/datafile/{id}/userPermissions', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessDatafileIDUserPermissionsRequest(
+    def get_user_file_permissions(self, id: str) -> operations.GetUserFilePermissionsResponse:
+        r"""Retrieve user permissions for a specific datafile."""
+        hook_ctx = HookContext(operation_id='getUserFilePermissions', oauth2_scopes=[], security_source=None)
+        request = operations.GetUserFilePermissionsRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessDatafileIDUserPermissionsRequest, base_url, '/api/v1/access/datafile/{id}/userPermissions', request)
+        url = utils.generate_url(operations.GetUserFilePermissionsRequest, base_url, '/api/v1/access/datafile/{id}/userPermissions', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -827,7 +843,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessDatafileIDUserPermissionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetUserFilePermissionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -838,9 +854,10 @@ class Access:
 
     
     
-    def post_api_v1_access_datafiles(self, gbrecs: Optional[bool] = None, request_body: Optional[str] = None) -> operations.PostAPIV1AccessDatafilesResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/access/datafiles', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1AccessDatafilesRequest(
+    def post_data_file_access(self, gbrecs: Optional[bool] = None, request_body: Optional[str] = None) -> operations.PostDataFileAccessResponse:
+        r"""Uploads access details of a data file"""
+        hook_ctx = HookContext(operation_id='postDataFileAccess', oauth2_scopes=[], security_source=None)
+        request = operations.PostDataFileAccessRequest(
             gbrecs=gbrecs,
             request_body=request_body,
         )
@@ -849,10 +866,10 @@ class Access:
         
         url = base_url + '/api/v1/access/datafiles'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1AccessDatafilesRequest, "request_body", False, True, 'string')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostDataFileAccessRequest, "request_body", False, True, 'string')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = utils.get_query_params(operations.PostAPIV1AccessDatafilesRequest, request)
+        query_params = utils.get_query_params(operations.PostDataFileAccessRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -881,7 +898,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1AccessDatafilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostDataFileAccessResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -892,18 +909,19 @@ class Access:
 
     
     
-    def get_api_v1_access_datafiles_file_ids_(self, file_ids: str, gbrecs: Optional[bool] = None) -> operations.GetAPIV1AccessDatafilesFileIdsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/datafiles/{fileIds}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessDatafilesFileIdsRequest(
+    def get_access_data_files(self, file_ids: str, gbrecs: Optional[bool] = None) -> operations.GetAccessDataFilesResponse:
+        r"""Retrieve access data for specified files"""
+        hook_ctx = HookContext(operation_id='getAccessDataFiles', oauth2_scopes=[], security_source=None)
+        request = operations.GetAccessDataFilesRequest(
             file_ids=file_ids,
             gbrecs=gbrecs,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessDatafilesFileIdsRequest, base_url, '/api/v1/access/datafiles/{fileIds}', request)
+        url = utils.generate_url(operations.GetAccessDataFilesRequest, base_url, '/api/v1/access/datafiles/{fileIds}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AccessDatafilesFileIdsRequest, request)
+        query_params = utils.get_query_params(operations.GetAccessDataFilesRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -932,7 +950,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessDatafilesFileIdsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAccessDataFilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -943,18 +961,19 @@ class Access:
 
     
     
-    def get_api_v1_access_dataset_id_(self, id: str, gbrecs: Optional[bool] = None) -> operations.GetAPIV1AccessDatasetIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/dataset/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessDatasetIDRequest(
+    def get_dataset_access(self, id: str, gbrecs: Optional[bool] = None) -> operations.GetDatasetAccessResponse:
+        r"""Retrieve access information for a specific dataset"""
+        hook_ctx = HookContext(operation_id='getDatasetAccess', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetAccessRequest(
             id=id,
             gbrecs=gbrecs,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessDatasetIDRequest, base_url, '/api/v1/access/dataset/{id}', request)
+        url = utils.generate_url(operations.GetDatasetAccessRequest, base_url, '/api/v1/access/dataset/{id}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AccessDatasetIDRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetAccessRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -983,7 +1002,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessDatasetIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetAccessResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -994,9 +1013,10 @@ class Access:
 
     
     
-    def get_api_v1_access_dataset_id_versions_version_id_(self, id: str, version_id: str, gbrecs: Optional[bool] = None, key: Optional[str] = None) -> operations.GetAPIV1AccessDatasetIDVersionsVersionIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/dataset/{id}/versions/{versionId}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessDatasetIDVersionsVersionIDRequest(
+    def get_dataset_version_access(self, id: str, version_id: str, gbrecs: Optional[bool] = None, key: Optional[str] = None) -> operations.GetDatasetVersionAccessResponse:
+        r"""Retrieve specific version of an accessible dataset by ID"""
+        hook_ctx = HookContext(operation_id='getDatasetVersionAccess', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetVersionAccessRequest(
             id=id,
             version_id=version_id,
             gbrecs=gbrecs,
@@ -1005,9 +1025,9 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessDatasetIDVersionsVersionIDRequest, base_url, '/api/v1/access/dataset/{id}/versions/{versionId}', request)
+        url = utils.generate_url(operations.GetDatasetVersionAccessRequest, base_url, '/api/v1/access/dataset/{id}/versions/{versionId}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1AccessDatasetIDVersionsVersionIDRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetVersionAccessRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1036,7 +1056,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessDatasetIDVersionsVersionIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetVersionAccessResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1047,15 +1067,16 @@ class Access:
 
     
     
-    def get_api_v1_access_ds_card_image_version_id_(self, version_id: int) -> operations.GetAPIV1AccessDsCardImageVersionIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/dsCardImage/{versionId}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessDsCardImageVersionIDRequest(
+    def get_ds_card_image(self, version_id: int) -> operations.GetDsCardImageResponse:
+        r"""Retrieves the version-specific Data Card image"""
+        hook_ctx = HookContext(operation_id='getDsCardImage', oauth2_scopes=[], security_source=None)
+        request = operations.GetDsCardImageRequest(
             version_id=version_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessDsCardImageVersionIDRequest, base_url, '/api/v1/access/dsCardImage/{versionId}', request)
+        url = utils.generate_url(operations.GetDsCardImageRequest, base_url, '/api/v1/access/dsCardImage/{versionId}', request)
         headers = {}
         headers['Accept'] = 'image/png'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1085,7 +1106,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessDsCardImageVersionIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDsCardImageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'image/png'):
@@ -1099,15 +1120,16 @@ class Access:
 
     
     
-    def get_api_v1_access_dv_card_image_dataverse_id_(self, dataverse_id: int) -> operations.GetAPIV1AccessDvCardImageDataverseIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/dvCardImage/{dataverseId}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessDvCardImageDataverseIDRequest(
+    def get_dataverse_card_image(self, dataverse_id: int) -> operations.GetDataverseCardImageResponse:
+        r"""Fetch the Dataverse card image"""
+        hook_ctx = HookContext(operation_id='getDataverseCardImage', oauth2_scopes=[], security_source=None)
+        request = operations.GetDataverseCardImageRequest(
             dataverse_id=dataverse_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessDvCardImageDataverseIDRequest, base_url, '/api/v1/access/dvCardImage/{dataverseId}', request)
+        url = utils.generate_url(operations.GetDataverseCardImageRequest, base_url, '/api/v1/access/dvCardImage/{dataverseId}', request)
         headers = {}
         headers['Accept'] = 'image/png'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1137,7 +1159,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessDvCardImageDataverseIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDataverseCardImageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'image/png'):
@@ -1151,15 +1173,16 @@ class Access:
 
     
     
-    def get_api_v1_access_file_card_image_file_id_(self, file_id: int) -> operations.GetAPIV1AccessFileCardImageFileIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/access/fileCardImage/{fileId}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1AccessFileCardImageFileIDRequest(
+    def get_file_card_image(self, file_id: int) -> operations.GetFileCardImageResponse:
+        r"""Retrieves the card image for the specified file ID."""
+        hook_ctx = HookContext(operation_id='getFileCardImage', oauth2_scopes=[], security_source=None)
+        request = operations.GetFileCardImageRequest(
             file_id=file_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1AccessFileCardImageFileIDRequest, base_url, '/api/v1/access/fileCardImage/{fileId}', request)
+        url = utils.generate_url(operations.GetFileCardImageRequest, base_url, '/api/v1/access/fileCardImage/{fileId}', request)
         headers = {}
         headers['Accept'] = 'image/png'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1189,7 +1212,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1AccessFileCardImageFileIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFileCardImageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'image/png'):
@@ -1203,15 +1226,16 @@ class Access:
 
     
     
-    def put_api_v1_access_id_allow_access_request(self, id: str) -> operations.PutAPIV1AccessIDAllowAccessRequestResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/access/{id}/allowAccessRequest', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1AccessIDAllowAccessRequestRequest(
+    def allow_access_request(self, id: str) -> operations.AllowAccessRequestResponse:
+        r"""Update permission to allow access request based on the provided ID"""
+        hook_ctx = HookContext(operation_id='allowAccessRequest', oauth2_scopes=[], security_source=None)
+        request = operations.AllowAccessRequestRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1AccessIDAllowAccessRequestRequest, base_url, '/api/v1/access/{id}/allowAccessRequest', request)
+        url = utils.generate_url(operations.AllowAccessRequestRequest, base_url, '/api/v1/access/{id}/allowAccessRequest', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1241,7 +1265,7 @@ class Access:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1AccessIDAllowAccessRequestResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AllowAccessRequestResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

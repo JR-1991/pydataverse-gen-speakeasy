@@ -3,12 +3,14 @@
 
 ### Available Operations
 
-* [get_api_v1_pids](#get_api_v1_pids)
-* [get_api_v1_pids_unreserved](#get_api_v1_pids_unreserved)
-* [delete_api_v1_pids_id_delete](#delete_api_v1_pids_id_delete)
-* [post_api_v1_pids_id_reserve](#post_api_v1_pids_id_reserve)
+* [get_persistent_id](#get_persistent_id) - Retrieve a specific persistent identifier
+* [get_unreserved_persistent_ids](#get_unreserved_persistent_ids) - Retrieves unreserved persistent identifiers
+* [delete_pid](#delete_pid) - Delete a specific persistent identifier (PID)
+* [reserve_pid](#reserve_pid) - Reserve a specific PID
 
-## get_api_v1_pids
+## get_persistent_id
+
+Retrieve a specific persistent identifier
 
 ### Example Usage
 
@@ -18,7 +20,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.pids.get_api_v1_pids(persistent_id='<value>')
+res = s.pids.get_persistent_id(persistent_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -34,14 +36,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1PidsResponse](../../models/operations/getapiv1pidsresponse.md)**
+**[operations.GetPersistentIDResponse](../../models/operations/getpersistentidresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_pids_unreserved
+## get_unreserved_persistent_ids
+
+Retrieves unreserved persistent identifiers
 
 ### Example Usage
 
@@ -51,7 +55,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.pids.get_api_v1_pids_unreserved(persistent_id='<value>')
+res = s.pids.get_unreserved_persistent_ids(persistent_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -67,14 +71,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1PidsUnreservedResponse](../../models/operations/getapiv1pidsunreservedresponse.md)**
+**[operations.GetUnreservedPersistentIdsResponse](../../models/operations/getunreservedpersistentidsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_pids_id_delete
+## delete_pid
+
+Delete a specific persistent identifier (PID)
 
 ### Example Usage
 
@@ -84,7 +90,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.pids.delete_api_v1_pids_id_delete(id='<value>')
+res = s.pids.delete_pid(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -100,14 +106,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1PidsIDDeleteResponse](../../models/operations/deleteapiv1pidsiddeleteresponse.md)**
+**[operations.DeletePidResponse](../../models/operations/deletepidresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_pids_id_reserve
+## reserve_pid
+
+Reserve a specific PID
 
 ### Example Usage
 
@@ -117,7 +125,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.pids.post_api_v1_pids_id_reserve(id='<value>')
+res = s.pids.reserve_pid(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -133,7 +141,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1PidsIDReserveResponse](../../models/operations/postapiv1pidsidreserveresponse.md)**
+**[operations.ReservePidResponse](../../models/operations/reservepidresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

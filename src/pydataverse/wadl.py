@@ -14,8 +14,9 @@ class Wadl:
         
     
     
-    def get_api_v1_application_wadl(self) -> operations.GetAPIV1ApplicationWadlResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/application.wadl', oauth2_scopes=[], security_source=None)
+    def get_application_wadl(self) -> operations.GetApplicationWadlResponse:
+        r"""Retrieves the application WADL"""
+        hook_ctx = HookContext(operation_id='getApplicationWadl', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/application.wadl'
@@ -48,7 +49,7 @@ class Wadl:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1ApplicationWadlResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetApplicationWadlResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -59,15 +60,16 @@ class Wadl:
 
     
     
-    def get_api_v1_application_wadl_path_(self, path: str) -> operations.GetAPIV1ApplicationWadlPathResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/application.wadl/{path}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1ApplicationWadlPathRequest(
+    def get_application_wadl_1(self, path: str) -> operations.GetApplicationWadl1Response:
+        r"""Retrieve the application WADL"""
+        hook_ctx = HookContext(operation_id='getApplicationWadl_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetApplicationWadl1Request(
             path=path,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1ApplicationWadlPathRequest, base_url, '/api/v1/application.wadl/{path}', request)
+        url = utils.generate_url(operations.GetApplicationWadl1Request, base_url, '/api/v1/application.wadl/{path}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -97,7 +99,7 @@ class Wadl:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1ApplicationWadlPathResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetApplicationWadl1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

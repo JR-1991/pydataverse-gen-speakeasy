@@ -3,17 +3,19 @@
 
 ### Available Operations
 
-* [get_api_v1_users_me](#get_api_v1_users_me)
-* [get_api_v1_users_token](#get_api_v1_users_token)
-* [delete_api_v1_users_token](#delete_api_v1_users_token)
-* [post_api_v1_users_token_recreate](#post_api_v1_users_token_recreate)
-* [post_api_v1_users_consumed_identifier_merge_into_user_base_identifier_](#post_api_v1_users_consumed_identifier_merge_into_user_base_identifier_)
-* [post_api_v1_users_identifier_change_identifier_new_identifier_](#post_api_v1_users_identifier_change_identifier_new_identifier_)
-* [post_api_v1_users_identifier_remove_roles](#post_api_v1_users_identifier_remove_roles)
-* [get_api_v1_users_identifier_traces](#get_api_v1_users_identifier_traces)
-* [get_api_v1_users_identifier_traces_element_](#get_api_v1_users_identifier_traces_element_)
+* [get_user_details](#get_user_details) - Retrieve the details of the logged-in user
+* [get_user_token](#get_user_token) - Retrieves a user's authentication token
+* [delete_user_token](#delete_user_token) - Deletes a user's authentication token
+* [recreate_user_token](#recreate_user_token) - Recreates the authentication token for a given user
+* [merge_users](#merge_users) - Merge the user with consumedIdentifier into the user with baseIdentifier
+* [change_user_identifier](#change_user_identifier) - Change the identifier of a given user
+* [remove_user_roles](#remove_user_roles) - Remove roles from a specific user
+* [get_user_traces](#get_user_traces) - Retrieve a user's traces
+* [get_user_trace_element](#get_user_trace_element) - Retrieve a specific trace element for a given user
 
-## get_api_v1_users_me
+## get_user_details
+
+Retrieve the details of the logged-in user
 
 ### Example Usage
 
@@ -23,7 +25,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.users.get_api_v1_users_me()
+res = s.users.get_user_details()
 
 if res.status_code == 200:
     # handle response
@@ -33,14 +35,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1UsersMeResponse](../../models/operations/getapiv1usersmeresponse.md)**
+**[operations.GetUserDetailsResponse](../../models/operations/getuserdetailsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_users_token
+## get_user_token
+
+Retrieves a user's authentication token
 
 ### Example Usage
 
@@ -50,7 +54,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.users.get_api_v1_users_token()
+res = s.users.get_user_token()
 
 if res.status_code == 200:
     # handle response
@@ -60,14 +64,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1UsersTokenResponse](../../models/operations/getapiv1userstokenresponse.md)**
+**[operations.GetUserTokenResponse](../../models/operations/getusertokenresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_users_token
+## delete_user_token
+
+Deletes a user's authentication token
 
 ### Example Usage
 
@@ -77,7 +83,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.users.delete_api_v1_users_token()
+res = s.users.delete_user_token()
 
 if res.status_code == 200:
     # handle response
@@ -87,14 +93,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1UsersTokenResponse](../../models/operations/deleteapiv1userstokenresponse.md)**
+**[operations.DeleteUserTokenResponse](../../models/operations/deleteusertokenresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_users_token_recreate
+## recreate_user_token
+
+Recreates the authentication token for a given user
 
 ### Example Usage
 
@@ -104,7 +112,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.users.post_api_v1_users_token_recreate()
+res = s.users.recreate_user_token()
 
 if res.status_code == 200:
     # handle response
@@ -114,14 +122,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1UsersTokenRecreateResponse](../../models/operations/postapiv1userstokenrecreateresponse.md)**
+**[operations.RecreateUserTokenResponse](../../models/operations/recreateusertokenresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_users_consumed_identifier_merge_into_user_base_identifier_
+## merge_users
+
+Merge the user with consumedIdentifier into the user with baseIdentifier
 
 ### Example Usage
 
@@ -131,7 +141,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.users.post_api_v1_users_consumed_identifier_merge_into_user_base_identifier_(base_identifier='<value>', consumed_identifier='<value>')
+res = s.users.merge_users(base_identifier='<value>', consumed_identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -148,14 +158,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1UsersConsumedIdentifierMergeIntoUserBaseIdentifierResponse](../../models/operations/postapiv1usersconsumedidentifiermergeintouserbaseidentifierresponse.md)**
+**[operations.MergeUsersResponse](../../models/operations/mergeusersresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_users_identifier_change_identifier_new_identifier_
+## change_user_identifier
+
+Change the identifier of a given user
 
 ### Example Usage
 
@@ -165,7 +177,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.users.post_api_v1_users_identifier_change_identifier_new_identifier_(identifier='<value>', new_identifier='<value>')
+res = s.users.change_user_identifier(identifier='<value>', new_identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -182,14 +194,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1UsersIdentifierChangeIdentifierNewIdentifierResponse](../../models/operations/postapiv1usersidentifierchangeidentifiernewidentifierresponse.md)**
+**[operations.ChangeUserIdentifierResponse](../../models/operations/changeuseridentifierresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_users_identifier_remove_roles
+## remove_user_roles
+
+Remove roles from a specific user
 
 ### Example Usage
 
@@ -199,7 +213,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.users.post_api_v1_users_identifier_remove_roles(identifier='<value>')
+res = s.users.remove_user_roles(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -215,14 +229,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1UsersIdentifierRemoveRolesResponse](../../models/operations/postapiv1usersidentifierremoverolesresponse.md)**
+**[operations.RemoveUserRolesResponse](../../models/operations/removeuserrolesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_users_identifier_traces
+## get_user_traces
+
+Retrieve a user's traces
 
 ### Example Usage
 
@@ -232,7 +248,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.users.get_api_v1_users_identifier_traces(identifier='<value>')
+res = s.users.get_user_traces(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -248,14 +264,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1UsersIdentifierTracesResponse](../../models/operations/getapiv1usersidentifiertracesresponse.md)**
+**[operations.GetUserTracesResponse](../../models/operations/getusertracesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_users_identifier_traces_element_
+## get_user_trace_element
+
+Retrieve a specific trace element for a given user
 
 ### Example Usage
 
@@ -265,7 +283,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.users.get_api_v1_users_identifier_traces_element_(element='<value>', identifier='<value>')
+res = s.users.get_user_trace_element(element='<value>', identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -282,7 +300,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1UsersIdentifierTracesElementResponse](../../models/operations/getapiv1usersidentifiertraceselementresponse.md)**
+**[operations.GetUserTraceElementResponse](../../models/operations/getusertraceelementresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

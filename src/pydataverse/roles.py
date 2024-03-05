@@ -15,9 +15,10 @@ class Roles:
         
     
     
-    def post_api_v1_roles(self, dvo: Optional[str] = None) -> operations.PostAPIV1RolesResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/roles', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1RolesRequest(
+    def create_role(self, dvo: Optional[str] = None) -> operations.CreateRoleResponse:
+        r"""Create a new role in the system"""
+        hook_ctx = HookContext(operation_id='createRole', oauth2_scopes=[], security_source=None)
+        request = operations.CreateRoleRequest(
             dvo=dvo,
         )
         
@@ -25,7 +26,7 @@ class Roles:
         
         url = base_url + '/api/v1/roles'
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1RolesRequest, request)
+        query_params = utils.get_query_params(operations.CreateRoleRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -54,7 +55,7 @@ class Roles:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1RolesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateRoleResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -65,15 +66,16 @@ class Roles:
 
     
     
-    def get_api_v1_roles_id_(self, id: str) -> operations.GetAPIV1RolesIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/roles/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1RolesIDRequest(
+    def get_role(self, id: str) -> operations.GetRoleResponse:
+        r"""Retrieve details of a specific role by id"""
+        hook_ctx = HookContext(operation_id='getRole', oauth2_scopes=[], security_source=None)
+        request = operations.GetRoleRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1RolesIDRequest, base_url, '/api/v1/roles/{id}', request)
+        url = utils.generate_url(operations.GetRoleRequest, base_url, '/api/v1/roles/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -103,7 +105,7 @@ class Roles:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1RolesIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetRoleResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -114,15 +116,16 @@ class Roles:
 
     
     
-    def delete_api_v1_roles_id_(self, id: str) -> operations.DeleteAPIV1RolesIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/roles/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1RolesIDRequest(
+    def delete_role(self, id: str) -> operations.DeleteRoleResponse:
+        r"""Delete a specific role by id"""
+        hook_ctx = HookContext(operation_id='deleteRole', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteRoleRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1RolesIDRequest, base_url, '/api/v1/roles/{id}', request)
+        url = utils.generate_url(operations.DeleteRoleRequest, base_url, '/api/v1/roles/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -152,7 +155,7 @@ class Roles:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1RolesIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteRoleResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

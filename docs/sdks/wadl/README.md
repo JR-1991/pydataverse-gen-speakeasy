@@ -3,10 +3,12 @@
 
 ### Available Operations
 
-* [get_api_v1_application_wadl](#get_api_v1_application_wadl)
-* [get_api_v1_application_wadl_path_](#get_api_v1_application_wadl_path_)
+* [get_application_wadl](#get_application_wadl) - Retrieves the application WADL
+* [get_application_wadl_1](#get_application_wadl_1) - Retrieve the application WADL
 
-## get_api_v1_application_wadl
+## get_application_wadl
+
+Retrieves the application WADL
 
 ### Example Usage
 
@@ -16,7 +18,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.application.wadl.get_api_v1_application_wadl()
+res = s.application.wadl.get_application_wadl()
 
 if res.status_code == 200:
     # handle response
@@ -26,14 +28,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1ApplicationWadlResponse](../../models/operations/getapiv1applicationwadlresponse.md)**
+**[operations.GetApplicationWadlResponse](../../models/operations/getapplicationwadlresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_application_wadl_path_
+## get_application_wadl_1
+
+Retrieve the application WADL
 
 ### Example Usage
 
@@ -43,7 +47,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.application.wadl.get_api_v1_application_wadl_path_(path='<value>')
+res = s.application.wadl.get_application_wadl_1(path='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -59,7 +63,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1ApplicationWadlPathResponse](../../models/operations/getapiv1applicationwadlpathresponse.md)**
+**[operations.GetApplicationWadl1Response](../../models/operations/getapplicationwadl1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

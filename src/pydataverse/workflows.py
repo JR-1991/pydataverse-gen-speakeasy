@@ -14,15 +14,16 @@ class Workflows:
         
     
     
-    def post_api_v1_workflows_invocation_id_(self, invocation_id: str) -> operations.PostAPIV1WorkflowsInvocationIDResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/workflows/{invocationId}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1WorkflowsInvocationIDRequest(
+    def start_workflow(self, invocation_id: str) -> operations.StartWorkflowResponse:
+        r"""Initiate a workflow using the given invocation id"""
+        hook_ctx = HookContext(operation_id='startWorkflow', oauth2_scopes=[], security_source=None)
+        request = operations.StartWorkflowRequest(
             invocation_id=invocation_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1WorkflowsInvocationIDRequest, base_url, '/api/v1/workflows/{invocationId}', request)
+        url = utils.generate_url(operations.StartWorkflowRequest, base_url, '/api/v1/workflows/{invocationId}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -52,7 +53,7 @@ class Workflows:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1WorkflowsInvocationIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.StartWorkflowResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

@@ -3,9 +3,11 @@
 
 ### Available Operations
 
-* [get_api_v1_mail_notifications](#get_api_v1_mail_notifications)
+* [get_mail_notifications](#get_mail_notifications) - Retrieve a list of mail notifications
 
-## get_api_v1_mail_notifications
+## get_mail_notifications
+
+Retrieve a list of mail notifications
 
 ### Example Usage
 
@@ -15,7 +17,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.mail.get_api_v1_mail_notifications()
+res = s.mail.get_mail_notifications()
 
 if res.status_code == 200:
     # handle response
@@ -25,7 +27,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1MailNotificationsResponse](../../models/operations/getapiv1mailnotificationsresponse.md)**
+**[operations.GetMailNotificationsResponse](../../models/operations/getmailnotificationsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

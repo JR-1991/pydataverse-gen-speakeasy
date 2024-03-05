@@ -3,9 +3,11 @@
 
 ### Available Operations
 
-* [put_api_v1_edit_file_id_](#put_api_v1_edit_file_id_)
+* [edit_file](#edit_file) - Edits the content of a specified file
 
-## put_api_v1_edit_file_id_
+## edit_file
+
+Edits the content of a specified file
 
 ### Example Usage
 
@@ -15,7 +17,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.edit.put_api_v1_edit_file_id_(file_id='<value>', request_body='<value>')
+res = s.edit.edit_file(file_id='<value>', request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -32,7 +34,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1EditFileIDResponse](../../models/operations/putapiv1editfileidresponse.md)**
+**[operations.EditFileResponse](../../models/operations/editfileresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

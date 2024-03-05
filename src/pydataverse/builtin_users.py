@@ -15,9 +15,10 @@ class BuiltinUsers:
         
     
     
-    def post_api_v1_builtin_users(self, key: Optional[str] = None, password: Optional[str] = None, send_email_notification: Optional[bool] = None) -> operations.PostAPIV1BuiltinUsersResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/builtin-users', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1BuiltinUsersRequest(
+    def post_builtin_users(self, key: Optional[str] = None, password: Optional[str] = None, send_email_notification: Optional[bool] = None) -> operations.PostBuiltinUsersResponse:
+        r"""Create a new builtin user"""
+        hook_ctx = HookContext(operation_id='postBuiltinUsers', oauth2_scopes=[], security_source=None)
+        request = operations.PostBuiltinUsersRequest(
             key=key,
             password=password,
             send_email_notification=send_email_notification,
@@ -27,7 +28,7 @@ class BuiltinUsers:
         
         url = base_url + '/api/v1/builtin-users'
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1BuiltinUsersRequest, request)
+        query_params = utils.get_query_params(operations.PostBuiltinUsersRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -56,7 +57,7 @@ class BuiltinUsers:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1BuiltinUsersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostBuiltinUsersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -67,16 +68,17 @@ class BuiltinUsers:
 
     
     
-    def post_api_v1_builtin_users_password_key_(self, key: str, password: str) -> operations.PostAPIV1BuiltinUsersPasswordKeyResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/builtin-users/{password}/{key}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1BuiltinUsersPasswordKeyRequest(
+    def create_builtin_user(self, key: str, password: str) -> operations.CreateBuiltinUserResponse:
+        r"""Create a new built-in user using a password and key"""
+        hook_ctx = HookContext(operation_id='createBuiltinUser', oauth2_scopes=[], security_source=None)
+        request = operations.CreateBuiltinUserRequest(
             key=key,
             password=password,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1BuiltinUsersPasswordKeyRequest, base_url, '/api/v1/builtin-users/{password}/{key}', request)
+        url = utils.generate_url(operations.CreateBuiltinUserRequest, base_url, '/api/v1/builtin-users/{password}/{key}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -106,7 +108,7 @@ class BuiltinUsers:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1BuiltinUsersPasswordKeyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateBuiltinUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -117,9 +119,10 @@ class BuiltinUsers:
 
     
     
-    def post_api_v1_builtin_users_password_key_send_email_notification_(self, key: str, password: str, send_email_notification: bool) -> operations.PostAPIV1BuiltinUsersPasswordKeySendEmailNotificationResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/builtin-users/{password}/{key}/{sendEmailNotification}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1BuiltinUsersPasswordKeySendEmailNotificationRequest(
+    def create_builtin_user_1(self, key: str, password: str, send_email_notification: bool) -> operations.CreateBuiltinUser1Response:
+        r"""Create a new builtin-user with a specific key, password and email notification preference."""
+        hook_ctx = HookContext(operation_id='createBuiltinUser_1', oauth2_scopes=[], security_source=None)
+        request = operations.CreateBuiltinUser1Request(
             key=key,
             password=password,
             send_email_notification=send_email_notification,
@@ -127,7 +130,7 @@ class BuiltinUsers:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1BuiltinUsersPasswordKeySendEmailNotificationRequest, base_url, '/api/v1/builtin-users/{password}/{key}/{sendEmailNotification}', request)
+        url = utils.generate_url(operations.CreateBuiltinUser1Request, base_url, '/api/v1/builtin-users/{password}/{key}/{sendEmailNotification}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -157,7 +160,7 @@ class BuiltinUsers:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1BuiltinUsersPasswordKeySendEmailNotificationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateBuiltinUser1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -168,18 +171,19 @@ class BuiltinUsers:
 
     
     
-    def get_api_v1_builtin_users_username_api_token(self, username: str, password: Optional[str] = None) -> operations.GetAPIV1BuiltinUsersUsernameAPITokenResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/builtin-users/{username}/api-token', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1BuiltinUsersUsernameAPITokenRequest(
+    def get_api_token_by_username(self, username: str, password: Optional[str] = None) -> operations.GetAPITokenByUsernameResponse:
+        r"""Gets the API token for the specified built-in user"""
+        hook_ctx = HookContext(operation_id='getApiTokenByUsername', oauth2_scopes=[], security_source=None)
+        request = operations.GetAPITokenByUsernameRequest(
             username=username,
             password=password,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1BuiltinUsersUsernameAPITokenRequest, base_url, '/api/v1/builtin-users/{username}/api-token', request)
+        url = utils.generate_url(operations.GetAPITokenByUsernameRequest, base_url, '/api/v1/builtin-users/{username}/api-token', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1BuiltinUsersUsernameAPITokenRequest, request)
+        query_params = utils.get_query_params(operations.GetAPITokenByUsernameRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -208,7 +212,7 @@ class BuiltinUsers:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1BuiltinUsersUsernameAPITokenResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAPITokenByUsernameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

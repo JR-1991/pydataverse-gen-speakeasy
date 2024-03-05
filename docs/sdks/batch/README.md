@@ -3,12 +3,14 @@
 
 ### Available Operations
 
-* [get_api_v1_batch_harvest](#get_api_v1_batch_harvest)
-* [get_api_v1_batch_import](#get_api_v1_batch_import)
-* [post_api_v1_batch_import](#post_api_v1_batch_import)
-* [post_api_v1_batch_jobs_import_datasets_files_identifier_](#post_api_v1_batch_jobs_import_datasets_files_identifier_)
+* [get_batch_harvest](#get_batch_harvest) - Retrieves information about a batch harvest based on provided parameters
+* [get_batch_import_status](#get_batch_import_status) - Retrieve status of a batch import request
+* [create_batch_import](#create_batch_import) - Initiate a new batch import request
+* [post_batch_job_import_datasets](#post_batch_job_import_datasets) - Initiate a batch job for importing datasets using the provided identifier
 
-## get_api_v1_batch_harvest
+## get_batch_harvest
+
+Retrieves information about a batch harvest based on provided parameters
 
 ### Example Usage
 
@@ -18,7 +20,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.batch.get_api_v1_batch_harvest(create_dv=False, dv='<value>', key='<value>', path='<value>')
+res = s.batch.get_batch_harvest(create_dv=False, dv='<value>', key='<value>', path='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -37,14 +39,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1BatchHarvestResponse](../../models/operations/getapiv1batchharvestresponse.md)**
+**[operations.GetBatchHarvestResponse](../../models/operations/getbatchharvestresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_batch_import
+## get_batch_import_status
+
+Retrieve status of a batch import request
 
 ### Example Usage
 
@@ -54,7 +58,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.batch.get_api_v1_batch_import(create_dv=False, dv='<value>', key='<value>', path='<value>')
+res = s.batch.get_batch_import_status(create_dv=False, dv='<value>', key='<value>', path='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -73,14 +77,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1BatchImportResponse](../../models/operations/getapiv1batchimportresponse.md)**
+**[operations.GetBatchImportStatusResponse](../../models/operations/getbatchimportstatusresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_batch_import
+## create_batch_import
+
+Initiate a new batch import request
 
 ### Example Usage
 
@@ -90,7 +96,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.batch.post_api_v1_batch_import(dv='<value>', key='<value>')
+res = s.batch.create_batch_import(dv='<value>', key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -107,14 +113,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1BatchImportResponse](../../models/operations/postapiv1batchimportresponse.md)**
+**[operations.CreateBatchImportResponse](../../models/operations/createbatchimportresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_batch_jobs_import_datasets_files_identifier_
+## post_batch_job_import_datasets
+
+Initiate a batch job for importing datasets using the provided identifier
 
 ### Example Usage
 
@@ -124,7 +132,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.batch.post_api_v1_batch_jobs_import_datasets_files_identifier_(identifier='<value>', mode='MERGE', total_size=18653, upload_folder='<value>')
+res = s.batch.post_batch_job_import_datasets(identifier='<value>', mode='MERGE', total_size=859069, upload_folder='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -143,7 +151,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1BatchJobsImportDatasetsFilesIdentifierResponse](../../models/operations/postapiv1batchjobsimportdatasetsfilesidentifierresponse.md)**
+**[operations.PostBatchJobImportDatasetsResponse](../../models/operations/postbatchjobimportdatasetsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

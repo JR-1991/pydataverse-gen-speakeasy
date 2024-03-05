@@ -15,8 +15,9 @@ class Inbox:
         
     
     
-    def post_api_v1_inbox(self, request: Optional[str]) -> operations.PostAPIV1InboxResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/inbox', oauth2_scopes=[], security_source=None)
+    def post_inbox(self, request: Optional[str]) -> operations.PostInboxResponse:
+        r"""Create a new inbox message"""
+        hook_ctx = HookContext(operation_id='postInbox', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/inbox'
@@ -52,7 +53,7 @@ class Inbox:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1InboxResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostInboxResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

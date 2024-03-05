@@ -5,7 +5,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_datafile_bundle_file_id_(file_id='<value>', file_metadata_id=793125, gbrecs=False)
+res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, gbrecs=False)
 
 if res.body is not None:
     # handle response

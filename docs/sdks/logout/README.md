@@ -3,9 +3,11 @@
 
 ### Available Operations
 
-* [post_api_v1_logout](#post_api_v1_logout)
+* [logout_user](#logout_user) - Log out the current user
 
-## post_api_v1_logout
+## logout_user
+
+Log out the current user
 
 ### Example Usage
 
@@ -15,7 +17,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.logout.post_api_v1_logout()
+res = s.logout.logout_user()
 
 if res.status_code == 200:
     # handle response
@@ -25,7 +27,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1LogoutResponse](../../models/operations/postapiv1logoutresponse.md)**
+**[operations.LogoutUserResponse](../../models/operations/logoutuserresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

@@ -14,8 +14,9 @@ class Users:
         
     
     
-    def get_api_v1_users_me(self) -> operations.GetAPIV1UsersMeResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/users/:me', oauth2_scopes=[], security_source=None)
+    def get_user_details(self) -> operations.GetUserDetailsResponse:
+        r"""Retrieve the details of the logged-in user"""
+        hook_ctx = HookContext(operation_id='getUserDetails', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/users/:me'
@@ -48,7 +49,7 @@ class Users:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1UsersMeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetUserDetailsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -59,8 +60,9 @@ class Users:
 
     
     
-    def get_api_v1_users_token(self) -> operations.GetAPIV1UsersTokenResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/users/token', oauth2_scopes=[], security_source=None)
+    def get_user_token(self) -> operations.GetUserTokenResponse:
+        r"""Retrieves a user's authentication token"""
+        hook_ctx = HookContext(operation_id='getUserToken', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/users/token'
@@ -93,7 +95,7 @@ class Users:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1UsersTokenResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetUserTokenResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -104,8 +106,9 @@ class Users:
 
     
     
-    def delete_api_v1_users_token(self) -> operations.DeleteAPIV1UsersTokenResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/users/token', oauth2_scopes=[], security_source=None)
+    def delete_user_token(self) -> operations.DeleteUserTokenResponse:
+        r"""Deletes a user's authentication token"""
+        hook_ctx = HookContext(operation_id='deleteUserToken', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/users/token'
@@ -138,7 +141,7 @@ class Users:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1UsersTokenResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteUserTokenResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -149,8 +152,9 @@ class Users:
 
     
     
-    def post_api_v1_users_token_recreate(self) -> operations.PostAPIV1UsersTokenRecreateResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/users/token/recreate', oauth2_scopes=[], security_source=None)
+    def recreate_user_token(self) -> operations.RecreateUserTokenResponse:
+        r"""Recreates the authentication token for a given user"""
+        hook_ctx = HookContext(operation_id='recreateUserToken', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/users/token/recreate'
@@ -183,7 +187,7 @@ class Users:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1UsersTokenRecreateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.RecreateUserTokenResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -194,16 +198,17 @@ class Users:
 
     
     
-    def post_api_v1_users_consumed_identifier_merge_into_user_base_identifier_(self, base_identifier: str, consumed_identifier: str) -> operations.PostAPIV1UsersConsumedIdentifierMergeIntoUserBaseIdentifierResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/users/{consumedIdentifier}/mergeIntoUser/{baseIdentifier}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1UsersConsumedIdentifierMergeIntoUserBaseIdentifierRequest(
+    def merge_users(self, base_identifier: str, consumed_identifier: str) -> operations.MergeUsersResponse:
+        r"""Merge the user with consumedIdentifier into the user with baseIdentifier"""
+        hook_ctx = HookContext(operation_id='mergeUsers', oauth2_scopes=[], security_source=None)
+        request = operations.MergeUsersRequest(
             base_identifier=base_identifier,
             consumed_identifier=consumed_identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1UsersConsumedIdentifierMergeIntoUserBaseIdentifierRequest, base_url, '/api/v1/users/{consumedIdentifier}/mergeIntoUser/{baseIdentifier}', request)
+        url = utils.generate_url(operations.MergeUsersRequest, base_url, '/api/v1/users/{consumedIdentifier}/mergeIntoUser/{baseIdentifier}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -233,7 +238,7 @@ class Users:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1UsersConsumedIdentifierMergeIntoUserBaseIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.MergeUsersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -244,16 +249,17 @@ class Users:
 
     
     
-    def post_api_v1_users_identifier_change_identifier_new_identifier_(self, identifier: str, new_identifier: str) -> operations.PostAPIV1UsersIdentifierChangeIdentifierNewIdentifierResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/users/{identifier}/changeIdentifier/{newIdentifier}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1UsersIdentifierChangeIdentifierNewIdentifierRequest(
+    def change_user_identifier(self, identifier: str, new_identifier: str) -> operations.ChangeUserIdentifierResponse:
+        r"""Change the identifier of a given user"""
+        hook_ctx = HookContext(operation_id='changeUserIdentifier', oauth2_scopes=[], security_source=None)
+        request = operations.ChangeUserIdentifierRequest(
             identifier=identifier,
             new_identifier=new_identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1UsersIdentifierChangeIdentifierNewIdentifierRequest, base_url, '/api/v1/users/{identifier}/changeIdentifier/{newIdentifier}', request)
+        url = utils.generate_url(operations.ChangeUserIdentifierRequest, base_url, '/api/v1/users/{identifier}/changeIdentifier/{newIdentifier}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -283,7 +289,7 @@ class Users:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1UsersIdentifierChangeIdentifierNewIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ChangeUserIdentifierResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -294,15 +300,16 @@ class Users:
 
     
     
-    def post_api_v1_users_identifier_remove_roles(self, identifier: str) -> operations.PostAPIV1UsersIdentifierRemoveRolesResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/users/{identifier}/removeRoles', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1UsersIdentifierRemoveRolesRequest(
+    def remove_user_roles(self, identifier: str) -> operations.RemoveUserRolesResponse:
+        r"""Remove roles from a specific user"""
+        hook_ctx = HookContext(operation_id='removeUserRoles', oauth2_scopes=[], security_source=None)
+        request = operations.RemoveUserRolesRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1UsersIdentifierRemoveRolesRequest, base_url, '/api/v1/users/{identifier}/removeRoles', request)
+        url = utils.generate_url(operations.RemoveUserRolesRequest, base_url, '/api/v1/users/{identifier}/removeRoles', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -332,7 +339,7 @@ class Users:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1UsersIdentifierRemoveRolesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.RemoveUserRolesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -343,15 +350,16 @@ class Users:
 
     
     
-    def get_api_v1_users_identifier_traces(self, identifier: str) -> operations.GetAPIV1UsersIdentifierTracesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/users/{identifier}/traces', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1UsersIdentifierTracesRequest(
+    def get_user_traces(self, identifier: str) -> operations.GetUserTracesResponse:
+        r"""Retrieve a user's traces"""
+        hook_ctx = HookContext(operation_id='getUserTraces', oauth2_scopes=[], security_source=None)
+        request = operations.GetUserTracesRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1UsersIdentifierTracesRequest, base_url, '/api/v1/users/{identifier}/traces', request)
+        url = utils.generate_url(operations.GetUserTracesRequest, base_url, '/api/v1/users/{identifier}/traces', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -381,7 +389,7 @@ class Users:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1UsersIdentifierTracesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetUserTracesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -392,16 +400,17 @@ class Users:
 
     
     
-    def get_api_v1_users_identifier_traces_element_(self, element: str, identifier: str) -> operations.GetAPIV1UsersIdentifierTracesElementResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/users/{identifier}/traces/{element}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1UsersIdentifierTracesElementRequest(
+    def get_user_trace_element(self, element: str, identifier: str) -> operations.GetUserTraceElementResponse:
+        r"""Retrieve a specific trace element for a given user"""
+        hook_ctx = HookContext(operation_id='getUserTraceElement', oauth2_scopes=[], security_source=None)
+        request = operations.GetUserTraceElementRequest(
             element=element,
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1UsersIdentifierTracesElementRequest, base_url, '/api/v1/users/{identifier}/traces/{element}', request)
+        url = utils.generate_url(operations.GetUserTraceElementRequest, base_url, '/api/v1/users/{identifier}/traces/{element}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -431,7 +440,7 @@ class Users:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1UsersIdentifierTracesElementResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetUserTraceElementResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

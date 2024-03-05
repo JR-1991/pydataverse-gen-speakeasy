@@ -3,54 +3,56 @@
 
 ### Available Operations
 
-* [post_api_v1_dataverses](#post_api_v1_dataverses)
-* [get_api_v1_dataverses_identifier_](#get_api_v1_dataverses_identifier_)
-* [post_api_v1_dataverses_identifier_](#post_api_v1_dataverses_identifier_)
-* [delete_api_v1_dataverses_identifier_](#delete_api_v1_dataverses_identifier_)
-* [post_api_v1_dataverses_identifier_actions_publish](#post_api_v1_dataverses_identifier_actions_publish)
-* [get_api_v1_dataverses_identifier_assignments](#get_api_v1_dataverses_identifier_assignments)
-* [post_api_v1_dataverses_identifier_assignments](#post_api_v1_dataverses_identifier_assignments)
-* [delete_api_v1_dataverses_identifier_assignments_id_](#delete_api_v1_dataverses_identifier_assignments_id_)
-* [put_api_v1_dataverses_identifier_attribute_attribute_](#put_api_v1_dataverses_identifier_attribute_attribute_)
-* [get_api_v1_dataverses_identifier_contents](#get_api_v1_dataverses_identifier_contents)
-* [get_api_v1_dataverses_identifier_dataset_schema](#get_api_v1_dataverses_identifier_dataset_schema)
-* [post_api_v1_dataverses_identifier_datasets](#post_api_v1_dataverses_identifier_datasets)
-* [post_api_v1_dataverses_identifier_datasets_import](#post_api_v1_dataverses_identifier_datasets_import)
-* [post_api_v1_dataverses_identifier_datasets_importddi](#post_api_v1_dataverses_identifier_datasets_importddi)
-* [post_api_v1_dataverses_identifier_datasets_startmigration](#post_api_v1_dataverses_identifier_datasets_startmigration)
-* [put_api_v1_dataverses_identifier_default_contributor_role_role_alias_](#put_api_v1_dataverses_identifier_default_contributor_role_role_alias_)
-* [get_api_v1_dataverses_identifier_facets](#get_api_v1_dataverses_identifier_facets)
-* [post_api_v1_dataverses_identifier_facets](#post_api_v1_dataverses_identifier_facets)
-* [get_api_v1_dataverses_identifier_groups](#get_api_v1_dataverses_identifier_groups)
-* [post_api_v1_dataverses_identifier_groups](#post_api_v1_dataverses_identifier_groups)
-* [get_api_v1_dataverses_identifier_groups_alias_in_owner_](#get_api_v1_dataverses_identifier_groups_alias_in_owner_)
-* [put_api_v1_dataverses_identifier_groups_alias_in_owner_](#put_api_v1_dataverses_identifier_groups_alias_in_owner_)
-* [delete_api_v1_dataverses_identifier_groups_alias_in_owner_](#delete_api_v1_dataverses_identifier_groups_alias_in_owner_)
-* [post_api_v1_dataverses_identifier_groups_alias_in_owner_role_assignees](#post_api_v1_dataverses_identifier_groups_alias_in_owner_role_assignees)
-* [put_api_v1_dataverses_identifier_groups_alias_in_owner_role_assignees_role_assignee_identifier_](#put_api_v1_dataverses_identifier_groups_alias_in_owner_role_assignees_role_assignee_identifier_)
-* [delete_api_v1_dataverses_identifier_groups_alias_in_owner_role_assignees_role_assignee_identifier_](#delete_api_v1_dataverses_identifier_groups_alias_in_owner_role_assignees_role_assignee_identifier_)
-* [get_api_v1_dataverses_identifier_guestbook_responses](#get_api_v1_dataverses_identifier_guestbook_responses)
-* [get_api_v1_dataverses_identifier_links](#get_api_v1_dataverses_identifier_links)
-* [get_api_v1_dataverses_identifier_metadatablockfacets](#get_api_v1_dataverses_identifier_metadatablockfacets)
-* [post_api_v1_dataverses_identifier_metadatablockfacets](#post_api_v1_dataverses_identifier_metadatablockfacets)
-* [post_api_v1_dataverses_identifier_metadatablockfacets_is_root](#post_api_v1_dataverses_identifier_metadatablockfacets_is_root)
-* [get_api_v1_dataverses_identifier_metadatablocks](#get_api_v1_dataverses_identifier_metadatablocks)
-* [post_api_v1_dataverses_identifier_metadatablocks](#post_api_v1_dataverses_identifier_metadatablocks)
-* [get_api_v1_dataverses_identifier_metadatablocks_is_root](#get_api_v1_dataverses_identifier_metadatablocks_is_root)
-* [post_api_v1_dataverses_identifier_metadatablocks_is_root](#post_api_v1_dataverses_identifier_metadatablocks_is_root)
-* [get_api_v1_dataverses_identifier_roles](#get_api_v1_dataverses_identifier_roles)
-* [post_api_v1_dataverses_identifier_roles](#post_api_v1_dataverses_identifier_roles)
-* [get_api_v1_dataverses_identifier_storage_quota](#get_api_v1_dataverses_identifier_storage_quota)
-* [delete_api_v1_dataverses_identifier_storage_quota](#delete_api_v1_dataverses_identifier_storage_quota)
-* [post_api_v1_dataverses_identifier_storage_quota_bytes_allocated_](#post_api_v1_dataverses_identifier_storage_quota_bytes_allocated_)
-* [get_api_v1_dataverses_identifier_storage_use](#get_api_v1_dataverses_identifier_storage_use)
-* [get_api_v1_dataverses_identifier_storagesize](#get_api_v1_dataverses_identifier_storagesize)
-* [post_api_v1_dataverses_identifier_validate_dataset_json](#post_api_v1_dataverses_identifier_validate_dataset_json)
-* [post_api_v1_dataverses_id_move_target_dataverse_alias_](#post_api_v1_dataverses_id_move_target_dataverse_alias_)
-* [put_api_v1_dataverses_linked_dataverse_alias_link_linking_dataverse_alias_](#put_api_v1_dataverses_linked_dataverse_alias_link_linking_dataverse_alias_)
-* [delete_api_v1_dataverses_linking_dataverse_id_delete_link_linked_dataverse_id_](#delete_api_v1_dataverses_linking_dataverse_id_delete_link_linked_dataverse_id_)
+* [create_dataverse](#create_dataverse) - Create a new Dataverse
+* [get_dataverse](#get_dataverse) - Retrieves a specified dataverse with the given identifier
+* [create_dataverse_1](#create_dataverse_1) - Creates a new dataverse with the given identifier
+* [delete_dataverse](#delete_dataverse) - Deletes a specified dataverse with the given identifier
+* [publish_dataverse_by_id](#publish_dataverse_by_id) - Publishes the identified Dataverse
+* [get_dataverse_assignments](#get_dataverse_assignments) - Retrieves assignments of specified Dataverse
+* [post_dataverse_assignments](#post_dataverse_assignments) - Assigns new user or role to specified Dataverse
+* [delete_dataverse_assignment](#delete_dataverse_assignment) - Delete a specific assignment from a specific dataverse
+* [update_dataverse_attribute](#update_dataverse_attribute) - Update a specific attribute of a Dataverse identified by the given identifier
+* [get_dataverse_contents](#get_dataverse_contents) - Retrieve contents of the specified Dataverse
+* [get_dataset_schema](#get_dataset_schema) - Retrieve the schema of a specific dataset in the dataverse identified by the given identifier
+* [create_dataset_in_dataverse](#create_dataset_in_dataverse) - Create a new dataset in the specified dataverse
+* [import_dataset](#import_dataset) - Imports a dataset into a given Dataverse identifier
+* [import_ddi_to_dataset](#import_ddi_to_dataset) - Imports DDI metadata to a dataset in the specified dataverse.
+* [start_migration](#start_migration) - Begins the migration process of datasets in a specific Dataverse identified by the provided identifier
+* [update_default_contributor_role](#update_default_contributor_role) - Update the default contributor role of a specific dataverse
+* [get_facets](#get_facets) - Retrieves the facets of the specified dataverse
+* [post_facets](#post_facets) - Updates the facets of the specified dataverse
+* [get_dataverse_groups](#get_dataverse_groups) - Retrieves groups associated with a specified dataverse
+* [create_dataverse_group](#create_dataverse_group) - Creates a new group in the specified dataverse
+* [get_group_in_dataverse](#get_group_in_dataverse) - Retrieve details of a specific group within the given Dataverse
+* [update_group_in_dataverse](#update_group_in_dataverse) - Update the details of a group within the specified Dataverse
+* [delete_group_in_dataverse](#delete_group_in_dataverse) - Delete a specific group from the specified Dataverse
+* [assign_role](#assign_role) - Assign a role to role assignees in a specified group within a dataverse
+* [update_role_assignee](#update_role_assignee) - Update a specific role assignee in a dataverse group
+* [delete_role_assignee](#delete_role_assignee) - Delete a specific role assignee from a dataverse group
+* [get_guestbook_responses](#get_guestbook_responses) - Retrieve all guestbook responses for a specific dataverse
+* [get_dataverse_links](#get_dataverse_links) - Retrieve all links associated with a specific dataverse identified by ID
+* [get_metadatablock_facets](#get_metadatablock_facets) - Retrieve metadatablock facets for a specific dataverse
+* [post_metadatablock_facets](#post_metadatablock_facets) - Add metadatablock facets to a specific dataverse
+* [update_root_status](#update_root_status) - Updates the root status of a Dataverse
+* [get_metadatablock](#get_metadatablock) - Retrieve the metadatablock of a Dataverse.
+* [create_metadatablock](#create_metadatablock) - Create a new metadatablock for a Dataverse.
+* [get_metadatablock_1](#get_metadatablock_1) - Retrieve metadata blocks for a specific dataverse identified by its unique identifier
+* [post_metadatablock](#post_metadatablock) - Add or update metadata block associated with the specified dataverse identifier
+* [get_roles_by_identifier](#get_roles_by_identifier) - Retrieve the roles for a given Dataverse identifier
+* [create_role_by_identifier](#create_role_by_identifier) - Create a new role for a given Dataverse identifier
+* [get_storage_quota](#get_storage_quota) - Retrieve storage quota of the dataverse identified by the given identifier
+* [delete_storage_quota](#delete_storage_quota) - Delete the storage quota configuration for the dataverse identified by the given identifier
+* [set_storage_quota](#set_storage_quota) - Sets the storage quota for a specific Dataverse
+* [get_dataverse_storage_usage](#get_dataverse_storage_usage) - Retrieve storage usage of a specific dataverse
+* [get_dataverse_storage_size](#get_dataverse_storage_size) - Retrieve the storage size of a specific Dataverse
+* [validate_dataset_json](#validate_dataset_json) - Validate the JSON of a dataset in a specific Dataverse
+* [move_dataverse](#move_dataverse) - Moves a Dataverse to a target Dataverse
+* [link_dataverses](#link_dataverses) - Links one Dataverse to another
+* [delete_dataverse_link](#delete_dataverse_link) - Delete a link between two dataverses
 
-## post_api_v1_dataverses
+## create_dataverse
+
+Create a new Dataverse
 
 ### Example Usage
 
@@ -60,7 +62,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses()
+res = s.dataverses.create_dataverse()
 
 if res.status_code == 200:
     # handle response
@@ -70,14 +72,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesResponse](../../models/operations/postapiv1dataversesresponse.md)**
+**[operations.CreateDataverseResponse](../../models/operations/createdataverseresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_
+## get_dataverse
+
+Retrieves a specified dataverse with the given identifier
 
 ### Example Usage
 
@@ -87,40 +91,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_(identifier='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `identifier`       | *str*              | :heavy_check_mark: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1DataversesIdentifierResponse](../../models/operations/getapiv1dataversesidentifierresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## post_api_v1_dataverses_identifier_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.dataverses.post_api_v1_dataverses_identifier_(identifier='<value>')
+res = s.dataverses.get_dataverse(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -136,14 +107,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierResponse](../../models/operations/postapiv1dataversesidentifierresponse.md)**
+**[operations.GetDataverseResponse](../../models/operations/getdataverseresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_dataverses_identifier_
+## create_dataverse_1
+
+Creates a new dataverse with the given identifier
 
 ### Example Usage
 
@@ -153,7 +126,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.delete_api_v1_dataverses_identifier_(identifier='<value>')
+res = s.dataverses.create_dataverse_1(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -169,14 +142,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DataversesIdentifierResponse](../../models/operations/deleteapiv1dataversesidentifierresponse.md)**
+**[operations.CreateDataverse1Response](../../models/operations/createdataverse1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_actions_publish
+## delete_dataverse
+
+Deletes a specified dataverse with the given identifier
 
 ### Example Usage
 
@@ -186,7 +161,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_actions_publish(identifier='<value>')
+res = s.dataverses.delete_dataverse(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -202,14 +177,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierActionsPublishResponse](../../models/operations/postapiv1dataversesidentifieractionspublishresponse.md)**
+**[operations.DeleteDataverseResponse](../../models/operations/deletedataverseresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_assignments
+## publish_dataverse_by_id
+
+Publishes the identified Dataverse
 
 ### Example Usage
 
@@ -219,7 +196,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_assignments(identifier='<value>')
+res = s.dataverses.publish_dataverse_by_id(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -235,14 +212,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DataversesIdentifierAssignmentsResponse](../../models/operations/getapiv1dataversesidentifierassignmentsresponse.md)**
+**[operations.PublishDataverseByIDResponse](../../models/operations/publishdataversebyidresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_assignments
+## get_dataverse_assignments
+
+Retrieves assignments of specified Dataverse
 
 ### Example Usage
 
@@ -252,7 +231,42 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_assignments(identifier='<value>', key='<value>')
+res = s.dataverses.get_dataverse_assignments(identifier='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `identifier`       | *str*              | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[operations.GetDataverseAssignmentsResponse](../../models/operations/getdataverseassignmentsresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## post_dataverse_assignments
+
+Assigns new user or role to specified Dataverse
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.dataverses.post_dataverse_assignments(identifier='<value>', key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -269,14 +283,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierAssignmentsResponse](../../models/operations/postapiv1dataversesidentifierassignmentsresponse.md)**
+**[operations.PostDataverseAssignmentsResponse](../../models/operations/postdataverseassignmentsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_dataverses_identifier_assignments_id_
+## delete_dataverse_assignment
+
+Delete a specific assignment from a specific dataverse
 
 ### Example Usage
 
@@ -286,7 +302,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.delete_api_v1_dataverses_identifier_assignments_id_(id=735432, identifier='<value>')
+res = s.dataverses.delete_dataverse_assignment(id=540951, identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -303,14 +319,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DataversesIdentifierAssignmentsIDResponse](../../models/operations/deleteapiv1dataversesidentifierassignmentsidresponse.md)**
+**[operations.DeleteDataverseAssignmentResponse](../../models/operations/deletedataverseassignmentresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_dataverses_identifier_attribute_attribute_
+## update_dataverse_attribute
+
+Update a specific attribute of a Dataverse identified by the given identifier
 
 ### Example Usage
 
@@ -320,7 +338,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.put_api_v1_dataverses_identifier_attribute_attribute_(attribute='<value>', identifier='<value>', value='<value>')
+res = s.dataverses.update_dataverse_attribute(attribute='<value>', identifier='<value>', value='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -338,14 +356,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DataversesIdentifierAttributeAttributeResponse](../../models/operations/putapiv1dataversesidentifierattributeattributeresponse.md)**
+**[operations.UpdateDataverseAttributeResponse](../../models/operations/updatedataverseattributeresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_contents
+## get_dataverse_contents
+
+Retrieve contents of the specified Dataverse
 
 ### Example Usage
 
@@ -355,7 +375,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_contents(identifier='<value>')
+res = s.dataverses.get_dataverse_contents(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -371,14 +391,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DataversesIdentifierContentsResponse](../../models/operations/getapiv1dataversesidentifiercontentsresponse.md)**
+**[operations.GetDataverseContentsResponse](../../models/operations/getdataversecontentsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_dataset_schema
+## get_dataset_schema
+
+Retrieve the schema of a specific dataset in the dataverse identified by the given identifier
 
 ### Example Usage
 
@@ -388,7 +410,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_dataset_schema(identifier='<value>')
+res = s.dataverses.get_dataset_schema(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -404,14 +426,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DataversesIdentifierDatasetSchemaResponse](../../models/operations/getapiv1dataversesidentifierdatasetschemaresponse.md)**
+**[operations.GetDatasetSchemaResponse](../../models/operations/getdatasetschemaresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_datasets
+## create_dataset_in_dataverse
+
+Create a new dataset in the specified dataverse
 
 ### Example Usage
 
@@ -421,7 +445,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_datasets(identifier='<value>', do_not_validate='<value>', request_body='<value>')
+res = s.dataverses.create_dataset_in_dataverse(identifier='<value>', do_not_validate='<value>', request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -439,14 +463,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierDatasetsResponse](../../models/operations/postapiv1dataversesidentifierdatasetsresponse.md)**
+**[operations.CreateDatasetInDataverseResponse](../../models/operations/createdatasetindataverseresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_datasets_import
+## import_dataset
+
+Imports a dataset into a given Dataverse identifier
 
 ### Example Usage
 
@@ -456,7 +482,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_datasets_import(identifier='<value>', pid='<value>', release='<value>')
+res = s.dataverses.import_dataset(identifier='<value>', pid='<value>', release='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -474,14 +500,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierDatasetsImportResponse](../../models/operations/postapiv1dataversesidentifierdatasetsimportresponse.md)**
+**[operations.ImportDatasetResponse](../../models/operations/importdatasetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_datasets_importddi
+## import_ddi_to_dataset
+
+Imports DDI metadata to a dataset in the specified dataverse.
 
 ### Example Usage
 
@@ -491,7 +519,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_datasets_importddi(identifier='<value>', pid='<value>', release='<value>')
+res = s.dataverses.import_ddi_to_dataset(identifier='<value>', pid='<value>', release='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -509,14 +537,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierDatasetsImportddiResponse](../../models/operations/postapiv1dataversesidentifierdatasetsimportddiresponse.md)**
+**[operations.ImportDdiToDatasetResponse](../../models/operations/importdditodatasetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_datasets_startmigration
+## start_migration
+
+Begins the migration process of datasets in a specific Dataverse identified by the provided identifier
 
 ### Example Usage
 
@@ -526,7 +556,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_datasets_startmigration(identifier='<value>', request_body='<value>')
+res = s.dataverses.start_migration(identifier='<value>', request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -543,14 +573,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierDatasetsStartmigrationResponse](../../models/operations/postapiv1dataversesidentifierdatasetsstartmigrationresponse.md)**
+**[operations.StartMigrationResponse](../../models/operations/startmigrationresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_dataverses_identifier_default_contributor_role_role_alias_
+## update_default_contributor_role
+
+Update the default contributor role of a specific dataverse
 
 ### Example Usage
 
@@ -560,7 +592,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.put_api_v1_dataverses_identifier_default_contributor_role_role_alias_(identifier='<value>', role_alias='<value>')
+res = s.dataverses.update_default_contributor_role(identifier='<value>', role_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -577,14 +609,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DataversesIdentifierDefaultContributorRoleRoleAliasResponse](../../models/operations/putapiv1dataversesidentifierdefaultcontributorrolerolealiasresponse.md)**
+**[operations.UpdateDefaultContributorRoleResponse](../../models/operations/updatedefaultcontributorroleresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_facets
+## get_facets
+
+Retrieves the facets of the specified dataverse
 
 ### Example Usage
 
@@ -594,7 +628,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_facets(identifier='<value>')
+res = s.dataverses.get_facets(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -610,14 +644,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DataversesIdentifierFacetsResponse](../../models/operations/getapiv1dataversesidentifierfacetsresponse.md)**
+**[operations.GetFacetsResponse](../../models/operations/getfacetsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_facets
+## post_facets
+
+Updates the facets of the specified dataverse
 
 ### Example Usage
 
@@ -627,7 +663,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_facets(identifier='<value>')
+res = s.dataverses.post_facets(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -643,14 +679,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierFacetsResponse](../../models/operations/postapiv1dataversesidentifierfacetsresponse.md)**
+**[operations.PostFacetsResponse](../../models/operations/postfacetsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_groups
+## get_dataverse_groups
+
+Retrieves groups associated with a specified dataverse
 
 ### Example Usage
 
@@ -660,7 +698,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_groups(identifier='<value>', key='<value>')
+res = s.dataverses.get_dataverse_groups(identifier='<value>', key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -677,14 +715,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DataversesIdentifierGroupsResponse](../../models/operations/getapiv1dataversesidentifiergroupsresponse.md)**
+**[operations.GetDataverseGroupsResponse](../../models/operations/getdataversegroupsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_groups
+## create_dataverse_group
+
+Creates a new group in the specified dataverse
 
 ### Example Usage
 
@@ -694,7 +734,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_groups(identifier='<value>')
+res = s.dataverses.create_dataverse_group(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -710,14 +750,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierGroupsResponse](../../models/operations/postapiv1dataversesidentifiergroupsresponse.md)**
+**[operations.CreateDataverseGroupResponse](../../models/operations/createdataversegroupresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_groups_alias_in_owner_
+## get_group_in_dataverse
+
+Retrieve details of a specific group within the given Dataverse
 
 ### Example Usage
 
@@ -727,41 +769,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_groups_alias_in_owner_(alias_in_owner='<value>', identifier='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `alias_in_owner`   | *str*              | :heavy_check_mark: | N/A                |
-| `identifier`       | *str*              | :heavy_check_mark: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1DataversesIdentifierGroupsAliasInOwnerResponse](../../models/operations/getapiv1dataversesidentifiergroupsaliasinownerresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## put_api_v1_dataverses_identifier_groups_alias_in_owner_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.dataverses.put_api_v1_dataverses_identifier_groups_alias_in_owner_(alias_in_owner='<value>', identifier='<value>')
+res = s.dataverses.get_group_in_dataverse(alias_in_owner='<value>', identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -778,14 +786,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DataversesIdentifierGroupsAliasInOwnerResponse](../../models/operations/putapiv1dataversesidentifiergroupsaliasinownerresponse.md)**
+**[operations.GetGroupInDataverseResponse](../../models/operations/getgroupindataverseresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_dataverses_identifier_groups_alias_in_owner_
+## update_group_in_dataverse
+
+Update the details of a group within the specified Dataverse
 
 ### Example Usage
 
@@ -795,7 +805,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.delete_api_v1_dataverses_identifier_groups_alias_in_owner_(alias_in_owner='<value>', identifier='<value>')
+res = s.dataverses.update_group_in_dataverse(alias_in_owner='<value>', identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -812,14 +822,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DataversesIdentifierGroupsAliasInOwnerResponse](../../models/operations/deleteapiv1dataversesidentifiergroupsaliasinownerresponse.md)**
+**[operations.UpdateGroupInDataverseResponse](../../models/operations/updategroupindataverseresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_groups_alias_in_owner_role_assignees
+## delete_group_in_dataverse
+
+Delete a specific group from the specified Dataverse
 
 ### Example Usage
 
@@ -829,7 +841,43 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_groups_alias_in_owner_role_assignees(alias_in_owner='<value>', identifier='<value>', request_body=[
+res = s.dataverses.delete_group_in_dataverse(alias_in_owner='<value>', identifier='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `alias_in_owner`   | *str*              | :heavy_check_mark: | N/A                |
+| `identifier`       | *str*              | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[operations.DeleteGroupInDataverseResponse](../../models/operations/deletegroupindataverseresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## assign_role
+
+Assign a role to role assignees in a specified group within a dataverse
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.dataverses.assign_role(alias_in_owner='<value>', identifier='<value>', request_body=[
     '<value>',
 ])
 
@@ -849,14 +897,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesResponse](../../models/operations/postapiv1dataversesidentifiergroupsaliasinownerroleassigneesresponse.md)**
+**[operations.AssignRoleResponse](../../models/operations/assignroleresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_dataverses_identifier_groups_alias_in_owner_role_assignees_role_assignee_identifier_
+## update_role_assignee
+
+Update a specific role assignee in a dataverse group
 
 ### Example Usage
 
@@ -866,7 +916,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.put_api_v1_dataverses_identifier_groups_alias_in_owner_role_assignees_role_assignee_identifier_(alias_in_owner='<value>', identifier='<value>', role_assignee_identifier='<value>')
+res = s.dataverses.update_role_assignee(alias_in_owner='<value>', identifier='<value>', role_assignee_identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -884,14 +934,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesRoleAssigneeIdentifierResponse](../../models/operations/putapiv1dataversesidentifiergroupsaliasinownerroleassigneesroleassigneeidentifierresponse.md)**
+**[operations.UpdateRoleAssigneeResponse](../../models/operations/updateroleassigneeresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_dataverses_identifier_groups_alias_in_owner_role_assignees_role_assignee_identifier_
+## delete_role_assignee
+
+Delete a specific role assignee from a dataverse group
 
 ### Example Usage
 
@@ -901,7 +953,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.delete_api_v1_dataverses_identifier_groups_alias_in_owner_role_assignees_role_assignee_identifier_(alias_in_owner='<value>', identifier='<value>', role_assignee_identifier='<value>')
+res = s.dataverses.delete_role_assignee(alias_in_owner='<value>', identifier='<value>', role_assignee_identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -919,14 +971,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DataversesIdentifierGroupsAliasInOwnerRoleAssigneesRoleAssigneeIdentifierResponse](../../models/operations/deleteapiv1dataversesidentifiergroupsaliasinownerroleassigneesroleassigneeidentifierresponse.md)**
+**[operations.DeleteRoleAssigneeResponse](../../models/operations/deleteroleassigneeresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_guestbook_responses
+## get_guestbook_responses
+
+Retrieve all guestbook responses for a specific dataverse
 
 ### Example Usage
 
@@ -936,7 +990,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_guestbook_responses(identifier='<value>', guestbook_id=164918)
+res = s.dataverses.get_guestbook_responses(identifier='<value>', guestbook_id=630521)
 
 if res.status_code == 200:
     # handle response
@@ -953,14 +1007,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DataversesIdentifierGuestbookResponsesResponse](../../models/operations/getapiv1dataversesidentifierguestbookresponsesresponse.md)**
+**[operations.GetGuestbookResponsesResponse](../../models/operations/getguestbookresponsesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_links
+## get_dataverse_links
+
+Retrieve all links associated with a specific dataverse identified by ID
 
 ### Example Usage
 
@@ -970,7 +1026,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_links(identifier='<value>')
+res = s.dataverses.get_dataverse_links(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -986,14 +1042,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DataversesIdentifierLinksResponse](../../models/operations/getapiv1dataversesidentifierlinksresponse.md)**
+**[operations.GetDataverseLinksResponse](../../models/operations/getdataverselinksresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_metadatablockfacets
+## get_metadatablock_facets
+
+Retrieve metadatablock facets for a specific dataverse
 
 ### Example Usage
 
@@ -1003,7 +1061,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_metadatablockfacets(identifier='<value>')
+res = s.dataverses.get_metadatablock_facets(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1019,14 +1077,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DataversesIdentifierMetadatablockfacetsResponse](../../models/operations/getapiv1dataversesidentifiermetadatablockfacetsresponse.md)**
+**[operations.GetMetadatablockFacetsResponse](../../models/operations/getmetadatablockfacetsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_metadatablockfacets
+## post_metadatablock_facets
+
+Add metadatablock facets to a specific dataverse
 
 ### Example Usage
 
@@ -1036,7 +1096,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_metadatablockfacets(identifier='<value>', request_body=[
+res = s.dataverses.post_metadatablock_facets(identifier='<value>', request_body=[
     '<value>',
 ])
 
@@ -1055,14 +1115,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierMetadatablockfacetsResponse](../../models/operations/postapiv1dataversesidentifiermetadatablockfacetsresponse.md)**
+**[operations.PostMetadatablockFacetsResponse](../../models/operations/postmetadatablockfacetsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_metadatablockfacets_is_root
+## update_root_status
+
+Updates the root status of a Dataverse
 
 ### Example Usage
 
@@ -1072,7 +1134,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_metadatablockfacets_is_root(identifier='<value>', request_body='<value>')
+res = s.dataverses.update_root_status(identifier='<value>', request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1089,14 +1151,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierMetadatablockfacetsIsRootResponse](../../models/operations/postapiv1dataversesidentifiermetadatablockfacetsisrootresponse.md)**
+**[operations.UpdateRootStatusResponse](../../models/operations/updaterootstatusresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_metadatablocks
+## get_metadatablock
+
+Retrieve the metadatablock of a Dataverse.
 
 ### Example Usage
 
@@ -1106,7 +1170,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_metadatablocks(identifier='<value>')
+res = s.dataverses.get_metadatablock(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1122,14 +1186,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DataversesIdentifierMetadatablocksResponse](../../models/operations/getapiv1dataversesidentifiermetadatablocksresponse.md)**
+**[operations.GetMetadatablockResponse](../../models/operations/getmetadatablockresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_metadatablocks
+## create_metadatablock
+
+Create a new metadatablock for a Dataverse.
 
 ### Example Usage
 
@@ -1139,7 +1205,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_metadatablocks(identifier='<value>')
+res = s.dataverses.create_metadatablock(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1155,14 +1221,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierMetadatablocksResponse](../../models/operations/postapiv1dataversesidentifiermetadatablocksresponse.md)**
+**[operations.CreateMetadatablockResponse](../../models/operations/createmetadatablockresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_metadatablocks_is_root
+## get_metadatablock_1
+
+Retrieve metadata blocks for a specific dataverse identified by its unique identifier
 
 ### Example Usage
 
@@ -1172,7 +1240,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_metadatablocks_is_root(identifier='<value>')
+res = s.dataverses.get_metadatablock_1(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1188,14 +1256,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DataversesIdentifierMetadatablocksIsRootResponse](../../models/operations/getapiv1dataversesidentifiermetadatablocksisrootresponse.md)**
+**[operations.GetMetadatablock1Response](../../models/operations/getmetadatablock1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_metadatablocks_is_root
+## post_metadatablock
+
+Add or update metadata block associated with the specified dataverse identifier
 
 ### Example Usage
 
@@ -1205,7 +1275,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_metadatablocks_is_root(identifier='<value>', request_body='<value>')
+res = s.dataverses.post_metadatablock(identifier='<value>', request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1222,14 +1292,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierMetadatablocksIsRootResponse](../../models/operations/postapiv1dataversesidentifiermetadatablocksisrootresponse.md)**
+**[operations.PostMetadatablockResponse](../../models/operations/postmetadatablockresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_roles
+## get_roles_by_identifier
+
+Retrieve the roles for a given Dataverse identifier
 
 ### Example Usage
 
@@ -1239,7 +1311,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_roles(identifier='<value>')
+res = s.dataverses.get_roles_by_identifier(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1255,14 +1327,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DataversesIdentifierRolesResponse](../../models/operations/getapiv1dataversesidentifierrolesresponse.md)**
+**[operations.GetRolesByIdentifierResponse](../../models/operations/getrolesbyidentifierresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_roles
+## create_role_by_identifier
+
+Create a new role for a given Dataverse identifier
 
 ### Example Usage
 
@@ -1272,7 +1346,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_roles(identifier='<value>')
+res = s.dataverses.create_role_by_identifier(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1288,14 +1362,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierRolesResponse](../../models/operations/postapiv1dataversesidentifierrolesresponse.md)**
+**[operations.CreateRoleByIdentifierResponse](../../models/operations/createrolebyidentifierresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_storage_quota
+## get_storage_quota
+
+Retrieve storage quota of the dataverse identified by the given identifier
 
 ### Example Usage
 
@@ -1305,7 +1381,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_storage_quota(identifier='<value>')
+res = s.dataverses.get_storage_quota(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1321,14 +1397,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DataversesIdentifierStorageQuotaResponse](../../models/operations/getapiv1dataversesidentifierstoragequotaresponse.md)**
+**[operations.GetStorageQuotaResponse](../../models/operations/getstoragequotaresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_dataverses_identifier_storage_quota
+## delete_storage_quota
+
+Delete the storage quota configuration for the dataverse identified by the given identifier
 
 ### Example Usage
 
@@ -1338,7 +1416,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.delete_api_v1_dataverses_identifier_storage_quota(identifier='<value>')
+res = s.dataverses.delete_storage_quota(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1354,14 +1432,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DataversesIdentifierStorageQuotaResponse](../../models/operations/deleteapiv1dataversesidentifierstoragequotaresponse.md)**
+**[operations.DeleteStorageQuotaResponse](../../models/operations/deletestoragequotaresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_storage_quota_bytes_allocated_
+## set_storage_quota
+
+Sets the storage quota for a specific Dataverse
 
 ### Example Usage
 
@@ -1371,7 +1451,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_storage_quota_bytes_allocated_(bytes_allocated=163160, identifier='<value>')
+res = s.dataverses.set_storage_quota(bytes_allocated=789024, identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1388,14 +1468,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierStorageQuotaBytesAllocatedResponse](../../models/operations/postapiv1dataversesidentifierstoragequotabytesallocatedresponse.md)**
+**[operations.SetStorageQuotaResponse](../../models/operations/setstoragequotaresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_storage_use
+## get_dataverse_storage_usage
+
+Retrieve storage usage of a specific dataverse
 
 ### Example Usage
 
@@ -1405,7 +1487,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_storage_use(identifier='<value>')
+res = s.dataverses.get_dataverse_storage_usage(identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1421,14 +1503,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DataversesIdentifierStorageUseResponse](../../models/operations/getapiv1dataversesidentifierstorageuseresponse.md)**
+**[operations.GetDataverseStorageUsageResponse](../../models/operations/getdataversestorageusageresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_dataverses_identifier_storagesize
+## get_dataverse_storage_size
+
+Retrieve the storage size of a specific Dataverse
 
 ### Example Usage
 
@@ -1438,7 +1522,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.get_api_v1_dataverses_identifier_storagesize(identifier='<value>', include_cached=False)
+res = s.dataverses.get_dataverse_storage_size(identifier='<value>', include_cached=False)
 
 if res.status_code == 200:
     # handle response
@@ -1455,14 +1539,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1DataversesIdentifierStoragesizeResponse](../../models/operations/getapiv1dataversesidentifierstoragesizeresponse.md)**
+**[operations.GetDataverseStorageSizeResponse](../../models/operations/getdataversestoragesizeresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_identifier_validate_dataset_json
+## validate_dataset_json
+
+Validate the JSON of a dataset in a specific Dataverse
 
 ### Example Usage
 
@@ -1472,7 +1558,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_identifier_validate_dataset_json(identifier='<value>', request_body='<value>')
+res = s.dataverses.validate_dataset_json(identifier='<value>', request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1489,14 +1575,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIdentifierValidateDatasetJSONResponse](../../models/operations/postapiv1dataversesidentifiervalidatedatasetjsonresponse.md)**
+**[operations.ValidateDatasetJSONResponse](../../models/operations/validatedatasetjsonresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_dataverses_id_move_target_dataverse_alias_
+## move_dataverse
+
+Moves a Dataverse to a target Dataverse
 
 ### Example Usage
 
@@ -1506,7 +1594,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.post_api_v1_dataverses_id_move_target_dataverse_alias_(id='<value>', target_dataverse_alias='<value>', force_move=False)
+res = s.dataverses.move_dataverse(id='<value>', target_dataverse_alias='<value>', force_move=False)
 
 if res.status_code == 200:
     # handle response
@@ -1524,14 +1612,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DataversesIDMoveTargetDataverseAliasResponse](../../models/operations/postapiv1dataversesidmovetargetdataversealiasresponse.md)**
+**[operations.MoveDataverseResponse](../../models/operations/movedataverseresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_dataverses_linked_dataverse_alias_link_linking_dataverse_alias_
+## link_dataverses
+
+Links one Dataverse to another
 
 ### Example Usage
 
@@ -1541,7 +1631,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.put_api_v1_dataverses_linked_dataverse_alias_link_linking_dataverse_alias_(linked_dataverse_alias='<value>', linking_dataverse_alias='<value>')
+res = s.dataverses.link_dataverses(linked_dataverse_alias='<value>', linking_dataverse_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1558,14 +1648,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1DataversesLinkedDataverseAliasLinkLinkingDataverseAliasResponse](../../models/operations/putapiv1dataverseslinkeddataversealiaslinklinkingdataversealiasresponse.md)**
+**[operations.LinkDataversesResponse](../../models/operations/linkdataversesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_dataverses_linking_dataverse_id_delete_link_linked_dataverse_id_
+## delete_dataverse_link
+
+Delete a link between two dataverses
 
 ### Example Usage
 
@@ -1575,7 +1667,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.dataverses.delete_api_v1_dataverses_linking_dataverse_id_delete_link_linked_dataverse_id_(linked_dataverse_id='<value>', linking_dataverse_id='<value>')
+res = s.dataverses.delete_dataverse_link(linked_dataverse_id='<value>', linking_dataverse_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1592,7 +1684,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1DataversesLinkingDataverseIDDeleteLinkLinkedDataverseIDResponse](../../models/operations/deleteapiv1dataverseslinkingdataverseiddeletelinklinkeddataverseidresponse.md)**
+**[operations.DeleteDataverseLinkResponse](../../models/operations/deletedataverselinkresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

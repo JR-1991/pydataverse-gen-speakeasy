@@ -3,10 +3,12 @@
 
 ### Available Operations
 
-* [~~get_api_v1_meta_datafile_file_id_~~](#get_api_v1_meta_datafile_file_id_) - :warning: **Deprecated**
-* [~~get_api_v1_meta_dataset_dataset_id_~~](#get_api_v1_meta_dataset_dataset_id_) - :warning: **Deprecated**
+* [~~get_datafile_meta~~](#get_datafile_meta) - Get metadata of a specific datafile by file id :warning: **Deprecated**
+* [~~get_dataset_metadata_1~~](#get_dataset_metadata_1) - Retrieves the metadata of a specific dataset by its ID :warning: **Deprecated**
 
-## ~~get_api_v1_meta_datafile_file_id_~~
+## ~~get_datafile_meta~~
+
+Get metadata of a specific datafile by file id
 
 > :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
@@ -18,7 +20,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.meta.get_api_v1_meta_datafile_file_id_(file_id=696407, exclude='<value>', file_metadata_id=880679, include='<value>')
+res = s.meta.get_datafile_meta(file_id=708075, exclude='<value>', file_metadata_id=709039, include='<value>')
 
 if res.res is not None:
     # handle response
@@ -37,14 +39,16 @@ if res.res is not None:
 
 ### Response
 
-**[operations.GetAPIV1MetaDatafileFileIDResponse](../../models/operations/getapiv1metadatafilefileidresponse.md)**
+**[operations.GetDatafileMetaResponse](../../models/operations/getdatafilemetaresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## ~~get_api_v1_meta_dataset_dataset_id_~~
+## ~~get_dataset_metadata_1~~
+
+Retrieves the metadata of a specific dataset by its ID
 
 > :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
@@ -56,7 +60,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.meta.get_api_v1_meta_dataset_dataset_id_(dataset_id=618154, exclude='<value>', include='<value>')
+res = s.meta.get_dataset_metadata_1(dataset_id=492183, exclude='<value>', include='<value>')
 
 if res.res is not None:
     # handle response
@@ -74,7 +78,7 @@ if res.res is not None:
 
 ### Response
 
-**[operations.GetAPIV1MetaDatasetDatasetIDResponse](../../models/operations/getapiv1metadatasetdatasetidresponse.md)**
+**[operations.GetDatasetMetadata1Response](../../models/operations/getdatasetmetadata1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

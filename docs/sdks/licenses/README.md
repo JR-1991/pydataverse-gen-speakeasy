@@ -3,16 +3,18 @@
 
 ### Available Operations
 
-* [get_api_v1_licenses](#get_api_v1_licenses)
-* [post_api_v1_licenses](#post_api_v1_licenses)
-* [get_api_v1_licenses_default](#get_api_v1_licenses_default)
-* [put_api_v1_licenses_default_id_](#put_api_v1_licenses_default_id_)
-* [get_api_v1_licenses_id_](#get_api_v1_licenses_id_)
-* [delete_api_v1_licenses_id_](#delete_api_v1_licenses_id_)
-* [put_api_v1_licenses_id_active_active_state_](#put_api_v1_licenses_id_active_active_state_)
-* [put_api_v1_licenses_id_sort_order_sort_order_](#put_api_v1_licenses_id_sort_order_sort_order_)
+* [get_licenses](#get_licenses) - Retrieve all the licenses
+* [add_license](#add_license) - Add a new license
+* [get_default_license](#get_default_license) - Fetch the current default license
+* [update_default_license](#update_default_license) - Update a default license by ID
+* [get_license](#get_license) - Retrieve a specific license by its ID
+* [delete_license](#delete_license) - Delete a specific license by its ID
+* [update_license_active_state](#update_license_active_state) - Updates the activity state of a specific license
+* [update_license_sort_order](#update_license_sort_order) - Update the sort order of a given license
 
-## get_api_v1_licenses
+## get_licenses
+
+Retrieve all the licenses
 
 ### Example Usage
 
@@ -22,7 +24,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.licenses.get_api_v1_licenses()
+res = s.licenses.get_licenses()
 
 if res.status_code == 200:
     # handle response
@@ -32,14 +34,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1LicensesResponse](../../models/operations/getapiv1licensesresponse.md)**
+**[operations.GetLicensesResponse](../../models/operations/getlicensesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_licenses
+## add_license
+
+Add a new license
 
 ### Example Usage
 
@@ -49,7 +53,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.licenses.post_api_v1_licenses()
+res = s.licenses.add_license()
 
 if res.status_code == 200:
     # handle response
@@ -59,14 +63,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1LicensesResponse](../../models/operations/postapiv1licensesresponse.md)**
+**[operations.AddLicenseResponse](../../models/operations/addlicenseresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_licenses_default
+## get_default_license
+
+Fetch the current default license
 
 ### Example Usage
 
@@ -76,7 +82,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.licenses.get_api_v1_licenses_default()
+res = s.licenses.get_default_license()
 
 if res.status_code == 200:
     # handle response
@@ -86,14 +92,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1LicensesDefaultResponse](../../models/operations/getapiv1licensesdefaultresponse.md)**
+**[operations.GetDefaultLicenseResponse](../../models/operations/getdefaultlicenseresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_licenses_default_id_
+## update_default_license
+
+Update a default license by ID
 
 ### Example Usage
 
@@ -103,40 +111,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.licenses.put_api_v1_licenses_default_id_(id=702036)
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *int*              | :heavy_check_mark: | N/A                |
-
-
-### Response
-
-**[operations.PutAPIV1LicensesDefaultIDResponse](../../models/operations/putapiv1licensesdefaultidresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_licenses_id_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.licenses.get_api_v1_licenses_id_(id=185769)
+res = s.licenses.update_default_license(id=34621)
 
 if res.status_code == 200:
     # handle response
@@ -152,14 +127,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1LicensesIDResponse](../../models/operations/getapiv1licensesidresponse.md)**
+**[operations.UpdateDefaultLicenseResponse](../../models/operations/updatedefaultlicenseresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_licenses_id_
+## get_license
+
+Retrieve a specific license by its ID
 
 ### Example Usage
 
@@ -169,7 +146,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.licenses.delete_api_v1_licenses_id_(id=307281)
+res = s.licenses.get_license(id=179853)
 
 if res.status_code == 200:
     # handle response
@@ -185,14 +162,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1LicensesIDResponse](../../models/operations/deleteapiv1licensesidresponse.md)**
+**[operations.GetLicenseResponse](../../models/operations/getlicenseresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_licenses_id_active_active_state_
+## delete_license
+
+Delete a specific license by its ID
 
 ### Example Usage
 
@@ -202,7 +181,42 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.licenses.put_api_v1_licenses_id_active_active_state_(active_state=False, id=262386)
+res = s.licenses.delete_license(id=738361)
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `id`               | *int*              | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[operations.DeleteLicenseResponse](../../models/operations/deletelicenseresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## update_license_active_state
+
+Updates the activity state of a specific license
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.licenses.update_license_active_state(active_state=False, id=744481)
 
 if res.status_code == 200:
     # handle response
@@ -219,14 +233,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1LicensesIDActiveActiveStateResponse](../../models/operations/putapiv1licensesidactiveactivestateresponse.md)**
+**[operations.UpdateLicenseActiveStateResponse](../../models/operations/updatelicenseactivestateresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_licenses_id_sort_order_sort_order_
+## update_license_sort_order
+
+Update the sort order of a given license
 
 ### Example Usage
 
@@ -236,7 +252,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.licenses.put_api_v1_licenses_id_sort_order_sort_order_(id=754761, sort_order=445396)
+res = s.licenses.update_license_sort_order(id=430322, sort_order=505916)
 
 if res.status_code == 200:
     # handle response
@@ -253,7 +269,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1LicensesIDSortOrderSortOrderResponse](../../models/operations/putapiv1licensesidsortordersortorderresponse.md)**
+**[operations.UpdateLicenseSortOrderResponse](../../models/operations/updatelicensesortorderresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

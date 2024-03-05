@@ -15,9 +15,10 @@ class Harvest:
         
     
     
-    def get_api_v1_harvest_clients(self, key: Optional[str] = None) -> operations.GetAPIV1HarvestClientsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/harvest/clients', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1HarvestClientsRequest(
+    def get_harvest_clients(self, key: Optional[str] = None) -> operations.GetHarvestClientsResponse:
+        r"""Retrieve all harvest clients based on the provided key"""
+        hook_ctx = HookContext(operation_id='getHarvestClients', oauth2_scopes=[], security_source=None)
+        request = operations.GetHarvestClientsRequest(
             key=key,
         )
         
@@ -25,7 +26,7 @@ class Harvest:
         
         url = base_url + '/api/v1/harvest/clients'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1HarvestClientsRequest, request)
+        query_params = utils.get_query_params(operations.GetHarvestClientsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -54,7 +55,7 @@ class Harvest:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1HarvestClientsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetHarvestClientsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -65,18 +66,19 @@ class Harvest:
 
     
     
-    def get_api_v1_harvest_clients_nick_name_(self, nick_name: str, key: Optional[str] = None) -> operations.GetAPIV1HarvestClientsNickNameResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/harvest/clients/{nickName}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1HarvestClientsNickNameRequest(
+    def get_harvest_client(self, nick_name: str, key: Optional[str] = None) -> operations.GetHarvestClientResponse:
+        r"""Retrieves a harvest client details based on the provided unique nickname and key"""
+        hook_ctx = HookContext(operation_id='getHarvestClient', oauth2_scopes=[], security_source=None)
+        request = operations.GetHarvestClientRequest(
             nick_name=nick_name,
             key=key,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1HarvestClientsNickNameRequest, base_url, '/api/v1/harvest/clients/{nickName}', request)
+        url = utils.generate_url(operations.GetHarvestClientRequest, base_url, '/api/v1/harvest/clients/{nickName}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1HarvestClientsNickNameRequest, request)
+        query_params = utils.get_query_params(operations.GetHarvestClientRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -105,7 +107,7 @@ class Harvest:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1HarvestClientsNickNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetHarvestClientResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -116,18 +118,19 @@ class Harvest:
 
     
     
-    def put_api_v1_harvest_clients_nick_name_(self, nick_name: str, key: Optional[str] = None) -> operations.PutAPIV1HarvestClientsNickNameResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/harvest/clients/{nickName}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1HarvestClientsNickNameRequest(
+    def update_harvest_client(self, nick_name: str, key: Optional[str] = None) -> operations.UpdateHarvestClientResponse:
+        r"""Updates an existing harvest client's details using the provided unique nickname and key"""
+        hook_ctx = HookContext(operation_id='updateHarvestClient', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateHarvestClientRequest(
             nick_name=nick_name,
             key=key,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1HarvestClientsNickNameRequest, base_url, '/api/v1/harvest/clients/{nickName}', request)
+        url = utils.generate_url(operations.UpdateHarvestClientRequest, base_url, '/api/v1/harvest/clients/{nickName}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PutAPIV1HarvestClientsNickNameRequest, request)
+        query_params = utils.get_query_params(operations.UpdateHarvestClientRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -156,7 +159,7 @@ class Harvest:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1HarvestClientsNickNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateHarvestClientResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -167,18 +170,19 @@ class Harvest:
 
     
     
-    def post_api_v1_harvest_clients_nick_name_(self, nick_name: str, key: Optional[str] = None) -> operations.PostAPIV1HarvestClientsNickNameResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/harvest/clients/{nickName}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1HarvestClientsNickNameRequest(
+    def create_harvest_client(self, nick_name: str, key: Optional[str] = None) -> operations.CreateHarvestClientResponse:
+        r"""Creates a new harvest client using the provided unique nickname and key"""
+        hook_ctx = HookContext(operation_id='createHarvestClient', oauth2_scopes=[], security_source=None)
+        request = operations.CreateHarvestClientRequest(
             nick_name=nick_name,
             key=key,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1HarvestClientsNickNameRequest, base_url, '/api/v1/harvest/clients/{nickName}', request)
+        url = utils.generate_url(operations.CreateHarvestClientRequest, base_url, '/api/v1/harvest/clients/{nickName}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1HarvestClientsNickNameRequest, request)
+        query_params = utils.get_query_params(operations.CreateHarvestClientRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -207,7 +211,7 @@ class Harvest:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1HarvestClientsNickNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateHarvestClientResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -218,15 +222,16 @@ class Harvest:
 
     
     
-    def delete_api_v1_harvest_clients_nick_name_(self, nick_name: str) -> operations.DeleteAPIV1HarvestClientsNickNameResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/harvest/clients/{nickName}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1HarvestClientsNickNameRequest(
+    def delete_harvest_client(self, nick_name: str) -> operations.DeleteHarvestClientResponse:
+        r"""Deletes a harvest client based on the provided unique nickname"""
+        hook_ctx = HookContext(operation_id='deleteHarvestClient', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteHarvestClientRequest(
             nick_name=nick_name,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1HarvestClientsNickNameRequest, base_url, '/api/v1/harvest/clients/{nickName}', request)
+        url = utils.generate_url(operations.DeleteHarvestClientRequest, base_url, '/api/v1/harvest/clients/{nickName}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -256,7 +261,7 @@ class Harvest:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1HarvestClientsNickNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteHarvestClientResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -267,18 +272,19 @@ class Harvest:
 
     
     
-    def post_api_v1_harvest_clients_nick_name_run(self, nick_name: str, key: Optional[str] = None) -> operations.PostAPIV1HarvestClientsNickNameRunResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/harvest/clients/{nickName}/run', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1HarvestClientsNickNameRunRequest(
+    def run_harvest_client(self, nick_name: str, key: Optional[str] = None) -> operations.RunHarvestClientResponse:
+        r"""Initiate a run for a specified Harvest client"""
+        hook_ctx = HookContext(operation_id='runHarvestClient', oauth2_scopes=[], security_source=None)
+        request = operations.RunHarvestClientRequest(
             nick_name=nick_name,
             key=key,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1HarvestClientsNickNameRunRequest, base_url, '/api/v1/harvest/clients/{nickName}/run', request)
+        url = utils.generate_url(operations.RunHarvestClientRequest, base_url, '/api/v1/harvest/clients/{nickName}/run', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1HarvestClientsNickNameRunRequest, request)
+        query_params = utils.get_query_params(operations.RunHarvestClientRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -307,7 +313,7 @@ class Harvest:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1HarvestClientsNickNameRunResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.RunHarvestClientResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -318,9 +324,10 @@ class Harvest:
 
     
     
-    def get_api_v1_harvest_server_oaisets(self, key: Optional[str] = None) -> operations.GetAPIV1HarvestServerOaisetsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/harvest/server/oaisets', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1HarvestServerOaisetsRequest(
+    def get_oai_sets(self, key: Optional[str] = None) -> operations.GetOaiSetsResponse:
+        r"""Retrieve the OAISets from the harvest server"""
+        hook_ctx = HookContext(operation_id='getOaiSets', oauth2_scopes=[], security_source=None)
+        request = operations.GetOaiSetsRequest(
             key=key,
         )
         
@@ -328,7 +335,7 @@ class Harvest:
         
         url = base_url + '/api/v1/harvest/server/oaisets'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1HarvestServerOaisetsRequest, request)
+        query_params = utils.get_query_params(operations.GetOaiSetsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -357,7 +364,7 @@ class Harvest:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1HarvestServerOaisetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetOaiSetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -368,9 +375,10 @@ class Harvest:
 
     
     
-    def post_api_v1_harvest_server_oaisets_add(self, key: Optional[str] = None) -> operations.PostAPIV1HarvestServerOaisetsAddResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/harvest/server/oaisets/add', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1HarvestServerOaisetsAddRequest(
+    def add_oai_set(self, key: Optional[str] = None) -> operations.AddOaiSetResponse:
+        r"""Adds a new OAI set to the harvest server"""
+        hook_ctx = HookContext(operation_id='addOaiSet', oauth2_scopes=[], security_source=None)
+        request = operations.AddOaiSetRequest(
             key=key,
         )
         
@@ -378,7 +386,7 @@ class Harvest:
         
         url = base_url + '/api/v1/harvest/server/oaisets/add'
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1HarvestServerOaisetsAddRequest, request)
+        query_params = utils.get_query_params(operations.AddOaiSetRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -407,7 +415,7 @@ class Harvest:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1HarvestServerOaisetsAddResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AddOaiSetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -418,18 +426,19 @@ class Harvest:
 
     
     
-    def get_api_v1_harvest_server_oaisets_specname_(self, specname: str, key: Optional[str] = None) -> operations.GetAPIV1HarvestServerOaisetsSpecnameResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/harvest/server/oaisets/{specname}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1HarvestServerOaisetsSpecnameRequest(
+    def get_oai_sets_1(self, specname: str, key: Optional[str] = None) -> operations.GetOaiSets1Response:
+        r"""Retrieve details of a specific OAI set"""
+        hook_ctx = HookContext(operation_id='getOaiSets_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetOaiSets1Request(
             specname=specname,
             key=key,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1HarvestServerOaisetsSpecnameRequest, base_url, '/api/v1/harvest/server/oaisets/{specname}', request)
+        url = utils.generate_url(operations.GetOaiSets1Request, base_url, '/api/v1/harvest/server/oaisets/{specname}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1HarvestServerOaisetsSpecnameRequest, request)
+        query_params = utils.get_query_params(operations.GetOaiSets1Request, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -458,7 +467,7 @@ class Harvest:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1HarvestServerOaisetsSpecnameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetOaiSets1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -469,18 +478,19 @@ class Harvest:
 
     
     
-    def put_api_v1_harvest_server_oaisets_specname_(self, specname: str, key: Optional[str] = None) -> operations.PutAPIV1HarvestServerOaisetsSpecnameResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/harvest/server/oaisets/{specname}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1HarvestServerOaisetsSpecnameRequest(
+    def update_oai_sets(self, specname: str, key: Optional[str] = None) -> operations.UpdateOaiSetsResponse:
+        r"""Update details of a specific OAI set"""
+        hook_ctx = HookContext(operation_id='updateOaiSets', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateOaiSetsRequest(
             specname=specname,
             key=key,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1HarvestServerOaisetsSpecnameRequest, base_url, '/api/v1/harvest/server/oaisets/{specname}', request)
+        url = utils.generate_url(operations.UpdateOaiSetsRequest, base_url, '/api/v1/harvest/server/oaisets/{specname}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PutAPIV1HarvestServerOaisetsSpecnameRequest, request)
+        query_params = utils.get_query_params(operations.UpdateOaiSetsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -509,7 +519,7 @@ class Harvest:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1HarvestServerOaisetsSpecnameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateOaiSetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -520,18 +530,19 @@ class Harvest:
 
     
     
-    def delete_api_v1_harvest_server_oaisets_specname_(self, specname: str, key: Optional[str] = None) -> operations.DeleteAPIV1HarvestServerOaisetsSpecnameResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/harvest/server/oaisets/{specname}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1HarvestServerOaisetsSpecnameRequest(
+    def delete_oai_sets(self, specname: str, key: Optional[str] = None) -> operations.DeleteOaiSetsResponse:
+        r"""Remove a specific OAI set"""
+        hook_ctx = HookContext(operation_id='deleteOaiSets', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteOaiSetsRequest(
             specname=specname,
             key=key,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1HarvestServerOaisetsSpecnameRequest, base_url, '/api/v1/harvest/server/oaisets/{specname}', request)
+        url = utils.generate_url(operations.DeleteOaiSetsRequest, base_url, '/api/v1/harvest/server/oaisets/{specname}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.DeleteAPIV1HarvestServerOaisetsSpecnameRequest, request)
+        query_params = utils.get_query_params(operations.DeleteOaiSetsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -560,7 +571,7 @@ class Harvest:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1HarvestServerOaisetsSpecnameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteOaiSetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -571,18 +582,19 @@ class Harvest:
 
     
     
-    def get_api_v1_harvest_server_oaisets_specname_datasets(self, specname: str, key: Optional[str] = None) -> operations.GetAPIV1HarvestServerOaisetsSpecnameDatasetsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/harvest/server/oaisets/{specname}/datasets', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1HarvestServerOaisetsSpecnameDatasetsRequest(
+    def get_harvest_datasets_by_spec_name(self, specname: str, key: Optional[str] = None) -> operations.GetHarvestDatasetsBySpecNameResponse:
+        r"""Retrieve datasets related to a specified OAISet"""
+        hook_ctx = HookContext(operation_id='getHarvestDatasetsBySpecName', oauth2_scopes=[], security_source=None)
+        request = operations.GetHarvestDatasetsBySpecNameRequest(
             specname=specname,
             key=key,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1HarvestServerOaisetsSpecnameDatasetsRequest, base_url, '/api/v1/harvest/server/oaisets/{specname}/datasets', request)
+        url = utils.generate_url(operations.GetHarvestDatasetsBySpecNameRequest, base_url, '/api/v1/harvest/server/oaisets/{specname}/datasets', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1HarvestServerOaisetsSpecnameDatasetsRequest, request)
+        query_params = utils.get_query_params(operations.GetHarvestDatasetsBySpecNameRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -611,7 +623,7 @@ class Harvest:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1HarvestServerOaisetsSpecnameDatasetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetHarvestDatasetsBySpecNameResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

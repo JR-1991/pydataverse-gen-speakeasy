@@ -15,18 +15,19 @@ class Edit:
         
     
     
-    def put_api_v1_edit_file_id_(self, file_id: str, request_body: Optional[str] = None) -> operations.PutAPIV1EditFileIDResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/edit/{fileId}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1EditFileIDRequest(
+    def edit_file(self, file_id: str, request_body: Optional[str] = None) -> operations.EditFileResponse:
+        r"""Edits the content of a specified file"""
+        hook_ctx = HookContext(operation_id='editFile', oauth2_scopes=[], security_source=None)
+        request = operations.EditFileRequest(
             file_id=file_id,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1EditFileIDRequest, base_url, '/api/v1/edit/{fileId}', request)
+        url = utils.generate_url(operations.EditFileRequest, base_url, '/api/v1/edit/{fileId}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PutAPIV1EditFileIDRequest, "request_body", False, True, 'string')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.EditFileRequest, "request_body", False, True, 'string')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -57,7 +58,7 @@ class Edit:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1EditFileIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.EditFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

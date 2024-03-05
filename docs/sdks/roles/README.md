@@ -3,11 +3,13 @@
 
 ### Available Operations
 
-* [post_api_v1_roles](#post_api_v1_roles)
-* [get_api_v1_roles_id_](#get_api_v1_roles_id_)
-* [delete_api_v1_roles_id_](#delete_api_v1_roles_id_)
+* [create_role](#create_role) - Create a new role in the system
+* [get_role](#get_role) - Retrieve details of a specific role by id
+* [delete_role](#delete_role) - Delete a specific role by id
 
-## post_api_v1_roles
+## create_role
+
+Create a new role in the system
 
 ### Example Usage
 
@@ -17,7 +19,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.roles.post_api_v1_roles(dvo='<value>')
+res = s.roles.create_role(dvo='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -33,14 +35,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1RolesResponse](../../models/operations/postapiv1rolesresponse.md)**
+**[operations.CreateRoleResponse](../../models/operations/createroleresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_roles_id_
+## get_role
+
+Retrieve details of a specific role by id
 
 ### Example Usage
 
@@ -50,7 +54,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.roles.get_api_v1_roles_id_(id='<value>')
+res = s.roles.get_role(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -66,14 +70,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1RolesIDResponse](../../models/operations/getapiv1rolesidresponse.md)**
+**[operations.GetRoleResponse](../../models/operations/getroleresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_roles_id_
+## delete_role
+
+Delete a specific role by id
 
 ### Example Usage
 
@@ -83,7 +89,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.roles.delete_api_v1_roles_id_(id='<value>')
+res = s.roles.delete_role(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -99,7 +105,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1RolesIDResponse](../../models/operations/deleteapiv1rolesidresponse.md)**
+**[operations.DeleteRoleResponse](../../models/operations/deleteroleresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

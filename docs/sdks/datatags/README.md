@@ -3,9 +3,11 @@
 
 ### Available Operations
 
-* [post_api_v1_datatags_receive_tags_unique_cache_id_](#post_api_v1_datatags_receive_tags_unique_cache_id_)
+* [post_receive_tags](#post_receive_tags) - Create a new datatag and associate it with the specified unique cache ID
 
-## post_api_v1_datatags_receive_tags_unique_cache_id_
+## post_receive_tags
+
+Create a new datatag and associate it with the specified unique cache ID
 
 ### Example Usage
 
@@ -15,7 +17,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.datatags.post_api_v1_datatags_receive_tags_unique_cache_id_(unique_cache_id='<value>')
+res = s.datatags.post_receive_tags(unique_cache_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -31,7 +33,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1DatatagsReceiveTagsUniqueCacheIDResponse](../../models/operations/postapiv1datatagsreceivetagsuniquecacheidresponse.md)**
+**[operations.PostReceiveTagsResponse](../../models/operations/postreceivetagsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

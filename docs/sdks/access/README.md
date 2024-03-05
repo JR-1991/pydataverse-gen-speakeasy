@@ -3,32 +3,34 @@
 
 ### Available Operations
 
-* [get_api_v1_access_datafile_bundle_file_id_](#get_api_v1_access_datafile_bundle_file_id_)
-* [get_api_v1_access_datafile_file_id_](#get_api_v1_access_datafile_file_id_)
-* [get_api_v1_access_datafile_file_id_auxiliary](#get_api_v1_access_datafile_file_id_auxiliary)
-* [get_api_v1_access_datafile_file_id_auxiliary_format_tag_format_version_](#get_api_v1_access_datafile_file_id_auxiliary_format_tag_format_version_)
-* [post_api_v1_access_datafile_file_id_auxiliary_format_tag_format_version_](#post_api_v1_access_datafile_file_id_auxiliary_format_tag_format_version_)
-* [delete_api_v1_access_datafile_file_id_auxiliary_format_tag_format_version_](#delete_api_v1_access_datafile_file_id_auxiliary_format_tag_format_version_)
-* [get_api_v1_access_datafile_file_id_auxiliary_origin_](#get_api_v1_access_datafile_file_id_auxiliary_origin_)
-* [get_api_v1_access_datafile_file_id_metadata](#get_api_v1_access_datafile_file_id_metadata)
-* [get_api_v1_access_datafile_file_id_metadata_ddi](#get_api_v1_access_datafile_file_id_metadata_ddi)
-* [put_api_v1_access_datafile_id_grant_access_identifier_](#put_api_v1_access_datafile_id_grant_access_identifier_)
-* [get_api_v1_access_datafile_id_list_requests](#get_api_v1_access_datafile_id_list_requests)
-* [put_api_v1_access_datafile_id_reject_access_identifier_](#put_api_v1_access_datafile_id_reject_access_identifier_)
-* [put_api_v1_access_datafile_id_request_access](#put_api_v1_access_datafile_id_request_access)
-* [delete_api_v1_access_datafile_id_revoke_access_identifier_](#delete_api_v1_access_datafile_id_revoke_access_identifier_)
-* [get_api_v1_access_datafile_id_user_file_access_requested](#get_api_v1_access_datafile_id_user_file_access_requested)
-* [get_api_v1_access_datafile_id_user_permissions](#get_api_v1_access_datafile_id_user_permissions)
-* [post_api_v1_access_datafiles](#post_api_v1_access_datafiles)
-* [get_api_v1_access_datafiles_file_ids_](#get_api_v1_access_datafiles_file_ids_)
-* [get_api_v1_access_dataset_id_](#get_api_v1_access_dataset_id_)
-* [get_api_v1_access_dataset_id_versions_version_id_](#get_api_v1_access_dataset_id_versions_version_id_)
-* [get_api_v1_access_ds_card_image_version_id_](#get_api_v1_access_ds_card_image_version_id_)
-* [get_api_v1_access_dv_card_image_dataverse_id_](#get_api_v1_access_dv_card_image_dataverse_id_)
-* [get_api_v1_access_file_card_image_file_id_](#get_api_v1_access_file_card_image_file_id_)
-* [put_api_v1_access_id_allow_access_request](#put_api_v1_access_id_allow_access_request)
+* [get_datafile_bundle](#get_datafile_bundle) - Retrieve a zip of the datafile bundle identified by the file ID.
+* [get_datafile](#get_datafile) - Retrieves datafile details based on given fileId
+* [get_datafile_auxiliary](#get_datafile_auxiliary) - Retrieve auxiliary data for a specific datafile.
+* [access_datafile_auxiliary_get](#access_datafile_auxiliary_get) - Retrieve details of a specific auxiliary data file
+* [access_datafile_auxiliary_create](#access_datafile_auxiliary_create) - Create a new auxiliary data file for a particular data file
+* [access_datafile_auxiliary_delete](#access_datafile_auxiliary_delete) - Delete a specific auxiliary data file
+* [get_datafile_auxiliary_info](#get_datafile_auxiliary_info) - Retrieve auxiliary information of specific datafile
+* [get_datafile_metadata](#get_datafile_metadata) - Retrieve metadata for a specific datafile
+* [get_datafile_meta_ddi](#get_datafile_meta_ddi) - Retrieve DDI metadata for a specific datafile.
+* [grant_datafile_access](#grant_datafile_access) - Grants access to a specific datafile using its ID and the identifier of the user
+* [get_datafile_requests](#get_datafile_requests) - Retrieves a list of all requests relevant to a specified datafile
+* [reject_data_access](#reject_data_access) - Reject access to specified datafile using ids
+* [request_file_access](#request_file_access) - Requests access to a specific datafile by ID.
+* [delete_file_access](#delete_file_access) - Revoke access to a specific file using its ID and an identifier
+* [get_user_file_access_requested](#get_user_file_access_requested) - Retrieve the status of a user file access request
+* [get_user_file_permissions](#get_user_file_permissions) - Retrieve user permissions for a specific datafile.
+* [post_data_file_access](#post_data_file_access) - Uploads access details of a data file
+* [get_access_data_files](#get_access_data_files) - Retrieve access data for specified files
+* [get_dataset_access](#get_dataset_access) - Retrieve access information for a specific dataset
+* [get_dataset_version_access](#get_dataset_version_access) - Retrieve specific version of an accessible dataset by ID
+* [get_ds_card_image](#get_ds_card_image) - Retrieves the version-specific Data Card image
+* [get_dataverse_card_image](#get_dataverse_card_image) - Fetch the Dataverse card image
+* [get_file_card_image](#get_file_card_image) - Retrieves the card image for the specified file ID.
+* [allow_access_request](#allow_access_request) - Update permission to allow access request based on the provided ID
 
-## get_api_v1_access_datafile_bundle_file_id_
+## get_datafile_bundle
+
+Retrieve a zip of the datafile bundle identified by the file ID.
 
 ### Example Usage
 
@@ -38,7 +40,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_datafile_bundle_file_id_(file_id='<value>', file_metadata_id=793125, gbrecs=False)
+res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, gbrecs=False)
 
 if res.body is not None:
     # handle response
@@ -56,14 +58,16 @@ if res.body is not None:
 
 ### Response
 
-**[operations.GetAPIV1AccessDatafileBundleFileIDResponse](../../models/operations/getapiv1accessdatafilebundlefileidresponse.md)**
+**[operations.GetDatafileBundleResponse](../../models/operations/getdatafilebundleresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_access_datafile_file_id_
+## get_datafile
+
+Retrieves datafile details based on given fileId
 
 ### Example Usage
 
@@ -73,7 +77,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_datafile_file_id_(file_id='<value>', gbrecs=False)
+res = s.access.get_datafile(file_id='<value>', gbrecs=False)
 
 if res.status_code == 200:
     # handle response
@@ -90,14 +94,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AccessDatafileFileIDResponse](../../models/operations/getapiv1accessdatafilefileidresponse.md)**
+**[operations.GetDatafileResponse](../../models/operations/getdatafileresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_access_datafile_file_id_auxiliary
+## get_datafile_auxiliary
+
+Retrieve auxiliary data for a specific datafile.
 
 ### Example Usage
 
@@ -107,7 +113,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_datafile_file_id_auxiliary(file_id='<value>')
+res = s.access.get_datafile_auxiliary(file_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -123,14 +129,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AccessDatafileFileIDAuxiliaryResponse](../../models/operations/getapiv1accessdatafilefileidauxiliaryresponse.md)**
+**[operations.GetDatafileAuxiliaryResponse](../../models/operations/getdatafileauxiliaryresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_access_datafile_file_id_auxiliary_format_tag_format_version_
+## access_datafile_auxiliary_get
+
+Retrieve details of a specific auxiliary data file
 
 ### Example Usage
 
@@ -140,7 +148,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_datafile_file_id_auxiliary_format_tag_format_version_(file_id='<value>', format_tag='<value>', format_version='<value>')
+res = s.access.access_datafile_auxiliary_get(file_id='<value>', format_tag='<value>', format_version='<value>')
 
 if res.res is not None:
     # handle response
@@ -158,14 +166,16 @@ if res.res is not None:
 
 ### Response
 
-**[operations.GetAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionResponse](../../models/operations/getapiv1accessdatafilefileidauxiliaryformattagformatversionresponse.md)**
+**[operations.AccessDatafileAuxiliaryGetResponse](../../models/operations/accessdatafileauxiliarygetresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_access_datafile_file_id_auxiliary_format_tag_format_version_
+## access_datafile_auxiliary_create
+
+Create a new auxiliary data file for a particular data file
 
 ### Example Usage
 
@@ -176,7 +186,7 @@ from pydataverse.models import operations
 s = pydataverse.PyDataverse()
 
 
-res = s.access.post_api_v1_access_datafile_file_id_auxiliary_format_tag_format_version_(file_id=398096, format_tag='<value>', format_version='<value>', request_body=operations.PostAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionRequestBody())
+res = s.access.access_datafile_auxiliary_create(file_id=7002, format_tag='<value>', format_version='<value>', request_body=operations.AccessDatafileAuxiliaryCreateRequestBody())
 
 if res.status_code == 200:
     # handle response
@@ -185,24 +195,26 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                                                                                                          | Type                                                                                                                                                                                               | Required                                                                                                                                                                                           | Description                                                                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `file_id`                                                                                                                                                                                          | *int*                                                                                                                                                                                              | :heavy_check_mark:                                                                                                                                                                                 | N/A                                                                                                                                                                                                |
-| `format_tag`                                                                                                                                                                                       | *str*                                                                                                                                                                                              | :heavy_check_mark:                                                                                                                                                                                 | N/A                                                                                                                                                                                                |
-| `format_version`                                                                                                                                                                                   | *str*                                                                                                                                                                                              | :heavy_check_mark:                                                                                                                                                                                 | N/A                                                                                                                                                                                                |
-| `request_body`                                                                                                                                                                                     | [Optional[operations.PostAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionRequestBody]](../../models/operations/postapiv1accessdatafilefileidauxiliaryformattagformatversionrequestbody.md) | :heavy_minus_sign:                                                                                                                                                                                 | N/A                                                                                                                                                                                                |
+| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `file_id`                                                                                                                            | *int*                                                                                                                                | :heavy_check_mark:                                                                                                                   | N/A                                                                                                                                  |
+| `format_tag`                                                                                                                         | *str*                                                                                                                                | :heavy_check_mark:                                                                                                                   | N/A                                                                                                                                  |
+| `format_version`                                                                                                                     | *str*                                                                                                                                | :heavy_check_mark:                                                                                                                   | N/A                                                                                                                                  |
+| `request_body`                                                                                                                       | [Optional[operations.AccessDatafileAuxiliaryCreateRequestBody]](../../models/operations/accessdatafileauxiliarycreaterequestbody.md) | :heavy_minus_sign:                                                                                                                   | N/A                                                                                                                                  |
 
 
 ### Response
 
-**[operations.PostAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionResponse](../../models/operations/postapiv1accessdatafilefileidauxiliaryformattagformatversionresponse.md)**
+**[operations.AccessDatafileAuxiliaryCreateResponse](../../models/operations/accessdatafileauxiliarycreateresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_access_datafile_file_id_auxiliary_format_tag_format_version_
+## access_datafile_auxiliary_delete
+
+Delete a specific auxiliary data file
 
 ### Example Usage
 
@@ -212,7 +224,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.delete_api_v1_access_datafile_file_id_auxiliary_format_tag_format_version_(file_id=417724, format_tag='<value>', format_version='<value>')
+res = s.access.access_datafile_auxiliary_delete(file_id=458810, format_tag='<value>', format_version='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -230,14 +242,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AccessDatafileFileIDAuxiliaryFormatTagFormatVersionResponse](../../models/operations/deleteapiv1accessdatafilefileidauxiliaryformattagformatversionresponse.md)**
+**[operations.AccessDatafileAuxiliaryDeleteResponse](../../models/operations/accessdatafileauxiliarydeleteresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_access_datafile_file_id_auxiliary_origin_
+## get_datafile_auxiliary_info
+
+Retrieve auxiliary information of specific datafile
 
 ### Example Usage
 
@@ -247,7 +261,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_datafile_file_id_auxiliary_origin_(file_id='<value>', origin='<value>')
+res = s.access.get_datafile_auxiliary_info(file_id='<value>', origin='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -264,14 +278,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AccessDatafileFileIDAuxiliaryOriginResponse](../../models/operations/getapiv1accessdatafilefileidauxiliaryoriginresponse.md)**
+**[operations.GetDatafileAuxiliaryInfoResponse](../../models/operations/getdatafileauxiliaryinforesponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_access_datafile_file_id_metadata
+## get_datafile_metadata
+
+Retrieve metadata for a specific datafile
 
 ### Example Usage
 
@@ -281,7 +297,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_datafile_file_id_metadata(file_id='<value>', exclude='<value>', file_metadata_id=700338, include='<value>')
+res = s.access.get_datafile_metadata(file_id='<value>', exclude='<value>', file_metadata_id=321038, include='<value>')
 
 if res.res is not None:
     # handle response
@@ -300,14 +316,16 @@ if res.res is not None:
 
 ### Response
 
-**[operations.GetAPIV1AccessDatafileFileIDMetadataResponse](../../models/operations/getapiv1accessdatafilefileidmetadataresponse.md)**
+**[operations.GetDatafileMetadataResponse](../../models/operations/getdatafilemetadataresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_access_datafile_file_id_metadata_ddi
+## get_datafile_meta_ddi
+
+Retrieve DDI metadata for a specific datafile.
 
 ### Example Usage
 
@@ -317,7 +335,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_datafile_file_id_metadata_ddi(file_id='<value>', exclude='<value>', file_metadata_id=709213, include='<value>')
+res = s.access.get_datafile_meta_ddi(file_id='<value>', exclude='<value>', file_metadata_id=344355, include='<value>')
 
 if res.res is not None:
     # handle response
@@ -336,14 +354,16 @@ if res.res is not None:
 
 ### Response
 
-**[operations.GetAPIV1AccessDatafileFileIDMetadataDdiResponse](../../models/operations/getapiv1accessdatafilefileidmetadataddiresponse.md)**
+**[operations.GetDatafileMetaDDIResponse](../../models/operations/getdatafilemetaddiresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_access_datafile_id_grant_access_identifier_
+## grant_datafile_access
+
+Grants access to a specific datafile using its ID and the identifier of the user
 
 ### Example Usage
 
@@ -353,7 +373,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.put_api_v1_access_datafile_id_grant_access_identifier_(id='<value>', identifier='<value>')
+res = s.access.grant_datafile_access(id='<value>', identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -370,14 +390,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AccessDatafileIDGrantAccessIdentifierResponse](../../models/operations/putapiv1accessdatafileidgrantaccessidentifierresponse.md)**
+**[operations.GrantDatafileAccessResponse](../../models/operations/grantdatafileaccessresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_access_datafile_id_list_requests
+## get_datafile_requests
+
+Retrieves a list of all requests relevant to a specified datafile
 
 ### Example Usage
 
@@ -387,7 +409,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_datafile_id_list_requests(id='<value>')
+res = s.access.get_datafile_requests(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -403,14 +425,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AccessDatafileIDListRequestsResponse](../../models/operations/getapiv1accessdatafileidlistrequestsresponse.md)**
+**[operations.GetDatafileRequestsResponse](../../models/operations/getdatafilerequestsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_access_datafile_id_reject_access_identifier_
+## reject_data_access
+
+Reject access to specified datafile using ids
 
 ### Example Usage
 
@@ -420,74 +444,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.put_api_v1_access_datafile_id_reject_access_identifier_(id='<value>', identifier='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *str*              | :heavy_check_mark: | N/A                |
-| `identifier`       | *str*              | :heavy_check_mark: | N/A                |
-
-
-### Response
-
-**[operations.PutAPIV1AccessDatafileIDRejectAccessIdentifierResponse](../../models/operations/putapiv1accessdatafileidrejectaccessidentifierresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## put_api_v1_access_datafile_id_request_access
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.access.put_api_v1_access_datafile_id_request_access(id='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *str*              | :heavy_check_mark: | N/A                |
-
-
-### Response
-
-**[operations.PutAPIV1AccessDatafileIDRequestAccessResponse](../../models/operations/putapiv1accessdatafileidrequestaccessresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## delete_api_v1_access_datafile_id_revoke_access_identifier_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.access.delete_api_v1_access_datafile_id_revoke_access_identifier_(id='<value>', identifier='<value>')
+res = s.access.reject_data_access(id='<value>', identifier='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -504,14 +461,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1AccessDatafileIDRevokeAccessIdentifierResponse](../../models/operations/deleteapiv1accessdatafileidrevokeaccessidentifierresponse.md)**
+**[operations.RejectDataAccessResponse](../../models/operations/rejectdataaccessresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_access_datafile_id_user_file_access_requested
+## request_file_access
+
+Requests access to a specific datafile by ID.
 
 ### Example Usage
 
@@ -521,7 +480,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_datafile_id_user_file_access_requested(id='<value>')
+res = s.access.request_file_access(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -537,14 +496,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AccessDatafileIDUserFileAccessRequestedResponse](../../models/operations/getapiv1accessdatafileiduserfileaccessrequestedresponse.md)**
+**[operations.RequestFileAccessResponse](../../models/operations/requestfileaccessresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_access_datafile_id_user_permissions
+## delete_file_access
+
+Revoke access to a specific file using its ID and an identifier
 
 ### Example Usage
 
@@ -554,7 +515,43 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_datafile_id_user_permissions(id='<value>')
+res = s.access.delete_file_access(id='<value>', identifier='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `id`               | *str*              | :heavy_check_mark: | N/A                |
+| `identifier`       | *str*              | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[operations.DeleteFileAccessResponse](../../models/operations/deletefileaccessresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_user_file_access_requested
+
+Retrieve the status of a user file access request
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.access.get_user_file_access_requested(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -570,14 +567,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AccessDatafileIDUserPermissionsResponse](../../models/operations/getapiv1accessdatafileiduserpermissionsresponse.md)**
+**[operations.GetUserFileAccessRequestedResponse](../../models/operations/getuserfileaccessrequestedresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_access_datafiles
+## get_user_file_permissions
+
+Retrieve user permissions for a specific datafile.
 
 ### Example Usage
 
@@ -587,7 +586,42 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.post_api_v1_access_datafiles(gbrecs=False, request_body='<value>')
+res = s.access.get_user_file_permissions(id='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `id`               | *str*              | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[operations.GetUserFilePermissionsResponse](../../models/operations/getuserfilepermissionsresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## post_data_file_access
+
+Uploads access details of a data file
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.access.post_data_file_access(gbrecs=False, request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -604,14 +638,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1AccessDatafilesResponse](../../models/operations/postapiv1accessdatafilesresponse.md)**
+**[operations.PostDataFileAccessResponse](../../models/operations/postdatafileaccessresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_access_datafiles_file_ids_
+## get_access_data_files
+
+Retrieve access data for specified files
 
 ### Example Usage
 
@@ -621,7 +657,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_datafiles_file_ids_(file_ids='<value>', gbrecs=False)
+res = s.access.get_access_data_files(file_ids='<value>', gbrecs=False)
 
 if res.status_code == 200:
     # handle response
@@ -638,14 +674,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AccessDatafilesFileIdsResponse](../../models/operations/getapiv1accessdatafilesfileidsresponse.md)**
+**[operations.GetAccessDataFilesResponse](../../models/operations/getaccessdatafilesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_access_dataset_id_
+## get_dataset_access
+
+Retrieve access information for a specific dataset
 
 ### Example Usage
 
@@ -655,7 +693,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_dataset_id_(id='<value>', gbrecs=False)
+res = s.access.get_dataset_access(id='<value>', gbrecs=False)
 
 if res.status_code == 200:
     # handle response
@@ -672,14 +710,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AccessDatasetIDResponse](../../models/operations/getapiv1accessdatasetidresponse.md)**
+**[operations.GetDatasetAccessResponse](../../models/operations/getdatasetaccessresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_access_dataset_id_versions_version_id_
+## get_dataset_version_access
+
+Retrieve specific version of an accessible dataset by ID
 
 ### Example Usage
 
@@ -689,7 +729,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_dataset_id_versions_version_id_(id='<value>', version_id='<value>', gbrecs=False, key='<value>')
+res = s.access.get_dataset_version_access(id='<value>', version_id='<value>', gbrecs=False, key='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -708,14 +748,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1AccessDatasetIDVersionsVersionIDResponse](../../models/operations/getapiv1accessdatasetidversionsversionidresponse.md)**
+**[operations.GetDatasetVersionAccessResponse](../../models/operations/getdatasetversionaccessresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_access_ds_card_image_version_id_
+## get_ds_card_image
+
+Retrieves the version-specific Data Card image
 
 ### Example Usage
 
@@ -725,7 +767,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_ds_card_image_version_id_(version_id=597512)
+res = s.access.get_ds_card_image(version_id=856190)
 
 if res.res is not None:
     # handle response
@@ -741,14 +783,16 @@ if res.res is not None:
 
 ### Response
 
-**[operations.GetAPIV1AccessDsCardImageVersionIDResponse](../../models/operations/getapiv1accessdscardimageversionidresponse.md)**
+**[operations.GetDsCardImageResponse](../../models/operations/getdscardimageresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_access_dv_card_image_dataverse_id_
+## get_dataverse_card_image
+
+Fetch the Dataverse card image
 
 ### Example Usage
 
@@ -758,7 +802,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_dv_card_image_dataverse_id_(dataverse_id=799966)
+res = s.access.get_dataverse_card_image(dataverse_id=305707)
 
 if res.res is not None:
     # handle response
@@ -774,14 +818,16 @@ if res.res is not None:
 
 ### Response
 
-**[operations.GetAPIV1AccessDvCardImageDataverseIDResponse](../../models/operations/getapiv1accessdvcardimagedataverseidresponse.md)**
+**[operations.GetDataverseCardImageResponse](../../models/operations/getdataversecardimageresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_access_file_card_image_file_id_
+## get_file_card_image
+
+Retrieves the card image for the specified file ID.
 
 ### Example Usage
 
@@ -791,7 +837,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.get_api_v1_access_file_card_image_file_id_(file_id=203069)
+res = s.access.get_file_card_image(file_id=259222)
 
 if res.res is not None:
     # handle response
@@ -807,14 +853,16 @@ if res.res is not None:
 
 ### Response
 
-**[operations.GetAPIV1AccessFileCardImageFileIDResponse](../../models/operations/getapiv1accessfilecardimagefileidresponse.md)**
+**[operations.GetFileCardImageResponse](../../models/operations/getfilecardimageresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_access_id_allow_access_request
+## allow_access_request
+
+Update permission to allow access request based on the provided ID
 
 ### Example Usage
 
@@ -824,7 +872,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.access.put_api_v1_access_id_allow_access_request(id='<value>')
+res = s.access.allow_access_request(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -840,7 +888,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1AccessIDAllowAccessRequestResponse](../../models/operations/putapiv1accessidallowaccessrequestresponse.md)**
+**[operations.AllowAccessRequestResponse](../../models/operations/allowaccessrequestresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

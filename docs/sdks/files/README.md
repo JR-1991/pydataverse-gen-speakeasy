@@ -3,32 +3,34 @@
 
 ### Available Operations
 
-* [get_api_v1_files_fixity_algorithm](#get_api_v1_files_fixity_algorithm)
-* [get_api_v1_files_id_](#get_api_v1_files_id_)
-* [delete_api_v1_files_id_](#delete_api_v1_files_id_)
-* [get_api_v1_files_id_data_tables](#get_api_v1_files_id_data_tables)
-* [get_api_v1_files_id_download_count](#get_api_v1_files_id_download_count)
-* [get_api_v1_files_id_draft](#get_api_v1_files_id_draft)
-* [post_api_v1_files_id_extract_ncml](#post_api_v1_files_id_extract_ncml)
-* [get_api_v1_files_id_has_been_deleted](#get_api_v1_files_id_has_been_deleted)
-* [get_api_v1_files_id_metadata](#get_api_v1_files_id_metadata)
-* [post_api_v1_files_id_metadata](#post_api_v1_files_id_metadata)
-* [post_api_v1_files_id_metadata_categories](#post_api_v1_files_id_metadata_categories)
-* [get_api_v1_files_id_metadata_draft](#get_api_v1_files_id_metadata_draft)
-* [post_api_v1_files_id_metadata_tabular_tags](#post_api_v1_files_id_metadata_tabular_tags)
-* [get_api_v1_files_id_metadata_fmid_toolparams_tid_](#get_api_v1_files_id_metadata_fmid_toolparams_tid_)
-* [get_api_v1_files_id_prov_freeform](#get_api_v1_files_id_prov_freeform)
-* [post_api_v1_files_id_prov_freeform](#post_api_v1_files_id_prov_freeform)
-* [get_api_v1_files_id_prov_json](#get_api_v1_files_id_prov_json)
-* [post_api_v1_files_id_prov_json](#post_api_v1_files_id_prov_json)
-* [delete_api_v1_files_id_prov_json](#delete_api_v1_files_id_prov_json)
-* [post_api_v1_files_id_redetect](#post_api_v1_files_id_redetect)
-* [post_api_v1_files_id_reingest](#post_api_v1_files_id_reingest)
-* [post_api_v1_files_id_replace](#post_api_v1_files_id_replace)
-* [put_api_v1_files_id_restrict](#put_api_v1_files_id_restrict)
-* [post_api_v1_files_id_uningest](#post_api_v1_files_id_uningest)
+* [get_fixity_algorithm](#get_fixity_algorithm) - Retrieve the fixity algorithm of a file
+* [get_file](#get_file) - Retrieve a specific file by ID.
+* [delete_file](#delete_file) - Delete a specific file by ID.
+* [get_file_data_tables](#get_file_data_tables) - Retrieve the data tables of a given file
+* [get_download_count](#get_download_count) - Retrieve the download count of a file
+* [get_file_draft](#get_file_draft) - Retrieve a file in draft mode by its ID
+* [extract_ncml_by_id](#extract_ncml_by_id) - Extract Ncml information of a file based on the provided id
+* [check_file_deletion_status](#check_file_deletion_status) - Check if specified file has been deleted
+* [get_file_metadata](#get_file_metadata) - Retrieves metadata for a specific file
+* [update_file_metadata](#update_file_metadata) - Updates metadata for a specific file
+* [post_file_metadata_categories](#post_file_metadata_categories) - Adds new metadata categories for a specific file.
+* [get_draft_meta_data](#get_draft_meta_data) - Retrieve the metadata of a draft file
+* [post_tabular_tags](#post_tabular_tags) - Add tabular tags to a file metadata
+* [get_file_metadata_tool_params](#get_file_metadata_tool_params) - Retrieves tool parameters for a specific file metadata ID
+* [get_file_prov_freeform](#get_file_prov_freeform) - Retrieves the freeform provenance data for a specific file
+* [post_file_prov_freeform](#post_file_prov_freeform) - Posts freeform provenance data for a specific file
+* [get_file_prov_json](#get_file_prov_json) - Retrieving the PROV JSON of a specific file
+* [post_file_prov_json](#post_file_prov_json) - Submit a new PROV JSON for a specific file
+* [delete_file_prov_json](#delete_file_prov_json) - Delete the PROV JSON of a specific file
+* [redetect_file](#redetect_file) - Invoke redetection process for the specified file
+* [reingest_file](#reingest_file) - Reingest a file using its ID
+* [replace_file](#replace_file) - Replace an existing file with a new version
+* [restrict_file_access](#restrict_file_access) - Restrict access to a specific file
+* [post_file_uningest](#post_file_uningest) - Uningest a file with the specified ID
 
-## get_api_v1_files_fixity_algorithm
+## get_fixity_algorithm
+
+Retrieve the fixity algorithm of a file
 
 ### Example Usage
 
@@ -38,7 +40,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.get_api_v1_files_fixity_algorithm()
+res = s.files.get_fixity_algorithm()
 
 if res.status_code == 200:
     # handle response
@@ -48,14 +50,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1FilesFixityAlgorithmResponse](../../models/operations/getapiv1filesfixityalgorithmresponse.md)**
+**[operations.GetFixityAlgorithmResponse](../../models/operations/getfixityalgorithmresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_files_id_
+## get_file
+
+Retrieve a specific file by ID.
 
 ### Example Usage
 
@@ -65,40 +69,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.get_api_v1_files_id_(id='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *str*              | :heavy_check_mark: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1FilesIDResponse](../../models/operations/getapiv1filesidresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## delete_api_v1_files_id_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.files.delete_api_v1_files_id_(id='<value>')
+res = s.files.get_file(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -114,14 +85,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1FilesIDResponse](../../models/operations/deleteapiv1filesidresponse.md)**
+**[operations.GetFileResponse](../../models/operations/getfileresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_files_id_data_tables
+## delete_file
+
+Delete a specific file by ID.
 
 ### Example Usage
 
@@ -131,7 +104,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.get_api_v1_files_id_data_tables(id='<value>')
+res = s.files.delete_file(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -147,14 +120,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1FilesIDDataTablesResponse](../../models/operations/getapiv1filesiddatatablesresponse.md)**
+**[operations.DeleteFileResponse](../../models/operations/deletefileresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_files_id_download_count
+## get_file_data_tables
+
+Retrieve the data tables of a given file
 
 ### Example Usage
 
@@ -164,7 +139,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.get_api_v1_files_id_download_count(id='<value>')
+res = s.files.get_file_data_tables(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -180,14 +155,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1FilesIDDownloadCountResponse](../../models/operations/getapiv1filesiddownloadcountresponse.md)**
+**[operations.GetFileDataTablesResponse](../../models/operations/getfiledatatablesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_files_id_draft
+## get_download_count
+
+Retrieve the download count of a file
 
 ### Example Usage
 
@@ -197,7 +174,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.get_api_v1_files_id_draft(id='<value>')
+res = s.files.get_download_count(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -213,14 +190,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1FilesIDDraftResponse](../../models/operations/getapiv1filesiddraftresponse.md)**
+**[operations.GetDownloadCountResponse](../../models/operations/getdownloadcountresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_files_id_extract_ncml
+## get_file_draft
+
+Retrieve a file in draft mode by its ID
 
 ### Example Usage
 
@@ -230,7 +209,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.post_api_v1_files_id_extract_ncml(id='<value>')
+res = s.files.get_file_draft(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -246,14 +225,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1FilesIDExtractNcmlResponse](../../models/operations/postapiv1filesidextractncmlresponse.md)**
+**[operations.GetFileDraftResponse](../../models/operations/getfiledraftresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_files_id_has_been_deleted
+## extract_ncml_by_id
+
+Extract Ncml information of a file based on the provided id
 
 ### Example Usage
 
@@ -263,7 +244,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.get_api_v1_files_id_has_been_deleted(id='<value>')
+res = s.files.extract_ncml_by_id(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -279,14 +260,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1FilesIDHasBeenDeletedResponse](../../models/operations/getapiv1filesidhasbeendeletedresponse.md)**
+**[operations.ExtractNcmlByIDResponse](../../models/operations/extractncmlbyidresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_files_id_metadata
+## check_file_deletion_status
+
+Check if specified file has been deleted
 
 ### Example Usage
 
@@ -296,7 +279,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.get_api_v1_files_id_metadata(id='<value>')
+res = s.files.check_file_deletion_status(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -312,14 +295,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1FilesIDMetadataResponse](../../models/operations/getapiv1filesidmetadataresponse.md)**
+**[operations.CheckFileDeletionStatusResponse](../../models/operations/checkfiledeletionstatusresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_files_id_metadata
+## get_file_metadata
+
+Retrieves metadata for a specific file
 
 ### Example Usage
 
@@ -329,7 +314,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.post_api_v1_files_id_metadata(id='<value>')
+res = s.files.get_file_metadata(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -345,14 +330,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1FilesIDMetadataResponse](../../models/operations/postapiv1filesidmetadataresponse.md)**
+**[operations.GetFileMetadataResponse](../../models/operations/getfilemetadataresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_files_id_metadata_categories
+## update_file_metadata
+
+Updates metadata for a specific file
 
 ### Example Usage
 
@@ -362,7 +349,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.post_api_v1_files_id_metadata_categories(id='<value>')
+res = s.files.update_file_metadata(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -378,14 +365,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1FilesIDMetadataCategoriesResponse](../../models/operations/postapiv1filesidmetadatacategoriesresponse.md)**
+**[operations.UpdateFileMetadataResponse](../../models/operations/updatefilemetadataresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_files_id_metadata_draft
+## post_file_metadata_categories
+
+Adds new metadata categories for a specific file.
 
 ### Example Usage
 
@@ -395,7 +384,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.get_api_v1_files_id_metadata_draft(id='<value>')
+res = s.files.post_file_metadata_categories(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -411,14 +400,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1FilesIDMetadataDraftResponse](../../models/operations/getapiv1filesidmetadatadraftresponse.md)**
+**[operations.PostFileMetadataCategoriesResponse](../../models/operations/postfilemetadatacategoriesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_files_id_metadata_tabular_tags
+## get_draft_meta_data
+
+Retrieve the metadata of a draft file
 
 ### Example Usage
 
@@ -428,7 +419,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.post_api_v1_files_id_metadata_tabular_tags(id='<value>')
+res = s.files.get_draft_meta_data(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -444,14 +435,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1FilesIDMetadataTabularTagsResponse](../../models/operations/postapiv1filesidmetadatatabulartagsresponse.md)**
+**[operations.GetDraftMetaDataResponse](../../models/operations/getdraftmetadataresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_files_id_metadata_fmid_toolparams_tid_
+## post_tabular_tags
+
+Add tabular tags to a file metadata
 
 ### Example Usage
 
@@ -461,7 +454,42 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.get_api_v1_files_id_metadata_fmid_toolparams_tid_(fmid=505910, id='<value>', tid=735941, locale='<value>')
+res = s.files.post_tabular_tags(id='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `id`               | *str*              | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[operations.PostTabularTagsResponse](../../models/operations/posttabulartagsresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_file_metadata_tool_params
+
+Retrieves tool parameters for a specific file metadata ID
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.files.get_file_metadata_tool_params(fmid=27570, id='<value>', tid=343127, locale='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -480,14 +508,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1FilesIDMetadataFmidToolparamsTidResponse](../../models/operations/getapiv1filesidmetadatafmidtoolparamstidresponse.md)**
+**[operations.GetFileMetadataToolParamsResponse](../../models/operations/getfilemetadatatoolparamsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_files_id_prov_freeform
+## get_file_prov_freeform
+
+Retrieves the freeform provenance data for a specific file
 
 ### Example Usage
 
@@ -497,7 +527,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.get_api_v1_files_id_prov_freeform(id='<value>')
+res = s.files.get_file_prov_freeform(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -513,14 +543,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1FilesIDProvFreeformResponse](../../models/operations/getapiv1filesidprovfreeformresponse.md)**
+**[operations.GetFileProvFreeformResponse](../../models/operations/getfileprovfreeformresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_files_id_prov_freeform
+## post_file_prov_freeform
+
+Posts freeform provenance data for a specific file
 
 ### Example Usage
 
@@ -530,7 +562,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.post_api_v1_files_id_prov_freeform(id='<value>', request_body='<value>')
+res = s.files.post_file_prov_freeform(id='<value>', request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -547,14 +579,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1FilesIDProvFreeformResponse](../../models/operations/postapiv1filesidprovfreeformresponse.md)**
+**[operations.PostFileProvFreeformResponse](../../models/operations/postfileprovfreeformresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_files_id_prov_json
+## get_file_prov_json
+
+Retrieving the PROV JSON of a specific file
 
 ### Example Usage
 
@@ -564,7 +598,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.get_api_v1_files_id_prov_json(id='<value>')
+res = s.files.get_file_prov_json(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -580,14 +614,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1FilesIDProvJSONResponse](../../models/operations/getapiv1filesidprovjsonresponse.md)**
+**[operations.GetFileProvJSONResponse](../../models/operations/getfileprovjsonresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_files_id_prov_json
+## post_file_prov_json
+
+Submit a new PROV JSON for a specific file
 
 ### Example Usage
 
@@ -597,7 +633,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.post_api_v1_files_id_prov_json(id='<value>', entity_name='<value>', request_body='<value>')
+res = s.files.post_file_prov_json(id='<value>', entity_name='<value>', request_body='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -615,14 +651,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1FilesIDProvJSONResponse](../../models/operations/postapiv1filesidprovjsonresponse.md)**
+**[operations.PostFileProvJSONResponse](../../models/operations/postfileprovjsonresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_files_id_prov_json
+## delete_file_prov_json
+
+Delete the PROV JSON of a specific file
 
 ### Example Usage
 
@@ -632,7 +670,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.delete_api_v1_files_id_prov_json(id='<value>')
+res = s.files.delete_file_prov_json(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -648,14 +686,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1FilesIDProvJSONResponse](../../models/operations/deleteapiv1filesidprovjsonresponse.md)**
+**[operations.DeleteFileProvJSONResponse](../../models/operations/deletefileprovjsonresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_files_id_redetect
+## redetect_file
+
+Invoke redetection process for the specified file
 
 ### Example Usage
 
@@ -665,7 +705,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.post_api_v1_files_id_redetect(id='<value>', dry_run=False)
+res = s.files.redetect_file(id='<value>', dry_run=False)
 
 if res.status_code == 200:
     # handle response
@@ -682,14 +722,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1FilesIDRedetectResponse](../../models/operations/postapiv1filesidredetectresponse.md)**
+**[operations.RedetectFileResponse](../../models/operations/redetectfileresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_files_id_reingest
+## reingest_file
+
+Reingest a file using its ID
 
 ### Example Usage
 
@@ -699,7 +741,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.post_api_v1_files_id_reingest(id='<value>')
+res = s.files.reingest_file(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -715,14 +757,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1FilesIDReingestResponse](../../models/operations/postapiv1filesidreingestresponse.md)**
+**[operations.ReingestFileResponse](../../models/operations/reingestfileresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_files_id_replace
+## replace_file
+
+Replace an existing file with a new version
 
 ### Example Usage
 
@@ -733,7 +777,7 @@ from pydataverse.models import operations
 s = pydataverse.PyDataverse()
 
 
-res = s.files.post_api_v1_files_id_replace(id='<value>', request_body=operations.PostAPIV1FilesIDReplaceRequestBody())
+res = s.files.replace_file(id='<value>', request_body=operations.ReplaceFileRequestBody())
 
 if res.status_code == 200:
     # handle response
@@ -742,22 +786,24 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                     | *str*                                                                                                                    | :heavy_check_mark:                                                                                                       | N/A                                                                                                                      |
-| `request_body`                                                                                                           | [Optional[operations.PostAPIV1FilesIDReplaceRequestBody]](../../models/operations/postapiv1filesidreplacerequestbody.md) | :heavy_minus_sign:                                                                                                       | N/A                                                                                                                      |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `id`                                                                                             | *str*                                                                                            | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `request_body`                                                                                   | [Optional[operations.ReplaceFileRequestBody]](../../models/operations/replacefilerequestbody.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
 
 
 ### Response
 
-**[operations.PostAPIV1FilesIDReplaceResponse](../../models/operations/postapiv1filesidreplaceresponse.md)**
+**[operations.ReplaceFileResponse](../../models/operations/replacefileresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_files_id_restrict
+## restrict_file_access
+
+Restrict access to a specific file
 
 ### Example Usage
 
@@ -767,7 +813,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.put_api_v1_files_id_restrict(id='<value>')
+res = s.files.restrict_file_access(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -783,14 +829,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1FilesIDRestrictResponse](../../models/operations/putapiv1filesidrestrictresponse.md)**
+**[operations.RestrictFileAccessResponse](../../models/operations/restrictfileaccessresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_files_id_uningest
+## post_file_uningest
+
+Uningest a file with the specified ID
 
 ### Example Usage
 
@@ -800,7 +848,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.files.post_api_v1_files_id_uningest(id='<value>')
+res = s.files.post_file_uningest(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -816,7 +864,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1FilesIDUningestResponse](../../models/operations/postapiv1filesiduningestresponse.md)**
+**[operations.PostFileUningestResponse](../../models/operations/postfileuningestresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

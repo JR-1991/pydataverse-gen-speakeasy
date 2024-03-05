@@ -3,12 +3,14 @@
 
 ### Available Operations
 
-* [post_api_v1_builtin_users](#post_api_v1_builtin_users)
-* [post_api_v1_builtin_users_password_key_](#post_api_v1_builtin_users_password_key_)
-* [post_api_v1_builtin_users_password_key_send_email_notification_](#post_api_v1_builtin_users_password_key_send_email_notification_)
-* [get_api_v1_builtin_users_username_api_token](#get_api_v1_builtin_users_username_api_token)
+* [post_builtin_users](#post_builtin_users) - Create a new builtin user
+* [create_builtin_user](#create_builtin_user) - Create a new built-in user using a password and key
+* [create_builtin_user_1](#create_builtin_user_1) - Create a new builtin-user with a specific key, password and email notification preference.
+* [get_api_token_by_username](#get_api_token_by_username) - Gets the API token for the specified built-in user
 
-## post_api_v1_builtin_users
+## post_builtin_users
+
+Create a new builtin user
 
 ### Example Usage
 
@@ -18,7 +20,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.builtin_users.post_api_v1_builtin_users(key='<value>', password='<value>', send_email_notification=False)
+res = s.builtin_users.post_builtin_users(key='<value>', password='<value>', send_email_notification=False)
 
 if res.status_code == 200:
     # handle response
@@ -36,14 +38,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1BuiltinUsersResponse](../../models/operations/postapiv1builtinusersresponse.md)**
+**[operations.PostBuiltinUsersResponse](../../models/operations/postbuiltinusersresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_builtin_users_password_key_
+## create_builtin_user
+
+Create a new built-in user using a password and key
 
 ### Example Usage
 
@@ -53,7 +57,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.builtin_users.post_api_v1_builtin_users_password_key_(key='<value>', password='<value>')
+res = s.builtin_users.create_builtin_user(key='<value>', password='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -70,14 +74,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1BuiltinUsersPasswordKeyResponse](../../models/operations/postapiv1builtinuserspasswordkeyresponse.md)**
+**[operations.CreateBuiltinUserResponse](../../models/operations/createbuiltinuserresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## post_api_v1_builtin_users_password_key_send_email_notification_
+## create_builtin_user_1
+
+Create a new builtin-user with a specific key, password and email notification preference.
 
 ### Example Usage
 
@@ -87,7 +93,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.builtin_users.post_api_v1_builtin_users_password_key_send_email_notification_(key='<value>', password='<value>', send_email_notification=False)
+res = s.builtin_users.create_builtin_user_1(key='<value>', password='<value>', send_email_notification=False)
 
 if res.status_code == 200:
     # handle response
@@ -105,14 +111,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1BuiltinUsersPasswordKeySendEmailNotificationResponse](../../models/operations/postapiv1builtinuserspasswordkeysendemailnotificationresponse.md)**
+**[operations.CreateBuiltinUser1Response](../../models/operations/createbuiltinuser1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_builtin_users_username_api_token
+## get_api_token_by_username
+
+Gets the API token for the specified built-in user
 
 ### Example Usage
 
@@ -122,7 +130,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.builtin_users.get_api_v1_builtin_users_username_api_token(username='<value>', password='<value>')
+res = s.builtin_users.get_api_token_by_username(username='<value>', password='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -139,7 +147,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1BuiltinUsersUsernameAPITokenResponse](../../models/operations/getapiv1builtinusersusernameapitokenresponse.md)**
+**[operations.GetAPITokenByUsernameResponse](../../models/operations/getapitokenbyusernameresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

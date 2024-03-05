@@ -3,9 +3,11 @@
 
 ### Available Operations
 
-* [post_api_v1_workflows_invocation_id_](#post_api_v1_workflows_invocation_id_)
+* [start_workflow](#start_workflow) - Initiate a workflow using the given invocation id
 
-## post_api_v1_workflows_invocation_id_
+## start_workflow
+
+Initiate a workflow using the given invocation id
 
 ### Example Usage
 
@@ -15,7 +17,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.workflows.post_api_v1_workflows_invocation_id_(invocation_id='<value>')
+res = s.workflows.start_workflow(invocation_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -31,7 +33,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PostAPIV1WorkflowsInvocationIDResponse](../../models/operations/postapiv1workflowsinvocationidresponse.md)**
+**[operations.StartWorkflowResponse](../../models/operations/startworkflowresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

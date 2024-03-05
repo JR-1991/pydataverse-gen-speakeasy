@@ -14,8 +14,9 @@ class Logout:
         
     
     
-    def post_api_v1_logout(self) -> operations.PostAPIV1LogoutResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/logout', oauth2_scopes=[], security_source=None)
+    def logout_user(self) -> operations.LogoutUserResponse:
+        r"""Log out the current user"""
+        hook_ctx = HookContext(operation_id='logoutUser', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/logout'
@@ -48,7 +49,7 @@ class Logout:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1LogoutResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.LogoutUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

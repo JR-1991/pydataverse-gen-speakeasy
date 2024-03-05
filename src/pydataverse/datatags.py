@@ -14,15 +14,16 @@ class Datatags:
         
     
     
-    def post_api_v1_datatags_receive_tags_unique_cache_id_(self, unique_cache_id: str) -> operations.PostAPIV1DatatagsReceiveTagsUniqueCacheIDResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datatags/receiveTags/{uniqueCacheId}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatatagsReceiveTagsUniqueCacheIDRequest(
+    def post_receive_tags(self, unique_cache_id: str) -> operations.PostReceiveTagsResponse:
+        r"""Create a new datatag and associate it with the specified unique cache ID"""
+        hook_ctx = HookContext(operation_id='postReceiveTags', oauth2_scopes=[], security_source=None)
+        request = operations.PostReceiveTagsRequest(
             unique_cache_id=unique_cache_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatatagsReceiveTagsUniqueCacheIDRequest, base_url, '/api/v1/datatags/receiveTags/{uniqueCacheId}', request)
+        url = utils.generate_url(operations.PostReceiveTagsRequest, base_url, '/api/v1/datatags/receiveTags/{uniqueCacheId}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -52,7 +53,7 @@ class Datatags:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatatagsReceiveTagsUniqueCacheIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostReceiveTagsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

@@ -15,8 +15,9 @@ class Info:
         
     
     
-    def get_api_v1_info_api_terms_of_use(self) -> operations.GetAPIV1InfoAPITermsOfUseResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/apiTermsOfUse', oauth2_scopes=[], security_source=None)
+    def get_api_terms_of_use_info(self) -> operations.GetAPITermsOfUseInfoResponse:
+        r"""Retrieve the terms of use of the API"""
+        hook_ctx = HookContext(operation_id='getApiTermsOfUseInfo', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/info/apiTermsOfUse'
@@ -49,7 +50,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoAPITermsOfUseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAPITermsOfUseInfoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -60,9 +61,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_datasets(self, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDatasetsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/datasets', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDatasetsRequest(
+    def get_dataset_metrics_1(self, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetDatasetMetrics1Response:
+        r"""Retrieve dataset metrics based on the data location and parent alias"""
+        hook_ctx = HookContext(operation_id='getDatasetMetrics_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetMetrics1Request(
             data_location=data_location,
             parent_alias=parent_alias,
         )
@@ -71,7 +73,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/datasets'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDatasetsRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetMetrics1Request, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -100,7 +102,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDatasetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetMetrics1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -111,9 +113,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_datasets_by_subject(self, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDatasetsBySubjectResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/datasets/bySubject', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDatasetsBySubjectRequest(
+    def get_datasets_by_subject(self, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetDatasetsBySubjectResponse:
+        r"""Retrieve datasets by subject according to specified data location and parent alias"""
+        hook_ctx = HookContext(operation_id='getDatasetsBySubject', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetsBySubjectRequest(
             data_location=data_location,
             parent_alias=parent_alias,
         )
@@ -122,7 +125,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/datasets/bySubject'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDatasetsBySubjectRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetsBySubjectRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -151,7 +154,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDatasetsBySubjectResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetsBySubjectResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -162,9 +165,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_datasets_by_subject_to_month_yyyymm_(self, yyyymm: str, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDatasetsBySubjectToMonthYyyymmResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/datasets/bySubject/toMonth/{yyyymm}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDatasetsBySubjectToMonthYyyymmRequest(
+    def get_monthly_subject_metrics(self, yyyymm: str, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetMonthlySubjectMetricsResponse:
+        r"""Retrieve monthly metrics for datasets by subject"""
+        hook_ctx = HookContext(operation_id='getMonthlySubjectMetrics', oauth2_scopes=[], security_source=None)
+        request = operations.GetMonthlySubjectMetricsRequest(
             yyyymm=yyyymm,
             data_location=data_location,
             parent_alias=parent_alias,
@@ -172,9 +176,9 @@ class Info:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsDatasetsBySubjectToMonthYyyymmRequest, base_url, '/api/v1/info/metrics/datasets/bySubject/toMonth/{yyyymm}', request)
+        url = utils.generate_url(operations.GetMonthlySubjectMetricsRequest, base_url, '/api/v1/info/metrics/datasets/bySubject/toMonth/{yyyymm}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDatasetsBySubjectToMonthYyyymmRequest, request)
+        query_params = utils.get_query_params(operations.GetMonthlySubjectMetricsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -203,7 +207,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDatasetsBySubjectToMonthYyyymmResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMonthlySubjectMetricsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -214,9 +218,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_datasets_monthly(self, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDatasetsMonthlyResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/datasets/monthly', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDatasetsMonthlyRequest(
+    def get_monthly_dataset_metrics(self, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetMonthlyDatasetMetricsResponse:
+        r"""Retrieve monthly metrics of datasets based on data location and parent alias."""
+        hook_ctx = HookContext(operation_id='getMonthlyDatasetMetrics', oauth2_scopes=[], security_source=None)
+        request = operations.GetMonthlyDatasetMetricsRequest(
             data_location=data_location,
             parent_alias=parent_alias,
         )
@@ -225,7 +230,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/datasets/monthly'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDatasetsMonthlyRequest, request)
+        query_params = utils.get_query_params(operations.GetMonthlyDatasetMetricsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -254,7 +259,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDatasetsMonthlyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMonthlyDatasetMetricsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -265,9 +270,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_datasets_past_days_days_(self, days: int, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDatasetsPastDaysDaysResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/datasets/pastDays/{days}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDatasetsPastDaysDaysRequest(
+    def get_past_days_metrics(self, days: int, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetPastDaysMetricsResponse:
+        r"""Retrieve metrics of datasets from past specified days"""
+        hook_ctx = HookContext(operation_id='getPastDaysMetrics', oauth2_scopes=[], security_source=None)
+        request = operations.GetPastDaysMetricsRequest(
             days=days,
             data_location=data_location,
             parent_alias=parent_alias,
@@ -275,9 +281,9 @@ class Info:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsDatasetsPastDaysDaysRequest, base_url, '/api/v1/info/metrics/datasets/pastDays/{days}', request)
+        url = utils.generate_url(operations.GetPastDaysMetricsRequest, base_url, '/api/v1/info/metrics/datasets/pastDays/{days}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDatasetsPastDaysDaysRequest, request)
+        query_params = utils.get_query_params(operations.GetPastDaysMetricsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -306,7 +312,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDatasetsPastDaysDaysResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetPastDaysMetricsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -317,9 +323,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_datasets_to_month_yyyymm_(self, yyyymm: str, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDatasetsToMonthYyyymmResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/datasets/toMonth/{yyyymm}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDatasetsToMonthYyyymmRequest(
+    def get_monthly_dataset_metrics_1(self, yyyymm: str, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetMonthlyDatasetMetrics1Response:
+        r"""Retrieve dataset metrics for a specific month"""
+        hook_ctx = HookContext(operation_id='getMonthlyDatasetMetrics_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetMonthlyDatasetMetrics1Request(
             yyyymm=yyyymm,
             data_location=data_location,
             parent_alias=parent_alias,
@@ -327,9 +334,9 @@ class Info:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsDatasetsToMonthYyyymmRequest, base_url, '/api/v1/info/metrics/datasets/toMonth/{yyyymm}', request)
+        url = utils.generate_url(operations.GetMonthlyDatasetMetrics1Request, base_url, '/api/v1/info/metrics/datasets/toMonth/{yyyymm}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDatasetsToMonthYyyymmRequest, request)
+        query_params = utils.get_query_params(operations.GetMonthlyDatasetMetrics1Request, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -358,7 +365,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDatasetsToMonthYyyymmResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMonthlyDatasetMetrics1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -369,9 +376,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_dataverses(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDataversesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/dataverses', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDataversesRequest(
+    def get_metrics_dataverses(self, parent_alias: Optional[str] = None) -> operations.GetMetricsDataversesResponse:
+        r"""Retrieves metrics of dataverses based on parent alias"""
+        hook_ctx = HookContext(operation_id='getMetricsDataverses', oauth2_scopes=[], security_source=None)
+        request = operations.GetMetricsDataversesRequest(
             parent_alias=parent_alias,
         )
         
@@ -379,7 +387,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/dataverses'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDataversesRequest, request)
+        query_params = utils.get_query_params(operations.GetMetricsDataversesRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -408,7 +416,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDataversesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetricsDataversesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -419,9 +427,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_dataverses_by_category(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDataversesByCategoryResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/dataverses/byCategory', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDataversesByCategoryRequest(
+    def get_metrics_by_category(self, parent_alias: Optional[str] = None) -> operations.GetMetricsByCategoryResponse:
+        r"""Retrieves metrics of dataverses sorted by category"""
+        hook_ctx = HookContext(operation_id='getMetricsByCategory', oauth2_scopes=[], security_source=None)
+        request = operations.GetMetricsByCategoryRequest(
             parent_alias=parent_alias,
         )
         
@@ -429,7 +438,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/dataverses/byCategory'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDataversesByCategoryRequest, request)
+        query_params = utils.get_query_params(operations.GetMetricsByCategoryRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -458,7 +467,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDataversesByCategoryResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetricsByCategoryResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -469,9 +478,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_dataverses_by_subject(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDataversesBySubjectResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/dataverses/bySubject', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDataversesBySubjectRequest(
+    def get_metrics_by_subject(self, parent_alias: Optional[str] = None) -> operations.GetMetricsBySubjectResponse:
+        r"""Retrieve metrics of dataverses by subject"""
+        hook_ctx = HookContext(operation_id='getMetricsBySubject', oauth2_scopes=[], security_source=None)
+        request = operations.GetMetricsBySubjectRequest(
             parent_alias=parent_alias,
         )
         
@@ -479,7 +489,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/dataverses/bySubject'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDataversesBySubjectRequest, request)
+        query_params = utils.get_query_params(operations.GetMetricsBySubjectRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -508,7 +518,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDataversesBySubjectResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetricsBySubjectResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -519,9 +529,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_dataverses_monthly(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDataversesMonthlyResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/dataverses/monthly', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDataversesMonthlyRequest(
+    def get_monthly_dataverse_metrics(self, parent_alias: Optional[str] = None) -> operations.GetMonthlyDataverseMetricsResponse:
+        r"""Retrieve the monthly metrics of a specific dataverse"""
+        hook_ctx = HookContext(operation_id='getMonthlyDataverseMetrics', oauth2_scopes=[], security_source=None)
+        request = operations.GetMonthlyDataverseMetricsRequest(
             parent_alias=parent_alias,
         )
         
@@ -529,7 +540,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/dataverses/monthly'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDataversesMonthlyRequest, request)
+        query_params = utils.get_query_params(operations.GetMonthlyDataverseMetricsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -558,7 +569,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDataversesMonthlyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMonthlyDataverseMetricsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -569,18 +580,19 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_dataverses_past_days_days_(self, days: int, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDataversesPastDaysDaysResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/dataverses/pastDays/{days}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDataversesPastDaysDaysRequest(
+    def get_metrics_past_days(self, days: int, parent_alias: Optional[str] = None) -> operations.GetMetricsPastDaysResponse:
+        r"""Retrieves the number of dataverses created over the past specified number of days"""
+        hook_ctx = HookContext(operation_id='getMetricsPastDays', oauth2_scopes=[], security_source=None)
+        request = operations.GetMetricsPastDaysRequest(
             days=days,
             parent_alias=parent_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsDataversesPastDaysDaysRequest, base_url, '/api/v1/info/metrics/dataverses/pastDays/{days}', request)
+        url = utils.generate_url(operations.GetMetricsPastDaysRequest, base_url, '/api/v1/info/metrics/dataverses/pastDays/{days}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDataversesPastDaysDaysRequest, request)
+        query_params = utils.get_query_params(operations.GetMetricsPastDaysRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -609,7 +621,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDataversesPastDaysDaysResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetricsPastDaysResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -620,18 +632,19 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_dataverses_to_month_yyyymm_(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDataversesToMonthYyyymmResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/dataverses/toMonth/{yyyymm}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDataversesToMonthYyyymmRequest(
+    def get_monthly_metrics_for_dataverses(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetMonthlyMetricsForDataversesResponse:
+        r"""Retrieve the metrics for dataverses up to the specified month."""
+        hook_ctx = HookContext(operation_id='getMonthlyMetricsForDataverses', oauth2_scopes=[], security_source=None)
+        request = operations.GetMonthlyMetricsForDataversesRequest(
             yyyymm=yyyymm,
             parent_alias=parent_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsDataversesToMonthYyyymmRequest, base_url, '/api/v1/info/metrics/dataverses/toMonth/{yyyymm}', request)
+        url = utils.generate_url(operations.GetMonthlyMetricsForDataversesRequest, base_url, '/api/v1/info/metrics/dataverses/toMonth/{yyyymm}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDataversesToMonthYyyymmRequest, request)
+        query_params = utils.get_query_params(operations.GetMonthlyMetricsForDataversesRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -660,7 +673,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDataversesToMonthYyyymmResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMonthlyMetricsForDataversesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -671,9 +684,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_downloads(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDownloadsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/downloads', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDownloadsRequest(
+    def get_download_metrics(self, parent_alias: Optional[str] = None) -> operations.GetDownloadMetricsResponse:
+        r"""Retrieve download metrics based on a parent alias."""
+        hook_ctx = HookContext(operation_id='getDownloadMetrics', oauth2_scopes=[], security_source=None)
+        request = operations.GetDownloadMetricsRequest(
             parent_alias=parent_alias,
         )
         
@@ -681,7 +695,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/downloads'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDownloadsRequest, request)
+        query_params = utils.get_query_params(operations.GetDownloadMetricsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -710,7 +724,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDownloadsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDownloadMetricsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -721,9 +735,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_downloads_monthly(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDownloadsMonthlyResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/downloads/monthly', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDownloadsMonthlyRequest(
+    def get_monthly_downloads(self, parent_alias: Optional[str] = None) -> operations.GetMonthlyDownloadsResponse:
+        r"""Retrieve monthly download metrics"""
+        hook_ctx = HookContext(operation_id='getMonthlyDownloads', oauth2_scopes=[], security_source=None)
+        request = operations.GetMonthlyDownloadsRequest(
             parent_alias=parent_alias,
         )
         
@@ -731,7 +746,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/downloads/monthly'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDownloadsMonthlyRequest, request)
+        query_params = utils.get_query_params(operations.GetMonthlyDownloadsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -760,7 +775,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDownloadsMonthlyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMonthlyDownloadsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -771,18 +786,19 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_downloads_past_days_days_(self, days: int, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDownloadsPastDaysDaysResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/downloads/pastDays/{days}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDownloadsPastDaysDaysRequest(
+    def get_past_days_downloads(self, days: int, parent_alias: Optional[str] = None) -> operations.GetPastDaysDownloadsResponse:
+        r"""Retrieve download metrics for the past specified number of days"""
+        hook_ctx = HookContext(operation_id='getPastDaysDownloads', oauth2_scopes=[], security_source=None)
+        request = operations.GetPastDaysDownloadsRequest(
             days=days,
             parent_alias=parent_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsDownloadsPastDaysDaysRequest, base_url, '/api/v1/info/metrics/downloads/pastDays/{days}', request)
+        url = utils.generate_url(operations.GetPastDaysDownloadsRequest, base_url, '/api/v1/info/metrics/downloads/pastDays/{days}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDownloadsPastDaysDaysRequest, request)
+        query_params = utils.get_query_params(operations.GetPastDaysDownloadsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -811,7 +827,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDownloadsPastDaysDaysResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetPastDaysDownloadsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -822,18 +838,19 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_downloads_to_month_yyyymm_(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsDownloadsToMonthYyyymmResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/downloads/toMonth/{yyyymm}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsDownloadsToMonthYyyymmRequest(
+    def get_download_metrics_to_month(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetDownloadMetricsToMonthResponse:
+        r"""Retrieve download metrics till a specific month"""
+        hook_ctx = HookContext(operation_id='getDownloadMetricsToMonth', oauth2_scopes=[], security_source=None)
+        request = operations.GetDownloadMetricsToMonthRequest(
             yyyymm=yyyymm,
             parent_alias=parent_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsDownloadsToMonthYyyymmRequest, base_url, '/api/v1/info/metrics/downloads/toMonth/{yyyymm}', request)
+        url = utils.generate_url(operations.GetDownloadMetricsToMonthRequest, base_url, '/api/v1/info/metrics/downloads/toMonth/{yyyymm}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsDownloadsToMonthYyyymmRequest, request)
+        query_params = utils.get_query_params(operations.GetDownloadMetricsToMonthRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -862,7 +879,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsDownloadsToMonthYyyymmResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDownloadMetricsToMonthResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -873,9 +890,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_filedownloads(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsFiledownloadsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/filedownloads', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsFiledownloadsRequest(
+    def get_file_downloads_metrics(self, parent_alias: Optional[str] = None) -> operations.GetFileDownloadsMetricsResponse:
+        r"""Retrieve File Downloads Metrics"""
+        hook_ctx = HookContext(operation_id='getFileDownloadsMetrics', oauth2_scopes=[], security_source=None)
+        request = operations.GetFileDownloadsMetricsRequest(
             parent_alias=parent_alias,
         )
         
@@ -883,7 +901,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/filedownloads'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsFiledownloadsRequest, request)
+        query_params = utils.get_query_params(operations.GetFileDownloadsMetricsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -912,7 +930,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsFiledownloadsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFileDownloadsMetricsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -923,9 +941,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_filedownloads_monthly(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsFiledownloadsMonthlyResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/filedownloads/monthly', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsFiledownloadsMonthlyRequest(
+    def get_monthly_file_downloads(self, parent_alias: Optional[str] = None) -> operations.GetMonthlyFileDownloadsResponse:
+        r"""Retrieve the monthly count of file downloads"""
+        hook_ctx = HookContext(operation_id='getMonthlyFileDownloads', oauth2_scopes=[], security_source=None)
+        request = operations.GetMonthlyFileDownloadsRequest(
             parent_alias=parent_alias,
         )
         
@@ -933,7 +952,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/filedownloads/monthly'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsFiledownloadsMonthlyRequest, request)
+        query_params = utils.get_query_params(operations.GetMonthlyFileDownloadsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -962,7 +981,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsFiledownloadsMonthlyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMonthlyFileDownloadsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -973,18 +992,19 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_filedownloads_to_month_yyyymm_(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsFiledownloadsToMonthYyyymmResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/filedownloads/toMonth/{yyyymm}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsFiledownloadsToMonthYyyymmRequest(
+    def get_file_downloads_to_month(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetFileDownloadsToMonthResponse:
+        r"""Retrieve file download metrics for a specific month"""
+        hook_ctx = HookContext(operation_id='getFileDownloadsToMonth', oauth2_scopes=[], security_source=None)
+        request = operations.GetFileDownloadsToMonthRequest(
             yyyymm=yyyymm,
             parent_alias=parent_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsFiledownloadsToMonthYyyymmRequest, base_url, '/api/v1/info/metrics/filedownloads/toMonth/{yyyymm}', request)
+        url = utils.generate_url(operations.GetFileDownloadsToMonthRequest, base_url, '/api/v1/info/metrics/filedownloads/toMonth/{yyyymm}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsFiledownloadsToMonthYyyymmRequest, request)
+        query_params = utils.get_query_params(operations.GetFileDownloadsToMonthRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1013,7 +1033,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsFiledownloadsToMonthYyyymmResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFileDownloadsToMonthResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1024,9 +1044,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_files(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsFilesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/files', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsFilesRequest(
+    def get_file_info_metrics(self, parent_alias: Optional[str] = None) -> operations.GetFileInfoMetricsResponse:
+        r"""Retrieve metrics information for files"""
+        hook_ctx = HookContext(operation_id='getFileInfoMetrics', oauth2_scopes=[], security_source=None)
+        request = operations.GetFileInfoMetricsRequest(
             parent_alias=parent_alias,
         )
         
@@ -1034,7 +1055,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/files'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsFilesRequest, request)
+        query_params = utils.get_query_params(operations.GetFileInfoMetricsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1063,7 +1084,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsFilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFileInfoMetricsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1074,9 +1095,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_files_by_type(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsFilesByTypeResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/files/byType', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsFilesByTypeRequest(
+    def get_metrics_by_file_type(self, parent_alias: Optional[str] = None) -> operations.GetMetricsByFileTypeResponse:
+        r"""Retrieve file metrics information categorized by file type"""
+        hook_ctx = HookContext(operation_id='getMetricsByFileType', oauth2_scopes=[], security_source=None)
+        request = operations.GetMetricsByFileTypeRequest(
             parent_alias=parent_alias,
         )
         
@@ -1084,7 +1106,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/files/byType'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsFilesByTypeRequest, request)
+        query_params = utils.get_query_params(operations.GetMetricsByFileTypeRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1113,7 +1135,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsFilesByTypeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetricsByFileTypeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1124,9 +1146,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_files_by_type_monthly(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsFilesByTypeMonthlyResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/files/byType/monthly', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsFilesByTypeMonthlyRequest(
+    def get_files_by_type_monthly(self, parent_alias: Optional[str] = None) -> operations.GetFilesByTypeMonthlyResponse:
+        r"""Retrieve monthly metrics for files by type"""
+        hook_ctx = HookContext(operation_id='getFilesByTypeMonthly', oauth2_scopes=[], security_source=None)
+        request = operations.GetFilesByTypeMonthlyRequest(
             parent_alias=parent_alias,
         )
         
@@ -1134,7 +1157,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/files/byType/monthly'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsFilesByTypeMonthlyRequest, request)
+        query_params = utils.get_query_params(operations.GetFilesByTypeMonthlyRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1163,7 +1186,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsFilesByTypeMonthlyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFilesByTypeMonthlyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1174,9 +1197,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_files_monthly(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsFilesMonthlyResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/files/monthly', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsFilesMonthlyRequest(
+    def get_monthly_files_metrics(self, parent_alias: Optional[str] = None) -> operations.GetMonthlyFilesMetricsResponse:
+        r"""Retrieve monthly metrics for files"""
+        hook_ctx = HookContext(operation_id='getMonthlyFilesMetrics', oauth2_scopes=[], security_source=None)
+        request = operations.GetMonthlyFilesMetricsRequest(
             parent_alias=parent_alias,
         )
         
@@ -1184,7 +1208,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/files/monthly'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsFilesMonthlyRequest, request)
+        query_params = utils.get_query_params(operations.GetMonthlyFilesMetricsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1213,7 +1237,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsFilesMonthlyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMonthlyFilesMetricsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1224,18 +1248,19 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_files_past_days_days_(self, days: int, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsFilesPastDaysDaysResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/files/pastDays/{days}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsFilesPastDaysDaysRequest(
+    def get_files_metrics(self, days: int, parent_alias: Optional[str] = None) -> operations.GetFilesMetricsResponse:
+        r"""Retrieve metrics for files from the past specified number of days"""
+        hook_ctx = HookContext(operation_id='getFilesMetrics', oauth2_scopes=[], security_source=None)
+        request = operations.GetFilesMetricsRequest(
             days=days,
             parent_alias=parent_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsFilesPastDaysDaysRequest, base_url, '/api/v1/info/metrics/files/pastDays/{days}', request)
+        url = utils.generate_url(operations.GetFilesMetricsRequest, base_url, '/api/v1/info/metrics/files/pastDays/{days}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsFilesPastDaysDaysRequest, request)
+        query_params = utils.get_query_params(operations.GetFilesMetricsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1264,7 +1289,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsFilesPastDaysDaysResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFilesMetricsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1275,18 +1300,19 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_files_to_month_yyyymm_(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsFilesToMonthYyyymmResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/files/toMonth/{yyyymm}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsFilesToMonthYyyymmRequest(
+    def get_monthly_files_info(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetMonthlyFilesInfoResponse:
+        r"""Retrieve files metrics information for a specific month"""
+        hook_ctx = HookContext(operation_id='getMonthlyFilesInfo', oauth2_scopes=[], security_source=None)
+        request = operations.GetMonthlyFilesInfoRequest(
             yyyymm=yyyymm,
             parent_alias=parent_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsFilesToMonthYyyymmRequest, base_url, '/api/v1/info/metrics/files/toMonth/{yyyymm}', request)
+        url = utils.generate_url(operations.GetMonthlyFilesInfoRequest, base_url, '/api/v1/info/metrics/files/toMonth/{yyyymm}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsFilesToMonthYyyymmRequest, request)
+        query_params = utils.get_query_params(operations.GetMonthlyFilesInfoRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1315,7 +1341,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsFilesToMonthYyyymmResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMonthlyFilesInfoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1326,9 +1352,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_make_data_count_metric_(self, metric: str, country: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsMakeDataCountMetricResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/makeDataCount/{metric}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsMakeDataCountMetricRequest(
+    def get_metric_data(self, metric: str, country: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetMetricDataResponse:
+        r"""Retrieve specific metric data by country and parentAlias"""
+        hook_ctx = HookContext(operation_id='getMetricData', oauth2_scopes=[], security_source=None)
+        request = operations.GetMetricDataRequest(
             metric=metric,
             country=country,
             parent_alias=parent_alias,
@@ -1336,9 +1363,9 @@ class Info:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsMakeDataCountMetricRequest, base_url, '/api/v1/info/metrics/makeDataCount/{metric}', request)
+        url = utils.generate_url(operations.GetMetricDataRequest, base_url, '/api/v1/info/metrics/makeDataCount/{metric}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsMakeDataCountMetricRequest, request)
+        query_params = utils.get_query_params(operations.GetMetricDataRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1367,7 +1394,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsMakeDataCountMetricResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetricDataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1378,9 +1405,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_make_data_count_metric_monthly(self, metric: str, country: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsMakeDataCountMetricMonthlyResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/makeDataCount/{metric}/monthly', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsMakeDataCountMetricMonthlyRequest(
+    def get_monthly_data_count_metrics(self, metric: str, country: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetMonthlyDataCountMetricsResponse:
+        r"""Retrieve the monthly data count metrics identified by the provided metric name"""
+        hook_ctx = HookContext(operation_id='getMonthlyDataCountMetrics', oauth2_scopes=[], security_source=None)
+        request = operations.GetMonthlyDataCountMetricsRequest(
             metric=metric,
             country=country,
             parent_alias=parent_alias,
@@ -1388,9 +1416,9 @@ class Info:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsMakeDataCountMetricMonthlyRequest, base_url, '/api/v1/info/metrics/makeDataCount/{metric}/monthly', request)
+        url = utils.generate_url(operations.GetMonthlyDataCountMetricsRequest, base_url, '/api/v1/info/metrics/makeDataCount/{metric}/monthly', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsMakeDataCountMetricMonthlyRequest, request)
+        query_params = utils.get_query_params(operations.GetMonthlyDataCountMetricsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1419,7 +1447,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsMakeDataCountMetricMonthlyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMonthlyDataCountMetricsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1430,9 +1458,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_make_data_count_metric_to_month_yyyymm_(self, metric: str, yyyymm: str, country: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsMakeDataCountMetricToMonthYyyymmResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/makeDataCount/{metric}/toMonth/{yyyymm}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsMakeDataCountMetricToMonthYyyymmRequest(
+    def get_metrics_by_month(self, metric: str, yyyymm: str, country: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetMetricsByMonthResponse:
+        r"""Retrieves data metrics for a specific month"""
+        hook_ctx = HookContext(operation_id='getMetricsByMonth', oauth2_scopes=[], security_source=None)
+        request = operations.GetMetricsByMonthRequest(
             metric=metric,
             yyyymm=yyyymm,
             country=country,
@@ -1441,9 +1470,9 @@ class Info:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsMakeDataCountMetricToMonthYyyymmRequest, base_url, '/api/v1/info/metrics/makeDataCount/{metric}/toMonth/{yyyymm}', request)
+        url = utils.generate_url(operations.GetMetricsByMonthRequest, base_url, '/api/v1/info/metrics/makeDataCount/{metric}/toMonth/{yyyymm}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsMakeDataCountMetricToMonthYyyymmRequest, request)
+        query_params = utils.get_query_params(operations.GetMetricsByMonthRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1472,7 +1501,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsMakeDataCountMetricToMonthYyyymmResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetricsByMonthResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1483,9 +1512,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_tree(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsTreeResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/tree', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsTreeRequest(
+    def get_metrics_tree(self, parent_alias: Optional[str] = None) -> operations.GetMetricsTreeResponse:
+        r"""Fetches the metrics tree based on the provided parent alias"""
+        hook_ctx = HookContext(operation_id='getMetricsTree', oauth2_scopes=[], security_source=None)
+        request = operations.GetMetricsTreeRequest(
             parent_alias=parent_alias,
         )
         
@@ -1493,7 +1523,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/tree'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsTreeRequest, request)
+        query_params = utils.get_query_params(operations.GetMetricsTreeRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1522,7 +1552,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsTreeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetricsTreeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1533,18 +1563,19 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_tree_to_month_yyyymm_(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsTreeToMonthYyyymmResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/tree/toMonth/{yyyymm}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsTreeToMonthYyyymmRequest(
+    def get_monthly_metrics_by_alias(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetMonthlyMetricsByAliasResponse:
+        r"""Retrieve monthly metrics for a specific alias"""
+        hook_ctx = HookContext(operation_id='getMonthlyMetricsByAlias', oauth2_scopes=[], security_source=None)
+        request = operations.GetMonthlyMetricsByAliasRequest(
             yyyymm=yyyymm,
             parent_alias=parent_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsTreeToMonthYyyymmRequest, base_url, '/api/v1/info/metrics/tree/toMonth/{yyyymm}', request)
+        url = utils.generate_url(operations.GetMonthlyMetricsByAliasRequest, base_url, '/api/v1/info/metrics/tree/toMonth/{yyyymm}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsTreeToMonthYyyymmRequest, request)
+        query_params = utils.get_query_params(operations.GetMonthlyMetricsByAliasRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1573,7 +1604,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsTreeToMonthYyyymmResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMonthlyMetricsByAliasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1584,9 +1615,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_uniquedownloads(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsUniquedownloadsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/uniquedownloads', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsUniquedownloadsRequest(
+    def get_unique_downloads(self, parent_alias: Optional[str] = None) -> operations.GetUniqueDownloadsResponse:
+        r"""Retrieve unique download metrics data for a particular alias"""
+        hook_ctx = HookContext(operation_id='getUniqueDownloads', oauth2_scopes=[], security_source=None)
+        request = operations.GetUniqueDownloadsRequest(
             parent_alias=parent_alias,
         )
         
@@ -1594,7 +1626,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/uniquedownloads'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsUniquedownloadsRequest, request)
+        query_params = utils.get_query_params(operations.GetUniqueDownloadsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1623,7 +1655,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsUniquedownloadsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetUniqueDownloadsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1634,9 +1666,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_uniquedownloads_monthly(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsUniquedownloadsMonthlyResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/uniquedownloads/monthly', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsUniquedownloadsMonthlyRequest(
+    def get_monthly_unique_downloads(self, parent_alias: Optional[str] = None) -> operations.GetMonthlyUniqueDownloadsResponse:
+        r"""Retrieve monthly unique downloads metrics"""
+        hook_ctx = HookContext(operation_id='getMonthlyUniqueDownloads', oauth2_scopes=[], security_source=None)
+        request = operations.GetMonthlyUniqueDownloadsRequest(
             parent_alias=parent_alias,
         )
         
@@ -1644,7 +1677,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/uniquedownloads/monthly'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsUniquedownloadsMonthlyRequest, request)
+        query_params = utils.get_query_params(operations.GetMonthlyUniqueDownloadsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1673,7 +1706,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsUniquedownloadsMonthlyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMonthlyUniqueDownloadsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1684,18 +1717,19 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_uniquedownloads_to_month_yyyymm_(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsUniquedownloadsToMonthYyyymmResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/uniquedownloads/toMonth/{yyyymm}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsUniquedownloadsToMonthYyyymmRequest(
+    def get_monthly_unique_downloads_1(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetMonthlyUniqueDownloads1Response:
+        r"""Retrieve the number of unique downloads for a specified month"""
+        hook_ctx = HookContext(operation_id='getMonthlyUniqueDownloads_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetMonthlyUniqueDownloads1Request(
             yyyymm=yyyymm,
             parent_alias=parent_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsUniquedownloadsToMonthYyyymmRequest, base_url, '/api/v1/info/metrics/uniquedownloads/toMonth/{yyyymm}', request)
+        url = utils.generate_url(operations.GetMonthlyUniqueDownloads1Request, base_url, '/api/v1/info/metrics/uniquedownloads/toMonth/{yyyymm}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsUniquedownloadsToMonthYyyymmRequest, request)
+        query_params = utils.get_query_params(operations.GetMonthlyUniqueDownloads1Request, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1724,7 +1758,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsUniquedownloadsToMonthYyyymmResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMonthlyUniqueDownloads1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1735,9 +1769,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_uniquefiledownloads(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsUniquefiledownloadsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/uniquefiledownloads', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsUniquefiledownloadsRequest(
+    def get_unique_file_downloads(self, parent_alias: Optional[str] = None) -> operations.GetUniqueFileDownloadsResponse:
+        r"""Retrieve the number of unique file downloads"""
+        hook_ctx = HookContext(operation_id='getUniqueFileDownloads', oauth2_scopes=[], security_source=None)
+        request = operations.GetUniqueFileDownloadsRequest(
             parent_alias=parent_alias,
         )
         
@@ -1745,7 +1780,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/uniquefiledownloads'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsUniquefiledownloadsRequest, request)
+        query_params = utils.get_query_params(operations.GetUniqueFileDownloadsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1774,7 +1809,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsUniquefiledownloadsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetUniqueFileDownloadsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1785,9 +1820,10 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_uniquefiledownloads_monthly(self, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsUniquefiledownloadsMonthlyResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/uniquefiledownloads/monthly', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsUniquefiledownloadsMonthlyRequest(
+    def get_monthly_unique_file_downloads(self, parent_alias: Optional[str] = None) -> operations.GetMonthlyUniqueFileDownloadsResponse:
+        r"""Retrieve the count of unique file downloads per month"""
+        hook_ctx = HookContext(operation_id='getMonthlyUniqueFileDownloads', oauth2_scopes=[], security_source=None)
+        request = operations.GetMonthlyUniqueFileDownloadsRequest(
             parent_alias=parent_alias,
         )
         
@@ -1795,7 +1831,7 @@ class Info:
         
         url = base_url + '/api/v1/info/metrics/uniquefiledownloads/monthly'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsUniquefiledownloadsMonthlyRequest, request)
+        query_params = utils.get_query_params(operations.GetMonthlyUniqueFileDownloadsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1824,7 +1860,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsUniquefiledownloadsMonthlyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMonthlyUniqueFileDownloadsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1835,18 +1871,19 @@ class Info:
 
     
     
-    def get_api_v1_info_metrics_uniquefiledownloads_to_month_yyyymm_(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetAPIV1InfoMetricsUniquefiledownloadsToMonthYyyymmResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/metrics/uniquefiledownloads/toMonth/{yyyymm}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoMetricsUniquefiledownloadsToMonthYyyymmRequest(
+    def get_unique_file_downloads_1(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetUniqueFileDownloads1Response:
+        r"""Fetches unique file downloads up to a specific month"""
+        hook_ctx = HookContext(operation_id='getUniqueFileDownloads_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetUniqueFileDownloads1Request(
             yyyymm=yyyymm,
             parent_alias=parent_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoMetricsUniquefiledownloadsToMonthYyyymmRequest, base_url, '/api/v1/info/metrics/uniquefiledownloads/toMonth/{yyyymm}', request)
+        url = utils.generate_url(operations.GetUniqueFileDownloads1Request, base_url, '/api/v1/info/metrics/uniquefiledownloads/toMonth/{yyyymm}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1InfoMetricsUniquefiledownloadsToMonthYyyymmRequest, request)
+        query_params = utils.get_query_params(operations.GetUniqueFileDownloads1Request, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1875,7 +1912,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoMetricsUniquefiledownloadsToMonthYyyymmResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetUniqueFileDownloads1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1886,15 +1923,16 @@ class Info:
 
     
     
-    def get_api_v1_info_openapi_output_format_(self, output_format: str) -> operations.GetAPIV1InfoOpenapiOutputFormatResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/openapi/{outputFormat}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1InfoOpenapiOutputFormatRequest(
+    def get_open_api_info(self, output_format: str) -> operations.GetOpenAPIInfoResponse:
+        r"""Retrieve OpenAPI info in specified output format"""
+        hook_ctx = HookContext(operation_id='getOpenApiInfo', oauth2_scopes=[], security_source=None)
+        request = operations.GetOpenAPIInfoRequest(
             output_format=output_format,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1InfoOpenapiOutputFormatRequest, base_url, '/api/v1/info/openapi/{outputFormat}', request)
+        url = utils.generate_url(operations.GetOpenAPIInfoRequest, base_url, '/api/v1/info/openapi/{outputFormat}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1924,7 +1962,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoOpenapiOutputFormatResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetOpenAPIInfoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1935,8 +1973,9 @@ class Info:
 
     
     
-    def get_api_v1_info_server(self) -> operations.GetAPIV1InfoServerResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/server', oauth2_scopes=[], security_source=None)
+    def get_server_info(self) -> operations.GetServerInfoResponse:
+        r"""Retrieve server information"""
+        hook_ctx = HookContext(operation_id='getServerInfo', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/info/server'
@@ -1969,7 +2008,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoServerResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetServerInfoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1980,8 +2019,9 @@ class Info:
 
     
     
-    def get_api_v1_info_settings_dataset_publish_popup_custom_text(self) -> operations.GetAPIV1InfoSettingsDatasetPublishPopupCustomTextResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/settings/:DatasetPublishPopupCustomText', oauth2_scopes=[], security_source=None)
+    def get_dataset_publish_popup_custom_text(self) -> operations.GetDatasetPublishPopupCustomTextResponse:
+        r"""Retrieve the custom text for dataset publish popup."""
+        hook_ctx = HookContext(operation_id='getDatasetPublishPopupCustomText', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/info/settings/:DatasetPublishPopupCustomText'
@@ -2014,7 +2054,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoSettingsDatasetPublishPopupCustomTextResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetPublishPopupCustomTextResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2025,8 +2065,9 @@ class Info:
 
     
     
-    def get_api_v1_info_settings_max_embargo_duration_in_months(self) -> operations.GetAPIV1InfoSettingsMaxEmbargoDurationInMonthsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/settings/:MaxEmbargoDurationInMonths', oauth2_scopes=[], security_source=None)
+    def get_max_embargo_duration_in_months(self) -> operations.GetMaxEmbargoDurationInMonthsResponse:
+        r"""Retrieve the maximum duration of embargo in months from the settings"""
+        hook_ctx = HookContext(operation_id='getMaxEmbargoDurationInMonths', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/info/settings/:MaxEmbargoDurationInMonths'
@@ -2059,7 +2100,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoSettingsMaxEmbargoDurationInMonthsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMaxEmbargoDurationInMonthsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2070,8 +2111,9 @@ class Info:
 
     
     
-    def get_api_v1_info_settings_incomplete_metadata_via_api(self) -> operations.GetAPIV1InfoSettingsIncompleteMetadataViaAPIResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/settings/incompleteMetadataViaApi', oauth2_scopes=[], security_source=None)
+    def get_incomplete_metadata_settings(self) -> operations.GetIncompleteMetadataSettingsResponse:
+        r"""Retrieves the status of incomplete metadata settings"""
+        hook_ctx = HookContext(operation_id='getIncompleteMetadataSettings', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/info/settings/incompleteMetadataViaApi'
@@ -2104,7 +2146,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoSettingsIncompleteMetadataViaAPIResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetIncompleteMetadataSettingsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2115,8 +2157,9 @@ class Info:
 
     
     
-    def get_api_v1_info_version(self) -> operations.GetAPIV1InfoVersionResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/version', oauth2_scopes=[], security_source=None)
+    def get_version_info(self) -> operations.GetVersionInfoResponse:
+        r"""Retrieve the current version information"""
+        hook_ctx = HookContext(operation_id='getVersionInfo', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/info/version'
@@ -2149,7 +2192,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoVersionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetVersionInfoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2160,8 +2203,9 @@ class Info:
 
     
     
-    def get_api_v1_info_zip_download_limit(self) -> operations.GetAPIV1InfoZipDownloadLimitResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/info/zipDownloadLimit', oauth2_scopes=[], security_source=None)
+    def get_zip_download_limit(self) -> operations.GetZipDownloadLimitResponse:
+        r"""Retrieve the current zip file download limit"""
+        hook_ctx = HookContext(operation_id='getZipDownloadLimit', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/info/zipDownloadLimit'
@@ -2194,7 +2238,7 @@ class Info:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1InfoZipDownloadLimitResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetZipDownloadLimitResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

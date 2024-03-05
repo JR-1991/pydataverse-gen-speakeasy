@@ -15,9 +15,10 @@ class Datasets:
         
     
     
-    def get_api_v1_datasets_export(self, exporter: Optional[str] = None, persistent_id: Optional[str] = None) -> operations.GetAPIV1DatasetsExportResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/export', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsExportRequest(
+    def get_datasets_export(self, exporter: Optional[str] = None, persistent_id: Optional[str] = None) -> operations.GetDatasetsExportResponse:
+        r"""Retrieves export information of a dataset given its exporter and persistent ID"""
+        hook_ctx = HookContext(operation_id='getDatasetsExport', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetsExportRequest(
             exporter=exporter,
             persistent_id=persistent_id,
         )
@@ -26,7 +27,7 @@ class Datasets:
         
         url = base_url + '/api/v1/datasets/export'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsExportRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetsExportRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -55,7 +56,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsExportResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetsExportResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -66,8 +67,9 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_list_curation_states(self) -> operations.GetAPIV1DatasetsListCurationStatesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/listCurationStates', oauth2_scopes=[], security_source=None)
+    def get_curation_states(self) -> operations.GetCurationStatesResponse:
+        r"""Retrieve a list of curation states for datasets"""
+        hook_ctx = HookContext(operation_id='getCurationStates', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/datasets/listCurationStates'
@@ -100,7 +102,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsListCurationStatesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetCurationStatesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -111,9 +113,10 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_locks(self, type_: Optional[str] = None, user_identifier: Optional[str] = None) -> operations.GetAPIV1DatasetsLocksResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/locks', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsLocksRequest(
+    def get_dataset_locks(self, type_: Optional[str] = None, user_identifier: Optional[str] = None) -> operations.GetDatasetLocksResponse:
+        r"""Retrieve information about locks on datasets"""
+        hook_ctx = HookContext(operation_id='getDatasetLocks', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetLocksRequest(
             type=type_,
             user_identifier=user_identifier,
         )
@@ -122,7 +125,7 @@ class Datasets:
         
         url = base_url + '/api/v1/datasets/locks'
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsLocksRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetLocksRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -151,7 +154,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsLocksResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetLocksResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -162,8 +165,9 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_modify_registration_all(self) -> operations.PostAPIV1DatasetsModifyRegistrationAllResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/modifyRegistrationAll', oauth2_scopes=[], security_source=None)
+    def modify_all_registrations(self) -> operations.ModifyAllRegistrationsResponse:
+        r"""Modifies registration details for all datasets"""
+        hook_ctx = HookContext(operation_id='modifyAllRegistrations', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/datasets/modifyRegistrationAll'
@@ -196,7 +200,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsModifyRegistrationAllResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ModifyAllRegistrationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -207,8 +211,9 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_modify_registration_pid_metadata_all(self) -> operations.GetAPIV1DatasetsModifyRegistrationPIDMetadataAllResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/modifyRegistrationPIDMetadataAll', oauth2_scopes=[], security_source=None)
+    def get_registration_pid_metadata(self) -> operations.GetRegistrationPIDMetadataResponse:
+        r"""Retrieve registration PID metadata of all datasets"""
+        hook_ctx = HookContext(operation_id='getRegistrationPIDMetadata', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/datasets/modifyRegistrationPIDMetadataAll'
@@ -241,7 +246,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsModifyRegistrationPIDMetadataAllResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetRegistrationPIDMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -252,9 +257,10 @@ class Datasets:
 
     
     
-    def put_api_v1_datasets_mpupload(self, globalid: Optional[str] = None, storageidentifier: Optional[str] = None, uploadid: Optional[str] = None) -> operations.PutAPIV1DatasetsMpuploadResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/datasets/mpupload', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DatasetsMpuploadRequest(
+    def update_dataset_upload(self, globalid: Optional[str] = None, storageidentifier: Optional[str] = None, uploadid: Optional[str] = None) -> operations.UpdateDatasetUploadResponse:
+        r"""Update a multi-part upload for a dataset using the provided global ID, storage identifier, and upload ID"""
+        hook_ctx = HookContext(operation_id='updateDatasetUpload', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateDatasetUploadRequest(
             globalid=globalid,
             storageidentifier=storageidentifier,
             uploadid=uploadid,
@@ -264,7 +270,7 @@ class Datasets:
         
         url = base_url + '/api/v1/datasets/mpupload'
         headers = {}
-        query_params = utils.get_query_params(operations.PutAPIV1DatasetsMpuploadRequest, request)
+        query_params = utils.get_query_params(operations.UpdateDatasetUploadRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -293,7 +299,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DatasetsMpuploadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateDatasetUploadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -304,9 +310,10 @@ class Datasets:
 
     
     
-    def delete_api_v1_datasets_mpupload(self, globalid: Optional[str] = None, storageidentifier: Optional[str] = None, uploadid: Optional[str] = None) -> operations.DeleteAPIV1DatasetsMpuploadResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/datasets/mpupload', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DatasetsMpuploadRequest(
+    def delete_dataset_upload(self, globalid: Optional[str] = None, storageidentifier: Optional[str] = None, uploadid: Optional[str] = None) -> operations.DeleteDatasetUploadResponse:
+        r"""Delete a multi-part upload for a dataset using the provided global ID, storage identifier, and upload ID"""
+        hook_ctx = HookContext(operation_id='deleteDatasetUpload', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteDatasetUploadRequest(
             globalid=globalid,
             storageidentifier=storageidentifier,
             uploadid=uploadid,
@@ -316,7 +323,7 @@ class Datasets:
         
         url = base_url + '/api/v1/datasets/mpupload'
         headers = {}
-        query_params = utils.get_query_params(operations.DeleteAPIV1DatasetsMpuploadRequest, request)
+        query_params = utils.get_query_params(operations.DeleteDatasetUploadRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -345,7 +352,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DatasetsMpuploadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteDatasetUploadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -356,15 +363,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_private_url_dataset_version_private_url_token_(self, private_url_token: str) -> operations.GetAPIV1DatasetsPrivateURLDatasetVersionPrivateURLTokenResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsPrivateURLDatasetVersionPrivateURLTokenRequest(
+    def get_private_url_dataset_version(self, private_url_token: str) -> operations.GetPrivateURLDatasetVersionResponse:
+        r"""Retrieves a dataset version using a private URL token"""
+        hook_ctx = HookContext(operation_id='getPrivateUrlDatasetVersion', oauth2_scopes=[], security_source=None)
+        request = operations.GetPrivateURLDatasetVersionRequest(
             private_url_token=private_url_token,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsPrivateURLDatasetVersionPrivateURLTokenRequest, base_url, '/api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}', request)
+        url = utils.generate_url(operations.GetPrivateURLDatasetVersionRequest, base_url, '/api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -394,7 +402,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsPrivateURLDatasetVersionPrivateURLTokenResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetPrivateURLDatasetVersionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -405,15 +413,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_private_url_dataset_version_private_url_token_citation(self, private_url_token: str) -> operations.GetAPIV1DatasetsPrivateURLDatasetVersionPrivateURLTokenCitationResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}/citation', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsPrivateURLDatasetVersionPrivateURLTokenCitationRequest(
+    def get_citation_by_private_url(self, private_url_token: str) -> operations.GetCitationByPrivateURLResponse:
+        r"""Retrieve citation information for a dataset version via a private URL token"""
+        hook_ctx = HookContext(operation_id='getCitationByPrivateUrl', oauth2_scopes=[], security_source=None)
+        request = operations.GetCitationByPrivateURLRequest(
             private_url_token=private_url_token,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsPrivateURLDatasetVersionPrivateURLTokenCitationRequest, base_url, '/api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}/citation', request)
+        url = utils.generate_url(operations.GetCitationByPrivateURLRequest, base_url, '/api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}/citation', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -443,7 +452,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsPrivateURLDatasetVersionPrivateURLTokenCitationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetCitationByPrivateURLResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -454,8 +463,9 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_summary_field_names(self) -> operations.GetAPIV1DatasetsSummaryFieldNamesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/summaryFieldNames', oauth2_scopes=[], security_source=None)
+    def get_summary_field_names(self) -> operations.GetSummaryFieldNamesResponse:
+        r"""Retrieve names of summary fields in the dataset"""
+        hook_ctx = HookContext(operation_id='getSummaryFieldNames', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/datasets/summaryFieldNames'
@@ -488,7 +498,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsSummaryFieldNamesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetSummaryFieldNamesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -499,16 +509,17 @@ class Datasets:
 
     
     
-    def delete_api_v1_datasets_dataset_id_delete_link_linked_dataverse_id_(self, dataset_id: str, linked_dataverse_id: str) -> operations.DeleteAPIV1DatasetsDatasetIDDeleteLinkLinkedDataverseIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/datasets/{datasetId}/deleteLink/{linkedDataverseId}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DatasetsDatasetIDDeleteLinkLinkedDataverseIDRequest(
+    def delete_dataset_link(self, dataset_id: str, linked_dataverse_id: str) -> operations.DeleteDatasetLinkResponse:
+        r"""Delete a link between a dataset and a dataverse"""
+        hook_ctx = HookContext(operation_id='deleteDatasetLink', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteDatasetLinkRequest(
             dataset_id=dataset_id,
             linked_dataverse_id=linked_dataverse_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DatasetsDatasetIDDeleteLinkLinkedDataverseIDRequest, base_url, '/api/v1/datasets/{datasetId}/deleteLink/{linkedDataverseId}', request)
+        url = utils.generate_url(operations.DeleteDatasetLinkRequest, base_url, '/api/v1/datasets/{datasetId}/deleteLink/{linkedDataverseId}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -538,7 +549,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DatasetsDatasetIDDeleteLinkLinkedDataverseIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteDatasetLinkResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -549,15 +560,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_identifier_allowed_curation_labels(self, identifier: str) -> operations.GetAPIV1DatasetsIdentifierAllowedCurationLabelsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{identifier}/allowedCurationLabels', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIdentifierAllowedCurationLabelsRequest(
+    def get_allowed_curation_labels(self, identifier: str) -> operations.GetAllowedCurationLabelsResponse:
+        r"""Retrieve a list of allowed curation labels for a specific dataset"""
+        hook_ctx = HookContext(operation_id='getAllowedCurationLabels', oauth2_scopes=[], security_source=None)
+        request = operations.GetAllowedCurationLabelsRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIdentifierAllowedCurationLabelsRequest, base_url, '/api/v1/datasets/{identifier}/allowedCurationLabels', request)
+        url = utils.generate_url(operations.GetAllowedCurationLabelsRequest, base_url, '/api/v1/datasets/{identifier}/allowedCurationLabels', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -587,7 +599,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIdentifierAllowedCurationLabelsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAllowedCurationLabelsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -598,15 +610,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_identifier_assignments(self, identifier: str) -> operations.GetAPIV1DatasetsIdentifierAssignmentsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{identifier}/assignments', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIdentifierAssignmentsRequest(
+    def get_dataset_assignments(self, identifier: str) -> operations.GetDatasetAssignmentsResponse:
+        r"""Retrieves assignments for a specific dataset"""
+        hook_ctx = HookContext(operation_id='getDatasetAssignments', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetAssignmentsRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIdentifierAssignmentsRequest, base_url, '/api/v1/datasets/{identifier}/assignments', request)
+        url = utils.generate_url(operations.GetDatasetAssignmentsRequest, base_url, '/api/v1/datasets/{identifier}/assignments', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -636,7 +649,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIdentifierAssignmentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetAssignmentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -647,18 +660,19 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_identifier_assignments(self, identifier: str, key: Optional[str] = None) -> operations.PostAPIV1DatasetsIdentifierAssignmentsResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{identifier}/assignments', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIdentifierAssignmentsRequest(
+    def create_dataset_assignment(self, identifier: str, key: Optional[str] = None) -> operations.CreateDatasetAssignmentResponse:
+        r"""Creates an assignment for a specific dataset"""
+        hook_ctx = HookContext(operation_id='createDatasetAssignment', oauth2_scopes=[], security_source=None)
+        request = operations.CreateDatasetAssignmentRequest(
             identifier=identifier,
             key=key,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIdentifierAssignmentsRequest, base_url, '/api/v1/datasets/{identifier}/assignments', request)
+        url = utils.generate_url(operations.CreateDatasetAssignmentRequest, base_url, '/api/v1/datasets/{identifier}/assignments', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1DatasetsIdentifierAssignmentsRequest, request)
+        query_params = utils.get_query_params(operations.CreateDatasetAssignmentRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -687,7 +701,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIdentifierAssignmentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateDatasetAssignmentResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -698,16 +712,17 @@ class Datasets:
 
     
     
-    def delete_api_v1_datasets_identifier_assignments_id_(self, id: int, identifier: str) -> operations.DeleteAPIV1DatasetsIdentifierAssignmentsIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/datasets/{identifier}/assignments/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DatasetsIdentifierAssignmentsIDRequest(
+    def delete_assignment(self, id: int, identifier: str) -> operations.DeleteAssignmentResponse:
+        r"""Delete a specific assignment for a dataset"""
+        hook_ctx = HookContext(operation_id='deleteAssignment', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteAssignmentRequest(
             id=id,
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DatasetsIdentifierAssignmentsIDRequest, base_url, '/api/v1/datasets/{identifier}/assignments/{id}', request)
+        url = utils.generate_url(operations.DeleteAssignmentRequest, base_url, '/api/v1/datasets/{identifier}/assignments/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -737,7 +752,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DatasetsIdentifierAssignmentsIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteAssignmentResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -748,15 +763,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_identifier_curation_label_set(self, identifier: str) -> operations.GetAPIV1DatasetsIdentifierCurationLabelSetResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{identifier}/curationLabelSet', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIdentifierCurationLabelSetRequest(
+    def get_curation_label_set_1(self, identifier: str) -> operations.GetCurationLabelSet1Response:
+        r"""Retrieves the curation label set of the specified dataset"""
+        hook_ctx = HookContext(operation_id='getCurationLabelSet_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetCurationLabelSet1Request(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIdentifierCurationLabelSetRequest, base_url, '/api/v1/datasets/{identifier}/curationLabelSet', request)
+        url = utils.generate_url(operations.GetCurationLabelSet1Request, base_url, '/api/v1/datasets/{identifier}/curationLabelSet', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -786,7 +802,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIdentifierCurationLabelSetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetCurationLabelSet1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -797,18 +813,19 @@ class Datasets:
 
     
     
-    def put_api_v1_datasets_identifier_curation_label_set(self, identifier: str, name: Optional[str] = None) -> operations.PutAPIV1DatasetsIdentifierCurationLabelSetResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/datasets/{identifier}/curationLabelSet', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DatasetsIdentifierCurationLabelSetRequest(
+    def update_curation_label_set_1(self, identifier: str, name: Optional[str] = None) -> operations.UpdateCurationLabelSet1Response:
+        r"""Updates the curation label set of the specified dataset"""
+        hook_ctx = HookContext(operation_id='updateCurationLabelSet_1', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateCurationLabelSet1Request(
             identifier=identifier,
             name=name,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DatasetsIdentifierCurationLabelSetRequest, base_url, '/api/v1/datasets/{identifier}/curationLabelSet', request)
+        url = utils.generate_url(operations.UpdateCurationLabelSet1Request, base_url, '/api/v1/datasets/{identifier}/curationLabelSet', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PutAPIV1DatasetsIdentifierCurationLabelSetRequest, request)
+        query_params = utils.get_query_params(operations.UpdateCurationLabelSet1Request, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -837,7 +854,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DatasetsIdentifierCurationLabelSetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateCurationLabelSet1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -848,15 +865,16 @@ class Datasets:
 
     
     
-    def delete_api_v1_datasets_identifier_curation_label_set(self, identifier: str) -> operations.DeleteAPIV1DatasetsIdentifierCurationLabelSetResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/datasets/{identifier}/curationLabelSet', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DatasetsIdentifierCurationLabelSetRequest(
+    def delete_curation_label_set_1(self, identifier: str) -> operations.DeleteCurationLabelSet1Response:
+        r"""Deletes the curation label set for the specified dataset"""
+        hook_ctx = HookContext(operation_id='deleteCurationLabelSet_1', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteCurationLabelSet1Request(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DatasetsIdentifierCurationLabelSetRequest, base_url, '/api/v1/datasets/{identifier}/curationLabelSet', request)
+        url = utils.generate_url(operations.DeleteCurationLabelSet1Request, base_url, '/api/v1/datasets/{identifier}/curationLabelSet', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -886,7 +904,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DatasetsIdentifierCurationLabelSetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteCurationLabelSet1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -897,15 +915,16 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_identifier_data_capture_module_checksum_validation(self, identifier: str) -> operations.PostAPIV1DatasetsIdentifierDataCaptureModuleChecksumValidationResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{identifier}/dataCaptureModule/checksumValidation', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIdentifierDataCaptureModuleChecksumValidationRequest(
+    def validate_checksum(self, identifier: str) -> operations.ValidateChecksumResponse:
+        r"""Validate checksum for specified dataset"""
+        hook_ctx = HookContext(operation_id='validateChecksum', oauth2_scopes=[], security_source=None)
+        request = operations.ValidateChecksumRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIdentifierDataCaptureModuleChecksumValidationRequest, base_url, '/api/v1/datasets/{identifier}/dataCaptureModule/checksumValidation', request)
+        url = utils.generate_url(operations.ValidateChecksumRequest, base_url, '/api/v1/datasets/{identifier}/dataCaptureModule/checksumValidation', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -935,7 +954,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIdentifierDataCaptureModuleChecksumValidationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ValidateChecksumResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -946,15 +965,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_identifier_data_capture_module_rsync(self, identifier: str) -> operations.GetAPIV1DatasetsIdentifierDataCaptureModuleRsyncResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{identifier}/dataCaptureModule/rsync', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIdentifierDataCaptureModuleRsyncRequest(
+    def get_rsync_data_module(self, identifier: str) -> operations.GetRsyncDataModuleResponse:
+        r"""Retrieve the Rsync data capture module for a specific dataset"""
+        hook_ctx = HookContext(operation_id='getRsyncDataModule', oauth2_scopes=[], security_source=None)
+        request = operations.GetRsyncDataModuleRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIdentifierDataCaptureModuleRsyncRequest, base_url, '/api/v1/datasets/{identifier}/dataCaptureModule/rsync', request)
+        url = utils.generate_url(operations.GetRsyncDataModuleRequest, base_url, '/api/v1/datasets/{identifier}/dataCaptureModule/rsync', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -984,7 +1004,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIdentifierDataCaptureModuleRsyncResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetRsyncDataModuleResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -995,15 +1015,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_identifier_guestbook_entry_at_request(self, identifier: str) -> operations.GetAPIV1DatasetsIdentifierGuestbookEntryAtRequestResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{identifier}/guestbookEntryAtRequest', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIdentifierGuestbookEntryAtRequestRequest(
+    def get_guestbook_entry(self, identifier: str) -> operations.GetGuestbookEntryResponse:
+        r"""Retrieves a guestbook entry for a specific dataset"""
+        hook_ctx = HookContext(operation_id='getGuestbookEntry', oauth2_scopes=[], security_source=None)
+        request = operations.GetGuestbookEntryRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIdentifierGuestbookEntryAtRequestRequest, base_url, '/api/v1/datasets/{identifier}/guestbookEntryAtRequest', request)
+        url = utils.generate_url(operations.GetGuestbookEntryRequest, base_url, '/api/v1/datasets/{identifier}/guestbookEntryAtRequest', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1033,7 +1054,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIdentifierGuestbookEntryAtRequestResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetGuestbookEntryResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1044,15 +1065,16 @@ class Datasets:
 
     
     
-    def put_api_v1_datasets_identifier_guestbook_entry_at_request(self, identifier: str) -> operations.PutAPIV1DatasetsIdentifierGuestbookEntryAtRequestResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/datasets/{identifier}/guestbookEntryAtRequest', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DatasetsIdentifierGuestbookEntryAtRequestRequest(
+    def update_guestbook_entry(self, identifier: str) -> operations.UpdateGuestbookEntryResponse:
+        r"""Updates a guestbook entry for a specific dataset"""
+        hook_ctx = HookContext(operation_id='updateGuestbookEntry', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateGuestbookEntryRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DatasetsIdentifierGuestbookEntryAtRequestRequest, base_url, '/api/v1/datasets/{identifier}/guestbookEntryAtRequest', request)
+        url = utils.generate_url(operations.UpdateGuestbookEntryRequest, base_url, '/api/v1/datasets/{identifier}/guestbookEntryAtRequest', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1082,7 +1104,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DatasetsIdentifierGuestbookEntryAtRequestResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateGuestbookEntryResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1093,15 +1115,16 @@ class Datasets:
 
     
     
-    def delete_api_v1_datasets_identifier_guestbook_entry_at_request(self, identifier: str) -> operations.DeleteAPIV1DatasetsIdentifierGuestbookEntryAtRequestResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/datasets/{identifier}/guestbookEntryAtRequest', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DatasetsIdentifierGuestbookEntryAtRequestRequest(
+    def delete_guestbook_entry(self, identifier: str) -> operations.DeleteGuestbookEntryResponse:
+        r"""Deletes a guestbook entry for a specific dataset"""
+        hook_ctx = HookContext(operation_id='deleteGuestbookEntry', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteGuestbookEntryRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DatasetsIdentifierGuestbookEntryAtRequestRequest, base_url, '/api/v1/datasets/{identifier}/guestbookEntryAtRequest', request)
+        url = utils.generate_url(operations.DeleteGuestbookEntryRequest, base_url, '/api/v1/datasets/{identifier}/guestbookEntryAtRequest', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1131,7 +1154,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DatasetsIdentifierGuestbookEntryAtRequestResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteGuestbookEntryResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1142,16 +1165,17 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_identifier_lock_type_(self, identifier: str, type_: str) -> operations.PostAPIV1DatasetsIdentifierLockTypeResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{identifier}/lock/{type}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIdentifierLockTypeRequest(
+    def lock_dataset(self, identifier: str, type_: str) -> operations.LockDatasetResponse:
+        r"""Lock a specific dataset identified by the given identifier and type"""
+        hook_ctx = HookContext(operation_id='lockDataset', oauth2_scopes=[], security_source=None)
+        request = operations.LockDatasetRequest(
             identifier=identifier,
             type=type_,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIdentifierLockTypeRequest, base_url, '/api/v1/datasets/{identifier}/lock/{type}', request)
+        url = utils.generate_url(operations.LockDatasetRequest, base_url, '/api/v1/datasets/{identifier}/lock/{type}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1181,7 +1205,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIdentifierLockTypeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.LockDatasetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1192,18 +1216,19 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_identifier_locks(self, identifier: str, type_: Optional[str] = None) -> operations.GetAPIV1DatasetsIdentifierLocksResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{identifier}/locks', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIdentifierLocksRequest(
+    def get_dataset_locks_1(self, identifier: str, type_: Optional[str] = None) -> operations.GetDatasetLocks1Response:
+        r"""Retrieves specific dataset locks"""
+        hook_ctx = HookContext(operation_id='getDatasetLocks_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetLocks1Request(
             identifier=identifier,
             type=type_,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIdentifierLocksRequest, base_url, '/api/v1/datasets/{identifier}/locks', request)
+        url = utils.generate_url(operations.GetDatasetLocks1Request, base_url, '/api/v1/datasets/{identifier}/locks', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIdentifierLocksRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetLocks1Request, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1232,7 +1257,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIdentifierLocksResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetLocks1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1243,18 +1268,19 @@ class Datasets:
 
     
     
-    def delete_api_v1_datasets_identifier_locks(self, identifier: str, type_: Optional[str] = None) -> operations.DeleteAPIV1DatasetsIdentifierLocksResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/datasets/{identifier}/locks', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DatasetsIdentifierLocksRequest(
+    def delete_dataset_locks(self, identifier: str, type_: Optional[str] = None) -> operations.DeleteDatasetLocksResponse:
+        r"""Deletes specific dataset locks"""
+        hook_ctx = HookContext(operation_id='deleteDatasetLocks', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteDatasetLocksRequest(
             identifier=identifier,
             type=type_,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DatasetsIdentifierLocksRequest, base_url, '/api/v1/datasets/{identifier}/locks', request)
+        url = utils.generate_url(operations.DeleteDatasetLocksRequest, base_url, '/api/v1/datasets/{identifier}/locks', request)
         headers = {}
-        query_params = utils.get_query_params(operations.DeleteAPIV1DatasetsIdentifierLocksRequest, request)
+        query_params = utils.get_query_params(operations.DeleteDatasetLocksRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1283,7 +1309,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DatasetsIdentifierLocksResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteDatasetLocksResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1294,15 +1320,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_identifier_storage_driver(self, identifier: str) -> operations.GetAPIV1DatasetsIdentifierStorageDriverResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{identifier}/storageDriver', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIdentifierStorageDriverRequest(
+    def get_storage_driver_1(self, identifier: str) -> operations.GetStorageDriver1Response:
+        r"""Retrieve the details of a specific storage driver based on the provided identifier"""
+        hook_ctx = HookContext(operation_id='getStorageDriver_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetStorageDriver1Request(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIdentifierStorageDriverRequest, base_url, '/api/v1/datasets/{identifier}/storageDriver', request)
+        url = utils.generate_url(operations.GetStorageDriver1Request, base_url, '/api/v1/datasets/{identifier}/storageDriver', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1332,7 +1359,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIdentifierStorageDriverResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetStorageDriver1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1343,15 +1370,16 @@ class Datasets:
 
     
     
-    def put_api_v1_datasets_identifier_storage_driver(self, identifier: str) -> operations.PutAPIV1DatasetsIdentifierStorageDriverResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/datasets/{identifier}/storageDriver', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DatasetsIdentifierStorageDriverRequest(
+    def update_storage_driver_1(self, identifier: str) -> operations.UpdateStorageDriver1Response:
+        r"""Update the details of a specific storage driver based on the provided identifier"""
+        hook_ctx = HookContext(operation_id='updateStorageDriver_1', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateStorageDriver1Request(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DatasetsIdentifierStorageDriverRequest, base_url, '/api/v1/datasets/{identifier}/storageDriver', request)
+        url = utils.generate_url(operations.UpdateStorageDriver1Request, base_url, '/api/v1/datasets/{identifier}/storageDriver', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1381,7 +1409,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DatasetsIdentifierStorageDriverResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateStorageDriver1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1392,15 +1420,16 @@ class Datasets:
 
     
     
-    def delete_api_v1_datasets_identifier_storage_driver(self, identifier: str) -> operations.DeleteAPIV1DatasetsIdentifierStorageDriverResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/datasets/{identifier}/storageDriver', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DatasetsIdentifierStorageDriverRequest(
+    def delete_storage_driver_1(self, identifier: str) -> operations.DeleteStorageDriver1Response:
+        r"""Delete a specific storage driver based on the provided identifier"""
+        hook_ctx = HookContext(operation_id='deleteStorageDriver_1', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteStorageDriver1Request(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DatasetsIdentifierStorageDriverRequest, base_url, '/api/v1/datasets/{identifier}/storageDriver', request)
+        url = utils.generate_url(operations.DeleteStorageDriver1Request, base_url, '/api/v1/datasets/{identifier}/storageDriver', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1430,7 +1459,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DatasetsIdentifierStorageDriverResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteStorageDriver1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1441,18 +1470,19 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_identifier_storagesize(self, identifier: str, include_cached: Optional[bool] = None) -> operations.GetAPIV1DatasetsIdentifierStoragesizeResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{identifier}/storagesize', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIdentifierStoragesizeRequest(
+    def get_dataset_storage_size(self, identifier: str, include_cached: Optional[bool] = None) -> operations.GetDatasetStorageSizeResponse:
+        r"""Retrieves the storage size of a dataset based on its identifier. An optional query parameter can be used to include cached files."""
+        hook_ctx = HookContext(operation_id='getDatasetStorageSize', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetStorageSizeRequest(
             identifier=identifier,
             include_cached=include_cached,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIdentifierStoragesizeRequest, base_url, '/api/v1/datasets/{identifier}/storagesize', request)
+        url = utils.generate_url(operations.GetDatasetStorageSizeRequest, base_url, '/api/v1/datasets/{identifier}/storagesize', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIdentifierStoragesizeRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetStorageSizeRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1481,7 +1511,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIdentifierStoragesizeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetStorageSizeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1492,15 +1522,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_identifier_timestamps(self, identifier: str) -> operations.GetAPIV1DatasetsIdentifierTimestampsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{identifier}/timestamps', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIdentifierTimestampsRequest(
+    def get_dataset_timestamps(self, identifier: str) -> operations.GetDatasetTimestampsResponse:
+        r"""Retrieves the timestamps for a given dataset identified by the path parameter 'identifier'"""
+        hook_ctx = HookContext(operation_id='getDatasetTimestamps', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetTimestampsRequest(
             identifier=identifier,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIdentifierTimestampsRequest, base_url, '/api/v1/datasets/{identifier}/timestamps', request)
+        url = utils.generate_url(operations.GetDatasetTimestampsRequest, base_url, '/api/v1/datasets/{identifier}/timestamps', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1530,7 +1561,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIdentifierTimestampsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetTimestampsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1541,13 +1572,14 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_identifier_versions_version_id_downloadsize(self, request: operations.GetAPIV1DatasetsIdentifierVersionsVersionIDDownloadsizeRequest) -> operations.GetAPIV1DatasetsIdentifierVersionsVersionIDDownloadsizeResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{identifier}/versions/{versionId}/downloadsize', oauth2_scopes=[], security_source=None)
+    def get_download_size(self, request: operations.GetDownloadSizeRequest) -> operations.GetDownloadSizeResponse:
+        r"""Retrieve the download size of a specific version of a dataset"""
+        hook_ctx = HookContext(operation_id='getDownloadSize', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIdentifierVersionsVersionIDDownloadsizeRequest, base_url, '/api/v1/datasets/{identifier}/versions/{versionId}/downloadsize', request)
+        url = utils.generate_url(operations.GetDownloadSizeRequest, base_url, '/api/v1/datasets/{identifier}/versions/{versionId}/downloadsize', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIdentifierVersionsVersionIDDownloadsizeRequest, request)
+        query_params = utils.get_query_params(operations.GetDownloadSizeRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1576,7 +1608,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIdentifierVersionsVersionIDDownloadsizeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDownloadSizeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1587,15 +1619,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_(self, id: str) -> operations.GetAPIV1DatasetsIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDRequest(
+    def get_dataset(self, id: str) -> operations.GetDatasetResponse:
+        r"""Retrieve the specified dataset"""
+        hook_ctx = HookContext(operation_id='getDataset', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDRequest, base_url, '/api/v1/datasets/{id}', request)
+        url = utils.generate_url(operations.GetDatasetRequest, base_url, '/api/v1/datasets/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1625,7 +1658,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1636,15 +1669,16 @@ class Datasets:
 
     
     
-    def delete_api_v1_datasets_id_(self, id: str) -> operations.DeleteAPIV1DatasetsIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/datasets/{id}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DatasetsIDRequest(
+    def delete_dataset(self, id: str) -> operations.DeleteDatasetResponse:
+        r"""Delete the specified dataset"""
+        hook_ctx = HookContext(operation_id='deleteDataset', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteDatasetRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DatasetsIDRequest, base_url, '/api/v1/datasets/{id}', request)
+        url = utils.generate_url(operations.DeleteDatasetRequest, base_url, '/api/v1/datasets/{id}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1674,7 +1708,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DatasetsIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteDatasetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1685,19 +1719,22 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_actions_publish(self, id: str, type_: Optional[str] = None) -> operations.GetAPIV1DatasetsIDActionsPublishResponse:
-        r"""Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible."""
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/actions/:publish', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDActionsPublishRequest(
+    def get_publish_dataset(self, id: str, type_: Optional[str] = None) -> operations.GetPublishDatasetResponse:
+        r"""Retrieve publishing details of a designated dataset
+
+        Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
+        """
+        hook_ctx = HookContext(operation_id='getPublishDataset', oauth2_scopes=[], security_source=None)
+        request = operations.GetPublishDatasetRequest(
             id=id,
             type=type_,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDActionsPublishRequest, base_url, '/api/v1/datasets/{id}/actions/:publish', request)
+        url = utils.generate_url(operations.GetPublishDatasetRequest, base_url, '/api/v1/datasets/{id}/actions/:publish', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIDActionsPublishRequest, request)
+        query_params = utils.get_query_params(operations.GetPublishDatasetRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1726,7 +1763,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDActionsPublishResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetPublishDatasetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1737,9 +1774,10 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_actions_publish(self, id: str, assure_is_indexed: Optional[bool] = None, type_: Optional[str] = None) -> operations.PostAPIV1DatasetsIDActionsPublishResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/actions/:publish', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDActionsPublishRequest(
+    def initiate_publishing(self, id: str, assure_is_indexed: Optional[bool] = None, type_: Optional[str] = None) -> operations.InitiatePublishingResponse:
+        r"""Publish a designated dataset with optional assurances"""
+        hook_ctx = HookContext(operation_id='initiatePublishing', oauth2_scopes=[], security_source=None)
+        request = operations.InitiatePublishingRequest(
             id=id,
             assure_is_indexed=assure_is_indexed,
             type=type_,
@@ -1747,9 +1785,9 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDActionsPublishRequest, base_url, '/api/v1/datasets/{id}/actions/:publish', request)
+        url = utils.generate_url(operations.InitiatePublishingRequest, base_url, '/api/v1/datasets/{id}/actions/:publish', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1DatasetsIDActionsPublishRequest, request)
+        query_params = utils.get_query_params(operations.InitiatePublishingRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1778,7 +1816,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDActionsPublishResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.InitiatePublishingResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1789,9 +1827,10 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_actions_releasemigrated(self, id: str, updatepidatprovider: Optional[bool] = None, request_body: Optional[str] = None) -> operations.PostAPIV1DatasetsIDActionsReleasemigratedResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/actions/:releasemigrated', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDActionsReleasemigratedRequest(
+    def release_migrated_dataset(self, id: str, updatepidatprovider: Optional[bool] = None, request_body: Optional[str] = None) -> operations.ReleaseMigratedDatasetResponse:
+        r"""Release a migrated dataset with a specified ID"""
+        hook_ctx = HookContext(operation_id='releaseMigratedDataset', oauth2_scopes=[], security_source=None)
+        request = operations.ReleaseMigratedDatasetRequest(
             id=id,
             updatepidatprovider=updatepidatprovider,
             request_body=request_body,
@@ -1799,12 +1838,12 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDActionsReleasemigratedRequest, base_url, '/api/v1/datasets/{id}/actions/:releasemigrated', request)
+        url = utils.generate_url(operations.ReleaseMigratedDatasetRequest, base_url, '/api/v1/datasets/{id}/actions/:releasemigrated', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DatasetsIDActionsReleasemigratedRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.ReleaseMigratedDatasetRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = utils.get_query_params(operations.PostAPIV1DatasetsIDActionsReleasemigratedRequest, request)
+        query_params = utils.get_query_params(operations.ReleaseMigratedDatasetRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1833,7 +1872,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDActionsReleasemigratedResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ReleaseMigratedDatasetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1844,18 +1883,19 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_add(self, id: str, request_body: Optional[operations.PostAPIV1DatasetsIDAddRequestBody] = None) -> operations.PostAPIV1DatasetsIDAddResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/add', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDAddRequest(
+    def add_dataset(self, id: str, request_body: Optional[operations.AddDatasetRequestBody] = None) -> operations.AddDatasetResponse:
+        r"""Add a new dataset to the existing record"""
+        hook_ctx = HookContext(operation_id='addDataset', oauth2_scopes=[], security_source=None)
+        request = operations.AddDatasetRequest(
             id=id,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDAddRequest, base_url, '/api/v1/datasets/{id}/add', request)
+        url = utils.generate_url(operations.AddDatasetRequest, base_url, '/api/v1/datasets/{id}/add', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DatasetsIDAddRequest, "request_body", False, True, 'multipart')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.AddDatasetRequest, "request_body", False, True, 'multipart')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -1886,7 +1926,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDAddResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AddDatasetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1897,18 +1937,19 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_add_files(self, id: str, request_body: Optional[operations.PostAPIV1DatasetsIDAddFilesRequestBody] = None) -> operations.PostAPIV1DatasetsIDAddFilesResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/addFiles', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDAddFilesRequest(
+    def add_files_to_dataset(self, id: str, request_body: Optional[operations.AddFilesToDatasetRequestBody] = None) -> operations.AddFilesToDatasetResponse:
+        r"""Adds files to a specified dataset"""
+        hook_ctx = HookContext(operation_id='addFilesToDataset', oauth2_scopes=[], security_source=None)
+        request = operations.AddFilesToDatasetRequest(
             id=id,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDAddFilesRequest, base_url, '/api/v1/datasets/{id}/addFiles', request)
+        url = utils.generate_url(operations.AddFilesToDatasetRequest, base_url, '/api/v1/datasets/{id}/addFiles', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DatasetsIDAddFilesRequest, "request_body", False, True, 'multipart')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.AddFilesToDatasetRequest, "request_body", False, True, 'multipart')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -1939,7 +1980,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDAddFilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AddFilesToDatasetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -1950,18 +1991,19 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_add_globus_files(self, id: str, request_body: Optional[operations.PostAPIV1DatasetsIDAddGlobusFilesRequestBody] = None) -> operations.PostAPIV1DatasetsIDAddGlobusFilesResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/addGlobusFiles', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDAddGlobusFilesRequest(
+    def add_globus_files_to_dataset(self, id: str, request_body: Optional[operations.AddGlobusFilesToDatasetRequestBody] = None) -> operations.AddGlobusFilesToDatasetResponse:
+        r"""Add globus files to a specific dataset"""
+        hook_ctx = HookContext(operation_id='addGlobusFilesToDataset', oauth2_scopes=[], security_source=None)
+        request = operations.AddGlobusFilesToDatasetRequest(
             id=id,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDAddGlobusFilesRequest, base_url, '/api/v1/datasets/{id}/addGlobusFiles', request)
+        url = utils.generate_url(operations.AddGlobusFilesToDatasetRequest, base_url, '/api/v1/datasets/{id}/addGlobusFiles', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DatasetsIDAddGlobusFilesRequest, "request_body", False, True, 'multipart')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.AddGlobusFilesToDatasetRequest, "request_body", False, True, 'multipart')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -1992,7 +2034,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDAddGlobusFilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AddGlobusFilesToDatasetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2003,15 +2045,16 @@ class Datasets:
 
     
     
-    def put_api_v1_datasets_id_citationdate(self, id: str) -> operations.PutAPIV1DatasetsIDCitationdateResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/datasets/{id}/citationdate', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DatasetsIDCitationdateRequest(
+    def update_citation_date(self, id: str) -> operations.UpdateCitationDateResponse:
+        r"""Update the citation date of a dataset based on dataset ID"""
+        hook_ctx = HookContext(operation_id='updateCitationDate', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateCitationDateRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DatasetsIDCitationdateRequest, base_url, '/api/v1/datasets/{id}/citationdate', request)
+        url = utils.generate_url(operations.UpdateCitationDateRequest, base_url, '/api/v1/datasets/{id}/citationdate', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2041,7 +2084,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DatasetsIDCitationdateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateCitationDateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2052,15 +2095,16 @@ class Datasets:
 
     
     
-    def delete_api_v1_datasets_id_citationdate(self, id: str) -> operations.DeleteAPIV1DatasetsIDCitationdateResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/datasets/{id}/citationdate', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DatasetsIDCitationdateRequest(
+    def delete_citation_date(self, id: str) -> operations.DeleteCitationDateResponse:
+        r"""Delete citation date of a dataset based on dataset ID"""
+        hook_ctx = HookContext(operation_id='deleteCitationDate', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteCitationDateRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DatasetsIDCitationdateRequest, base_url, '/api/v1/datasets/{id}/citationdate', request)
+        url = utils.generate_url(operations.DeleteCitationDateRequest, base_url, '/api/v1/datasets/{id}/citationdate', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2090,7 +2134,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DatasetsIDCitationdateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteCitationDateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2101,18 +2145,19 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_clean_storage(self, id: str, dryrun: Optional[bool] = None) -> operations.GetAPIV1DatasetsIDCleanStorageResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/cleanStorage', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDCleanStorageRequest(
+    def get_clean_storage_status(self, id: str, dryrun: Optional[bool] = None) -> operations.GetCleanStorageStatusResponse:
+        r"""Get the status of the clean storage task for the specified dataset"""
+        hook_ctx = HookContext(operation_id='getCleanStorageStatus', oauth2_scopes=[], security_source=None)
+        request = operations.GetCleanStorageStatusRequest(
             id=id,
             dryrun=dryrun,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDCleanStorageRequest, base_url, '/api/v1/datasets/{id}/cleanStorage', request)
+        url = utils.generate_url(operations.GetCleanStorageStatusRequest, base_url, '/api/v1/datasets/{id}/cleanStorage', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIDCleanStorageRequest, request)
+        query_params = utils.get_query_params(operations.GetCleanStorageStatusRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -2141,7 +2186,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDCleanStorageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetCleanStorageStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2152,15 +2197,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_curation_status(self, id: str) -> operations.GetAPIV1DatasetsIDCurationStatusResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/curationStatus', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDCurationStatusRequest(
+    def get_curation_status(self, id: str) -> operations.GetCurationStatusResponse:
+        r"""Fetches the curation status of the specified dataset"""
+        hook_ctx = HookContext(operation_id='getCurationStatus', oauth2_scopes=[], security_source=None)
+        request = operations.GetCurationStatusRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDCurationStatusRequest, base_url, '/api/v1/datasets/{id}/curationStatus', request)
+        url = utils.generate_url(operations.GetCurationStatusRequest, base_url, '/api/v1/datasets/{id}/curationStatus', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2190,7 +2236,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDCurationStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetCurationStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2201,18 +2247,19 @@ class Datasets:
 
     
     
-    def put_api_v1_datasets_id_curation_status(self, id: str, label: Optional[str] = None) -> operations.PutAPIV1DatasetsIDCurationStatusResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/datasets/{id}/curationStatus', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DatasetsIDCurationStatusRequest(
+    def update_curation_status(self, id: str, label: Optional[str] = None) -> operations.UpdateCurationStatusResponse:
+        r"""Updates the curation status of the specified dataset"""
+        hook_ctx = HookContext(operation_id='updateCurationStatus', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateCurationStatusRequest(
             id=id,
             label=label,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DatasetsIDCurationStatusRequest, base_url, '/api/v1/datasets/{id}/curationStatus', request)
+        url = utils.generate_url(operations.UpdateCurationStatusRequest, base_url, '/api/v1/datasets/{id}/curationStatus', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PutAPIV1DatasetsIDCurationStatusRequest, request)
+        query_params = utils.get_query_params(operations.UpdateCurationStatusRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -2241,7 +2288,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DatasetsIDCurationStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateCurationStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2252,15 +2299,16 @@ class Datasets:
 
     
     
-    def delete_api_v1_datasets_id_curation_status(self, id: str) -> operations.DeleteAPIV1DatasetsIDCurationStatusResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/datasets/{id}/curationStatus', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DatasetsIDCurationStatusRequest(
+    def delete_curation_status(self, id: str) -> operations.DeleteCurationStatusResponse:
+        r"""Deletes the curation status of the specified dataset"""
+        hook_ctx = HookContext(operation_id='deleteCurationStatus', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteCurationStatusRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DatasetsIDCurationStatusRequest, base_url, '/api/v1/datasets/{id}/curationStatus', request)
+        url = utils.generate_url(operations.DeleteCurationStatusRequest, base_url, '/api/v1/datasets/{id}/curationStatus', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2290,7 +2338,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DatasetsIDCurationStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteCurationStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2301,15 +2349,16 @@ class Datasets:
 
     
     
-    def put_api_v1_datasets_id_delete_metadata(self, id: str) -> operations.PutAPIV1DatasetsIDDeleteMetadataResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/datasets/{id}/deleteMetadata', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DatasetsIDDeleteMetadataRequest(
+    def update_dataset_metadata(self, id: str) -> operations.UpdateDatasetMetadataResponse:
+        r"""Update the metadata of a specific dataset"""
+        hook_ctx = HookContext(operation_id='updateDatasetMetadata', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateDatasetMetadataRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DatasetsIDDeleteMetadataRequest, base_url, '/api/v1/datasets/{id}/deleteMetadata', request)
+        url = utils.generate_url(operations.UpdateDatasetMetadataRequest, base_url, '/api/v1/datasets/{id}/deleteMetadata', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2339,7 +2388,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DatasetsIDDeleteMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateDatasetMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2350,15 +2399,16 @@ class Datasets:
 
     
     
-    def delete_api_v1_datasets_id_destroy(self, id: str) -> operations.DeleteAPIV1DatasetsIDDestroyResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/datasets/{id}/destroy', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DatasetsIDDestroyRequest(
+    def delete_dataset_1(self, id: str) -> operations.DeleteDataset1Response:
+        r"""Delete a specific dataset by its ID."""
+        hook_ctx = HookContext(operation_id='deleteDataset_1', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteDataset1Request(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DatasetsIDDestroyRequest, base_url, '/api/v1/datasets/{id}/destroy', request)
+        url = utils.generate_url(operations.DeleteDataset1Request, base_url, '/api/v1/datasets/{id}/destroy', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2388,7 +2438,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DatasetsIDDestroyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteDataset1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2399,9 +2449,10 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_dirindex(self, id: str, folder: Optional[str] = None, original: Optional[bool] = None, version: Optional[str] = None) -> operations.GetAPIV1DatasetsIDDirindexResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/dirindex', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDDirindexRequest(
+    def get_dataset_directory_index(self, id: str, folder: Optional[str] = None, original: Optional[bool] = None, version: Optional[str] = None) -> operations.GetDatasetDirectoryIndexResponse:
+        r"""Retrieve directory index of a dataset"""
+        hook_ctx = HookContext(operation_id='getDatasetDirectoryIndex', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetDirectoryIndexRequest(
             id=id,
             folder=folder,
             original=original,
@@ -2410,9 +2461,9 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDDirindexRequest, base_url, '/api/v1/datasets/{id}/dirindex', request)
+        url = utils.generate_url(operations.GetDatasetDirectoryIndexRequest, base_url, '/api/v1/datasets/{id}/dirindex', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIDDirindexRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetDirectoryIndexRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -2441,7 +2492,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDDirindexResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetDirectoryIndexResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2452,18 +2503,19 @@ class Datasets:
 
     
     
-    def put_api_v1_datasets_id_edit_metadata(self, id: str, replace: Optional[bool] = None) -> operations.PutAPIV1DatasetsIDEditMetadataResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/datasets/{id}/editMetadata', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DatasetsIDEditMetadataRequest(
+    def edit_dataset_metadata(self, id: str, replace: Optional[bool] = None) -> operations.EditDatasetMetadataResponse:
+        r"""Updates the metadata of a specific dataset represented by its ID"""
+        hook_ctx = HookContext(operation_id='editDatasetMetadata', oauth2_scopes=[], security_source=None)
+        request = operations.EditDatasetMetadataRequest(
             id=id,
             replace=replace,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DatasetsIDEditMetadataRequest, base_url, '/api/v1/datasets/{id}/editMetadata', request)
+        url = utils.generate_url(operations.EditDatasetMetadataRequest, base_url, '/api/v1/datasets/{id}/editMetadata', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PutAPIV1DatasetsIDEditMetadataRequest, request)
+        query_params = utils.get_query_params(operations.EditDatasetMetadataRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -2492,7 +2544,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DatasetsIDEditMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.EditDatasetMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2503,15 +2555,16 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_files_actions_set_embargo(self, id: str) -> operations.PostAPIV1DatasetsIDFilesActionsSetEmbargoResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/files/actions/:set-embargo', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDFilesActionsSetEmbargoRequest(
+    def set_dataset_embargo(self, id: str) -> operations.SetDatasetEmbargoResponse:
+        r"""Set an embargo on a specific dataset's files"""
+        hook_ctx = HookContext(operation_id='setDatasetEmbargo', oauth2_scopes=[], security_source=None)
+        request = operations.SetDatasetEmbargoRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDFilesActionsSetEmbargoRequest, base_url, '/api/v1/datasets/{id}/files/actions/:set-embargo', request)
+        url = utils.generate_url(operations.SetDatasetEmbargoRequest, base_url, '/api/v1/datasets/{id}/files/actions/:set-embargo', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2541,7 +2594,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDFilesActionsSetEmbargoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.SetDatasetEmbargoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2552,15 +2605,16 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_files_actions_unset_embargo(self, id: str) -> operations.PostAPIV1DatasetsIDFilesActionsUnsetEmbargoResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/files/actions/:unset-embargo', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDFilesActionsUnsetEmbargoRequest(
+    def unset_embargo_on_dataset_files(self, id: str) -> operations.UnsetEmbargoOnDatasetFilesResponse:
+        r"""Unset embargo on files for a specific dataset"""
+        hook_ctx = HookContext(operation_id='unsetEmbargoOnDatasetFiles', oauth2_scopes=[], security_source=None)
+        request = operations.UnsetEmbargoOnDatasetFilesRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDFilesActionsUnsetEmbargoRequest, base_url, '/api/v1/datasets/{id}/files/actions/:unset-embargo', request)
+        url = utils.generate_url(operations.UnsetEmbargoOnDatasetFilesRequest, base_url, '/api/v1/datasets/{id}/files/actions/:unset-embargo', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2590,7 +2644,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDFilesActionsUnsetEmbargoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UnsetEmbargoOnDatasetFilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2601,9 +2655,10 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_globus_download_parameters(self, id: str, download_id: Optional[str] = None, locale: Optional[str] = None) -> operations.GetAPIV1DatasetsIDGlobusDownloadParametersResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/globusDownloadParameters', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDGlobusDownloadParametersRequest(
+    def get_globus_download_parameters(self, id: str, download_id: Optional[str] = None, locale: Optional[str] = None) -> operations.GetGlobusDownloadParametersResponse:
+        r"""Retrieve the parameters for Globus download for a specified dataset"""
+        hook_ctx = HookContext(operation_id='getGlobusDownloadParameters', oauth2_scopes=[], security_source=None)
+        request = operations.GetGlobusDownloadParametersRequest(
             id=id,
             download_id=download_id,
             locale=locale,
@@ -2611,9 +2666,9 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDGlobusDownloadParametersRequest, base_url, '/api/v1/datasets/{id}/globusDownloadParameters', request)
+        url = utils.generate_url(operations.GetGlobusDownloadParametersRequest, base_url, '/api/v1/datasets/{id}/globusDownloadParameters', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIDGlobusDownloadParametersRequest, request)
+        query_params = utils.get_query_params(operations.GetGlobusDownloadParametersRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -2642,7 +2697,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDGlobusDownloadParametersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetGlobusDownloadParametersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2653,18 +2708,19 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_globus_upload_parameters(self, id: str, locale: Optional[str] = None) -> operations.GetAPIV1DatasetsIDGlobusUploadParametersResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/globusUploadParameters', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDGlobusUploadParametersRequest(
+    def get_globus_upload_parameters(self, id: str, locale: Optional[str] = None) -> operations.GetGlobusUploadParametersResponse:
+        r"""Retrieves Globus upload parameters for a specific dataset"""
+        hook_ctx = HookContext(operation_id='getGlobusUploadParameters', oauth2_scopes=[], security_source=None)
+        request = operations.GetGlobusUploadParametersRequest(
             id=id,
             locale=locale,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDGlobusUploadParametersRequest, base_url, '/api/v1/datasets/{id}/globusUploadParameters', request)
+        url = utils.generate_url(operations.GetGlobusUploadParametersRequest, base_url, '/api/v1/datasets/{id}/globusUploadParameters', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIDGlobusUploadParametersRequest, request)
+        query_params = utils.get_query_params(operations.GetGlobusUploadParametersRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -2693,7 +2749,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDGlobusUploadParametersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetGlobusUploadParametersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2704,15 +2760,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_links(self, id: str) -> operations.GetAPIV1DatasetsIDLinksResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/links', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDLinksRequest(
+    def get_dataset_links(self, id: str) -> operations.GetDatasetLinksResponse:
+        r"""Retrieves the links of a specified dataset"""
+        hook_ctx = HookContext(operation_id='getDatasetLinks', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetLinksRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDLinksRequest, base_url, '/api/v1/datasets/{id}/links', request)
+        url = utils.generate_url(operations.GetDatasetLinksRequest, base_url, '/api/v1/datasets/{id}/links', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2742,7 +2799,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDLinksResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetLinksResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2753,15 +2810,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_logo(self, id: str) -> operations.GetAPIV1DatasetsIDLogoResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/logo', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDLogoRequest(
+    def get_dataset_logo(self, id: str) -> operations.GetDatasetLogoResponse:
+        r"""Retrieve the logo of a specific dataset"""
+        hook_ctx = HookContext(operation_id='getDatasetLogo', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetLogoRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDLogoRequest, base_url, '/api/v1/datasets/{id}/logo', request)
+        url = utils.generate_url(operations.GetDatasetLogoRequest, base_url, '/api/v1/datasets/{id}/logo', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2791,7 +2849,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDLogoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetLogoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2802,15 +2860,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_make_data_count_citations(self, id: str) -> operations.GetAPIV1DatasetsIDMakeDataCountCitationsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/makeDataCount/citations', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDMakeDataCountCitationsRequest(
+    def dataset_citation_count_get(self, id: str) -> operations.DatasetCitationCountGetResponse:
+        r"""Retrieves the citation count for a specific dataset"""
+        hook_ctx = HookContext(operation_id='datasetCitationCountGet', oauth2_scopes=[], security_source=None)
+        request = operations.DatasetCitationCountGetRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDMakeDataCountCitationsRequest, base_url, '/api/v1/datasets/{id}/makeDataCount/citations', request)
+        url = utils.generate_url(operations.DatasetCitationCountGetRequest, base_url, '/api/v1/datasets/{id}/makeDataCount/citations', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2840,7 +2899,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDMakeDataCountCitationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DatasetCitationCountGetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2851,9 +2910,10 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_make_data_count_metric_(self, id: str, metric: str, country: Optional[str] = None) -> operations.GetAPIV1DatasetsIDMakeDataCountMetricResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/makeDataCount/{metric}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDMakeDataCountMetricRequest(
+    def get_dataset_metrics(self, id: str, metric: str, country: Optional[str] = None) -> operations.GetDatasetMetricsResponse:
+        r"""Retrieve specific metrics for a specified dataset"""
+        hook_ctx = HookContext(operation_id='getDatasetMetrics', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetMetricsRequest(
             id=id,
             metric=metric,
             country=country,
@@ -2861,9 +2921,9 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDMakeDataCountMetricRequest, base_url, '/api/v1/datasets/{id}/makeDataCount/{metric}', request)
+        url = utils.generate_url(operations.GetDatasetMetricsRequest, base_url, '/api/v1/datasets/{id}/makeDataCount/{metric}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIDMakeDataCountMetricRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetMetricsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -2892,7 +2952,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDMakeDataCountMetricResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetMetricsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2903,9 +2963,10 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_make_data_count_metric_yyyymm_(self, id: str, metric: str, yyyymm: str, country: Optional[str] = None) -> operations.GetAPIV1DatasetsIDMakeDataCountMetricYyyymmResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/makeDataCount/{metric}/{yyyymm}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDMakeDataCountMetricYyyymmRequest(
+    def get_dataset_metric(self, id: str, metric: str, yyyymm: str, country: Optional[str] = None) -> operations.GetDatasetMetricResponse:
+        r"""Fetches a specific metric for a specific dataset"""
+        hook_ctx = HookContext(operation_id='getDatasetMetric', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetMetricRequest(
             id=id,
             metric=metric,
             yyyymm=yyyymm,
@@ -2914,9 +2975,9 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDMakeDataCountMetricYyyymmRequest, base_url, '/api/v1/datasets/{id}/makeDataCount/{metric}/{yyyymm}', request)
+        url = utils.generate_url(operations.GetDatasetMetricRequest, base_url, '/api/v1/datasets/{id}/makeDataCount/{metric}/{yyyymm}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIDMakeDataCountMetricYyyymmRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetMetricRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -2945,7 +3006,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDMakeDataCountMetricYyyymmResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetMetricResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -2956,15 +3017,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_metadata(self, id: str) -> operations.GetAPIV1DatasetsIDMetadataResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/metadata', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDMetadataRequest(
+    def get_dataset_metadata(self, id: str) -> operations.GetDatasetMetadataResponse:
+        r"""Retrieves the metadata of a dataset by its ID"""
+        hook_ctx = HookContext(operation_id='getDatasetMetadata', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetMetadataRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDMetadataRequest, base_url, '/api/v1/datasets/{id}/metadata', request)
+        url = utils.generate_url(operations.GetDatasetMetadataRequest, base_url, '/api/v1/datasets/{id}/metadata', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -2994,7 +3056,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3005,9 +3067,10 @@ class Datasets:
 
     
     
-    def put_api_v1_datasets_id_metadata(self, id: str, replace: Optional[bool] = None, request_body: Optional[str] = None) -> operations.PutAPIV1DatasetsIDMetadataResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/datasets/{id}/metadata', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DatasetsIDMetadataRequest(
+    def update_dataset_metadata_1(self, id: str, replace: Optional[bool] = None, request_body: Optional[str] = None) -> operations.UpdateDatasetMetadata1Response:
+        r"""Updates the metadata of a dataset by its ID, with an option to replace the existing metadata"""
+        hook_ctx = HookContext(operation_id='updateDatasetMetadata_1', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateDatasetMetadata1Request(
             id=id,
             replace=replace,
             request_body=request_body,
@@ -3015,12 +3078,12 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DatasetsIDMetadataRequest, base_url, '/api/v1/datasets/{id}/metadata', request)
+        url = utils.generate_url(operations.UpdateDatasetMetadata1Request, base_url, '/api/v1/datasets/{id}/metadata', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PutAPIV1DatasetsIDMetadataRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateDatasetMetadata1Request, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = utils.get_query_params(operations.PutAPIV1DatasetsIDMetadataRequest, request)
+        query_params = utils.get_query_params(operations.UpdateDatasetMetadata1Request, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -3049,7 +3112,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DatasetsIDMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateDatasetMetadata1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3060,18 +3123,19 @@ class Datasets:
 
     
     
-    def put_api_v1_datasets_id_metadata_delete(self, id: str, request_body: Optional[str] = None) -> operations.PutAPIV1DatasetsIDMetadataDeleteResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/datasets/{id}/metadata/delete', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DatasetsIDMetadataDeleteRequest(
+    def update_metadata_deletion(self, id: str, request_body: Optional[str] = None) -> operations.UpdateMetadataDeletionResponse:
+        r"""Update the deletion status of the metadata of a specific dataset"""
+        hook_ctx = HookContext(operation_id='updateMetadataDeletion', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateMetadataDeletionRequest(
             id=id,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DatasetsIDMetadataDeleteRequest, base_url, '/api/v1/datasets/{id}/metadata/delete', request)
+        url = utils.generate_url(operations.UpdateMetadataDeletionRequest, base_url, '/api/v1/datasets/{id}/metadata/delete', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PutAPIV1DatasetsIDMetadataDeleteRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateMetadataDeletionRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -3102,7 +3166,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DatasetsIDMetadataDeleteResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateMetadataDeletionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3113,15 +3177,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_modify_registration(self, id: str) -> operations.GetAPIV1DatasetsIDModifyRegistrationResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/modifyRegistration', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDModifyRegistrationRequest(
+    def get_registration_modification(self, id: str) -> operations.GetRegistrationModificationResponse:
+        r"""Retrieve the modification details of a specific dataset registration"""
+        hook_ctx = HookContext(operation_id='getRegistrationModification', oauth2_scopes=[], security_source=None)
+        request = operations.GetRegistrationModificationRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDModifyRegistrationRequest, base_url, '/api/v1/datasets/{id}/modifyRegistration', request)
+        url = utils.generate_url(operations.GetRegistrationModificationRequest, base_url, '/api/v1/datasets/{id}/modifyRegistration', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3151,7 +3216,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDModifyRegistrationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetRegistrationModificationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3162,15 +3227,16 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_modify_registration_metadata(self, id: str) -> operations.PostAPIV1DatasetsIDModifyRegistrationMetadataResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/modifyRegistrationMetadata', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDModifyRegistrationMetadataRequest(
+    def modify_dataset_registration_metadata(self, id: str) -> operations.ModifyDatasetRegistrationMetadataResponse:
+        r"""Modify the registration metadata of a specific dataset"""
+        hook_ctx = HookContext(operation_id='modifyDatasetRegistrationMetadata', oauth2_scopes=[], security_source=None)
+        request = operations.ModifyDatasetRegistrationMetadataRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDModifyRegistrationMetadataRequest, base_url, '/api/v1/datasets/{id}/modifyRegistrationMetadata', request)
+        url = utils.generate_url(operations.ModifyDatasetRegistrationMetadataRequest, base_url, '/api/v1/datasets/{id}/modifyRegistrationMetadata', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3200,7 +3266,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDModifyRegistrationMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ModifyDatasetRegistrationMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3211,18 +3277,19 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_monitor_globus_download(self, id: str, request_body: Optional[str] = None) -> operations.PostAPIV1DatasetsIDMonitorGlobusDownloadResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/monitorGlobusDownload', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDMonitorGlobusDownloadRequest(
+    def monitor_globus_download(self, id: str, request_body: Optional[str] = None) -> operations.MonitorGlobusDownloadResponse:
+        r"""Initiate the process to monitor a Globus download operation for a specific dataset"""
+        hook_ctx = HookContext(operation_id='monitorGlobusDownload', oauth2_scopes=[], security_source=None)
+        request = operations.MonitorGlobusDownloadRequest(
             id=id,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDMonitorGlobusDownloadRequest, base_url, '/api/v1/datasets/{id}/monitorGlobusDownload', request)
+        url = utils.generate_url(operations.MonitorGlobusDownloadRequest, base_url, '/api/v1/datasets/{id}/monitorGlobusDownload', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DatasetsIDMonitorGlobusDownloadRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.MonitorGlobusDownloadRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -3253,7 +3320,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDMonitorGlobusDownloadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.MonitorGlobusDownloadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3264,9 +3331,10 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_move_target_dataverse_alias_(self, id: str, target_dataverse_alias: str, force_move: Optional[bool] = None) -> operations.PostAPIV1DatasetsIDMoveTargetDataverseAliasResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/move/{targetDataverseAlias}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDMoveTargetDataverseAliasRequest(
+    def move_dataset_to_target(self, id: str, target_dataverse_alias: str, force_move: Optional[bool] = None) -> operations.MoveDatasetToTargetResponse:
+        r"""Moves a specific dataset to a target dataverse"""
+        hook_ctx = HookContext(operation_id='moveDatasetToTarget', oauth2_scopes=[], security_source=None)
+        request = operations.MoveDatasetToTargetRequest(
             id=id,
             target_dataverse_alias=target_dataverse_alias,
             force_move=force_move,
@@ -3274,9 +3342,9 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDMoveTargetDataverseAliasRequest, base_url, '/api/v1/datasets/{id}/move/{targetDataverseAlias}', request)
+        url = utils.generate_url(operations.MoveDatasetToTargetRequest, base_url, '/api/v1/datasets/{id}/move/{targetDataverseAlias}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1DatasetsIDMoveTargetDataverseAliasRequest, request)
+        query_params = utils.get_query_params(operations.MoveDatasetToTargetRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -3305,7 +3373,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDMoveTargetDataverseAliasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.MoveDatasetToTargetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3316,15 +3384,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_private_url(self, id: str) -> operations.GetAPIV1DatasetsIDPrivateURLResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/privateUrl', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDPrivateURLRequest(
+    def get_private_url(self, id: str) -> operations.GetPrivateURLResponse:
+        r"""Retrieve a specific dataset's private URL"""
+        hook_ctx = HookContext(operation_id='getPrivateUrl', oauth2_scopes=[], security_source=None)
+        request = operations.GetPrivateURLRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDPrivateURLRequest, base_url, '/api/v1/datasets/{id}/privateUrl', request)
+        url = utils.generate_url(operations.GetPrivateURLRequest, base_url, '/api/v1/datasets/{id}/privateUrl', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3354,7 +3423,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDPrivateURLResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetPrivateURLResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3365,18 +3434,19 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_private_url(self, id: str, anonymized_access: Optional[bool] = None) -> operations.PostAPIV1DatasetsIDPrivateURLResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/privateUrl', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDPrivateURLRequest(
+    def create_private_url(self, id: str, anonymized_access: Optional[bool] = None) -> operations.CreatePrivateURLResponse:
+        r"""Create a private URL for a specific dataset"""
+        hook_ctx = HookContext(operation_id='createPrivateUrl', oauth2_scopes=[], security_source=None)
+        request = operations.CreatePrivateURLRequest(
             id=id,
             anonymized_access=anonymized_access,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDPrivateURLRequest, base_url, '/api/v1/datasets/{id}/privateUrl', request)
+        url = utils.generate_url(operations.CreatePrivateURLRequest, base_url, '/api/v1/datasets/{id}/privateUrl', request)
         headers = {}
-        query_params = utils.get_query_params(operations.PostAPIV1DatasetsIDPrivateURLRequest, request)
+        query_params = utils.get_query_params(operations.CreatePrivateURLRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -3405,7 +3475,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDPrivateURLResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreatePrivateURLResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3416,15 +3486,16 @@ class Datasets:
 
     
     
-    def delete_api_v1_datasets_id_private_url(self, id: str) -> operations.DeleteAPIV1DatasetsIDPrivateURLResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/datasets/{id}/privateUrl', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DatasetsIDPrivateURLRequest(
+    def delete_private_url(self, id: str) -> operations.DeletePrivateURLResponse:
+        r"""Delete a specific dataset's private URL"""
+        hook_ctx = HookContext(operation_id='deletePrivateUrl', oauth2_scopes=[], security_source=None)
+        request = operations.DeletePrivateURLRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DatasetsIDPrivateURLRequest, base_url, '/api/v1/datasets/{id}/privateUrl', request)
+        url = utils.generate_url(operations.DeletePrivateURLRequest, base_url, '/api/v1/datasets/{id}/privateUrl', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3454,7 +3525,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DatasetsIDPrivateURLResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeletePrivateURLResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3465,18 +3536,19 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_replace_files(self, id: str, request_body: Optional[operations.PostAPIV1DatasetsIDReplaceFilesRequestBody] = None) -> operations.PostAPIV1DatasetsIDReplaceFilesResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/replaceFiles', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDReplaceFilesRequest(
+    def replace_dataset_files(self, id: str, request_body: Optional[operations.ReplaceDatasetFilesRequestBody] = None) -> operations.ReplaceDatasetFilesResponse:
+        r"""Replace files in a specified dataset"""
+        hook_ctx = HookContext(operation_id='replaceDatasetFiles', oauth2_scopes=[], security_source=None)
+        request = operations.ReplaceDatasetFilesRequest(
             id=id,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDReplaceFilesRequest, base_url, '/api/v1/datasets/{id}/replaceFiles', request)
+        url = utils.generate_url(operations.ReplaceDatasetFilesRequest, base_url, '/api/v1/datasets/{id}/replaceFiles', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DatasetsIDReplaceFilesRequest, "request_body", False, True, 'multipart')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.ReplaceDatasetFilesRequest, "request_body", False, True, 'multipart')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -3507,7 +3579,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDReplaceFilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ReplaceDatasetFilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3518,9 +3590,10 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_request_globus_download(self, id: str, download_id: Optional[str] = None, request_body: Optional[str] = None) -> operations.PostAPIV1DatasetsIDRequestGlobusDownloadResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/requestGlobusDownload', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDRequestGlobusDownloadRequest(
+    def submit_globus_download_request(self, id: str, download_id: Optional[str] = None, request_body: Optional[str] = None) -> operations.SubmitGlobusDownloadRequestResponse:
+        r"""Submit a request for Globus download for a specific dataset"""
+        hook_ctx = HookContext(operation_id='submitGlobusDownloadRequest', oauth2_scopes=[], security_source=None)
+        request = operations.SubmitGlobusDownloadRequestRequest(
             id=id,
             download_id=download_id,
             request_body=request_body,
@@ -3528,12 +3601,12 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDRequestGlobusDownloadRequest, base_url, '/api/v1/datasets/{id}/requestGlobusDownload', request)
+        url = utils.generate_url(operations.SubmitGlobusDownloadRequestRequest, base_url, '/api/v1/datasets/{id}/requestGlobusDownload', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DatasetsIDRequestGlobusDownloadRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.SubmitGlobusDownloadRequestRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = utils.get_query_params(operations.PostAPIV1DatasetsIDRequestGlobusDownloadRequest, request)
+        query_params = utils.get_query_params(operations.SubmitGlobusDownloadRequestRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -3562,7 +3635,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDRequestGlobusDownloadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.SubmitGlobusDownloadRequestResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3573,18 +3646,19 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_request_globus_upload_paths(self, id: str, request_body: Optional[str] = None) -> operations.PostAPIV1DatasetsIDRequestGlobusUploadPathsResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/requestGlobusUploadPaths', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDRequestGlobusUploadPathsRequest(
+    def post_globus_upload_paths_request(self, id: str, request_body: Optional[str] = None) -> operations.PostGlobusUploadPathsRequestResponse:
+        r"""Submit a request to get the paths for Globus file upload for a specified dataset"""
+        hook_ctx = HookContext(operation_id='postGlobusUploadPathsRequest', oauth2_scopes=[], security_source=None)
+        request = operations.PostGlobusUploadPathsRequestRequest(
             id=id,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDRequestGlobusUploadPathsRequest, base_url, '/api/v1/datasets/{id}/requestGlobusUploadPaths', request)
+        url = utils.generate_url(operations.PostGlobusUploadPathsRequestRequest, base_url, '/api/v1/datasets/{id}/requestGlobusUploadPaths', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DatasetsIDRequestGlobusUploadPathsRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostGlobusUploadPathsRequestRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -3615,7 +3689,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDRequestGlobusUploadPathsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostGlobusUploadPathsRequestResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3626,15 +3700,16 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_return_to_author(self, id: str) -> operations.PostAPIV1DatasetsIDReturnToAuthorResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/returnToAuthor', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDReturnToAuthorRequest(
+    def return_dataset_to_author(self, id: str) -> operations.ReturnDatasetToAuthorResponse:
+        r"""Returns the specified dataset back to its author"""
+        hook_ctx = HookContext(operation_id='returnDatasetToAuthor', oauth2_scopes=[], security_source=None)
+        request = operations.ReturnDatasetToAuthorRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDReturnToAuthorRequest, base_url, '/api/v1/datasets/{id}/returnToAuthor', request)
+        url = utils.generate_url(operations.ReturnDatasetToAuthorRequest, base_url, '/api/v1/datasets/{id}/returnToAuthor', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3664,7 +3739,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDReturnToAuthorResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ReturnDatasetToAuthorResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3675,15 +3750,16 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_submit_for_review(self, id: str) -> operations.PostAPIV1DatasetsIDSubmitForReviewResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/submitForReview', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDSubmitForReviewRequest(
+    def submit_dataset_for_review(self, id: str) -> operations.SubmitDatasetForReviewResponse:
+        r"""Submits a specified dataset for review"""
+        hook_ctx = HookContext(operation_id='submitDatasetForReview', oauth2_scopes=[], security_source=None)
+        request = operations.SubmitDatasetForReviewRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDSubmitForReviewRequest, base_url, '/api/v1/datasets/{id}/submitForReview', request)
+        url = utils.generate_url(operations.SubmitDatasetForReviewRequest, base_url, '/api/v1/datasets/{id}/submitForReview', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3713,7 +3789,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDSubmitForReviewResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.SubmitDatasetForReviewResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3724,15 +3800,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_thumbnail(self, id: str) -> operations.GetAPIV1DatasetsIDThumbnailResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/thumbnail', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDThumbnailRequest(
+    def get_dataset_thumbnail(self, id: str) -> operations.GetDatasetThumbnailResponse:
+        r"""Retrieves a thumbnail from a specific dataset"""
+        hook_ctx = HookContext(operation_id='getDatasetThumbnail', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetThumbnailRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDThumbnailRequest, base_url, '/api/v1/datasets/{id}/thumbnail', request)
+        url = utils.generate_url(operations.GetDatasetThumbnailRequest, base_url, '/api/v1/datasets/{id}/thumbnail', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3762,7 +3839,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDThumbnailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetThumbnailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3773,18 +3850,19 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_thumbnail(self, id: str, request_body: Optional[operations.PostAPIV1DatasetsIDThumbnailRequestBody] = None) -> operations.PostAPIV1DatasetsIDThumbnailResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/thumbnail', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDThumbnailRequest(
+    def post_dataset_thumbnail(self, id: str, request_body: Optional[operations.PostDatasetThumbnailRequestBody] = None) -> operations.PostDatasetThumbnailResponse:
+        r"""Adds a thumbnail to a specific dataset"""
+        hook_ctx = HookContext(operation_id='postDatasetThumbnail', oauth2_scopes=[], security_source=None)
+        request = operations.PostDatasetThumbnailRequest(
             id=id,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDThumbnailRequest, base_url, '/api/v1/datasets/{id}/thumbnail', request)
+        url = utils.generate_url(operations.PostDatasetThumbnailRequest, base_url, '/api/v1/datasets/{id}/thumbnail', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAPIV1DatasetsIDThumbnailRequest, "request_body", False, True, 'multipart')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostDatasetThumbnailRequest, "request_body", False, True, 'multipart')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -3815,7 +3893,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDThumbnailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostDatasetThumbnailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3826,15 +3904,16 @@ class Datasets:
 
     
     
-    def delete_api_v1_datasets_id_thumbnail(self, id: str) -> operations.DeleteAPIV1DatasetsIDThumbnailResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/datasets/{id}/thumbnail', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DatasetsIDThumbnailRequest(
+    def delete_dataset_thumbnail(self, id: str) -> operations.DeleteDatasetThumbnailResponse:
+        r"""Deletes a thumbnail from a specific dataset"""
+        hook_ctx = HookContext(operation_id='deleteDatasetThumbnail', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteDatasetThumbnailRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DatasetsIDThumbnailRequest, base_url, '/api/v1/datasets/{id}/thumbnail', request)
+        url = utils.generate_url(operations.DeleteDatasetThumbnailRequest, base_url, '/api/v1/datasets/{id}/thumbnail', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3864,7 +3943,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DatasetsIDThumbnailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteDatasetThumbnailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3875,15 +3954,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_thumbnail_candidates(self, id: str) -> operations.GetAPIV1DatasetsIDThumbnailCandidatesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/thumbnail/candidates', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDThumbnailCandidatesRequest(
+    def get_thumbnail_candidates(self, id: str) -> operations.GetThumbnailCandidatesResponse:
+        r"""Retrieve the list of thumbnail candidates for a specific dataset"""
+        hook_ctx = HookContext(operation_id='getThumbnailCandidates', oauth2_scopes=[], security_source=None)
+        request = operations.GetThumbnailCandidatesRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDThumbnailCandidatesRequest, base_url, '/api/v1/datasets/{id}/thumbnail/candidates', request)
+        url = utils.generate_url(operations.GetThumbnailCandidatesRequest, base_url, '/api/v1/datasets/{id}/thumbnail/candidates', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3913,7 +3993,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDThumbnailCandidatesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetThumbnailCandidatesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3924,16 +4004,17 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_thumbnail_data_file_id_(self, data_file_id: int, id: str) -> operations.PostAPIV1DatasetsIDThumbnailDataFileIDResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/thumbnail/{dataFileId}', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDThumbnailDataFileIDRequest(
+    def post_thumbnail_data(self, data_file_id: int, id: str) -> operations.PostThumbnailDataResponse:
+        r"""Upload a new thumbnail for a specific dataset"""
+        hook_ctx = HookContext(operation_id='postThumbnailData', oauth2_scopes=[], security_source=None)
+        request = operations.PostThumbnailDataRequest(
             data_file_id=data_file_id,
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDThumbnailDataFileIDRequest, base_url, '/api/v1/datasets/{id}/thumbnail/{dataFileId}', request)
+        url = utils.generate_url(operations.PostThumbnailDataRequest, base_url, '/api/v1/datasets/{id}/thumbnail/{dataFileId}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -3963,7 +4044,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDThumbnailDataFileIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostThumbnailDataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -3974,16 +4055,19 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_uploadsid(self, id: str) -> operations.GetAPIV1DatasetsIDUploadsidResponse:
-        r"""Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible."""
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/uploadsid', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDUploadsidRequest(
+    def get_upload_id(self, id: str) -> operations.GetUploadIDResponse:
+        r"""Retrieve the upload ID for the specified dataset
+
+        Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
+        """
+        hook_ctx = HookContext(operation_id='getUploadId', oauth2_scopes=[], security_source=None)
+        request = operations.GetUploadIDRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDUploadsidRequest, base_url, '/api/v1/datasets/{id}/uploadsid', request)
+        url = utils.generate_url(operations.GetUploadIDRequest, base_url, '/api/v1/datasets/{id}/uploadsid', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4013,7 +4097,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDUploadsidResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetUploadIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4024,18 +4108,19 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_uploadurls(self, id: str, size: Optional[int] = None) -> operations.GetAPIV1DatasetsIDUploadurlsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/uploadurls', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDUploadurlsRequest(
+    def get_upload_ur_ls(self, id: str, size: Optional[int] = None) -> operations.GetUploadURLsResponse:
+        r"""Retrieve upload URLs for a specific dataset"""
+        hook_ctx = HookContext(operation_id='getUploadURLs', oauth2_scopes=[], security_source=None)
+        request = operations.GetUploadURLsRequest(
             id=id,
             size=size,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDUploadurlsRequest, base_url, '/api/v1/datasets/{id}/uploadurls', request)
+        url = utils.generate_url(operations.GetUploadURLsRequest, base_url, '/api/v1/datasets/{id}/uploadurls', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIDUploadurlsRequest, request)
+        query_params = utils.get_query_params(operations.GetUploadURLsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -4064,7 +4149,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDUploadurlsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetUploadURLsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4075,15 +4160,16 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_user_permissions(self, id: str) -> operations.GetAPIV1DatasetsIDUserPermissionsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/userPermissions', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDUserPermissionsRequest(
+    def get_user_permissions(self, id: str) -> operations.GetUserPermissionsResponse:
+        r"""Retrieve user permissions for a specific dataset"""
+        hook_ctx = HookContext(operation_id='getUserPermissions', oauth2_scopes=[], security_source=None)
+        request = operations.GetUserPermissionsRequest(
             id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDUserPermissionsRequest, base_url, '/api/v1/datasets/{id}/userPermissions', request)
+        url = utils.generate_url(operations.GetUserPermissionsRequest, base_url, '/api/v1/datasets/{id}/userPermissions', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4113,7 +4199,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDUserPermissionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetUserPermissionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4124,9 +4210,10 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_versions(self, id: str, exclude_files: Optional[bool] = None, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetAPIV1DatasetsIDVersionsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/versions', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDVersionsRequest(
+    def get_dataset_versions(self, id: str, exclude_files: Optional[bool] = None, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetDatasetVersionsResponse:
+        r"""Retrieve versions of a specific dataset"""
+        hook_ctx = HookContext(operation_id='getDatasetVersions', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetVersionsRequest(
             id=id,
             exclude_files=exclude_files,
             limit=limit,
@@ -4135,9 +4222,9 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDVersionsRequest, base_url, '/api/v1/datasets/{id}/versions', request)
+        url = utils.generate_url(operations.GetDatasetVersionsRequest, base_url, '/api/v1/datasets/{id}/versions', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIDVersionsRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetVersionsRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -4166,7 +4253,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDVersionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetVersionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4177,9 +4264,10 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_versions_version_id_(self, id: str, version_id: str, exclude_files: Optional[bool] = None, include_deaccessioned: Optional[bool] = None) -> operations.GetAPIV1DatasetsIDVersionsVersionIDResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/versions/{versionId}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDVersionsVersionIDRequest(
+    def get_dataset_version(self, id: str, version_id: str, exclude_files: Optional[bool] = None, include_deaccessioned: Optional[bool] = None) -> operations.GetDatasetVersionResponse:
+        r"""Fetches the dataset version details, with options to exclude files or include deaccessioned ones"""
+        hook_ctx = HookContext(operation_id='getDatasetVersion', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetVersionRequest(
             id=id,
             version_id=version_id,
             exclude_files=exclude_files,
@@ -4188,9 +4276,9 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDVersionsVersionIDRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}', request)
+        url = utils.generate_url(operations.GetDatasetVersionRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIDVersionsVersionIDRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetVersionRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -4219,7 +4307,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDVersionsVersionIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetVersionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4230,9 +4318,10 @@ class Datasets:
 
     
     
-    def put_api_v1_datasets_id_versions_version_id_(self, id: str, version_id: str, request_body: Optional[str] = None) -> operations.PutAPIV1DatasetsIDVersionsVersionIDResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/datasets/{id}/versions/{versionId}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DatasetsIDVersionsVersionIDRequest(
+    def update_dataset_version(self, id: str, version_id: str, request_body: Optional[str] = None) -> operations.UpdateDatasetVersionResponse:
+        r"""Updates the dataset version with the given ID"""
+        hook_ctx = HookContext(operation_id='updateDatasetVersion', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateDatasetVersionRequest(
             id=id,
             version_id=version_id,
             request_body=request_body,
@@ -4240,9 +4329,9 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DatasetsIDVersionsVersionIDRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}', request)
+        url = utils.generate_url(operations.UpdateDatasetVersionRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PutAPIV1DatasetsIDVersionsVersionIDRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateDatasetVersionRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -4273,7 +4362,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DatasetsIDVersionsVersionIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateDatasetVersionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4284,16 +4373,17 @@ class Datasets:
 
     
     
-    def delete_api_v1_datasets_id_versions_version_id_(self, id: str, version_id: str) -> operations.DeleteAPIV1DatasetsIDVersionsVersionIDResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/datasets/{id}/versions/{versionId}', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DatasetsIDVersionsVersionIDRequest(
+    def delete_dataset_version(self, id: str, version_id: str) -> operations.DeleteDatasetVersionResponse:
+        r"""Deletes the specified version of a dataset"""
+        hook_ctx = HookContext(operation_id='deleteDatasetVersion', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteDatasetVersionRequest(
             id=id,
             version_id=version_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DatasetsIDVersionsVersionIDRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}', request)
+        url = utils.generate_url(operations.DeleteDatasetVersionRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4323,7 +4413,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DatasetsIDVersionsVersionIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteDatasetVersionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4334,9 +4424,10 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_versions_version_id_can_download_at_least_one_file(self, id: str, version_id: str, include_deaccessioned: Optional[bool] = None) -> operations.GetAPIV1DatasetsIDVersionsVersionIDCanDownloadAtLeastOneFileResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/versions/{versionId}/canDownloadAtLeastOneFile', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDVersionsVersionIDCanDownloadAtLeastOneFileRequest(
+    def check_dataset_file_download_permission(self, id: str, version_id: str, include_deaccessioned: Optional[bool] = None) -> operations.CheckDatasetFileDownloadPermissionResponse:
+        r"""Checks if a user has permission to download at least one file from a specific dataset version"""
+        hook_ctx = HookContext(operation_id='checkDatasetFileDownloadPermission', oauth2_scopes=[], security_source=None)
+        request = operations.CheckDatasetFileDownloadPermissionRequest(
             id=id,
             version_id=version_id,
             include_deaccessioned=include_deaccessioned,
@@ -4344,9 +4435,9 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDVersionsVersionIDCanDownloadAtLeastOneFileRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/canDownloadAtLeastOneFile', request)
+        url = utils.generate_url(operations.CheckDatasetFileDownloadPermissionRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/canDownloadAtLeastOneFile', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIDVersionsVersionIDCanDownloadAtLeastOneFileRequest, request)
+        query_params = utils.get_query_params(operations.CheckDatasetFileDownloadPermissionRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -4375,7 +4466,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDVersionsVersionIDCanDownloadAtLeastOneFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CheckDatasetFileDownloadPermissionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4386,9 +4477,10 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_versions_version_id_citation(self, id: str, version_id: str, include_deaccessioned: Optional[bool] = None) -> operations.GetAPIV1DatasetsIDVersionsVersionIDCitationResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/versions/{versionId}/citation', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDVersionsVersionIDCitationRequest(
+    def get_citation(self, id: str, version_id: str, include_deaccessioned: Optional[bool] = None) -> operations.GetCitationResponse:
+        r"""Retrieve the citation of a specific dataset version"""
+        hook_ctx = HookContext(operation_id='getCitation', oauth2_scopes=[], security_source=None)
+        request = operations.GetCitationRequest(
             id=id,
             version_id=version_id,
             include_deaccessioned=include_deaccessioned,
@@ -4396,9 +4488,9 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDVersionsVersionIDCitationRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/citation', request)
+        url = utils.generate_url(operations.GetCitationRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/citation', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIDVersionsVersionIDCitationRequest, request)
+        query_params = utils.get_query_params(operations.GetCitationRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -4427,7 +4519,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDVersionsVersionIDCitationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetCitationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4438,16 +4530,17 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_versions_version_id_customlicense(self, id: str, version_id: str) -> operations.GetAPIV1DatasetsIDVersionsVersionIDCustomlicenseResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/versions/{versionId}/customlicense', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDVersionsVersionIDCustomlicenseRequest(
+    def get_custom_license(self, id: str, version_id: str) -> operations.GetCustomLicenseResponse:
+        r"""Retrieve a specific dataset version's custom license"""
+        hook_ctx = HookContext(operation_id='getCustomLicense', oauth2_scopes=[], security_source=None)
+        request = operations.GetCustomLicenseRequest(
             id=id,
             version_id=version_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDVersionsVersionIDCustomlicenseRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/customlicense', request)
+        url = utils.generate_url(operations.GetCustomLicenseRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/customlicense', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4477,7 +4570,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDVersionsVersionIDCustomlicenseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetCustomLicenseResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4488,16 +4581,17 @@ class Datasets:
 
     
     
-    def post_api_v1_datasets_id_versions_version_id_deaccession(self, id: str, version_id: str) -> operations.PostAPIV1DatasetsIDVersionsVersionIDDeaccessionResponse:
-        hook_ctx = HookContext(operation_id='post_/api/v1/datasets/{id}/versions/{versionId}/deaccession', oauth2_scopes=[], security_source=None)
-        request = operations.PostAPIV1DatasetsIDVersionsVersionIDDeaccessionRequest(
+    def post_deaccession_dataset_by_version_id(self, id: str, version_id: str) -> operations.PostDeaccessionDatasetByVersionIDResponse:
+        r"""Remove access to a specific version of a dataset"""
+        hook_ctx = HookContext(operation_id='postDeaccessionDatasetByVersionId', oauth2_scopes=[], security_source=None)
+        request = operations.PostDeaccessionDatasetByVersionIDRequest(
             id=id,
             version_id=version_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostAPIV1DatasetsIDVersionsVersionIDDeaccessionRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/deaccession', request)
+        url = utils.generate_url(operations.PostDeaccessionDatasetByVersionIDRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/deaccession', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4527,7 +4621,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostAPIV1DatasetsIDVersionsVersionIDDeaccessionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostDeaccessionDatasetByVersionIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4538,13 +4632,14 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_versions_version_id_files(self, request: operations.GetAPIV1DatasetsIDVersionsVersionIDFilesRequest) -> operations.GetAPIV1DatasetsIDVersionsVersionIDFilesResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/versions/{versionId}/files', oauth2_scopes=[], security_source=None)
+    def get_dataset_version_files(self, request: operations.GetDatasetVersionFilesRequest) -> operations.GetDatasetVersionFilesResponse:
+        r"""Fetches files within a specific version of a dataset"""
+        hook_ctx = HookContext(operation_id='getDatasetVersionFiles', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDVersionsVersionIDFilesRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/files', request)
+        url = utils.generate_url(operations.GetDatasetVersionFilesRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/files', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIDVersionsVersionIDFilesRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetVersionFilesRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -4573,7 +4668,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDVersionsVersionIDFilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetVersionFilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4584,13 +4679,14 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_versions_version_id_files_counts(self, request: operations.GetAPIV1DatasetsIDVersionsVersionIDFilesCountsRequest) -> operations.GetAPIV1DatasetsIDVersionsVersionIDFilesCountsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/versions/{versionId}/files/counts', oauth2_scopes=[], security_source=None)
+    def get_dataset_files_count(self, request: operations.GetDatasetFilesCountRequest) -> operations.GetDatasetFilesCountResponse:
+        r"""Retrieve counts of various types of files in a specified dataset version"""
+        hook_ctx = HookContext(operation_id='getDatasetFilesCount', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDVersionsVersionIDFilesCountsRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/files/counts', request)
+        url = utils.generate_url(operations.GetDatasetFilesCountRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/files/counts', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIDVersionsVersionIDFilesCountsRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetFilesCountRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -4619,7 +4715,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDVersionsVersionIDFilesCountsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetFilesCountResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4630,16 +4726,17 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_versions_version_id_linkset(self, id: str, version_id: str) -> operations.GetAPIV1DatasetsIDVersionsVersionIDLinksetResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/versions/{versionId}/linkset', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDVersionsVersionIDLinksetRequest(
+    def get_dataset_version_linkset(self, id: str, version_id: str) -> operations.GetDatasetVersionLinksetResponse:
+        r"""Retrieve linkset of a specific dataset version"""
+        hook_ctx = HookContext(operation_id='getDatasetVersionLinkset', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetVersionLinksetRequest(
             id=id,
             version_id=version_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDVersionsVersionIDLinksetRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/linkset', request)
+        url = utils.generate_url(operations.GetDatasetVersionLinksetRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/linkset', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4669,7 +4766,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDVersionsVersionIDLinksetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetVersionLinksetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4680,16 +4777,17 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_versions_version_id_metadata(self, id: str, version_id: str) -> operations.GetAPIV1DatasetsIDVersionsVersionIDMetadataResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/versions/{versionId}/metadata', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDVersionsVersionIDMetadataRequest(
+    def get_dataset_version_metadata(self, id: str, version_id: str) -> operations.GetDatasetVersionMetadataResponse:
+        r"""Retrieve the metadata of a specific version of a dataset"""
+        hook_ctx = HookContext(operation_id='getDatasetVersionMetadata', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetVersionMetadataRequest(
             id=id,
             version_id=version_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDVersionsVersionIDMetadataRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/metadata', request)
+        url = utils.generate_url(operations.GetDatasetVersionMetadataRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/metadata', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4719,7 +4817,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDVersionsVersionIDMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetVersionMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4730,9 +4828,10 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_versions_version_number_metadata_block_(self, block: str, id: str, version_number: str) -> operations.GetAPIV1DatasetsIDVersionsVersionNumberMetadataBlockResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/versions/{versionNumber}/metadata/{block}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDVersionsVersionNumberMetadataBlockRequest(
+    def get_dataset_version_metadata_1(self, block: str, id: str, version_number: str) -> operations.GetDatasetVersionMetadata1Response:
+        r"""Retrieve metadata of a specified version of a dataset"""
+        hook_ctx = HookContext(operation_id='getDatasetVersionMetadata_1', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetVersionMetadata1Request(
             block=block,
             id=id,
             version_number=version_number,
@@ -4740,7 +4839,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDVersionsVersionNumberMetadataBlockRequest, base_url, '/api/v1/datasets/{id}/versions/{versionNumber}/metadata/{block}', request)
+        url = utils.generate_url(operations.GetDatasetVersionMetadata1Request, base_url, '/api/v1/datasets/{id}/versions/{versionNumber}/metadata/{block}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4770,7 +4869,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDVersionsVersionNumberMetadataBlockResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetVersionMetadata1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4781,9 +4880,10 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_versions_version_toolparams_tid_(self, id: str, tid: int, version: str, locale: Optional[str] = None) -> operations.GetAPIV1DatasetsIDVersionsVersionToolparamsTidResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/versions/{version}/toolparams/{tid}', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDVersionsVersionToolparamsTidRequest(
+    def get_dataset_version_tool_param(self, id: str, tid: int, version: str, locale: Optional[str] = None) -> operations.GetDatasetVersionToolParamResponse:
+        r"""Retrieve tool parameters of a specific version of a dataset"""
+        hook_ctx = HookContext(operation_id='getDatasetVersionToolParam', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetVersionToolParamRequest(
             id=id,
             tid=tid,
             version=version,
@@ -4792,9 +4892,9 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDVersionsVersionToolparamsTidRequest, base_url, '/api/v1/datasets/{id}/versions/{version}/toolparams/{tid}', request)
+        url = utils.generate_url(operations.GetDatasetVersionToolParamRequest, base_url, '/api/v1/datasets/{id}/versions/{version}/toolparams/{tid}', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAPIV1DatasetsIDVersionsVersionToolparamsTidRequest, request)
+        query_params = utils.get_query_params(operations.GetDatasetVersionToolParamRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -4823,7 +4923,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDVersionsVersionToolparamsTidResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetVersionToolParamResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4834,16 +4934,17 @@ class Datasets:
 
     
     
-    def get_api_v1_datasets_id_version_archival_status(self, id: str, version: str) -> operations.GetAPIV1DatasetsIDVersionArchivalStatusResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/datasets/{id}/{version}/archivalStatus', oauth2_scopes=[], security_source=None)
-        request = operations.GetAPIV1DatasetsIDVersionArchivalStatusRequest(
+    def get_dataset_archival_status(self, id: str, version: str) -> operations.GetDatasetArchivalStatusResponse:
+        r"""Retrieve the archival status of a specific version of a dataset"""
+        hook_ctx = HookContext(operation_id='getDatasetArchivalStatus', oauth2_scopes=[], security_source=None)
+        request = operations.GetDatasetArchivalStatusRequest(
             id=id,
             version=version,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPIV1DatasetsIDVersionArchivalStatusRequest, base_url, '/api/v1/datasets/{id}/{version}/archivalStatus', request)
+        url = utils.generate_url(operations.GetDatasetArchivalStatusRequest, base_url, '/api/v1/datasets/{id}/{version}/archivalStatus', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4873,7 +4974,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1DatasetsIDVersionArchivalStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDatasetArchivalStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4884,9 +4985,10 @@ class Datasets:
 
     
     
-    def put_api_v1_datasets_id_version_archival_status(self, id: str, version: str, request_body: Optional[str] = None) -> operations.PutAPIV1DatasetsIDVersionArchivalStatusResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/datasets/{id}/{version}/archivalStatus', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DatasetsIDVersionArchivalStatusRequest(
+    def update_dataset_archival_status(self, id: str, version: str, request_body: Optional[str] = None) -> operations.UpdateDatasetArchivalStatusResponse:
+        r"""Update the archival status of a specific version of a dataset"""
+        hook_ctx = HookContext(operation_id='updateDatasetArchivalStatus', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateDatasetArchivalStatusRequest(
             id=id,
             version=version,
             request_body=request_body,
@@ -4894,9 +4996,9 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DatasetsIDVersionArchivalStatusRequest, base_url, '/api/v1/datasets/{id}/{version}/archivalStatus', request)
+        url = utils.generate_url(operations.UpdateDatasetArchivalStatusRequest, base_url, '/api/v1/datasets/{id}/{version}/archivalStatus', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.PutAPIV1DatasetsIDVersionArchivalStatusRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateDatasetArchivalStatusRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -4927,7 +5029,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DatasetsIDVersionArchivalStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateDatasetArchivalStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4938,16 +5040,17 @@ class Datasets:
 
     
     
-    def delete_api_v1_datasets_id_version_archival_status(self, id: str, version: str) -> operations.DeleteAPIV1DatasetsIDVersionArchivalStatusResponse:
-        hook_ctx = HookContext(operation_id='delete_/api/v1/datasets/{id}/{version}/archivalStatus', oauth2_scopes=[], security_source=None)
-        request = operations.DeleteAPIV1DatasetsIDVersionArchivalStatusRequest(
+    def delete_dataset_archival_status(self, id: str, version: str) -> operations.DeleteDatasetArchivalStatusResponse:
+        r"""Remove the archival status of a specific version of a dataset"""
+        hook_ctx = HookContext(operation_id='deleteDatasetArchivalStatus', oauth2_scopes=[], security_source=None)
+        request = operations.DeleteDatasetArchivalStatusRequest(
             id=id,
             version=version,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAPIV1DatasetsIDVersionArchivalStatusRequest, base_url, '/api/v1/datasets/{id}/{version}/archivalStatus', request)
+        url = utils.generate_url(operations.DeleteDatasetArchivalStatusRequest, base_url, '/api/v1/datasets/{id}/{version}/archivalStatus', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -4977,7 +5080,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteAPIV1DatasetsIDVersionArchivalStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteDatasetArchivalStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
@@ -4988,16 +5091,17 @@ class Datasets:
 
     
     
-    def put_api_v1_datasets_linked_dataset_id_link_linking_dataverse_alias_(self, linked_dataset_id: str, linking_dataverse_alias: str) -> operations.PutAPIV1DatasetsLinkedDatasetIDLinkLinkingDataverseAliasResponse:
-        hook_ctx = HookContext(operation_id='put_/api/v1/datasets/{linkedDatasetId}/link/{linkingDataverseAlias}', oauth2_scopes=[], security_source=None)
-        request = operations.PutAPIV1DatasetsLinkedDatasetIDLinkLinkingDataverseAliasRequest(
+    def update_dataset_link(self, linked_dataset_id: str, linking_dataverse_alias: str) -> operations.UpdateDatasetLinkResponse:
+        r"""Updates the link between a dataset and a Dataverse alias"""
+        hook_ctx = HookContext(operation_id='updateDatasetLink', oauth2_scopes=[], security_source=None)
+        request = operations.UpdateDatasetLinkRequest(
             linked_dataset_id=linked_dataset_id,
             linking_dataverse_alias=linking_dataverse_alias,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutAPIV1DatasetsLinkedDatasetIDLinkLinkingDataverseAliasRequest, base_url, '/api/v1/datasets/{linkedDatasetId}/link/{linkingDataverseAlias}', request)
+        url = utils.generate_url(operations.UpdateDatasetLinkRequest, base_url, '/api/v1/datasets/{linkedDatasetId}/link/{linkingDataverseAlias}', request)
         headers = {}
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -5027,7 +5131,7 @@ class Datasets:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PutAPIV1DatasetsLinkedDatasetIDLinkLinkingDataverseAliasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateDatasetLinkResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

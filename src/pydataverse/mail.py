@@ -14,8 +14,9 @@ class Mail:
         
     
     
-    def get_api_v1_mail_notifications(self) -> operations.GetAPIV1MailNotificationsResponse:
-        hook_ctx = HookContext(operation_id='get_/api/v1/mail/notifications', oauth2_scopes=[], security_source=None)
+    def get_mail_notifications(self) -> operations.GetMailNotificationsResponse:
+        r"""Retrieve a list of mail notifications"""
+        hook_ctx = HookContext(operation_id='getMailNotifications', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/mail/notifications'
@@ -48,7 +49,7 @@ class Mail:
         
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIV1MailNotificationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMailNotificationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             pass

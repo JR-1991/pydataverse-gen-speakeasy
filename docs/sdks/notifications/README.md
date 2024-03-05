@@ -3,16 +3,18 @@
 
 ### Available Operations
 
-* [get_api_v1_notifications_all](#get_api_v1_notifications_all)
-* [get_api_v1_notifications_muted_emails](#get_api_v1_notifications_muted_emails)
-* [put_api_v1_notifications_muted_emails_type_name_](#put_api_v1_notifications_muted_emails_type_name_)
-* [delete_api_v1_notifications_muted_emails_type_name_](#delete_api_v1_notifications_muted_emails_type_name_)
-* [get_api_v1_notifications_muted_notifications](#get_api_v1_notifications_muted_notifications)
-* [put_api_v1_notifications_muted_notifications_type_name_](#put_api_v1_notifications_muted_notifications_type_name_)
-* [delete_api_v1_notifications_muted_notifications_type_name_](#delete_api_v1_notifications_muted_notifications_type_name_)
-* [delete_api_v1_notifications_id_](#delete_api_v1_notifications_id_)
+* [get_all_notifications](#get_all_notifications) - Retrieve all notifications
+* [get_muted_emails](#get_muted_emails) - Retrieve a list of muted email notifications
+* [update_muted_email_notification](#update_muted_email_notification) - Updates a muted email notification by type name
+* [delete_muted_email_notification](#delete_muted_email_notification) - Deletes a muted email notification by type name
+* [get_muted_notifications](#get_muted_notifications) - Retrieve all muted notifications
+* [update_muted_notification](#update_muted_notification) - Update details of a specific muted notification
+* [delete_muted_notification](#delete_muted_notification) - Delete a specific muted notification
+* [delete_notification](#delete_notification) - Delete a notification by ID
 
-## get_api_v1_notifications_all
+## get_all_notifications
+
+Retrieve all notifications
 
 ### Example Usage
 
@@ -22,7 +24,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.notifications.get_api_v1_notifications_all()
+res = s.notifications.get_all_notifications()
 
 if res.status_code == 200:
     # handle response
@@ -32,14 +34,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1NotificationsAllResponse](../../models/operations/getapiv1notificationsallresponse.md)**
+**[operations.GetAllNotificationsResponse](../../models/operations/getallnotificationsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_notifications_muted_emails
+## get_muted_emails
+
+Retrieve a list of muted email notifications
 
 ### Example Usage
 
@@ -49,7 +53,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.notifications.get_api_v1_notifications_muted_emails()
+res = s.notifications.get_muted_emails()
 
 if res.status_code == 200:
     # handle response
@@ -59,14 +63,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1NotificationsMutedEmailsResponse](../../models/operations/getapiv1notificationsmutedemailsresponse.md)**
+**[operations.GetMutedEmailsResponse](../../models/operations/getmutedemailsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## put_api_v1_notifications_muted_emails_type_name_
+## update_muted_email_notification
+
+Updates a muted email notification by type name
 
 ### Example Usage
 
@@ -76,40 +82,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.notifications.put_api_v1_notifications_muted_emails_type_name_(type_name='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `type_name`        | *str*              | :heavy_check_mark: | N/A                |
-
-
-### Response
-
-**[operations.PutAPIV1NotificationsMutedEmailsTypeNameResponse](../../models/operations/putapiv1notificationsmutedemailstypenameresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## delete_api_v1_notifications_muted_emails_type_name_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.notifications.delete_api_v1_notifications_muted_emails_type_name_(type_name='<value>')
+res = s.notifications.update_muted_email_notification(type_name='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -125,14 +98,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1NotificationsMutedEmailsTypeNameResponse](../../models/operations/deleteapiv1notificationsmutedemailstypenameresponse.md)**
+**[operations.UpdateMutedEmailNotificationResponse](../../models/operations/updatemutedemailnotificationresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_notifications_muted_notifications
+## delete_muted_email_notification
+
+Deletes a muted email notification by type name
 
 ### Example Usage
 
@@ -142,34 +117,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.notifications.get_api_v1_notifications_muted_notifications()
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-
-### Response
-
-**[operations.GetAPIV1NotificationsMutedNotificationsResponse](../../models/operations/getapiv1notificationsmutednotificationsresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## put_api_v1_notifications_muted_notifications_type_name_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.notifications.put_api_v1_notifications_muted_notifications_type_name_(type_name='<value>')
+res = s.notifications.delete_muted_email_notification(type_name='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -185,14 +133,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.PutAPIV1NotificationsMutedNotificationsTypeNameResponse](../../models/operations/putapiv1notificationsmutednotificationstypenameresponse.md)**
+**[operations.DeleteMutedEmailNotificationResponse](../../models/operations/deletemutedemailnotificationresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_notifications_muted_notifications_type_name_
+## get_muted_notifications
+
+Retrieve all muted notifications
 
 ### Example Usage
 
@@ -202,7 +152,36 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.notifications.delete_api_v1_notifications_muted_notifications_type_name_(type_name='<value>')
+res = s.notifications.get_muted_notifications()
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+
+### Response
+
+**[operations.GetMutedNotificationsResponse](../../models/operations/getmutednotificationsresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## update_muted_notification
+
+Update details of a specific muted notification
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.notifications.update_muted_notification(type_name='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -218,14 +197,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1NotificationsMutedNotificationsTypeNameResponse](../../models/operations/deleteapiv1notificationsmutednotificationstypenameresponse.md)**
+**[operations.UpdateMutedNotificationResponse](../../models/operations/updatemutednotificationresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## delete_api_v1_notifications_id_
+## delete_muted_notification
+
+Delete a specific muted notification
 
 ### Example Usage
 
@@ -235,7 +216,42 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.notifications.delete_api_v1_notifications_id_(id=44071)
+res = s.notifications.delete_muted_notification(type_name='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `type_name`        | *str*              | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[operations.DeleteMutedNotificationResponse](../../models/operations/deletemutednotificationresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## delete_notification
+
+Delete a notification by ID
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.notifications.delete_notification(id=927889)
 
 if res.status_code == 200:
     # handle response
@@ -251,7 +267,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.DeleteAPIV1NotificationsIDResponse](../../models/operations/deleteapiv1notificationsidresponse.md)**
+**[operations.DeleteNotificationResponse](../../models/operations/deletenotificationresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

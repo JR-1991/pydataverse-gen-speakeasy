@@ -3,52 +3,54 @@
 
 ### Available Operations
 
-* [get_api_v1_info_api_terms_of_use](#get_api_v1_info_api_terms_of_use)
-* [get_api_v1_info_metrics_datasets](#get_api_v1_info_metrics_datasets)
-* [get_api_v1_info_metrics_datasets_by_subject](#get_api_v1_info_metrics_datasets_by_subject)
-* [get_api_v1_info_metrics_datasets_by_subject_to_month_yyyymm_](#get_api_v1_info_metrics_datasets_by_subject_to_month_yyyymm_)
-* [get_api_v1_info_metrics_datasets_monthly](#get_api_v1_info_metrics_datasets_monthly)
-* [get_api_v1_info_metrics_datasets_past_days_days_](#get_api_v1_info_metrics_datasets_past_days_days_)
-* [get_api_v1_info_metrics_datasets_to_month_yyyymm_](#get_api_v1_info_metrics_datasets_to_month_yyyymm_)
-* [get_api_v1_info_metrics_dataverses](#get_api_v1_info_metrics_dataverses)
-* [get_api_v1_info_metrics_dataverses_by_category](#get_api_v1_info_metrics_dataverses_by_category)
-* [get_api_v1_info_metrics_dataverses_by_subject](#get_api_v1_info_metrics_dataverses_by_subject)
-* [get_api_v1_info_metrics_dataverses_monthly](#get_api_v1_info_metrics_dataverses_monthly)
-* [get_api_v1_info_metrics_dataverses_past_days_days_](#get_api_v1_info_metrics_dataverses_past_days_days_)
-* [get_api_v1_info_metrics_dataverses_to_month_yyyymm_](#get_api_v1_info_metrics_dataverses_to_month_yyyymm_)
-* [get_api_v1_info_metrics_downloads](#get_api_v1_info_metrics_downloads)
-* [get_api_v1_info_metrics_downloads_monthly](#get_api_v1_info_metrics_downloads_monthly)
-* [get_api_v1_info_metrics_downloads_past_days_days_](#get_api_v1_info_metrics_downloads_past_days_days_)
-* [get_api_v1_info_metrics_downloads_to_month_yyyymm_](#get_api_v1_info_metrics_downloads_to_month_yyyymm_)
-* [get_api_v1_info_metrics_filedownloads](#get_api_v1_info_metrics_filedownloads)
-* [get_api_v1_info_metrics_filedownloads_monthly](#get_api_v1_info_metrics_filedownloads_monthly)
-* [get_api_v1_info_metrics_filedownloads_to_month_yyyymm_](#get_api_v1_info_metrics_filedownloads_to_month_yyyymm_)
-* [get_api_v1_info_metrics_files](#get_api_v1_info_metrics_files)
-* [get_api_v1_info_metrics_files_by_type](#get_api_v1_info_metrics_files_by_type)
-* [get_api_v1_info_metrics_files_by_type_monthly](#get_api_v1_info_metrics_files_by_type_monthly)
-* [get_api_v1_info_metrics_files_monthly](#get_api_v1_info_metrics_files_monthly)
-* [get_api_v1_info_metrics_files_past_days_days_](#get_api_v1_info_metrics_files_past_days_days_)
-* [get_api_v1_info_metrics_files_to_month_yyyymm_](#get_api_v1_info_metrics_files_to_month_yyyymm_)
-* [get_api_v1_info_metrics_make_data_count_metric_](#get_api_v1_info_metrics_make_data_count_metric_)
-* [get_api_v1_info_metrics_make_data_count_metric_monthly](#get_api_v1_info_metrics_make_data_count_metric_monthly)
-* [get_api_v1_info_metrics_make_data_count_metric_to_month_yyyymm_](#get_api_v1_info_metrics_make_data_count_metric_to_month_yyyymm_)
-* [get_api_v1_info_metrics_tree](#get_api_v1_info_metrics_tree)
-* [get_api_v1_info_metrics_tree_to_month_yyyymm_](#get_api_v1_info_metrics_tree_to_month_yyyymm_)
-* [get_api_v1_info_metrics_uniquedownloads](#get_api_v1_info_metrics_uniquedownloads)
-* [get_api_v1_info_metrics_uniquedownloads_monthly](#get_api_v1_info_metrics_uniquedownloads_monthly)
-* [get_api_v1_info_metrics_uniquedownloads_to_month_yyyymm_](#get_api_v1_info_metrics_uniquedownloads_to_month_yyyymm_)
-* [get_api_v1_info_metrics_uniquefiledownloads](#get_api_v1_info_metrics_uniquefiledownloads)
-* [get_api_v1_info_metrics_uniquefiledownloads_monthly](#get_api_v1_info_metrics_uniquefiledownloads_monthly)
-* [get_api_v1_info_metrics_uniquefiledownloads_to_month_yyyymm_](#get_api_v1_info_metrics_uniquefiledownloads_to_month_yyyymm_)
-* [get_api_v1_info_openapi_output_format_](#get_api_v1_info_openapi_output_format_)
-* [get_api_v1_info_server](#get_api_v1_info_server)
-* [get_api_v1_info_settings_dataset_publish_popup_custom_text](#get_api_v1_info_settings_dataset_publish_popup_custom_text)
-* [get_api_v1_info_settings_max_embargo_duration_in_months](#get_api_v1_info_settings_max_embargo_duration_in_months)
-* [get_api_v1_info_settings_incomplete_metadata_via_api](#get_api_v1_info_settings_incomplete_metadata_via_api)
-* [get_api_v1_info_version](#get_api_v1_info_version)
-* [get_api_v1_info_zip_download_limit](#get_api_v1_info_zip_download_limit)
+* [get_api_terms_of_use_info](#get_api_terms_of_use_info) - Retrieve the terms of use of the API
+* [get_dataset_metrics_1](#get_dataset_metrics_1) - Retrieve dataset metrics based on the data location and parent alias
+* [get_datasets_by_subject](#get_datasets_by_subject) - Retrieve datasets by subject according to specified data location and parent alias
+* [get_monthly_subject_metrics](#get_monthly_subject_metrics) - Retrieve monthly metrics for datasets by subject
+* [get_monthly_dataset_metrics](#get_monthly_dataset_metrics) - Retrieve monthly metrics of datasets based on data location and parent alias.
+* [get_past_days_metrics](#get_past_days_metrics) - Retrieve metrics of datasets from past specified days
+* [get_monthly_dataset_metrics_1](#get_monthly_dataset_metrics_1) - Retrieve dataset metrics for a specific month
+* [get_metrics_dataverses](#get_metrics_dataverses) - Retrieves metrics of dataverses based on parent alias
+* [get_metrics_by_category](#get_metrics_by_category) - Retrieves metrics of dataverses sorted by category
+* [get_metrics_by_subject](#get_metrics_by_subject) - Retrieve metrics of dataverses by subject
+* [get_monthly_dataverse_metrics](#get_monthly_dataverse_metrics) - Retrieve the monthly metrics of a specific dataverse
+* [get_metrics_past_days](#get_metrics_past_days) - Retrieves the number of dataverses created over the past specified number of days
+* [get_monthly_metrics_for_dataverses](#get_monthly_metrics_for_dataverses) - Retrieve the metrics for dataverses up to the specified month.
+* [get_download_metrics](#get_download_metrics) - Retrieve download metrics based on a parent alias.
+* [get_monthly_downloads](#get_monthly_downloads) - Retrieve monthly download metrics
+* [get_past_days_downloads](#get_past_days_downloads) - Retrieve download metrics for the past specified number of days
+* [get_download_metrics_to_month](#get_download_metrics_to_month) - Retrieve download metrics till a specific month
+* [get_file_downloads_metrics](#get_file_downloads_metrics) - Retrieve File Downloads Metrics
+* [get_monthly_file_downloads](#get_monthly_file_downloads) - Retrieve the monthly count of file downloads
+* [get_file_downloads_to_month](#get_file_downloads_to_month) - Retrieve file download metrics for a specific month
+* [get_file_info_metrics](#get_file_info_metrics) - Retrieve metrics information for files
+* [get_metrics_by_file_type](#get_metrics_by_file_type) - Retrieve file metrics information categorized by file type
+* [get_files_by_type_monthly](#get_files_by_type_monthly) - Retrieve monthly metrics for files by type
+* [get_monthly_files_metrics](#get_monthly_files_metrics) - Retrieve monthly metrics for files
+* [get_files_metrics](#get_files_metrics) - Retrieve metrics for files from the past specified number of days
+* [get_monthly_files_info](#get_monthly_files_info) - Retrieve files metrics information for a specific month
+* [get_metric_data](#get_metric_data) - Retrieve specific metric data by country and parentAlias
+* [get_monthly_data_count_metrics](#get_monthly_data_count_metrics) - Retrieve the monthly data count metrics identified by the provided metric name
+* [get_metrics_by_month](#get_metrics_by_month) - Retrieves data metrics for a specific month
+* [get_metrics_tree](#get_metrics_tree) - Fetches the metrics tree based on the provided parent alias
+* [get_monthly_metrics_by_alias](#get_monthly_metrics_by_alias) - Retrieve monthly metrics for a specific alias
+* [get_unique_downloads](#get_unique_downloads) - Retrieve unique download metrics data for a particular alias
+* [get_monthly_unique_downloads](#get_monthly_unique_downloads) - Retrieve monthly unique downloads metrics
+* [get_monthly_unique_downloads_1](#get_monthly_unique_downloads_1) - Retrieve the number of unique downloads for a specified month
+* [get_unique_file_downloads](#get_unique_file_downloads) - Retrieve the number of unique file downloads
+* [get_monthly_unique_file_downloads](#get_monthly_unique_file_downloads) - Retrieve the count of unique file downloads per month
+* [get_unique_file_downloads_1](#get_unique_file_downloads_1) - Fetches unique file downloads up to a specific month
+* [get_open_api_info](#get_open_api_info) - Retrieve OpenAPI info in specified output format
+* [get_server_info](#get_server_info) - Retrieve server information
+* [get_dataset_publish_popup_custom_text](#get_dataset_publish_popup_custom_text) - Retrieve the custom text for dataset publish popup.
+* [get_max_embargo_duration_in_months](#get_max_embargo_duration_in_months) - Retrieve the maximum duration of embargo in months from the settings
+* [get_incomplete_metadata_settings](#get_incomplete_metadata_settings) - Retrieves the status of incomplete metadata settings
+* [get_version_info](#get_version_info) - Retrieve the current version information
+* [get_zip_download_limit](#get_zip_download_limit) - Retrieve the current zip file download limit
 
-## get_api_v1_info_api_terms_of_use
+## get_api_terms_of_use_info
+
+Retrieve the terms of use of the API
 
 ### Example Usage
 
@@ -58,7 +60,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_api_terms_of_use()
+res = s.info.get_api_terms_of_use_info()
 
 if res.status_code == 200:
     # handle response
@@ -68,14 +70,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoAPITermsOfUseResponse](../../models/operations/getapiv1infoapitermsofuseresponse.md)**
+**[operations.GetAPITermsOfUseInfoResponse](../../models/operations/getapitermsofuseinforesponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_datasets
+## get_dataset_metrics_1
+
+Retrieve dataset metrics based on the data location and parent alias
 
 ### Example Usage
 
@@ -85,41 +89,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_datasets(data_location='<value>', parent_alias='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `data_location`    | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1InfoMetricsDatasetsResponse](../../models/operations/getapiv1infometricsdatasetsresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_info_metrics_datasets_by_subject
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.info.get_api_v1_info_metrics_datasets_by_subject(data_location='<value>', parent_alias='<value>')
+res = s.info.get_dataset_metrics_1(data_location='<value>', parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -136,14 +106,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsDatasetsBySubjectResponse](../../models/operations/getapiv1infometricsdatasetsbysubjectresponse.md)**
+**[operations.GetDatasetMetrics1Response](../../models/operations/getdatasetmetrics1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_datasets_by_subject_to_month_yyyymm_
+## get_datasets_by_subject
+
+Retrieve datasets by subject according to specified data location and parent alias
 
 ### Example Usage
 
@@ -153,7 +125,43 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_datasets_by_subject_to_month_yyyymm_(yyyymm='<value>', data_location='<value>', parent_alias='<value>')
+res = s.info.get_datasets_by_subject(data_location='<value>', parent_alias='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `data_location`    | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+
+
+### Response
+
+**[operations.GetDatasetsBySubjectResponse](../../models/operations/getdatasetsbysubjectresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_monthly_subject_metrics
+
+Retrieve monthly metrics for datasets by subject
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.info.get_monthly_subject_metrics(yyyymm='<value>', data_location='<value>', parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -171,14 +179,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsDatasetsBySubjectToMonthYyyymmResponse](../../models/operations/getapiv1infometricsdatasetsbysubjecttomonthyyyymmresponse.md)**
+**[operations.GetMonthlySubjectMetricsResponse](../../models/operations/getmonthlysubjectmetricsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_datasets_monthly
+## get_monthly_dataset_metrics
+
+Retrieve monthly metrics of datasets based on data location and parent alias.
 
 ### Example Usage
 
@@ -188,7 +198,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_datasets_monthly(data_location='<value>', parent_alias='<value>')
+res = s.info.get_monthly_dataset_metrics(data_location='<value>', parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -205,14 +215,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsDatasetsMonthlyResponse](../../models/operations/getapiv1infometricsdatasetsmonthlyresponse.md)**
+**[operations.GetMonthlyDatasetMetricsResponse](../../models/operations/getmonthlydatasetmetricsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_datasets_past_days_days_
+## get_past_days_metrics
+
+Retrieve metrics of datasets from past specified days
 
 ### Example Usage
 
@@ -222,7 +234,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_datasets_past_days_days_(days=907566, data_location='<value>', parent_alias='<value>')
+res = s.info.get_past_days_metrics(days=970072, data_location='<value>', parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -240,14 +252,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsDatasetsPastDaysDaysResponse](../../models/operations/getapiv1infometricsdatasetspastdaysdaysresponse.md)**
+**[operations.GetPastDaysMetricsResponse](../../models/operations/getpastdaysmetricsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_datasets_to_month_yyyymm_
+## get_monthly_dataset_metrics_1
+
+Retrieve dataset metrics for a specific month
 
 ### Example Usage
 
@@ -257,7 +271,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_datasets_to_month_yyyymm_(yyyymm='<value>', data_location='<value>', parent_alias='<value>')
+res = s.info.get_monthly_dataset_metrics_1(yyyymm='<value>', data_location='<value>', parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -275,14 +289,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsDatasetsToMonthYyyymmResponse](../../models/operations/getapiv1infometricsdatasetstomonthyyyymmresponse.md)**
+**[operations.GetMonthlyDatasetMetrics1Response](../../models/operations/getmonthlydatasetmetrics1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_dataverses
+## get_metrics_dataverses
+
+Retrieves metrics of dataverses based on parent alias
 
 ### Example Usage
 
@@ -292,7 +308,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_dataverses(parent_alias='<value>')
+res = s.info.get_metrics_dataverses(parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -308,14 +324,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsDataversesResponse](../../models/operations/getapiv1infometricsdataversesresponse.md)**
+**[operations.GetMetricsDataversesResponse](../../models/operations/getmetricsdataversesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_dataverses_by_category
+## get_metrics_by_category
+
+Retrieves metrics of dataverses sorted by category
 
 ### Example Usage
 
@@ -325,7 +343,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_dataverses_by_category(parent_alias='<value>')
+res = s.info.get_metrics_by_category(parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -341,14 +359,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsDataversesByCategoryResponse](../../models/operations/getapiv1infometricsdataversesbycategoryresponse.md)**
+**[operations.GetMetricsByCategoryResponse](../../models/operations/getmetricsbycategoryresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_dataverses_by_subject
+## get_metrics_by_subject
+
+Retrieve metrics of dataverses by subject
 
 ### Example Usage
 
@@ -358,7 +378,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_dataverses_by_subject(parent_alias='<value>')
+res = s.info.get_metrics_by_subject(parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -374,14 +394,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsDataversesBySubjectResponse](../../models/operations/getapiv1infometricsdataversesbysubjectresponse.md)**
+**[operations.GetMetricsBySubjectResponse](../../models/operations/getmetricsbysubjectresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_dataverses_monthly
+## get_monthly_dataverse_metrics
+
+Retrieve the monthly metrics of a specific dataverse
 
 ### Example Usage
 
@@ -391,7 +413,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_dataverses_monthly(parent_alias='<value>')
+res = s.info.get_monthly_dataverse_metrics(parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -407,14 +429,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsDataversesMonthlyResponse](../../models/operations/getapiv1infometricsdataversesmonthlyresponse.md)**
+**[operations.GetMonthlyDataverseMetricsResponse](../../models/operations/getmonthlydataversemetricsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_dataverses_past_days_days_
+## get_metrics_past_days
+
+Retrieves the number of dataverses created over the past specified number of days
 
 ### Example Usage
 
@@ -424,141 +448,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_dataverses_past_days_days_(days=123806, parent_alias='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `days`             | *int*              | :heavy_check_mark: | N/A                |
-| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1InfoMetricsDataversesPastDaysDaysResponse](../../models/operations/getapiv1infometricsdataversespastdaysdaysresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_info_metrics_dataverses_to_month_yyyymm_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.info.get_api_v1_info_metrics_dataverses_to_month_yyyymm_(yyyymm='<value>', parent_alias='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `yyyymm`           | *str*              | :heavy_check_mark: | N/A                |
-| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1InfoMetricsDataversesToMonthYyyymmResponse](../../models/operations/getapiv1infometricsdataversestomonthyyyymmresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_info_metrics_downloads
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.info.get_api_v1_info_metrics_downloads(parent_alias='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1InfoMetricsDownloadsResponse](../../models/operations/getapiv1infometricsdownloadsresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_info_metrics_downloads_monthly
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.info.get_api_v1_info_metrics_downloads_monthly(parent_alias='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1InfoMetricsDownloadsMonthlyResponse](../../models/operations/getapiv1infometricsdownloadsmonthlyresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_info_metrics_downloads_past_days_days_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.info.get_api_v1_info_metrics_downloads_past_days_days_(days=646171, parent_alias='<value>')
+res = s.info.get_metrics_past_days(days=651880, parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -575,14 +465,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsDownloadsPastDaysDaysResponse](../../models/operations/getapiv1infometricsdownloadspastdaysdaysresponse.md)**
+**[operations.GetMetricsPastDaysResponse](../../models/operations/getmetricspastdaysresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_downloads_to_month_yyyymm_
+## get_monthly_metrics_for_dataverses
+
+Retrieve the metrics for dataverses up to the specified month.
 
 ### Example Usage
 
@@ -592,7 +484,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_downloads_to_month_yyyymm_(yyyymm='<value>', parent_alias='<value>')
+res = s.info.get_monthly_metrics_for_dataverses(yyyymm='<value>', parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -609,14 +501,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsDownloadsToMonthYyyymmResponse](../../models/operations/getapiv1infometricsdownloadstomonthyyyymmresponse.md)**
+**[operations.GetMonthlyMetricsForDataversesResponse](../../models/operations/getmonthlymetricsfordataversesresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_filedownloads
+## get_download_metrics
+
+Retrieve download metrics based on a parent alias.
 
 ### Example Usage
 
@@ -626,7 +520,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_filedownloads(parent_alias='<value>')
+res = s.info.get_download_metrics(parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -642,14 +536,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsFiledownloadsResponse](../../models/operations/getapiv1infometricsfiledownloadsresponse.md)**
+**[operations.GetDownloadMetricsResponse](../../models/operations/getdownloadmetricsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_filedownloads_monthly
+## get_monthly_downloads
+
+Retrieve monthly download metrics
 
 ### Example Usage
 
@@ -659,7 +555,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_filedownloads_monthly(parent_alias='<value>')
+res = s.info.get_monthly_downloads(parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -675,14 +571,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsFiledownloadsMonthlyResponse](../../models/operations/getapiv1infometricsfiledownloadsmonthlyresponse.md)**
+**[operations.GetMonthlyDownloadsResponse](../../models/operations/getmonthlydownloadsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_filedownloads_to_month_yyyymm_
+## get_past_days_downloads
+
+Retrieve download metrics for the past specified number of days
 
 ### Example Usage
 
@@ -692,173 +590,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_filedownloads_to_month_yyyymm_(yyyymm='<value>', parent_alias='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `yyyymm`           | *str*              | :heavy_check_mark: | N/A                |
-| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1InfoMetricsFiledownloadsToMonthYyyymmResponse](../../models/operations/getapiv1infometricsfiledownloadstomonthyyyymmresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_info_metrics_files
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.info.get_api_v1_info_metrics_files(parent_alias='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1InfoMetricsFilesResponse](../../models/operations/getapiv1infometricsfilesresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_info_metrics_files_by_type
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.info.get_api_v1_info_metrics_files_by_type(parent_alias='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1InfoMetricsFilesByTypeResponse](../../models/operations/getapiv1infometricsfilesbytyperesponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_info_metrics_files_by_type_monthly
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.info.get_api_v1_info_metrics_files_by_type_monthly(parent_alias='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1InfoMetricsFilesByTypeMonthlyResponse](../../models/operations/getapiv1infometricsfilesbytypemonthlyresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_info_metrics_files_monthly
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.info.get_api_v1_info_metrics_files_monthly(parent_alias='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1InfoMetricsFilesMonthlyResponse](../../models/operations/getapiv1infometricsfilesmonthlyresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_info_metrics_files_past_days_days_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.info.get_api_v1_info_metrics_files_past_days_days_(days=112599, parent_alias='<value>')
+res = s.info.get_past_days_downloads(days=336932, parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -875,14 +607,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsFilesPastDaysDaysResponse](../../models/operations/getapiv1infometricsfilespastdaysdaysresponse.md)**
+**[operations.GetPastDaysDownloadsResponse](../../models/operations/getpastdaysdownloadsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_files_to_month_yyyymm_
+## get_download_metrics_to_month
+
+Retrieve download metrics till a specific month
 
 ### Example Usage
 
@@ -892,7 +626,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_files_to_month_yyyymm_(yyyymm='<value>', parent_alias='<value>')
+res = s.info.get_download_metrics_to_month(yyyymm='<value>', parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -909,14 +643,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsFilesToMonthYyyymmResponse](../../models/operations/getapiv1infometricsfilestomonthyyyymmresponse.md)**
+**[operations.GetDownloadMetricsToMonthResponse](../../models/operations/getdownloadmetricstomonthresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_make_data_count_metric_
+## get_file_downloads_metrics
+
+Retrieve File Downloads Metrics
 
 ### Example Usage
 
@@ -926,7 +662,325 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_make_data_count_metric_(metric='<value>', country='<value>', parent_alias='<value>')
+res = s.info.get_file_downloads_metrics(parent_alias='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+
+
+### Response
+
+**[operations.GetFileDownloadsMetricsResponse](../../models/operations/getfiledownloadsmetricsresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_monthly_file_downloads
+
+Retrieve the monthly count of file downloads
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.info.get_monthly_file_downloads(parent_alias='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+
+
+### Response
+
+**[operations.GetMonthlyFileDownloadsResponse](../../models/operations/getmonthlyfiledownloadsresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_file_downloads_to_month
+
+Retrieve file download metrics for a specific month
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.info.get_file_downloads_to_month(yyyymm='<value>', parent_alias='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `yyyymm`           | *str*              | :heavy_check_mark: | N/A                |
+| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+
+
+### Response
+
+**[operations.GetFileDownloadsToMonthResponse](../../models/operations/getfiledownloadstomonthresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_file_info_metrics
+
+Retrieve metrics information for files
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.info.get_file_info_metrics(parent_alias='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+
+
+### Response
+
+**[operations.GetFileInfoMetricsResponse](../../models/operations/getfileinfometricsresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_metrics_by_file_type
+
+Retrieve file metrics information categorized by file type
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.info.get_metrics_by_file_type(parent_alias='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+
+
+### Response
+
+**[operations.GetMetricsByFileTypeResponse](../../models/operations/getmetricsbyfiletyperesponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_files_by_type_monthly
+
+Retrieve monthly metrics for files by type
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.info.get_files_by_type_monthly(parent_alias='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+
+
+### Response
+
+**[operations.GetFilesByTypeMonthlyResponse](../../models/operations/getfilesbytypemonthlyresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_monthly_files_metrics
+
+Retrieve monthly metrics for files
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.info.get_monthly_files_metrics(parent_alias='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+
+
+### Response
+
+**[operations.GetMonthlyFilesMetricsResponse](../../models/operations/getmonthlyfilesmetricsresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_files_metrics
+
+Retrieve metrics for files from the past specified number of days
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.info.get_files_metrics(days=694967, parent_alias='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `days`             | *int*              | :heavy_check_mark: | N/A                |
+| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+
+
+### Response
+
+**[operations.GetFilesMetricsResponse](../../models/operations/getfilesmetricsresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_monthly_files_info
+
+Retrieve files metrics information for a specific month
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.info.get_monthly_files_info(yyyymm='<value>', parent_alias='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `yyyymm`           | *str*              | :heavy_check_mark: | N/A                |
+| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+
+
+### Response
+
+**[operations.GetMonthlyFilesInfoResponse](../../models/operations/getmonthlyfilesinforesponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_metric_data
+
+Retrieve specific metric data by country and parentAlias
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.info.get_metric_data(metric='<value>', country='<value>', parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -944,14 +998,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsMakeDataCountMetricResponse](../../models/operations/getapiv1infometricsmakedatacountmetricresponse.md)**
+**[operations.GetMetricDataResponse](../../models/operations/getmetricdataresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_make_data_count_metric_monthly
+## get_monthly_data_count_metrics
+
+Retrieve the monthly data count metrics identified by the provided metric name
 
 ### Example Usage
 
@@ -961,7 +1017,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_make_data_count_metric_monthly(metric='<value>', country='<value>', parent_alias='<value>')
+res = s.info.get_monthly_data_count_metrics(metric='<value>', country='<value>', parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -979,14 +1035,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsMakeDataCountMetricMonthlyResponse](../../models/operations/getapiv1infometricsmakedatacountmetricmonthlyresponse.md)**
+**[operations.GetMonthlyDataCountMetricsResponse](../../models/operations/getmonthlydatacountmetricsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_make_data_count_metric_to_month_yyyymm_
+## get_metrics_by_month
+
+Retrieves data metrics for a specific month
 
 ### Example Usage
 
@@ -996,7 +1054,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_make_data_count_metric_to_month_yyyymm_(metric='<value>', yyyymm='<value>', country='<value>', parent_alias='<value>')
+res = s.info.get_metrics_by_month(metric='<value>', yyyymm='<value>', country='<value>', parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1015,14 +1073,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsMakeDataCountMetricToMonthYyyymmResponse](../../models/operations/getapiv1infometricsmakedatacountmetrictomonthyyyymmresponse.md)**
+**[operations.GetMetricsByMonthResponse](../../models/operations/getmetricsbymonthresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_tree
+## get_metrics_tree
+
+Fetches the metrics tree based on the provided parent alias
 
 ### Example Usage
 
@@ -1032,7 +1092,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_tree(parent_alias='<value>')
+res = s.info.get_metrics_tree(parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1048,14 +1108,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsTreeResponse](../../models/operations/getapiv1infometricstreeresponse.md)**
+**[operations.GetMetricsTreeResponse](../../models/operations/getmetricstreeresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_tree_to_month_yyyymm_
+## get_monthly_metrics_by_alias
+
+Retrieve monthly metrics for a specific alias
 
 ### Example Usage
 
@@ -1065,107 +1127,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_tree_to_month_yyyymm_(yyyymm='<value>', parent_alias='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `yyyymm`           | *str*              | :heavy_check_mark: | N/A                |
-| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1InfoMetricsTreeToMonthYyyymmResponse](../../models/operations/getapiv1infometricstreetomonthyyyymmresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_info_metrics_uniquedownloads
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.info.get_api_v1_info_metrics_uniquedownloads(parent_alias='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1InfoMetricsUniquedownloadsResponse](../../models/operations/getapiv1infometricsuniquedownloadsresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_info_metrics_uniquedownloads_monthly
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.info.get_api_v1_info_metrics_uniquedownloads_monthly(parent_alias='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-
-
-### Response
-
-**[operations.GetAPIV1InfoMetricsUniquedownloadsMonthlyResponse](../../models/operations/getapiv1infometricsuniquedownloadsmonthlyresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## get_api_v1_info_metrics_uniquedownloads_to_month_yyyymm_
-
-### Example Usage
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse()
-
-
-res = s.info.get_api_v1_info_metrics_uniquedownloads_to_month_yyyymm_(yyyymm='<value>', parent_alias='<value>')
+res = s.info.get_monthly_metrics_by_alias(yyyymm='<value>', parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1182,14 +1144,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsUniquedownloadsToMonthYyyymmResponse](../../models/operations/getapiv1infometricsuniquedownloadstomonthyyyymmresponse.md)**
+**[operations.GetMonthlyMetricsByAliasResponse](../../models/operations/getmonthlymetricsbyaliasresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_uniquefiledownloads
+## get_unique_downloads
+
+Retrieve unique download metrics data for a particular alias
 
 ### Example Usage
 
@@ -1199,7 +1163,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_uniquefiledownloads(parent_alias='<value>')
+res = s.info.get_unique_downloads(parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1215,14 +1179,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsUniquefiledownloadsResponse](../../models/operations/getapiv1infometricsuniquefiledownloadsresponse.md)**
+**[operations.GetUniqueDownloadsResponse](../../models/operations/getuniquedownloadsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_uniquefiledownloads_monthly
+## get_monthly_unique_downloads
+
+Retrieve monthly unique downloads metrics
 
 ### Example Usage
 
@@ -1232,7 +1198,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_uniquefiledownloads_monthly(parent_alias='<value>')
+res = s.info.get_monthly_unique_downloads(parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1248,14 +1214,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsUniquefiledownloadsMonthlyResponse](../../models/operations/getapiv1infometricsuniquefiledownloadsmonthlyresponse.md)**
+**[operations.GetMonthlyUniqueDownloadsResponse](../../models/operations/getmonthlyuniquedownloadsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_metrics_uniquefiledownloads_to_month_yyyymm_
+## get_monthly_unique_downloads_1
+
+Retrieve the number of unique downloads for a specified month
 
 ### Example Usage
 
@@ -1265,7 +1233,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_metrics_uniquefiledownloads_to_month_yyyymm_(yyyymm='<value>', parent_alias='<value>')
+res = s.info.get_monthly_unique_downloads_1(yyyymm='<value>', parent_alias='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1282,14 +1250,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoMetricsUniquefiledownloadsToMonthYyyymmResponse](../../models/operations/getapiv1infometricsuniquefiledownloadstomonthyyyymmresponse.md)**
+**[operations.GetMonthlyUniqueDownloads1Response](../../models/operations/getmonthlyuniquedownloads1response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_openapi_output_format_
+## get_unique_file_downloads
+
+Retrieve the number of unique file downloads
 
 ### Example Usage
 
@@ -1299,7 +1269,113 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_openapi_output_format_(output_format='<value>')
+res = s.info.get_unique_file_downloads(parent_alias='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+
+
+### Response
+
+**[operations.GetUniqueFileDownloadsResponse](../../models/operations/getuniquefiledownloadsresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_monthly_unique_file_downloads
+
+Retrieve the count of unique file downloads per month
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.info.get_monthly_unique_file_downloads(parent_alias='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+
+
+### Response
+
+**[operations.GetMonthlyUniqueFileDownloadsResponse](../../models/operations/getmonthlyuniquefiledownloadsresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_unique_file_downloads_1
+
+Fetches unique file downloads up to a specific month
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.info.get_unique_file_downloads_1(yyyymm='<value>', parent_alias='<value>')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `yyyymm`           | *str*              | :heavy_check_mark: | N/A                |
+| `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+
+
+### Response
+
+**[operations.GetUniqueFileDownloads1Response](../../models/operations/getuniquefiledownloads1response.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_open_api_info
+
+Retrieve OpenAPI info in specified output format
+
+### Example Usage
+
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse()
+
+
+res = s.info.get_open_api_info(output_format='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -1315,14 +1391,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoOpenapiOutputFormatResponse](../../models/operations/getapiv1infoopenapioutputformatresponse.md)**
+**[operations.GetOpenAPIInfoResponse](../../models/operations/getopenapiinforesponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_server
+## get_server_info
+
+Retrieve server information
 
 ### Example Usage
 
@@ -1332,7 +1410,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_server()
+res = s.info.get_server_info()
 
 if res.status_code == 200:
     # handle response
@@ -1342,14 +1420,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoServerResponse](../../models/operations/getapiv1infoserverresponse.md)**
+**[operations.GetServerInfoResponse](../../models/operations/getserverinforesponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_settings_dataset_publish_popup_custom_text
+## get_dataset_publish_popup_custom_text
+
+Retrieve the custom text for dataset publish popup.
 
 ### Example Usage
 
@@ -1359,7 +1439,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_settings_dataset_publish_popup_custom_text()
+res = s.info.get_dataset_publish_popup_custom_text()
 
 if res.status_code == 200:
     # handle response
@@ -1369,14 +1449,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoSettingsDatasetPublishPopupCustomTextResponse](../../models/operations/getapiv1infosettingsdatasetpublishpopupcustomtextresponse.md)**
+**[operations.GetDatasetPublishPopupCustomTextResponse](../../models/operations/getdatasetpublishpopupcustomtextresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_settings_max_embargo_duration_in_months
+## get_max_embargo_duration_in_months
+
+Retrieve the maximum duration of embargo in months from the settings
 
 ### Example Usage
 
@@ -1386,7 +1468,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_settings_max_embargo_duration_in_months()
+res = s.info.get_max_embargo_duration_in_months()
 
 if res.status_code == 200:
     # handle response
@@ -1396,14 +1478,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoSettingsMaxEmbargoDurationInMonthsResponse](../../models/operations/getapiv1infosettingsmaxembargodurationinmonthsresponse.md)**
+**[operations.GetMaxEmbargoDurationInMonthsResponse](../../models/operations/getmaxembargodurationinmonthsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_settings_incomplete_metadata_via_api
+## get_incomplete_metadata_settings
+
+Retrieves the status of incomplete metadata settings
 
 ### Example Usage
 
@@ -1413,7 +1497,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_settings_incomplete_metadata_via_api()
+res = s.info.get_incomplete_metadata_settings()
 
 if res.status_code == 200:
     # handle response
@@ -1423,14 +1507,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoSettingsIncompleteMetadataViaAPIResponse](../../models/operations/getapiv1infosettingsincompletemetadataviaapiresponse.md)**
+**[operations.GetIncompleteMetadataSettingsResponse](../../models/operations/getincompletemetadatasettingsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_version
+## get_version_info
+
+Retrieve the current version information
 
 ### Example Usage
 
@@ -1440,7 +1526,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_version()
+res = s.info.get_version_info()
 
 if res.status_code == 200:
     # handle response
@@ -1450,14 +1536,16 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoVersionResponse](../../models/operations/getapiv1infoversionresponse.md)**
+**[operations.GetVersionInfoResponse](../../models/operations/getversioninforesponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## get_api_v1_info_zip_download_limit
+## get_zip_download_limit
+
+Retrieve the current zip file download limit
 
 ### Example Usage
 
@@ -1467,7 +1555,7 @@ import pydataverse
 s = pydataverse.PyDataverse()
 
 
-res = s.info.get_api_v1_info_zip_download_limit()
+res = s.info.get_zip_download_limit()
 
 if res.status_code == 200:
     # handle response
@@ -1477,7 +1565,7 @@ if res.status_code == 200:
 
 ### Response
 
-**[operations.GetAPIV1InfoZipDownloadLimitResponse](../../models/operations/getapiv1infozipdownloadlimitresponse.md)**
+**[operations.GetZipDownloadLimitResponse](../../models/operations/getzipdownloadlimitresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
