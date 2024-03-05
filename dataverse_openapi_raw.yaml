@@ -1,19 +1,20 @@
+---
 openapi: 3.0.3
 info:
   title: Dataverse API
-  version: '1.0'
+  version: "1.0"
 servers:
-- url: '{protocol}://{base_url}'
-  description: Harvard Dataverse
-  variables:
-    protocol:
-      enum:
-      - http
-      - https
-      default: https
-    base_url:
-      default: demo.dataverse.org
-      description: The base URL of the Dataverse installation
+  - url: '{protocol}://{base_url}'
+    description: Harvard Dataverse
+    variables:
+      protocol:
+        enum:
+          - http
+          - https
+        default: https
+      base_url:
+        default: demo.dataverse.org
+        description: The base URL of the Dataverse installation
 paths:
   /api/v1/access/datafile/bundle/{fileId}:
     get:
@@ -32,14 +33,12 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/zip:
               schema:
                 type: object
-      tags:
-      - Access
   /api/v1/access/datafile/{fileId}:
     get:
       parameters:
@@ -54,10 +53,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/access/datafile/{fileId}/auxiliary:
     get:
       parameters:
@@ -67,10 +64,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}:
     get:
       parameters:
@@ -90,14 +85,12 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
           content:
             '*/*':
               schema:
                 type: string
-      tags:
-      - Access
     post:
       parameters:
       - name: fileId
@@ -121,10 +114,8 @@ paths:
             schema:
               type: object
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
     delete:
       parameters:
       - name: fileId
@@ -143,10 +134,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/access/datafile/{fileId}/auxiliary/{origin}:
     get:
       parameters:
@@ -161,10 +150,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/access/datafile/{fileId}/metadata:
     get:
       parameters:
@@ -186,14 +173,12 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
           content:
             text/xml:
               schema:
                 type: string
-      tags:
-      - Access
   /api/v1/access/datafile/{fileId}/metadata/ddi:
     get:
       parameters:
@@ -215,14 +200,12 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
           content:
             text/xml:
               schema:
                 type: string
-      tags:
-      - Access
   /api/v1/access/datafile/{id}/grantAccess/{identifier}:
     put:
       parameters:
@@ -237,10 +220,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/access/datafile/{id}/listRequests:
     get:
       parameters:
@@ -250,10 +231,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/access/datafile/{id}/rejectAccess/{identifier}:
     put:
       parameters:
@@ -268,10 +247,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/access/datafile/{id}/requestAccess:
     put:
       parameters:
@@ -281,10 +258,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/access/datafile/{id}/revokeAccess/{identifier}:
     delete:
       parameters:
@@ -299,10 +274,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/access/datafile/{id}/userFileAccessRequested:
     get:
       parameters:
@@ -312,10 +285,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/access/datafile/{id}/userPermissions:
     get:
       parameters:
@@ -325,10 +296,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/access/datafiles:
     post:
       parameters:
@@ -342,10 +311,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/access/datafiles/{fileIds}:
     get:
       parameters:
@@ -359,10 +326,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/access/dataset/{id}:
     get:
       parameters:
@@ -376,10 +341,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/access/dataset/{id}/versions/{versionId}:
     get:
       parameters:
@@ -402,10 +365,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/access/dsCardImage/{versionId}:
     get:
       parameters:
@@ -415,14 +376,12 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
           content:
             image/png:
               schema:
                 type: string
-      tags:
-      - Access
   /api/v1/access/dvCardImage/{dataverseId}:
     get:
       parameters:
@@ -432,14 +391,12 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
           content:
             image/png:
               schema:
                 type: string
-      tags:
-      - Access
   /api/v1/access/fileCardImage/{fileId}:
     get:
       parameters:
@@ -449,14 +406,12 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
           content:
             image/png:
               schema:
                 type: string
-      tags:
-      - Access
   /api/v1/access/{id}/allowAccessRequest:
     put:
       parameters:
@@ -466,10 +421,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Access
   /api/v1/admin/archiveAllUnarchivedDatasetVersions:
     post:
       parameters:
@@ -486,10 +439,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/assignee/{idtf}:
     get:
       parameters:
@@ -499,10 +450,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/assignments/assignees/{raIdtf}:
     get:
       parameters:
@@ -513,38 +462,28 @@ paths:
           pattern: .*
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/authenticatedUsers:
     get:
       responses:
-        '200':
+        "200":
           description: OK
       deprecated: true
-      tags:
-      - Admin
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/authenticatedUsers/convert/builtin2oauth:
     put:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/authenticatedUsers/convert/builtin2shib:
     put:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/authenticatedUsers/id/{id}:
     delete:
       parameters:
@@ -554,10 +493,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/authenticatedUsers/id/{id}/convertRemoteToBuiltIn:
     put:
       parameters:
@@ -567,10 +504,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/authenticatedUsers/id/{id}/convertShibToBuiltIn:
     put:
       parameters:
@@ -580,11 +515,9 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
       deprecated: true
-      tags:
-      - Admin
   /api/v1/admin/authenticatedUsers/id/{id}/deactivate:
     post:
       parameters:
@@ -594,10 +527,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/authenticatedUsers/{identifier}:
     get:
       parameters:
@@ -607,10 +538,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     delete:
       parameters:
       - name: identifier
@@ -619,10 +548,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/authenticatedUsers/{identifier}/deactivate:
     post:
       parameters:
@@ -632,30 +559,22 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/authenticationProviderFactories:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/authenticationProviders:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/authenticationProviders/{id}:
     get:
       parameters:
@@ -665,10 +584,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     delete:
       parameters:
       - name: id
@@ -677,10 +594,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/authenticationProviders/{id}/:enabled:
     post:
       parameters:
@@ -690,10 +605,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/authenticationProviders/{id}/enabled:
     get:
       parameters:
@@ -703,10 +616,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     put:
       parameters:
       - name: id
@@ -715,23 +626,17 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/bannerMessage:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/bannerMessage/{id}:
     delete:
       parameters:
@@ -741,10 +646,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/bannerMessage/{id}/deactivate:
     put:
       parameters:
@@ -754,17 +657,13 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/batch/jobs:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/batch/jobs/name/{jobName}:
     get:
       parameters:
@@ -774,10 +673,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/batch/jobs/{jobId}:
     get:
       parameters:
@@ -787,17 +684,13 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/clearMetricsCache:
     delete:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/clearMetricsCache/{name}:
     delete:
       parameters:
@@ -807,17 +700,13 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/clearThumbnailFailureFlag:
     delete:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/clearThumbnailFailureFlag/{id}:
     delete:
       parameters:
@@ -827,10 +716,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/computeDataFileHashValue/{fileId}/algorithm/{alg}:
     post:
       parameters:
@@ -845,10 +732,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/confirmEmail/{userId}:
     get:
       parameters:
@@ -858,10 +743,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     post:
       parameters:
       - name: userId
@@ -870,17 +753,13 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/convertUserFromBcryptToSha1:
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/datafiles/integrity/fixmissingoriginalsizes:
     get:
       parameters:
@@ -889,31 +768,23 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/datafiles/integrity/fixmissingoriginaltypes:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/datasetfield:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/datasetfield/controlledVocabulary/subject:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/datasetfield/load:
     post:
       requestBody:
@@ -922,17 +793,13 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/datasetfield/loadNAControlledVocabularyValue:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/datasetfield/loadpropertyfiles:
     post:
       requestBody:
@@ -941,10 +808,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/datasetfield/{name}:
     get:
       parameters:
@@ -954,10 +819,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/datasets/integrity/{datasetVersionId}/fixmissingunf:
     post:
       parameters:
@@ -971,10 +834,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/datasets/thumbnailMetadata/{id}:
     get:
       parameters:
@@ -984,24 +845,18 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/dataverse/curationLabelSets:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/dataverse/storageDrivers:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/dataverse/{alias}/addRoleAssignmentsToChildren:
     get:
       parameters:
@@ -1011,10 +866,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/dataverse/{alias}/curationLabelSet:
     get:
       parameters:
@@ -1024,10 +877,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     put:
       parameters:
       - name: alias
@@ -1040,10 +891,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     delete:
       parameters:
       - name: alias
@@ -1052,10 +901,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/dataverse/{alias}/storageDriver:
     get:
       parameters:
@@ -1065,10 +912,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     put:
       parameters:
       - name: alias
@@ -1077,10 +922,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     delete:
       parameters:
       - name: alias
@@ -1089,10 +932,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/downloadTmpFile:
     get:
       parameters:
@@ -1101,23 +942,17 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/externalTools:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/externalTools/{id}:
     get:
       parameters:
@@ -1127,10 +962,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     delete:
       parameters:
       - name: id
@@ -1139,30 +972,22 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/feedback:
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/groups/domain:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/groups/domain/{groupAlias}:
     get:
       parameters:
@@ -1172,10 +997,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     put:
       parameters:
       - name: groupAlias
@@ -1184,10 +1007,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     delete:
       parameters:
       - name: groupAlias
@@ -1196,23 +1017,17 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/groups/ip:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/groups/ip/{groupIdtf}:
     get:
       parameters:
@@ -1222,10 +1037,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     delete:
       parameters:
       - name: groupIdtf
@@ -1234,23 +1047,17 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/groups/shib:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/groups/shib/{primaryKey}:
     delete:
       parameters:
@@ -1260,10 +1067,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index:
     get:
       parameters:
@@ -1280,17 +1085,13 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/clear:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/clear-orphans:
     get:
       parameters:
@@ -1299,10 +1100,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/continue:
     get:
       parameters:
@@ -1319,10 +1118,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/dataset:
     get:
       parameters:
@@ -1331,10 +1128,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/datasets/{id}:
     delete:
       parameters:
@@ -1344,10 +1139,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/filemetadata/{dataset_id}:
     get:
       parameters:
@@ -1369,10 +1162,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/filesearch:
     get:
       parameters:
@@ -1389,10 +1180,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/mod:
     get:
       parameters:
@@ -1405,17 +1194,13 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/perms:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/perms/{id}:
     get:
       parameters:
@@ -1425,10 +1210,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/permsDebug:
     get:
       parameters:
@@ -1441,21 +1224,17 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/solr/schema:
     get:
       responses:
-        '200':
+        "200":
           description: OK
           content:
             '*/*':
               schema:
                 type: string
-      tags:
-      - Admin
   /api/v1/admin/index/status:
     get:
       parameters:
@@ -1464,10 +1243,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/test:
     get:
       parameters:
@@ -1486,17 +1263,13 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/timestamps:
     delete:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/timestamps/{dvObjectId}:
     delete:
       parameters:
@@ -1506,10 +1279,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/index/{type}/{id}:
     get:
       parameters:
@@ -1524,17 +1295,13 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/isOrcid:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/list-users:
     get:
       parameters:
@@ -1555,10 +1322,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/makeDataCount/addUsageMetricsFromSushiReport:
     post:
       parameters:
@@ -1567,17 +1332,13 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/makeDataCount/sendToHub:
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/makeDataCount/{id}/addUsageMetricsFromSushiReport:
     post:
       parameters:
@@ -1591,10 +1352,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/makeDataCount/{id}/updateCitationsForDataset:
     post:
       parameters:
@@ -1604,24 +1363,18 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/metadata/clearExportTimestamps:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/metadata/exportAll:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/metadata/exportOAI/{specname}:
     put:
       parameters:
@@ -1631,17 +1384,13 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/metadata/reExportAll:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/metadata/{id}/reExportDataset:
     get:
       parameters:
@@ -1651,10 +1400,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/permissions/{dvo}:
     get:
       parameters:
@@ -1664,10 +1411,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/publishDataverseAsCreator/{id}:
     post:
       parameters:
@@ -1677,17 +1422,13 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/registerDataFileAll:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/registerDataFiles/{alias}:
     get:
       parameters:
@@ -1701,10 +1442,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/requestSignedUrl:
     post:
       requestBody:
@@ -1713,23 +1452,17 @@ paths:
             schema:
               type: object
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/roles:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/roles/{id}:
     delete:
       parameters:
@@ -1739,30 +1472,22 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/savedsearches:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/savedsearches/list:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/savedsearches/makelinks/all:
     put:
       parameters:
@@ -1771,10 +1496,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/savedsearches/makelinks/{id}:
     put:
       parameters:
@@ -1788,10 +1511,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/savedsearches/{id}:
     get:
       parameters:
@@ -1801,10 +1522,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     delete:
       parameters:
       - name: id
@@ -1813,17 +1532,13 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/settings:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/settings/{name}:
     get:
       parameters:
@@ -1833,10 +1548,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     put:
       parameters:
       - name: name
@@ -1845,10 +1558,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     delete:
       parameters:
       - name: name
@@ -1857,10 +1568,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/settings/{name}/lang/{lang}:
     put:
       parameters:
@@ -1875,10 +1584,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     delete:
       parameters:
       - name: lang
@@ -1892,30 +1599,22 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/sitemap:
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/storageSites:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/storageSites/{id}:
     get:
       parameters:
@@ -1925,10 +1624,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     delete:
       parameters:
       - name: id
@@ -1937,10 +1634,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/storageSites/{id}/primaryStorage:
     put:
       parameters:
@@ -1950,10 +1645,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/submitDatasetVersionToArchive/{id}/{version}:
     post:
       parameters:
@@ -1968,10 +1661,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/superuser/{identifier}:
     post:
       parameters:
@@ -1981,10 +1672,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/template/{id}:
     delete:
       parameters:
@@ -1994,17 +1683,13 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/templates:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/templates/{alias}:
     get:
       parameters:
@@ -2014,10 +1699,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/test/datasets/{id}/externalTools:
     get:
       parameters:
@@ -2031,10 +1714,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/test/files/{id}/externalTool/{toolId}:
     get:
       parameters:
@@ -2053,10 +1734,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/test/files/{id}/externalTools:
     get:
       parameters:
@@ -2070,10 +1749,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/updateHashValues/{alg}:
     get:
       parameters:
@@ -2087,10 +1764,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/validate/dataset/files/{id}:
     get:
       parameters:
@@ -2100,10 +1775,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/validate/dataset/{id}:
     get:
       parameters:
@@ -2117,10 +1790,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/validate/datasets:
     get:
       parameters:
@@ -2129,10 +1800,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/validateDataFileHashValue/{fileId}:
     post:
       parameters:
@@ -2142,37 +1811,27 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/validatePassword:
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/workflows:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/workflows/default:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/workflows/default/{triggerType}:
     get:
       parameters:
@@ -2182,10 +1841,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     put:
       parameters:
       - name: triggerType
@@ -2194,10 +1851,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     delete:
       parameters:
       - name: triggerType
@@ -2206,29 +1861,21 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/workflows/ip-whitelist:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     put:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
     delete:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/workflows/{identifier}:
     get:
       parameters:
@@ -2238,10 +1885,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/{id}/registerDataFile:
     get:
       parameters:
@@ -2251,10 +1896,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/admin/{id}/reregisterHDLToPID:
     post:
       parameters:
@@ -2264,17 +1907,13 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Admin
   /api/v1/application.wadl:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Application.wadl
   /api/v1/application.wadl/{path}:
     get:
       parameters:
@@ -2284,10 +1923,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Application.wadl
   /api/v1/batch/harvest:
     get:
       parameters:
@@ -2308,10 +1945,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Batch
   /api/v1/batch/import:
     get:
       parameters:
@@ -2332,10 +1967,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Batch
     post:
       parameters:
       - name: dv
@@ -2347,10 +1980,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Batch
   /api/v1/batch/jobs/import/datasets/files/{identifier}:
     post:
       parameters:
@@ -2373,10 +2004,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Batch
   /api/v1/builtin-users:
     post:
       parameters:
@@ -2393,10 +2022,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Builtin-users
   /api/v1/builtin-users/{password}/{key}:
     post:
       parameters:
@@ -2411,10 +2038,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Builtin-users
   /api/v1/builtin-users/{password}/{key}/{sendEmailNotification}:
     post:
       parameters:
@@ -2434,10 +2059,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Builtin-users
   /api/v1/builtin-users/{username}/api-token:
     get:
       parameters:
@@ -2451,10 +2074,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Builtin-users
   /api/v1/datasets/export:
     get:
       parameters:
@@ -2467,17 +2088,13 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/listCurationStates:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/locks:
     get:
       parameters:
@@ -2490,24 +2107,18 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/modifyRegistrationAll:
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/modifyRegistrationPIDMetadataAll:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/mpupload:
     put:
       parameters:
@@ -2524,10 +2135,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     delete:
       parameters:
       - name: globalid
@@ -2543,10 +2152,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}:
     get:
       parameters:
@@ -2556,10 +2163,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}/citation:
     get:
       parameters:
@@ -2569,17 +2174,13 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/summaryFieldNames:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{datasetId}/deleteLink/{linkedDataverseId}:
     delete:
       parameters:
@@ -2594,10 +2195,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{identifier}/allowedCurationLabels:
     get:
       parameters:
@@ -2607,10 +2206,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{identifier}/assignments:
     get:
       parameters:
@@ -2620,10 +2217,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     post:
       parameters:
       - name: identifier
@@ -2636,10 +2231,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{identifier}/assignments/{id}:
     delete:
       parameters:
@@ -2654,10 +2247,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{identifier}/curationLabelSet:
     get:
       parameters:
@@ -2667,10 +2258,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     put:
       parameters:
       - name: identifier
@@ -2683,10 +2272,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     delete:
       parameters:
       - name: identifier
@@ -2695,10 +2282,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{identifier}/dataCaptureModule/checksumValidation:
     post:
       parameters:
@@ -2708,10 +2293,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{identifier}/dataCaptureModule/rsync:
     get:
       parameters:
@@ -2721,10 +2304,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{identifier}/guestbookEntryAtRequest:
     get:
       parameters:
@@ -2734,10 +2315,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     put:
       parameters:
       - name: identifier
@@ -2746,10 +2325,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     delete:
       parameters:
       - name: identifier
@@ -2758,10 +2335,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{identifier}/lock/{type}:
     post:
       parameters:
@@ -2776,10 +2351,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{identifier}/locks:
     get:
       parameters:
@@ -2793,10 +2366,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     delete:
       parameters:
       - name: identifier
@@ -2809,10 +2380,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{identifier}/storageDriver:
     get:
       parameters:
@@ -2822,10 +2391,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     put:
       parameters:
       - name: identifier
@@ -2834,10 +2401,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     delete:
       parameters:
       - name: identifier
@@ -2846,10 +2411,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{identifier}/storagesize:
     get:
       parameters:
@@ -2863,10 +2426,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{identifier}/timestamps:
     get:
       parameters:
@@ -2876,10 +2437,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{identifier}/versions/{versionId}/downloadsize:
     get:
       parameters:
@@ -2922,10 +2481,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}:
     get:
       parameters:
@@ -2935,10 +2492,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     delete:
       parameters:
       - name: id
@@ -2947,10 +2502,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/actions/:publish:
     get:
       parameters:
@@ -2964,11 +2517,9 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
       deprecated: true
-      tags:
-      - Datasets
     post:
       parameters:
       - name: id
@@ -2985,10 +2536,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/actions/:releasemigrated:
     post:
       parameters:
@@ -3011,10 +2560,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/add:
     post:
       parameters:
@@ -3029,10 +2576,8 @@ paths:
             schema:
               type: object
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/addFiles:
     post:
       parameters:
@@ -3047,10 +2592,8 @@ paths:
             schema:
               type: object
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/addGlobusFiles:
     post:
       parameters:
@@ -3065,10 +2608,8 @@ paths:
             schema:
               type: object
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/citationdate:
     put:
       parameters:
@@ -3078,10 +2619,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     delete:
       parameters:
       - name: id
@@ -3090,10 +2629,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/cleanStorage:
     get:
       parameters:
@@ -3107,10 +2644,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/curationStatus:
     get:
       parameters:
@@ -3120,10 +2655,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     put:
       parameters:
       - name: id
@@ -3136,10 +2669,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     delete:
       parameters:
       - name: id
@@ -3148,10 +2679,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/deleteMetadata:
     put:
       parameters:
@@ -3161,10 +2690,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/destroy:
     delete:
       parameters:
@@ -3174,10 +2701,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/dirindex:
     get:
       parameters:
@@ -3199,10 +2724,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/editMetadata:
     put:
       parameters:
@@ -3216,10 +2739,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/files/actions/:set-embargo:
     post:
       parameters:
@@ -3229,10 +2750,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/files/actions/:unset-embargo:
     post:
       parameters:
@@ -3242,10 +2761,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/globusDownloadParameters:
     get:
       parameters:
@@ -3263,10 +2780,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/globusUploadParameters:
     get:
       parameters:
@@ -3280,10 +2795,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/links:
     get:
       parameters:
@@ -3293,10 +2806,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/logo:
     get:
       parameters:
@@ -3306,10 +2817,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/makeDataCount/citations:
     get:
       parameters:
@@ -3319,10 +2828,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/makeDataCount/{metric}:
     get:
       parameters:
@@ -3341,10 +2848,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/makeDataCount/{metric}/{yyyymm}:
     get:
       parameters:
@@ -3368,10 +2873,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/metadata:
     get:
       parameters:
@@ -3381,10 +2884,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     put:
       parameters:
       - name: id
@@ -3406,10 +2907,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/metadata/delete:
     put:
       parameters:
@@ -3427,10 +2926,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/modifyRegistration:
     get:
       parameters:
@@ -3440,10 +2937,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/modifyRegistrationMetadata:
     post:
       parameters:
@@ -3453,10 +2948,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/monitorGlobusDownload:
     post:
       parameters:
@@ -3471,10 +2964,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/move/{targetDataverseAlias}:
     post:
       parameters:
@@ -3493,10 +2984,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/privateUrl:
     get:
       parameters:
@@ -3506,10 +2995,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     post:
       parameters:
       - name: id
@@ -3523,10 +3010,8 @@ paths:
           default: false
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     delete:
       parameters:
       - name: id
@@ -3535,10 +3020,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/replaceFiles:
     post:
       parameters:
@@ -3553,10 +3036,8 @@ paths:
             schema:
               type: object
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/requestGlobusDownload:
     post:
       parameters:
@@ -3575,10 +3056,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/requestGlobusUploadPaths:
     post:
       parameters:
@@ -3593,10 +3072,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/returnToAuthor:
     post:
       parameters:
@@ -3606,10 +3083,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/submitForReview:
     post:
       parameters:
@@ -3619,10 +3094,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/thumbnail:
     get:
       parameters:
@@ -3632,10 +3105,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     post:
       parameters:
       - name: id
@@ -3649,10 +3120,8 @@ paths:
             schema:
               type: object
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     delete:
       parameters:
       - name: id
@@ -3661,10 +3130,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/thumbnail/candidates:
     get:
       parameters:
@@ -3674,10 +3141,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/thumbnail/{dataFileId}:
     post:
       parameters:
@@ -3692,10 +3157,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/uploadsid:
     get:
       parameters:
@@ -3705,11 +3168,9 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
       deprecated: true
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/uploadurls:
     get:
       parameters:
@@ -3723,10 +3184,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/userPermissions:
     get:
       parameters:
@@ -3736,10 +3195,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/versions:
     get:
       parameters:
@@ -3761,10 +3218,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/versions/{versionId}:
     get:
       parameters:
@@ -3787,10 +3242,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     put:
       parameters:
       - name: id
@@ -3809,10 +3262,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     delete:
       parameters:
       - name: id
@@ -3826,10 +3277,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/versions/{versionId}/canDownloadAtLeastOneFile:
     get:
       parameters:
@@ -3848,10 +3297,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/versions/{versionId}/citation:
     get:
       parameters:
@@ -3870,10 +3317,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/versions/{versionId}/customlicense:
     get:
       parameters:
@@ -3888,10 +3333,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/versions/{versionId}/deaccession:
     post:
       parameters:
@@ -3906,10 +3349,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/versions/{versionId}/files:
     get:
       parameters:
@@ -3960,10 +3401,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/versions/{versionId}/files/counts:
     get:
       parameters:
@@ -4002,10 +3441,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/versions/{versionId}/linkset:
     get:
       parameters:
@@ -4020,10 +3457,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/versions/{versionId}/metadata:
     get:
       parameters:
@@ -4038,10 +3473,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/versions/{versionNumber}/metadata/{block}:
     get:
       parameters:
@@ -4061,10 +3494,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/versions/{version}/toolparams/{tid}:
     get:
       parameters:
@@ -4088,10 +3519,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{id}/{version}/archivalStatus:
     get:
       parameters:
@@ -4106,10 +3535,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     put:
       parameters:
       - name: id
@@ -4128,10 +3555,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
     delete:
       parameters:
       - name: id
@@ -4145,10 +3570,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datasets/{linkedDatasetId}/link/{linkingDataverseAlias}:
     put:
       parameters:
@@ -4163,10 +3586,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datasets
   /api/v1/datatags/receiveTags/{uniqueCacheId}:
     post:
       parameters:
@@ -4176,17 +3597,13 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Datatags
   /api/v1/dataverses:
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}:
     get:
       parameters:
@@ -4196,10 +3613,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
     post:
       parameters:
       - name: identifier
@@ -4208,10 +3623,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
     delete:
       parameters:
       - name: identifier
@@ -4220,10 +3633,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/actions/:publish:
     post:
       parameters:
@@ -4233,10 +3644,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/assignments:
     get:
       parameters:
@@ -4246,10 +3655,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
     post:
       parameters:
       - name: identifier
@@ -4262,10 +3669,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/assignments/{id}:
     delete:
       parameters:
@@ -4280,10 +3685,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/attribute/{attribute}:
     put:
       parameters:
@@ -4302,10 +3705,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/contents:
     get:
       parameters:
@@ -4315,10 +3716,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/datasetSchema:
     get:
       parameters:
@@ -4328,10 +3727,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/datasets:
     post:
       parameters:
@@ -4356,10 +3753,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/datasets/:import:
     post:
       parameters:
@@ -4377,10 +3772,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/datasets/:importddi:
     post:
       parameters:
@@ -4398,10 +3791,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/datasets/:startmigration:
     post:
       parameters:
@@ -4419,10 +3810,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/defaultContributorRole/{roleAlias}:
     put:
       parameters:
@@ -4437,10 +3826,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/facets:
     get:
       parameters:
@@ -4450,10 +3837,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
     post:
       parameters:
       - name: identifier
@@ -4462,10 +3847,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/groups:
     get:
       parameters:
@@ -4479,10 +3862,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
     post:
       parameters:
       - name: identifier
@@ -4491,10 +3872,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/groups/{aliasInOwner}:
     get:
       parameters:
@@ -4509,10 +3888,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
     put:
       parameters:
       - name: aliasInOwner
@@ -4526,10 +3903,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
     delete:
       parameters:
       - name: aliasInOwner
@@ -4543,10 +3918,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees:
     post:
       parameters:
@@ -4568,10 +3941,8 @@ paths:
               items:
                 type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees/{roleAssigneeIdentifier}:
     put:
       parameters:
@@ -4592,10 +3963,8 @@ paths:
           pattern: .*
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
     delete:
       parameters:
       - name: aliasInOwner
@@ -4615,10 +3984,8 @@ paths:
           pattern: .*
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/guestbookResponses:
     get:
       parameters:
@@ -4632,10 +3999,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/links:
     get:
       parameters:
@@ -4645,10 +4010,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/metadatablockfacets:
     get:
       parameters:
@@ -4658,10 +4021,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
     post:
       parameters:
       - name: identifier
@@ -4677,10 +4038,8 @@ paths:
               items:
                 type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/metadatablockfacets/isRoot:
     post:
       parameters:
@@ -4695,10 +4054,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/metadatablocks:
     get:
       parameters:
@@ -4708,10 +4065,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
     post:
       parameters:
       - name: identifier
@@ -4720,10 +4075,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/metadatablocks/:isRoot:
     get:
       parameters:
@@ -4733,10 +4086,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
     post:
       parameters:
       - name: identifier
@@ -4750,10 +4101,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/roles:
     get:
       parameters:
@@ -4763,10 +4112,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
     post:
       parameters:
       - name: identifier
@@ -4775,10 +4122,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/storage/quota:
     get:
       parameters:
@@ -4788,10 +4133,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
     delete:
       parameters:
       - name: identifier
@@ -4800,10 +4143,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/storage/quota/{bytesAllocated}:
     post:
       parameters:
@@ -4818,10 +4159,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/storage/use:
     get:
       parameters:
@@ -4831,10 +4170,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/storagesize:
     get:
       parameters:
@@ -4848,10 +4185,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{identifier}/validateDatasetJson:
     post:
       parameters:
@@ -4866,10 +4201,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{id}/move/{targetDataverseAlias}:
     post:
       parameters:
@@ -4888,10 +4221,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{linkedDataverseAlias}/link/{linkingDataverseAlias}:
     put:
       parameters:
@@ -4906,10 +4237,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/dataverses/{linkingDataverseId}/deleteLink/{linkedDataverseId}:
     delete:
       parameters:
@@ -4924,10 +4253,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Dataverses
   /api/v1/edit/{fileId}:
     put:
       parameters:
@@ -4942,17 +4269,13 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Edit
   /api/v1/files/fixityAlgorithm:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}:
     get:
       parameters:
@@ -4962,10 +4285,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
     delete:
       parameters:
       - name: id
@@ -4974,10 +4295,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/dataTables:
     get:
       parameters:
@@ -4987,10 +4306,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/downloadCount:
     get:
       parameters:
@@ -5000,10 +4317,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/draft:
     get:
       parameters:
@@ -5013,10 +4328,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/extractNcml:
     post:
       parameters:
@@ -5026,10 +4339,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/hasBeenDeleted:
     get:
       parameters:
@@ -5039,10 +4350,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/metadata:
     get:
       parameters:
@@ -5052,10 +4361,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
     post:
       parameters:
       - name: id
@@ -5064,10 +4371,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/metadata/categories:
     post:
       parameters:
@@ -5077,10 +4382,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/metadata/draft:
     get:
       parameters:
@@ -5090,10 +4393,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/metadata/tabularTags:
     post:
       parameters:
@@ -5103,10 +4404,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/metadata/{fmid}/toolparams/{tid}:
     get:
       parameters:
@@ -5130,10 +4429,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/prov-freeform:
     get:
       parameters:
@@ -5143,10 +4440,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
     post:
       parameters:
       - name: id
@@ -5160,10 +4455,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/prov-json:
     get:
       parameters:
@@ -5173,10 +4466,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
     post:
       parameters:
       - name: id
@@ -5194,10 +4485,8 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
     delete:
       parameters:
       - name: id
@@ -5206,10 +4495,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/redetect:
     post:
       parameters:
@@ -5223,10 +4510,8 @@ paths:
         schema:
           type: boolean
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/reingest:
     post:
       parameters:
@@ -5236,10 +4521,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/replace:
     post:
       parameters:
@@ -5254,10 +4537,8 @@ paths:
             schema:
               type: object
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/restrict:
     put:
       parameters:
@@ -5267,10 +4548,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/files/{id}/uningest:
     post:
       parameters:
@@ -5280,10 +4559,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Files
   /api/v1/harvest/clients:
     get:
       parameters:
@@ -5292,10 +4569,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Harvest
   /api/v1/harvest/clients/{nickName}:
     get:
       parameters:
@@ -5309,10 +4584,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Harvest
     put:
       parameters:
       - name: nickName
@@ -5325,10 +4598,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Harvest
     post:
       parameters:
       - name: nickName
@@ -5341,10 +4612,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Harvest
     delete:
       parameters:
       - name: nickName
@@ -5353,10 +4622,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Harvest
   /api/v1/harvest/clients/{nickName}/run:
     post:
       parameters:
@@ -5370,10 +4637,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Harvest
   /api/v1/harvest/server/oaisets:
     get:
       parameters:
@@ -5382,10 +4647,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Harvest
   /api/v1/harvest/server/oaisets/add:
     post:
       parameters:
@@ -5394,10 +4657,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Harvest
   /api/v1/harvest/server/oaisets/{specname}:
     get:
       parameters:
@@ -5411,10 +4672,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Harvest
     put:
       parameters:
       - name: specname
@@ -5427,10 +4686,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Harvest
     delete:
       parameters:
       - name: specname
@@ -5443,10 +4700,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Harvest
   /api/v1/harvest/server/oaisets/{specname}/datasets:
     get:
       parameters:
@@ -5460,10 +4715,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Harvest
   /api/v1/inbox:
     post:
       requestBody:
@@ -5475,17 +4728,13 @@ paths:
             schema:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Inbox
   /api/v1/info/apiTermsOfUse:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/datasets:
     get:
       parameters:
@@ -5498,10 +4747,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/datasets/bySubject:
     get:
       parameters:
@@ -5514,10 +4761,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/datasets/bySubject/toMonth/{yyyymm}:
     get:
       parameters:
@@ -5535,10 +4780,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/datasets/monthly:
     get:
       parameters:
@@ -5551,10 +4794,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/datasets/pastDays/{days}:
     get:
       parameters:
@@ -5572,10 +4813,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/datasets/toMonth/{yyyymm}:
     get:
       parameters:
@@ -5593,10 +4832,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/dataverses:
     get:
       parameters:
@@ -5605,10 +4842,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/dataverses/byCategory:
     get:
       parameters:
@@ -5617,10 +4852,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/dataverses/bySubject:
     get:
       parameters:
@@ -5629,10 +4862,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/dataverses/monthly:
     get:
       parameters:
@@ -5641,10 +4872,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/dataverses/pastDays/{days}:
     get:
       parameters:
@@ -5658,10 +4887,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/dataverses/toMonth/{yyyymm}:
     get:
       parameters:
@@ -5675,10 +4902,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/downloads:
     get:
       parameters:
@@ -5687,10 +4912,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/downloads/monthly:
     get:
       parameters:
@@ -5699,10 +4922,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/downloads/pastDays/{days}:
     get:
       parameters:
@@ -5716,10 +4937,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/downloads/toMonth/{yyyymm}:
     get:
       parameters:
@@ -5733,10 +4952,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/filedownloads:
     get:
       parameters:
@@ -5745,10 +4962,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/filedownloads/monthly:
     get:
       parameters:
@@ -5757,10 +4972,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/filedownloads/toMonth/{yyyymm}:
     get:
       parameters:
@@ -5774,10 +4987,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/files:
     get:
       parameters:
@@ -5786,10 +4997,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/files/byType:
     get:
       parameters:
@@ -5798,10 +5007,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/files/byType/monthly:
     get:
       parameters:
@@ -5810,10 +5017,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/files/monthly:
     get:
       parameters:
@@ -5822,10 +5027,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/files/pastDays/{days}:
     get:
       parameters:
@@ -5839,10 +5042,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/files/toMonth/{yyyymm}:
     get:
       parameters:
@@ -5856,10 +5057,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/makeDataCount/{metric}:
     get:
       parameters:
@@ -5877,10 +5076,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/makeDataCount/{metric}/monthly:
     get:
       parameters:
@@ -5898,10 +5095,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/makeDataCount/{metric}/toMonth/{yyyymm}:
     get:
       parameters:
@@ -5924,10 +5119,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/tree:
     get:
       parameters:
@@ -5936,10 +5129,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/tree/toMonth/{yyyymm}:
     get:
       parameters:
@@ -5953,10 +5144,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/uniquedownloads:
     get:
       parameters:
@@ -5965,10 +5154,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/uniquedownloads/monthly:
     get:
       parameters:
@@ -5977,10 +5164,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/uniquedownloads/toMonth/{yyyymm}:
     get:
       parameters:
@@ -5994,10 +5179,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/uniquefiledownloads:
     get:
       parameters:
@@ -6006,10 +5189,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/uniquefiledownloads/monthly:
     get:
       parameters:
@@ -6018,10 +5199,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/metrics/uniquefiledownloads/toMonth/{yyyymm}:
     get:
       parameters:
@@ -6035,10 +5214,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/openapi/{format}:
     get:
       parameters:
@@ -6048,52 +5225,38 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/server:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/settings/:DatasetPublishPopupCustomText:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/settings/:MaxEmbargoDurationInMonths:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/settings/incompleteMetadataViaApi:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/version:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/info/zipDownloadLimit:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Info
   /api/v1/ingest/test/file:
     get:
       parameters:
@@ -6106,34 +5269,26 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
           content:
             text/plain:
               schema:
                 type: string
-      tags:
-      - Ingest
   /api/v1/licenses:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Licenses
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Licenses
   /api/v1/licenses/default:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Licenses
   /api/v1/licenses/default/{id}:
     put:
       parameters:
@@ -6143,10 +5298,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Licenses
   /api/v1/licenses/{id}:
     get:
       parameters:
@@ -6156,10 +5309,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Licenses
     delete:
       parameters:
       - name: id
@@ -6168,10 +5319,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Licenses
   /api/v1/licenses/{id}/:active/{activeState}:
     put:
       parameters:
@@ -6186,10 +5335,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Licenses
   /api/v1/licenses/{id}/:sortOrder/{sortOrder}:
     put:
       parameters:
@@ -6204,24 +5351,18 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Licenses
   /api/v1/logout:
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Logout
   /api/v1/mail/notifications:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Mail
   /api/v1/meta/datafile/{fileId}:
     get:
       parameters:
@@ -6243,15 +5384,13 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
           content:
             text/xml:
               schema:
                 type: string
       deprecated: true
-      tags:
-      - Meta
   /api/v1/meta/dataset/{datasetId}:
     get:
       parameters:
@@ -6269,22 +5408,18 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/xml:
               schema:
                 type: string
       deprecated: true
-      tags:
-      - Meta
   /api/v1/metadatablocks:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Metadatablocks
   /api/v1/metadatablocks/{identifier}:
     get:
       parameters:
@@ -6294,10 +5429,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Metadatablocks
   /api/v1/mydata/retrieve:
     get:
       parameters:
@@ -6342,28 +5475,22 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
                 type: string
-      tags:
-      - Mydata
   /api/v1/notifications/all:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Notifications
   /api/v1/notifications/mutedEmails:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Notifications
   /api/v1/notifications/mutedEmails/{typeName}:
     put:
       parameters:
@@ -6373,10 +5500,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Notifications
     delete:
       parameters:
       - name: typeName
@@ -6385,17 +5510,13 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Notifications
   /api/v1/notifications/mutedNotifications:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Notifications
   /api/v1/notifications/mutedNotifications/{typeName}:
     put:
       parameters:
@@ -6405,10 +5526,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Notifications
     delete:
       parameters:
       - name: typeName
@@ -6417,10 +5536,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Notifications
   /api/v1/notifications/{id}:
     delete:
       parameters:
@@ -6430,10 +5547,8 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Notifications
   /api/v1/pids:
     get:
       parameters:
@@ -6442,10 +5557,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Pids
   /api/v1/pids/unreserved:
     get:
       parameters:
@@ -6454,10 +5567,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Pids
   /api/v1/pids/{id}/delete:
     delete:
       parameters:
@@ -6467,10 +5578,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Pids
   /api/v1/pids/{id}/reserve:
     post:
       parameters:
@@ -6480,10 +5589,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Pids
   /api/v1/roles:
     post:
       parameters:
@@ -6492,10 +5599,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Roles
   /api/v1/roles/{id}:
     get:
       parameters:
@@ -6505,10 +5610,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Roles
     delete:
       parameters:
       - name: id
@@ -6517,10 +5620,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Roles
   /api/v1/search:
     get:
       parameters:
@@ -6601,37 +5702,27 @@ paths:
           items:
             type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Search
   /api/v1/users/:me:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Users
   /api/v1/users/token:
     get:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Users
     delete:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Users
   /api/v1/users/token/recreate:
     post:
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Users
   /api/v1/users/{consumedIdentifier}/mergeIntoUser/{baseIdentifier}:
     post:
       parameters:
@@ -6646,10 +5737,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Users
   /api/v1/users/{identifier}/changeIdentifier/{newIdentifier}:
     post:
       parameters:
@@ -6664,10 +5753,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Users
   /api/v1/users/{identifier}/removeRoles:
     post:
       parameters:
@@ -6677,10 +5764,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Users
   /api/v1/users/{identifier}/traces:
     get:
       parameters:
@@ -6690,10 +5775,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Users
   /api/v1/users/{identifier}/traces/{element}:
     get:
       parameters:
@@ -6708,10 +5791,8 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Users
   /api/v1/workflows/{invocationId}:
     post:
       parameters:
@@ -6721,7 +5802,5 @@ paths:
         schema:
           type: string
       responses:
-        '200':
+        "200":
           description: OK
-      tags:
-      - Workflows
