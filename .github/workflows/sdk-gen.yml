@@ -16,7 +16,7 @@ jobs:
     with:
       speakeasy_version: latest
       openapi_docs: |
-        - ./dataverse_openapi.yaml
+        - ./dataverse_openapi_documented.yaml
       languages: |-
         - python
       mode: direct
