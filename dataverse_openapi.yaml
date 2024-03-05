@@ -15,7 +15,6 @@ paths:
       - name: fileMetadataId
         in: query
         schema:
-          format: int64
           type: integer
       - name: gbrecs
         in: query
@@ -86,7 +85,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       - name: formatTag
         in: path
@@ -112,7 +110,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       - name: formatTag
         in: path
@@ -158,7 +155,6 @@ paths:
       - name: fileMetadataId
         in: query
         schema:
-          format: int64
           type: integer
       - name: include
         in: query
@@ -186,7 +182,6 @@ paths:
       - name: fileMetadataId
         in: query
         schema:
-          format: int64
           type: integer
       - name: include
         in: query
@@ -367,7 +362,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -375,7 +369,6 @@ paths:
           content:
             image/png:
               schema:
-                format: binary
                 type: string
   /api/v1/access/dvCardImage/{dataverseId}:
     get:
@@ -384,7 +377,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -392,7 +384,6 @@ paths:
           content:
             image/png:
               schema:
-                format: binary
                 type: string
   /api/v1/access/fileCardImage/{fileId}:
     get:
@@ -401,7 +392,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -409,7 +399,6 @@ paths:
           content:
             image/png:
               schema:
-                format: binary
                 type: string
   /api/v1/access/{id}/allowAccessRequest:
     put:
@@ -432,7 +421,6 @@ paths:
       - name: limit
         in: query
         schema:
-          format: int32
           type: integer
       - name: listonly
         in: query
@@ -491,7 +479,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -503,7 +490,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -515,7 +501,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -528,7 +513,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -648,7 +632,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -660,7 +643,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -747,7 +729,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -758,7 +739,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -774,7 +754,6 @@ paths:
       - name: limit
         in: query
         schema:
-          format: int32
           type: integer
       responses:
         "200":
@@ -800,7 +779,6 @@ paths:
         content:
           text/tab-separated-values:
             schema:
-              format: binary
               type: string
       responses:
         "200":
@@ -816,7 +794,6 @@ paths:
         content:
           application/zip:
             schema:
-              format: binary
               type: string
       responses:
         "200":
@@ -854,7 +831,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -972,7 +948,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -983,7 +958,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -1089,12 +1063,10 @@ paths:
       - name: numPartitions
         in: query
         schema:
-          format: int64
           type: integer
       - name: partitionIdToProcess
         in: query
         schema:
-          format: int64
           type: integer
       - name: previewOnly
         in: query
@@ -1124,12 +1096,10 @@ paths:
       - name: numPartitions
         in: query
         schema:
-          format: int64
           type: integer
       - name: partitionIdToProcess
         in: query
         schema:
-          format: int64
           type: integer
       - name: previewOnly
         in: query
@@ -1155,7 +1125,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -1167,12 +1136,10 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       - name: maxResults
         in: query
         schema:
-          format: int32
           type: integer
       - name: order
         in: query
@@ -1209,12 +1176,10 @@ paths:
       - name: partitions
         in: query
         schema:
-          format: int64
           type: integer
       - name: which
         in: query
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -1231,7 +1196,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -1242,7 +1206,6 @@ paths:
       - name: id
         in: query
         schema:
-          format: int64
           type: integer
       - name: key
         in: query
@@ -1302,7 +1265,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -1314,7 +1276,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       - name: type
         in: path
@@ -1335,7 +1296,6 @@ paths:
       - name: itemsPerPage
         in: query
         schema:
-          format: int32
           type: integer
       - name: searchTerm
         in: query
@@ -1344,7 +1304,6 @@ paths:
       - name: selectedPage
         in: query
         schema:
-          format: int32
           type: integer
       - name: sortKey
         in: query
@@ -1449,7 +1408,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -1470,7 +1428,6 @@ paths:
       - name: sleep
         in: query
         schema:
-          format: int32
           type: integer
       responses:
         "200":
@@ -1536,7 +1493,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       - name: debug
         in: query
@@ -1552,7 +1508,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -1563,7 +1518,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -1656,7 +1610,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -1667,7 +1620,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -1679,7 +1631,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -1718,7 +1669,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -1800,7 +1750,6 @@ paths:
       - name: num
         in: query
         schema:
-          format: int32
           type: integer
       responses:
         "200":
@@ -2037,7 +1986,6 @@ paths:
       - name: totalSize
         in: query
         schema:
-          format: int64
           type: integer
       - name: uploadFolder
         in: query
@@ -2280,7 +2228,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       - name: identifier
         in: path
@@ -3159,7 +3106,6 @@ paths:
         content:
           multipart/form-data:
             schema:
-              format: binary
               type: object
       responses:
         "200":
@@ -3192,7 +3138,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       - name: id
         in: path
@@ -3225,7 +3170,6 @@ paths:
       - name: size
         in: query
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -3256,12 +3200,10 @@ paths:
       - name: limit
         in: query
         schema:
-          format: int32
           type: integer
       - name: offset
         in: query
         schema:
-          format: int32
           type: integer
       responses:
         "200":
@@ -3429,12 +3371,10 @@ paths:
       - name: limit
         in: query
         schema:
-          format: int32
           type: integer
       - name: offset
         in: query
         schema:
-          format: int32
           type: integer
       - name: orderCriteria
         in: query
@@ -3556,7 +3496,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       - name: version
         in: path
@@ -3727,7 +3666,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       - name: identifier
         in: path
@@ -4047,7 +3985,6 @@ paths:
       - name: guestbookId
         in: query
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -4203,7 +4140,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       - name: identifier
         in: path
@@ -4319,7 +4255,6 @@ paths:
         content:
           application/xml:
             schema:
-              format: binary
               type: string
       responses:
         "200":
@@ -4466,7 +4401,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       - name: id
         in: path
@@ -4477,7 +4411,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       - name: locale
         in: query
@@ -4858,7 +4791,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int32
           type: integer
       - name: dataLocation
         in: query
@@ -4937,7 +4869,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int32
           type: integer
       - name: parentAlias
         in: query
@@ -4988,7 +4919,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int32
           type: integer
       - name: parentAlias
         in: query
@@ -5094,7 +5024,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int32
           type: integer
       - name: parentAlias
         in: query
@@ -5355,7 +5284,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -5367,7 +5295,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -5378,7 +5305,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -5395,7 +5321,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -5407,13 +5332,11 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       - name: sortOrder
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -5435,7 +5358,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       - name: exclude
         in: query
@@ -5444,7 +5366,6 @@ paths:
       - name: fileMetadataId
         in: query
         schema:
-          format: int64
           type: integer
       - name: include
         in: query
@@ -5465,7 +5386,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       - name: exclude
         in: query
@@ -5533,12 +5453,10 @@ paths:
         schema:
           type: array
           items:
-            format: int64
             type: integer
       - name: selected_page
         in: query
         schema:
-          format: int32
           type: integer
       - name: userIdentifier
         in: query
@@ -5615,7 +5533,6 @@ paths:
         in: path
         required: true
         schema:
-          format: int64
           type: integer
       responses:
         "200":
@@ -5723,7 +5640,6 @@ paths:
       - name: per_page
         in: query
         schema:
-          format: int32
           type: integer
       - name: q
         in: query
@@ -5760,7 +5676,6 @@ paths:
       - name: start
         in: query
         schema:
-          format: int32
           type: integer
       - name: subtree
         in: query
