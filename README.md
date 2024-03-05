@@ -16,6 +16,10 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 - [ ] 🎁 Publish your SDK to package managers by [configuring automatic publishing](https://www.speakeasyapi.dev/docs/productionize-sdks/publish-sdks)
 - [ ] ✨ When ready to productionize, delete this section from the README
 
+## ReadMe Documentation
+
+[Go to the documentation](https://test-dv.readme.io/reference/)
+
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
