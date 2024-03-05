@@ -6039,10 +6039,10 @@ paths:
           description: OK
       tags:
       - Info
-  /api/v1/info/openapi/{format}:
+  /api/v1/info/openapi/{outputFormat}:
     get:
       parameters:
-      - name: format
+      - name: outputFormat
         in: path
         required: true
         schema:

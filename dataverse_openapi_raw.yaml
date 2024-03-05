@@ -5216,10 +5216,10 @@ paths:
       responses:
         "200":
           description: OK
-  /api/v1/info/openapi/{format}:
+  /api/v1/info/openapi/{outputFormat}:
     get:
       parameters:
-      - name: format
+      - name: outputFormat
         in: path
         required: true
         schema:
