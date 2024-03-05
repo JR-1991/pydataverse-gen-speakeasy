@@ -1,0 +1,7692 @@
+openapi: 3.0.3
+info:
+  title: Dataverse API
+  version: '1.0'
+servers:
+- url: '{protocol}://{base_url}'
+  description: Harvard Dataverse
+  variables:
+    protocol:
+      enum:
+      - http
+      - https
+      default: https
+    base_url:
+      default: demo.dataverse.org
+      description: The base URL of the Dataverse installation
+paths:
+  /api/v1/access/datafile/bundle/{fileId}:
+    get:
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fileMetadataId
+        in: query
+        schema:
+          type: integer
+      - name: gbrecs
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/zip:
+              schema:
+                type: object
+      tags:
+      - Access
+      operationId: getDatafileBundle
+      summary: Retrieve a zip of the datafile bundle identified by the file ID.
+  /api/v1/access/datafile/{fileId}:
+    get:
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          pattern: .+
+          type: string
+      - name: gbrecs
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: getDatafile
+      summary: Retrieves datafile details based on given fileId
+  /api/v1/access/datafile/{fileId}/auxiliary:
+    get:
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: getDatafileAuxiliary
+      summary: Retrieve auxiliary data for a specific datafile.
+  /api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}:
+    get:
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: formatTag
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: formatVersion
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+      tags:
+      - Access
+      operationId: accessDatafileAuxiliaryGet
+      summary: Retrieve details of a specific auxiliary data file
+    post:
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: formatTag
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: formatVersion
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: accessDatafileAuxiliaryCreate
+      summary: Create a new auxiliary data file for a particular data file
+    delete:
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: formatTag
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: formatVersion
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: accessDatafileAuxiliaryDelete
+      summary: Delete a specific auxiliary data file
+  /api/v1/access/datafile/{fileId}/auxiliary/{origin}:
+    get:
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: origin
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: getDatafileAuxiliaryInfo
+      summary: Retrieve auxiliary information of specific datafile
+  /api/v1/access/datafile/{fileId}/metadata:
+    get:
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: exclude
+        in: query
+        schema:
+          type: string
+      - name: fileMetadataId
+        in: query
+        schema:
+          type: integer
+      - name: include
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/xml:
+              schema:
+                type: string
+      tags:
+      - Access
+      operationId: getDatafileMetadata
+      summary: Retrieve metadata for a specific datafile
+  /api/v1/access/datafile/{fileId}/metadata/ddi:
+    get:
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: exclude
+        in: query
+        schema:
+          type: string
+      - name: fileMetadataId
+        in: query
+        schema:
+          type: integer
+      - name: include
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/xml:
+              schema:
+                type: string
+      tags:
+      - Access
+      operationId: getDatafileMetaDDI
+      summary: Retrieve DDI metadata for a specific datafile.
+  /api/v1/access/datafile/{id}/grantAccess/{identifier}:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: grantDatafileAccess
+      summary: Grants access to a specific datafile using its ID and the identifier
+        of the user
+  /api/v1/access/datafile/{id}/listRequests:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: getDatafileRequests
+      summary: Retrieves a list of all requests relevant to a specified datafile
+  /api/v1/access/datafile/{id}/rejectAccess/{identifier}:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: rejectDataAccess
+      summary: Reject access to specified datafile using ids
+  /api/v1/access/datafile/{id}/requestAccess:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: requestFileAccess
+      summary: Requests access to a specific datafile by ID.
+  /api/v1/access/datafile/{id}/revokeAccess/{identifier}:
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: deleteFileAccess
+      summary: Revoke access to a specific file using its ID and an identifier
+  /api/v1/access/datafile/{id}/userFileAccessRequested:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: getUserFileAccessRequested
+      summary: Retrieve the status of a user file access request
+  /api/v1/access/datafile/{id}/userPermissions:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: getUserFilePermissions
+      summary: Retrieve user permissions for a specific datafile.
+  /api/v1/access/datafiles:
+    post:
+      parameters:
+      - name: gbrecs
+        in: query
+        schema:
+          type: boolean
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: postDataFileAccess
+      summary: Uploads access details of a data file
+  /api/v1/access/datafiles/{fileIds}:
+    get:
+      parameters:
+      - name: fileIds
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: gbrecs
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: getAccessDataFiles
+      summary: Retrieve access data for specified files
+  /api/v1/access/dataset/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: gbrecs
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: getDatasetAccess
+      summary: Retrieve access information for a specific dataset
+  /api/v1/access/dataset/{id}/versions/{versionId}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: gbrecs
+        in: query
+        schema:
+          type: boolean
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: getDatasetVersionAccess
+      summary: Retrieve specific version of an accessible dataset by ID
+  /api/v1/access/dsCardImage/{versionId}:
+    get:
+      parameters:
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            image/png:
+              schema:
+                type: string
+      tags:
+      - Access
+      operationId: getDsCardImage
+      summary: Retrieves the version-specific Data Card image
+  /api/v1/access/dvCardImage/{dataverseId}:
+    get:
+      parameters:
+      - name: dataverseId
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            image/png:
+              schema:
+                type: string
+      tags:
+      - Access
+      operationId: getDataverseCardImage
+      summary: Fetch the Dataverse card image
+  /api/v1/access/fileCardImage/{fileId}:
+    get:
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            image/png:
+              schema:
+                type: string
+      tags:
+      - Access
+      operationId: getFileCardImage
+      summary: Retrieves the card image for the specified file ID.
+  /api/v1/access/{id}/allowAccessRequest:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Access
+      operationId: allowAccessRequest
+      summary: Update permission to allow access request based on the provided ID
+  /api/v1/admin/archiveAllUnarchivedDatasetVersions:
+    post:
+      parameters:
+      - name: latestonly
+        in: query
+        schema:
+          type: boolean
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: listonly
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: archiveAllUnarchivedVersions
+      summary: Archives all unarchived dataset versions. Allows options to limit the
+        number of versions archived, archive only the latest versions, or simply list
+        the versions that would be archived without actually doing it.
+  /api/v1/admin/assignee/{idtf}:
+    get:
+      parameters:
+      - name: idtf
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminAssignee
+      summary: Retrieve a specific assignee detail by ID.
+  /api/v1/admin/assignments/assignees/{raIdtf}:
+    get:
+      parameters:
+      - name: raIdtf
+        in: path
+        required: true
+        schema:
+          pattern: .*
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAssigneesDetail
+      summary: Retrieve details of a specific assignee by raIdtf
+  /api/v1/admin/authenticatedUsers:
+    get:
+      responses:
+        '200':
+          description: OK
+      deprecated: true
+      tags:
+      - Admin
+      operationId: getAuthenticatedUsers
+      summary: Retrieves a list of authenticated users. This endpoint is deprecated.
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: createAuthenticatedUser
+      summary: Creates a new authenticated user.
+  /api/v1/admin/authenticatedUsers/convert/builtin2oauth:
+    put:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: convertUserToOAuth
+      summary: Convert an authenticated user from built-in to OAuth
+  /api/v1/admin/authenticatedUsers/convert/builtin2shib:
+    put:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: convertAuthUsers
+      summary: Convert Authenticated Users from Built-in system to Shibboleth
+  /api/v1/admin/authenticatedUsers/id/{id}:
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteAuthenticatedUser
+      summary: Delete an authenticated user by ID
+  /api/v1/admin/authenticatedUsers/id/{id}/convertRemoteToBuiltIn:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: convertRemoteToBuiltIn
+      summary: Converts a remote user to a built-in user by their ID
+  /api/v1/admin/authenticatedUsers/id/{id}/convertShibToBuiltIn:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      deprecated: true
+      tags:
+      - Admin
+      operationId: convertUserAuthenticationMethod
+      summary: Converts the authentication method of an authenticated user from Shibboleth
+        to Built-In.
+  /api/v1/admin/authenticatedUsers/id/{id}/deactivate:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deactivateUser
+      summary: Deactivates an authenticated user by ID
+  /api/v1/admin/authenticatedUsers/{identifier}:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAuthenticatedUser
+      summary: Retrieve details of a specified authenticated user
+    delete:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteAuthenticatedUser_1
+      summary: Delete a specified authenticated user
+  /api/v1/admin/authenticatedUsers/{identifier}/deactivate:
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deactivateUser_1
+      summary: Deactivate an authenticated user by identifier
+  /api/v1/admin/authenticationProviderFactories:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAuthProviderFactories
+      summary: Retrieve all authentication provider factories
+  /api/v1/admin/authenticationProviders:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAuthProviders
+      summary: Retrieve list of authentication providers
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: addAuthProvider
+      summary: Add a new authentication provider
+  /api/v1/admin/authenticationProviders/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAuthProvidersById
+      summary: Fetch specific authentication provider using ID
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: removeAuthProvidersById
+      summary: Delete specific authentication provider using ID
+  /api/v1/admin/authenticationProviders/{id}/:enabled:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: enableAuthProvider
+      summary: Enable a specific authentication provider by its ID
+  /api/v1/admin/authenticationProviders/{id}/enabled:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAuthProviderStatus
+      summary: Retrieves the status of a specific authentication provider
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: updateAuthProviderStatus
+      summary: Updates the status of a specific authentication provider
+  /api/v1/admin/bannerMessage:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getBannerMessage
+      summary: Retrieve a current banner message
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: postBannerMessage
+      summary: Add a new banner message
+  /api/v1/admin/bannerMessage/{id}:
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteBannerMessage
+      summary: Delete a specific banner message by ID
+  /api/v1/admin/bannerMessage/{id}/deactivate:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deactivateBannerMessage
+      summary: Deactivates a specific banner message
+  /api/v1/admin/batch/jobs:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getBatchJobs
+      summary: Retrieve all batch jobs
+  /api/v1/admin/batch/jobs/name/{jobName}:
+    get:
+      parameters:
+      - name: jobName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getJobByName
+      summary: Retrieve details for a job given its name
+  /api/v1/admin/batch/jobs/{jobId}:
+    get:
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminJobById
+      summary: Retrieve details of a specific admin batch job
+  /api/v1/admin/clearMetricsCache:
+    delete:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteMetricsCache
+      summary: Deletes the metrics cache for admin
+  /api/v1/admin/clearMetricsCache/{name}:
+    delete:
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteMetricsCache_1
+      summary: Deletes a specific metric cache.
+  /api/v1/admin/clearThumbnailFailureFlag:
+    delete:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteThumbnailFailureFlag
+      summary: Deletes a thumbnail failure flag
+  /api/v1/admin/clearThumbnailFailureFlag/{id}:
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: adminClearThumbnailFailureFlag
+      summary: Delete the thumbnail failure flag for a specified Dataverse id
+  /api/v1/admin/computeDataFileHashValue/{fileId}/algorithm/{alg}:
+    post:
+      parameters:
+      - name: alg
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: computeFileHashValue
+      summary: Computes the hash value of the specified file using the given algorithm
+  /api/v1/admin/confirmEmail/{userId}:
+    get:
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getUserIdConfEmail
+      summary: Retrieve Confirmation Email Associated with User ID
+    post:
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: postUserIdConfEmail
+      summary: Send Confirmation Email to User ID
+  /api/v1/admin/convertUserFromBcryptToSha1:
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: admin_convertUserEncryption
+      summary: Convert a user's encryption scheme from Bcrypt to Sha1
+  /api/v1/admin/datafiles/integrity/fixmissingoriginalsizes:
+    get:
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getFixMissingOriginalSizes
+      summary: Retrieve a limited number of records with missing original sizes and
+        fix them
+  /api/v1/admin/datafiles/integrity/fixmissingoriginaltypes:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: fixMissingOriginalTypes
+      summary: Retrieve a report of datafiles with missing original types and apply
+        fixes
+  /api/v1/admin/datasetfield:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminDatasetField
+      summary: Retrieve the dataset fields available to administrators
+  /api/v1/admin/datasetfield/controlledVocabulary/subject:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getControlledVocabulary
+      summary: Retrieve a list of controlled vocabulary subjects
+  /api/v1/admin/datasetfield/load:
+    post:
+      requestBody:
+        content:
+          text/tab-separated-values:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: load_dataset_field_admin
+      summary: Load dataset field as an admin
+  /api/v1/admin/datasetfield/loadNAControlledVocabularyValue:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getNAControlledVocabValue
+      summary: Retrieve North American controlled vocabulary value
+  /api/v1/admin/datasetfield/loadpropertyfiles:
+    post:
+      requestBody:
+        content:
+          application/zip:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: adminLoadPropertyFiles
+      summary: Load dataset field property files as a ZIP.
+  /api/v1/admin/datasetfield/{name}:
+    get:
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getDatasetFieldName
+      summary: Retrieve information of the specified dataset field
+  /api/v1/admin/datasets/integrity/{datasetVersionId}/fixmissingunf:
+    post:
+      parameters:
+      - name: datasetVersionId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: forceRecalculate
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: postFixMissingUnf
+      summary: Update or recalculate dataset integrity by fixing missing UNF in specified
+        dataset version
+  /api/v1/admin/datasets/thumbnailMetadata/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getThumbnailMetadataById
+      summary: Retrieves thumbnail metadata for a specific dataset using its ID
+  /api/v1/admin/dataverse/curationLabelSets:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getCurationLabelSets
+      summary: Retrieve all curation label sets
+  /api/v1/admin/dataverse/storageDrivers:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getStorageDrivers
+      summary: Retrieves all storage drivers
+  /api/v1/admin/dataverse/{alias}/addRoleAssignmentsToChildren:
+    get:
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getRoleAssignments
+      summary: Retrieve role assignments associated with a dataverse
+  /api/v1/admin/dataverse/{alias}/curationLabelSet:
+    get:
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getCurationLabelSet
+      summary: Retrieve the curation label set of the specified Dataverse
+    put:
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: updateCurationLabelSet
+      summary: Update or create a curation label set for the specified Dataverse
+    delete:
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteCurationLabelSet
+      summary: Remove the curation label set from the specified Dataverse
+  /api/v1/admin/dataverse/{alias}/storageDriver:
+    get:
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getStorageDriver
+      summary: Retrieve the storage driver of a specific dataverse
+    put:
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: updateStorageDriver
+      summary: Update the storage driver of a specific dataverse
+    delete:
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteStorageDriver
+      summary: Remove the storage driver of a specific dataverse
+  /api/v1/admin/downloadTmpFile:
+    get:
+      parameters:
+      - name: fullyQualifiedPathToFile
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getTmpFile
+      summary: Retrieve a temporary file via its fully qualified path
+  /api/v1/admin/externalTools:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getExternalTools
+      summary: Retrieve a list of all external tools
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: createExternalTool
+      summary: Create a new external tool
+  /api/v1/admin/externalTools/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getExternalTool
+      summary: Retrieve an external tool by its ID
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteExternalTool
+      summary: Delete an external tool by its ID
+  /api/v1/admin/feedback:
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: postAdminFeedback
+      summary: Create or post feedback as an admin
+  /api/v1/admin/groups/domain:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminGroupsDomain
+      summary: Retrieve domain-related groups information from the admin endpoint
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: postAdminGroupsDomain
+      summary: Submit new domain-related groups information to the admin endpoint
+  /api/v1/admin/groups/domain/{groupAlias}:
+    get:
+      parameters:
+      - name: groupAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getGroupAlias
+      summary: Retrieves information of the group alias specified in the path
+    put:
+      parameters:
+      - name: groupAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: updateGroupAlias
+      summary: Updates the group alias specified in the path
+    delete:
+      parameters:
+      - name: groupAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteGroupAlias
+      summary: Deletes the group alias specified in the path
+  /api/v1/admin/groups/ip:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminGroupsIP
+      summary: Retrieve IP-based groups information
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: postAdminGroupsIP
+      summary: Create a new IP-based group
+  /api/v1/admin/groups/ip/{groupIdtf}:
+    get:
+      parameters:
+      - name: groupIdtf
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getGroupByGroupIdtf
+      summary: Fetches a group by the groupIdtf provided in the path
+    delete:
+      parameters:
+      - name: groupIdtf
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteGroupByGroupIdtf
+      summary: Deletes a group by the groupIdtf provided in the path
+  /api/v1/admin/groups/shib:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getShibGroupInfo
+      summary: Retrieve information about Shibboleth groups
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: createShibGroup
+      summary: Create a new Shibboleth group
+  /api/v1/admin/groups/shib/{primaryKey}:
+    delete:
+      parameters:
+      - name: primaryKey
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteShibGroup
+      summary: Delete a Shibboleth Group by given Primary Key
+  /api/v1/admin/index:
+    get:
+      parameters:
+      - name: numPartitions
+        in: query
+        schema:
+          type: integer
+      - name: partitionIdToProcess
+        in: query
+        schema:
+          type: integer
+      - name: previewOnly
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminIndex
+      summary: Retrieve details of admin index with queried parameters
+  /api/v1/admin/index/clear:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: clearAdminIndex
+      summary: Clears the admin index
+  /api/v1/admin/index/clear-orphans:
+    get:
+      parameters:
+      - name: sync
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: clearOrphansIndex
+      summary: Retrieve and clear orphans from the admin index
+  /api/v1/admin/index/continue:
+    get:
+      parameters:
+      - name: numPartitions
+        in: query
+        schema:
+          type: integer
+      - name: partitionIdToProcess
+        in: query
+        schema:
+          type: integer
+      - name: previewOnly
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: continueIndexProcessing
+      summary: Continues the process of indexing partitions based on given parameters.
+  /api/v1/admin/index/dataset:
+    get:
+      parameters:
+      - name: persistentId
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getDatasetIndex
+      summary: Retrieve the index of a dataset given its persistentId
+  /api/v1/admin/index/datasets/{id}:
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteDatasetById
+      summary: Delete a specific dataset by its ID
+  /api/v1/admin/index/filemetadata/{dataset_id}:
+    get:
+      parameters:
+      - name: dataset_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+      - name: order
+        in: query
+        schema:
+          type: string
+      - name: sort
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: get_fileMetadata1
+      summary: Retrieve file metadata for a specific dataset
+  /api/v1/admin/index/filesearch:
+    get:
+      parameters:
+      - name: persistentId
+        in: query
+        schema:
+          type: string
+      - name: q
+        in: query
+        schema:
+          type: string
+      - name: semanticVersion
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: fileSearchIndexGET
+      summary: This endpoint retrieves data about file search index by persistentId,
+        q, and/or semanticVersion.
+  /api/v1/admin/index/mod:
+    get:
+      parameters:
+      - name: partitions
+        in: query
+        schema:
+          type: integer
+      - name: which
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminIndexMod
+      summary: Retrieves modification of the admin index based on provided query parameters
+  /api/v1/admin/index/perms:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminIndexPerms
+      summary: Retrieve permissions for the admin index
+  /api/v1/admin/index/perms/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminIndexPerms_1
+      summary: Retrieve a specific admin index permissions by ID
+  /api/v1/admin/index/permsDebug:
+    get:
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getPermsDebugInfo
+      summary: Retrieves permission debug info for specified id and key
+  /api/v1/admin/index/solr/schema:
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+      tags:
+      - Admin
+      operationId: getSolrSchema
+      summary: Retrieve the Solr schema configuration.
+  /api/v1/admin/index/status:
+    get:
+      parameters:
+      - name: sync
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminIndexStatus
+      summary: Retrieve status of the admin index
+  /api/v1/admin/index/test:
+    get:
+      parameters:
+      - name: fq
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      - name: q
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminTestIndex
+      summary: Obtain specific parameters from the Admin Test Index
+  /api/v1/admin/index/timestamps:
+    delete:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteAdminIndexTimestamps
+      summary: Delete timestamps from the admin index
+  /api/v1/admin/index/timestamps/{dvObjectId}:
+    delete:
+      parameters:
+      - name: dvObjectId
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteIndexTimestamp
+      summary: Delete index timestamp by dvObjectId
+  /api/v1/admin/index/{type}/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: type
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminIndexTypeById
+      summary: Retrieves specific type and ID details in admin index
+  /api/v1/admin/isOrcid:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getOrcidStatus
+      summary: Retrieve ORCID status for a specific admin
+  /api/v1/admin/list-users:
+    get:
+      parameters:
+      - name: itemsPerPage
+        in: query
+        schema:
+          type: integer
+      - name: searchTerm
+        in: query
+        schema:
+          type: string
+      - name: selectedPage
+        in: query
+        schema:
+          type: integer
+      - name: sortKey
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: listUsers
+      summary: Retrieve a list of all users
+  /api/v1/admin/makeDataCount/addUsageMetricsFromSushiReport:
+    post:
+      parameters:
+      - name: reportOnDisk
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: addMetricsFromReport
+      summary: Add usage metrics from a SUSHI report
+  /api/v1/admin/makeDataCount/sendToHub:
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: adminSendToHub
+      summary: Send data count to the admin hub.
+  /api/v1/admin/makeDataCount/{id}/addUsageMetricsFromSushiReport:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: reportOnDisk
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: addUsageMetricsFromSushiRepo
+      summary: Add usage metrics for a specific Dataverse file from a SUSHI Report
+  /api/v1/admin/makeDataCount/{id}/updateCitationsForDataset:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: updateDatasetCitations
+      summary: Updates the citation count for a specified dataset
+  /api/v1/admin/metadata/clearExportTimestamps:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getExportTimestamps
+      summary: Retrieve the export timestamps
+  /api/v1/admin/metadata/exportAll:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getMetadataExportAll
+      summary: Fetches all metadata for export by admin
+  /api/v1/admin/metadata/exportOAI/{specname}:
+    put:
+      parameters:
+      - name: specname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: adminMetadataExportOAISpec
+      summary: Update the OAI export specification using provided 'specname'
+  /api/v1/admin/metadata/reExportAll:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: reExportAllMetadata
+      summary: Retrieves and exports all metadata
+  /api/v1/admin/metadata/{id}/reExportDataset:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getMetadataReExport
+      summary: Retrieves and re-exports the specific metadata for the dataset using
+        dataset ID
+  /api/v1/admin/permissions/{dvo}:
+    get:
+      parameters:
+      - name: dvo
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminPermissions
+      summary: Retrieve specific admin permission details
+  /api/v1/admin/publishDataverseAsCreator/{id}:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: publishDataverseAsCreator
+      summary: Publish Dataverse as creator using the given ID
+  /api/v1/admin/registerDataFileAll:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getRegisterDataFileAll
+      summary: Retrieve all registered data files from the admin.
+  /api/v1/admin/registerDataFiles/{alias}:
+    get:
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sleep
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getRegisterDataFilesByAlias
+      summary: Retrieve data file registration details for a given alias
+  /api/v1/admin/requestSignedUrl:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: postAdminSignedUrl
+      summary: Admin sends a request to receive a signed URL.
+  /api/v1/admin/roles:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminRoles
+      summary: Retrieve a list of all admin roles
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: createAdminRole
+      summary: Create a new admin role
+  /api/v1/admin/roles/{id}:
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteAdminRole
+      summary: Delete a specific admin role
+  /api/v1/admin/savedsearches:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getSavedSearches
+      summary: Retrieves all saved searches in the system.
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: addSavedSearch
+      summary: Adds a new saved search to the system.
+  /api/v1/admin/savedsearches/list:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getSavedSearchesList
+      summary: Retrieve a list of all saved searches by the administrator
+  /api/v1/admin/savedsearches/makelinks/all:
+    put:
+      parameters:
+      - name: debug
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: updateAllSavedSearchLinks
+      summary: Updates all saved search links
+  /api/v1/admin/savedsearches/makelinks/{id}:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: debug
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: makeLinksForSavedSearch
+      summary: Updates the link for a specific saved search by ID
+  /api/v1/admin/savedsearches/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getSavedSearch
+      summary: Retrieves a saved search by ID
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteSavedSearch
+      summary: Deletes a saved search by ID
+  /api/v1/admin/settings:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminSettings
+      summary: Retrieve administrator settings
+  /api/v1/admin/settings/{name}:
+    get:
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminSetting
+      summary: Retrieve a specified admin setting
+    put:
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: updateAdminSetting
+      summary: Update a specified admin setting
+    delete:
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteAdminSetting
+      summary: Delete a specified admin setting
+  /api/v1/admin/settings/{name}/lang/{lang}:
+    put:
+      parameters:
+      - name: lang
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: updateAdminSettingsLang
+      summary: Update a specific Admin setting for a given language
+    delete:
+      parameters:
+      - name: lang
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteAdminSettingsLang
+      summary: Delete a specific Admin setting for a given language
+  /api/v1/admin/sitemap:
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: generateSitemap
+      summary: Generate a new sitemap for the application
+  /api/v1/admin/storageSites:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getStorageSites
+      summary: Fetches all storage sites
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: createStorageSite
+      summary: Creates a new storage site
+  /api/v1/admin/storageSites/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: fetchStorageSite
+      summary: Retrieves details of a specific storage site by its unique identifier
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteStorageSite
+      summary: Deletes a specific storage site by its unique identifier
+  /api/v1/admin/storageSites/{id}/primaryStorage:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: updatePrimaryStorage
+      summary: Update the primary storage of a storage site by ID
+  /api/v1/admin/submitDatasetVersionToArchive/{id}/{version}:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: submitDatasetVersionToArchive
+      summary: Submit a specific dataset version to the archive by using provided
+        dataset ID and version number
+  /api/v1/admin/superuser/{identifier}:
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: admin_createSuperUser
+      summary: Creates a new superuser with the provided identifier
+  /api/v1/admin/template/{id}:
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteAdminTemplate
+      summary: Delete an admin template by ID
+  /api/v1/admin/templates:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminTemplates
+      summary: Retrieve all admin templates
+  /api/v1/admin/templates/{alias}:
+    get:
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminTemplate
+      summary: Retrieve a specific admin template using its alias.
+  /api/v1/admin/test/datasets/{id}/externalTools:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getExternalTools_1
+      summary: Gets an external tool associated with a specific dataset identified
+        by its id
+  /api/v1/admin/test/files/{id}/externalTool/{toolId}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: toolId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getExternalToolById
+      summary: Retrieve the details of a specific external tool by its ID for a given
+        file
+  /api/v1/admin/test/files/{id}/externalTools:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getExternalTools_1_1
+      summary: Retrieve the external tools of a specific test file.
+  /api/v1/admin/updateHashValues/{alg}:
+    get:
+      parameters:
+      - name: alg
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: num
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getHashValues
+      summary: Retrieve hash values based on specified algorithm
+  /api/v1/admin/validate/dataset/files/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: get_validate_dataset_files
+      summary: Retrieve and validate specified dataset files
+  /api/v1/admin/validate/dataset/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: variables
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: validateDataset
+      summary: Validate a dataset with a specified ID
+  /api/v1/admin/validate/datasets:
+    get:
+      parameters:
+      - name: variables
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: adminValidateDatasets
+      summary: Validate datasets in the system
+  /api/v1/admin/validateDataFileHashValue/{fileId}:
+    post:
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: ValidateDataFileHash
+      summary: Validate hash value of the specified data file
+  /api/v1/admin/validatePassword:
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: validateAdminPassword
+      summary: Validates the password of an admin user
+  /api/v1/admin/workflows:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminWorkflows
+      summary: Retrieve all workflows associated with the admin
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: createAdminWorkflow
+      summary: Create a new workflow for the admin
+  /api/v1/admin/workflows/default:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getDefaultWorkflow
+      summary: Fetch default workflow configured for admin
+  /api/v1/admin/workflows/default/{triggerType}:
+    get:
+      parameters:
+      - name: triggerType
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getTriggerType
+      summary: Retrieve a specific trigger type from workflows
+    put:
+      parameters:
+      - name: triggerType
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: updateTriggerType
+      summary: Update a specific trigger type in workflows
+    delete:
+      parameters:
+      - name: triggerType
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteTriggerType
+      summary: Delete a specific trigger type from workflows
+  /api/v1/admin/workflows/ip-whitelist:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getIPWhitelist
+      summary: Retrieve current IP Whitelist for admin workflows
+    put:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: updateIPWhitelist
+      summary: Update the IP Whitelist for admin workflows
+    delete:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: deleteIPWhitelist
+      summary: Remove the IP Whitelist for admin workflows
+  /api/v1/admin/workflows/{identifier}:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getWorkflowByIdentifier
+      summary: Retrieve a specific workflow using its identifier
+  /api/v1/admin/{id}/registerDataFile:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: getAdminDataFile
+      summary: Retrieve data file details registered by a specific admin
+  /api/v1/admin/{id}/reregisterHDLToPID:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Admin
+      operationId: adminReregisterHDLToPID
+      summary: Admin reruns the HDL to PID registration for a specific admin ID.
+  /api/v1/application.wadl:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Application.wadl
+      operationId: getApplicationWadl
+      summary: Retrieves the application WADL
+  /api/v1/application.wadl/{path}:
+    get:
+      parameters:
+      - name: path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Application.wadl
+      operationId: getApplicationWadl_1
+      summary: Retrieve the application WADL
+  /api/v1/batch/harvest:
+    get:
+      parameters:
+      - name: createDV
+        in: query
+        schema:
+          type: boolean
+      - name: dv
+        in: query
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      - name: path
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Batch
+      operationId: getBatchHarvest
+      summary: Retrieves information about a batch harvest based on provided parameters
+  /api/v1/batch/import:
+    get:
+      parameters:
+      - name: createDV
+        in: query
+        schema:
+          type: boolean
+      - name: dv
+        in: query
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      - name: path
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Batch
+      operationId: getBatchImportStatus
+      summary: Retrieve status of a batch import request
+    post:
+      parameters:
+      - name: dv
+        in: query
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Batch
+      operationId: createBatchImport
+      summary: Initiate a new batch import request
+  /api/v1/batch/jobs/import/datasets/files/{identifier}:
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: mode
+        in: query
+        schema:
+          default: MERGE
+          type: string
+      - name: totalSize
+        in: query
+        schema:
+          type: integer
+      - name: uploadFolder
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Batch
+      operationId: postBatchJobImportDatasets
+      summary: Initiate a batch job for importing datasets using the provided identifier
+  /api/v1/builtin-users:
+    post:
+      parameters:
+      - name: key
+        in: query
+        schema:
+          type: string
+      - name: password
+        in: query
+        schema:
+          type: string
+      - name: sendEmailNotification
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Builtin-users
+      operationId: postBuiltinUsers
+      summary: Create a new builtin user
+  /api/v1/builtin-users/{password}/{key}:
+    post:
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: password
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Builtin-users
+      operationId: createBuiltinUser
+      summary: Create a new built-in user using a password and key
+  /api/v1/builtin-users/{password}/{key}/{sendEmailNotification}:
+    post:
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: password
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sendEmailNotification
+        in: path
+        required: true
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Builtin-users
+      operationId: createBuiltinUser_1
+      summary: Create a new builtin-user with a specific key, password and email notification
+        preference.
+  /api/v1/builtin-users/{username}/api-token:
+    get:
+      parameters:
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: password
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Builtin-users
+      operationId: getApiTokenByUsername
+      summary: Gets the API token for the specified built-in user
+  /api/v1/datasets/export:
+    get:
+      parameters:
+      - name: exporter
+        in: query
+        schema:
+          type: string
+      - name: persistentId
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetsExport
+      summary: Retrieves export information of a dataset given its exporter and persistent
+        ID
+  /api/v1/datasets/listCurationStates:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getCurationStates
+      summary: Retrieve a list of curation states for datasets
+  /api/v1/datasets/locks:
+    get:
+      parameters:
+      - name: type
+        in: query
+        schema:
+          type: string
+      - name: userIdentifier
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetLocks
+      summary: Retrieve information about locks on datasets
+  /api/v1/datasets/modifyRegistrationAll:
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: modifyAllRegistrations
+      summary: Modifies registration details for all datasets
+  /api/v1/datasets/modifyRegistrationPIDMetadataAll:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getRegistrationPIDMetadata
+      summary: Retrieve registration PID metadata of all datasets
+  /api/v1/datasets/mpupload:
+    put:
+      parameters:
+      - name: globalid
+        in: query
+        schema:
+          type: string
+      - name: storageidentifier
+        in: query
+        schema:
+          type: string
+      - name: uploadid
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: updateDatasetUpload
+      summary: Update a multi-part upload for a dataset using the provided global
+        ID, storage identifier, and upload ID
+    delete:
+      parameters:
+      - name: globalid
+        in: query
+        schema:
+          type: string
+      - name: storageidentifier
+        in: query
+        schema:
+          type: string
+      - name: uploadid
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: deleteDatasetUpload
+      summary: Delete a multi-part upload for a dataset using the provided global
+        ID, storage identifier, and upload ID
+  /api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}:
+    get:
+      parameters:
+      - name: privateUrlToken
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getPrivateUrlDatasetVersion
+      summary: Retrieves a dataset version using a private URL token
+  /api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}/citation:
+    get:
+      parameters:
+      - name: privateUrlToken
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getCitationByPrivateUrl
+      summary: Retrieve citation information for a dataset version via a private URL
+        token
+  /api/v1/datasets/summaryFieldNames:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getSummaryFieldNames
+      summary: Retrieve names of summary fields in the dataset
+  /api/v1/datasets/{datasetId}/deleteLink/{linkedDataverseId}:
+    delete:
+      parameters:
+      - name: datasetId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: linkedDataverseId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: deleteDatasetLink
+      summary: Delete a link between a dataset and a dataverse
+  /api/v1/datasets/{identifier}/allowedCurationLabels:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getAllowedCurationLabels
+      summary: Retrieve a list of allowed curation labels for a specific dataset
+  /api/v1/datasets/{identifier}/assignments:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetAssignments
+      summary: Retrieves assignments for a specific dataset
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: createDatasetAssignment
+      summary: Creates an assignment for a specific dataset
+  /api/v1/datasets/{identifier}/assignments/{id}:
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: deleteAssignment
+      summary: Delete a specific assignment for a dataset
+  /api/v1/datasets/{identifier}/curationLabelSet:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getCurationLabelSet_1
+      summary: Retrieves the curation label set of the specified dataset
+    put:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: updateCurationLabelSet_1
+      summary: Updates the curation label set of the specified dataset
+    delete:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: deleteCurationLabelSet_1
+      summary: Deletes the curation label set for the specified dataset
+  /api/v1/datasets/{identifier}/dataCaptureModule/checksumValidation:
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: validateChecksum
+      summary: Validate checksum for specified dataset
+  /api/v1/datasets/{identifier}/dataCaptureModule/rsync:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getRsyncDataModule
+      summary: Retrieve the Rsync data capture module for a specific dataset
+  /api/v1/datasets/{identifier}/guestbookEntryAtRequest:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getGuestbookEntry
+      summary: Retrieves a guestbook entry for a specific dataset
+    put:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: updateGuestbookEntry
+      summary: Updates a guestbook entry for a specific dataset
+    delete:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: deleteGuestbookEntry
+      summary: Deletes a guestbook entry for a specific dataset
+  /api/v1/datasets/{identifier}/lock/{type}:
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: lockDataset
+      summary: Lock a specific dataset identified by the given identifier and type
+  /api/v1/datasets/{identifier}/locks:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetLocks_1
+      summary: Retrieves specific dataset locks
+    delete:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: deleteDatasetLocks
+      summary: Deletes specific dataset locks
+  /api/v1/datasets/{identifier}/storageDriver:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getStorageDriver_1
+      summary: Retrieve the details of a specific storage driver based on the provided
+        identifier
+    put:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: updateStorageDriver_1
+      summary: Update the details of a specific storage driver based on the provided
+        identifier
+    delete:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: deleteStorageDriver_1
+      summary: Delete a specific storage driver based on the provided identifier
+  /api/v1/datasets/{identifier}/storagesize:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: includeCached
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetStorageSize
+      summary: Retrieves the storage size of a dataset based on its identifier. An
+        optional query parameter can be used to include cached files.
+  /api/v1/datasets/{identifier}/timestamps:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetTimestamps
+      summary: Retrieves the timestamps for a given dataset identified by the path
+        parameter 'identifier'
+  /api/v1/datasets/{identifier}/versions/{versionId}/downloadsize:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: accessStatus
+        in: query
+        schema:
+          type: string
+      - name: categoryName
+        in: query
+        schema:
+          type: string
+      - name: contentType
+        in: query
+        schema:
+          type: string
+      - name: includeDeaccessioned
+        in: query
+        schema:
+          type: boolean
+      - name: mode
+        in: query
+        schema:
+          type: string
+      - name: searchText
+        in: query
+        schema:
+          type: string
+      - name: tabularTagName
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDownloadSize
+      summary: Retrieve the download size of a specific version of a dataset
+  /api/v1/datasets/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDataset
+      summary: Retrieve the specified dataset
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: deleteDataset
+      summary: Delete the specified dataset
+  /api/v1/datasets/{id}/actions/:publish:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      deprecated: true
+      tags:
+      - Datasets
+      operationId: getPublishDataset
+      summary: Retrieve publishing details of a designated dataset
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: assureIsIndexed
+        in: query
+        schema:
+          type: boolean
+      - name: type
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: initiatePublishing
+      summary: Publish a designated dataset with optional assurances
+  /api/v1/datasets/{id}/actions/:releasemigrated:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: updatepidatprovider
+        in: query
+        schema:
+          default: false
+          type: boolean
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              type: string
+          application/json-ld:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: releaseMigratedDataset
+      summary: Release a migrated dataset with a specified ID
+  /api/v1/datasets/{id}/add:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: addDataset
+      summary: Add a new dataset to the existing record
+  /api/v1/datasets/{id}/addFiles:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: addFilesToDataset
+      summary: Adds files to a specified dataset
+  /api/v1/datasets/{id}/addGlobusFiles:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: addGlobusFilesToDataset
+      summary: Add globus files to a specific dataset
+  /api/v1/datasets/{id}/citationdate:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: updateCitationDate
+      summary: Update the citation date of a dataset based on dataset ID
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: deleteCitationDate
+      summary: Delete citation date of a dataset based on dataset ID
+  /api/v1/datasets/{id}/cleanStorage:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dryrun
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getCleanStorageStatus
+      summary: Get the status of the clean storage task for the specified dataset
+  /api/v1/datasets/{id}/curationStatus:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getCurationStatus
+      summary: Fetches the curation status of the specified dataset
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: label
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: updateCurationStatus
+      summary: Updates the curation status of the specified dataset
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: deleteCurationStatus
+      summary: Deletes the curation status of the specified dataset
+  /api/v1/datasets/{id}/deleteMetadata:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: updateDatasetMetadata
+      summary: Update the metadata of a specific dataset
+  /api/v1/datasets/{id}/destroy:
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: deleteDataset_1
+      summary: Delete a specific dataset by its ID.
+  /api/v1/datasets/{id}/dirindex:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: folder
+        in: query
+        schema:
+          type: string
+      - name: original
+        in: query
+        schema:
+          type: boolean
+      - name: version
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetDirectoryIndex
+      summary: Retrieve directory index of a dataset
+  /api/v1/datasets/{id}/editMetadata:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: replace
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: editDatasetMetadata
+      summary: Updates the metadata of a specific dataset represented by its ID
+  /api/v1/datasets/{id}/files/actions/:set-embargo:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: setDatasetEmbargo
+      summary: Set an embargo on a specific dataset's files
+  /api/v1/datasets/{id}/files/actions/:unset-embargo:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: unsetEmbargoOnDatasetFiles
+      summary: Unset embargo on files for a specific dataset
+  /api/v1/datasets/{id}/globusDownloadParameters:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: downloadId
+        in: query
+        schema:
+          type: string
+      - name: locale
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getGlobusDownloadParameters
+      summary: Retrieve the parameters for Globus download for a specified dataset
+  /api/v1/datasets/{id}/globusUploadParameters:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: locale
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getGlobusUploadParameters
+      summary: Retrieves Globus upload parameters for a specific dataset
+  /api/v1/datasets/{id}/links:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetLinks
+      summary: Retrieves the links of a specified dataset
+  /api/v1/datasets/{id}/logo:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetLogo
+      summary: Retrieve the logo of a specific dataset
+  /api/v1/datasets/{id}/makeDataCount/citations:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: datasetCitationCountGet
+      summary: Retrieves the citation count for a specific dataset
+  /api/v1/datasets/{id}/makeDataCount/{metric}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: metric
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: country
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetMetrics
+      summary: Retrieve specific metrics for a specified dataset
+  /api/v1/datasets/{id}/makeDataCount/{metric}/{yyyymm}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: metric
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: country
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetMetric
+      summary: Fetches a specific metric for a specific dataset
+  /api/v1/datasets/{id}/metadata:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetMetadata
+      summary: Retrieves the metadata of a dataset by its ID
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: replace
+        in: query
+        schema:
+          default: false
+          type: boolean
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              type: string
+          application/json-ld:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: updateDatasetMetadata_1
+      summary: Updates the metadata of a dataset by its ID, with an option to replace
+        the existing metadata
+  /api/v1/datasets/{id}/metadata/delete:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              type: string
+          application/json-ld:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: updateMetadataDeletion
+      summary: Update the deletion status of the metadata of a specific dataset
+  /api/v1/datasets/{id}/modifyRegistration:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getRegistrationModification
+      summary: Retrieve the modification details of a specific dataset registration
+  /api/v1/datasets/{id}/modifyRegistrationMetadata:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: modifyDatasetRegistrationMetadata
+      summary: Modify the registration metadata of a specific dataset
+  /api/v1/datasets/{id}/monitorGlobusDownload:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: monitorGlobusDownload
+      summary: Initiate the process to monitor a Globus download operation for a specific
+        dataset
+  /api/v1/datasets/{id}/move/{targetDataverseAlias}:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: targetDataverseAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: forceMove
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: moveDatasetToTarget
+      summary: Moves a specific dataset to a target dataverse
+  /api/v1/datasets/{id}/privateUrl:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getPrivateUrl
+      summary: Retrieve a specific dataset's private URL
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: anonymizedAccess
+        in: query
+        schema:
+          default: false
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: createPrivateUrl
+      summary: Create a private URL for a specific dataset
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: deletePrivateUrl
+      summary: Delete a specific dataset's private URL
+  /api/v1/datasets/{id}/replaceFiles:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: replaceDatasetFiles
+      summary: Replace files in a specified dataset
+  /api/v1/datasets/{id}/requestGlobusDownload:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: downloadId
+        in: query
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: submitGlobusDownloadRequest
+      summary: Submit a request for Globus download for a specific dataset
+  /api/v1/datasets/{id}/requestGlobusUploadPaths:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: postGlobusUploadPathsRequest
+      summary: Submit a request to get the paths for Globus file upload for a specified
+        dataset
+  /api/v1/datasets/{id}/returnToAuthor:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: returnDatasetToAuthor
+      summary: Returns the specified dataset back to its author
+  /api/v1/datasets/{id}/submitForReview:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: submitDatasetForReview
+      summary: Submits a specified dataset for review
+  /api/v1/datasets/{id}/thumbnail:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetThumbnail
+      summary: Retrieves a thumbnail from a specific dataset
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: postDatasetThumbnail
+      summary: Adds a thumbnail to a specific dataset
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: deleteDatasetThumbnail
+      summary: Deletes a thumbnail from a specific dataset
+  /api/v1/datasets/{id}/thumbnail/candidates:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getThumbnailCandidates
+      summary: Retrieve the list of thumbnail candidates for a specific dataset
+  /api/v1/datasets/{id}/thumbnail/{dataFileId}:
+    post:
+      parameters:
+      - name: dataFileId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: postThumbnailData
+      summary: Upload a new thumbnail for a specific dataset
+  /api/v1/datasets/{id}/uploadsid:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      deprecated: true
+      tags:
+      - Datasets
+      operationId: getUploadId
+      summary: Retrieve the upload ID for the specified dataset
+  /api/v1/datasets/{id}/uploadurls:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: size
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getUploadURLs
+      summary: Retrieve upload URLs for a specific dataset
+  /api/v1/datasets/{id}/userPermissions:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getUserPermissions
+      summary: Retrieve user permissions for a specific dataset
+  /api/v1/datasets/{id}/versions:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: excludeFiles
+        in: query
+        schema:
+          type: boolean
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: offset
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetVersions
+      summary: Retrieve versions of a specific dataset
+  /api/v1/datasets/{id}/versions/{versionId}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: excludeFiles
+        in: query
+        schema:
+          type: boolean
+      - name: includeDeaccessioned
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetVersion
+      summary: Fetches the dataset version details, with options to exclude files
+        or include deaccessioned ones
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: updateDatasetVersion
+      summary: Updates the dataset version with the given ID
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: deleteDatasetVersion
+      summary: Deletes the specified version of a dataset
+  /api/v1/datasets/{id}/versions/{versionId}/canDownloadAtLeastOneFile:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: includeDeaccessioned
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: checkDatasetFileDownloadPermission
+      summary: Checks if a user has permission to download at least one file from
+        a specific dataset version
+  /api/v1/datasets/{id}/versions/{versionId}/citation:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: includeDeaccessioned
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getCitation
+      summary: Retrieve the citation of a specific dataset version
+  /api/v1/datasets/{id}/versions/{versionId}/customlicense:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getCustomLicense
+      summary: Retrieve a specific dataset version's custom license
+  /api/v1/datasets/{id}/versions/{versionId}/deaccession:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: postDeaccessionDatasetByVersionId
+      summary: Remove access to a specific version of a dataset
+  /api/v1/datasets/{id}/versions/{versionId}/files:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: accessStatus
+        in: query
+        schema:
+          type: string
+      - name: categoryName
+        in: query
+        schema:
+          type: string
+      - name: contentType
+        in: query
+        schema:
+          type: string
+      - name: includeDeaccessioned
+        in: query
+        schema:
+          type: boolean
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: offset
+        in: query
+        schema:
+          type: integer
+      - name: orderCriteria
+        in: query
+        schema:
+          type: string
+      - name: searchText
+        in: query
+        schema:
+          type: string
+      - name: tabularTagName
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetVersionFiles
+      summary: Fetches files within a specific version of a dataset
+  /api/v1/datasets/{id}/versions/{versionId}/files/counts:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: accessStatus
+        in: query
+        schema:
+          type: string
+      - name: categoryName
+        in: query
+        schema:
+          type: string
+      - name: contentType
+        in: query
+        schema:
+          type: string
+      - name: includeDeaccessioned
+        in: query
+        schema:
+          type: boolean
+      - name: searchText
+        in: query
+        schema:
+          type: string
+      - name: tabularTagName
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetFilesCount
+      summary: Retrieve counts of various types of files in a specified dataset version
+  /api/v1/datasets/{id}/versions/{versionId}/linkset:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetVersionLinkset
+      summary: Retrieve linkset of a specific dataset version
+  /api/v1/datasets/{id}/versions/{versionId}/metadata:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetVersionMetadata
+      summary: Retrieve the metadata of a specific version of a dataset
+  /api/v1/datasets/{id}/versions/{versionNumber}/metadata/{block}:
+    get:
+      parameters:
+      - name: block
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionNumber
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetVersionMetadata_1
+      summary: Retrieve metadata of a specified version of a dataset
+  /api/v1/datasets/{id}/versions/{version}/toolparams/{tid}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tid
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: locale
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetVersionToolParam
+      summary: Retrieve tool parameters of a specific version of a dataset
+  /api/v1/datasets/{id}/{version}/archivalStatus:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: getDatasetArchivalStatus
+      summary: Retrieve the archival status of a specific version of a dataset
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: updateDatasetArchivalStatus
+      summary: Update the archival status of a specific version of a dataset
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: deleteDatasetArchivalStatus
+      summary: Remove the archival status of a specific version of a dataset
+  /api/v1/datasets/{linkedDatasetId}/link/{linkingDataverseAlias}:
+    put:
+      parameters:
+      - name: linkedDatasetId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: linkingDataverseAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasets
+      operationId: updateDatasetLink
+      summary: Updates the link between a dataset and a Dataverse alias
+  /api/v1/datatags/receiveTags/{uniqueCacheId}:
+    post:
+      parameters:
+      - name: uniqueCacheId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datatags
+      operationId: postReceiveTags
+      summary: Create a new datatag and associate it with the specified unique cache
+        ID
+  /api/v1/dataverses:
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: createDataverse
+      summary: Create a new Dataverse
+  /api/v1/dataverses/{identifier}:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getDataverse
+      summary: Retrieves a specified dataverse with the given identifier
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: createDataverse_1
+      summary: Creates a new dataverse with the given identifier
+    delete:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: deleteDataverse
+      summary: Deletes a specified dataverse with the given identifier
+  /api/v1/dataverses/{identifier}/actions/:publish:
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: publishDataverseById
+      summary: Publishes the identified Dataverse
+  /api/v1/dataverses/{identifier}/assignments:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getDataverseAssignments
+      summary: Retrieves assignments of specified Dataverse
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: postDataverseAssignments
+      summary: Assigns new user or role to specified Dataverse
+  /api/v1/dataverses/{identifier}/assignments/{id}:
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: deleteDataverseAssignment
+      summary: Delete a specific assignment from a specific dataverse
+  /api/v1/dataverses/{identifier}/attribute/{attribute}:
+    put:
+      parameters:
+      - name: attribute
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: value
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: updateDataverseAttribute
+      summary: Update a specific attribute of a Dataverse identified by the given
+        identifier
+  /api/v1/dataverses/{identifier}/contents:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getDataverseContents
+      summary: Retrieve contents of the specified Dataverse
+  /api/v1/dataverses/{identifier}/datasetSchema:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getDatasetSchema
+      summary: Retrieve the schema of a specific dataset in the dataverse identified
+        by the given identifier
+  /api/v1/dataverses/{identifier}/datasets:
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: doNotValidate
+        in: query
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              type: string
+          application/json-ld:
+            schema:
+              type: string
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: createDatasetInDataverse
+      summary: Create a new dataset in the specified dataverse
+  /api/v1/dataverses/{identifier}/datasets/:import:
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pid
+        in: query
+        schema:
+          type: string
+      - name: release
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: importDataset
+      summary: Imports a dataset into a given Dataverse identifier
+  /api/v1/dataverses/{identifier}/datasets/:importddi:
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pid
+        in: query
+        schema:
+          type: string
+      - name: release
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: importDdiToDataset
+      summary: Imports DDI metadata to a dataset in the specified dataverse.
+  /api/v1/dataverses/{identifier}/datasets/:startmigration:
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              type: string
+          application/json-ld:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: startMigration
+      summary: Begins the migration process of datasets in a specific Dataverse identified
+        by the provided identifier
+  /api/v1/dataverses/{identifier}/defaultContributorRole/{roleAlias}:
+    put:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: roleAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: updateDefaultContributorRole
+      summary: Update the default contributor role of a specific dataverse
+  /api/v1/dataverses/{identifier}/facets:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getFacets
+      summary: Retrieves the facets of the specified dataverse
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: postFacets
+      summary: Updates the facets of the specified dataverse
+  /api/v1/dataverses/{identifier}/groups:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getDataverseGroups
+      summary: Retrieves groups associated with a specified dataverse
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: createDataverseGroup
+      summary: Creates a new group in the specified dataverse
+  /api/v1/dataverses/{identifier}/groups/{aliasInOwner}:
+    get:
+      parameters:
+      - name: aliasInOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getGroupInDataverse
+      summary: Retrieve details of a specific group within the given Dataverse
+    put:
+      parameters:
+      - name: aliasInOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: updateGroupInDataverse
+      summary: Update the details of a group within the specified Dataverse
+    delete:
+      parameters:
+      - name: aliasInOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: deleteGroupInDataverse
+      summary: Delete a specific group from the specified Dataverse
+  /api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees:
+    post:
+      parameters:
+      - name: aliasInOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: assignRole
+      summary: Assign a role to role assignees in a specified group within a dataverse
+  /api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees/{roleAssigneeIdentifier}:
+    put:
+      parameters:
+      - name: aliasInOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: roleAssigneeIdentifier
+        in: path
+        required: true
+        schema:
+          pattern: .*
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: updateRoleAssignee
+      summary: Update a specific role assignee in a dataverse group
+    delete:
+      parameters:
+      - name: aliasInOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: roleAssigneeIdentifier
+        in: path
+        required: true
+        schema:
+          pattern: .*
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: deleteRoleAssignee
+      summary: Delete a specific role assignee from a dataverse group
+  /api/v1/dataverses/{identifier}/guestbookResponses:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: guestbookId
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getGuestbookResponses
+      summary: Retrieve all guestbook responses for a specific dataverse
+  /api/v1/dataverses/{identifier}/links:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getDataverseLinks
+      summary: Retrieve all links associated with a specific dataverse identified
+        by ID
+  /api/v1/dataverses/{identifier}/metadatablockfacets:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getMetadatablockFacets
+      summary: Retrieve metadatablock facets for a specific dataverse
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: postMetadatablockFacets
+      summary: Add metadatablock facets to a specific dataverse
+  /api/v1/dataverses/{identifier}/metadatablockfacets/isRoot:
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: updateRootStatus
+      summary: Updates the root status of a Dataverse
+  /api/v1/dataverses/{identifier}/metadatablocks:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getMetadatablock
+      summary: Retrieve the metadatablock of a Dataverse.
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: createMetadatablock
+      summary: Create a new metadatablock for a Dataverse.
+  /api/v1/dataverses/{identifier}/metadatablocks/:isRoot:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getMetadatablock_1
+      summary: Retrieve metadata blocks for a specific dataverse identified by its
+        unique identifier
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: postMetadatablock
+      summary: Add or update metadata block associated with the specified dataverse
+        identifier
+  /api/v1/dataverses/{identifier}/roles:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getRolesByIdentifier
+      summary: Retrieve the roles for a given Dataverse identifier
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: createRoleByIdentifier
+      summary: Create a new role for a given Dataverse identifier
+  /api/v1/dataverses/{identifier}/storage/quota:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getStorageQuota
+      summary: Retrieve storage quota of the dataverse identified by the given identifier
+    delete:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: deleteStorageQuota
+      summary: Delete the storage quota configuration for the dataverse identified
+        by the given identifier
+  /api/v1/dataverses/{identifier}/storage/quota/{bytesAllocated}:
+    post:
+      parameters:
+      - name: bytesAllocated
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: setStorageQuota
+      summary: Sets the storage quota for a specific Dataverse
+  /api/v1/dataverses/{identifier}/storage/use:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getDataverseStorageUsage
+      summary: Retrieve storage usage of a specific dataverse
+  /api/v1/dataverses/{identifier}/storagesize:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: includeCached
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: getDataverseStorageSize
+      summary: Retrieve the storage size of a specific Dataverse
+  /api/v1/dataverses/{identifier}/validateDatasetJson:
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: validateDatasetJson
+      summary: Validate the JSON of a dataset in a specific Dataverse
+  /api/v1/dataverses/{id}/move/{targetDataverseAlias}:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: targetDataverseAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: forceMove
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: moveDataverse
+      summary: Moves a Dataverse to a target Dataverse
+  /api/v1/dataverses/{linkedDataverseAlias}/link/{linkingDataverseAlias}:
+    put:
+      parameters:
+      - name: linkedDataverseAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: linkingDataverseAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: linkDataverses
+      summary: Links one Dataverse to another
+  /api/v1/dataverses/{linkingDataverseId}/deleteLink/{linkedDataverseId}:
+    delete:
+      parameters:
+      - name: linkedDataverseId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: linkingDataverseId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Dataverses
+      operationId: deleteDataverseLink
+      summary: Delete a link between two dataverses
+  /api/v1/edit/{fileId}:
+    put:
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Edit
+      operationId: editFile
+      summary: Edits the content of a specified file
+  /api/v1/files/fixityAlgorithm:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: getFixityAlgorithm
+      summary: Retrieve the fixity algorithm of a file
+  /api/v1/files/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: getFile
+      summary: Retrieve a specific file by ID.
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: deleteFile
+      summary: Delete a specific file by ID.
+  /api/v1/files/{id}/dataTables:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: getFileDataTables
+      summary: Retrieve the data tables of a given file
+  /api/v1/files/{id}/downloadCount:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: getDownloadCount
+      summary: Retrieve the download count of a file
+  /api/v1/files/{id}/draft:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: getFileDraft
+      summary: Retrieve a file in draft mode by its ID
+  /api/v1/files/{id}/extractNcml:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: extractNcmlById
+      summary: Extract Ncml information of a file based on the provided id
+  /api/v1/files/{id}/hasBeenDeleted:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: checkFileDeletionStatus
+      summary: Check if specified file has been deleted
+  /api/v1/files/{id}/metadata:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: get_file_metadata
+      summary: Retrieves metadata for a specific file
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: update_file_metadata
+      summary: Updates metadata for a specific file
+  /api/v1/files/{id}/metadata/categories:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: postFileMetadataCategories
+      summary: Adds new metadata categories for a specific file.
+  /api/v1/files/{id}/metadata/draft:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: getDraftMetaData
+      summary: Retrieve the metadata of a draft file
+  /api/v1/files/{id}/metadata/tabularTags:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: postTabularTags
+      summary: Add tabular tags to a file metadata
+  /api/v1/files/{id}/metadata/{fmid}/toolparams/{tid}:
+    get:
+      parameters:
+      - name: fmid
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tid
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: locale
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: getFileMetadataToolParams
+      summary: Retrieves tool parameters for a specific file metadata ID
+  /api/v1/files/{id}/prov-freeform:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: getFileProvFreeform
+      summary: Retrieves the freeform provenance data for a specific file
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: postFileProvFreeform
+      summary: Posts freeform provenance data for a specific file
+  /api/v1/files/{id}/prov-json:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: getFileProvJSON
+      summary: Retrieving the PROV JSON of a specific file
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: entityName
+        in: query
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: postFileProvJSON
+      summary: Submit a new PROV JSON for a specific file
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: deleteFileProvJSON
+      summary: Delete the PROV JSON of a specific file
+  /api/v1/files/{id}/redetect:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dryRun
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: redetectFile
+      summary: Invoke redetection process for the specified file
+  /api/v1/files/{id}/reingest:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: reingestFile
+      summary: Reingest a file using its ID
+  /api/v1/files/{id}/replace:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: replaceFile
+      summary: Replace an existing file with a new version
+  /api/v1/files/{id}/restrict:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: restrictFileAccess
+      summary: Restrict access to a specific file
+  /api/v1/files/{id}/uningest:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Files
+      operationId: postFileUningest
+      summary: Uningest a file with the specified ID
+  /api/v1/harvest/clients:
+    get:
+      parameters:
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Harvest
+      operationId: getHarvestClients
+      summary: Retrieve all harvest clients based on the provided key
+  /api/v1/harvest/clients/{nickName}:
+    get:
+      parameters:
+      - name: nickName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Harvest
+      operationId: getHarvestClient
+      summary: Retrieves a harvest client details based on the provided unique nickname
+        and key
+    put:
+      parameters:
+      - name: nickName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Harvest
+      operationId: updateHarvestClient
+      summary: Updates an existing harvest client's details using the provided unique
+        nickname and key
+    post:
+      parameters:
+      - name: nickName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Harvest
+      operationId: createHarvestClient
+      summary: Creates a new harvest client using the provided unique nickname and
+        key
+    delete:
+      parameters:
+      - name: nickName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Harvest
+      operationId: deleteHarvestClient
+      summary: Deletes a harvest client based on the provided unique nickname
+  /api/v1/harvest/clients/{nickName}/run:
+    post:
+      parameters:
+      - name: nickName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Harvest
+      operationId: runHarvestClient
+      summary: Initiate a run for a specified Harvest client
+  /api/v1/harvest/server/oaisets:
+    get:
+      parameters:
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Harvest
+      operationId: getOaiSets
+      summary: Retrieve the OAISets from the harvest server
+  /api/v1/harvest/server/oaisets/add:
+    post:
+      parameters:
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Harvest
+      operationId: addOaiSet
+      summary: Adds a new OAI set to the harvest server
+  /api/v1/harvest/server/oaisets/{specname}:
+    get:
+      parameters:
+      - name: specname
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Harvest
+      operationId: getOaiSets_1
+      summary: Retrieve details of a specific OAI set
+    put:
+      parameters:
+      - name: specname
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Harvest
+      operationId: updateOaiSets
+      summary: Update details of a specific OAI set
+    delete:
+      parameters:
+      - name: specname
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Harvest
+      operationId: deleteOaiSets
+      summary: Remove a specific OAI set
+  /api/v1/harvest/server/oaisets/{specname}/datasets:
+    get:
+      parameters:
+      - name: specname
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Harvest
+      operationId: getHarvestDatasetsBySpecName
+      summary: Retrieve datasets related to a specified OAISet
+  /api/v1/inbox:
+    post:
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              type: string
+          application/json-ld:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Inbox
+      operationId: postInbox
+      summary: Create a new inbox message
+  /api/v1/info/apiTermsOfUse:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getApiTermsOfUseInfo
+      summary: Retrieve the terms of use of the API
+  /api/v1/info/metrics/datasets:
+    get:
+      parameters:
+      - name: dataLocation
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getDatasetMetrics_1
+      summary: Retrieve dataset metrics based on the data location and parent alias
+  /api/v1/info/metrics/datasets/bySubject:
+    get:
+      parameters:
+      - name: dataLocation
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getDatasetsBySubject
+      summary: Retrieve datasets by subject according to specified data location and
+        parent alias
+  /api/v1/info/metrics/datasets/bySubject/toMonth/{yyyymm}:
+    get:
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dataLocation
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMonthlySubjectMetrics
+      summary: Retrieve monthly metrics for datasets by subject
+  /api/v1/info/metrics/datasets/monthly:
+    get:
+      parameters:
+      - name: dataLocation
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMonthlyDatasetMetrics
+      summary: Retrieve monthly metrics of datasets based on data location and parent
+        alias.
+  /api/v1/info/metrics/datasets/pastDays/{days}:
+    get:
+      parameters:
+      - name: days
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: dataLocation
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getPastDaysMetrics
+      summary: Retrieve metrics of datasets from past specified days
+  /api/v1/info/metrics/datasets/toMonth/{yyyymm}:
+    get:
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dataLocation
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMonthlyDatasetMetrics_1
+      summary: Retrieve dataset metrics for a specific month
+  /api/v1/info/metrics/dataverses:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMetricsDataverses
+      summary: Retrieves metrics of dataverses based on parent alias
+  /api/v1/info/metrics/dataverses/byCategory:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMetricsByCategory
+      summary: Retrieves metrics of dataverses sorted by category
+  /api/v1/info/metrics/dataverses/bySubject:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMetricsBySubject
+      summary: Retrieve metrics of dataverses by subject
+  /api/v1/info/metrics/dataverses/monthly:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMonthlyDataverseMetrics
+      summary: Retrieve the monthly metrics of a specific dataverse
+  /api/v1/info/metrics/dataverses/pastDays/{days}:
+    get:
+      parameters:
+      - name: days
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMetricsPastDays
+      summary: Retrieves the number of dataverses created over the past specified
+        number of days
+  /api/v1/info/metrics/dataverses/toMonth/{yyyymm}:
+    get:
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMonthlyMetricsForDataverses
+      summary: Retrieve the metrics for dataverses up to the specified month.
+  /api/v1/info/metrics/downloads:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getDownloadMetrics
+      summary: Retrieve download metrics based on a parent alias.
+  /api/v1/info/metrics/downloads/monthly:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMonthlyDownloads
+      summary: Retrieve monthly download metrics
+  /api/v1/info/metrics/downloads/pastDays/{days}:
+    get:
+      parameters:
+      - name: days
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getPastDaysDownloads
+      summary: Retrieve download metrics for the past specified number of days
+  /api/v1/info/metrics/downloads/toMonth/{yyyymm}:
+    get:
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getDownloadMetricsToMonth
+      summary: Retrieve download metrics till a specific month
+  /api/v1/info/metrics/filedownloads:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getFileDownloadsMetrics
+      summary: Retrieve File Downloads Metrics
+  /api/v1/info/metrics/filedownloads/monthly:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMonthlyFileDownloads
+      summary: Retrieve the monthly count of file downloads
+  /api/v1/info/metrics/filedownloads/toMonth/{yyyymm}:
+    get:
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getFileDownloadsToMonth
+      summary: Retrieve file download metrics for a specific month
+  /api/v1/info/metrics/files:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getFileInfoMetrics
+      summary: Retrieve metrics information for files
+  /api/v1/info/metrics/files/byType:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMetricsByFileType
+      summary: Retrieve file metrics information categorized by file type
+  /api/v1/info/metrics/files/byType/monthly:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getFilesByTypeMonthly
+      summary: Retrieve monthly metrics for files by type
+  /api/v1/info/metrics/files/monthly:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMonthlyFilesMetrics
+      summary: Retrieve monthly metrics for files
+  /api/v1/info/metrics/files/pastDays/{days}:
+    get:
+      parameters:
+      - name: days
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getFilesMetrics
+      summary: Retrieve metrics for files from the past specified number of days
+  /api/v1/info/metrics/files/toMonth/{yyyymm}:
+    get:
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMonthlyFilesInfo
+      summary: Retrieve files metrics information for a specific month
+  /api/v1/info/metrics/makeDataCount/{metric}:
+    get:
+      parameters:
+      - name: metric
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: country
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMetricData
+      summary: Retrieve specific metric data by country and parentAlias
+  /api/v1/info/metrics/makeDataCount/{metric}/monthly:
+    get:
+      parameters:
+      - name: metric
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: country
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMonthlyDataCountMetrics
+      summary: Retrieve the monthly data count metrics identified by the provided
+        metric name
+  /api/v1/info/metrics/makeDataCount/{metric}/toMonth/{yyyymm}:
+    get:
+      parameters:
+      - name: metric
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: country
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMetricsByMonth
+      summary: Retrieves data metrics for a specific month
+  /api/v1/info/metrics/tree:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMetricsTree
+      summary: Fetches the metrics tree based on the provided parent alias
+  /api/v1/info/metrics/tree/toMonth/{yyyymm}:
+    get:
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMonthlyMetricsByAlias
+      summary: Retrieve monthly metrics for a specific alias
+  /api/v1/info/metrics/uniquedownloads:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getUniqueDownloads
+      summary: Retrieve unique download metrics data for a particular alias
+  /api/v1/info/metrics/uniquedownloads/monthly:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMonthlyUniqueDownloads
+      summary: Retrieve monthly unique downloads metrics
+  /api/v1/info/metrics/uniquedownloads/toMonth/{yyyymm}:
+    get:
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMonthlyUniqueDownloads_1
+      summary: Retrieve the number of unique downloads for a specified month
+  /api/v1/info/metrics/uniquefiledownloads:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getUniqueFileDownloads
+      summary: Retrieve the number of unique file downloads
+  /api/v1/info/metrics/uniquefiledownloads/monthly:
+    get:
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMonthlyUniqueFileDownloads
+      summary: Retrieve the count of unique file downloads per month
+  /api/v1/info/metrics/uniquefiledownloads/toMonth/{yyyymm}:
+    get:
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getUniqueFileDownloads_1
+      summary: Fetches unique file downloads up to a specific month
+  /api/v1/info/openapi/{outputFormat}:
+    get:
+      parameters:
+      - name: outputFormat
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getOpenApiInfo
+      summary: Retrieve OpenAPI info in specified output format
+  /api/v1/info/server:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getServerInfo
+      summary: Retrieve server information
+  /api/v1/info/settings/:DatasetPublishPopupCustomText:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getDatasetPublishPopupCustomText
+      summary: Retrieve the custom text for dataset publish popup.
+  /api/v1/info/settings/:MaxEmbargoDurationInMonths:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getMaxEmbargoDurationInMonths
+      summary: Retrieve the maximum duration of embargo in months from the settings
+  /api/v1/info/settings/incompleteMetadataViaApi:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getIncompleteMetadataSettings
+      summary: Retrieves the status of incomplete metadata settings
+  /api/v1/info/version:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getVersionInfo
+      summary: Retrieve the current version information
+  /api/v1/info/zipDownloadLimit:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Info
+      operationId: getZipDownloadLimit
+      summary: Retrieve the current zip file download limit
+  /api/v1/ingest/test/file:
+    get:
+      parameters:
+      - name: fileName
+        in: query
+        schema:
+          type: string
+      - name: fileType
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+      tags:
+      - Ingest
+      operationId: getIngestTestFile
+      summary: Retrieve details of a specific test file in the ingest process by filename
+        and filetype
+  /api/v1/licenses:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Licenses
+      operationId: getLicenses
+      summary: Retrieve all the licenses
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Licenses
+      operationId: addLicense
+      summary: Add a new license
+  /api/v1/licenses/default:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Licenses
+      operationId: get_default_license
+      summary: Fetch the current default license
+  /api/v1/licenses/default/{id}:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Licenses
+      operationId: updateDefaultLicense
+      summary: Update a default license by ID
+  /api/v1/licenses/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Licenses
+      operationId: getLicense
+      summary: Retrieve a specific license by its ID
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Licenses
+      operationId: deleteLicense
+      summary: Delete a specific license by its ID
+  /api/v1/licenses/{id}/:active/{activeState}:
+    put:
+      parameters:
+      - name: activeState
+        in: path
+        required: true
+        schema:
+          type: boolean
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Licenses
+      operationId: updateLicenseActiveState
+      summary: Updates the activity state of a specific license
+  /api/v1/licenses/{id}/:sortOrder/{sortOrder}:
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: sortOrder
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Licenses
+      operationId: updateLicenseSortOrder
+      summary: Update the sort order of a given license
+  /api/v1/logout:
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Logout
+      operationId: logoutUser
+      summary: Log out the current user
+  /api/v1/mail/notifications:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Mail
+      operationId: getMailNotifications
+      summary: Retrieve a list of mail notifications
+  /api/v1/meta/datafile/{fileId}:
+    get:
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: exclude
+        in: query
+        schema:
+          type: string
+      - name: fileMetadataId
+        in: query
+        schema:
+          type: integer
+      - name: include
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/xml:
+              schema:
+                type: string
+      deprecated: true
+      tags:
+      - Meta
+      operationId: getDatafileMeta
+      summary: Get metadata of a specific datafile by file id
+  /api/v1/meta/dataset/{datasetId}:
+    get:
+      parameters:
+      - name: datasetId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: exclude
+        in: query
+        schema:
+          type: string
+      - name: include
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+      deprecated: true
+      tags:
+      - Meta
+      operationId: getDatasetMetadata_1
+      summary: Retrieves the metadata of a specific dataset by its ID
+  /api/v1/metadatablocks:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Metadatablocks
+      operationId: getMetadatablocks
+      summary: Retrieve metadata blocks available in the system
+  /api/v1/metadatablocks/{identifier}:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Metadatablocks
+      operationId: getMetadatablock_1_1
+      summary: Retrieve a specific Metadatablock by its identifier
+  /api/v1/mydata/retrieve:
+    get:
+      parameters:
+      - name: dataset_valid
+        in: query
+        schema:
+          type: array
+          items:
+            type: boolean
+      - name: dvobject_types
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: filter_validities
+        in: query
+        schema:
+          type: boolean
+      - name: mydata_search_term
+        in: query
+        schema:
+          type: string
+      - name: published_states
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: role_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+      - name: selected_page
+        in: query
+        schema:
+          type: integer
+      - name: userIdentifier
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+      tags:
+      - Mydata
+      operationId: myDataRetrieve
+      summary: Retrieve specific set of my data based on the provided filters
+  /api/v1/notifications/all:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications
+      operationId: getAllNotifications
+      summary: Retrieve all notifications
+  /api/v1/notifications/mutedEmails:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications
+      operationId: getMutedEmails
+      summary: Retrieve a list of muted email notifications
+  /api/v1/notifications/mutedEmails/{typeName}:
+    put:
+      parameters:
+      - name: typeName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications
+      operationId: updateMutedEmailNotification
+      summary: Updates a muted email notification by type name
+    delete:
+      parameters:
+      - name: typeName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications
+      operationId: deleteMutedEmailNotification
+      summary: Deletes a muted email notification by type name
+  /api/v1/notifications/mutedNotifications:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications
+      operationId: getMutedNotifications
+      summary: Retrieve all muted notifications
+  /api/v1/notifications/mutedNotifications/{typeName}:
+    put:
+      parameters:
+      - name: typeName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications
+      operationId: updateMutedNotification
+      summary: Update details of a specific muted notification
+    delete:
+      parameters:
+      - name: typeName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications
+      operationId: deleteMutedNotification
+      summary: Delete a specific muted notification
+  /api/v1/notifications/{id}:
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications
+      operationId: deleteNotification
+      summary: Delete a notification by ID
+  /api/v1/pids:
+    get:
+      parameters:
+      - name: persistentId
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Pids
+      operationId: getPersistentId
+      summary: Retrieve a specific persistent identifier
+  /api/v1/pids/unreserved:
+    get:
+      parameters:
+      - name: persistentId
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Pids
+      operationId: getUnreservedPersistentIds
+      summary: Retrieves unreserved persistent identifiers
+  /api/v1/pids/{id}/delete:
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Pids
+      operationId: deletePid
+      summary: Delete a specific persistent identifier (PID)
+  /api/v1/pids/{id}/reserve:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Pids
+      operationId: reservePid
+      summary: Reserve a specific PID
+  /api/v1/roles:
+    post:
+      parameters:
+      - name: dvo
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Roles
+      operationId: createRole
+      summary: Create a new role in the system
+  /api/v1/roles/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Roles
+      operationId: getRole
+      summary: Retrieve details of a specific role by id
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Roles
+      operationId: deleteRole
+      summary: Delete a specific role by id
+  /api/v1/search:
+    get:
+      parameters:
+      - name: fq
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: geo_point
+        in: query
+        schema:
+          type: string
+      - name: geo_radius
+        in: query
+        schema:
+          type: string
+      - name: metadata_fields
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: order
+        in: query
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+      - name: q
+        in: query
+        schema:
+          type: string
+      - name: query_entities
+        in: query
+        schema:
+          type: boolean
+      - name: show_api_urls
+        in: query
+        schema:
+          type: boolean
+      - name: show_entity_ids
+        in: query
+        schema:
+          type: boolean
+      - name: show_facets
+        in: query
+        schema:
+          type: boolean
+      - name: show_my_data
+        in: query
+        schema:
+          type: boolean
+      - name: show_relevance
+        in: query
+        schema:
+          type: boolean
+      - name: sort
+        in: query
+        schema:
+          type: string
+      - name: start
+        in: query
+        schema:
+          type: integer
+      - name: subtree
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: type
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Search
+      operationId: searchQuery
+      summary: Executes a search query with various parameters and returns the matching
+        records.
+  /api/v1/users/:me:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Users
+      operationId: getUserDetails
+      summary: Retrieve the details of the logged-in user
+  /api/v1/users/token:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Users
+      operationId: getUserToken
+      summary: Retrieves a user's authentication token
+    delete:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Users
+      operationId: deleteUserToken
+      summary: Deletes a user's authentication token
+  /api/v1/users/token/recreate:
+    post:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Users
+      operationId: recreateUserToken
+      summary: Recreates the authentication token for a given user
+  /api/v1/users/{consumedIdentifier}/mergeIntoUser/{baseIdentifier}:
+    post:
+      parameters:
+      - name: baseIdentifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: consumedIdentifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Users
+      operationId: mergeUsers
+      summary: Merge the user with consumedIdentifier into the user with baseIdentifier
+  /api/v1/users/{identifier}/changeIdentifier/{newIdentifier}:
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: newIdentifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Users
+      operationId: changeUserIdentifier
+      summary: Change the identifier of a given user
+  /api/v1/users/{identifier}/removeRoles:
+    post:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Users
+      operationId: removeUserRoles
+      summary: Remove roles from a specific user
+  /api/v1/users/{identifier}/traces:
+    get:
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Users
+      operationId: getUserTraces
+      summary: Retrieve a user's traces
+  /api/v1/users/{identifier}/traces/{element}:
+    get:
+      parameters:
+      - name: element
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Users
+      operationId: getUserTraceElement
+      summary: Retrieve a specific trace element for a given user
+  /api/v1/workflows/{invocationId}:
+    post:
+      parameters:
+      - name: invocationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workflows
+      operationId: startWorkflow
+      summary: Initiate a workflow using the given invocation id
