@@ -10665,8 +10665,6 @@ components:
           type: array
           items:
             type: string
-        httpUpload:
-          type: boolean
         rsyncOnly:
           type: boolean
         webloaderUpload:
