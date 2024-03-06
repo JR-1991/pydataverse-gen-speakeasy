@@ -25,7 +25,9 @@ Retrieve all harvest clients based on the provided key
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.harvest.get_harvest_clients(key='<value>')
@@ -60,7 +62,9 @@ Retrieves a harvest client details based on the provided unique nickname and key
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.harvest.get_harvest_client(nick_name='<value>', key='<value>')
@@ -96,7 +100,9 @@ Updates an existing harvest client's details using the provided unique nickname 
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.harvest.update_harvest_client(nick_name='<value>', key='<value>')
@@ -132,7 +138,9 @@ Creates a new harvest client using the provided unique nickname and key
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.harvest.create_harvest_client(nick_name='<value>', key='<value>')
@@ -168,7 +176,9 @@ Deletes a harvest client based on the provided unique nickname
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.harvest.delete_harvest_client(nick_name='<value>')
@@ -203,7 +213,9 @@ Initiate a run for a specified Harvest client
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.harvest.run_harvest_client(nick_name='<value>', key='<value>')
@@ -239,7 +251,9 @@ Retrieve the OAISets from the harvest server
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.harvest.get_oai_sets(key='<value>')
@@ -274,7 +288,9 @@ Adds a new OAI set to the harvest server
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.harvest.add_oai_set(key='<value>')
@@ -309,7 +325,9 @@ Retrieve details of a specific OAI set
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.harvest.get_oai_sets_1(specname='<value>', key='<value>')
@@ -345,7 +363,9 @@ Update details of a specific OAI set
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.harvest.update_oai_sets(specname='<value>', key='<value>')
@@ -381,7 +401,9 @@ Remove a specific OAI set
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.harvest.delete_oai_sets(specname='<value>', key='<value>')
@@ -417,7 +439,9 @@ Retrieve datasets related to a specified OAISet
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.harvest.get_harvest_datasets_by_spec_name(specname='<value>', key='<value>')

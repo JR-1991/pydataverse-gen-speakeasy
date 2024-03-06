@@ -113,7 +113,9 @@ Retrieves export information of a dataset given its exporter and persistent ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_datasets_export(exporter='<value>', persistent_id='<value>')
@@ -149,7 +151,9 @@ Retrieve a list of curation states for datasets
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_curation_states()
@@ -178,7 +182,9 @@ Retrieve information about locks on datasets
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_locks(type='<value>', user_identifier='<value>')
@@ -214,7 +220,9 @@ Modifies registration details for all datasets
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.modify_all_registrations()
@@ -243,7 +251,9 @@ Retrieve registration PID metadata of all datasets
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_registration_pid_metadata()
@@ -272,7 +282,9 @@ Update a multi-part upload for a dataset using the provided global ID, storage i
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.update_dataset_upload(globalid='<value>', storageidentifier='<value>', uploadid='<value>')
@@ -309,7 +321,9 @@ Delete a multi-part upload for a dataset using the provided global ID, storage i
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.delete_dataset_upload(globalid='<value>', storageidentifier='<value>', uploadid='<value>')
@@ -346,7 +360,9 @@ Retrieves a dataset version using a private URL token
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_private_url_dataset_version(private_url_token='<value>')
@@ -381,7 +397,9 @@ Retrieve citation information for a dataset version via a private URL token
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_citation_by_private_url(private_url_token='<value>')
@@ -416,7 +434,9 @@ Retrieve names of summary fields in the dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_summary_field_names()
@@ -445,7 +465,9 @@ Delete a link between a dataset and a dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.delete_dataset_link(dataset_id='<value>', linked_dataverse_id='<value>')
@@ -481,7 +503,9 @@ Retrieve a list of allowed curation labels for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_allowed_curation_labels(identifier='<value>')
@@ -516,7 +540,9 @@ Retrieves assignments for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_assignments(identifier='<value>')
@@ -551,7 +577,9 @@ Creates an assignment for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.create_dataset_assignment(identifier='<value>', key='<value>')
@@ -587,7 +615,9 @@ Delete a specific assignment for a dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.delete_assignment(id=246530, identifier='<value>')
@@ -623,7 +653,9 @@ Retrieves the curation label set of the specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_curation_label_set_1(identifier='<value>')
@@ -658,7 +690,9 @@ Updates the curation label set of the specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.update_curation_label_set_1(identifier='<value>', name='<value>')
@@ -694,7 +728,9 @@ Deletes the curation label set for the specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.delete_curation_label_set_1(identifier='<value>')
@@ -729,7 +765,9 @@ Validate checksum for specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.validate_checksum(identifier='<value>')
@@ -764,7 +802,9 @@ Retrieve the Rsync data capture module for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_rsync_data_module(identifier='<value>')
@@ -799,7 +839,9 @@ Retrieves a guestbook entry for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_guestbook_entry(identifier='<value>')
@@ -834,7 +876,9 @@ Updates a guestbook entry for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.update_guestbook_entry(identifier='<value>')
@@ -869,7 +913,9 @@ Deletes a guestbook entry for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.delete_guestbook_entry(identifier='<value>')
@@ -904,7 +950,9 @@ Lock a specific dataset identified by the given identifier and type
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.lock_dataset(identifier='<value>', type='<value>')
@@ -940,7 +988,9 @@ Retrieves specific dataset locks
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_locks_1(identifier='<value>', type='<value>')
@@ -976,7 +1026,9 @@ Deletes specific dataset locks
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.delete_dataset_locks(identifier='<value>', type='<value>')
@@ -1012,7 +1064,9 @@ Retrieve the details of a specific storage driver based on the provided identifi
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_storage_driver_1(identifier='<value>')
@@ -1047,7 +1101,9 @@ Update the details of a specific storage driver based on the provided identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.update_storage_driver_1(identifier='<value>')
@@ -1082,7 +1138,9 @@ Delete a specific storage driver based on the provided identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.delete_storage_driver_1(identifier='<value>')
@@ -1117,7 +1175,9 @@ Retrieves the storage size of a dataset based on its identifier. An optional que
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_storage_size(identifier='<value>', include_cached=False)
@@ -1153,7 +1213,9 @@ Retrieves the timestamps for a given dataset identified by the path parameter 'i
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_timestamps(identifier='<value>')
@@ -1189,7 +1251,9 @@ Retrieve the download size of a specific version of a dataset
 import pydataverse
 from pydataverse.models import operations
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 req = operations.GetDownloadSizeRequest(
     identifier='<value>',
@@ -1228,7 +1292,9 @@ Retrieve the specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset(id='<value>')
@@ -1263,7 +1329,9 @@ Delete the specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.delete_dataset(id='<value>')
@@ -1300,7 +1368,9 @@ Retrieve publishing details of a designated dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_publish_dataset(id='<value>', type='<value>')
@@ -1336,7 +1406,9 @@ Publish a designated dataset with optional assurances
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.initiate_publishing(id='<value>', assure_is_indexed=False, type='<value>')
@@ -1373,7 +1445,9 @@ Release a migrated dataset with a specified ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.release_migrated_dataset(id='<value>', updatepidatprovider=False, request_body='<value>')
@@ -1411,7 +1485,9 @@ Add a new dataset to the existing record
 import pydataverse
 from pydataverse.models import operations
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.add_dataset(id='<value>', request_body=operations.AddDatasetRequestBody())
@@ -1448,7 +1524,9 @@ Adds files to a specified dataset
 import pydataverse
 from pydataverse.models import operations
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.add_files_to_dataset(id='<value>', request_body=operations.AddFilesToDatasetRequestBody())
@@ -1485,7 +1563,9 @@ Add globus files to a specific dataset
 import pydataverse
 from pydataverse.models import operations
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.add_globus_files_to_dataset(id='<value>', request_body=operations.AddGlobusFilesToDatasetRequestBody())
@@ -1521,7 +1601,9 @@ Update the citation date of a dataset based on dataset ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.update_citation_date(id='<value>')
@@ -1556,7 +1638,9 @@ Delete citation date of a dataset based on dataset ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.delete_citation_date(id='<value>')
@@ -1591,7 +1675,9 @@ Get the status of the clean storage task for the specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_clean_storage_status(id='<value>', dryrun=False)
@@ -1627,7 +1713,9 @@ Fetches the curation status of the specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_curation_status(id='<value>')
@@ -1662,7 +1750,9 @@ Updates the curation status of the specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.update_curation_status(id='<value>', label='<value>')
@@ -1698,7 +1788,9 @@ Deletes the curation status of the specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.delete_curation_status(id='<value>')
@@ -1733,7 +1825,9 @@ Update the metadata of a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.update_dataset_metadata(id='<value>')
@@ -1768,7 +1862,9 @@ Delete a specific dataset by its ID.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.delete_dataset_1(id='<value>')
@@ -1803,7 +1899,9 @@ Retrieve directory index of a dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_directory_index(id='<value>', folder='<value>', original=False, version='<value>')
@@ -1841,7 +1939,9 @@ Updates the metadata of a specific dataset represented by its ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.edit_dataset_metadata(id='<value>', replace=False)
@@ -1877,7 +1977,9 @@ Set an embargo on a specific dataset's files
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.set_dataset_embargo(id='<value>')
@@ -1912,7 +2014,9 @@ Unset embargo on files for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.unset_embargo_on_dataset_files(id='<value>')
@@ -1947,7 +2051,9 @@ Retrieve the parameters for Globus download for a specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_globus_download_parameters(id='<value>', download_id='<value>', locale='<value>')
@@ -1984,7 +2090,9 @@ Retrieves Globus upload parameters for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_globus_upload_parameters(id='<value>', locale='<value>')
@@ -2020,7 +2128,9 @@ Retrieves the links of a specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_links(id='<value>')
@@ -2055,7 +2165,9 @@ Retrieve the logo of a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_logo(id='<value>')
@@ -2090,7 +2202,9 @@ Retrieves the citation count for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.dataset_citation_count_get(id='<value>')
@@ -2125,7 +2239,9 @@ Retrieve specific metrics for a specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_metrics(id='<value>', metric='<value>', country='<value>')
@@ -2162,7 +2278,9 @@ Fetches a specific metric for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_metric(id='<value>', metric='<value>', yyyymm='<value>', country='<value>')
@@ -2200,7 +2318,9 @@ Retrieves the metadata of a dataset by its ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_metadata(id='<value>')
@@ -2235,7 +2355,9 @@ Updates the metadata of a dataset by its ID, with an option to replace the exist
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.update_dataset_metadata_1(id='<value>', replace=False, request_body='<value>')
@@ -2272,7 +2394,9 @@ Update the deletion status of the metadata of a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.update_metadata_deletion(id='<value>', request_body='<value>')
@@ -2308,7 +2432,9 @@ Retrieve the modification details of a specific dataset registration
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_registration_modification(id='<value>')
@@ -2343,7 +2469,9 @@ Modify the registration metadata of a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.modify_dataset_registration_metadata(id='<value>')
@@ -2378,7 +2506,9 @@ Initiate the process to monitor a Globus download operation for a specific datas
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.monitor_globus_download(id='<value>', request_body='<value>')
@@ -2414,7 +2544,9 @@ Moves a specific dataset to a target dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.move_dataset_to_target(id='<value>', target_dataverse_alias='<value>', force_move=False)
@@ -2451,7 +2583,9 @@ Retrieve a specific dataset's private URL
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_private_url(id='<value>')
@@ -2486,7 +2620,9 @@ Create a private URL for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.create_private_url(id='<value>', anonymized_access=False)
@@ -2522,7 +2658,9 @@ Delete a specific dataset's private URL
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.delete_private_url(id='<value>')
@@ -2558,7 +2696,9 @@ Replace files in a specified dataset
 import pydataverse
 from pydataverse.models import operations
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.replace_dataset_files(id='<value>', request_body=operations.ReplaceDatasetFilesRequestBody())
@@ -2594,7 +2734,9 @@ Submit a request for Globus download for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.submit_globus_download_request(id='<value>', download_id='<value>', request_body='<value>')
@@ -2631,7 +2773,9 @@ Submit a request to get the paths for Globus file upload for a specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.post_globus_upload_paths_request(id='<value>', request_body='<value>')
@@ -2667,7 +2811,9 @@ Returns the specified dataset back to its author
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.return_dataset_to_author(id='<value>')
@@ -2702,7 +2848,9 @@ Submits a specified dataset for review
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.submit_dataset_for_review(id='<value>')
@@ -2737,7 +2885,9 @@ Retrieves a thumbnail from a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_thumbnail(id='<value>')
@@ -2773,7 +2923,9 @@ Adds a thumbnail to a specific dataset
 import pydataverse
 from pydataverse.models import operations
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.post_dataset_thumbnail(id='<value>', request_body=operations.PostDatasetThumbnailRequestBody())
@@ -2809,7 +2961,9 @@ Deletes a thumbnail from a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.delete_dataset_thumbnail(id='<value>')
@@ -2844,7 +2998,9 @@ Retrieve the list of thumbnail candidates for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_thumbnail_candidates(id='<value>')
@@ -2879,7 +3035,9 @@ Upload a new thumbnail for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.post_thumbnail_data(data_file_id=907375, id='<value>')
@@ -2917,7 +3075,9 @@ Retrieve the upload ID for the specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_upload_id(id='<value>')
@@ -2952,7 +3112,9 @@ Retrieve upload URLs for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_upload_ur_ls(id='<value>', size=272233)
@@ -2988,7 +3150,9 @@ Retrieve user permissions for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_user_permissions(id='<value>')
@@ -3023,7 +3187,9 @@ Retrieve versions of a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_versions(id='<value>', exclude_files=False, limit=953940, offset=665447)
@@ -3061,7 +3227,9 @@ Fetches the dataset version details, with options to exclude files or include de
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_version(id='<value>', version_id='<value>', exclude_files=False, include_deaccessioned=False)
@@ -3099,7 +3267,9 @@ Updates the dataset version with the given ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.update_dataset_version(id='<value>', version_id='<value>', request_body='<value>')
@@ -3136,7 +3306,9 @@ Deletes the specified version of a dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.delete_dataset_version(id='<value>', version_id='<value>')
@@ -3172,7 +3344,9 @@ Checks if a user has permission to download at least one file from a specific da
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.check_dataset_file_download_permission(id='<value>', version_id='<value>', include_deaccessioned=False)
@@ -3209,7 +3383,9 @@ Retrieve the citation of a specific dataset version
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_citation(id='<value>', version_id='<value>', include_deaccessioned=False)
@@ -3246,7 +3422,9 @@ Retrieve a specific dataset version's custom license
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_custom_license(id='<value>', version_id='<value>')
@@ -3282,7 +3460,9 @@ Remove access to a specific version of a dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.post_deaccession_dataset_by_version_id(id='<value>', version_id='<value>')
@@ -3319,7 +3499,9 @@ Fetches files within a specific version of a dataset
 import pydataverse
 from pydataverse.models import operations
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 req = operations.GetDatasetVersionFilesRequest(
     id='<id>',
@@ -3359,7 +3541,9 @@ Retrieve counts of various types of files in a specified dataset version
 import pydataverse
 from pydataverse.models import operations
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 req = operations.GetDatasetFilesCountRequest(
     id='<id>',
@@ -3398,7 +3582,9 @@ Retrieve linkset of a specific dataset version
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_version_linkset(id='<value>', version_id='<value>')
@@ -3434,7 +3620,9 @@ Retrieve the metadata of a specific version of a dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_version_metadata(id='<value>', version_id='<value>')
@@ -3470,7 +3658,9 @@ Retrieve metadata of a specified version of a dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_version_metadata_1(block='<value>', id='<value>', version_number='<value>')
@@ -3507,7 +3697,9 @@ Retrieve tool parameters of a specific version of a dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_version_tool_param(id='<value>', tid=660939, version='<value>', locale='<value>')
@@ -3545,7 +3737,9 @@ Retrieve the archival status of a specific version of a dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.get_dataset_archival_status(id='<value>', version='<value>')
@@ -3581,7 +3775,9 @@ Update the archival status of a specific version of a dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.update_dataset_archival_status(id='<value>', version='<value>', request_body='<value>')
@@ -3618,7 +3814,9 @@ Remove the archival status of a specific version of a dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.delete_dataset_archival_status(id='<value>', version='<value>')
@@ -3654,7 +3852,9 @@ Updates the link between a dataset and a Dataverse alias
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.datasets.update_dataset_link(linked_dataset_id='<value>', linking_dataverse_alias='<value>')

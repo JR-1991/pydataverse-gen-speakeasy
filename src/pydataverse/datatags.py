@@ -16,7 +16,7 @@ class Datatags:
     
     def post_receive_tags(self, unique_cache_id: str) -> operations.PostReceiveTagsResponse:
         r"""Create a new datatag and associate it with the specified unique cache ID"""
-        hook_ctx = HookContext(operation_id='postReceiveTags', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postReceiveTags', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostReceiveTagsRequest(
             unique_cache_id=unique_cache_id,
         )
@@ -28,7 +28,10 @@ class Datatags:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

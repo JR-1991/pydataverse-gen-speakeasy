@@ -14,7 +14,9 @@ Edits the content of a specified file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.edit.edit_file(file_id='<value>', request_body='<value>')

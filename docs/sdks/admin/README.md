@@ -169,7 +169,9 @@ Archives all unarchived dataset versions. Allows options to limit the number of 
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.archive_all_unarchived_versions(latestonly=False, limit=452296, listonly=False)
@@ -206,7 +208,9 @@ Retrieve a specific assignee detail by ID.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_assignee(idtf='<value>')
@@ -241,7 +245,9 @@ Retrieve details of a specific assignee by raIdtf
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_assignees_detail(ra_idtf='<value>')
@@ -278,7 +284,9 @@ Retrieves a list of authenticated users. This endpoint is deprecated.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_authenticated_users()
@@ -307,7 +315,9 @@ Creates a new authenticated user.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.create_authenticated_user()
@@ -336,7 +346,9 @@ Convert an authenticated user from built-in to OAuth
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.convert_user_to_o_auth()
@@ -365,7 +377,9 @@ Convert Authenticated Users from Built-in system to Shibboleth
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.convert_auth_users()
@@ -394,7 +408,9 @@ Delete an authenticated user by ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_authenticated_user(id=972068)
@@ -429,7 +445,9 @@ Converts a remote user to a built-in user by their ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.convert_remote_to_built_in(id=306142)
@@ -466,7 +484,9 @@ Converts the authentication method of an authenticated user from Shibboleth to B
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.convert_user_authentication_method(id=261670)
@@ -501,7 +521,9 @@ Deactivates an authenticated user by ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.deactivate_user(id=143950)
@@ -536,7 +558,9 @@ Retrieve details of a specified authenticated user
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_authenticated_user(identifier='<value>')
@@ -571,7 +595,9 @@ Delete a specified authenticated user
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_authenticated_user_1(identifier='<value>')
@@ -606,7 +632,9 @@ Deactivate an authenticated user by identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.deactivate_user_1(identifier='<value>')
@@ -641,7 +669,9 @@ Retrieve all authentication provider factories
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_auth_provider_factories()
@@ -670,7 +700,9 @@ Retrieve list of authentication providers
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_auth_providers()
@@ -699,7 +731,9 @@ Add a new authentication provider
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.add_auth_provider()
@@ -728,7 +762,9 @@ Fetch specific authentication provider using ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_auth_providers_by_id(id='<value>')
@@ -763,7 +799,9 @@ Delete specific authentication provider using ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.remove_auth_providers_by_id(id='<value>')
@@ -798,7 +836,9 @@ Enable a specific authentication provider by its ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.enable_auth_provider(id='<value>')
@@ -833,7 +873,9 @@ Retrieves the status of a specific authentication provider
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_auth_provider_status(id='<value>')
@@ -868,7 +910,9 @@ Updates the status of a specific authentication provider
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.update_auth_provider_status(id='<value>')
@@ -903,7 +947,9 @@ Retrieve a current banner message
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_banner_message()
@@ -932,7 +978,9 @@ Add a new banner message
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.post_banner_message()
@@ -961,7 +1009,9 @@ Delete a specific banner message by ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_banner_message(id=314460)
@@ -996,7 +1046,9 @@ Deactivates a specific banner message
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.deactivate_banner_message(id=723548)
@@ -1031,7 +1083,9 @@ Retrieve all batch jobs
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_batch_jobs()
@@ -1060,7 +1114,9 @@ Retrieve details for a job given its name
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_job_by_name(job_name='<value>')
@@ -1095,7 +1151,9 @@ Retrieve details of a specific admin batch job
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_job_by_id(job_id='<value>')
@@ -1130,7 +1188,9 @@ Deletes the metrics cache for admin
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_metrics_cache()
@@ -1159,7 +1219,9 @@ Deletes a specific metric cache.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_metrics_cache_1(name='<value>')
@@ -1194,7 +1256,9 @@ Deletes a thumbnail failure flag
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_thumbnail_failure_flag()
@@ -1223,7 +1287,9 @@ Delete the thumbnail failure flag for a specified Dataverse id
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.admin_clear_thumbnail_failure_flag(id='<value>')
@@ -1258,7 +1324,9 @@ Computes the hash value of the specified file using the given algorithm
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.compute_file_hash_value(alg='<value>', file_id='<value>')
@@ -1294,7 +1362,9 @@ Retrieve Confirmation Email Associated with User ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_user_id_conf_email(user_id=47374)
@@ -1329,7 +1399,9 @@ Send Confirmation Email to User ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.post_user_id_conf_email(user_id=163013)
@@ -1364,7 +1436,9 @@ Convert a user's encryption scheme from Bcrypt to Sha1
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.admin_convert_user_encryption()
@@ -1393,7 +1467,9 @@ Retrieve a limited number of records with missing original sizes and fix them
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_fix_missing_original_sizes(limit=413519)
@@ -1428,7 +1504,9 @@ Retrieve a report of datafiles with missing original types and apply fixes
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.fix_missing_original_types()
@@ -1457,7 +1535,9 @@ Retrieve the dataset fields available to administrators
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_dataset_field()
@@ -1486,7 +1566,9 @@ Retrieve a list of controlled vocabulary subjects
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_controlled_vocabulary()
@@ -1515,7 +1597,9 @@ Load dataset field as an admin
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 req = '<value>'
 
@@ -1551,7 +1635,9 @@ Retrieve North American controlled vocabulary value
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_na_controlled_vocab_value()
@@ -1580,7 +1666,9 @@ Load dataset field property files as a ZIP.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 req = '<value>'
 
@@ -1616,7 +1704,9 @@ Retrieve information of the specified dataset field
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_dataset_field_name(name='<value>')
@@ -1651,7 +1741,9 @@ Update or recalculate dataset integrity by fixing missing UNF in specified datas
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.post_fix_missing_unf(dataset_version_id='<value>', force_recalculate=False)
@@ -1687,7 +1779,9 @@ Retrieves thumbnail metadata for a specific dataset using its ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_thumbnail_metadata_by_id(id=860637)
@@ -1722,7 +1816,9 @@ Retrieve all curation label sets
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_curation_label_sets()
@@ -1751,7 +1847,9 @@ Retrieves all storage drivers
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_storage_drivers()
@@ -1780,7 +1878,9 @@ Retrieve role assignments associated with a dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_role_assignments(alias='<value>')
@@ -1815,7 +1915,9 @@ Retrieve the curation label set of the specified Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_curation_label_set(alias='<value>')
@@ -1850,7 +1952,9 @@ Update or create a curation label set for the specified Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.update_curation_label_set(alias='<value>', name='<value>')
@@ -1886,7 +1990,9 @@ Remove the curation label set from the specified Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_curation_label_set(alias='<value>')
@@ -1921,7 +2027,9 @@ Retrieve the storage driver of a specific dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_storage_driver(alias='<value>')
@@ -1956,7 +2064,9 @@ Update the storage driver of a specific dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.update_storage_driver(alias='<value>')
@@ -1991,7 +2101,9 @@ Remove the storage driver of a specific dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_storage_driver(alias='<value>')
@@ -2026,7 +2138,9 @@ Retrieve a temporary file via its fully qualified path
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_tmp_file(fully_qualified_path_to_file='<value>')
@@ -2061,7 +2175,9 @@ Retrieve a list of all external tools
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_external_tools()
@@ -2090,7 +2206,9 @@ Create a new external tool
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.create_external_tool()
@@ -2119,7 +2237,9 @@ Retrieve an external tool by its ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_external_tool(id=835857)
@@ -2154,7 +2274,9 @@ Delete an external tool by its ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_external_tool(id=423055)
@@ -2189,7 +2311,9 @@ Create or post feedback as an admin
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.post_admin_feedback()
@@ -2218,7 +2342,9 @@ Retrieve domain-related groups information from the admin endpoint
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_groups_domain()
@@ -2247,7 +2373,9 @@ Submit new domain-related groups information to the admin endpoint
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.post_admin_groups_domain()
@@ -2276,7 +2404,9 @@ Retrieves information of the group alias specified in the path
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_group_alias(group_alias='<value>')
@@ -2311,7 +2441,9 @@ Updates the group alias specified in the path
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.update_group_alias(group_alias='<value>')
@@ -2346,7 +2478,9 @@ Deletes the group alias specified in the path
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_group_alias(group_alias='<value>')
@@ -2381,7 +2515,9 @@ Retrieve IP-based groups information
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_groups_ip()
@@ -2410,7 +2546,9 @@ Create a new IP-based group
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.post_admin_groups_ip()
@@ -2439,7 +2577,9 @@ Fetches a group by the groupIdtf provided in the path
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_group_by_group_idtf(group_idtf='<value>')
@@ -2474,7 +2614,9 @@ Deletes a group by the groupIdtf provided in the path
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_group_by_group_idtf(group_idtf='<value>')
@@ -2509,7 +2651,9 @@ Retrieve information about Shibboleth groups
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_shib_group_info()
@@ -2538,7 +2682,9 @@ Create a new Shibboleth group
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.create_shib_group()
@@ -2567,7 +2713,9 @@ Delete a Shibboleth Group by given Primary Key
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_shib_group(primary_key='<value>')
@@ -2602,7 +2750,9 @@ Retrieve details of admin index with queried parameters
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_index(num_partitions=966288, partition_id_to_process=875880, preview_only=False)
@@ -2639,7 +2789,9 @@ Clears the admin index
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.clear_admin_index()
@@ -2668,7 +2820,9 @@ Retrieve and clear orphans from the admin index
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.clear_orphans_index(sync='<value>')
@@ -2703,7 +2857,9 @@ Continues the process of indexing partitions based on given parameters.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.continue_index_processing(num_partitions=385791, partition_id_to_process=791191, preview_only=False)
@@ -2740,7 +2896,9 @@ Retrieve the index of a dataset given its persistentId
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_dataset_index(persistent_id='<value>')
@@ -2775,7 +2933,9 @@ Delete a specific dataset by its ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_dataset_by_id(id=57539)
@@ -2810,7 +2970,9 @@ Retrieve file metadata for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_file_metadata1(dataset_id=442844, max_results=115835, order='<value>', sort='<value>')
@@ -2848,7 +3010,9 @@ This endpoint retrieves data about file search index by persistentId, q, and/or 
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.file_search_index_get(persistent_id='<value>', q='<value>', semantic_version='<value>')
@@ -2885,7 +3049,9 @@ Retrieves modification of the admin index based on provided query parameters
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_index_mod(partitions=500680, which=91223)
@@ -2921,7 +3087,9 @@ Retrieve permissions for the admin index
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_index_perms()
@@ -2950,7 +3118,9 @@ Retrieve a specific admin index permissions by ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_index_perms_1(id=536096)
@@ -2985,7 +3155,9 @@ Retrieves permission debug info for specified id and key
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_perms_debug_info(id=680308, key='<value>')
@@ -3021,7 +3193,9 @@ Retrieve the Solr schema configuration.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_solr_schema()
@@ -3050,7 +3224,9 @@ Retrieve status of the admin index
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_index_status(sync='<value>')
@@ -3085,7 +3261,9 @@ Obtain specific parameters from the Admin Test Index
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_test_index(fq=[
@@ -3124,7 +3302,9 @@ Delete timestamps from the admin index
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_admin_index_timestamps()
@@ -3153,7 +3333,9 @@ Delete index timestamp by dvObjectId
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_index_timestamp(dv_object_id=378575)
@@ -3188,7 +3370,9 @@ Retrieves specific type and ID details in admin index
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_index_type_by_id(id=292538, type='<value>')
@@ -3224,7 +3408,9 @@ Retrieve ORCID status for a specific admin
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_orcid_status()
@@ -3253,7 +3439,9 @@ Retrieve a list of all users
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.list_users(items_per_page=526212, search_term='<value>', selected_page=540061, sort_key='<value>')
@@ -3291,7 +3479,9 @@ Add usage metrics from a SUSHI report
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.add_metrics_from_report(report_on_disk='<value>')
@@ -3326,7 +3516,9 @@ Send data count to the admin hub.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.admin_send_to_hub()
@@ -3355,7 +3547,9 @@ Add usage metrics for a specific Dataverse file from a SUSHI Report
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.add_usage_metrics_from_sushi_repo(id='<value>', report_on_disk='<value>')
@@ -3391,7 +3585,9 @@ Updates the citation count for a specified dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.update_dataset_citations(id='<value>')
@@ -3426,7 +3622,9 @@ Retrieve the export timestamps
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_export_timestamps()
@@ -3455,7 +3653,9 @@ Fetches all metadata for export by admin
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_metadata_export_all()
@@ -3484,7 +3684,9 @@ Update the OAI export specification using provided 'specname'
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.admin_metadata_export_oai_spec(specname='<value>')
@@ -3519,7 +3721,9 @@ Retrieves and exports all metadata
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.re_export_all_metadata()
@@ -3548,7 +3752,9 @@ Retrieves and re-exports the specific metadata for the dataset using dataset ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_metadata_re_export(id='<value>')
@@ -3583,7 +3789,9 @@ Retrieve specific admin permission details
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_permissions(dvo='<value>')
@@ -3618,7 +3826,9 @@ Publish Dataverse as creator using the given ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.publish_dataverse_as_creator(id=453435)
@@ -3653,7 +3863,9 @@ Retrieve all registered data files from the admin.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_register_data_file_all()
@@ -3682,7 +3894,9 @@ Retrieve data file registration details for a given alias
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_register_data_files_by_alias(alias='<value>', sleep=973941)
@@ -3719,7 +3933,9 @@ Admin sends a request to receive a signed URL.
 import pydataverse
 from pydataverse.models import operations
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 req = operations.PostAdminSignedURLRequestBody()
 
@@ -3755,7 +3971,9 @@ Retrieve a list of all admin roles
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_roles()
@@ -3784,7 +4002,9 @@ Create a new admin role
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.create_admin_role()
@@ -3813,7 +4033,9 @@ Delete a specific admin role
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_admin_role(id='<value>')
@@ -3848,7 +4070,9 @@ Retrieves all saved searches in the system.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_saved_searches()
@@ -3877,7 +4101,9 @@ Adds a new saved search to the system.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.add_saved_search()
@@ -3906,7 +4132,9 @@ Retrieve a list of all saved searches by the administrator
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_saved_searches_list()
@@ -3935,7 +4163,9 @@ Updates all saved search links
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.update_all_saved_search_links(debug=False)
@@ -3970,7 +4200,9 @@ Updates the link for a specific saved search by ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.make_links_for_saved_search(id=882350, debug=False)
@@ -4006,7 +4238,9 @@ Retrieves a saved search by ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_saved_search(id=731650)
@@ -4041,7 +4275,9 @@ Deletes a saved search by ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_saved_search(id=364122)
@@ -4076,7 +4312,9 @@ Retrieve administrator settings
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_settings()
@@ -4105,7 +4343,9 @@ Retrieve a specified admin setting
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_setting(name='<value>')
@@ -4140,7 +4380,9 @@ Update a specified admin setting
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.update_admin_setting(name='<value>')
@@ -4175,7 +4417,9 @@ Delete a specified admin setting
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_admin_setting(name='<value>')
@@ -4210,7 +4454,9 @@ Update a specific Admin setting for a given language
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.update_admin_settings_lang(lang='<value>', name='<value>')
@@ -4246,7 +4492,9 @@ Delete a specific Admin setting for a given language
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_admin_settings_lang(lang='<value>', name='<value>')
@@ -4282,7 +4530,9 @@ Generate a new sitemap for the application
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.generate_sitemap()
@@ -4311,7 +4561,9 @@ Fetches all storage sites
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_storage_sites()
@@ -4340,7 +4592,9 @@ Creates a new storage site
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.create_storage_site()
@@ -4369,7 +4623,9 @@ Retrieves details of a specific storage site by its unique identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.fetch_storage_site(id=259428)
@@ -4404,7 +4660,9 @@ Deletes a specific storage site by its unique identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_storage_site(id=969351)
@@ -4439,7 +4697,9 @@ Update the primary storage of a storage site by ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.update_primary_storage(id=206518)
@@ -4474,7 +4734,9 @@ Submit a specific dataset version to the archive by using provided dataset ID an
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.submit_dataset_version_to_archive(id='<value>', version='<value>')
@@ -4510,7 +4772,9 @@ Creates a new superuser with the provided identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.admin_create_super_user(identifier='<value>')
@@ -4545,7 +4809,9 @@ Delete an admin template by ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_admin_template(id=195565)
@@ -4580,7 +4846,9 @@ Retrieve all admin templates
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_templates()
@@ -4609,7 +4877,9 @@ Retrieve a specific admin template using its alias.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_template(alias='<value>')
@@ -4644,7 +4914,9 @@ Gets an external tool associated with a specific dataset identified by its id
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_external_tools_1(id='<value>', type='<value>')
@@ -4680,7 +4952,9 @@ Retrieve the details of a specific external tool by its ID for a given file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_external_tool_by_id(id='<value>', tool_id='<value>', type='<value>')
@@ -4717,7 +4991,9 @@ Retrieve the external tools of a specific test file.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_external_tools_1_1(id='<value>', type='<value>')
@@ -4753,7 +5029,9 @@ Retrieve hash values based on specified algorithm
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_hash_values(alg='<value>', num=972785)
@@ -4789,7 +5067,9 @@ Retrieve and validate specified dataset files
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_validate_dataset_files(id='<value>')
@@ -4824,7 +5104,9 @@ Validate a dataset with a specified ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.validate_dataset(id='<value>', variables=False)
@@ -4860,7 +5142,9 @@ Validate datasets in the system
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.admin_validate_datasets(variables=False)
@@ -4895,7 +5179,9 @@ Validate hash value of the specified data file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.validate_data_file_hash(file_id='<value>')
@@ -4930,7 +5216,9 @@ Validates the password of an admin user
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.validate_admin_password()
@@ -4959,7 +5247,9 @@ Retrieve all workflows associated with the admin
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_workflows()
@@ -4988,7 +5278,9 @@ Create a new workflow for the admin
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.create_admin_workflow()
@@ -5017,7 +5309,9 @@ Fetch default workflow configured for admin
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_default_workflow()
@@ -5046,7 +5340,9 @@ Retrieve a specific trigger type from workflows
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_trigger_type(trigger_type='<value>')
@@ -5081,7 +5377,9 @@ Update a specific trigger type in workflows
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.update_trigger_type(trigger_type='<value>')
@@ -5116,7 +5414,9 @@ Delete a specific trigger type from workflows
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_trigger_type(trigger_type='<value>')
@@ -5151,7 +5451,9 @@ Retrieve current IP Whitelist for admin workflows
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_ip_whitelist()
@@ -5180,7 +5482,9 @@ Update the IP Whitelist for admin workflows
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.update_ip_whitelist()
@@ -5209,7 +5513,9 @@ Remove the IP Whitelist for admin workflows
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.delete_ip_whitelist()
@@ -5238,7 +5544,9 @@ Retrieve a specific workflow using its identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_workflow_by_identifier(identifier='<value>')
@@ -5273,7 +5581,9 @@ Retrieve data file details registered by a specific admin
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.get_admin_data_file(id='<value>')
@@ -5308,7 +5618,9 @@ Admin reruns the HDL to PID registration for a specific admin ID.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.admin.admin_reregister_hdl_to_pid(id='<value>')

@@ -15,7 +15,9 @@ Retrieve metadata blocks available in the system
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.metadatablocks.get_metadatablocks()
@@ -44,7 +46,9 @@ Retrieve a specific Metadatablock by its identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.metadatablocks.get_metadatablock_1_1(identifier='<value>')

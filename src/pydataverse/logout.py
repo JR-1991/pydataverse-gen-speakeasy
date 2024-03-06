@@ -16,7 +16,7 @@ class Logout:
     
     def logout_user(self) -> operations.LogoutUserResponse:
         r"""Log out the current user"""
-        hook_ctx = HookContext(operation_id='logoutUser', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='logoutUser', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/logout'
@@ -24,7 +24,10 @@ class Logout:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

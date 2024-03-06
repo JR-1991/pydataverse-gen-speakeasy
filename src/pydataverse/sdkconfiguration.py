@@ -7,7 +7,8 @@ from .utils import utils
 from .utils.retries import RetryConfig
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Dict, List, Tuple
+from pydataverse.models import components
+from typing import Callable, Dict, List, Tuple, Union
 
 
 SERVERS = [
@@ -24,14 +25,15 @@ class ServerProtocol(str, Enum):
 @dataclass
 class SDKConfiguration:
     client: requests_http.Session
+    security: Union[components.Security,Callable[[], components.Security]] = None
     server_url: str = ''
     server_idx: int = 0
     server_defaults: List[Dict[str, str]] = field(default_factory=List)
     language: str = 'python'
     openapi_doc_version: str = '1.0'
-    sdk_version: str = '0.4.2'
+    sdk_version: str = '0.5.0'
     gen_version: str = '2.277.0'
-    user_agent: str = 'speakeasy-sdk/python 0.4.2 2.277.0 1.0 pydataverse'
+    user_agent: str = 'speakeasy-sdk/python 0.5.0 2.277.0 1.0 pydataverse'
     retry_config: RetryConfig = None
     _hooks: SDKHooks = None
 

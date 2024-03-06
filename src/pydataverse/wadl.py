@@ -16,7 +16,7 @@ class Wadl:
     
     def get_application_wadl(self) -> operations.GetApplicationWadlResponse:
         r"""Retrieves the application WADL"""
-        hook_ctx = HookContext(operation_id='getApplicationWadl', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getApplicationWadl', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/application.wadl'
@@ -24,7 +24,10 @@ class Wadl:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -62,7 +65,7 @@ class Wadl:
     
     def get_application_wadl_1(self, path: str) -> operations.GetApplicationWadl1Response:
         r"""Retrieve the application WADL"""
-        hook_ctx = HookContext(operation_id='getApplicationWadl_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getApplicationWadl_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetApplicationWadl1Request(
             path=path,
         )
@@ -74,7 +77,10 @@ class Wadl:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

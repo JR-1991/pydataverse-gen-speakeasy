@@ -14,7 +14,9 @@ Retrieve a list of mail notifications
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.mail.get_mail_notifications()

@@ -17,7 +17,9 @@ Retrieve a specific persistent identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.pids.get_persistent_id(persistent_id='<value>')
@@ -52,7 +54,9 @@ Retrieves unreserved persistent identifiers
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.pids.get_unreserved_persistent_ids(persistent_id='<value>')
@@ -87,7 +91,9 @@ Delete a specific persistent identifier (PID)
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.pids.delete_pid(id='<value>')
@@ -122,7 +128,9 @@ Reserve a specific PID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.pids.reserve_pid(id='<value>')

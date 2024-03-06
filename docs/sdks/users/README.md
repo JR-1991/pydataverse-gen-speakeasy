@@ -22,7 +22,9 @@ Retrieve the details of the logged-in user
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.users.get_user_details()
@@ -51,7 +53,9 @@ Retrieves a user's authentication token
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.users.get_user_token()
@@ -80,7 +84,9 @@ Deletes a user's authentication token
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.users.delete_user_token()
@@ -109,7 +115,9 @@ Recreates the authentication token for a given user
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.users.recreate_user_token()
@@ -138,7 +146,9 @@ Merge the user with consumedIdentifier into the user with baseIdentifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.users.merge_users(base_identifier='<value>', consumed_identifier='<value>')
@@ -174,7 +184,9 @@ Change the identifier of a given user
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.users.change_user_identifier(identifier='<value>', new_identifier='<value>')
@@ -210,7 +222,9 @@ Remove roles from a specific user
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.users.remove_user_roles(identifier='<value>')
@@ -245,7 +259,9 @@ Retrieve a user's traces
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.users.get_user_traces(identifier='<value>')
@@ -280,7 +296,9 @@ Retrieve a specific trace element for a given user
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.users.get_user_trace_element(element='<value>', identifier='<value>')

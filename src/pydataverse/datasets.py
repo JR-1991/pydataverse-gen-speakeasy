@@ -17,7 +17,7 @@ class Datasets:
     
     def get_datasets_export(self, exporter: Optional[str] = None, persistent_id: Optional[str] = None) -> operations.GetDatasetsExportResponse:
         r"""Retrieves export information of a dataset given its exporter and persistent ID"""
-        hook_ctx = HookContext(operation_id='getDatasetsExport', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetsExport', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetsExportRequest(
             exporter=exporter,
             persistent_id=persistent_id,
@@ -31,7 +31,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -69,7 +72,7 @@ class Datasets:
     
     def get_curation_states(self) -> operations.GetCurationStatesResponse:
         r"""Retrieve a list of curation states for datasets"""
-        hook_ctx = HookContext(operation_id='getCurationStates', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getCurationStates', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/datasets/listCurationStates'
@@ -77,7 +80,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -115,7 +121,7 @@ class Datasets:
     
     def get_dataset_locks(self, type_: Optional[str] = None, user_identifier: Optional[str] = None) -> operations.GetDatasetLocksResponse:
         r"""Retrieve information about locks on datasets"""
-        hook_ctx = HookContext(operation_id='getDatasetLocks', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetLocks', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetLocksRequest(
             type=type_,
             user_identifier=user_identifier,
@@ -129,7 +135,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -167,7 +176,7 @@ class Datasets:
     
     def modify_all_registrations(self) -> operations.ModifyAllRegistrationsResponse:
         r"""Modifies registration details for all datasets"""
-        hook_ctx = HookContext(operation_id='modifyAllRegistrations', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='modifyAllRegistrations', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/datasets/modifyRegistrationAll'
@@ -175,7 +184,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -213,7 +225,7 @@ class Datasets:
     
     def get_registration_pid_metadata(self) -> operations.GetRegistrationPIDMetadataResponse:
         r"""Retrieve registration PID metadata of all datasets"""
-        hook_ctx = HookContext(operation_id='getRegistrationPIDMetadata', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getRegistrationPIDMetadata', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/datasets/modifyRegistrationPIDMetadataAll'
@@ -221,7 +233,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -259,7 +274,7 @@ class Datasets:
     
     def update_dataset_upload(self, globalid: Optional[str] = None, storageidentifier: Optional[str] = None, uploadid: Optional[str] = None) -> operations.UpdateDatasetUploadResponse:
         r"""Update a multi-part upload for a dataset using the provided global ID, storage identifier, and upload ID"""
-        hook_ctx = HookContext(operation_id='updateDatasetUpload', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateDatasetUpload', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateDatasetUploadRequest(
             globalid=globalid,
             storageidentifier=storageidentifier,
@@ -274,7 +289,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -312,7 +330,7 @@ class Datasets:
     
     def delete_dataset_upload(self, globalid: Optional[str] = None, storageidentifier: Optional[str] = None, uploadid: Optional[str] = None) -> operations.DeleteDatasetUploadResponse:
         r"""Delete a multi-part upload for a dataset using the provided global ID, storage identifier, and upload ID"""
-        hook_ctx = HookContext(operation_id='deleteDatasetUpload', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteDatasetUpload', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteDatasetUploadRequest(
             globalid=globalid,
             storageidentifier=storageidentifier,
@@ -327,7 +345,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -365,7 +386,7 @@ class Datasets:
     
     def get_private_url_dataset_version(self, private_url_token: str) -> operations.GetPrivateURLDatasetVersionResponse:
         r"""Retrieves a dataset version using a private URL token"""
-        hook_ctx = HookContext(operation_id='getPrivateUrlDatasetVersion', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getPrivateUrlDatasetVersion', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetPrivateURLDatasetVersionRequest(
             private_url_token=private_url_token,
         )
@@ -377,7 +398,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -415,7 +439,7 @@ class Datasets:
     
     def get_citation_by_private_url(self, private_url_token: str) -> operations.GetCitationByPrivateURLResponse:
         r"""Retrieve citation information for a dataset version via a private URL token"""
-        hook_ctx = HookContext(operation_id='getCitationByPrivateUrl', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getCitationByPrivateUrl', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetCitationByPrivateURLRequest(
             private_url_token=private_url_token,
         )
@@ -427,7 +451,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -465,7 +492,7 @@ class Datasets:
     
     def get_summary_field_names(self) -> operations.GetSummaryFieldNamesResponse:
         r"""Retrieve names of summary fields in the dataset"""
-        hook_ctx = HookContext(operation_id='getSummaryFieldNames', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getSummaryFieldNames', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/datasets/summaryFieldNames'
@@ -473,7 +500,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -511,7 +541,7 @@ class Datasets:
     
     def delete_dataset_link(self, dataset_id: str, linked_dataverse_id: str) -> operations.DeleteDatasetLinkResponse:
         r"""Delete a link between a dataset and a dataverse"""
-        hook_ctx = HookContext(operation_id='deleteDatasetLink', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteDatasetLink', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteDatasetLinkRequest(
             dataset_id=dataset_id,
             linked_dataverse_id=linked_dataverse_id,
@@ -524,7 +554,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -562,7 +595,7 @@ class Datasets:
     
     def get_allowed_curation_labels(self, identifier: str) -> operations.GetAllowedCurationLabelsResponse:
         r"""Retrieve a list of allowed curation labels for a specific dataset"""
-        hook_ctx = HookContext(operation_id='getAllowedCurationLabels', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAllowedCurationLabels', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAllowedCurationLabelsRequest(
             identifier=identifier,
         )
@@ -574,7 +607,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -612,7 +648,7 @@ class Datasets:
     
     def get_dataset_assignments(self, identifier: str) -> operations.GetDatasetAssignmentsResponse:
         r"""Retrieves assignments for a specific dataset"""
-        hook_ctx = HookContext(operation_id='getDatasetAssignments', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetAssignments', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetAssignmentsRequest(
             identifier=identifier,
         )
@@ -624,7 +660,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -662,7 +701,7 @@ class Datasets:
     
     def create_dataset_assignment(self, identifier: str, key: Optional[str] = None) -> operations.CreateDatasetAssignmentResponse:
         r"""Creates an assignment for a specific dataset"""
-        hook_ctx = HookContext(operation_id='createDatasetAssignment', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createDatasetAssignment', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CreateDatasetAssignmentRequest(
             identifier=identifier,
             key=key,
@@ -676,7 +715,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -714,7 +756,7 @@ class Datasets:
     
     def delete_assignment(self, id: int, identifier: str) -> operations.DeleteAssignmentResponse:
         r"""Delete a specific assignment for a dataset"""
-        hook_ctx = HookContext(operation_id='deleteAssignment', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteAssignment', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteAssignmentRequest(
             id=id,
             identifier=identifier,
@@ -727,7 +769,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -765,7 +810,7 @@ class Datasets:
     
     def get_curation_label_set_1(self, identifier: str) -> operations.GetCurationLabelSet1Response:
         r"""Retrieves the curation label set of the specified dataset"""
-        hook_ctx = HookContext(operation_id='getCurationLabelSet_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getCurationLabelSet_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetCurationLabelSet1Request(
             identifier=identifier,
         )
@@ -777,7 +822,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -815,7 +863,7 @@ class Datasets:
     
     def update_curation_label_set_1(self, identifier: str, name: Optional[str] = None) -> operations.UpdateCurationLabelSet1Response:
         r"""Updates the curation label set of the specified dataset"""
-        hook_ctx = HookContext(operation_id='updateCurationLabelSet_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateCurationLabelSet_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateCurationLabelSet1Request(
             identifier=identifier,
             name=name,
@@ -829,7 +877,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -867,7 +918,7 @@ class Datasets:
     
     def delete_curation_label_set_1(self, identifier: str) -> operations.DeleteCurationLabelSet1Response:
         r"""Deletes the curation label set for the specified dataset"""
-        hook_ctx = HookContext(operation_id='deleteCurationLabelSet_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteCurationLabelSet_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteCurationLabelSet1Request(
             identifier=identifier,
         )
@@ -879,7 +930,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -917,7 +971,7 @@ class Datasets:
     
     def validate_checksum(self, identifier: str) -> operations.ValidateChecksumResponse:
         r"""Validate checksum for specified dataset"""
-        hook_ctx = HookContext(operation_id='validateChecksum', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='validateChecksum', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ValidateChecksumRequest(
             identifier=identifier,
         )
@@ -929,7 +983,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -967,7 +1024,7 @@ class Datasets:
     
     def get_rsync_data_module(self, identifier: str) -> operations.GetRsyncDataModuleResponse:
         r"""Retrieve the Rsync data capture module for a specific dataset"""
-        hook_ctx = HookContext(operation_id='getRsyncDataModule', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getRsyncDataModule', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetRsyncDataModuleRequest(
             identifier=identifier,
         )
@@ -979,7 +1036,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1017,7 +1077,7 @@ class Datasets:
     
     def get_guestbook_entry(self, identifier: str) -> operations.GetGuestbookEntryResponse:
         r"""Retrieves a guestbook entry for a specific dataset"""
-        hook_ctx = HookContext(operation_id='getGuestbookEntry', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getGuestbookEntry', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetGuestbookEntryRequest(
             identifier=identifier,
         )
@@ -1029,7 +1089,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1067,7 +1130,7 @@ class Datasets:
     
     def update_guestbook_entry(self, identifier: str) -> operations.UpdateGuestbookEntryResponse:
         r"""Updates a guestbook entry for a specific dataset"""
-        hook_ctx = HookContext(operation_id='updateGuestbookEntry', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateGuestbookEntry', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateGuestbookEntryRequest(
             identifier=identifier,
         )
@@ -1079,7 +1142,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1117,7 +1183,7 @@ class Datasets:
     
     def delete_guestbook_entry(self, identifier: str) -> operations.DeleteGuestbookEntryResponse:
         r"""Deletes a guestbook entry for a specific dataset"""
-        hook_ctx = HookContext(operation_id='deleteGuestbookEntry', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteGuestbookEntry', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteGuestbookEntryRequest(
             identifier=identifier,
         )
@@ -1129,7 +1195,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1167,7 +1236,7 @@ class Datasets:
     
     def lock_dataset(self, identifier: str, type_: str) -> operations.LockDatasetResponse:
         r"""Lock a specific dataset identified by the given identifier and type"""
-        hook_ctx = HookContext(operation_id='lockDataset', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='lockDataset', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.LockDatasetRequest(
             identifier=identifier,
             type=type_,
@@ -1180,7 +1249,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1218,7 +1290,7 @@ class Datasets:
     
     def get_dataset_locks_1(self, identifier: str, type_: Optional[str] = None) -> operations.GetDatasetLocks1Response:
         r"""Retrieves specific dataset locks"""
-        hook_ctx = HookContext(operation_id='getDatasetLocks_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetLocks_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetLocks1Request(
             identifier=identifier,
             type=type_,
@@ -1232,7 +1304,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1270,7 +1345,7 @@ class Datasets:
     
     def delete_dataset_locks(self, identifier: str, type_: Optional[str] = None) -> operations.DeleteDatasetLocksResponse:
         r"""Deletes specific dataset locks"""
-        hook_ctx = HookContext(operation_id='deleteDatasetLocks', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteDatasetLocks', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteDatasetLocksRequest(
             identifier=identifier,
             type=type_,
@@ -1284,7 +1359,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1322,7 +1400,7 @@ class Datasets:
     
     def get_storage_driver_1(self, identifier: str) -> operations.GetStorageDriver1Response:
         r"""Retrieve the details of a specific storage driver based on the provided identifier"""
-        hook_ctx = HookContext(operation_id='getStorageDriver_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getStorageDriver_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetStorageDriver1Request(
             identifier=identifier,
         )
@@ -1334,7 +1412,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1372,7 +1453,7 @@ class Datasets:
     
     def update_storage_driver_1(self, identifier: str) -> operations.UpdateStorageDriver1Response:
         r"""Update the details of a specific storage driver based on the provided identifier"""
-        hook_ctx = HookContext(operation_id='updateStorageDriver_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateStorageDriver_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateStorageDriver1Request(
             identifier=identifier,
         )
@@ -1384,7 +1465,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1422,7 +1506,7 @@ class Datasets:
     
     def delete_storage_driver_1(self, identifier: str) -> operations.DeleteStorageDriver1Response:
         r"""Delete a specific storage driver based on the provided identifier"""
-        hook_ctx = HookContext(operation_id='deleteStorageDriver_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteStorageDriver_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteStorageDriver1Request(
             identifier=identifier,
         )
@@ -1434,7 +1518,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1472,7 +1559,7 @@ class Datasets:
     
     def get_dataset_storage_size(self, identifier: str, include_cached: Optional[bool] = None) -> operations.GetDatasetStorageSizeResponse:
         r"""Retrieves the storage size of a dataset based on its identifier. An optional query parameter can be used to include cached files."""
-        hook_ctx = HookContext(operation_id='getDatasetStorageSize', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetStorageSize', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetStorageSizeRequest(
             identifier=identifier,
             include_cached=include_cached,
@@ -1486,7 +1573,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1524,7 +1614,7 @@ class Datasets:
     
     def get_dataset_timestamps(self, identifier: str) -> operations.GetDatasetTimestampsResponse:
         r"""Retrieves the timestamps for a given dataset identified by the path parameter 'identifier'"""
-        hook_ctx = HookContext(operation_id='getDatasetTimestamps', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetTimestamps', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetTimestampsRequest(
             identifier=identifier,
         )
@@ -1536,7 +1626,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1574,7 +1667,7 @@ class Datasets:
     
     def get_download_size(self, request: operations.GetDownloadSizeRequest) -> operations.GetDownloadSizeResponse:
         r"""Retrieve the download size of a specific version of a dataset"""
-        hook_ctx = HookContext(operation_id='getDownloadSize', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDownloadSize', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetDownloadSizeRequest, base_url, '/api/v1/datasets/{identifier}/versions/{versionId}/downloadsize', request)
@@ -1583,7 +1676,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1621,7 +1717,7 @@ class Datasets:
     
     def get_dataset(self, id: str) -> operations.GetDatasetResponse:
         r"""Retrieve the specified dataset"""
-        hook_ctx = HookContext(operation_id='getDataset', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDataset', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetRequest(
             id=id,
         )
@@ -1633,7 +1729,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1671,7 +1770,7 @@ class Datasets:
     
     def delete_dataset(self, id: str) -> operations.DeleteDatasetResponse:
         r"""Delete the specified dataset"""
-        hook_ctx = HookContext(operation_id='deleteDataset', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteDataset', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteDatasetRequest(
             id=id,
         )
@@ -1683,7 +1782,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1724,7 +1826,7 @@ class Datasets:
 
         Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
         """
-        hook_ctx = HookContext(operation_id='getPublishDataset', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getPublishDataset', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetPublishDatasetRequest(
             id=id,
             type=type_,
@@ -1738,7 +1840,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1776,7 +1881,7 @@ class Datasets:
     
     def initiate_publishing(self, id: str, assure_is_indexed: Optional[bool] = None, type_: Optional[str] = None) -> operations.InitiatePublishingResponse:
         r"""Publish a designated dataset with optional assurances"""
-        hook_ctx = HookContext(operation_id='initiatePublishing', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='initiatePublishing', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.InitiatePublishingRequest(
             id=id,
             assure_is_indexed=assure_is_indexed,
@@ -1791,7 +1896,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1829,7 +1937,7 @@ class Datasets:
     
     def release_migrated_dataset(self, id: str, updatepidatprovider: Optional[bool] = None, request_body: Optional[str] = None) -> operations.ReleaseMigratedDatasetResponse:
         r"""Release a migrated dataset with a specified ID"""
-        hook_ctx = HookContext(operation_id='releaseMigratedDataset', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='releaseMigratedDataset', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ReleaseMigratedDatasetRequest(
             id=id,
             updatepidatprovider=updatepidatprovider,
@@ -1847,7 +1955,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1885,7 +1996,7 @@ class Datasets:
     
     def add_dataset(self, id: str, request_body: Optional[operations.AddDatasetRequestBody] = None) -> operations.AddDatasetResponse:
         r"""Add a new dataset to the existing record"""
-        hook_ctx = HookContext(operation_id='addDataset', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='addDataset', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AddDatasetRequest(
             id=id,
             request_body=request_body,
@@ -1901,7 +2012,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1939,7 +2053,7 @@ class Datasets:
     
     def add_files_to_dataset(self, id: str, request_body: Optional[operations.AddFilesToDatasetRequestBody] = None) -> operations.AddFilesToDatasetResponse:
         r"""Adds files to a specified dataset"""
-        hook_ctx = HookContext(operation_id='addFilesToDataset', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='addFilesToDataset', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AddFilesToDatasetRequest(
             id=id,
             request_body=request_body,
@@ -1955,7 +2069,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1993,7 +2110,7 @@ class Datasets:
     
     def add_globus_files_to_dataset(self, id: str, request_body: Optional[operations.AddGlobusFilesToDatasetRequestBody] = None) -> operations.AddGlobusFilesToDatasetResponse:
         r"""Add globus files to a specific dataset"""
-        hook_ctx = HookContext(operation_id='addGlobusFilesToDataset', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='addGlobusFilesToDataset', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AddGlobusFilesToDatasetRequest(
             id=id,
             request_body=request_body,
@@ -2009,7 +2126,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2047,7 +2167,7 @@ class Datasets:
     
     def update_citation_date(self, id: str) -> operations.UpdateCitationDateResponse:
         r"""Update the citation date of a dataset based on dataset ID"""
-        hook_ctx = HookContext(operation_id='updateCitationDate', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateCitationDate', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateCitationDateRequest(
             id=id,
         )
@@ -2059,7 +2179,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2097,7 +2220,7 @@ class Datasets:
     
     def delete_citation_date(self, id: str) -> operations.DeleteCitationDateResponse:
         r"""Delete citation date of a dataset based on dataset ID"""
-        hook_ctx = HookContext(operation_id='deleteCitationDate', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteCitationDate', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteCitationDateRequest(
             id=id,
         )
@@ -2109,7 +2232,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2147,7 +2273,7 @@ class Datasets:
     
     def get_clean_storage_status(self, id: str, dryrun: Optional[bool] = None) -> operations.GetCleanStorageStatusResponse:
         r"""Get the status of the clean storage task for the specified dataset"""
-        hook_ctx = HookContext(operation_id='getCleanStorageStatus', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getCleanStorageStatus', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetCleanStorageStatusRequest(
             id=id,
             dryrun=dryrun,
@@ -2161,7 +2287,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2199,7 +2328,7 @@ class Datasets:
     
     def get_curation_status(self, id: str) -> operations.GetCurationStatusResponse:
         r"""Fetches the curation status of the specified dataset"""
-        hook_ctx = HookContext(operation_id='getCurationStatus', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getCurationStatus', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetCurationStatusRequest(
             id=id,
         )
@@ -2211,7 +2340,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2249,7 +2381,7 @@ class Datasets:
     
     def update_curation_status(self, id: str, label: Optional[str] = None) -> operations.UpdateCurationStatusResponse:
         r"""Updates the curation status of the specified dataset"""
-        hook_ctx = HookContext(operation_id='updateCurationStatus', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateCurationStatus', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateCurationStatusRequest(
             id=id,
             label=label,
@@ -2263,7 +2395,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2301,7 +2436,7 @@ class Datasets:
     
     def delete_curation_status(self, id: str) -> operations.DeleteCurationStatusResponse:
         r"""Deletes the curation status of the specified dataset"""
-        hook_ctx = HookContext(operation_id='deleteCurationStatus', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteCurationStatus', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteCurationStatusRequest(
             id=id,
         )
@@ -2313,7 +2448,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2351,7 +2489,7 @@ class Datasets:
     
     def update_dataset_metadata(self, id: str) -> operations.UpdateDatasetMetadataResponse:
         r"""Update the metadata of a specific dataset"""
-        hook_ctx = HookContext(operation_id='updateDatasetMetadata', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateDatasetMetadata', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateDatasetMetadataRequest(
             id=id,
         )
@@ -2363,7 +2501,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2401,7 +2542,7 @@ class Datasets:
     
     def delete_dataset_1(self, id: str) -> operations.DeleteDataset1Response:
         r"""Delete a specific dataset by its ID."""
-        hook_ctx = HookContext(operation_id='deleteDataset_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteDataset_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteDataset1Request(
             id=id,
         )
@@ -2413,7 +2554,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2451,7 +2595,7 @@ class Datasets:
     
     def get_dataset_directory_index(self, id: str, folder: Optional[str] = None, original: Optional[bool] = None, version: Optional[str] = None) -> operations.GetDatasetDirectoryIndexResponse:
         r"""Retrieve directory index of a dataset"""
-        hook_ctx = HookContext(operation_id='getDatasetDirectoryIndex', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetDirectoryIndex', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetDirectoryIndexRequest(
             id=id,
             folder=folder,
@@ -2467,7 +2611,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2505,7 +2652,7 @@ class Datasets:
     
     def edit_dataset_metadata(self, id: str, replace: Optional[bool] = None) -> operations.EditDatasetMetadataResponse:
         r"""Updates the metadata of a specific dataset represented by its ID"""
-        hook_ctx = HookContext(operation_id='editDatasetMetadata', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='editDatasetMetadata', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.EditDatasetMetadataRequest(
             id=id,
             replace=replace,
@@ -2519,7 +2666,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2557,7 +2707,7 @@ class Datasets:
     
     def set_dataset_embargo(self, id: str) -> operations.SetDatasetEmbargoResponse:
         r"""Set an embargo on a specific dataset's files"""
-        hook_ctx = HookContext(operation_id='setDatasetEmbargo', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='setDatasetEmbargo', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.SetDatasetEmbargoRequest(
             id=id,
         )
@@ -2569,7 +2719,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2607,7 +2760,7 @@ class Datasets:
     
     def unset_embargo_on_dataset_files(self, id: str) -> operations.UnsetEmbargoOnDatasetFilesResponse:
         r"""Unset embargo on files for a specific dataset"""
-        hook_ctx = HookContext(operation_id='unsetEmbargoOnDatasetFiles', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='unsetEmbargoOnDatasetFiles', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UnsetEmbargoOnDatasetFilesRequest(
             id=id,
         )
@@ -2619,7 +2772,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2657,7 +2813,7 @@ class Datasets:
     
     def get_globus_download_parameters(self, id: str, download_id: Optional[str] = None, locale: Optional[str] = None) -> operations.GetGlobusDownloadParametersResponse:
         r"""Retrieve the parameters for Globus download for a specified dataset"""
-        hook_ctx = HookContext(operation_id='getGlobusDownloadParameters', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getGlobusDownloadParameters', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetGlobusDownloadParametersRequest(
             id=id,
             download_id=download_id,
@@ -2672,7 +2828,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2710,7 +2869,7 @@ class Datasets:
     
     def get_globus_upload_parameters(self, id: str, locale: Optional[str] = None) -> operations.GetGlobusUploadParametersResponse:
         r"""Retrieves Globus upload parameters for a specific dataset"""
-        hook_ctx = HookContext(operation_id='getGlobusUploadParameters', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getGlobusUploadParameters', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetGlobusUploadParametersRequest(
             id=id,
             locale=locale,
@@ -2724,7 +2883,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2762,7 +2924,7 @@ class Datasets:
     
     def get_dataset_links(self, id: str) -> operations.GetDatasetLinksResponse:
         r"""Retrieves the links of a specified dataset"""
-        hook_ctx = HookContext(operation_id='getDatasetLinks', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetLinks', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetLinksRequest(
             id=id,
         )
@@ -2774,7 +2936,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2812,7 +2977,7 @@ class Datasets:
     
     def get_dataset_logo(self, id: str) -> operations.GetDatasetLogoResponse:
         r"""Retrieve the logo of a specific dataset"""
-        hook_ctx = HookContext(operation_id='getDatasetLogo', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetLogo', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetLogoRequest(
             id=id,
         )
@@ -2824,7 +2989,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2862,7 +3030,7 @@ class Datasets:
     
     def dataset_citation_count_get(self, id: str) -> operations.DatasetCitationCountGetResponse:
         r"""Retrieves the citation count for a specific dataset"""
-        hook_ctx = HookContext(operation_id='datasetCitationCountGet', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='datasetCitationCountGet', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DatasetCitationCountGetRequest(
             id=id,
         )
@@ -2874,7 +3042,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2912,7 +3083,7 @@ class Datasets:
     
     def get_dataset_metrics(self, id: str, metric: str, country: Optional[str] = None) -> operations.GetDatasetMetricsResponse:
         r"""Retrieve specific metrics for a specified dataset"""
-        hook_ctx = HookContext(operation_id='getDatasetMetrics', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetMetrics', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetMetricsRequest(
             id=id,
             metric=metric,
@@ -2927,7 +3098,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2965,7 +3139,7 @@ class Datasets:
     
     def get_dataset_metric(self, id: str, metric: str, yyyymm: str, country: Optional[str] = None) -> operations.GetDatasetMetricResponse:
         r"""Fetches a specific metric for a specific dataset"""
-        hook_ctx = HookContext(operation_id='getDatasetMetric', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetMetric', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetMetricRequest(
             id=id,
             metric=metric,
@@ -2981,7 +3155,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3019,7 +3196,7 @@ class Datasets:
     
     def get_dataset_metadata(self, id: str) -> operations.GetDatasetMetadataResponse:
         r"""Retrieves the metadata of a dataset by its ID"""
-        hook_ctx = HookContext(operation_id='getDatasetMetadata', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetMetadata', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetMetadataRequest(
             id=id,
         )
@@ -3031,7 +3208,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3069,7 +3249,7 @@ class Datasets:
     
     def update_dataset_metadata_1(self, id: str, replace: Optional[bool] = None, request_body: Optional[str] = None) -> operations.UpdateDatasetMetadata1Response:
         r"""Updates the metadata of a dataset by its ID, with an option to replace the existing metadata"""
-        hook_ctx = HookContext(operation_id='updateDatasetMetadata_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateDatasetMetadata_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateDatasetMetadata1Request(
             id=id,
             replace=replace,
@@ -3087,7 +3267,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3125,7 +3308,7 @@ class Datasets:
     
     def update_metadata_deletion(self, id: str, request_body: Optional[str] = None) -> operations.UpdateMetadataDeletionResponse:
         r"""Update the deletion status of the metadata of a specific dataset"""
-        hook_ctx = HookContext(operation_id='updateMetadataDeletion', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateMetadataDeletion', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateMetadataDeletionRequest(
             id=id,
             request_body=request_body,
@@ -3141,7 +3324,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3179,7 +3365,7 @@ class Datasets:
     
     def get_registration_modification(self, id: str) -> operations.GetRegistrationModificationResponse:
         r"""Retrieve the modification details of a specific dataset registration"""
-        hook_ctx = HookContext(operation_id='getRegistrationModification', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getRegistrationModification', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetRegistrationModificationRequest(
             id=id,
         )
@@ -3191,7 +3377,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3229,7 +3418,7 @@ class Datasets:
     
     def modify_dataset_registration_metadata(self, id: str) -> operations.ModifyDatasetRegistrationMetadataResponse:
         r"""Modify the registration metadata of a specific dataset"""
-        hook_ctx = HookContext(operation_id='modifyDatasetRegistrationMetadata', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='modifyDatasetRegistrationMetadata', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ModifyDatasetRegistrationMetadataRequest(
             id=id,
         )
@@ -3241,7 +3430,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3279,7 +3471,7 @@ class Datasets:
     
     def monitor_globus_download(self, id: str, request_body: Optional[str] = None) -> operations.MonitorGlobusDownloadResponse:
         r"""Initiate the process to monitor a Globus download operation for a specific dataset"""
-        hook_ctx = HookContext(operation_id='monitorGlobusDownload', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='monitorGlobusDownload', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.MonitorGlobusDownloadRequest(
             id=id,
             request_body=request_body,
@@ -3295,7 +3487,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3333,7 +3528,7 @@ class Datasets:
     
     def move_dataset_to_target(self, id: str, target_dataverse_alias: str, force_move: Optional[bool] = None) -> operations.MoveDatasetToTargetResponse:
         r"""Moves a specific dataset to a target dataverse"""
-        hook_ctx = HookContext(operation_id='moveDatasetToTarget', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='moveDatasetToTarget', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.MoveDatasetToTargetRequest(
             id=id,
             target_dataverse_alias=target_dataverse_alias,
@@ -3348,7 +3543,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3386,7 +3584,7 @@ class Datasets:
     
     def get_private_url(self, id: str) -> operations.GetPrivateURLResponse:
         r"""Retrieve a specific dataset's private URL"""
-        hook_ctx = HookContext(operation_id='getPrivateUrl', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getPrivateUrl', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetPrivateURLRequest(
             id=id,
         )
@@ -3398,7 +3596,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3436,7 +3637,7 @@ class Datasets:
     
     def create_private_url(self, id: str, anonymized_access: Optional[bool] = None) -> operations.CreatePrivateURLResponse:
         r"""Create a private URL for a specific dataset"""
-        hook_ctx = HookContext(operation_id='createPrivateUrl', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createPrivateUrl', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CreatePrivateURLRequest(
             id=id,
             anonymized_access=anonymized_access,
@@ -3450,7 +3651,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3488,7 +3692,7 @@ class Datasets:
     
     def delete_private_url(self, id: str) -> operations.DeletePrivateURLResponse:
         r"""Delete a specific dataset's private URL"""
-        hook_ctx = HookContext(operation_id='deletePrivateUrl', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deletePrivateUrl', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeletePrivateURLRequest(
             id=id,
         )
@@ -3500,7 +3704,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3538,7 +3745,7 @@ class Datasets:
     
     def replace_dataset_files(self, id: str, request_body: Optional[operations.ReplaceDatasetFilesRequestBody] = None) -> operations.ReplaceDatasetFilesResponse:
         r"""Replace files in a specified dataset"""
-        hook_ctx = HookContext(operation_id='replaceDatasetFiles', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='replaceDatasetFiles', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ReplaceDatasetFilesRequest(
             id=id,
             request_body=request_body,
@@ -3554,7 +3761,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3592,7 +3802,7 @@ class Datasets:
     
     def submit_globus_download_request(self, id: str, download_id: Optional[str] = None, request_body: Optional[str] = None) -> operations.SubmitGlobusDownloadRequestResponse:
         r"""Submit a request for Globus download for a specific dataset"""
-        hook_ctx = HookContext(operation_id='submitGlobusDownloadRequest', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='submitGlobusDownloadRequest', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.SubmitGlobusDownloadRequestRequest(
             id=id,
             download_id=download_id,
@@ -3610,7 +3820,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3648,7 +3861,7 @@ class Datasets:
     
     def post_globus_upload_paths_request(self, id: str, request_body: Optional[str] = None) -> operations.PostGlobusUploadPathsRequestResponse:
         r"""Submit a request to get the paths for Globus file upload for a specified dataset"""
-        hook_ctx = HookContext(operation_id='postGlobusUploadPathsRequest', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postGlobusUploadPathsRequest', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostGlobusUploadPathsRequestRequest(
             id=id,
             request_body=request_body,
@@ -3664,7 +3877,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3702,7 +3918,7 @@ class Datasets:
     
     def return_dataset_to_author(self, id: str) -> operations.ReturnDatasetToAuthorResponse:
         r"""Returns the specified dataset back to its author"""
-        hook_ctx = HookContext(operation_id='returnDatasetToAuthor', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='returnDatasetToAuthor', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ReturnDatasetToAuthorRequest(
             id=id,
         )
@@ -3714,7 +3930,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3752,7 +3971,7 @@ class Datasets:
     
     def submit_dataset_for_review(self, id: str) -> operations.SubmitDatasetForReviewResponse:
         r"""Submits a specified dataset for review"""
-        hook_ctx = HookContext(operation_id='submitDatasetForReview', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='submitDatasetForReview', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.SubmitDatasetForReviewRequest(
             id=id,
         )
@@ -3764,7 +3983,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3802,7 +4024,7 @@ class Datasets:
     
     def get_dataset_thumbnail(self, id: str) -> operations.GetDatasetThumbnailResponse:
         r"""Retrieves a thumbnail from a specific dataset"""
-        hook_ctx = HookContext(operation_id='getDatasetThumbnail', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetThumbnail', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetThumbnailRequest(
             id=id,
         )
@@ -3814,7 +4036,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3852,7 +4077,7 @@ class Datasets:
     
     def post_dataset_thumbnail(self, id: str, request_body: Optional[operations.PostDatasetThumbnailRequestBody] = None) -> operations.PostDatasetThumbnailResponse:
         r"""Adds a thumbnail to a specific dataset"""
-        hook_ctx = HookContext(operation_id='postDatasetThumbnail', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postDatasetThumbnail', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostDatasetThumbnailRequest(
             id=id,
             request_body=request_body,
@@ -3868,7 +4093,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3906,7 +4134,7 @@ class Datasets:
     
     def delete_dataset_thumbnail(self, id: str) -> operations.DeleteDatasetThumbnailResponse:
         r"""Deletes a thumbnail from a specific dataset"""
-        hook_ctx = HookContext(operation_id='deleteDatasetThumbnail', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteDatasetThumbnail', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteDatasetThumbnailRequest(
             id=id,
         )
@@ -3918,7 +4146,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3956,7 +4187,7 @@ class Datasets:
     
     def get_thumbnail_candidates(self, id: str) -> operations.GetThumbnailCandidatesResponse:
         r"""Retrieve the list of thumbnail candidates for a specific dataset"""
-        hook_ctx = HookContext(operation_id='getThumbnailCandidates', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getThumbnailCandidates', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetThumbnailCandidatesRequest(
             id=id,
         )
@@ -3968,7 +4199,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4006,7 +4240,7 @@ class Datasets:
     
     def post_thumbnail_data(self, data_file_id: int, id: str) -> operations.PostThumbnailDataResponse:
         r"""Upload a new thumbnail for a specific dataset"""
-        hook_ctx = HookContext(operation_id='postThumbnailData', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postThumbnailData', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostThumbnailDataRequest(
             data_file_id=data_file_id,
             id=id,
@@ -4019,7 +4253,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4060,7 +4297,7 @@ class Datasets:
 
         Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
         """
-        hook_ctx = HookContext(operation_id='getUploadId', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getUploadId', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetUploadIDRequest(
             id=id,
         )
@@ -4072,7 +4309,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4110,7 +4350,7 @@ class Datasets:
     
     def get_upload_ur_ls(self, id: str, size: Optional[int] = None) -> operations.GetUploadURLsResponse:
         r"""Retrieve upload URLs for a specific dataset"""
-        hook_ctx = HookContext(operation_id='getUploadURLs', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getUploadURLs', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetUploadURLsRequest(
             id=id,
             size=size,
@@ -4124,7 +4364,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4162,7 +4405,7 @@ class Datasets:
     
     def get_user_permissions(self, id: str) -> operations.GetUserPermissionsResponse:
         r"""Retrieve user permissions for a specific dataset"""
-        hook_ctx = HookContext(operation_id='getUserPermissions', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getUserPermissions', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetUserPermissionsRequest(
             id=id,
         )
@@ -4174,7 +4417,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4212,7 +4458,7 @@ class Datasets:
     
     def get_dataset_versions(self, id: str, exclude_files: Optional[bool] = None, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetDatasetVersionsResponse:
         r"""Retrieve versions of a specific dataset"""
-        hook_ctx = HookContext(operation_id='getDatasetVersions', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetVersions', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetVersionsRequest(
             id=id,
             exclude_files=exclude_files,
@@ -4228,7 +4474,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4266,7 +4515,7 @@ class Datasets:
     
     def get_dataset_version(self, id: str, version_id: str, exclude_files: Optional[bool] = None, include_deaccessioned: Optional[bool] = None) -> operations.GetDatasetVersionResponse:
         r"""Fetches the dataset version details, with options to exclude files or include deaccessioned ones"""
-        hook_ctx = HookContext(operation_id='getDatasetVersion', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetVersion', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetVersionRequest(
             id=id,
             version_id=version_id,
@@ -4282,7 +4531,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4320,7 +4572,7 @@ class Datasets:
     
     def update_dataset_version(self, id: str, version_id: str, request_body: Optional[str] = None) -> operations.UpdateDatasetVersionResponse:
         r"""Updates the dataset version with the given ID"""
-        hook_ctx = HookContext(operation_id='updateDatasetVersion', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateDatasetVersion', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateDatasetVersionRequest(
             id=id,
             version_id=version_id,
@@ -4337,7 +4589,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4375,7 +4630,7 @@ class Datasets:
     
     def delete_dataset_version(self, id: str, version_id: str) -> operations.DeleteDatasetVersionResponse:
         r"""Deletes the specified version of a dataset"""
-        hook_ctx = HookContext(operation_id='deleteDatasetVersion', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteDatasetVersion', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteDatasetVersionRequest(
             id=id,
             version_id=version_id,
@@ -4388,7 +4643,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4426,7 +4684,7 @@ class Datasets:
     
     def check_dataset_file_download_permission(self, id: str, version_id: str, include_deaccessioned: Optional[bool] = None) -> operations.CheckDatasetFileDownloadPermissionResponse:
         r"""Checks if a user has permission to download at least one file from a specific dataset version"""
-        hook_ctx = HookContext(operation_id='checkDatasetFileDownloadPermission', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='checkDatasetFileDownloadPermission', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CheckDatasetFileDownloadPermissionRequest(
             id=id,
             version_id=version_id,
@@ -4441,7 +4699,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4479,7 +4740,7 @@ class Datasets:
     
     def get_citation(self, id: str, version_id: str, include_deaccessioned: Optional[bool] = None) -> operations.GetCitationResponse:
         r"""Retrieve the citation of a specific dataset version"""
-        hook_ctx = HookContext(operation_id='getCitation', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getCitation', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetCitationRequest(
             id=id,
             version_id=version_id,
@@ -4494,7 +4755,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4532,7 +4796,7 @@ class Datasets:
     
     def get_custom_license(self, id: str, version_id: str) -> operations.GetCustomLicenseResponse:
         r"""Retrieve a specific dataset version's custom license"""
-        hook_ctx = HookContext(operation_id='getCustomLicense', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getCustomLicense', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetCustomLicenseRequest(
             id=id,
             version_id=version_id,
@@ -4545,7 +4809,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4583,7 +4850,7 @@ class Datasets:
     
     def post_deaccession_dataset_by_version_id(self, id: str, version_id: str) -> operations.PostDeaccessionDatasetByVersionIDResponse:
         r"""Remove access to a specific version of a dataset"""
-        hook_ctx = HookContext(operation_id='postDeaccessionDatasetByVersionId', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postDeaccessionDatasetByVersionId', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostDeaccessionDatasetByVersionIDRequest(
             id=id,
             version_id=version_id,
@@ -4596,7 +4863,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4634,7 +4904,7 @@ class Datasets:
     
     def get_dataset_version_files(self, request: operations.GetDatasetVersionFilesRequest) -> operations.GetDatasetVersionFilesResponse:
         r"""Fetches files within a specific version of a dataset"""
-        hook_ctx = HookContext(operation_id='getDatasetVersionFiles', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetVersionFiles', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetDatasetVersionFilesRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/files', request)
@@ -4643,7 +4913,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4681,7 +4954,7 @@ class Datasets:
     
     def get_dataset_files_count(self, request: operations.GetDatasetFilesCountRequest) -> operations.GetDatasetFilesCountResponse:
         r"""Retrieve counts of various types of files in a specified dataset version"""
-        hook_ctx = HookContext(operation_id='getDatasetFilesCount', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetFilesCount', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetDatasetFilesCountRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/files/counts', request)
@@ -4690,7 +4963,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4728,7 +5004,7 @@ class Datasets:
     
     def get_dataset_version_linkset(self, id: str, version_id: str) -> operations.GetDatasetVersionLinksetResponse:
         r"""Retrieve linkset of a specific dataset version"""
-        hook_ctx = HookContext(operation_id='getDatasetVersionLinkset', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetVersionLinkset', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetVersionLinksetRequest(
             id=id,
             version_id=version_id,
@@ -4741,7 +5017,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4779,7 +5058,7 @@ class Datasets:
     
     def get_dataset_version_metadata(self, id: str, version_id: str) -> operations.GetDatasetVersionMetadataResponse:
         r"""Retrieve the metadata of a specific version of a dataset"""
-        hook_ctx = HookContext(operation_id='getDatasetVersionMetadata', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetVersionMetadata', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetVersionMetadataRequest(
             id=id,
             version_id=version_id,
@@ -4792,7 +5071,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4830,7 +5112,7 @@ class Datasets:
     
     def get_dataset_version_metadata_1(self, block: str, id: str, version_number: str) -> operations.GetDatasetVersionMetadata1Response:
         r"""Retrieve metadata of a specified version of a dataset"""
-        hook_ctx = HookContext(operation_id='getDatasetVersionMetadata_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetVersionMetadata_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetVersionMetadata1Request(
             block=block,
             id=id,
@@ -4844,7 +5126,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4882,7 +5167,7 @@ class Datasets:
     
     def get_dataset_version_tool_param(self, id: str, tid: int, version: str, locale: Optional[str] = None) -> operations.GetDatasetVersionToolParamResponse:
         r"""Retrieve tool parameters of a specific version of a dataset"""
-        hook_ctx = HookContext(operation_id='getDatasetVersionToolParam', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetVersionToolParam', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetVersionToolParamRequest(
             id=id,
             tid=tid,
@@ -4898,7 +5183,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4936,7 +5224,7 @@ class Datasets:
     
     def get_dataset_archival_status(self, id: str, version: str) -> operations.GetDatasetArchivalStatusResponse:
         r"""Retrieve the archival status of a specific version of a dataset"""
-        hook_ctx = HookContext(operation_id='getDatasetArchivalStatus', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetArchivalStatus', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetArchivalStatusRequest(
             id=id,
             version=version,
@@ -4949,7 +5237,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4987,7 +5278,7 @@ class Datasets:
     
     def update_dataset_archival_status(self, id: str, version: str, request_body: Optional[str] = None) -> operations.UpdateDatasetArchivalStatusResponse:
         r"""Update the archival status of a specific version of a dataset"""
-        hook_ctx = HookContext(operation_id='updateDatasetArchivalStatus', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateDatasetArchivalStatus', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateDatasetArchivalStatusRequest(
             id=id,
             version=version,
@@ -5004,7 +5295,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5042,7 +5336,7 @@ class Datasets:
     
     def delete_dataset_archival_status(self, id: str, version: str) -> operations.DeleteDatasetArchivalStatusResponse:
         r"""Remove the archival status of a specific version of a dataset"""
-        hook_ctx = HookContext(operation_id='deleteDatasetArchivalStatus', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteDatasetArchivalStatus', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteDatasetArchivalStatusRequest(
             id=id,
             version=version,
@@ -5055,7 +5349,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5093,7 +5390,7 @@ class Datasets:
     
     def update_dataset_link(self, linked_dataset_id: str, linking_dataverse_alias: str) -> operations.UpdateDatasetLinkResponse:
         r"""Updates the link between a dataset and a Dataverse alias"""
-        hook_ctx = HookContext(operation_id='updateDatasetLink', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateDatasetLink', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateDatasetLinkRequest(
             linked_dataset_id=linked_dataset_id,
             linking_dataverse_alias=linking_dataverse_alias,
@@ -5106,7 +5403,10 @@ class Datasets:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

@@ -21,7 +21,9 @@ Retrieve all notifications
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.notifications.get_all_notifications()
@@ -50,7 +52,9 @@ Retrieve a list of muted email notifications
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.notifications.get_muted_emails()
@@ -79,7 +83,9 @@ Updates a muted email notification by type name
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.notifications.update_muted_email_notification(type_name='<value>')
@@ -114,7 +120,9 @@ Deletes a muted email notification by type name
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.notifications.delete_muted_email_notification(type_name='<value>')
@@ -149,7 +157,9 @@ Retrieve all muted notifications
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.notifications.get_muted_notifications()
@@ -178,7 +188,9 @@ Update details of a specific muted notification
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.notifications.update_muted_notification(type_name='<value>')
@@ -213,7 +225,9 @@ Delete a specific muted notification
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.notifications.delete_muted_notification(type_name='<value>')
@@ -248,7 +262,9 @@ Delete a notification by ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.notifications.delete_notification(id=927889)

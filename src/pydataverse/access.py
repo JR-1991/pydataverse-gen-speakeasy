@@ -17,7 +17,7 @@ class Access:
     
     def get_datafile_bundle(self, file_id: str, file_metadata_id: Optional[int] = None, gbrecs: Optional[bool] = None) -> operations.GetDatafileBundleResponse:
         r"""Retrieve a zip of the datafile bundle identified by the file ID."""
-        hook_ctx = HookContext(operation_id='getDatafileBundle', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatafileBundle', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatafileBundleRequest(
             file_id=file_id,
             file_metadata_id=file_metadata_id,
@@ -32,7 +32,10 @@ class Access:
         headers['Accept'] = 'application/zip'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -73,7 +76,7 @@ class Access:
     
     def get_datafile(self, file_id: str, gbrecs: Optional[bool] = None) -> operations.GetDatafileResponse:
         r"""Retrieves datafile details based on given fileId"""
-        hook_ctx = HookContext(operation_id='getDatafile', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatafile', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatafileRequest(
             file_id=file_id,
             gbrecs=gbrecs,
@@ -87,7 +90,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -125,7 +131,7 @@ class Access:
     
     def get_datafile_auxiliary(self, file_id: str) -> operations.GetDatafileAuxiliaryResponse:
         r"""Retrieve auxiliary data for a specific datafile."""
-        hook_ctx = HookContext(operation_id='getDatafileAuxiliary', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatafileAuxiliary', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatafileAuxiliaryRequest(
             file_id=file_id,
         )
@@ -137,7 +143,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -175,7 +184,7 @@ class Access:
     
     def access_datafile_auxiliary_get(self, file_id: str, format_tag: str, format_version: str) -> operations.AccessDatafileAuxiliaryGetResponse:
         r"""Retrieve details of a specific auxiliary data file"""
-        hook_ctx = HookContext(operation_id='accessDatafileAuxiliaryGet', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='accessDatafileAuxiliaryGet', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AccessDatafileAuxiliaryGetRequest(
             file_id=file_id,
             format_tag=format_tag,
@@ -189,7 +198,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -230,7 +242,7 @@ class Access:
     
     def access_datafile_auxiliary_create(self, file_id: int, format_tag: str, format_version: str, request_body: Optional[operations.AccessDatafileAuxiliaryCreateRequestBody] = None) -> operations.AccessDatafileAuxiliaryCreateResponse:
         r"""Create a new auxiliary data file for a particular data file"""
-        hook_ctx = HookContext(operation_id='accessDatafileAuxiliaryCreate', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='accessDatafileAuxiliaryCreate', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AccessDatafileAuxiliaryCreateRequest(
             file_id=file_id,
             format_tag=format_tag,
@@ -248,7 +260,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -286,7 +301,7 @@ class Access:
     
     def access_datafile_auxiliary_delete(self, file_id: int, format_tag: str, format_version: str) -> operations.AccessDatafileAuxiliaryDeleteResponse:
         r"""Delete a specific auxiliary data file"""
-        hook_ctx = HookContext(operation_id='accessDatafileAuxiliaryDelete', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='accessDatafileAuxiliaryDelete', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AccessDatafileAuxiliaryDeleteRequest(
             file_id=file_id,
             format_tag=format_tag,
@@ -300,7 +315,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -338,7 +356,7 @@ class Access:
     
     def get_datafile_auxiliary_info(self, file_id: str, origin: str) -> operations.GetDatafileAuxiliaryInfoResponse:
         r"""Retrieve auxiliary information of specific datafile"""
-        hook_ctx = HookContext(operation_id='getDatafileAuxiliaryInfo', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatafileAuxiliaryInfo', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatafileAuxiliaryInfoRequest(
             file_id=file_id,
             origin=origin,
@@ -351,7 +369,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -389,7 +410,7 @@ class Access:
     
     def get_datafile_metadata(self, file_id: str, exclude: Optional[str] = None, file_metadata_id: Optional[int] = None, include: Optional[str] = None) -> operations.GetDatafileMetadataResponse:
         r"""Retrieve metadata for a specific datafile"""
-        hook_ctx = HookContext(operation_id='getDatafileMetadata', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatafileMetadata', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatafileMetadataRequest(
             file_id=file_id,
             exclude=exclude,
@@ -405,7 +426,10 @@ class Access:
         headers['Accept'] = 'text/xml'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -446,7 +470,7 @@ class Access:
     
     def get_datafile_meta_ddi(self, file_id: str, exclude: Optional[str] = None, file_metadata_id: Optional[int] = None, include: Optional[str] = None) -> operations.GetDatafileMetaDDIResponse:
         r"""Retrieve DDI metadata for a specific datafile."""
-        hook_ctx = HookContext(operation_id='getDatafileMetaDDI', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatafileMetaDDI', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatafileMetaDDIRequest(
             file_id=file_id,
             exclude=exclude,
@@ -462,7 +486,10 @@ class Access:
         headers['Accept'] = 'text/xml'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -503,7 +530,7 @@ class Access:
     
     def grant_datafile_access(self, id: str, identifier: str) -> operations.GrantDatafileAccessResponse:
         r"""Grants access to a specific datafile using its ID and the identifier of the user"""
-        hook_ctx = HookContext(operation_id='grantDatafileAccess', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='grantDatafileAccess', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GrantDatafileAccessRequest(
             id=id,
             identifier=identifier,
@@ -516,7 +543,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -554,7 +584,7 @@ class Access:
     
     def get_datafile_requests(self, id: str) -> operations.GetDatafileRequestsResponse:
         r"""Retrieves a list of all requests relevant to a specified datafile"""
-        hook_ctx = HookContext(operation_id='getDatafileRequests', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatafileRequests', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatafileRequestsRequest(
             id=id,
         )
@@ -566,7 +596,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -604,7 +637,7 @@ class Access:
     
     def reject_data_access(self, id: str, identifier: str) -> operations.RejectDataAccessResponse:
         r"""Reject access to specified datafile using ids"""
-        hook_ctx = HookContext(operation_id='rejectDataAccess', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='rejectDataAccess', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.RejectDataAccessRequest(
             id=id,
             identifier=identifier,
@@ -617,7 +650,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -655,7 +691,7 @@ class Access:
     
     def request_file_access(self, id: str) -> operations.RequestFileAccessResponse:
         r"""Requests access to a specific datafile by ID."""
-        hook_ctx = HookContext(operation_id='requestFileAccess', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='requestFileAccess', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.RequestFileAccessRequest(
             id=id,
         )
@@ -667,7 +703,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -705,7 +744,7 @@ class Access:
     
     def delete_file_access(self, id: str, identifier: str) -> operations.DeleteFileAccessResponse:
         r"""Revoke access to a specific file using its ID and an identifier"""
-        hook_ctx = HookContext(operation_id='deleteFileAccess', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteFileAccess', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteFileAccessRequest(
             id=id,
             identifier=identifier,
@@ -718,7 +757,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -756,7 +798,7 @@ class Access:
     
     def get_user_file_access_requested(self, id: str) -> operations.GetUserFileAccessRequestedResponse:
         r"""Retrieve the status of a user file access request"""
-        hook_ctx = HookContext(operation_id='getUserFileAccessRequested', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getUserFileAccessRequested', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetUserFileAccessRequestedRequest(
             id=id,
         )
@@ -768,7 +810,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -806,7 +851,7 @@ class Access:
     
     def get_user_file_permissions(self, id: str) -> operations.GetUserFilePermissionsResponse:
         r"""Retrieve user permissions for a specific datafile."""
-        hook_ctx = HookContext(operation_id='getUserFilePermissions', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getUserFilePermissions', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetUserFilePermissionsRequest(
             id=id,
         )
@@ -818,7 +863,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -856,7 +904,7 @@ class Access:
     
     def post_data_file_access(self, gbrecs: Optional[bool] = None, request_body: Optional[str] = None) -> operations.PostDataFileAccessResponse:
         r"""Uploads access details of a data file"""
-        hook_ctx = HookContext(operation_id='postDataFileAccess', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postDataFileAccess', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostDataFileAccessRequest(
             gbrecs=gbrecs,
             request_body=request_body,
@@ -873,7 +921,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -911,7 +962,7 @@ class Access:
     
     def get_access_data_files(self, file_ids: str, gbrecs: Optional[bool] = None) -> operations.GetAccessDataFilesResponse:
         r"""Retrieve access data for specified files"""
-        hook_ctx = HookContext(operation_id='getAccessDataFiles', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAccessDataFiles', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAccessDataFilesRequest(
             file_ids=file_ids,
             gbrecs=gbrecs,
@@ -925,7 +976,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -963,7 +1017,7 @@ class Access:
     
     def get_dataset_access(self, id: str, gbrecs: Optional[bool] = None) -> operations.GetDatasetAccessResponse:
         r"""Retrieve access information for a specific dataset"""
-        hook_ctx = HookContext(operation_id='getDatasetAccess', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetAccess', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetAccessRequest(
             id=id,
             gbrecs=gbrecs,
@@ -977,7 +1031,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1015,7 +1072,7 @@ class Access:
     
     def get_dataset_version_access(self, id: str, version_id: str, gbrecs: Optional[bool] = None, key: Optional[str] = None) -> operations.GetDatasetVersionAccessResponse:
         r"""Retrieve specific version of an accessible dataset by ID"""
-        hook_ctx = HookContext(operation_id='getDatasetVersionAccess', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetVersionAccess', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetVersionAccessRequest(
             id=id,
             version_id=version_id,
@@ -1031,7 +1088,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1069,7 +1129,7 @@ class Access:
     
     def get_ds_card_image(self, version_id: int) -> operations.GetDsCardImageResponse:
         r"""Retrieves the version-specific Data Card image"""
-        hook_ctx = HookContext(operation_id='getDsCardImage', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDsCardImage', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDsCardImageRequest(
             version_id=version_id,
         )
@@ -1081,7 +1141,10 @@ class Access:
         headers['Accept'] = 'image/png'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1122,7 +1185,7 @@ class Access:
     
     def get_dataverse_card_image(self, dataverse_id: int) -> operations.GetDataverseCardImageResponse:
         r"""Fetch the Dataverse card image"""
-        hook_ctx = HookContext(operation_id='getDataverseCardImage', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDataverseCardImage', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDataverseCardImageRequest(
             dataverse_id=dataverse_id,
         )
@@ -1134,7 +1197,10 @@ class Access:
         headers['Accept'] = 'image/png'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1175,7 +1241,7 @@ class Access:
     
     def get_file_card_image(self, file_id: int) -> operations.GetFileCardImageResponse:
         r"""Retrieves the card image for the specified file ID."""
-        hook_ctx = HookContext(operation_id='getFileCardImage', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getFileCardImage', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFileCardImageRequest(
             file_id=file_id,
         )
@@ -1187,7 +1253,10 @@ class Access:
         headers['Accept'] = 'image/png'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1228,7 +1297,7 @@ class Access:
     
     def allow_access_request(self, id: str) -> operations.AllowAccessRequestResponse:
         r"""Update permission to allow access request based on the provided ID"""
-        hook_ctx = HookContext(operation_id='allowAccessRequest', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='allowAccessRequest', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AllowAccessRequestRequest(
             id=id,
         )
@@ -1240,7 +1309,10 @@ class Access:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

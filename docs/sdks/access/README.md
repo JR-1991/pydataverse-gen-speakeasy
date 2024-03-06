@@ -37,7 +37,9 @@ Retrieve a zip of the datafile bundle identified by the file ID.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, gbrecs=False)
@@ -74,7 +76,9 @@ Retrieves datafile details based on given fileId
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_datafile(file_id='<value>', gbrecs=False)
@@ -110,7 +114,9 @@ Retrieve auxiliary data for a specific datafile.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_datafile_auxiliary(file_id='<value>')
@@ -145,7 +151,9 @@ Retrieve details of a specific auxiliary data file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.access_datafile_auxiliary_get(file_id='<value>', format_tag='<value>', format_version='<value>')
@@ -183,7 +191,9 @@ Create a new auxiliary data file for a particular data file
 import pydataverse
 from pydataverse.models import operations
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.access_datafile_auxiliary_create(file_id=7002, format_tag='<value>', format_version='<value>', request_body=operations.AccessDatafileAuxiliaryCreateRequestBody())
@@ -221,7 +231,9 @@ Delete a specific auxiliary data file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.access_datafile_auxiliary_delete(file_id=458810, format_tag='<value>', format_version='<value>')
@@ -258,7 +270,9 @@ Retrieve auxiliary information of specific datafile
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_datafile_auxiliary_info(file_id='<value>', origin='<value>')
@@ -294,7 +308,9 @@ Retrieve metadata for a specific datafile
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_datafile_metadata(file_id='<value>', exclude='<value>', file_metadata_id=321038, include='<value>')
@@ -332,7 +348,9 @@ Retrieve DDI metadata for a specific datafile.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_datafile_meta_ddi(file_id='<value>', exclude='<value>', file_metadata_id=344355, include='<value>')
@@ -370,7 +388,9 @@ Grants access to a specific datafile using its ID and the identifier of the user
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.grant_datafile_access(id='<value>', identifier='<value>')
@@ -406,7 +426,9 @@ Retrieves a list of all requests relevant to a specified datafile
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_datafile_requests(id='<value>')
@@ -441,7 +463,9 @@ Reject access to specified datafile using ids
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.reject_data_access(id='<value>', identifier='<value>')
@@ -477,7 +501,9 @@ Requests access to a specific datafile by ID.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.request_file_access(id='<value>')
@@ -512,7 +538,9 @@ Revoke access to a specific file using its ID and an identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.delete_file_access(id='<value>', identifier='<value>')
@@ -548,7 +576,9 @@ Retrieve the status of a user file access request
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_user_file_access_requested(id='<value>')
@@ -583,7 +613,9 @@ Retrieve user permissions for a specific datafile.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_user_file_permissions(id='<value>')
@@ -618,7 +650,9 @@ Uploads access details of a data file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.post_data_file_access(gbrecs=False, request_body='<value>')
@@ -654,7 +688,9 @@ Retrieve access data for specified files
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_access_data_files(file_ids='<value>', gbrecs=False)
@@ -690,7 +726,9 @@ Retrieve access information for a specific dataset
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_dataset_access(id='<value>', gbrecs=False)
@@ -726,7 +764,9 @@ Retrieve specific version of an accessible dataset by ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_dataset_version_access(id='<value>', version_id='<value>', gbrecs=False, key='<value>')
@@ -764,7 +804,9 @@ Retrieves the version-specific Data Card image
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_ds_card_image(version_id=856190)
@@ -799,7 +841,9 @@ Fetch the Dataverse card image
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_dataverse_card_image(dataverse_id=305707)
@@ -834,7 +878,9 @@ Retrieves the card image for the specified file ID.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_file_card_image(file_id=259222)
@@ -869,7 +915,9 @@ Update permission to allow access request based on the provided ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.allow_access_request(id='<value>')

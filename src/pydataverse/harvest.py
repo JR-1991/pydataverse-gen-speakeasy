@@ -17,7 +17,7 @@ class Harvest:
     
     def get_harvest_clients(self, key: Optional[str] = None) -> operations.GetHarvestClientsResponse:
         r"""Retrieve all harvest clients based on the provided key"""
-        hook_ctx = HookContext(operation_id='getHarvestClients', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getHarvestClients', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetHarvestClientsRequest(
             key=key,
         )
@@ -30,7 +30,10 @@ class Harvest:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -68,7 +71,7 @@ class Harvest:
     
     def get_harvest_client(self, nick_name: str, key: Optional[str] = None) -> operations.GetHarvestClientResponse:
         r"""Retrieves a harvest client details based on the provided unique nickname and key"""
-        hook_ctx = HookContext(operation_id='getHarvestClient', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getHarvestClient', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetHarvestClientRequest(
             nick_name=nick_name,
             key=key,
@@ -82,7 +85,10 @@ class Harvest:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -120,7 +126,7 @@ class Harvest:
     
     def update_harvest_client(self, nick_name: str, key: Optional[str] = None) -> operations.UpdateHarvestClientResponse:
         r"""Updates an existing harvest client's details using the provided unique nickname and key"""
-        hook_ctx = HookContext(operation_id='updateHarvestClient', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateHarvestClient', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateHarvestClientRequest(
             nick_name=nick_name,
             key=key,
@@ -134,7 +140,10 @@ class Harvest:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -172,7 +181,7 @@ class Harvest:
     
     def create_harvest_client(self, nick_name: str, key: Optional[str] = None) -> operations.CreateHarvestClientResponse:
         r"""Creates a new harvest client using the provided unique nickname and key"""
-        hook_ctx = HookContext(operation_id='createHarvestClient', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createHarvestClient', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CreateHarvestClientRequest(
             nick_name=nick_name,
             key=key,
@@ -186,7 +195,10 @@ class Harvest:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -224,7 +236,7 @@ class Harvest:
     
     def delete_harvest_client(self, nick_name: str) -> operations.DeleteHarvestClientResponse:
         r"""Deletes a harvest client based on the provided unique nickname"""
-        hook_ctx = HookContext(operation_id='deleteHarvestClient', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteHarvestClient', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteHarvestClientRequest(
             nick_name=nick_name,
         )
@@ -236,7 +248,10 @@ class Harvest:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -274,7 +289,7 @@ class Harvest:
     
     def run_harvest_client(self, nick_name: str, key: Optional[str] = None) -> operations.RunHarvestClientResponse:
         r"""Initiate a run for a specified Harvest client"""
-        hook_ctx = HookContext(operation_id='runHarvestClient', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='runHarvestClient', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.RunHarvestClientRequest(
             nick_name=nick_name,
             key=key,
@@ -288,7 +303,10 @@ class Harvest:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -326,7 +344,7 @@ class Harvest:
     
     def get_oai_sets(self, key: Optional[str] = None) -> operations.GetOaiSetsResponse:
         r"""Retrieve the OAISets from the harvest server"""
-        hook_ctx = HookContext(operation_id='getOaiSets', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getOaiSets', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetOaiSetsRequest(
             key=key,
         )
@@ -339,7 +357,10 @@ class Harvest:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -377,7 +398,7 @@ class Harvest:
     
     def add_oai_set(self, key: Optional[str] = None) -> operations.AddOaiSetResponse:
         r"""Adds a new OAI set to the harvest server"""
-        hook_ctx = HookContext(operation_id='addOaiSet', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='addOaiSet', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AddOaiSetRequest(
             key=key,
         )
@@ -390,7 +411,10 @@ class Harvest:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -428,7 +452,7 @@ class Harvest:
     
     def get_oai_sets_1(self, specname: str, key: Optional[str] = None) -> operations.GetOaiSets1Response:
         r"""Retrieve details of a specific OAI set"""
-        hook_ctx = HookContext(operation_id='getOaiSets_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getOaiSets_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetOaiSets1Request(
             specname=specname,
             key=key,
@@ -442,7 +466,10 @@ class Harvest:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -480,7 +507,7 @@ class Harvest:
     
     def update_oai_sets(self, specname: str, key: Optional[str] = None) -> operations.UpdateOaiSetsResponse:
         r"""Update details of a specific OAI set"""
-        hook_ctx = HookContext(operation_id='updateOaiSets', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateOaiSets', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateOaiSetsRequest(
             specname=specname,
             key=key,
@@ -494,7 +521,10 @@ class Harvest:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -532,7 +562,7 @@ class Harvest:
     
     def delete_oai_sets(self, specname: str, key: Optional[str] = None) -> operations.DeleteOaiSetsResponse:
         r"""Remove a specific OAI set"""
-        hook_ctx = HookContext(operation_id='deleteOaiSets', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteOaiSets', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteOaiSetsRequest(
             specname=specname,
             key=key,
@@ -546,7 +576,10 @@ class Harvest:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -584,7 +617,7 @@ class Harvest:
     
     def get_harvest_datasets_by_spec_name(self, specname: str, key: Optional[str] = None) -> operations.GetHarvestDatasetsBySpecNameResponse:
         r"""Retrieve datasets related to a specified OAISet"""
-        hook_ctx = HookContext(operation_id='getHarvestDatasetsBySpecName', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getHarvestDatasetsBySpecName', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetHarvestDatasetsBySpecNameRequest(
             specname=specname,
             key=key,
@@ -598,7 +631,10 @@ class Harvest:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

@@ -57,7 +57,9 @@ Retrieve the terms of use of the API
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_api_terms_of_use_info()
@@ -86,7 +88,9 @@ Retrieve dataset metrics based on the data location and parent alias
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_dataset_metrics_1(data_location='<value>', parent_alias='<value>')
@@ -122,7 +126,9 @@ Retrieve datasets by subject according to specified data location and parent ali
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_datasets_by_subject(data_location='<value>', parent_alias='<value>')
@@ -158,7 +164,9 @@ Retrieve monthly metrics for datasets by subject
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_monthly_subject_metrics(yyyymm='<value>', data_location='<value>', parent_alias='<value>')
@@ -195,7 +203,9 @@ Retrieve monthly metrics of datasets based on data location and parent alias.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_monthly_dataset_metrics(data_location='<value>', parent_alias='<value>')
@@ -231,7 +241,9 @@ Retrieve metrics of datasets from past specified days
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_past_days_metrics(days=970072, data_location='<value>', parent_alias='<value>')
@@ -268,7 +280,9 @@ Retrieve dataset metrics for a specific month
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_monthly_dataset_metrics_1(yyyymm='<value>', data_location='<value>', parent_alias='<value>')
@@ -305,7 +319,9 @@ Retrieves metrics of dataverses based on parent alias
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_metrics_dataverses(parent_alias='<value>')
@@ -340,7 +356,9 @@ Retrieves metrics of dataverses sorted by category
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_metrics_by_category(parent_alias='<value>')
@@ -375,7 +393,9 @@ Retrieve metrics of dataverses by subject
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_metrics_by_subject(parent_alias='<value>')
@@ -410,7 +430,9 @@ Retrieve the monthly metrics of a specific dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_monthly_dataverse_metrics(parent_alias='<value>')
@@ -445,7 +467,9 @@ Retrieves the number of dataverses created over the past specified number of day
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_metrics_past_days(days=651880, parent_alias='<value>')
@@ -481,7 +505,9 @@ Retrieve the metrics for dataverses up to the specified month.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_monthly_metrics_for_dataverses(yyyymm='<value>', parent_alias='<value>')
@@ -517,7 +543,9 @@ Retrieve download metrics based on a parent alias.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_download_metrics(parent_alias='<value>')
@@ -552,7 +580,9 @@ Retrieve monthly download metrics
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_monthly_downloads(parent_alias='<value>')
@@ -587,7 +617,9 @@ Retrieve download metrics for the past specified number of days
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_past_days_downloads(days=336932, parent_alias='<value>')
@@ -623,7 +655,9 @@ Retrieve download metrics till a specific month
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_download_metrics_to_month(yyyymm='<value>', parent_alias='<value>')
@@ -659,7 +693,9 @@ Retrieve File Downloads Metrics
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_file_downloads_metrics(parent_alias='<value>')
@@ -694,7 +730,9 @@ Retrieve the monthly count of file downloads
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_monthly_file_downloads(parent_alias='<value>')
@@ -729,7 +767,9 @@ Retrieve file download metrics for a specific month
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_file_downloads_to_month(yyyymm='<value>', parent_alias='<value>')
@@ -765,7 +805,9 @@ Retrieve metrics information for files
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_file_info_metrics(parent_alias='<value>')
@@ -800,7 +842,9 @@ Retrieve file metrics information categorized by file type
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_metrics_by_file_type(parent_alias='<value>')
@@ -835,7 +879,9 @@ Retrieve monthly metrics for files by type
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_files_by_type_monthly(parent_alias='<value>')
@@ -870,7 +916,9 @@ Retrieve monthly metrics for files
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_monthly_files_metrics(parent_alias='<value>')
@@ -905,7 +953,9 @@ Retrieve metrics for files from the past specified number of days
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_files_metrics(days=694967, parent_alias='<value>')
@@ -941,7 +991,9 @@ Retrieve files metrics information for a specific month
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_monthly_files_info(yyyymm='<value>', parent_alias='<value>')
@@ -977,7 +1029,9 @@ Retrieve specific metric data by country and parentAlias
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_metric_data(metric='<value>', country='<value>', parent_alias='<value>')
@@ -1014,7 +1068,9 @@ Retrieve the monthly data count metrics identified by the provided metric name
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_monthly_data_count_metrics(metric='<value>', country='<value>', parent_alias='<value>')
@@ -1051,7 +1107,9 @@ Retrieves data metrics for a specific month
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_metrics_by_month(metric='<value>', yyyymm='<value>', country='<value>', parent_alias='<value>')
@@ -1089,7 +1147,9 @@ Fetches the metrics tree based on the provided parent alias
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_metrics_tree(parent_alias='<value>')
@@ -1124,7 +1184,9 @@ Retrieve monthly metrics for a specific alias
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_monthly_metrics_by_alias(yyyymm='<value>', parent_alias='<value>')
@@ -1160,7 +1222,9 @@ Retrieve unique download metrics data for a particular alias
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_unique_downloads(parent_alias='<value>')
@@ -1195,7 +1259,9 @@ Retrieve monthly unique downloads metrics
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_monthly_unique_downloads(parent_alias='<value>')
@@ -1230,7 +1296,9 @@ Retrieve the number of unique downloads for a specified month
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_monthly_unique_downloads_1(yyyymm='<value>', parent_alias='<value>')
@@ -1266,7 +1334,9 @@ Retrieve the number of unique file downloads
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_unique_file_downloads(parent_alias='<value>')
@@ -1301,7 +1371,9 @@ Retrieve the count of unique file downloads per month
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_monthly_unique_file_downloads(parent_alias='<value>')
@@ -1336,7 +1408,9 @@ Fetches unique file downloads up to a specific month
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_unique_file_downloads_1(yyyymm='<value>', parent_alias='<value>')
@@ -1372,7 +1446,9 @@ Retrieve OpenAPI info in specified output format
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_open_api_info(output_format='<value>')
@@ -1407,7 +1483,9 @@ Retrieve server information
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_server_info()
@@ -1436,7 +1514,9 @@ Retrieve the custom text for dataset publish popup.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_dataset_publish_popup_custom_text()
@@ -1465,7 +1545,9 @@ Retrieve the maximum duration of embargo in months from the settings
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_max_embargo_duration_in_months()
@@ -1494,7 +1576,9 @@ Retrieves the status of incomplete metadata settings
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_incomplete_metadata_settings()
@@ -1523,7 +1607,9 @@ Retrieve the current version information
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_version_info()
@@ -1552,7 +1638,9 @@ Retrieve the current zip file download limit
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.info.get_zip_download_limit()

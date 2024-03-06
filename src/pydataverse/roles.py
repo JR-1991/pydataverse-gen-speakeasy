@@ -17,7 +17,7 @@ class Roles:
     
     def create_role(self, dvo: Optional[str] = None) -> operations.CreateRoleResponse:
         r"""Create a new role in the system"""
-        hook_ctx = HookContext(operation_id='createRole', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createRole', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CreateRoleRequest(
             dvo=dvo,
         )
@@ -30,7 +30,10 @@ class Roles:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -68,7 +71,7 @@ class Roles:
     
     def get_role(self, id: str) -> operations.GetRoleResponse:
         r"""Retrieve details of a specific role by id"""
-        hook_ctx = HookContext(operation_id='getRole', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getRole', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetRoleRequest(
             id=id,
         )
@@ -80,7 +83,10 @@ class Roles:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -118,7 +124,7 @@ class Roles:
     
     def delete_role(self, id: str) -> operations.DeleteRoleResponse:
         r"""Delete a specific role by id"""
-        hook_ctx = HookContext(operation_id='deleteRole', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteRole', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteRoleRequest(
             id=id,
         )
@@ -130,7 +136,10 @@ class Roles:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

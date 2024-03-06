@@ -16,7 +16,7 @@ class Users:
     
     def get_user_details(self) -> operations.GetUserDetailsResponse:
         r"""Retrieve the details of the logged-in user"""
-        hook_ctx = HookContext(operation_id='getUserDetails', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getUserDetails', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/users/:me'
@@ -24,7 +24,10 @@ class Users:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -62,7 +65,7 @@ class Users:
     
     def get_user_token(self) -> operations.GetUserTokenResponse:
         r"""Retrieves a user's authentication token"""
-        hook_ctx = HookContext(operation_id='getUserToken', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getUserToken', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/users/token'
@@ -70,7 +73,10 @@ class Users:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -108,7 +114,7 @@ class Users:
     
     def delete_user_token(self) -> operations.DeleteUserTokenResponse:
         r"""Deletes a user's authentication token"""
-        hook_ctx = HookContext(operation_id='deleteUserToken', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteUserToken', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/users/token'
@@ -116,7 +122,10 @@ class Users:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -154,7 +163,7 @@ class Users:
     
     def recreate_user_token(self) -> operations.RecreateUserTokenResponse:
         r"""Recreates the authentication token for a given user"""
-        hook_ctx = HookContext(operation_id='recreateUserToken', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='recreateUserToken', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/users/token/recreate'
@@ -162,7 +171,10 @@ class Users:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -200,7 +212,7 @@ class Users:
     
     def merge_users(self, base_identifier: str, consumed_identifier: str) -> operations.MergeUsersResponse:
         r"""Merge the user with consumedIdentifier into the user with baseIdentifier"""
-        hook_ctx = HookContext(operation_id='mergeUsers', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='mergeUsers', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.MergeUsersRequest(
             base_identifier=base_identifier,
             consumed_identifier=consumed_identifier,
@@ -213,7 +225,10 @@ class Users:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -251,7 +266,7 @@ class Users:
     
     def change_user_identifier(self, identifier: str, new_identifier: str) -> operations.ChangeUserIdentifierResponse:
         r"""Change the identifier of a given user"""
-        hook_ctx = HookContext(operation_id='changeUserIdentifier', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='changeUserIdentifier', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ChangeUserIdentifierRequest(
             identifier=identifier,
             new_identifier=new_identifier,
@@ -264,7 +279,10 @@ class Users:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -302,7 +320,7 @@ class Users:
     
     def remove_user_roles(self, identifier: str) -> operations.RemoveUserRolesResponse:
         r"""Remove roles from a specific user"""
-        hook_ctx = HookContext(operation_id='removeUserRoles', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='removeUserRoles', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.RemoveUserRolesRequest(
             identifier=identifier,
         )
@@ -314,7 +332,10 @@ class Users:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -352,7 +373,7 @@ class Users:
     
     def get_user_traces(self, identifier: str) -> operations.GetUserTracesResponse:
         r"""Retrieve a user's traces"""
-        hook_ctx = HookContext(operation_id='getUserTraces', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getUserTraces', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetUserTracesRequest(
             identifier=identifier,
         )
@@ -364,7 +385,10 @@ class Users:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -402,7 +426,7 @@ class Users:
     
     def get_user_trace_element(self, element: str, identifier: str) -> operations.GetUserTraceElementResponse:
         r"""Retrieve a specific trace element for a given user"""
-        hook_ctx = HookContext(operation_id='getUserTraceElement', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getUserTraceElement', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetUserTraceElementRequest(
             element=element,
             identifier=identifier,
@@ -415,7 +439,10 @@ class Users:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

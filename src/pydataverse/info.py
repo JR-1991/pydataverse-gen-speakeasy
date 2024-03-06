@@ -17,7 +17,7 @@ class Info:
     
     def get_api_terms_of_use_info(self) -> operations.GetAPITermsOfUseInfoResponse:
         r"""Retrieve the terms of use of the API"""
-        hook_ctx = HookContext(operation_id='getApiTermsOfUseInfo', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getApiTermsOfUseInfo', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/info/apiTermsOfUse'
@@ -25,7 +25,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -63,7 +66,7 @@ class Info:
     
     def get_dataset_metrics_1(self, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetDatasetMetrics1Response:
         r"""Retrieve dataset metrics based on the data location and parent alias"""
-        hook_ctx = HookContext(operation_id='getDatasetMetrics_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetMetrics_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetMetrics1Request(
             data_location=data_location,
             parent_alias=parent_alias,
@@ -77,7 +80,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -115,7 +121,7 @@ class Info:
     
     def get_datasets_by_subject(self, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetDatasetsBySubjectResponse:
         r"""Retrieve datasets by subject according to specified data location and parent alias"""
-        hook_ctx = HookContext(operation_id='getDatasetsBySubject', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetsBySubject', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetsBySubjectRequest(
             data_location=data_location,
             parent_alias=parent_alias,
@@ -129,7 +135,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -167,7 +176,7 @@ class Info:
     
     def get_monthly_subject_metrics(self, yyyymm: str, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetMonthlySubjectMetricsResponse:
         r"""Retrieve monthly metrics for datasets by subject"""
-        hook_ctx = HookContext(operation_id='getMonthlySubjectMetrics', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMonthlySubjectMetrics', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMonthlySubjectMetricsRequest(
             yyyymm=yyyymm,
             data_location=data_location,
@@ -182,7 +191,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -220,7 +232,7 @@ class Info:
     
     def get_monthly_dataset_metrics(self, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetMonthlyDatasetMetricsResponse:
         r"""Retrieve monthly metrics of datasets based on data location and parent alias."""
-        hook_ctx = HookContext(operation_id='getMonthlyDatasetMetrics', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMonthlyDatasetMetrics', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMonthlyDatasetMetricsRequest(
             data_location=data_location,
             parent_alias=parent_alias,
@@ -234,7 +246,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -272,7 +287,7 @@ class Info:
     
     def get_past_days_metrics(self, days: int, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetPastDaysMetricsResponse:
         r"""Retrieve metrics of datasets from past specified days"""
-        hook_ctx = HookContext(operation_id='getPastDaysMetrics', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getPastDaysMetrics', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetPastDaysMetricsRequest(
             days=days,
             data_location=data_location,
@@ -287,7 +302,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -325,7 +343,7 @@ class Info:
     
     def get_monthly_dataset_metrics_1(self, yyyymm: str, data_location: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetMonthlyDatasetMetrics1Response:
         r"""Retrieve dataset metrics for a specific month"""
-        hook_ctx = HookContext(operation_id='getMonthlyDatasetMetrics_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMonthlyDatasetMetrics_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMonthlyDatasetMetrics1Request(
             yyyymm=yyyymm,
             data_location=data_location,
@@ -340,7 +358,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -378,7 +399,7 @@ class Info:
     
     def get_metrics_dataverses(self, parent_alias: Optional[str] = None) -> operations.GetMetricsDataversesResponse:
         r"""Retrieves metrics of dataverses based on parent alias"""
-        hook_ctx = HookContext(operation_id='getMetricsDataverses', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMetricsDataverses', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMetricsDataversesRequest(
             parent_alias=parent_alias,
         )
@@ -391,7 +412,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -429,7 +453,7 @@ class Info:
     
     def get_metrics_by_category(self, parent_alias: Optional[str] = None) -> operations.GetMetricsByCategoryResponse:
         r"""Retrieves metrics of dataverses sorted by category"""
-        hook_ctx = HookContext(operation_id='getMetricsByCategory', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMetricsByCategory', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMetricsByCategoryRequest(
             parent_alias=parent_alias,
         )
@@ -442,7 +466,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -480,7 +507,7 @@ class Info:
     
     def get_metrics_by_subject(self, parent_alias: Optional[str] = None) -> operations.GetMetricsBySubjectResponse:
         r"""Retrieve metrics of dataverses by subject"""
-        hook_ctx = HookContext(operation_id='getMetricsBySubject', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMetricsBySubject', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMetricsBySubjectRequest(
             parent_alias=parent_alias,
         )
@@ -493,7 +520,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -531,7 +561,7 @@ class Info:
     
     def get_monthly_dataverse_metrics(self, parent_alias: Optional[str] = None) -> operations.GetMonthlyDataverseMetricsResponse:
         r"""Retrieve the monthly metrics of a specific dataverse"""
-        hook_ctx = HookContext(operation_id='getMonthlyDataverseMetrics', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMonthlyDataverseMetrics', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMonthlyDataverseMetricsRequest(
             parent_alias=parent_alias,
         )
@@ -544,7 +574,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -582,7 +615,7 @@ class Info:
     
     def get_metrics_past_days(self, days: int, parent_alias: Optional[str] = None) -> operations.GetMetricsPastDaysResponse:
         r"""Retrieves the number of dataverses created over the past specified number of days"""
-        hook_ctx = HookContext(operation_id='getMetricsPastDays', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMetricsPastDays', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMetricsPastDaysRequest(
             days=days,
             parent_alias=parent_alias,
@@ -596,7 +629,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -634,7 +670,7 @@ class Info:
     
     def get_monthly_metrics_for_dataverses(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetMonthlyMetricsForDataversesResponse:
         r"""Retrieve the metrics for dataverses up to the specified month."""
-        hook_ctx = HookContext(operation_id='getMonthlyMetricsForDataverses', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMonthlyMetricsForDataverses', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMonthlyMetricsForDataversesRequest(
             yyyymm=yyyymm,
             parent_alias=parent_alias,
@@ -648,7 +684,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -686,7 +725,7 @@ class Info:
     
     def get_download_metrics(self, parent_alias: Optional[str] = None) -> operations.GetDownloadMetricsResponse:
         r"""Retrieve download metrics based on a parent alias."""
-        hook_ctx = HookContext(operation_id='getDownloadMetrics', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDownloadMetrics', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDownloadMetricsRequest(
             parent_alias=parent_alias,
         )
@@ -699,7 +738,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -737,7 +779,7 @@ class Info:
     
     def get_monthly_downloads(self, parent_alias: Optional[str] = None) -> operations.GetMonthlyDownloadsResponse:
         r"""Retrieve monthly download metrics"""
-        hook_ctx = HookContext(operation_id='getMonthlyDownloads', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMonthlyDownloads', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMonthlyDownloadsRequest(
             parent_alias=parent_alias,
         )
@@ -750,7 +792,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -788,7 +833,7 @@ class Info:
     
     def get_past_days_downloads(self, days: int, parent_alias: Optional[str] = None) -> operations.GetPastDaysDownloadsResponse:
         r"""Retrieve download metrics for the past specified number of days"""
-        hook_ctx = HookContext(operation_id='getPastDaysDownloads', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getPastDaysDownloads', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetPastDaysDownloadsRequest(
             days=days,
             parent_alias=parent_alias,
@@ -802,7 +847,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -840,7 +888,7 @@ class Info:
     
     def get_download_metrics_to_month(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetDownloadMetricsToMonthResponse:
         r"""Retrieve download metrics till a specific month"""
-        hook_ctx = HookContext(operation_id='getDownloadMetricsToMonth', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDownloadMetricsToMonth', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDownloadMetricsToMonthRequest(
             yyyymm=yyyymm,
             parent_alias=parent_alias,
@@ -854,7 +902,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -892,7 +943,7 @@ class Info:
     
     def get_file_downloads_metrics(self, parent_alias: Optional[str] = None) -> operations.GetFileDownloadsMetricsResponse:
         r"""Retrieve File Downloads Metrics"""
-        hook_ctx = HookContext(operation_id='getFileDownloadsMetrics', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getFileDownloadsMetrics', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFileDownloadsMetricsRequest(
             parent_alias=parent_alias,
         )
@@ -905,7 +956,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -943,7 +997,7 @@ class Info:
     
     def get_monthly_file_downloads(self, parent_alias: Optional[str] = None) -> operations.GetMonthlyFileDownloadsResponse:
         r"""Retrieve the monthly count of file downloads"""
-        hook_ctx = HookContext(operation_id='getMonthlyFileDownloads', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMonthlyFileDownloads', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMonthlyFileDownloadsRequest(
             parent_alias=parent_alias,
         )
@@ -956,7 +1010,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -994,7 +1051,7 @@ class Info:
     
     def get_file_downloads_to_month(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetFileDownloadsToMonthResponse:
         r"""Retrieve file download metrics for a specific month"""
-        hook_ctx = HookContext(operation_id='getFileDownloadsToMonth', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getFileDownloadsToMonth', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFileDownloadsToMonthRequest(
             yyyymm=yyyymm,
             parent_alias=parent_alias,
@@ -1008,7 +1065,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1046,7 +1106,7 @@ class Info:
     
     def get_file_info_metrics(self, parent_alias: Optional[str] = None) -> operations.GetFileInfoMetricsResponse:
         r"""Retrieve metrics information for files"""
-        hook_ctx = HookContext(operation_id='getFileInfoMetrics', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getFileInfoMetrics', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFileInfoMetricsRequest(
             parent_alias=parent_alias,
         )
@@ -1059,7 +1119,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1097,7 +1160,7 @@ class Info:
     
     def get_metrics_by_file_type(self, parent_alias: Optional[str] = None) -> operations.GetMetricsByFileTypeResponse:
         r"""Retrieve file metrics information categorized by file type"""
-        hook_ctx = HookContext(operation_id='getMetricsByFileType', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMetricsByFileType', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMetricsByFileTypeRequest(
             parent_alias=parent_alias,
         )
@@ -1110,7 +1173,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1148,7 +1214,7 @@ class Info:
     
     def get_files_by_type_monthly(self, parent_alias: Optional[str] = None) -> operations.GetFilesByTypeMonthlyResponse:
         r"""Retrieve monthly metrics for files by type"""
-        hook_ctx = HookContext(operation_id='getFilesByTypeMonthly', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getFilesByTypeMonthly', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFilesByTypeMonthlyRequest(
             parent_alias=parent_alias,
         )
@@ -1161,7 +1227,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1199,7 +1268,7 @@ class Info:
     
     def get_monthly_files_metrics(self, parent_alias: Optional[str] = None) -> operations.GetMonthlyFilesMetricsResponse:
         r"""Retrieve monthly metrics for files"""
-        hook_ctx = HookContext(operation_id='getMonthlyFilesMetrics', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMonthlyFilesMetrics', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMonthlyFilesMetricsRequest(
             parent_alias=parent_alias,
         )
@@ -1212,7 +1281,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1250,7 +1322,7 @@ class Info:
     
     def get_files_metrics(self, days: int, parent_alias: Optional[str] = None) -> operations.GetFilesMetricsResponse:
         r"""Retrieve metrics for files from the past specified number of days"""
-        hook_ctx = HookContext(operation_id='getFilesMetrics', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getFilesMetrics', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFilesMetricsRequest(
             days=days,
             parent_alias=parent_alias,
@@ -1264,7 +1336,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1302,7 +1377,7 @@ class Info:
     
     def get_monthly_files_info(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetMonthlyFilesInfoResponse:
         r"""Retrieve files metrics information for a specific month"""
-        hook_ctx = HookContext(operation_id='getMonthlyFilesInfo', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMonthlyFilesInfo', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMonthlyFilesInfoRequest(
             yyyymm=yyyymm,
             parent_alias=parent_alias,
@@ -1316,7 +1391,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1354,7 +1432,7 @@ class Info:
     
     def get_metric_data(self, metric: str, country: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetMetricDataResponse:
         r"""Retrieve specific metric data by country and parentAlias"""
-        hook_ctx = HookContext(operation_id='getMetricData', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMetricData', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMetricDataRequest(
             metric=metric,
             country=country,
@@ -1369,7 +1447,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1407,7 +1488,7 @@ class Info:
     
     def get_monthly_data_count_metrics(self, metric: str, country: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetMonthlyDataCountMetricsResponse:
         r"""Retrieve the monthly data count metrics identified by the provided metric name"""
-        hook_ctx = HookContext(operation_id='getMonthlyDataCountMetrics', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMonthlyDataCountMetrics', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMonthlyDataCountMetricsRequest(
             metric=metric,
             country=country,
@@ -1422,7 +1503,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1460,7 +1544,7 @@ class Info:
     
     def get_metrics_by_month(self, metric: str, yyyymm: str, country: Optional[str] = None, parent_alias: Optional[str] = None) -> operations.GetMetricsByMonthResponse:
         r"""Retrieves data metrics for a specific month"""
-        hook_ctx = HookContext(operation_id='getMetricsByMonth', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMetricsByMonth', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMetricsByMonthRequest(
             metric=metric,
             yyyymm=yyyymm,
@@ -1476,7 +1560,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1514,7 +1601,7 @@ class Info:
     
     def get_metrics_tree(self, parent_alias: Optional[str] = None) -> operations.GetMetricsTreeResponse:
         r"""Fetches the metrics tree based on the provided parent alias"""
-        hook_ctx = HookContext(operation_id='getMetricsTree', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMetricsTree', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMetricsTreeRequest(
             parent_alias=parent_alias,
         )
@@ -1527,7 +1614,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1565,7 +1655,7 @@ class Info:
     
     def get_monthly_metrics_by_alias(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetMonthlyMetricsByAliasResponse:
         r"""Retrieve monthly metrics for a specific alias"""
-        hook_ctx = HookContext(operation_id='getMonthlyMetricsByAlias', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMonthlyMetricsByAlias', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMonthlyMetricsByAliasRequest(
             yyyymm=yyyymm,
             parent_alias=parent_alias,
@@ -1579,7 +1669,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1617,7 +1710,7 @@ class Info:
     
     def get_unique_downloads(self, parent_alias: Optional[str] = None) -> operations.GetUniqueDownloadsResponse:
         r"""Retrieve unique download metrics data for a particular alias"""
-        hook_ctx = HookContext(operation_id='getUniqueDownloads', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getUniqueDownloads', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetUniqueDownloadsRequest(
             parent_alias=parent_alias,
         )
@@ -1630,7 +1723,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1668,7 +1764,7 @@ class Info:
     
     def get_monthly_unique_downloads(self, parent_alias: Optional[str] = None) -> operations.GetMonthlyUniqueDownloadsResponse:
         r"""Retrieve monthly unique downloads metrics"""
-        hook_ctx = HookContext(operation_id='getMonthlyUniqueDownloads', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMonthlyUniqueDownloads', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMonthlyUniqueDownloadsRequest(
             parent_alias=parent_alias,
         )
@@ -1681,7 +1777,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1719,7 +1818,7 @@ class Info:
     
     def get_monthly_unique_downloads_1(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetMonthlyUniqueDownloads1Response:
         r"""Retrieve the number of unique downloads for a specified month"""
-        hook_ctx = HookContext(operation_id='getMonthlyUniqueDownloads_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMonthlyUniqueDownloads_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMonthlyUniqueDownloads1Request(
             yyyymm=yyyymm,
             parent_alias=parent_alias,
@@ -1733,7 +1832,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1771,7 +1873,7 @@ class Info:
     
     def get_unique_file_downloads(self, parent_alias: Optional[str] = None) -> operations.GetUniqueFileDownloadsResponse:
         r"""Retrieve the number of unique file downloads"""
-        hook_ctx = HookContext(operation_id='getUniqueFileDownloads', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getUniqueFileDownloads', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetUniqueFileDownloadsRequest(
             parent_alias=parent_alias,
         )
@@ -1784,7 +1886,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1822,7 +1927,7 @@ class Info:
     
     def get_monthly_unique_file_downloads(self, parent_alias: Optional[str] = None) -> operations.GetMonthlyUniqueFileDownloadsResponse:
         r"""Retrieve the count of unique file downloads per month"""
-        hook_ctx = HookContext(operation_id='getMonthlyUniqueFileDownloads', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMonthlyUniqueFileDownloads', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMonthlyUniqueFileDownloadsRequest(
             parent_alias=parent_alias,
         )
@@ -1835,7 +1940,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1873,7 +1981,7 @@ class Info:
     
     def get_unique_file_downloads_1(self, yyyymm: str, parent_alias: Optional[str] = None) -> operations.GetUniqueFileDownloads1Response:
         r"""Fetches unique file downloads up to a specific month"""
-        hook_ctx = HookContext(operation_id='getUniqueFileDownloads_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getUniqueFileDownloads_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetUniqueFileDownloads1Request(
             yyyymm=yyyymm,
             parent_alias=parent_alias,
@@ -1887,7 +1995,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1925,7 +2036,7 @@ class Info:
     
     def get_open_api_info(self, output_format: str) -> operations.GetOpenAPIInfoResponse:
         r"""Retrieve OpenAPI info in specified output format"""
-        hook_ctx = HookContext(operation_id='getOpenApiInfo', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getOpenApiInfo', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetOpenAPIInfoRequest(
             output_format=output_format,
         )
@@ -1937,7 +2048,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1975,7 +2089,7 @@ class Info:
     
     def get_server_info(self) -> operations.GetServerInfoResponse:
         r"""Retrieve server information"""
-        hook_ctx = HookContext(operation_id='getServerInfo', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getServerInfo', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/info/server'
@@ -1983,7 +2097,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2021,7 +2138,7 @@ class Info:
     
     def get_dataset_publish_popup_custom_text(self) -> operations.GetDatasetPublishPopupCustomTextResponse:
         r"""Retrieve the custom text for dataset publish popup."""
-        hook_ctx = HookContext(operation_id='getDatasetPublishPopupCustomText', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetPublishPopupCustomText', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/info/settings/:DatasetPublishPopupCustomText'
@@ -2029,7 +2146,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2067,7 +2187,7 @@ class Info:
     
     def get_max_embargo_duration_in_months(self) -> operations.GetMaxEmbargoDurationInMonthsResponse:
         r"""Retrieve the maximum duration of embargo in months from the settings"""
-        hook_ctx = HookContext(operation_id='getMaxEmbargoDurationInMonths', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMaxEmbargoDurationInMonths', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/info/settings/:MaxEmbargoDurationInMonths'
@@ -2075,7 +2195,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2113,7 +2236,7 @@ class Info:
     
     def get_incomplete_metadata_settings(self) -> operations.GetIncompleteMetadataSettingsResponse:
         r"""Retrieves the status of incomplete metadata settings"""
-        hook_ctx = HookContext(operation_id='getIncompleteMetadataSettings', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getIncompleteMetadataSettings', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/info/settings/incompleteMetadataViaApi'
@@ -2121,7 +2244,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2159,7 +2285,7 @@ class Info:
     
     def get_version_info(self) -> operations.GetVersionInfoResponse:
         r"""Retrieve the current version information"""
-        hook_ctx = HookContext(operation_id='getVersionInfo', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getVersionInfo', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/info/version'
@@ -2167,7 +2293,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2205,7 +2334,7 @@ class Info:
     
     def get_zip_download_limit(self) -> operations.GetZipDownloadLimitResponse:
         r"""Retrieve the current zip file download limit"""
-        hook_ctx = HookContext(operation_id='getZipDownloadLimit', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getZipDownloadLimit', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/info/zipDownloadLimit'
@@ -2213,7 +2342,10 @@ class Info:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

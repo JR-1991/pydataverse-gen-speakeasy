@@ -15,7 +15,9 @@ Executes a search query with various parameters and returns the matching records
 import pydataverse
 from pydataverse.models import operations
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 req = operations.SearchQueryRequest()
 

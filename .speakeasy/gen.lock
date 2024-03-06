@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: faa73a4f-3f6c-47a0-809e-515af47dce1e
 management:
-  docChecksum: cf04890527b58976ae662af216f3791e
+  docChecksum: c9e88375743a655c6d3eaa43b6ab4831
   docVersion: "1.0"
-  speakeasyVersion: internal
+  speakeasyVersion: 1.201.2
   generationVersion: 2.277.0
-  releaseVersion: 0.4.2
-  configChecksum: fb9085ae484f7f485ce32016c5555f0c
+  releaseVersion: 0.5.0
+  configChecksum: 601d81c1a52c92f01bde6e99a834e708
   repoURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
   repoSubDirectory: .
   installationURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
@@ -16,6 +16,7 @@ features:
     core: 4.5.0
     deprecations: 2.81.1
     flattening: 2.81.1
+    globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
 generatedFiles:
   - src/pydataverse/sdkconfiguration.py
@@ -516,9 +517,16 @@ generatedFiles:
   - src/pydataverse/models/operations/getusertraces.py
   - src/pydataverse/models/operations/getusertraceelement.py
   - src/pydataverse/models/operations/startworkflow.py
+  - src/pydataverse/models/components/dataverseresponse.py
+  - src/pydataverse/models/components/dataverse.py
+  - src/pydataverse/models/components/contact.py
+  - src/pydataverse/models/components/dataverserequest.py
+  - src/pydataverse/models/components/security.py
+  - src/pydataverse/models/errors/errorresponse.py
   - src/pydataverse/models/__init__.py
   - src/pydataverse/models/errors/__init__.py
   - src/pydataverse/models/operations/__init__.py
+  - src/pydataverse/models/components/__init__.py
   - docs/models/operations/getdatafilebundlerequest.md
   - docs/models/operations/getdatafilebundleresponsebody.md
   - docs/models/operations/getdatafilebundleresponse.md
@@ -1364,6 +1372,12 @@ generatedFiles:
   - docs/models/operations/getusertraceelementresponse.md
   - docs/models/operations/startworkflowrequest.md
   - docs/models/operations/startworkflowresponse.md
+  - docs/models/components/dataverseresponse.md
+  - docs/models/components/dataverse.md
+  - docs/models/components/contact.md
+  - docs/models/components/dataverserequest.md
+  - docs/models/components/security.md
+  - docs/models/errors/errorresponse.md
   - docs/sdks/pydataverse/README.md
   - docs/sdks/access/README.md
   - docs/sdks/admin/README.md

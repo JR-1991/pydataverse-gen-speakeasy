@@ -17,7 +17,7 @@ class BuiltinUsers:
     
     def post_builtin_users(self, key: Optional[str] = None, password: Optional[str] = None, send_email_notification: Optional[bool] = None) -> operations.PostBuiltinUsersResponse:
         r"""Create a new builtin user"""
-        hook_ctx = HookContext(operation_id='postBuiltinUsers', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postBuiltinUsers', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostBuiltinUsersRequest(
             key=key,
             password=password,
@@ -32,7 +32,10 @@ class BuiltinUsers:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -70,7 +73,7 @@ class BuiltinUsers:
     
     def create_builtin_user(self, key: str, password: str) -> operations.CreateBuiltinUserResponse:
         r"""Create a new built-in user using a password and key"""
-        hook_ctx = HookContext(operation_id='createBuiltinUser', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createBuiltinUser', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CreateBuiltinUserRequest(
             key=key,
             password=password,
@@ -83,7 +86,10 @@ class BuiltinUsers:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -121,7 +127,7 @@ class BuiltinUsers:
     
     def create_builtin_user_1(self, key: str, password: str, send_email_notification: bool) -> operations.CreateBuiltinUser1Response:
         r"""Create a new builtin-user with a specific key, password and email notification preference."""
-        hook_ctx = HookContext(operation_id='createBuiltinUser_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createBuiltinUser_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CreateBuiltinUser1Request(
             key=key,
             password=password,
@@ -135,7 +141,10 @@ class BuiltinUsers:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -173,7 +182,7 @@ class BuiltinUsers:
     
     def get_api_token_by_username(self, username: str, password: Optional[str] = None) -> operations.GetAPITokenByUsernameResponse:
         r"""Gets the API token for the specified built-in user"""
-        hook_ctx = HookContext(operation_id='getApiTokenByUsername', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getApiTokenByUsername', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAPITokenByUsernameRequest(
             username=username,
             password=password,
@@ -187,7 +196,10 @@ class BuiltinUsers:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

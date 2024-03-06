@@ -10,7 +10,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="pydataverse",
-    version="0.4.2",
+    version="0.5.0",
     author="pyDataverse Working Group",
     description="This is a Python client for Dataverse",
     long_description=long_description,

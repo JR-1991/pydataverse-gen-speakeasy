@@ -17,7 +17,7 @@ class Admin:
     
     def archive_all_unarchived_versions(self, latestonly: Optional[bool] = None, limit: Optional[int] = None, listonly: Optional[bool] = None) -> operations.ArchiveAllUnarchivedVersionsResponse:
         r"""Archives all unarchived dataset versions. Allows options to limit the number of versions archived, archive only the latest versions, or simply list the versions that would be archived without actually doing it."""
-        hook_ctx = HookContext(operation_id='archiveAllUnarchivedVersions', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='archiveAllUnarchivedVersions', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ArchiveAllUnarchivedVersionsRequest(
             latestonly=latestonly,
             limit=limit,
@@ -32,7 +32,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -70,7 +73,7 @@ class Admin:
     
     def get_admin_assignee(self, idtf: str) -> operations.GetAdminAssigneeResponse:
         r"""Retrieve a specific assignee detail by ID."""
-        hook_ctx = HookContext(operation_id='getAdminAssignee', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminAssignee', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAdminAssigneeRequest(
             idtf=idtf,
         )
@@ -82,7 +85,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -120,7 +126,7 @@ class Admin:
     
     def get_assignees_detail(self, ra_idtf: str) -> operations.GetAssigneesDetailResponse:
         r"""Retrieve details of a specific assignee by raIdtf"""
-        hook_ctx = HookContext(operation_id='getAssigneesDetail', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAssigneesDetail', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAssigneesDetailRequest(
             ra_idtf=ra_idtf,
         )
@@ -132,7 +138,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -173,7 +182,7 @@ class Admin:
 
         Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
         """
-        hook_ctx = HookContext(operation_id='getAuthenticatedUsers', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAuthenticatedUsers', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/authenticatedUsers'
@@ -181,7 +190,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -219,7 +231,7 @@ class Admin:
     
     def create_authenticated_user(self) -> operations.CreateAuthenticatedUserResponse:
         r"""Creates a new authenticated user."""
-        hook_ctx = HookContext(operation_id='createAuthenticatedUser', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createAuthenticatedUser', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/authenticatedUsers'
@@ -227,7 +239,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -265,7 +280,7 @@ class Admin:
     
     def convert_user_to_o_auth(self) -> operations.ConvertUserToOAuthResponse:
         r"""Convert an authenticated user from built-in to OAuth"""
-        hook_ctx = HookContext(operation_id='convertUserToOAuth', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='convertUserToOAuth', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/authenticatedUsers/convert/builtin2oauth'
@@ -273,7 +288,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -311,7 +329,7 @@ class Admin:
     
     def convert_auth_users(self) -> operations.ConvertAuthUsersResponse:
         r"""Convert Authenticated Users from Built-in system to Shibboleth"""
-        hook_ctx = HookContext(operation_id='convertAuthUsers', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='convertAuthUsers', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/authenticatedUsers/convert/builtin2shib'
@@ -319,7 +337,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -357,7 +378,7 @@ class Admin:
     
     def delete_authenticated_user(self, id: int) -> operations.DeleteAuthenticatedUserResponse:
         r"""Delete an authenticated user by ID"""
-        hook_ctx = HookContext(operation_id='deleteAuthenticatedUser', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteAuthenticatedUser', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteAuthenticatedUserRequest(
             id=id,
         )
@@ -369,7 +390,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -407,7 +431,7 @@ class Admin:
     
     def convert_remote_to_built_in(self, id: int) -> operations.ConvertRemoteToBuiltInResponse:
         r"""Converts a remote user to a built-in user by their ID"""
-        hook_ctx = HookContext(operation_id='convertRemoteToBuiltIn', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='convertRemoteToBuiltIn', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ConvertRemoteToBuiltInRequest(
             id=id,
         )
@@ -419,7 +443,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -460,7 +487,7 @@ class Admin:
 
         Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
         """
-        hook_ctx = HookContext(operation_id='convertUserAuthenticationMethod', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='convertUserAuthenticationMethod', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ConvertUserAuthenticationMethodRequest(
             id=id,
         )
@@ -472,7 +499,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -510,7 +540,7 @@ class Admin:
     
     def deactivate_user(self, id: int) -> operations.DeactivateUserResponse:
         r"""Deactivates an authenticated user by ID"""
-        hook_ctx = HookContext(operation_id='deactivateUser', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deactivateUser', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeactivateUserRequest(
             id=id,
         )
@@ -522,7 +552,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -560,7 +593,7 @@ class Admin:
     
     def get_authenticated_user(self, identifier: str) -> operations.GetAuthenticatedUserResponse:
         r"""Retrieve details of a specified authenticated user"""
-        hook_ctx = HookContext(operation_id='getAuthenticatedUser', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAuthenticatedUser', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAuthenticatedUserRequest(
             identifier=identifier,
         )
@@ -572,7 +605,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -610,7 +646,7 @@ class Admin:
     
     def delete_authenticated_user_1(self, identifier: str) -> operations.DeleteAuthenticatedUser1Response:
         r"""Delete a specified authenticated user"""
-        hook_ctx = HookContext(operation_id='deleteAuthenticatedUser_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteAuthenticatedUser_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteAuthenticatedUser1Request(
             identifier=identifier,
         )
@@ -622,7 +658,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -660,7 +699,7 @@ class Admin:
     
     def deactivate_user_1(self, identifier: str) -> operations.DeactivateUser1Response:
         r"""Deactivate an authenticated user by identifier"""
-        hook_ctx = HookContext(operation_id='deactivateUser_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deactivateUser_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeactivateUser1Request(
             identifier=identifier,
         )
@@ -672,7 +711,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -710,7 +752,7 @@ class Admin:
     
     def get_auth_provider_factories(self) -> operations.GetAuthProviderFactoriesResponse:
         r"""Retrieve all authentication provider factories"""
-        hook_ctx = HookContext(operation_id='getAuthProviderFactories', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAuthProviderFactories', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/authenticationProviderFactories'
@@ -718,7 +760,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -756,7 +801,7 @@ class Admin:
     
     def get_auth_providers(self) -> operations.GetAuthProvidersResponse:
         r"""Retrieve list of authentication providers"""
-        hook_ctx = HookContext(operation_id='getAuthProviders', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAuthProviders', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/authenticationProviders'
@@ -764,7 +809,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -802,7 +850,7 @@ class Admin:
     
     def add_auth_provider(self) -> operations.AddAuthProviderResponse:
         r"""Add a new authentication provider"""
-        hook_ctx = HookContext(operation_id='addAuthProvider', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='addAuthProvider', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/authenticationProviders'
@@ -810,7 +858,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -848,7 +899,7 @@ class Admin:
     
     def get_auth_providers_by_id(self, id: str) -> operations.GetAuthProvidersByIDResponse:
         r"""Fetch specific authentication provider using ID"""
-        hook_ctx = HookContext(operation_id='getAuthProvidersById', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAuthProvidersById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAuthProvidersByIDRequest(
             id=id,
         )
@@ -860,7 +911,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -898,7 +952,7 @@ class Admin:
     
     def remove_auth_providers_by_id(self, id: str) -> operations.RemoveAuthProvidersByIDResponse:
         r"""Delete specific authentication provider using ID"""
-        hook_ctx = HookContext(operation_id='removeAuthProvidersById', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='removeAuthProvidersById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.RemoveAuthProvidersByIDRequest(
             id=id,
         )
@@ -910,7 +964,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -948,7 +1005,7 @@ class Admin:
     
     def enable_auth_provider(self, id: str) -> operations.EnableAuthProviderResponse:
         r"""Enable a specific authentication provider by its ID"""
-        hook_ctx = HookContext(operation_id='enableAuthProvider', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='enableAuthProvider', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.EnableAuthProviderRequest(
             id=id,
         )
@@ -960,7 +1017,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -998,7 +1058,7 @@ class Admin:
     
     def get_auth_provider_status(self, id: str) -> operations.GetAuthProviderStatusResponse:
         r"""Retrieves the status of a specific authentication provider"""
-        hook_ctx = HookContext(operation_id='getAuthProviderStatus', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAuthProviderStatus', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAuthProviderStatusRequest(
             id=id,
         )
@@ -1010,7 +1070,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1048,7 +1111,7 @@ class Admin:
     
     def update_auth_provider_status(self, id: str) -> operations.UpdateAuthProviderStatusResponse:
         r"""Updates the status of a specific authentication provider"""
-        hook_ctx = HookContext(operation_id='updateAuthProviderStatus', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateAuthProviderStatus', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateAuthProviderStatusRequest(
             id=id,
         )
@@ -1060,7 +1123,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1098,7 +1164,7 @@ class Admin:
     
     def get_banner_message(self) -> operations.GetBannerMessageResponse:
         r"""Retrieve a current banner message"""
-        hook_ctx = HookContext(operation_id='getBannerMessage', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getBannerMessage', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/bannerMessage'
@@ -1106,7 +1172,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1144,7 +1213,7 @@ class Admin:
     
     def post_banner_message(self) -> operations.PostBannerMessageResponse:
         r"""Add a new banner message"""
-        hook_ctx = HookContext(operation_id='postBannerMessage', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postBannerMessage', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/bannerMessage'
@@ -1152,7 +1221,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1190,7 +1262,7 @@ class Admin:
     
     def delete_banner_message(self, id: int) -> operations.DeleteBannerMessageResponse:
         r"""Delete a specific banner message by ID"""
-        hook_ctx = HookContext(operation_id='deleteBannerMessage', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteBannerMessage', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteBannerMessageRequest(
             id=id,
         )
@@ -1202,7 +1274,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1240,7 +1315,7 @@ class Admin:
     
     def deactivate_banner_message(self, id: int) -> operations.DeactivateBannerMessageResponse:
         r"""Deactivates a specific banner message"""
-        hook_ctx = HookContext(operation_id='deactivateBannerMessage', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deactivateBannerMessage', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeactivateBannerMessageRequest(
             id=id,
         )
@@ -1252,7 +1327,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1290,7 +1368,7 @@ class Admin:
     
     def get_batch_jobs(self) -> operations.GetBatchJobsResponse:
         r"""Retrieve all batch jobs"""
-        hook_ctx = HookContext(operation_id='getBatchJobs', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getBatchJobs', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/batch/jobs'
@@ -1298,7 +1376,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1336,7 +1417,7 @@ class Admin:
     
     def get_job_by_name(self, job_name: str) -> operations.GetJobByNameResponse:
         r"""Retrieve details for a job given its name"""
-        hook_ctx = HookContext(operation_id='getJobByName', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getJobByName', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetJobByNameRequest(
             job_name=job_name,
         )
@@ -1348,7 +1429,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1386,7 +1470,7 @@ class Admin:
     
     def get_admin_job_by_id(self, job_id: str) -> operations.GetAdminJobByIDResponse:
         r"""Retrieve details of a specific admin batch job"""
-        hook_ctx = HookContext(operation_id='getAdminJobById', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminJobById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAdminJobByIDRequest(
             job_id=job_id,
         )
@@ -1398,7 +1482,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1436,7 +1523,7 @@ class Admin:
     
     def delete_metrics_cache(self) -> operations.DeleteMetricsCacheResponse:
         r"""Deletes the metrics cache for admin"""
-        hook_ctx = HookContext(operation_id='deleteMetricsCache', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteMetricsCache', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/clearMetricsCache'
@@ -1444,7 +1531,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1482,7 +1572,7 @@ class Admin:
     
     def delete_metrics_cache_1(self, name: str) -> operations.DeleteMetricsCache1Response:
         r"""Deletes a specific metric cache."""
-        hook_ctx = HookContext(operation_id='deleteMetricsCache_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteMetricsCache_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteMetricsCache1Request(
             name=name,
         )
@@ -1494,7 +1584,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1532,7 +1625,7 @@ class Admin:
     
     def delete_thumbnail_failure_flag(self) -> operations.DeleteThumbnailFailureFlagResponse:
         r"""Deletes a thumbnail failure flag"""
-        hook_ctx = HookContext(operation_id='deleteThumbnailFailureFlag', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteThumbnailFailureFlag', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/clearThumbnailFailureFlag'
@@ -1540,7 +1633,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1578,7 +1674,7 @@ class Admin:
     
     def admin_clear_thumbnail_failure_flag(self, id: str) -> operations.AdminClearThumbnailFailureFlagResponse:
         r"""Delete the thumbnail failure flag for a specified Dataverse id"""
-        hook_ctx = HookContext(operation_id='adminClearThumbnailFailureFlag', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='adminClearThumbnailFailureFlag', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AdminClearThumbnailFailureFlagRequest(
             id=id,
         )
@@ -1590,7 +1686,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1628,7 +1727,7 @@ class Admin:
     
     def compute_file_hash_value(self, alg: str, file_id: str) -> operations.ComputeFileHashValueResponse:
         r"""Computes the hash value of the specified file using the given algorithm"""
-        hook_ctx = HookContext(operation_id='computeFileHashValue', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='computeFileHashValue', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ComputeFileHashValueRequest(
             alg=alg,
             file_id=file_id,
@@ -1641,7 +1740,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1679,7 +1781,7 @@ class Admin:
     
     def get_user_id_conf_email(self, user_id: int) -> operations.GetUserIDConfEmailResponse:
         r"""Retrieve Confirmation Email Associated with User ID"""
-        hook_ctx = HookContext(operation_id='getUserIdConfEmail', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getUserIdConfEmail', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetUserIDConfEmailRequest(
             user_id=user_id,
         )
@@ -1691,7 +1793,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1729,7 +1834,7 @@ class Admin:
     
     def post_user_id_conf_email(self, user_id: int) -> operations.PostUserIDConfEmailResponse:
         r"""Send Confirmation Email to User ID"""
-        hook_ctx = HookContext(operation_id='postUserIdConfEmail', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postUserIdConfEmail', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostUserIDConfEmailRequest(
             user_id=user_id,
         )
@@ -1741,7 +1846,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1779,7 +1887,7 @@ class Admin:
     
     def admin_convert_user_encryption(self) -> operations.AdminConvertUserEncryptionResponse:
         r"""Convert a user's encryption scheme from Bcrypt to Sha1"""
-        hook_ctx = HookContext(operation_id='admin_convertUserEncryption', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='admin_convertUserEncryption', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/convertUserFromBcryptToSha1'
@@ -1787,7 +1895,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1825,7 +1936,7 @@ class Admin:
     
     def get_fix_missing_original_sizes(self, limit: Optional[int] = None) -> operations.GetFixMissingOriginalSizesResponse:
         r"""Retrieve a limited number of records with missing original sizes and fix them"""
-        hook_ctx = HookContext(operation_id='getFixMissingOriginalSizes', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getFixMissingOriginalSizes', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFixMissingOriginalSizesRequest(
             limit=limit,
         )
@@ -1838,7 +1949,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1876,7 +1990,7 @@ class Admin:
     
     def fix_missing_original_types(self) -> operations.FixMissingOriginalTypesResponse:
         r"""Retrieve a report of datafiles with missing original types and apply fixes"""
-        hook_ctx = HookContext(operation_id='fixMissingOriginalTypes', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='fixMissingOriginalTypes', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/datafiles/integrity/fixmissingoriginaltypes'
@@ -1884,7 +1998,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1922,7 +2039,7 @@ class Admin:
     
     def get_admin_dataset_field(self) -> operations.GetAdminDatasetFieldResponse:
         r"""Retrieve the dataset fields available to administrators"""
-        hook_ctx = HookContext(operation_id='getAdminDatasetField', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminDatasetField', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/datasetfield'
@@ -1930,7 +2047,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1968,7 +2088,7 @@ class Admin:
     
     def get_controlled_vocabulary(self) -> operations.GetControlledVocabularyResponse:
         r"""Retrieve a list of controlled vocabulary subjects"""
-        hook_ctx = HookContext(operation_id='getControlledVocabulary', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getControlledVocabulary', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/datasetfield/controlledVocabulary/subject'
@@ -1976,7 +2096,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2014,7 +2137,7 @@ class Admin:
     
     def load_dataset_field_admin(self, request: Optional[str]) -> operations.LoadDatasetFieldAdminResponse:
         r"""Load dataset field as an admin"""
-        hook_ctx = HookContext(operation_id='load_dataset_field_admin', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='load_dataset_field_admin', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/datasetfield/load'
@@ -2025,7 +2148,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2063,7 +2189,7 @@ class Admin:
     
     def get_na_controlled_vocab_value(self) -> operations.GetNAControlledVocabValueResponse:
         r"""Retrieve North American controlled vocabulary value"""
-        hook_ctx = HookContext(operation_id='getNAControlledVocabValue', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getNAControlledVocabValue', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/datasetfield/loadNAControlledVocabularyValue'
@@ -2071,7 +2197,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2109,7 +2238,7 @@ class Admin:
     
     def admin_load_property_files(self, request: Optional[str]) -> operations.AdminLoadPropertyFilesResponse:
         r"""Load dataset field property files as a ZIP."""
-        hook_ctx = HookContext(operation_id='adminLoadPropertyFiles', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='adminLoadPropertyFiles', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/datasetfield/loadpropertyfiles'
@@ -2120,7 +2249,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2158,7 +2290,7 @@ class Admin:
     
     def get_dataset_field_name(self, name: str) -> operations.GetDatasetFieldNameResponse:
         r"""Retrieve information of the specified dataset field"""
-        hook_ctx = HookContext(operation_id='getDatasetFieldName', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetFieldName', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetFieldNameRequest(
             name=name,
         )
@@ -2170,7 +2302,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2208,7 +2343,7 @@ class Admin:
     
     def post_fix_missing_unf(self, dataset_version_id: str, force_recalculate: Optional[bool] = None) -> operations.PostFixMissingUnfResponse:
         r"""Update or recalculate dataset integrity by fixing missing UNF in specified dataset version"""
-        hook_ctx = HookContext(operation_id='postFixMissingUnf', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postFixMissingUnf', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostFixMissingUnfRequest(
             dataset_version_id=dataset_version_id,
             force_recalculate=force_recalculate,
@@ -2222,7 +2357,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2260,7 +2398,7 @@ class Admin:
     
     def get_thumbnail_metadata_by_id(self, id: int) -> operations.GetThumbnailMetadataByIDResponse:
         r"""Retrieves thumbnail metadata for a specific dataset using its ID"""
-        hook_ctx = HookContext(operation_id='getThumbnailMetadataById', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getThumbnailMetadataById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetThumbnailMetadataByIDRequest(
             id=id,
         )
@@ -2272,7 +2410,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2310,7 +2451,7 @@ class Admin:
     
     def get_curation_label_sets(self) -> operations.GetCurationLabelSetsResponse:
         r"""Retrieve all curation label sets"""
-        hook_ctx = HookContext(operation_id='getCurationLabelSets', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getCurationLabelSets', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/dataverse/curationLabelSets'
@@ -2318,7 +2459,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2356,7 +2500,7 @@ class Admin:
     
     def get_storage_drivers(self) -> operations.GetStorageDriversResponse:
         r"""Retrieves all storage drivers"""
-        hook_ctx = HookContext(operation_id='getStorageDrivers', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getStorageDrivers', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/dataverse/storageDrivers'
@@ -2364,7 +2508,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2402,7 +2549,7 @@ class Admin:
     
     def get_role_assignments(self, alias: str) -> operations.GetRoleAssignmentsResponse:
         r"""Retrieve role assignments associated with a dataverse"""
-        hook_ctx = HookContext(operation_id='getRoleAssignments', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getRoleAssignments', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetRoleAssignmentsRequest(
             alias=alias,
         )
@@ -2414,7 +2561,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2452,7 +2602,7 @@ class Admin:
     
     def get_curation_label_set(self, alias: str) -> operations.GetCurationLabelSetResponse:
         r"""Retrieve the curation label set of the specified Dataverse"""
-        hook_ctx = HookContext(operation_id='getCurationLabelSet', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getCurationLabelSet', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetCurationLabelSetRequest(
             alias=alias,
         )
@@ -2464,7 +2614,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2502,7 +2655,7 @@ class Admin:
     
     def update_curation_label_set(self, alias: str, name: Optional[str] = None) -> operations.UpdateCurationLabelSetResponse:
         r"""Update or create a curation label set for the specified Dataverse"""
-        hook_ctx = HookContext(operation_id='updateCurationLabelSet', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateCurationLabelSet', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateCurationLabelSetRequest(
             alias=alias,
             name=name,
@@ -2516,7 +2669,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2554,7 +2710,7 @@ class Admin:
     
     def delete_curation_label_set(self, alias: str) -> operations.DeleteCurationLabelSetResponse:
         r"""Remove the curation label set from the specified Dataverse"""
-        hook_ctx = HookContext(operation_id='deleteCurationLabelSet', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteCurationLabelSet', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteCurationLabelSetRequest(
             alias=alias,
         )
@@ -2566,7 +2722,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2604,7 +2763,7 @@ class Admin:
     
     def get_storage_driver(self, alias: str) -> operations.GetStorageDriverResponse:
         r"""Retrieve the storage driver of a specific dataverse"""
-        hook_ctx = HookContext(operation_id='getStorageDriver', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getStorageDriver', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetStorageDriverRequest(
             alias=alias,
         )
@@ -2616,7 +2775,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2654,7 +2816,7 @@ class Admin:
     
     def update_storage_driver(self, alias: str) -> operations.UpdateStorageDriverResponse:
         r"""Update the storage driver of a specific dataverse"""
-        hook_ctx = HookContext(operation_id='updateStorageDriver', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateStorageDriver', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateStorageDriverRequest(
             alias=alias,
         )
@@ -2666,7 +2828,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2704,7 +2869,7 @@ class Admin:
     
     def delete_storage_driver(self, alias: str) -> operations.DeleteStorageDriverResponse:
         r"""Remove the storage driver of a specific dataverse"""
-        hook_ctx = HookContext(operation_id='deleteStorageDriver', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteStorageDriver', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteStorageDriverRequest(
             alias=alias,
         )
@@ -2716,7 +2881,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2754,7 +2922,7 @@ class Admin:
     
     def get_tmp_file(self, fully_qualified_path_to_file: Optional[str] = None) -> operations.GetTmpFileResponse:
         r"""Retrieve a temporary file via its fully qualified path"""
-        hook_ctx = HookContext(operation_id='getTmpFile', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getTmpFile', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetTmpFileRequest(
             fully_qualified_path_to_file=fully_qualified_path_to_file,
         )
@@ -2767,7 +2935,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2805,7 +2976,7 @@ class Admin:
     
     def get_external_tools(self) -> operations.GetExternalToolsResponse:
         r"""Retrieve a list of all external tools"""
-        hook_ctx = HookContext(operation_id='getExternalTools', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getExternalTools', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/externalTools'
@@ -2813,7 +2984,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2851,7 +3025,7 @@ class Admin:
     
     def create_external_tool(self) -> operations.CreateExternalToolResponse:
         r"""Create a new external tool"""
-        hook_ctx = HookContext(operation_id='createExternalTool', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createExternalTool', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/externalTools'
@@ -2859,7 +3033,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2897,7 +3074,7 @@ class Admin:
     
     def get_external_tool(self, id: int) -> operations.GetExternalToolResponse:
         r"""Retrieve an external tool by its ID"""
-        hook_ctx = HookContext(operation_id='getExternalTool', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getExternalTool', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetExternalToolRequest(
             id=id,
         )
@@ -2909,7 +3086,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2947,7 +3127,7 @@ class Admin:
     
     def delete_external_tool(self, id: int) -> operations.DeleteExternalToolResponse:
         r"""Delete an external tool by its ID"""
-        hook_ctx = HookContext(operation_id='deleteExternalTool', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteExternalTool', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteExternalToolRequest(
             id=id,
         )
@@ -2959,7 +3139,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2997,7 +3180,7 @@ class Admin:
     
     def post_admin_feedback(self) -> operations.PostAdminFeedbackResponse:
         r"""Create or post feedback as an admin"""
-        hook_ctx = HookContext(operation_id='postAdminFeedback', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postAdminFeedback', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/feedback'
@@ -3005,7 +3188,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3043,7 +3229,7 @@ class Admin:
     
     def get_admin_groups_domain(self) -> operations.GetAdminGroupsDomainResponse:
         r"""Retrieve domain-related groups information from the admin endpoint"""
-        hook_ctx = HookContext(operation_id='getAdminGroupsDomain', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminGroupsDomain', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/groups/domain'
@@ -3051,7 +3237,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3089,7 +3278,7 @@ class Admin:
     
     def post_admin_groups_domain(self) -> operations.PostAdminGroupsDomainResponse:
         r"""Submit new domain-related groups information to the admin endpoint"""
-        hook_ctx = HookContext(operation_id='postAdminGroupsDomain', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postAdminGroupsDomain', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/groups/domain'
@@ -3097,7 +3286,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3135,7 +3327,7 @@ class Admin:
     
     def get_group_alias(self, group_alias: str) -> operations.GetGroupAliasResponse:
         r"""Retrieves information of the group alias specified in the path"""
-        hook_ctx = HookContext(operation_id='getGroupAlias', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getGroupAlias', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetGroupAliasRequest(
             group_alias=group_alias,
         )
@@ -3147,7 +3339,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3185,7 +3380,7 @@ class Admin:
     
     def update_group_alias(self, group_alias: str) -> operations.UpdateGroupAliasResponse:
         r"""Updates the group alias specified in the path"""
-        hook_ctx = HookContext(operation_id='updateGroupAlias', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateGroupAlias', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateGroupAliasRequest(
             group_alias=group_alias,
         )
@@ -3197,7 +3392,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3235,7 +3433,7 @@ class Admin:
     
     def delete_group_alias(self, group_alias: str) -> operations.DeleteGroupAliasResponse:
         r"""Deletes the group alias specified in the path"""
-        hook_ctx = HookContext(operation_id='deleteGroupAlias', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteGroupAlias', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteGroupAliasRequest(
             group_alias=group_alias,
         )
@@ -3247,7 +3445,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3285,7 +3486,7 @@ class Admin:
     
     def get_admin_groups_ip(self) -> operations.GetAdminGroupsIPResponse:
         r"""Retrieve IP-based groups information"""
-        hook_ctx = HookContext(operation_id='getAdminGroupsIP', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminGroupsIP', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/groups/ip'
@@ -3293,7 +3494,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3331,7 +3535,7 @@ class Admin:
     
     def post_admin_groups_ip(self) -> operations.PostAdminGroupsIPResponse:
         r"""Create a new IP-based group"""
-        hook_ctx = HookContext(operation_id='postAdminGroupsIP', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postAdminGroupsIP', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/groups/ip'
@@ -3339,7 +3543,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3377,7 +3584,7 @@ class Admin:
     
     def get_group_by_group_idtf(self, group_idtf: str) -> operations.GetGroupByGroupIdtfResponse:
         r"""Fetches a group by the groupIdtf provided in the path"""
-        hook_ctx = HookContext(operation_id='getGroupByGroupIdtf', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getGroupByGroupIdtf', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetGroupByGroupIdtfRequest(
             group_idtf=group_idtf,
         )
@@ -3389,7 +3596,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3427,7 +3637,7 @@ class Admin:
     
     def delete_group_by_group_idtf(self, group_idtf: str) -> operations.DeleteGroupByGroupIdtfResponse:
         r"""Deletes a group by the groupIdtf provided in the path"""
-        hook_ctx = HookContext(operation_id='deleteGroupByGroupIdtf', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteGroupByGroupIdtf', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteGroupByGroupIdtfRequest(
             group_idtf=group_idtf,
         )
@@ -3439,7 +3649,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3477,7 +3690,7 @@ class Admin:
     
     def get_shib_group_info(self) -> operations.GetShibGroupInfoResponse:
         r"""Retrieve information about Shibboleth groups"""
-        hook_ctx = HookContext(operation_id='getShibGroupInfo', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getShibGroupInfo', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/groups/shib'
@@ -3485,7 +3698,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3523,7 +3739,7 @@ class Admin:
     
     def create_shib_group(self) -> operations.CreateShibGroupResponse:
         r"""Create a new Shibboleth group"""
-        hook_ctx = HookContext(operation_id='createShibGroup', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createShibGroup', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/groups/shib'
@@ -3531,7 +3747,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3569,7 +3788,7 @@ class Admin:
     
     def delete_shib_group(self, primary_key: str) -> operations.DeleteShibGroupResponse:
         r"""Delete a Shibboleth Group by given Primary Key"""
-        hook_ctx = HookContext(operation_id='deleteShibGroup', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteShibGroup', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteShibGroupRequest(
             primary_key=primary_key,
         )
@@ -3581,7 +3800,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3619,7 +3841,7 @@ class Admin:
     
     def get_admin_index(self, num_partitions: Optional[int] = None, partition_id_to_process: Optional[int] = None, preview_only: Optional[bool] = None) -> operations.GetAdminIndexResponse:
         r"""Retrieve details of admin index with queried parameters"""
-        hook_ctx = HookContext(operation_id='getAdminIndex', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminIndex', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAdminIndexRequest(
             num_partitions=num_partitions,
             partition_id_to_process=partition_id_to_process,
@@ -3634,7 +3856,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3672,7 +3897,7 @@ class Admin:
     
     def clear_admin_index(self) -> operations.ClearAdminIndexResponse:
         r"""Clears the admin index"""
-        hook_ctx = HookContext(operation_id='clearAdminIndex', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='clearAdminIndex', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/index/clear'
@@ -3680,7 +3905,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3718,7 +3946,7 @@ class Admin:
     
     def clear_orphans_index(self, sync: Optional[str] = None) -> operations.ClearOrphansIndexResponse:
         r"""Retrieve and clear orphans from the admin index"""
-        hook_ctx = HookContext(operation_id='clearOrphansIndex', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='clearOrphansIndex', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ClearOrphansIndexRequest(
             sync=sync,
         )
@@ -3731,7 +3959,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3769,7 +4000,7 @@ class Admin:
     
     def continue_index_processing(self, num_partitions: Optional[int] = None, partition_id_to_process: Optional[int] = None, preview_only: Optional[bool] = None) -> operations.ContinueIndexProcessingResponse:
         r"""Continues the process of indexing partitions based on given parameters."""
-        hook_ctx = HookContext(operation_id='continueIndexProcessing', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='continueIndexProcessing', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ContinueIndexProcessingRequest(
             num_partitions=num_partitions,
             partition_id_to_process=partition_id_to_process,
@@ -3784,7 +4015,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3822,7 +4056,7 @@ class Admin:
     
     def get_dataset_index(self, persistent_id: Optional[str] = None) -> operations.GetDatasetIndexResponse:
         r"""Retrieve the index of a dataset given its persistentId"""
-        hook_ctx = HookContext(operation_id='getDatasetIndex', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetIndex', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetIndexRequest(
             persistent_id=persistent_id,
         )
@@ -3835,7 +4069,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3873,7 +4110,7 @@ class Admin:
     
     def delete_dataset_by_id(self, id: int) -> operations.DeleteDatasetByIDResponse:
         r"""Delete a specific dataset by its ID"""
-        hook_ctx = HookContext(operation_id='deleteDatasetById', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteDatasetById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteDatasetByIDRequest(
             id=id,
         )
@@ -3885,7 +4122,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3923,7 +4163,7 @@ class Admin:
     
     def get_file_metadata1(self, dataset_id: int, max_results: Optional[int] = None, order: Optional[str] = None, sort: Optional[str] = None) -> operations.GetFileMetadata1Response:
         r"""Retrieve file metadata for a specific dataset"""
-        hook_ctx = HookContext(operation_id='get_fileMetadata1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='get_fileMetadata1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFileMetadata1Request(
             dataset_id=dataset_id,
             max_results=max_results,
@@ -3939,7 +4179,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -3977,7 +4220,7 @@ class Admin:
     
     def file_search_index_get(self, persistent_id: Optional[str] = None, q: Optional[str] = None, semantic_version: Optional[str] = None) -> operations.FileSearchIndexGETResponse:
         r"""This endpoint retrieves data about file search index by persistentId, q, and/or semanticVersion."""
-        hook_ctx = HookContext(operation_id='fileSearchIndexGET', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='fileSearchIndexGET', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.FileSearchIndexGETRequest(
             persistent_id=persistent_id,
             q=q,
@@ -3992,7 +4235,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4030,7 +4276,7 @@ class Admin:
     
     def get_admin_index_mod(self, partitions: Optional[int] = None, which: Optional[int] = None) -> operations.GetAdminIndexModResponse:
         r"""Retrieves modification of the admin index based on provided query parameters"""
-        hook_ctx = HookContext(operation_id='getAdminIndexMod', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminIndexMod', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAdminIndexModRequest(
             partitions=partitions,
             which=which,
@@ -4044,7 +4290,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4082,7 +4331,7 @@ class Admin:
     
     def get_admin_index_perms(self) -> operations.GetAdminIndexPermsResponse:
         r"""Retrieve permissions for the admin index"""
-        hook_ctx = HookContext(operation_id='getAdminIndexPerms', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminIndexPerms', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/index/perms'
@@ -4090,7 +4339,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4128,7 +4380,7 @@ class Admin:
     
     def get_admin_index_perms_1(self, id: int) -> operations.GetAdminIndexPerms1Response:
         r"""Retrieve a specific admin index permissions by ID"""
-        hook_ctx = HookContext(operation_id='getAdminIndexPerms_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminIndexPerms_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAdminIndexPerms1Request(
             id=id,
         )
@@ -4140,7 +4392,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4178,7 +4433,7 @@ class Admin:
     
     def get_perms_debug_info(self, id: Optional[int] = None, key: Optional[str] = None) -> operations.GetPermsDebugInfoResponse:
         r"""Retrieves permission debug info for specified id and key"""
-        hook_ctx = HookContext(operation_id='getPermsDebugInfo', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getPermsDebugInfo', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetPermsDebugInfoRequest(
             id=id,
             key=key,
@@ -4192,7 +4447,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4230,7 +4488,7 @@ class Admin:
     
     def get_solr_schema(self) -> operations.GetSolrSchemaResponse:
         r"""Retrieve the Solr schema configuration."""
-        hook_ctx = HookContext(operation_id='getSolrSchema', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getSolrSchema', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/index/solr/schema'
@@ -4238,7 +4496,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4279,7 +4540,7 @@ class Admin:
     
     def get_admin_index_status(self, sync: Optional[str] = None) -> operations.GetAdminIndexStatusResponse:
         r"""Retrieve status of the admin index"""
-        hook_ctx = HookContext(operation_id='getAdminIndexStatus', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminIndexStatus', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAdminIndexStatusRequest(
             sync=sync,
         )
@@ -4292,7 +4553,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4330,7 +4594,7 @@ class Admin:
     
     def get_admin_test_index(self, fq: Optional[List[str]] = None, key: Optional[str] = None, q: Optional[str] = None) -> operations.GetAdminTestIndexResponse:
         r"""Obtain specific parameters from the Admin Test Index"""
-        hook_ctx = HookContext(operation_id='getAdminTestIndex', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminTestIndex', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAdminTestIndexRequest(
             fq=fq,
             key=key,
@@ -4345,7 +4609,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4383,7 +4650,7 @@ class Admin:
     
     def delete_admin_index_timestamps(self) -> operations.DeleteAdminIndexTimestampsResponse:
         r"""Delete timestamps from the admin index"""
-        hook_ctx = HookContext(operation_id='deleteAdminIndexTimestamps', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteAdminIndexTimestamps', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/index/timestamps'
@@ -4391,7 +4658,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4429,7 +4699,7 @@ class Admin:
     
     def delete_index_timestamp(self, dv_object_id: int) -> operations.DeleteIndexTimestampResponse:
         r"""Delete index timestamp by dvObjectId"""
-        hook_ctx = HookContext(operation_id='deleteIndexTimestamp', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteIndexTimestamp', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteIndexTimestampRequest(
             dv_object_id=dv_object_id,
         )
@@ -4441,7 +4711,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4479,7 +4752,7 @@ class Admin:
     
     def get_admin_index_type_by_id(self, id: int, type_: str) -> operations.GetAdminIndexTypeByIDResponse:
         r"""Retrieves specific type and ID details in admin index"""
-        hook_ctx = HookContext(operation_id='getAdminIndexTypeById', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminIndexTypeById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAdminIndexTypeByIDRequest(
             id=id,
             type=type_,
@@ -4492,7 +4765,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4530,7 +4806,7 @@ class Admin:
     
     def get_orcid_status(self) -> operations.GetOrcidStatusResponse:
         r"""Retrieve ORCID status for a specific admin"""
-        hook_ctx = HookContext(operation_id='getOrcidStatus', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getOrcidStatus', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/isOrcid'
@@ -4538,7 +4814,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4576,7 +4855,7 @@ class Admin:
     
     def list_users(self, items_per_page: Optional[int] = None, search_term: Optional[str] = None, selected_page: Optional[int] = None, sort_key: Optional[str] = None) -> operations.ListUsersResponse:
         r"""Retrieve a list of all users"""
-        hook_ctx = HookContext(operation_id='listUsers', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='listUsers', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ListUsersRequest(
             items_per_page=items_per_page,
             search_term=search_term,
@@ -4592,7 +4871,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4630,7 +4912,7 @@ class Admin:
     
     def add_metrics_from_report(self, report_on_disk: Optional[str] = None) -> operations.AddMetricsFromReportResponse:
         r"""Add usage metrics from a SUSHI report"""
-        hook_ctx = HookContext(operation_id='addMetricsFromReport', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='addMetricsFromReport', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AddMetricsFromReportRequest(
             report_on_disk=report_on_disk,
         )
@@ -4643,7 +4925,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4681,7 +4966,7 @@ class Admin:
     
     def admin_send_to_hub(self) -> operations.AdminSendToHubResponse:
         r"""Send data count to the admin hub."""
-        hook_ctx = HookContext(operation_id='adminSendToHub', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='adminSendToHub', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/makeDataCount/sendToHub'
@@ -4689,7 +4974,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4727,7 +5015,7 @@ class Admin:
     
     def add_usage_metrics_from_sushi_repo(self, id: str, report_on_disk: Optional[str] = None) -> operations.AddUsageMetricsFromSushiRepoResponse:
         r"""Add usage metrics for a specific Dataverse file from a SUSHI Report"""
-        hook_ctx = HookContext(operation_id='addUsageMetricsFromSushiRepo', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='addUsageMetricsFromSushiRepo', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AddUsageMetricsFromSushiRepoRequest(
             id=id,
             report_on_disk=report_on_disk,
@@ -4741,7 +5029,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4779,7 +5070,7 @@ class Admin:
     
     def update_dataset_citations(self, id: str) -> operations.UpdateDatasetCitationsResponse:
         r"""Updates the citation count for a specified dataset"""
-        hook_ctx = HookContext(operation_id='updateDatasetCitations', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateDatasetCitations', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateDatasetCitationsRequest(
             id=id,
         )
@@ -4791,7 +5082,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4829,7 +5123,7 @@ class Admin:
     
     def get_export_timestamps(self) -> operations.GetExportTimestampsResponse:
         r"""Retrieve the export timestamps"""
-        hook_ctx = HookContext(operation_id='getExportTimestamps', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getExportTimestamps', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/metadata/clearExportTimestamps'
@@ -4837,7 +5131,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4875,7 +5172,7 @@ class Admin:
     
     def get_metadata_export_all(self) -> operations.GetMetadataExportAllResponse:
         r"""Fetches all metadata for export by admin"""
-        hook_ctx = HookContext(operation_id='getMetadataExportAll', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMetadataExportAll', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/metadata/exportAll'
@@ -4883,7 +5180,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4921,7 +5221,7 @@ class Admin:
     
     def admin_metadata_export_oai_spec(self, specname: str) -> operations.AdminMetadataExportOAISpecResponse:
         r"""Update the OAI export specification using provided 'specname'"""
-        hook_ctx = HookContext(operation_id='adminMetadataExportOAISpec', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='adminMetadataExportOAISpec', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AdminMetadataExportOAISpecRequest(
             specname=specname,
         )
@@ -4933,7 +5233,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -4971,7 +5274,7 @@ class Admin:
     
     def re_export_all_metadata(self) -> operations.ReExportAllMetadataResponse:
         r"""Retrieves and exports all metadata"""
-        hook_ctx = HookContext(operation_id='reExportAllMetadata', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='reExportAllMetadata', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/metadata/reExportAll'
@@ -4979,7 +5282,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5017,7 +5323,7 @@ class Admin:
     
     def get_metadata_re_export(self, id: str) -> operations.GetMetadataReExportResponse:
         r"""Retrieves and re-exports the specific metadata for the dataset using dataset ID"""
-        hook_ctx = HookContext(operation_id='getMetadataReExport', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMetadataReExport', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMetadataReExportRequest(
             id=id,
         )
@@ -5029,7 +5335,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5067,7 +5376,7 @@ class Admin:
     
     def get_admin_permissions(self, dvo: str) -> operations.GetAdminPermissionsResponse:
         r"""Retrieve specific admin permission details"""
-        hook_ctx = HookContext(operation_id='getAdminPermissions', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminPermissions', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAdminPermissionsRequest(
             dvo=dvo,
         )
@@ -5079,7 +5388,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5117,7 +5429,7 @@ class Admin:
     
     def publish_dataverse_as_creator(self, id: int) -> operations.PublishDataverseAsCreatorResponse:
         r"""Publish Dataverse as creator using the given ID"""
-        hook_ctx = HookContext(operation_id='publishDataverseAsCreator', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='publishDataverseAsCreator', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PublishDataverseAsCreatorRequest(
             id=id,
         )
@@ -5129,7 +5441,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5167,7 +5482,7 @@ class Admin:
     
     def get_register_data_file_all(self) -> operations.GetRegisterDataFileAllResponse:
         r"""Retrieve all registered data files from the admin."""
-        hook_ctx = HookContext(operation_id='getRegisterDataFileAll', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getRegisterDataFileAll', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/registerDataFileAll'
@@ -5175,7 +5490,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5213,7 +5531,7 @@ class Admin:
     
     def get_register_data_files_by_alias(self, alias: str, sleep: Optional[int] = None) -> operations.GetRegisterDataFilesByAliasResponse:
         r"""Retrieve data file registration details for a given alias"""
-        hook_ctx = HookContext(operation_id='getRegisterDataFilesByAlias', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getRegisterDataFilesByAlias', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetRegisterDataFilesByAliasRequest(
             alias=alias,
             sleep=sleep,
@@ -5227,7 +5545,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5265,7 +5586,7 @@ class Admin:
     
     def post_admin_signed_url(self, request: Optional[operations.PostAdminSignedURLRequestBody]) -> operations.PostAdminSignedURLResponse:
         r"""Admin sends a request to receive a signed URL."""
-        hook_ctx = HookContext(operation_id='postAdminSignedUrl', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postAdminSignedUrl', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/requestSignedUrl'
@@ -5276,7 +5597,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5314,7 +5638,7 @@ class Admin:
     
     def get_admin_roles(self) -> operations.GetAdminRolesResponse:
         r"""Retrieve a list of all admin roles"""
-        hook_ctx = HookContext(operation_id='getAdminRoles', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminRoles', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/roles'
@@ -5322,7 +5646,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5360,7 +5687,7 @@ class Admin:
     
     def create_admin_role(self) -> operations.CreateAdminRoleResponse:
         r"""Create a new admin role"""
-        hook_ctx = HookContext(operation_id='createAdminRole', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createAdminRole', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/roles'
@@ -5368,7 +5695,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5406,7 +5736,7 @@ class Admin:
     
     def delete_admin_role(self, id: str) -> operations.DeleteAdminRoleResponse:
         r"""Delete a specific admin role"""
-        hook_ctx = HookContext(operation_id='deleteAdminRole', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteAdminRole', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteAdminRoleRequest(
             id=id,
         )
@@ -5418,7 +5748,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5456,7 +5789,7 @@ class Admin:
     
     def get_saved_searches(self) -> operations.GetSavedSearchesResponse:
         r"""Retrieves all saved searches in the system."""
-        hook_ctx = HookContext(operation_id='getSavedSearches', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getSavedSearches', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/savedsearches'
@@ -5464,7 +5797,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5502,7 +5838,7 @@ class Admin:
     
     def add_saved_search(self) -> operations.AddSavedSearchResponse:
         r"""Adds a new saved search to the system."""
-        hook_ctx = HookContext(operation_id='addSavedSearch', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='addSavedSearch', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/savedsearches'
@@ -5510,7 +5846,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5548,7 +5887,7 @@ class Admin:
     
     def get_saved_searches_list(self) -> operations.GetSavedSearchesListResponse:
         r"""Retrieve a list of all saved searches by the administrator"""
-        hook_ctx = HookContext(operation_id='getSavedSearchesList', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getSavedSearchesList', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/savedsearches/list'
@@ -5556,7 +5895,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5594,7 +5936,7 @@ class Admin:
     
     def update_all_saved_search_links(self, debug: Optional[bool] = None) -> operations.UpdateAllSavedSearchLinksResponse:
         r"""Updates all saved search links"""
-        hook_ctx = HookContext(operation_id='updateAllSavedSearchLinks', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateAllSavedSearchLinks', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateAllSavedSearchLinksRequest(
             debug=debug,
         )
@@ -5607,7 +5949,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5645,7 +5990,7 @@ class Admin:
     
     def make_links_for_saved_search(self, id: int, debug: Optional[bool] = None) -> operations.MakeLinksForSavedSearchResponse:
         r"""Updates the link for a specific saved search by ID"""
-        hook_ctx = HookContext(operation_id='makeLinksForSavedSearch', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='makeLinksForSavedSearch', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.MakeLinksForSavedSearchRequest(
             id=id,
             debug=debug,
@@ -5659,7 +6004,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5697,7 +6045,7 @@ class Admin:
     
     def get_saved_search(self, id: int) -> operations.GetSavedSearchResponse:
         r"""Retrieves a saved search by ID"""
-        hook_ctx = HookContext(operation_id='getSavedSearch', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getSavedSearch', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetSavedSearchRequest(
             id=id,
         )
@@ -5709,7 +6057,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5747,7 +6098,7 @@ class Admin:
     
     def delete_saved_search(self, id: int) -> operations.DeleteSavedSearchResponse:
         r"""Deletes a saved search by ID"""
-        hook_ctx = HookContext(operation_id='deleteSavedSearch', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteSavedSearch', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteSavedSearchRequest(
             id=id,
         )
@@ -5759,7 +6110,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5797,7 +6151,7 @@ class Admin:
     
     def get_admin_settings(self) -> operations.GetAdminSettingsResponse:
         r"""Retrieve administrator settings"""
-        hook_ctx = HookContext(operation_id='getAdminSettings', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminSettings', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/settings'
@@ -5805,7 +6159,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5843,7 +6200,7 @@ class Admin:
     
     def get_admin_setting(self, name: str) -> operations.GetAdminSettingResponse:
         r"""Retrieve a specified admin setting"""
-        hook_ctx = HookContext(operation_id='getAdminSetting', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminSetting', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAdminSettingRequest(
             name=name,
         )
@@ -5855,7 +6212,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5893,7 +6253,7 @@ class Admin:
     
     def update_admin_setting(self, name: str) -> operations.UpdateAdminSettingResponse:
         r"""Update a specified admin setting"""
-        hook_ctx = HookContext(operation_id='updateAdminSetting', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateAdminSetting', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateAdminSettingRequest(
             name=name,
         )
@@ -5905,7 +6265,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5943,7 +6306,7 @@ class Admin:
     
     def delete_admin_setting(self, name: str) -> operations.DeleteAdminSettingResponse:
         r"""Delete a specified admin setting"""
-        hook_ctx = HookContext(operation_id='deleteAdminSetting', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteAdminSetting', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteAdminSettingRequest(
             name=name,
         )
@@ -5955,7 +6318,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -5993,7 +6359,7 @@ class Admin:
     
     def update_admin_settings_lang(self, lang: str, name: str) -> operations.UpdateAdminSettingsLangResponse:
         r"""Update a specific Admin setting for a given language"""
-        hook_ctx = HookContext(operation_id='updateAdminSettingsLang', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateAdminSettingsLang', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateAdminSettingsLangRequest(
             lang=lang,
             name=name,
@@ -6006,7 +6372,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6044,7 +6413,7 @@ class Admin:
     
     def delete_admin_settings_lang(self, lang: str, name: str) -> operations.DeleteAdminSettingsLangResponse:
         r"""Delete a specific Admin setting for a given language"""
-        hook_ctx = HookContext(operation_id='deleteAdminSettingsLang', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteAdminSettingsLang', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteAdminSettingsLangRequest(
             lang=lang,
             name=name,
@@ -6057,7 +6426,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6095,7 +6467,7 @@ class Admin:
     
     def generate_sitemap(self) -> operations.GenerateSitemapResponse:
         r"""Generate a new sitemap for the application"""
-        hook_ctx = HookContext(operation_id='generateSitemap', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='generateSitemap', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/sitemap'
@@ -6103,7 +6475,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6141,7 +6516,7 @@ class Admin:
     
     def get_storage_sites(self) -> operations.GetStorageSitesResponse:
         r"""Fetches all storage sites"""
-        hook_ctx = HookContext(operation_id='getStorageSites', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getStorageSites', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/storageSites'
@@ -6149,7 +6524,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6187,7 +6565,7 @@ class Admin:
     
     def create_storage_site(self) -> operations.CreateStorageSiteResponse:
         r"""Creates a new storage site"""
-        hook_ctx = HookContext(operation_id='createStorageSite', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createStorageSite', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/storageSites'
@@ -6195,7 +6573,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6233,7 +6614,7 @@ class Admin:
     
     def fetch_storage_site(self, id: int) -> operations.FetchStorageSiteResponse:
         r"""Retrieves details of a specific storage site by its unique identifier"""
-        hook_ctx = HookContext(operation_id='fetchStorageSite', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='fetchStorageSite', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.FetchStorageSiteRequest(
             id=id,
         )
@@ -6245,7 +6626,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6283,7 +6667,7 @@ class Admin:
     
     def delete_storage_site(self, id: int) -> operations.DeleteStorageSiteResponse:
         r"""Deletes a specific storage site by its unique identifier"""
-        hook_ctx = HookContext(operation_id='deleteStorageSite', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteStorageSite', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteStorageSiteRequest(
             id=id,
         )
@@ -6295,7 +6679,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6333,7 +6720,7 @@ class Admin:
     
     def update_primary_storage(self, id: int) -> operations.UpdatePrimaryStorageResponse:
         r"""Update the primary storage of a storage site by ID"""
-        hook_ctx = HookContext(operation_id='updatePrimaryStorage', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updatePrimaryStorage', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdatePrimaryStorageRequest(
             id=id,
         )
@@ -6345,7 +6732,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6383,7 +6773,7 @@ class Admin:
     
     def submit_dataset_version_to_archive(self, id: str, version: str) -> operations.SubmitDatasetVersionToArchiveResponse:
         r"""Submit a specific dataset version to the archive by using provided dataset ID and version number"""
-        hook_ctx = HookContext(operation_id='submitDatasetVersionToArchive', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='submitDatasetVersionToArchive', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.SubmitDatasetVersionToArchiveRequest(
             id=id,
             version=version,
@@ -6396,7 +6786,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6434,7 +6827,7 @@ class Admin:
     
     def admin_create_super_user(self, identifier: str) -> operations.AdminCreateSuperUserResponse:
         r"""Creates a new superuser with the provided identifier"""
-        hook_ctx = HookContext(operation_id='admin_createSuperUser', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='admin_createSuperUser', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AdminCreateSuperUserRequest(
             identifier=identifier,
         )
@@ -6446,7 +6839,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6484,7 +6880,7 @@ class Admin:
     
     def delete_admin_template(self, id: int) -> operations.DeleteAdminTemplateResponse:
         r"""Delete an admin template by ID"""
-        hook_ctx = HookContext(operation_id='deleteAdminTemplate', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteAdminTemplate', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteAdminTemplateRequest(
             id=id,
         )
@@ -6496,7 +6892,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6534,7 +6933,7 @@ class Admin:
     
     def get_admin_templates(self) -> operations.GetAdminTemplatesResponse:
         r"""Retrieve all admin templates"""
-        hook_ctx = HookContext(operation_id='getAdminTemplates', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminTemplates', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/templates'
@@ -6542,7 +6941,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6580,7 +6982,7 @@ class Admin:
     
     def get_admin_template(self, alias: str) -> operations.GetAdminTemplateResponse:
         r"""Retrieve a specific admin template using its alias."""
-        hook_ctx = HookContext(operation_id='getAdminTemplate', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminTemplate', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAdminTemplateRequest(
             alias=alias,
         )
@@ -6592,7 +6994,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6630,7 +7035,7 @@ class Admin:
     
     def get_external_tools_1(self, id: str, type_: Optional[str] = None) -> operations.GetExternalTools1Response:
         r"""Gets an external tool associated with a specific dataset identified by its id"""
-        hook_ctx = HookContext(operation_id='getExternalTools_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getExternalTools_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetExternalTools1Request(
             id=id,
             type=type_,
@@ -6644,7 +7049,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6682,7 +7090,7 @@ class Admin:
     
     def get_external_tool_by_id(self, id: str, tool_id: str, type_: Optional[str] = None) -> operations.GetExternalToolByIDResponse:
         r"""Retrieve the details of a specific external tool by its ID for a given file"""
-        hook_ctx = HookContext(operation_id='getExternalToolById', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getExternalToolById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetExternalToolByIDRequest(
             id=id,
             tool_id=tool_id,
@@ -6697,7 +7105,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6735,7 +7146,7 @@ class Admin:
     
     def get_external_tools_1_1(self, id: str, type_: Optional[str] = None) -> operations.GetExternalTools11Response:
         r"""Retrieve the external tools of a specific test file."""
-        hook_ctx = HookContext(operation_id='getExternalTools_1_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getExternalTools_1_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetExternalTools11Request(
             id=id,
             type=type_,
@@ -6749,7 +7160,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6787,7 +7201,7 @@ class Admin:
     
     def get_hash_values(self, alg: str, num: Optional[int] = None) -> operations.GetHashValuesResponse:
         r"""Retrieve hash values based on specified algorithm"""
-        hook_ctx = HookContext(operation_id='getHashValues', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getHashValues', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetHashValuesRequest(
             alg=alg,
             num=num,
@@ -6801,7 +7215,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6839,7 +7256,7 @@ class Admin:
     
     def get_validate_dataset_files(self, id: str) -> operations.GetValidateDatasetFilesResponse:
         r"""Retrieve and validate specified dataset files"""
-        hook_ctx = HookContext(operation_id='get_validate_dataset_files', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='get_validate_dataset_files', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetValidateDatasetFilesRequest(
             id=id,
         )
@@ -6851,7 +7268,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6889,7 +7309,7 @@ class Admin:
     
     def validate_dataset(self, id: str, variables: Optional[bool] = None) -> operations.ValidateDatasetResponse:
         r"""Validate a dataset with a specified ID"""
-        hook_ctx = HookContext(operation_id='validateDataset', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='validateDataset', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ValidateDatasetRequest(
             id=id,
             variables=variables,
@@ -6903,7 +7323,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6941,7 +7364,7 @@ class Admin:
     
     def admin_validate_datasets(self, variables: Optional[bool] = None) -> operations.AdminValidateDatasetsResponse:
         r"""Validate datasets in the system"""
-        hook_ctx = HookContext(operation_id='adminValidateDatasets', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='adminValidateDatasets', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AdminValidateDatasetsRequest(
             variables=variables,
         )
@@ -6954,7 +7377,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -6992,7 +7418,7 @@ class Admin:
     
     def validate_data_file_hash(self, file_id: str) -> operations.ValidateDataFileHashResponse:
         r"""Validate hash value of the specified data file"""
-        hook_ctx = HookContext(operation_id='ValidateDataFileHash', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='ValidateDataFileHash', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ValidateDataFileHashRequest(
             file_id=file_id,
         )
@@ -7004,7 +7430,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -7042,7 +7471,7 @@ class Admin:
     
     def validate_admin_password(self) -> operations.ValidateAdminPasswordResponse:
         r"""Validates the password of an admin user"""
-        hook_ctx = HookContext(operation_id='validateAdminPassword', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='validateAdminPassword', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/validatePassword'
@@ -7050,7 +7479,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -7088,7 +7520,7 @@ class Admin:
     
     def get_admin_workflows(self) -> operations.GetAdminWorkflowsResponse:
         r"""Retrieve all workflows associated with the admin"""
-        hook_ctx = HookContext(operation_id='getAdminWorkflows', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminWorkflows', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/workflows'
@@ -7096,7 +7528,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -7134,7 +7569,7 @@ class Admin:
     
     def create_admin_workflow(self) -> operations.CreateAdminWorkflowResponse:
         r"""Create a new workflow for the admin"""
-        hook_ctx = HookContext(operation_id='createAdminWorkflow', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createAdminWorkflow', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/workflows'
@@ -7142,7 +7577,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -7180,7 +7618,7 @@ class Admin:
     
     def get_default_workflow(self) -> operations.GetDefaultWorkflowResponse:
         r"""Fetch default workflow configured for admin"""
-        hook_ctx = HookContext(operation_id='getDefaultWorkflow', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDefaultWorkflow', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/workflows/default'
@@ -7188,7 +7626,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -7226,7 +7667,7 @@ class Admin:
     
     def get_trigger_type(self, trigger_type: str) -> operations.GetTriggerTypeResponse:
         r"""Retrieve a specific trigger type from workflows"""
-        hook_ctx = HookContext(operation_id='getTriggerType', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getTriggerType', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetTriggerTypeRequest(
             trigger_type=trigger_type,
         )
@@ -7238,7 +7679,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -7276,7 +7720,7 @@ class Admin:
     
     def update_trigger_type(self, trigger_type: str) -> operations.UpdateTriggerTypeResponse:
         r"""Update a specific trigger type in workflows"""
-        hook_ctx = HookContext(operation_id='updateTriggerType', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateTriggerType', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateTriggerTypeRequest(
             trigger_type=trigger_type,
         )
@@ -7288,7 +7732,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -7326,7 +7773,7 @@ class Admin:
     
     def delete_trigger_type(self, trigger_type: str) -> operations.DeleteTriggerTypeResponse:
         r"""Delete a specific trigger type from workflows"""
-        hook_ctx = HookContext(operation_id='deleteTriggerType', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteTriggerType', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteTriggerTypeRequest(
             trigger_type=trigger_type,
         )
@@ -7338,7 +7785,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -7376,7 +7826,7 @@ class Admin:
     
     def get_ip_whitelist(self) -> operations.GetIPWhitelistResponse:
         r"""Retrieve current IP Whitelist for admin workflows"""
-        hook_ctx = HookContext(operation_id='getIPWhitelist', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getIPWhitelist', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/workflows/ip-whitelist'
@@ -7384,7 +7834,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -7422,7 +7875,7 @@ class Admin:
     
     def update_ip_whitelist(self) -> operations.UpdateIPWhitelistResponse:
         r"""Update the IP Whitelist for admin workflows"""
-        hook_ctx = HookContext(operation_id='updateIPWhitelist', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateIPWhitelist', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/workflows/ip-whitelist'
@@ -7430,7 +7883,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -7468,7 +7924,7 @@ class Admin:
     
     def delete_ip_whitelist(self) -> operations.DeleteIPWhitelistResponse:
         r"""Remove the IP Whitelist for admin workflows"""
-        hook_ctx = HookContext(operation_id='deleteIPWhitelist', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteIPWhitelist', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/admin/workflows/ip-whitelist'
@@ -7476,7 +7932,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -7514,7 +7973,7 @@ class Admin:
     
     def get_workflow_by_identifier(self, identifier: str) -> operations.GetWorkflowByIdentifierResponse:
         r"""Retrieve a specific workflow using its identifier"""
-        hook_ctx = HookContext(operation_id='getWorkflowByIdentifier', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getWorkflowByIdentifier', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetWorkflowByIdentifierRequest(
             identifier=identifier,
         )
@@ -7526,7 +7985,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -7564,7 +8026,7 @@ class Admin:
     
     def get_admin_data_file(self, id: str) -> operations.GetAdminDataFileResponse:
         r"""Retrieve data file details registered by a specific admin"""
-        hook_ctx = HookContext(operation_id='getAdminDataFile', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAdminDataFile', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAdminDataFileRequest(
             id=id,
         )
@@ -7576,7 +8038,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -7614,7 +8079,7 @@ class Admin:
     
     def admin_reregister_hdl_to_pid(self, id: str) -> operations.AdminReregisterHDLToPIDResponse:
         r"""Admin reruns the HDL to PID registration for a specific admin ID."""
-        hook_ctx = HookContext(operation_id='adminReregisterHDLToPID', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='adminReregisterHDLToPID', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AdminReregisterHDLToPIDRequest(
             id=id,
         )
@@ -7626,7 +8091,10 @@ class Admin:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

@@ -37,7 +37,9 @@ Retrieve the fixity algorithm of a file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.get_fixity_algorithm()
@@ -66,7 +68,9 @@ Retrieve a specific file by ID.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.get_file(id='<value>')
@@ -101,7 +105,9 @@ Delete a specific file by ID.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.delete_file(id='<value>')
@@ -136,7 +142,9 @@ Retrieve the data tables of a given file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.get_file_data_tables(id='<value>')
@@ -171,7 +179,9 @@ Retrieve the download count of a file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.get_download_count(id='<value>')
@@ -206,7 +216,9 @@ Retrieve a file in draft mode by its ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.get_file_draft(id='<value>')
@@ -241,7 +253,9 @@ Extract Ncml information of a file based on the provided id
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.extract_ncml_by_id(id='<value>')
@@ -276,7 +290,9 @@ Check if specified file has been deleted
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.check_file_deletion_status(id='<value>')
@@ -311,7 +327,9 @@ Retrieves metadata for a specific file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.get_file_metadata(id='<value>')
@@ -346,7 +364,9 @@ Updates metadata for a specific file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.update_file_metadata(id='<value>')
@@ -381,7 +401,9 @@ Adds new metadata categories for a specific file.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.post_file_metadata_categories(id='<value>')
@@ -416,7 +438,9 @@ Retrieve the metadata of a draft file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.get_draft_meta_data(id='<value>')
@@ -451,7 +475,9 @@ Add tabular tags to a file metadata
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.post_tabular_tags(id='<value>')
@@ -486,7 +512,9 @@ Retrieves tool parameters for a specific file metadata ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.get_file_metadata_tool_params(fmid=27570, id='<value>', tid=343127, locale='<value>')
@@ -524,7 +552,9 @@ Retrieves the freeform provenance data for a specific file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.get_file_prov_freeform(id='<value>')
@@ -559,7 +589,9 @@ Posts freeform provenance data for a specific file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.post_file_prov_freeform(id='<value>', request_body='<value>')
@@ -595,7 +627,9 @@ Retrieving the PROV JSON of a specific file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.get_file_prov_json(id='<value>')
@@ -630,7 +664,9 @@ Submit a new PROV JSON for a specific file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.post_file_prov_json(id='<value>', entity_name='<value>', request_body='<value>')
@@ -667,7 +703,9 @@ Delete the PROV JSON of a specific file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.delete_file_prov_json(id='<value>')
@@ -702,7 +740,9 @@ Invoke redetection process for the specified file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.redetect_file(id='<value>', dry_run=False)
@@ -738,7 +778,9 @@ Reingest a file using its ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.reingest_file(id='<value>')
@@ -774,7 +816,9 @@ Replace an existing file with a new version
 import pydataverse
 from pydataverse.models import operations
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.replace_file(id='<value>', request_body=operations.ReplaceFileRequestBody())
@@ -810,7 +854,9 @@ Restrict access to a specific file
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.restrict_file_access(id='<value>')
@@ -845,7 +891,9 @@ Uningest a file with the specified ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.files.post_file_uningest(id='<value>')

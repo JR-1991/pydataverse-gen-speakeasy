@@ -16,7 +16,7 @@ class Search:
     
     def search_query(self, request: operations.SearchQueryRequest) -> operations.SearchQueryResponse:
         r"""Executes a search query with various parameters and returns the matching records."""
-        hook_ctx = HookContext(operation_id='searchQuery', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='searchQuery', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/search'
@@ -25,7 +25,10 @@ class Search:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
