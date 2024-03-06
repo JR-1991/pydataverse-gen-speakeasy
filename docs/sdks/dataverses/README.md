@@ -133,7 +133,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.create_dataverse_1(identifier='<value>', dataverse_request=components.DataverseRequest())
+res = s.dataverses.create_dataverse_1(identifier='<value>', dataverse_request=components.DataverseRequest(
+    name='<value>',
+    alias='<value>',
+    affiliation='<value>',
+    description='User-friendly stable benchmark',
+    dataverse_type='<value>',
+))
 
 if res.dataverse_response is not None:
     # handle response

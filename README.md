@@ -616,7 +616,13 @@ s = pydataverse.PyDataverse(
 
 res = None
 try:
-    res = s.dataverses.create_dataverse_1(identifier='<value>', dataverse_request=components.DataverseRequest())
+    res = s.dataverses.create_dataverse_1(identifier='<value>', dataverse_request=components.DataverseRequest(
+    name='<value>',
+    alias='<value>',
+    affiliation='<value>',
+    description='User-friendly stable benchmark',
+    dataverse_type='<value>',
+))
 except errors.ErrorResponse as e:
     # handle exception
     raise(e)

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: faa73a4f-3f6c-47a0-809e-515af47dce1e
 management:
-  docChecksum: c9e88375743a655c6d3eaa43b6ab4831
+  docChecksum: 804482d470c512b1fb80b46abf333521
   docVersion: "1.0"
   speakeasyVersion: 1.201.2
   generationVersion: 2.277.0
-  releaseVersion: 0.5.0
-  configChecksum: 601d81c1a52c92f01bde6e99a834e708
+  releaseVersion: 0.5.1
+  configChecksum: 8f64485a50b6a13dc5d688401098980a
   repoURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
   repoSubDirectory: .
   installationURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
