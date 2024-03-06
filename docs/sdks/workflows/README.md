@@ -14,7 +14,9 @@ Initiate a workflow using the given invocation id
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.workflows.start_workflow(invocation_id='<value>')

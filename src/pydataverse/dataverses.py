@@ -4,7 +4,7 @@ import requests as requests_http
 from .sdkconfiguration import SDKConfiguration
 from pydataverse import utils
 from pydataverse._hooks import HookContext
-from pydataverse.models import errors, operations
+from pydataverse.models import components, errors, operations
 from typing import List, Optional
 
 class Dataverses:
@@ -17,7 +17,7 @@ class Dataverses:
     
     def create_dataverse(self) -> operations.CreateDataverseResponse:
         r"""Create a new Dataverse"""
-        hook_ctx = HookContext(operation_id='createDataverse', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createDataverse', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/dataverses'
@@ -25,7 +25,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -63,7 +66,7 @@ class Dataverses:
     
     def get_dataverse(self, identifier: str) -> operations.GetDataverseResponse:
         r"""Retrieves a specified dataverse with the given identifier"""
-        hook_ctx = HookContext(operation_id='getDataverse', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDataverse', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDataverseRequest(
             identifier=identifier,
         )
@@ -75,7 +78,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -111,34 +117,43 @@ class Dataverses:
 
     
     
-    def create_dataverse_1(self, identifier: str) -> operations.CreateDataverse1Response:
+    def create_dataverse_1(self, identifier: str, dataverse_request: components.DataverseRequest) -> operations.CreateDataverse1Response:
         r"""Creates a new dataverse with the given identifier"""
-        hook_ctx = HookContext(operation_id='createDataverse_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createDataverse_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CreateDataverse1Request(
             identifier=identifier,
+            dataverse_request=dataverse_request,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.CreateDataverse1Request, base_url, '/api/v1/dataverses/{identifier}', request)
         headers = {}
-        headers['Accept'] = '*/*'
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateDataverse1Request, "dataverse_request", False, False, 'json')
+        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        if data is None and form is None:
+            raise Exception('request body is required')
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('POST', url, headers=headers).prepare(),
+                requests_http.Request('POST', url, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
             _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
             raise e
 
-        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
+        if utils.match_status_codes(['400','4XX','5XX'], http_res.status_code):
             http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
             if e:
                 raise e
@@ -152,8 +167,19 @@ class Dataverses:
         
         res = operations.CreateDataverse1Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 200:
-            pass
+        if http_res.status_code == 201:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[components.DataverseResponse])
+                res.dataverse_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code == 400:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, errors.ErrorResponse)
+                out.raw_response = http_res
+                raise out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
@@ -163,7 +189,7 @@ class Dataverses:
     
     def delete_dataverse(self, identifier: str) -> operations.DeleteDataverseResponse:
         r"""Deletes a specified dataverse with the given identifier"""
-        hook_ctx = HookContext(operation_id='deleteDataverse', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteDataverse', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteDataverseRequest(
             identifier=identifier,
         )
@@ -175,7 +201,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -213,7 +242,7 @@ class Dataverses:
     
     def publish_dataverse_by_id(self, identifier: str) -> operations.PublishDataverseByIDResponse:
         r"""Publishes the identified Dataverse"""
-        hook_ctx = HookContext(operation_id='publishDataverseById', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='publishDataverseById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PublishDataverseByIDRequest(
             identifier=identifier,
         )
@@ -225,7 +254,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -263,7 +295,7 @@ class Dataverses:
     
     def get_dataverse_assignments(self, identifier: str) -> operations.GetDataverseAssignmentsResponse:
         r"""Retrieves assignments of specified Dataverse"""
-        hook_ctx = HookContext(operation_id='getDataverseAssignments', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDataverseAssignments', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDataverseAssignmentsRequest(
             identifier=identifier,
         )
@@ -275,7 +307,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -313,7 +348,7 @@ class Dataverses:
     
     def post_dataverse_assignments(self, identifier: str, key: Optional[str] = None) -> operations.PostDataverseAssignmentsResponse:
         r"""Assigns new user or role to specified Dataverse"""
-        hook_ctx = HookContext(operation_id='postDataverseAssignments', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postDataverseAssignments', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostDataverseAssignmentsRequest(
             identifier=identifier,
             key=key,
@@ -327,7 +362,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -365,7 +403,7 @@ class Dataverses:
     
     def delete_dataverse_assignment(self, id: int, identifier: str) -> operations.DeleteDataverseAssignmentResponse:
         r"""Delete a specific assignment from a specific dataverse"""
-        hook_ctx = HookContext(operation_id='deleteDataverseAssignment', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteDataverseAssignment', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteDataverseAssignmentRequest(
             id=id,
             identifier=identifier,
@@ -378,7 +416,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -416,7 +457,7 @@ class Dataverses:
     
     def update_dataverse_attribute(self, attribute: str, identifier: str, value: Optional[str] = None) -> operations.UpdateDataverseAttributeResponse:
         r"""Update a specific attribute of a Dataverse identified by the given identifier"""
-        hook_ctx = HookContext(operation_id='updateDataverseAttribute', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateDataverseAttribute', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateDataverseAttributeRequest(
             attribute=attribute,
             identifier=identifier,
@@ -431,7 +472,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -469,7 +513,7 @@ class Dataverses:
     
     def get_dataverse_contents(self, identifier: str) -> operations.GetDataverseContentsResponse:
         r"""Retrieve contents of the specified Dataverse"""
-        hook_ctx = HookContext(operation_id='getDataverseContents', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDataverseContents', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDataverseContentsRequest(
             identifier=identifier,
         )
@@ -481,7 +525,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -519,7 +566,7 @@ class Dataverses:
     
     def get_dataset_schema(self, identifier: str) -> operations.GetDatasetSchemaResponse:
         r"""Retrieve the schema of a specific dataset in the dataverse identified by the given identifier"""
-        hook_ctx = HookContext(operation_id='getDatasetSchema', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetSchema', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetSchemaRequest(
             identifier=identifier,
         )
@@ -531,7 +578,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -569,7 +619,7 @@ class Dataverses:
     
     def create_dataset_in_dataverse(self, identifier: str, do_not_validate: Optional[str] = None, request_body: Optional[str] = None) -> operations.CreateDatasetInDataverseResponse:
         r"""Create a new dataset in the specified dataverse"""
-        hook_ctx = HookContext(operation_id='createDatasetInDataverse', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createDatasetInDataverse', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CreateDatasetInDataverseRequest(
             identifier=identifier,
             do_not_validate=do_not_validate,
@@ -587,7 +637,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -625,7 +678,7 @@ class Dataverses:
     
     def import_dataset(self, identifier: str, pid: Optional[str] = None, release: Optional[str] = None) -> operations.ImportDatasetResponse:
         r"""Imports a dataset into a given Dataverse identifier"""
-        hook_ctx = HookContext(operation_id='importDataset', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='importDataset', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ImportDatasetRequest(
             identifier=identifier,
             pid=pid,
@@ -640,7 +693,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -678,7 +734,7 @@ class Dataverses:
     
     def import_ddi_to_dataset(self, identifier: str, pid: Optional[str] = None, release: Optional[str] = None) -> operations.ImportDdiToDatasetResponse:
         r"""Imports DDI metadata to a dataset in the specified dataverse."""
-        hook_ctx = HookContext(operation_id='importDdiToDataset', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='importDdiToDataset', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ImportDdiToDatasetRequest(
             identifier=identifier,
             pid=pid,
@@ -693,7 +749,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -731,7 +790,7 @@ class Dataverses:
     
     def start_migration(self, identifier: str, request_body: Optional[str] = None) -> operations.StartMigrationResponse:
         r"""Begins the migration process of datasets in a specific Dataverse identified by the provided identifier"""
-        hook_ctx = HookContext(operation_id='startMigration', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='startMigration', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.StartMigrationRequest(
             identifier=identifier,
             request_body=request_body,
@@ -747,7 +806,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -785,7 +847,7 @@ class Dataverses:
     
     def update_default_contributor_role(self, identifier: str, role_alias: str) -> operations.UpdateDefaultContributorRoleResponse:
         r"""Update the default contributor role of a specific dataverse"""
-        hook_ctx = HookContext(operation_id='updateDefaultContributorRole', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateDefaultContributorRole', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateDefaultContributorRoleRequest(
             identifier=identifier,
             role_alias=role_alias,
@@ -798,7 +860,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -836,7 +901,7 @@ class Dataverses:
     
     def get_facets(self, identifier: str) -> operations.GetFacetsResponse:
         r"""Retrieves the facets of the specified dataverse"""
-        hook_ctx = HookContext(operation_id='getFacets', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getFacets', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFacetsRequest(
             identifier=identifier,
         )
@@ -848,7 +913,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -886,7 +954,7 @@ class Dataverses:
     
     def post_facets(self, identifier: str) -> operations.PostFacetsResponse:
         r"""Updates the facets of the specified dataverse"""
-        hook_ctx = HookContext(operation_id='postFacets', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postFacets', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostFacetsRequest(
             identifier=identifier,
         )
@@ -898,7 +966,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -936,7 +1007,7 @@ class Dataverses:
     
     def get_dataverse_groups(self, identifier: str, key: Optional[str] = None) -> operations.GetDataverseGroupsResponse:
         r"""Retrieves groups associated with a specified dataverse"""
-        hook_ctx = HookContext(operation_id='getDataverseGroups', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDataverseGroups', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDataverseGroupsRequest(
             identifier=identifier,
             key=key,
@@ -950,7 +1021,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -988,7 +1062,7 @@ class Dataverses:
     
     def create_dataverse_group(self, identifier: str) -> operations.CreateDataverseGroupResponse:
         r"""Creates a new group in the specified dataverse"""
-        hook_ctx = HookContext(operation_id='createDataverseGroup', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createDataverseGroup', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CreateDataverseGroupRequest(
             identifier=identifier,
         )
@@ -1000,7 +1074,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1038,7 +1115,7 @@ class Dataverses:
     
     def get_group_in_dataverse(self, alias_in_owner: str, identifier: str) -> operations.GetGroupInDataverseResponse:
         r"""Retrieve details of a specific group within the given Dataverse"""
-        hook_ctx = HookContext(operation_id='getGroupInDataverse', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getGroupInDataverse', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetGroupInDataverseRequest(
             alias_in_owner=alias_in_owner,
             identifier=identifier,
@@ -1051,7 +1128,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1089,7 +1169,7 @@ class Dataverses:
     
     def update_group_in_dataverse(self, alias_in_owner: str, identifier: str) -> operations.UpdateGroupInDataverseResponse:
         r"""Update the details of a group within the specified Dataverse"""
-        hook_ctx = HookContext(operation_id='updateGroupInDataverse', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateGroupInDataverse', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateGroupInDataverseRequest(
             alias_in_owner=alias_in_owner,
             identifier=identifier,
@@ -1102,7 +1182,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1140,7 +1223,7 @@ class Dataverses:
     
     def delete_group_in_dataverse(self, alias_in_owner: str, identifier: str) -> operations.DeleteGroupInDataverseResponse:
         r"""Delete a specific group from the specified Dataverse"""
-        hook_ctx = HookContext(operation_id='deleteGroupInDataverse', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteGroupInDataverse', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteGroupInDataverseRequest(
             alias_in_owner=alias_in_owner,
             identifier=identifier,
@@ -1153,7 +1236,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1191,7 +1277,7 @@ class Dataverses:
     
     def assign_role(self, alias_in_owner: str, identifier: str, request_body: Optional[List[str]] = None) -> operations.AssignRoleResponse:
         r"""Assign a role to role assignees in a specified group within a dataverse"""
-        hook_ctx = HookContext(operation_id='assignRole', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='assignRole', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AssignRoleRequest(
             alias_in_owner=alias_in_owner,
             identifier=identifier,
@@ -1208,7 +1294,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1246,7 +1335,7 @@ class Dataverses:
     
     def update_role_assignee(self, alias_in_owner: str, identifier: str, role_assignee_identifier: str) -> operations.UpdateRoleAssigneeResponse:
         r"""Update a specific role assignee in a dataverse group"""
-        hook_ctx = HookContext(operation_id='updateRoleAssignee', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateRoleAssignee', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateRoleAssigneeRequest(
             alias_in_owner=alias_in_owner,
             identifier=identifier,
@@ -1260,7 +1349,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1298,7 +1390,7 @@ class Dataverses:
     
     def delete_role_assignee(self, alias_in_owner: str, identifier: str, role_assignee_identifier: str) -> operations.DeleteRoleAssigneeResponse:
         r"""Delete a specific role assignee from a dataverse group"""
-        hook_ctx = HookContext(operation_id='deleteRoleAssignee', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteRoleAssignee', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteRoleAssigneeRequest(
             alias_in_owner=alias_in_owner,
             identifier=identifier,
@@ -1312,7 +1404,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1350,7 +1445,7 @@ class Dataverses:
     
     def get_guestbook_responses(self, identifier: str, guestbook_id: Optional[int] = None) -> operations.GetGuestbookResponsesResponse:
         r"""Retrieve all guestbook responses for a specific dataverse"""
-        hook_ctx = HookContext(operation_id='getGuestbookResponses', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getGuestbookResponses', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetGuestbookResponsesRequest(
             identifier=identifier,
             guestbook_id=guestbook_id,
@@ -1364,7 +1459,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1402,7 +1500,7 @@ class Dataverses:
     
     def get_dataverse_links(self, identifier: str) -> operations.GetDataverseLinksResponse:
         r"""Retrieve all links associated with a specific dataverse identified by ID"""
-        hook_ctx = HookContext(operation_id='getDataverseLinks', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDataverseLinks', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDataverseLinksRequest(
             identifier=identifier,
         )
@@ -1414,7 +1512,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1452,7 +1553,7 @@ class Dataverses:
     
     def get_metadatablock_facets(self, identifier: str) -> operations.GetMetadatablockFacetsResponse:
         r"""Retrieve metadatablock facets for a specific dataverse"""
-        hook_ctx = HookContext(operation_id='getMetadatablockFacets', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMetadatablockFacets', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMetadatablockFacetsRequest(
             identifier=identifier,
         )
@@ -1464,7 +1565,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1502,7 +1606,7 @@ class Dataverses:
     
     def post_metadatablock_facets(self, identifier: str, request_body: Optional[List[str]] = None) -> operations.PostMetadatablockFacetsResponse:
         r"""Add metadatablock facets to a specific dataverse"""
-        hook_ctx = HookContext(operation_id='postMetadatablockFacets', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postMetadatablockFacets', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostMetadatablockFacetsRequest(
             identifier=identifier,
             request_body=request_body,
@@ -1518,7 +1622,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1556,7 +1663,7 @@ class Dataverses:
     
     def update_root_status(self, identifier: str, request_body: Optional[str] = None) -> operations.UpdateRootStatusResponse:
         r"""Updates the root status of a Dataverse"""
-        hook_ctx = HookContext(operation_id='updateRootStatus', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateRootStatus', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateRootStatusRequest(
             identifier=identifier,
             request_body=request_body,
@@ -1572,7 +1679,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1610,7 +1720,7 @@ class Dataverses:
     
     def get_metadatablock(self, identifier: str) -> operations.GetMetadatablockResponse:
         r"""Retrieve the metadatablock of a Dataverse."""
-        hook_ctx = HookContext(operation_id='getMetadatablock', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMetadatablock', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMetadatablockRequest(
             identifier=identifier,
         )
@@ -1622,7 +1732,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1660,7 +1773,7 @@ class Dataverses:
     
     def create_metadatablock(self, identifier: str) -> operations.CreateMetadatablockResponse:
         r"""Create a new metadatablock for a Dataverse."""
-        hook_ctx = HookContext(operation_id='createMetadatablock', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createMetadatablock', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CreateMetadatablockRequest(
             identifier=identifier,
         )
@@ -1672,7 +1785,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1710,7 +1826,7 @@ class Dataverses:
     
     def get_metadatablock_1(self, identifier: str) -> operations.GetMetadatablock1Response:
         r"""Retrieve metadata blocks for a specific dataverse identified by its unique identifier"""
-        hook_ctx = HookContext(operation_id='getMetadatablock_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMetadatablock_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMetadatablock1Request(
             identifier=identifier,
         )
@@ -1722,7 +1838,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1760,7 +1879,7 @@ class Dataverses:
     
     def post_metadatablock(self, identifier: str, request_body: Optional[str] = None) -> operations.PostMetadatablockResponse:
         r"""Add or update metadata block associated with the specified dataverse identifier"""
-        hook_ctx = HookContext(operation_id='postMetadatablock', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postMetadatablock', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostMetadatablockRequest(
             identifier=identifier,
             request_body=request_body,
@@ -1776,7 +1895,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1814,7 +1936,7 @@ class Dataverses:
     
     def get_roles_by_identifier(self, identifier: str) -> operations.GetRolesByIdentifierResponse:
         r"""Retrieve the roles for a given Dataverse identifier"""
-        hook_ctx = HookContext(operation_id='getRolesByIdentifier', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getRolesByIdentifier', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetRolesByIdentifierRequest(
             identifier=identifier,
         )
@@ -1826,7 +1948,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1864,7 +1989,7 @@ class Dataverses:
     
     def create_role_by_identifier(self, identifier: str) -> operations.CreateRoleByIdentifierResponse:
         r"""Create a new role for a given Dataverse identifier"""
-        hook_ctx = HookContext(operation_id='createRoleByIdentifier', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createRoleByIdentifier', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CreateRoleByIdentifierRequest(
             identifier=identifier,
         )
@@ -1876,7 +2001,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1914,7 +2042,7 @@ class Dataverses:
     
     def get_storage_quota(self, identifier: str) -> operations.GetStorageQuotaResponse:
         r"""Retrieve storage quota of the dataverse identified by the given identifier"""
-        hook_ctx = HookContext(operation_id='getStorageQuota', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getStorageQuota', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetStorageQuotaRequest(
             identifier=identifier,
         )
@@ -1926,7 +2054,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1964,7 +2095,7 @@ class Dataverses:
     
     def delete_storage_quota(self, identifier: str) -> operations.DeleteStorageQuotaResponse:
         r"""Delete the storage quota configuration for the dataverse identified by the given identifier"""
-        hook_ctx = HookContext(operation_id='deleteStorageQuota', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteStorageQuota', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteStorageQuotaRequest(
             identifier=identifier,
         )
@@ -1976,7 +2107,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2014,7 +2148,7 @@ class Dataverses:
     
     def set_storage_quota(self, bytes_allocated: int, identifier: str) -> operations.SetStorageQuotaResponse:
         r"""Sets the storage quota for a specific Dataverse"""
-        hook_ctx = HookContext(operation_id='setStorageQuota', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='setStorageQuota', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.SetStorageQuotaRequest(
             bytes_allocated=bytes_allocated,
             identifier=identifier,
@@ -2027,7 +2161,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2065,7 +2202,7 @@ class Dataverses:
     
     def get_dataverse_storage_usage(self, identifier: str) -> operations.GetDataverseStorageUsageResponse:
         r"""Retrieve storage usage of a specific dataverse"""
-        hook_ctx = HookContext(operation_id='getDataverseStorageUsage', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDataverseStorageUsage', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDataverseStorageUsageRequest(
             identifier=identifier,
         )
@@ -2077,7 +2214,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2115,7 +2255,7 @@ class Dataverses:
     
     def get_dataverse_storage_size(self, identifier: str, include_cached: Optional[bool] = None) -> operations.GetDataverseStorageSizeResponse:
         r"""Retrieve the storage size of a specific Dataverse"""
-        hook_ctx = HookContext(operation_id='getDataverseStorageSize', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDataverseStorageSize', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDataverseStorageSizeRequest(
             identifier=identifier,
             include_cached=include_cached,
@@ -2129,7 +2269,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2167,7 +2310,7 @@ class Dataverses:
     
     def validate_dataset_json(self, identifier: str, request_body: Optional[str] = None) -> operations.ValidateDatasetJSONResponse:
         r"""Validate the JSON of a dataset in a specific Dataverse"""
-        hook_ctx = HookContext(operation_id='validateDatasetJson', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='validateDatasetJson', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ValidateDatasetJSONRequest(
             identifier=identifier,
             request_body=request_body,
@@ -2183,7 +2326,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2221,7 +2367,7 @@ class Dataverses:
     
     def move_dataverse(self, id: str, target_dataverse_alias: str, force_move: Optional[bool] = None) -> operations.MoveDataverseResponse:
         r"""Moves a Dataverse to a target Dataverse"""
-        hook_ctx = HookContext(operation_id='moveDataverse', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='moveDataverse', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.MoveDataverseRequest(
             id=id,
             target_dataverse_alias=target_dataverse_alias,
@@ -2236,7 +2382,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2274,7 +2423,7 @@ class Dataverses:
     
     def link_dataverses(self, linked_dataverse_alias: str, linking_dataverse_alias: str) -> operations.LinkDataversesResponse:
         r"""Links one Dataverse to another"""
-        hook_ctx = HookContext(operation_id='linkDataverses', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='linkDataverses', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.LinkDataversesRequest(
             linked_dataverse_alias=linked_dataverse_alias,
             linking_dataverse_alias=linking_dataverse_alias,
@@ -2287,7 +2436,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -2325,7 +2477,7 @@ class Dataverses:
     
     def delete_dataverse_link(self, linked_dataverse_id: str, linking_dataverse_id: str) -> operations.DeleteDataverseLinkResponse:
         r"""Delete a link between two dataverses"""
-        hook_ctx = HookContext(operation_id='deleteDataverseLink', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteDataverseLink', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteDataverseLinkRequest(
             linked_dataverse_id=linked_dataverse_id,
             linking_dataverse_id=linking_dataverse_id,
@@ -2338,7 +2490,10 @@ class Dataverses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

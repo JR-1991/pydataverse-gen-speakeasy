@@ -59,7 +59,9 @@ Create a new Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.create_dataverse()
@@ -88,7 +90,9 @@ Retrieves a specified dataverse with the given identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_dataverse(identifier='<value>')
@@ -122,22 +126,26 @@ Creates a new dataverse with the given identifier
 
 ```python
 import pydataverse
+from pydataverse.models import components
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
-res = s.dataverses.create_dataverse_1(identifier='<value>')
+res = s.dataverses.create_dataverse_1(identifier='<value>', dataverse_request=components.DataverseRequest())
 
-if res.status_code == 200:
+if res.dataverse_response is not None:
     # handle response
     pass
 ```
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `identifier`       | *str*              | :heavy_check_mark: | N/A                |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `identifier`                                                               | *str*                                                                      | :heavy_check_mark:                                                         | N/A                                                                        |
+| `dataverse_request`                                                        | [components.DataverseRequest](../../models/components/dataverserequest.md) | :heavy_check_mark:                                                         | N/A                                                                        |
 
 
 ### Response
@@ -145,9 +153,10 @@ if res.status_code == 200:
 **[operations.CreateDataverse1Response](../../models/operations/createdataverse1response.md)**
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| Error Object         | Status Code          | Content Type         |
+| -------------------- | -------------------- | -------------------- |
+| errors.ErrorResponse | 400                  | application/json     |
+| errors.SDKError      | 4x-5xx               | */*                  |
 
 ## delete_dataverse
 
@@ -158,7 +167,9 @@ Deletes a specified dataverse with the given identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.delete_dataverse(identifier='<value>')
@@ -193,7 +204,9 @@ Publishes the identified Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.publish_dataverse_by_id(identifier='<value>')
@@ -228,7 +241,9 @@ Retrieves assignments of specified Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_dataverse_assignments(identifier='<value>')
@@ -263,7 +278,9 @@ Assigns new user or role to specified Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.post_dataverse_assignments(identifier='<value>', key='<value>')
@@ -299,7 +316,9 @@ Delete a specific assignment from a specific dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.delete_dataverse_assignment(id=540951, identifier='<value>')
@@ -335,7 +354,9 @@ Update a specific attribute of a Dataverse identified by the given identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.update_dataverse_attribute(attribute='<value>', identifier='<value>', value='<value>')
@@ -372,7 +393,9 @@ Retrieve contents of the specified Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_dataverse_contents(identifier='<value>')
@@ -407,7 +430,9 @@ Retrieve the schema of a specific dataset in the dataverse identified by the giv
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_dataset_schema(identifier='<value>')
@@ -442,7 +467,9 @@ Create a new dataset in the specified dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.create_dataset_in_dataverse(identifier='<value>', do_not_validate='<value>', request_body='<value>')
@@ -479,7 +506,9 @@ Imports a dataset into a given Dataverse identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.import_dataset(identifier='<value>', pid='<value>', release='<value>')
@@ -516,7 +545,9 @@ Imports DDI metadata to a dataset in the specified dataverse.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.import_ddi_to_dataset(identifier='<value>', pid='<value>', release='<value>')
@@ -553,7 +584,9 @@ Begins the migration process of datasets in a specific Dataverse identified by t
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.start_migration(identifier='<value>', request_body='<value>')
@@ -589,7 +622,9 @@ Update the default contributor role of a specific dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.update_default_contributor_role(identifier='<value>', role_alias='<value>')
@@ -625,7 +660,9 @@ Retrieves the facets of the specified dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_facets(identifier='<value>')
@@ -660,7 +697,9 @@ Updates the facets of the specified dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.post_facets(identifier='<value>')
@@ -695,7 +734,9 @@ Retrieves groups associated with a specified dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_dataverse_groups(identifier='<value>', key='<value>')
@@ -731,7 +772,9 @@ Creates a new group in the specified dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.create_dataverse_group(identifier='<value>')
@@ -766,7 +809,9 @@ Retrieve details of a specific group within the given Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_group_in_dataverse(alias_in_owner='<value>', identifier='<value>')
@@ -802,7 +847,9 @@ Update the details of a group within the specified Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.update_group_in_dataverse(alias_in_owner='<value>', identifier='<value>')
@@ -838,7 +885,9 @@ Delete a specific group from the specified Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.delete_group_in_dataverse(alias_in_owner='<value>', identifier='<value>')
@@ -874,7 +923,9 @@ Assign a role to role assignees in a specified group within a dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.assign_role(alias_in_owner='<value>', identifier='<value>', request_body=[
@@ -913,7 +964,9 @@ Update a specific role assignee in a dataverse group
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.update_role_assignee(alias_in_owner='<value>', identifier='<value>', role_assignee_identifier='<value>')
@@ -950,7 +1003,9 @@ Delete a specific role assignee from a dataverse group
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.delete_role_assignee(alias_in_owner='<value>', identifier='<value>', role_assignee_identifier='<value>')
@@ -987,7 +1042,9 @@ Retrieve all guestbook responses for a specific dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_guestbook_responses(identifier='<value>', guestbook_id=630521)
@@ -1023,7 +1080,9 @@ Retrieve all links associated with a specific dataverse identified by ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_dataverse_links(identifier='<value>')
@@ -1058,7 +1117,9 @@ Retrieve metadatablock facets for a specific dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_metadatablock_facets(identifier='<value>')
@@ -1093,7 +1154,9 @@ Add metadatablock facets to a specific dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.post_metadatablock_facets(identifier='<value>', request_body=[
@@ -1131,7 +1194,9 @@ Updates the root status of a Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.update_root_status(identifier='<value>', request_body='<value>')
@@ -1167,7 +1232,9 @@ Retrieve the metadatablock of a Dataverse.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_metadatablock(identifier='<value>')
@@ -1202,7 +1269,9 @@ Create a new metadatablock for a Dataverse.
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.create_metadatablock(identifier='<value>')
@@ -1237,7 +1306,9 @@ Retrieve metadata blocks for a specific dataverse identified by its unique ident
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_metadatablock_1(identifier='<value>')
@@ -1272,7 +1343,9 @@ Add or update metadata block associated with the specified dataverse identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.post_metadatablock(identifier='<value>', request_body='<value>')
@@ -1308,7 +1381,9 @@ Retrieve the roles for a given Dataverse identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_roles_by_identifier(identifier='<value>')
@@ -1343,7 +1418,9 @@ Create a new role for a given Dataverse identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.create_role_by_identifier(identifier='<value>')
@@ -1378,7 +1455,9 @@ Retrieve storage quota of the dataverse identified by the given identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_storage_quota(identifier='<value>')
@@ -1413,7 +1492,9 @@ Delete the storage quota configuration for the dataverse identified by the given
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.delete_storage_quota(identifier='<value>')
@@ -1448,7 +1529,9 @@ Sets the storage quota for a specific Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.set_storage_quota(bytes_allocated=789024, identifier='<value>')
@@ -1484,7 +1567,9 @@ Retrieve storage usage of a specific dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_dataverse_storage_usage(identifier='<value>')
@@ -1519,7 +1604,9 @@ Retrieve the storage size of a specific Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.get_dataverse_storage_size(identifier='<value>', include_cached=False)
@@ -1555,7 +1642,9 @@ Validate the JSON of a dataset in a specific Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.validate_dataset_json(identifier='<value>', request_body='<value>')
@@ -1591,7 +1680,9 @@ Moves a Dataverse to a target Dataverse
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.move_dataverse(id='<value>', target_dataverse_alias='<value>', force_move=False)
@@ -1628,7 +1719,9 @@ Links one Dataverse to another
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.link_dataverses(linked_dataverse_alias='<value>', linking_dataverse_alias='<value>')
@@ -1664,7 +1757,9 @@ Delete a link between two dataverses
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.dataverses.delete_dataverse_link(linked_dataverse_id='<value>', linking_dataverse_id='<value>')

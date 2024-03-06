@@ -15,7 +15,9 @@ Retrieve specific set of my data based on the provided filters
 import pydataverse
 from pydataverse.models import operations
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 req = operations.MyDataRetrieveRequest()
 

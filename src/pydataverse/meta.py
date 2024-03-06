@@ -20,7 +20,7 @@ class Meta:
 
         Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
         """
-        hook_ctx = HookContext(operation_id='getDatafileMeta', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatafileMeta', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatafileMetaRequest(
             file_id=file_id,
             exclude=exclude,
@@ -36,7 +36,10 @@ class Meta:
         headers['Accept'] = 'text/xml'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -80,7 +83,7 @@ class Meta:
 
         Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
         """
-        hook_ctx = HookContext(operation_id='getDatasetMetadata_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDatasetMetadata_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDatasetMetadata1Request(
             dataset_id=dataset_id,
             exclude=exclude,
@@ -95,7 +98,10 @@ class Meta:
         headers['Accept'] = 'application/xml'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

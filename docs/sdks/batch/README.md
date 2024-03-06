@@ -17,7 +17,9 @@ Retrieves information about a batch harvest based on provided parameters
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.batch.get_batch_harvest(create_dv=False, dv='<value>', key='<value>', path='<value>')
@@ -55,7 +57,9 @@ Retrieve status of a batch import request
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.batch.get_batch_import_status(create_dv=False, dv='<value>', key='<value>', path='<value>')
@@ -93,7 +97,9 @@ Initiate a new batch import request
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.batch.create_batch_import(dv='<value>', key='<value>')
@@ -129,7 +135,9 @@ Initiate a batch job for importing datasets using the provided identifier
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.batch.post_batch_job_import_datasets(identifier='<value>', mode='MERGE', total_size=859069, upload_folder='<value>')

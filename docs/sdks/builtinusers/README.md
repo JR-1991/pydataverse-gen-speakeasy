@@ -17,7 +17,9 @@ Create a new builtin user
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.builtin_users.post_builtin_users(key='<value>', password='<value>', send_email_notification=False)
@@ -54,7 +56,9 @@ Create a new built-in user using a password and key
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.builtin_users.create_builtin_user(key='<value>', password='<value>')
@@ -90,7 +94,9 @@ Create a new builtin-user with a specific key, password and email notification p
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.builtin_users.create_builtin_user_1(key='<value>', password='<value>', send_email_notification=False)
@@ -127,7 +133,9 @@ Gets the API token for the specified built-in user
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.builtin_users.get_api_token_by_username(username='<value>', password='<value>')

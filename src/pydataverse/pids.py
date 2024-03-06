@@ -17,7 +17,7 @@ class Pids:
     
     def get_persistent_id(self, persistent_id: Optional[str] = None) -> operations.GetPersistentIDResponse:
         r"""Retrieve a specific persistent identifier"""
-        hook_ctx = HookContext(operation_id='getPersistentId', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getPersistentId', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetPersistentIDRequest(
             persistent_id=persistent_id,
         )
@@ -30,7 +30,10 @@ class Pids:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -68,7 +71,7 @@ class Pids:
     
     def get_unreserved_persistent_ids(self, persistent_id: Optional[str] = None) -> operations.GetUnreservedPersistentIdsResponse:
         r"""Retrieves unreserved persistent identifiers"""
-        hook_ctx = HookContext(operation_id='getUnreservedPersistentIds', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getUnreservedPersistentIds', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetUnreservedPersistentIdsRequest(
             persistent_id=persistent_id,
         )
@@ -81,7 +84,10 @@ class Pids:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -119,7 +125,7 @@ class Pids:
     
     def delete_pid(self, id: str) -> operations.DeletePidResponse:
         r"""Delete a specific persistent identifier (PID)"""
-        hook_ctx = HookContext(operation_id='deletePid', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deletePid', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeletePidRequest(
             id=id,
         )
@@ -131,7 +137,10 @@ class Pids:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -169,7 +178,7 @@ class Pids:
     
     def reserve_pid(self, id: str) -> operations.ReservePidResponse:
         r"""Reserve a specific PID"""
-        hook_ctx = HookContext(operation_id='reservePid', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='reservePid', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ReservePidRequest(
             id=id,
         )
@@ -181,7 +190,10 @@ class Pids:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

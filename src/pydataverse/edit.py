@@ -17,7 +17,7 @@ class Edit:
     
     def edit_file(self, file_id: str, request_body: Optional[str] = None) -> operations.EditFileResponse:
         r"""Edits the content of a specified file"""
-        hook_ctx = HookContext(operation_id='editFile', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='editFile', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.EditFileRequest(
             file_id=file_id,
             request_body=request_body,
@@ -33,7 +33,10 @@ class Edit:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

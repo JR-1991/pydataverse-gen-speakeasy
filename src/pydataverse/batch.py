@@ -17,7 +17,7 @@ class Batch:
     
     def get_batch_harvest(self, create_dv: Optional[bool] = None, dv: Optional[str] = None, key: Optional[str] = None, path: Optional[str] = None) -> operations.GetBatchHarvestResponse:
         r"""Retrieves information about a batch harvest based on provided parameters"""
-        hook_ctx = HookContext(operation_id='getBatchHarvest', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getBatchHarvest', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetBatchHarvestRequest(
             create_dv=create_dv,
             dv=dv,
@@ -33,7 +33,10 @@ class Batch:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -71,7 +74,7 @@ class Batch:
     
     def get_batch_import_status(self, create_dv: Optional[bool] = None, dv: Optional[str] = None, key: Optional[str] = None, path: Optional[str] = None) -> operations.GetBatchImportStatusResponse:
         r"""Retrieve status of a batch import request"""
-        hook_ctx = HookContext(operation_id='getBatchImportStatus', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getBatchImportStatus', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetBatchImportStatusRequest(
             create_dv=create_dv,
             dv=dv,
@@ -87,7 +90,10 @@ class Batch:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -125,7 +131,7 @@ class Batch:
     
     def create_batch_import(self, dv: Optional[str] = None, key: Optional[str] = None) -> operations.CreateBatchImportResponse:
         r"""Initiate a new batch import request"""
-        hook_ctx = HookContext(operation_id='createBatchImport', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='createBatchImport', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CreateBatchImportRequest(
             dv=dv,
             key=key,
@@ -139,7 +145,10 @@ class Batch:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -177,7 +186,7 @@ class Batch:
     
     def post_batch_job_import_datasets(self, identifier: str, mode: Optional[str] = None, total_size: Optional[int] = None, upload_folder: Optional[str] = None) -> operations.PostBatchJobImportDatasetsResponse:
         r"""Initiate a batch job for importing datasets using the provided identifier"""
-        hook_ctx = HookContext(operation_id='postBatchJobImportDatasets', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postBatchJobImportDatasets', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostBatchJobImportDatasetsRequest(
             identifier=identifier,
             mode=mode,
@@ -193,7 +202,10 @@ class Batch:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

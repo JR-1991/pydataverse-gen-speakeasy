@@ -16,7 +16,7 @@ class Licenses:
     
     def get_licenses(self) -> operations.GetLicensesResponse:
         r"""Retrieve all the licenses"""
-        hook_ctx = HookContext(operation_id='getLicenses', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getLicenses', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/licenses'
@@ -24,7 +24,10 @@ class Licenses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -62,7 +65,7 @@ class Licenses:
     
     def add_license(self) -> operations.AddLicenseResponse:
         r"""Add a new license"""
-        hook_ctx = HookContext(operation_id='addLicense', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='addLicense', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/licenses'
@@ -70,7 +73,10 @@ class Licenses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -108,7 +114,7 @@ class Licenses:
     
     def get_default_license(self) -> operations.GetDefaultLicenseResponse:
         r"""Fetch the current default license"""
-        hook_ctx = HookContext(operation_id='get_default_license', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='get_default_license', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/licenses/default'
@@ -116,7 +122,10 @@ class Licenses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -154,7 +163,7 @@ class Licenses:
     
     def update_default_license(self, id: int) -> operations.UpdateDefaultLicenseResponse:
         r"""Update a default license by ID"""
-        hook_ctx = HookContext(operation_id='updateDefaultLicense', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateDefaultLicense', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateDefaultLicenseRequest(
             id=id,
         )
@@ -166,7 +175,10 @@ class Licenses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -204,7 +216,7 @@ class Licenses:
     
     def get_license(self, id: int) -> operations.GetLicenseResponse:
         r"""Retrieve a specific license by its ID"""
-        hook_ctx = HookContext(operation_id='getLicense', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getLicense', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetLicenseRequest(
             id=id,
         )
@@ -216,7 +228,10 @@ class Licenses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -254,7 +269,7 @@ class Licenses:
     
     def delete_license(self, id: int) -> operations.DeleteLicenseResponse:
         r"""Delete a specific license by its ID"""
-        hook_ctx = HookContext(operation_id='deleteLicense', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteLicense', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteLicenseRequest(
             id=id,
         )
@@ -266,7 +281,10 @@ class Licenses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -304,7 +322,7 @@ class Licenses:
     
     def update_license_active_state(self, active_state: bool, id: int) -> operations.UpdateLicenseActiveStateResponse:
         r"""Updates the activity state of a specific license"""
-        hook_ctx = HookContext(operation_id='updateLicenseActiveState', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateLicenseActiveState', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateLicenseActiveStateRequest(
             active_state=active_state,
             id=id,
@@ -317,7 +335,10 @@ class Licenses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -355,7 +376,7 @@ class Licenses:
     
     def update_license_sort_order(self, id: int, sort_order: int) -> operations.UpdateLicenseSortOrderResponse:
         r"""Update the sort order of a given license"""
-        hook_ctx = HookContext(operation_id='updateLicenseSortOrder', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateLicenseSortOrder', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateLicenseSortOrderRequest(
             id=id,
             sort_order=sort_order,
@@ -368,7 +389,10 @@ class Licenses:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

@@ -36,7 +36,9 @@ pip install git+https://github.com/JR-1991/pydataverse-gen-speakeasy.git
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, gbrecs=False)
@@ -596,27 +598,33 @@ if res.body is not None:
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| Error Object         | Status Code          | Content Type         |
+| -------------------- | -------------------- | -------------------- |
+| errors.ErrorResponse | 400                  | application/json     |
+| errors.SDKError      | 4x-5xx               | */*                  |
 
 ### Example
 
 ```python
 import pydataverse
-from pydataverse.models import errors
+from pydataverse.models import components, errors
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = None
 try:
-    res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, gbrecs=False)
+    res = s.dataverses.create_dataverse_1(identifier='<value>', dataverse_request=components.DataverseRequest())
+except errors.ErrorResponse as e:
+    # handle exception
+    raise(e)
 except errors.SDKError as e:
     # handle exception
     raise(e)
 
-if res.body is not None:
+if res.dataverse_response is not None:
     # handle response
     pass
 ```
@@ -640,6 +648,7 @@ import pydataverse
 
 s = pydataverse.PyDataverse(
     server_idx=0,
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
@@ -664,6 +673,7 @@ import pydataverse
 
 s = pydataverse.PyDataverse(
     server_url="{protocol}://{base_url}",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
@@ -690,6 +700,34 @@ http_client.headers.update({'x-custom-header': 'someValue'})
 s = pydataverse.PyDataverse(client: http_client)
 ```
 <!-- End Custom HTTP Client [http-client] -->
+
+<!-- Start Authentication [security] -->
+## Authentication
+
+### Per-Client Security Schemes
+
+This SDK supports the following security scheme globally:
+
+| Name           | Type           | Scheme         |
+| -------------- | -------------- | -------------- |
+| `api_key_auth` | apiKey         | API key        |
+
+To authenticate with the API the `api_key_auth` parameter must be set when initializing the SDK client instance. For example:
+```python
+import pydataverse
+
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
+
+
+res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, gbrecs=False)
+
+if res.body is not None:
+    # handle response
+    pass
+```
+<!-- End Authentication [security] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

@@ -17,7 +17,9 @@ Get metadata of a specific datafile by file id
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.meta.get_datafile_meta(file_id=708075, exclude='<value>', file_metadata_id=709039, include='<value>')
@@ -57,7 +59,9 @@ Retrieves the metadata of a specific dataset by its ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.meta.get_dataset_metadata_1(dataset_id=492183, exclude='<value>', include='<value>')

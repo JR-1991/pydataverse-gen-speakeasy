@@ -17,7 +17,7 @@ class Files:
     
     def get_fixity_algorithm(self) -> operations.GetFixityAlgorithmResponse:
         r"""Retrieve the fixity algorithm of a file"""
-        hook_ctx = HookContext(operation_id='getFixityAlgorithm', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getFixityAlgorithm', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/files/fixityAlgorithm'
@@ -25,7 +25,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -63,7 +66,7 @@ class Files:
     
     def get_file(self, id: str) -> operations.GetFileResponse:
         r"""Retrieve a specific file by ID."""
-        hook_ctx = HookContext(operation_id='getFile', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getFile', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFileRequest(
             id=id,
         )
@@ -75,7 +78,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -113,7 +119,7 @@ class Files:
     
     def delete_file(self, id: str) -> operations.DeleteFileResponse:
         r"""Delete a specific file by ID."""
-        hook_ctx = HookContext(operation_id='deleteFile', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteFile', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteFileRequest(
             id=id,
         )
@@ -125,7 +131,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -163,7 +172,7 @@ class Files:
     
     def get_file_data_tables(self, id: str) -> operations.GetFileDataTablesResponse:
         r"""Retrieve the data tables of a given file"""
-        hook_ctx = HookContext(operation_id='getFileDataTables', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getFileDataTables', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFileDataTablesRequest(
             id=id,
         )
@@ -175,7 +184,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -213,7 +225,7 @@ class Files:
     
     def get_download_count(self, id: str) -> operations.GetDownloadCountResponse:
         r"""Retrieve the download count of a file"""
-        hook_ctx = HookContext(operation_id='getDownloadCount', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDownloadCount', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDownloadCountRequest(
             id=id,
         )
@@ -225,7 +237,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -263,7 +278,7 @@ class Files:
     
     def get_file_draft(self, id: str) -> operations.GetFileDraftResponse:
         r"""Retrieve a file in draft mode by its ID"""
-        hook_ctx = HookContext(operation_id='getFileDraft', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getFileDraft', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFileDraftRequest(
             id=id,
         )
@@ -275,7 +290,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -313,7 +331,7 @@ class Files:
     
     def extract_ncml_by_id(self, id: str) -> operations.ExtractNcmlByIDResponse:
         r"""Extract Ncml information of a file based on the provided id"""
-        hook_ctx = HookContext(operation_id='extractNcmlById', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='extractNcmlById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ExtractNcmlByIDRequest(
             id=id,
         )
@@ -325,7 +343,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -363,7 +384,7 @@ class Files:
     
     def check_file_deletion_status(self, id: str) -> operations.CheckFileDeletionStatusResponse:
         r"""Check if specified file has been deleted"""
-        hook_ctx = HookContext(operation_id='checkFileDeletionStatus', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='checkFileDeletionStatus', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CheckFileDeletionStatusRequest(
             id=id,
         )
@@ -375,7 +396,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -413,7 +437,7 @@ class Files:
     
     def get_file_metadata(self, id: str) -> operations.GetFileMetadataResponse:
         r"""Retrieves metadata for a specific file"""
-        hook_ctx = HookContext(operation_id='get_file_metadata', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='get_file_metadata', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFileMetadataRequest(
             id=id,
         )
@@ -425,7 +449,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -463,7 +490,7 @@ class Files:
     
     def update_file_metadata(self, id: str) -> operations.UpdateFileMetadataResponse:
         r"""Updates metadata for a specific file"""
-        hook_ctx = HookContext(operation_id='update_file_metadata', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='update_file_metadata', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateFileMetadataRequest(
             id=id,
         )
@@ -475,7 +502,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -513,7 +543,7 @@ class Files:
     
     def post_file_metadata_categories(self, id: str) -> operations.PostFileMetadataCategoriesResponse:
         r"""Adds new metadata categories for a specific file."""
-        hook_ctx = HookContext(operation_id='postFileMetadataCategories', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postFileMetadataCategories', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostFileMetadataCategoriesRequest(
             id=id,
         )
@@ -525,7 +555,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -563,7 +596,7 @@ class Files:
     
     def get_draft_meta_data(self, id: str) -> operations.GetDraftMetaDataResponse:
         r"""Retrieve the metadata of a draft file"""
-        hook_ctx = HookContext(operation_id='getDraftMetaData', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getDraftMetaData', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetDraftMetaDataRequest(
             id=id,
         )
@@ -575,7 +608,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -613,7 +649,7 @@ class Files:
     
     def post_tabular_tags(self, id: str) -> operations.PostTabularTagsResponse:
         r"""Add tabular tags to a file metadata"""
-        hook_ctx = HookContext(operation_id='postTabularTags', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postTabularTags', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostTabularTagsRequest(
             id=id,
         )
@@ -625,7 +661,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -663,7 +702,7 @@ class Files:
     
     def get_file_metadata_tool_params(self, fmid: int, id: str, tid: int, locale: Optional[str] = None) -> operations.GetFileMetadataToolParamsResponse:
         r"""Retrieves tool parameters for a specific file metadata ID"""
-        hook_ctx = HookContext(operation_id='getFileMetadataToolParams', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getFileMetadataToolParams', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFileMetadataToolParamsRequest(
             fmid=fmid,
             id=id,
@@ -679,7 +718,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -717,7 +759,7 @@ class Files:
     
     def get_file_prov_freeform(self, id: str) -> operations.GetFileProvFreeformResponse:
         r"""Retrieves the freeform provenance data for a specific file"""
-        hook_ctx = HookContext(operation_id='getFileProvFreeform', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getFileProvFreeform', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFileProvFreeformRequest(
             id=id,
         )
@@ -729,7 +771,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -767,7 +812,7 @@ class Files:
     
     def post_file_prov_freeform(self, id: str, request_body: Optional[str] = None) -> operations.PostFileProvFreeformResponse:
         r"""Posts freeform provenance data for a specific file"""
-        hook_ctx = HookContext(operation_id='postFileProvFreeform', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postFileProvFreeform', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostFileProvFreeformRequest(
             id=id,
             request_body=request_body,
@@ -783,7 +828,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -821,7 +869,7 @@ class Files:
     
     def get_file_prov_json(self, id: str) -> operations.GetFileProvJSONResponse:
         r"""Retrieving the PROV JSON of a specific file"""
-        hook_ctx = HookContext(operation_id='getFileProvJSON', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getFileProvJSON', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFileProvJSONRequest(
             id=id,
         )
@@ -833,7 +881,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -871,7 +922,7 @@ class Files:
     
     def post_file_prov_json(self, id: str, entity_name: Optional[str] = None, request_body: Optional[str] = None) -> operations.PostFileProvJSONResponse:
         r"""Submit a new PROV JSON for a specific file"""
-        hook_ctx = HookContext(operation_id='postFileProvJSON', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postFileProvJSON', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostFileProvJSONRequest(
             id=id,
             entity_name=entity_name,
@@ -889,7 +940,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -927,7 +981,7 @@ class Files:
     
     def delete_file_prov_json(self, id: str) -> operations.DeleteFileProvJSONResponse:
         r"""Delete the PROV JSON of a specific file"""
-        hook_ctx = HookContext(operation_id='deleteFileProvJSON', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteFileProvJSON', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteFileProvJSONRequest(
             id=id,
         )
@@ -939,7 +993,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -977,7 +1034,7 @@ class Files:
     
     def redetect_file(self, id: str, dry_run: Optional[bool] = None) -> operations.RedetectFileResponse:
         r"""Invoke redetection process for the specified file"""
-        hook_ctx = HookContext(operation_id='redetectFile', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='redetectFile', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.RedetectFileRequest(
             id=id,
             dry_run=dry_run,
@@ -991,7 +1048,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1029,7 +1089,7 @@ class Files:
     
     def reingest_file(self, id: str) -> operations.ReingestFileResponse:
         r"""Reingest a file using its ID"""
-        hook_ctx = HookContext(operation_id='reingestFile', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='reingestFile', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ReingestFileRequest(
             id=id,
         )
@@ -1041,7 +1101,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1079,7 +1142,7 @@ class Files:
     
     def replace_file(self, id: str, request_body: Optional[operations.ReplaceFileRequestBody] = None) -> operations.ReplaceFileResponse:
         r"""Replace an existing file with a new version"""
-        hook_ctx = HookContext(operation_id='replaceFile', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='replaceFile', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ReplaceFileRequest(
             id=id,
             request_body=request_body,
@@ -1095,7 +1158,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1133,7 +1199,7 @@ class Files:
     
     def restrict_file_access(self, id: str) -> operations.RestrictFileAccessResponse:
         r"""Restrict access to a specific file"""
-        hook_ctx = HookContext(operation_id='restrictFileAccess', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='restrictFileAccess', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.RestrictFileAccessRequest(
             id=id,
         )
@@ -1145,7 +1211,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -1183,7 +1252,7 @@ class Files:
     
     def post_file_uningest(self, id: str) -> operations.PostFileUningestResponse:
         r"""Uningest a file with the specified ID"""
-        hook_ctx = HookContext(operation_id='postFileUningest', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='postFileUningest', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.PostFileUningestRequest(
             id=id,
         )
@@ -1195,7 +1264,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

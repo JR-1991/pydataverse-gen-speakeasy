@@ -17,7 +17,7 @@ class Ingest:
     
     def get_ingest_test_file(self, file_name: Optional[str] = None, file_type: Optional[str] = None) -> operations.GetIngestTestFileResponse:
         r"""Retrieve details of a specific test file in the ingest process by filename and filetype"""
-        hook_ctx = HookContext(operation_id='getIngestTestFile', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getIngestTestFile', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetIngestTestFileRequest(
             file_name=file_name,
             file_type=file_type,
@@ -31,7 +31,10 @@ class Ingest:
         headers['Accept'] = 'text/plain'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

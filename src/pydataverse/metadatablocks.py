@@ -16,7 +16,7 @@ class Metadatablocks:
     
     def get_metadatablocks(self) -> operations.GetMetadatablocksResponse:
         r"""Retrieve metadata blocks available in the system"""
-        hook_ctx = HookContext(operation_id='getMetadatablocks', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMetadatablocks', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/metadatablocks'
@@ -24,7 +24,10 @@ class Metadatablocks:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -62,7 +65,7 @@ class Metadatablocks:
     
     def get_metadatablock_1_1(self, identifier: str) -> operations.GetMetadatablock11Response:
         r"""Retrieve a specific Metadatablock by its identifier"""
-        hook_ctx = HookContext(operation_id='getMetadatablock_1_1', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMetadatablock_1_1', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetMetadatablock11Request(
             identifier=identifier,
         )
@@ -74,7 +77,10 @@ class Metadatablocks:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

@@ -3,11 +3,15 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ...models.components import dataverserequest as components_dataverserequest
+from ...models.components import dataverseresponse as components_dataverseresponse
+from typing import Optional
 
 
 @dataclasses.dataclass
 class CreateDataverse1Request:
     identifier: str = dataclasses.field(metadata={'path_param': { 'field_name': 'identifier', 'style': 'simple', 'explode': False }})
+    dataverse_request: components_dataverserequest.DataverseRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     
 
 
@@ -20,5 +24,7 @@ class CreateDataverse1Response:
     r"""HTTP response status code for this operation"""
     raw_response: requests_http.Response = dataclasses.field()
     r"""Raw HTTP response; suitable for custom response parsing"""
+    dataverse_response: Optional[components_dataverseresponse.DataverseResponse] = dataclasses.field(default=None)
+    r"""Dataverse created successfully"""
     
 

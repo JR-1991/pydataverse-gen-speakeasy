@@ -2,7 +2,9 @@
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, gbrecs=False)

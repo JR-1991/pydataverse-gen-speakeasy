@@ -16,7 +16,7 @@ class Mydata:
     
     def my_data_retrieve(self, request: operations.MyDataRetrieveRequest) -> operations.MyDataRetrieveResponse:
         r"""Retrieve specific set of my data based on the provided filters"""
-        hook_ctx = HookContext(operation_id='myDataRetrieve', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='myDataRetrieve', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/mydata/retrieve'
@@ -25,7 +25,10 @@ class Mydata:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

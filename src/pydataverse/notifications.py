@@ -16,7 +16,7 @@ class Notifications:
     
     def get_all_notifications(self) -> operations.GetAllNotificationsResponse:
         r"""Retrieve all notifications"""
-        hook_ctx = HookContext(operation_id='getAllNotifications', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getAllNotifications', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/notifications/all'
@@ -24,7 +24,10 @@ class Notifications:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -62,7 +65,7 @@ class Notifications:
     
     def get_muted_emails(self) -> operations.GetMutedEmailsResponse:
         r"""Retrieve a list of muted email notifications"""
-        hook_ctx = HookContext(operation_id='getMutedEmails', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMutedEmails', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/notifications/mutedEmails'
@@ -70,7 +73,10 @@ class Notifications:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -108,7 +114,7 @@ class Notifications:
     
     def update_muted_email_notification(self, type_name: str) -> operations.UpdateMutedEmailNotificationResponse:
         r"""Updates a muted email notification by type name"""
-        hook_ctx = HookContext(operation_id='updateMutedEmailNotification', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateMutedEmailNotification', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateMutedEmailNotificationRequest(
             type_name=type_name,
         )
@@ -120,7 +126,10 @@ class Notifications:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -158,7 +167,7 @@ class Notifications:
     
     def delete_muted_email_notification(self, type_name: str) -> operations.DeleteMutedEmailNotificationResponse:
         r"""Deletes a muted email notification by type name"""
-        hook_ctx = HookContext(operation_id='deleteMutedEmailNotification', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteMutedEmailNotification', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteMutedEmailNotificationRequest(
             type_name=type_name,
         )
@@ -170,7 +179,10 @@ class Notifications:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -208,7 +220,7 @@ class Notifications:
     
     def get_muted_notifications(self) -> operations.GetMutedNotificationsResponse:
         r"""Retrieve all muted notifications"""
-        hook_ctx = HookContext(operation_id='getMutedNotifications', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='getMutedNotifications', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/api/v1/notifications/mutedNotifications'
@@ -216,7 +228,10 @@ class Notifications:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -254,7 +269,7 @@ class Notifications:
     
     def update_muted_notification(self, type_name: str) -> operations.UpdateMutedNotificationResponse:
         r"""Update details of a specific muted notification"""
-        hook_ctx = HookContext(operation_id='updateMutedNotification', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='updateMutedNotification', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateMutedNotificationRequest(
             type_name=type_name,
         )
@@ -266,7 +281,10 @@ class Notifications:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -304,7 +322,7 @@ class Notifications:
     
     def delete_muted_notification(self, type_name: str) -> operations.DeleteMutedNotificationResponse:
         r"""Delete a specific muted notification"""
-        hook_ctx = HookContext(operation_id='deleteMutedNotification', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteMutedNotification', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteMutedNotificationRequest(
             type_name=type_name,
         )
@@ -316,7 +334,10 @@ class Notifications:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:
@@ -354,7 +375,7 @@ class Notifications:
     
     def delete_notification(self, id: int) -> operations.DeleteNotificationResponse:
         r"""Delete a notification by ID"""
-        hook_ctx = HookContext(operation_id='deleteNotification', oauth2_scopes=[], security_source=None)
+        hook_ctx = HookContext(operation_id='deleteNotification', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteNotificationRequest(
             id=id,
         )
@@ -366,7 +387,10 @@ class Notifications:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         
         try:

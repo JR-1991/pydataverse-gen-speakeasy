@@ -21,7 +21,9 @@ Retrieve all the licenses
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.licenses.get_licenses()
@@ -50,7 +52,9 @@ Add a new license
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.licenses.add_license()
@@ -79,7 +83,9 @@ Fetch the current default license
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.licenses.get_default_license()
@@ -108,7 +114,9 @@ Update a default license by ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.licenses.update_default_license(id=34621)
@@ -143,7 +151,9 @@ Retrieve a specific license by its ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.licenses.get_license(id=179853)
@@ -178,7 +188,9 @@ Delete a specific license by its ID
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.licenses.delete_license(id=738361)
@@ -213,7 +225,9 @@ Updates the activity state of a specific license
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.licenses.update_license_active_state(active_state=False, id=744481)
@@ -249,7 +263,9 @@ Update the sort order of a given license
 ```python
 import pydataverse
 
-s = pydataverse.PyDataverse()
+s = pydataverse.PyDataverse(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
 
 res = s.licenses.update_license_sort_order(id=430322, sort_order=505916)
