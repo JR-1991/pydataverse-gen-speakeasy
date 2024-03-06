@@ -7752,6 +7752,12 @@ components:
           type: string
         dataverseType:
           type: string
+      required:
+        - name
+        - alias
+        - affiliation
+        - description
+        - dataverseType
     Contact:
       type: object
       properties:
