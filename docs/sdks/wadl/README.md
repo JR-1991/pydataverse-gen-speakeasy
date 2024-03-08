@@ -22,9 +22,10 @@ s = pydataverse.PyDataverse(
 
 res = s.application.wadl.get_application_wadl()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -53,9 +54,10 @@ s = pydataverse.PyDataverse(
 
 res = s.application.wadl.get_application_wadl_1(path='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

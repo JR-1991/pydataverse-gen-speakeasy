@@ -22,9 +22,10 @@ req = '<value>'
 
 res = s.inbox.post_inbox(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

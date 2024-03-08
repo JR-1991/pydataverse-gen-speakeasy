@@ -44,9 +44,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.get_fixity_algorithm()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -75,9 +76,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.get_file(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -112,9 +114,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.delete_file(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -149,9 +152,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.get_file_data_tables(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -186,9 +190,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.get_download_count(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -223,9 +228,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.get_file_draft(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -260,9 +266,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.extract_ncml_by_id(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -297,9 +304,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.check_file_deletion_status(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -334,9 +342,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.get_file_metadata(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -371,9 +380,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.update_file_metadata(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -408,9 +418,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.post_file_metadata_categories(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -445,9 +456,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.get_draft_meta_data(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -482,9 +494,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.post_tabular_tags(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -519,9 +532,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.get_file_metadata_tool_params(fmid=27570, id='<value>', tid=343127, locale='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -559,9 +573,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.get_file_prov_freeform(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -596,9 +611,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.post_file_prov_freeform(id='<value>', request_body='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -634,9 +650,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.get_file_prov_json(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -671,9 +688,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.post_file_prov_json(id='<value>', entity_name='<value>', request_body='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -710,9 +728,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.delete_file_prov_json(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -747,9 +766,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.redetect_file(id='<value>', dry_run=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -785,9 +805,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.reingest_file(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -823,9 +844,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.replace_file(id='<value>', request_body=operations.ReplaceFileRequestBody())
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -861,9 +883,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.restrict_file_access(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -898,9 +921,10 @@ s = pydataverse.PyDataverse(
 
 res = s.files.post_file_uningest(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

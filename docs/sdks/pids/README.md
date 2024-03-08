@@ -24,9 +24,10 @@ s = pydataverse.PyDataverse(
 
 res = s.pids.get_persistent_id(persistent_id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -61,9 +62,10 @@ s = pydataverse.PyDataverse(
 
 res = s.pids.get_unreserved_persistent_ids(persistent_id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -98,9 +100,10 @@ s = pydataverse.PyDataverse(
 
 res = s.pids.delete_pid(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -135,9 +138,10 @@ s = pydataverse.PyDataverse(
 
 res = s.pids.reserve_pid(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

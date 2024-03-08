@@ -21,9 +21,10 @@ s = pydataverse.PyDataverse(
 
 res = s.edit.edit_file(file_id='<value>', request_body='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

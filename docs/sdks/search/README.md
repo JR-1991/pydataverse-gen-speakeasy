@@ -23,9 +23,10 @@ req = operations.SearchQueryRequest()
 
 res = s.search.search_query(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

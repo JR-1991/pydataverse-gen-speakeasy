@@ -46,6 +46,7 @@ res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, g
 if res.body is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -633,6 +634,7 @@ except errors.SDKError as e:
 if res.dataverse_response is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -663,6 +665,7 @@ res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, g
 if res.body is not None:
     # handle response
     pass
+
 ```
 
 #### Variables
@@ -688,6 +691,7 @@ res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, g
 if res.body is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -732,6 +736,7 @@ res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, g
 if res.body is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 

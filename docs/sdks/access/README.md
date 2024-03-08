@@ -47,6 +47,7 @@ res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, g
 if res.body is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -83,9 +84,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.get_datafile(file_id='<value>', gbrecs=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -121,9 +123,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.get_datafile_auxiliary(file_id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -161,6 +164,7 @@ res = s.access.access_datafile_auxiliary_get(file_id='<value>', format_tag='<val
 if res.res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -198,9 +202,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.access_datafile_auxiliary_create(file_id=7002, format_tag='<value>', format_version='<value>', request_body=operations.AccessDatafileAuxiliaryCreateRequestBody())
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -238,9 +243,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.access_datafile_auxiliary_delete(file_id=458810, format_tag='<value>', format_version='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -277,9 +283,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.get_datafile_auxiliary_info(file_id='<value>', origin='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -318,6 +325,7 @@ res = s.access.get_datafile_metadata(file_id='<value>', exclude='<value>', file_
 if res.res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -358,6 +366,7 @@ res = s.access.get_datafile_meta_ddi(file_id='<value>', exclude='<value>', file_
 if res.res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -395,9 +404,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.grant_datafile_access(id='<value>', identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -433,9 +443,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.get_datafile_requests(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -470,9 +481,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.reject_data_access(id='<value>', identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -508,9 +520,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.request_file_access(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -545,9 +558,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.delete_file_access(id='<value>', identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -583,9 +597,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.get_user_file_access_requested(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -620,9 +635,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.get_user_file_permissions(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -657,9 +673,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.post_data_file_access(gbrecs=False, request_body='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -695,9 +712,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.get_access_data_files(file_ids='<value>', gbrecs=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -733,9 +751,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.get_dataset_access(id='<value>', gbrecs=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -771,9 +790,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.get_dataset_version_access(id='<value>', version_id='<value>', gbrecs=False, key='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -814,6 +834,7 @@ res = s.access.get_ds_card_image(version_id=856190)
 if res.res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -851,6 +872,7 @@ res = s.access.get_dataverse_card_image(dataverse_id=305707)
 if res.res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -888,6 +910,7 @@ res = s.access.get_file_card_image(file_id=259222)
 if res.res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -922,9 +945,10 @@ s = pydataverse.PyDataverse(
 
 res = s.access.allow_access_request(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

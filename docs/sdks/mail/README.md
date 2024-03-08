@@ -21,9 +21,10 @@ s = pydataverse.PyDataverse(
 
 res = s.mail.get_mail_notifications()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 

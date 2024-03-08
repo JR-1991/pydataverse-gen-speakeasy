@@ -24,9 +24,10 @@ s = pydataverse.PyDataverse(
 
 res = s.builtin_users.post_builtin_users(key='<value>', password='<value>', send_email_notification=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -63,9 +64,10 @@ s = pydataverse.PyDataverse(
 
 res = s.builtin_users.create_builtin_user(key='<value>', password='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -101,9 +103,10 @@ s = pydataverse.PyDataverse(
 
 res = s.builtin_users.create_builtin_user_1(key='<value>', password='<value>', send_email_notification=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -140,9 +143,10 @@ s = pydataverse.PyDataverse(
 
 res = s.builtin_users.get_api_token_by_username(username='<value>', password='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

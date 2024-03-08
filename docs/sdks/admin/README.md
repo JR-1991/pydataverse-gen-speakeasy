@@ -176,9 +176,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.archive_all_unarchived_versions(latestonly=False, limit=452296, listonly=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -215,9 +216,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_assignee(idtf='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -252,9 +254,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_assignees_detail(ra_idtf='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -291,9 +294,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_authenticated_users()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -322,9 +326,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.create_authenticated_user()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -353,9 +358,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.convert_user_to_o_auth()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -384,9 +390,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.convert_auth_users()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -415,9 +422,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_authenticated_user(id=972068)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -452,9 +460,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.convert_remote_to_built_in(id=306142)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -491,9 +500,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.convert_user_authentication_method(id=261670)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -528,9 +538,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.deactivate_user(id=143950)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -565,9 +576,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_authenticated_user(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -602,9 +614,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_authenticated_user_1(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -639,9 +652,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.deactivate_user_1(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -676,9 +690,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_auth_provider_factories()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -707,9 +722,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_auth_providers()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -738,9 +754,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.add_auth_provider()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -769,9 +786,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_auth_providers_by_id(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -806,9 +824,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.remove_auth_providers_by_id(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -843,9 +862,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.enable_auth_provider(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -880,9 +900,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_auth_provider_status(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -917,9 +938,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.update_auth_provider_status(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -954,9 +976,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_banner_message()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -985,9 +1008,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.post_banner_message()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -1016,9 +1040,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_banner_message(id=314460)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1053,9 +1078,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.deactivate_banner_message(id=723548)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1090,9 +1116,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_batch_jobs()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -1121,9 +1148,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_job_by_name(job_name='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1158,9 +1186,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_job_by_id(job_id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1195,9 +1224,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_metrics_cache()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -1226,9 +1256,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_metrics_cache_1(name='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1263,9 +1294,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_thumbnail_failure_flag()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -1294,9 +1326,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.admin_clear_thumbnail_failure_flag(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1331,9 +1364,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.compute_file_hash_value(alg='<value>', file_id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1369,9 +1403,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_user_id_conf_email(user_id=47374)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1406,9 +1441,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.post_user_id_conf_email(user_id=163013)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1443,9 +1479,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.admin_convert_user_encryption()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -1474,9 +1511,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_fix_missing_original_sizes(limit=413519)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1511,9 +1549,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.fix_missing_original_types()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -1542,9 +1581,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_dataset_field()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -1573,9 +1613,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_controlled_vocabulary()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -1605,9 +1646,10 @@ req = '<value>'
 
 res = s.admin.load_dataset_field_admin(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1642,9 +1684,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_na_controlled_vocab_value()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -1674,9 +1717,10 @@ req = '<value>'
 
 res = s.admin.admin_load_property_files(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1711,9 +1755,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_dataset_field_name(name='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1748,9 +1793,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.post_fix_missing_unf(dataset_version_id='<value>', force_recalculate=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1786,9 +1832,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_thumbnail_metadata_by_id(id=860637)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1823,9 +1870,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_curation_label_sets()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -1854,9 +1902,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_storage_drivers()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -1885,9 +1934,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_role_assignments(alias='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1922,9 +1972,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_curation_label_set(alias='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1959,9 +2010,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.update_curation_label_set(alias='<value>', name='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1997,9 +2049,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_curation_label_set(alias='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2034,9 +2087,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_storage_driver(alias='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2071,9 +2125,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.update_storage_driver(alias='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2108,9 +2163,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_storage_driver(alias='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2145,9 +2201,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_tmp_file(fully_qualified_path_to_file='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2182,9 +2239,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_external_tools()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -2213,9 +2271,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.create_external_tool()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -2244,9 +2303,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_external_tool(id=835857)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2281,9 +2341,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_external_tool(id=423055)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2318,9 +2379,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.post_admin_feedback()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -2349,9 +2411,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_groups_domain()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -2380,9 +2443,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.post_admin_groups_domain()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -2411,9 +2475,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_group_alias(group_alias='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2448,9 +2513,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.update_group_alias(group_alias='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2485,9 +2551,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_group_alias(group_alias='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2522,9 +2589,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_groups_ip()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -2553,9 +2621,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.post_admin_groups_ip()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -2584,9 +2653,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_group_by_group_idtf(group_idtf='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2621,9 +2691,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_group_by_group_idtf(group_idtf='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2658,9 +2729,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_shib_group_info()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -2689,9 +2761,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.create_shib_group()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -2720,9 +2793,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_shib_group(primary_key='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2757,9 +2831,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_index(num_partitions=966288, partition_id_to_process=875880, preview_only=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2796,9 +2871,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.clear_admin_index()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -2827,9 +2903,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.clear_orphans_index(sync='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2864,9 +2941,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.continue_index_processing(num_partitions=385791, partition_id_to_process=791191, preview_only=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2903,9 +2981,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_dataset_index(persistent_id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2940,9 +3019,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_dataset_by_id(id=57539)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2977,9 +3057,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_file_metadata1(dataset_id=442844, max_results=115835, order='<value>', sort='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3017,9 +3098,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.file_search_index_get(persistent_id='<value>', q='<value>', semantic_version='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3056,9 +3138,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_index_mod(partitions=500680, which=91223)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3094,9 +3177,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_index_perms()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -3125,9 +3209,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_index_perms_1(id=536096)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3162,9 +3247,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_perms_debug_info(id=680308, key='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3203,6 +3289,7 @@ res = s.admin.get_solr_schema()
 if res.res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -3231,9 +3318,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_index_status(sync='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3270,9 +3358,10 @@ res = s.admin.get_admin_test_index(fq=[
     '<value>',
 ], key='<value>', q='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3309,9 +3398,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_admin_index_timestamps()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -3340,9 +3430,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_index_timestamp(dv_object_id=378575)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3377,9 +3468,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_index_type_by_id(id=292538, type='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3415,9 +3507,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_orcid_status()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -3446,9 +3539,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.list_users(items_per_page=526212, search_term='<value>', selected_page=540061, sort_key='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3486,9 +3580,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.add_metrics_from_report(report_on_disk='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3523,9 +3618,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.admin_send_to_hub()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -3554,9 +3650,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.add_usage_metrics_from_sushi_repo(id='<value>', report_on_disk='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3592,9 +3689,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.update_dataset_citations(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3629,9 +3727,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_export_timestamps()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -3660,9 +3759,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_metadata_export_all()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -3691,9 +3791,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.admin_metadata_export_oai_spec(specname='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3728,9 +3829,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.re_export_all_metadata()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -3759,9 +3861,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_metadata_re_export(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3796,9 +3899,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_permissions(dvo='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3833,9 +3937,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.publish_dataverse_as_creator(id=453435)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3870,9 +3975,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_register_data_file_all()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -3901,9 +4007,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_register_data_files_by_alias(alias='<value>', sleep=973941)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3941,9 +4048,10 @@ req = operations.PostAdminSignedURLRequestBody()
 
 res = s.admin.post_admin_signed_url(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -3978,9 +4086,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_roles()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -4009,9 +4118,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.create_admin_role()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -4040,9 +4150,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_admin_role(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4077,9 +4188,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_saved_searches()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -4108,9 +4220,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.add_saved_search()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -4139,9 +4252,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_saved_searches_list()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -4170,9 +4284,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.update_all_saved_search_links(debug=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4207,9 +4322,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.make_links_for_saved_search(id=882350, debug=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4245,9 +4361,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_saved_search(id=731650)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4282,9 +4399,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_saved_search(id=364122)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4319,9 +4437,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_settings()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -4350,9 +4469,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_setting(name='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4387,9 +4507,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.update_admin_setting(name='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4424,9 +4545,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_admin_setting(name='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4461,9 +4583,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.update_admin_settings_lang(lang='<value>', name='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4499,9 +4622,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_admin_settings_lang(lang='<value>', name='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4537,9 +4661,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.generate_sitemap()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -4568,9 +4693,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_storage_sites()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -4599,9 +4725,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.create_storage_site()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -4630,9 +4757,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.fetch_storage_site(id=259428)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4667,9 +4795,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_storage_site(id=969351)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4704,9 +4833,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.update_primary_storage(id=206518)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4741,9 +4871,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.submit_dataset_version_to_archive(id='<value>', version='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4779,9 +4910,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.admin_create_super_user(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4816,9 +4948,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_admin_template(id=195565)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4853,9 +4986,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_templates()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -4884,9 +5018,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_template(alias='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4921,9 +5056,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_external_tools_1(id='<value>', type='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4959,9 +5095,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_external_tool_by_id(id='<value>', tool_id='<value>', type='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -4998,9 +5135,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_external_tools_1_1(id='<value>', type='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -5036,9 +5174,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_hash_values(alg='<value>', num=972785)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -5074,9 +5213,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_validate_dataset_files(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -5111,9 +5251,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.validate_dataset(id='<value>', variables=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -5149,9 +5290,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.admin_validate_datasets(variables=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -5186,9 +5328,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.validate_data_file_hash(file_id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -5223,9 +5366,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.validate_admin_password()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -5254,9 +5398,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_workflows()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -5285,9 +5430,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.create_admin_workflow()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -5316,9 +5462,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_default_workflow()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -5347,9 +5494,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_trigger_type(trigger_type='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -5384,9 +5532,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.update_trigger_type(trigger_type='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -5421,9 +5570,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_trigger_type(trigger_type='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -5458,9 +5608,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_ip_whitelist()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -5489,9 +5640,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.update_ip_whitelist()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -5520,9 +5672,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.delete_ip_whitelist()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -5551,9 +5704,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_workflow_by_identifier(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -5588,9 +5742,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.get_admin_data_file(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -5625,9 +5780,10 @@ s = pydataverse.PyDataverse(
 
 res = s.admin.admin_reregister_hdl_to_pid(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

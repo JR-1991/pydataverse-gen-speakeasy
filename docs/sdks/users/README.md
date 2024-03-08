@@ -29,9 +29,10 @@ s = pydataverse.PyDataverse(
 
 res = s.users.get_user_details()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -60,9 +61,10 @@ s = pydataverse.PyDataverse(
 
 res = s.users.get_user_token()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -91,9 +93,10 @@ s = pydataverse.PyDataverse(
 
 res = s.users.delete_user_token()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -122,9 +125,10 @@ s = pydataverse.PyDataverse(
 
 res = s.users.recreate_user_token()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -153,9 +157,10 @@ s = pydataverse.PyDataverse(
 
 res = s.users.merge_users(base_identifier='<value>', consumed_identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -191,9 +196,10 @@ s = pydataverse.PyDataverse(
 
 res = s.users.change_user_identifier(identifier='<value>', new_identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -229,9 +235,10 @@ s = pydataverse.PyDataverse(
 
 res = s.users.remove_user_roles(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -266,9 +273,10 @@ s = pydataverse.PyDataverse(
 
 res = s.users.get_user_traces(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -303,9 +311,10 @@ s = pydataverse.PyDataverse(
 
 res = s.users.get_user_trace_element(element='<value>', identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

@@ -24,6 +24,7 @@ res = s.ingest.get_ingest_test_file(file_name='<value>', file_type='<value>')
 if res.res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

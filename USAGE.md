@@ -12,5 +12,6 @@ res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, g
 if res.body is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->

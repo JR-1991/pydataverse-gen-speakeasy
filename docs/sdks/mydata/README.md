@@ -23,9 +23,10 @@ req = operations.MyDataRetrieveRequest()
 
 res = s.mydata.my_data_retrieve(req)
 
-if res.res is not None:
+if res.string is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

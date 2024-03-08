@@ -23,9 +23,10 @@ s = pydataverse.PyDataverse(
 
 res = s.roles.create_role(dvo='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -60,9 +61,10 @@ s = pydataverse.PyDataverse(
 
 res = s.roles.get_role(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -97,9 +99,10 @@ s = pydataverse.PyDataverse(
 
 res = s.roles.delete_role(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

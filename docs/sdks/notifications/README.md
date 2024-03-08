@@ -28,9 +28,10 @@ s = pydataverse.PyDataverse(
 
 res = s.notifications.get_all_notifications()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -59,9 +60,10 @@ s = pydataverse.PyDataverse(
 
 res = s.notifications.get_muted_emails()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -90,9 +92,10 @@ s = pydataverse.PyDataverse(
 
 res = s.notifications.update_muted_email_notification(type_name='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -127,9 +130,10 @@ s = pydataverse.PyDataverse(
 
 res = s.notifications.delete_muted_email_notification(type_name='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -164,9 +168,10 @@ s = pydataverse.PyDataverse(
 
 res = s.notifications.get_muted_notifications()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -195,9 +200,10 @@ s = pydataverse.PyDataverse(
 
 res = s.notifications.update_muted_notification(type_name='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -232,9 +238,10 @@ s = pydataverse.PyDataverse(
 
 res = s.notifications.delete_muted_notification(type_name='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -269,9 +276,10 @@ s = pydataverse.PyDataverse(
 
 res = s.notifications.delete_notification(id=927889)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

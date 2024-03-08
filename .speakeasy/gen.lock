@@ -3,21 +3,22 @@ id: faa73a4f-3f6c-47a0-809e-515af47dce1e
 management:
   docChecksum: 804482d470c512b1fb80b46abf333521
   docVersion: "1.0"
-  speakeasyVersion: 1.201.2
-  generationVersion: 2.277.0
-  releaseVersion: 0.5.1
-  configChecksum: 8f64485a50b6a13dc5d688401098980a
+  speakeasyVersion: 1.204.1
+  generationVersion: 2.279.1
+  releaseVersion: 0.6.0
+  configChecksum: 1a93c0e25eb6970b7b28de0cfbaf8b67
   repoURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
   repoSubDirectory: .
   installationURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
 features:
   python:
     constsAndDefaults: 0.1.3
-    core: 4.5.0
+    core: 4.5.1
     deprecations: 2.81.1
     flattening: 2.81.1
     globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
+    responseFormat: 0.1.0
 generatedFiles:
   - src/pydataverse/sdkconfiguration.py
   - src/pydataverse/access.py
@@ -48,6 +49,7 @@ generatedFiles:
   - src/pydataverse/users.py
   - src/pydataverse/workflows.py
   - src/pydataverse/sdk.py
+  - py.typed
   - pylintrc
   - setup.py
   - src/pydataverse/__init__.py

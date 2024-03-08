@@ -27,6 +27,7 @@ res = s.meta.get_datafile_meta(file_id=708075, exclude='<value>', file_metadata_
 if res.res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -69,6 +70,7 @@ res = s.meta.get_dataset_metadata_1(dataset_id=492183, exclude='<value>', includ
 if res.res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

@@ -22,9 +22,10 @@ s = pydataverse.PyDataverse(
 
 res = s.metadatablocks.get_metadatablocks()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -53,9 +54,10 @@ s = pydataverse.PyDataverse(
 
 res = s.metadatablocks.get_metadatablock_1_1(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

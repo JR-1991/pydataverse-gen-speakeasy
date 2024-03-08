@@ -66,9 +66,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.create_dataverse()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -97,9 +98,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_dataverse(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -144,6 +146,7 @@ res = s.dataverses.create_dataverse_1(identifier='<value>', dataverse_request=co
 if res.dataverse_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -180,9 +183,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.delete_dataverse(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -217,9 +221,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.publish_dataverse_by_id(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -254,9 +259,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_dataverse_assignments(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -291,9 +297,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.post_dataverse_assignments(identifier='<value>', key='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -329,9 +336,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.delete_dataverse_assignment(id=540951, identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -367,9 +375,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.update_dataverse_attribute(attribute='<value>', identifier='<value>', value='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -406,9 +415,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_dataverse_contents(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -443,9 +453,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_dataset_schema(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -480,9 +491,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.create_dataset_in_dataverse(identifier='<value>', do_not_validate='<value>', request_body='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -519,9 +531,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.import_dataset(identifier='<value>', pid='<value>', release='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -558,9 +571,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.import_ddi_to_dataset(identifier='<value>', pid='<value>', release='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -597,9 +611,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.start_migration(identifier='<value>', request_body='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -635,9 +650,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.update_default_contributor_role(identifier='<value>', role_alias='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -673,9 +689,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_facets(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -710,9 +727,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.post_facets(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -747,9 +765,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_dataverse_groups(identifier='<value>', key='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -785,9 +804,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.create_dataverse_group(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -822,9 +842,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_group_in_dataverse(alias_in_owner='<value>', identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -860,9 +881,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.update_group_in_dataverse(alias_in_owner='<value>', identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -898,9 +920,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.delete_group_in_dataverse(alias_in_owner='<value>', identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -938,9 +961,10 @@ res = s.dataverses.assign_role(alias_in_owner='<value>', identifier='<value>', r
     '<value>',
 ])
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -977,9 +1001,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.update_role_assignee(alias_in_owner='<value>', identifier='<value>', role_assignee_identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1016,9 +1041,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.delete_role_assignee(alias_in_owner='<value>', identifier='<value>', role_assignee_identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1055,9 +1081,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_guestbook_responses(identifier='<value>', guestbook_id=630521)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1093,9 +1120,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_dataverse_links(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1130,9 +1158,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_metadatablock_facets(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1169,9 +1198,10 @@ res = s.dataverses.post_metadatablock_facets(identifier='<value>', request_body=
     '<value>',
 ])
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1207,9 +1237,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.update_root_status(identifier='<value>', request_body='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1245,9 +1276,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_metadatablock(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1282,9 +1314,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.create_metadatablock(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1319,9 +1352,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_metadatablock_1(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1356,9 +1390,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.post_metadatablock(identifier='<value>', request_body='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1394,9 +1429,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_roles_by_identifier(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1431,9 +1467,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.create_role_by_identifier(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1468,9 +1505,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_storage_quota(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1505,9 +1543,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.delete_storage_quota(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1542,9 +1581,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.set_storage_quota(bytes_allocated=789024, identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1580,9 +1620,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_dataverse_storage_usage(identifier='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1617,9 +1658,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.get_dataverse_storage_size(identifier='<value>', include_cached=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1655,9 +1697,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.validate_dataset_json(identifier='<value>', request_body='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1693,9 +1736,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.move_dataverse(id='<value>', target_dataverse_alias='<value>', force_move=False)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1732,9 +1776,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.link_dataverses(linked_dataverse_alias='<value>', linking_dataverse_alias='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1770,9 +1815,10 @@ s = pydataverse.PyDataverse(
 
 res = s.dataverses.delete_dataverse_link(linked_dataverse_id='<value>', linking_dataverse_id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

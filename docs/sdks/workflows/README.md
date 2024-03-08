@@ -21,9 +21,10 @@ s = pydataverse.PyDataverse(
 
 res = s.workflows.start_workflow(invocation_id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

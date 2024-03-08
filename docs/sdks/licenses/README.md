@@ -28,9 +28,10 @@ s = pydataverse.PyDataverse(
 
 res = s.licenses.get_licenses()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -59,9 +60,10 @@ s = pydataverse.PyDataverse(
 
 res = s.licenses.add_license()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -90,9 +92,10 @@ s = pydataverse.PyDataverse(
 
 res = s.licenses.get_default_license()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -121,9 +124,10 @@ s = pydataverse.PyDataverse(
 
 res = s.licenses.update_default_license(id=34621)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -158,9 +162,10 @@ s = pydataverse.PyDataverse(
 
 res = s.licenses.get_license(id=179853)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -195,9 +200,10 @@ s = pydataverse.PyDataverse(
 
 res = s.licenses.delete_license(id=738361)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -232,9 +238,10 @@ s = pydataverse.PyDataverse(
 
 res = s.licenses.update_license_active_state(active_state=False, id=744481)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -270,9 +277,10 @@ s = pydataverse.PyDataverse(
 
 res = s.licenses.update_license_sort_order(id=430322, sort_order=505916)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
