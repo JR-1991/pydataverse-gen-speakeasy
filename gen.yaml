@@ -29,7 +29,7 @@ go:
   outputModelSuffix: output
   packageName: openapi
 python:
-  version: 0.6.2
+  version: 0.7.0
   additionalDependencies:
     dependencies: {}
     extraDependencies:
@@ -50,6 +50,7 @@ python:
   maxMethodParams: 4
   outputModelSuffix: output
   packageName: pydataverse
+  projectUrls: {}
   responseFormat: envelope
 typescript:
   version: 0.2.0

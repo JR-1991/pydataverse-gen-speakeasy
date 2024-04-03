@@ -10,9 +10,10 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="pydataverse",
-    version="0.6.2",
+    version="0.7.0",
     author="pyDataverse Working Group",
     description="This is a Python client for Dataverse",
+    url="https://github.com/JR-1991/pydataverse-gen-speakeasy.git",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(where="src"),
