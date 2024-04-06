@@ -19,7 +19,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name='pydataverse',
-    version='0.7.1',
+    version='0.7.2',
     author='pyDataverse Working Group',
     description='This is a Python client for Dataverse',
     url='https://github.com/JR-1991/pydataverse-gen-speakeasy.git',
@@ -44,10 +44,12 @@ setuptools.setup(
     ],
     extras_require={
         "dev": [
-            "pylint==2.16.2",
+            "pylint==3.1.0",
         ],
     },
     package_dir={'': 'src'},
     python_requires='>=3.8',
-    package_data={'pydataverse': ['py.typed']},
+    package_data={
+        'pydataverse': ['py.typed']
+    },
 )
