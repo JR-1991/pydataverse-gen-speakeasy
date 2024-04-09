@@ -220,7 +220,7 @@ class Users:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.MergeUsersRequest, base_url, '/api/v1/users/{consumedIdentifier}/mergeIntoUser/{baseIdentifier}', request)
+        url = utils.generate_url(base_url, '/api/v1/users/{consumedIdentifier}/mergeIntoUser/{baseIdentifier}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -274,7 +274,7 @@ class Users:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ChangeUserIdentifierRequest, base_url, '/api/v1/users/{identifier}/changeIdentifier/{newIdentifier}', request)
+        url = utils.generate_url(base_url, '/api/v1/users/{identifier}/changeIdentifier/{newIdentifier}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -327,7 +327,7 @@ class Users:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.RemoveUserRolesRequest, base_url, '/api/v1/users/{identifier}/removeRoles', request)
+        url = utils.generate_url(base_url, '/api/v1/users/{identifier}/removeRoles', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -380,7 +380,7 @@ class Users:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetUserTracesRequest, base_url, '/api/v1/users/{identifier}/traces', request)
+        url = utils.generate_url(base_url, '/api/v1/users/{identifier}/traces', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -434,7 +434,7 @@ class Users:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetUserTraceElementRequest, base_url, '/api/v1/users/{identifier}/traces/{element}', request)
+        url = utils.generate_url(base_url, '/api/v1/users/{identifier}/traces/{element}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())

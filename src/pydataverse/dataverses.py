@@ -73,7 +73,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDataverseRequest, base_url, '/api/v1/dataverses/{identifier}', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -127,7 +127,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.CreateDataverse1Request, base_url, '/api/v1/dataverses/{identifier}', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -197,7 +197,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteDataverseRequest, base_url, '/api/v1/dataverses/{identifier}', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -250,7 +250,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PublishDataverseByIDRequest, base_url, '/api/v1/dataverses/{identifier}/actions/:publish', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/actions/:publish', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -303,7 +303,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDataverseAssignmentsRequest, base_url, '/api/v1/dataverses/{identifier}/assignments', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/assignments', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -357,14 +357,14 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostDataverseAssignmentsRequest, base_url, '/api/v1/dataverses/{identifier}/assignments', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/assignments', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.PostDataverseAssignmentsRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -412,7 +412,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteDataverseAssignmentRequest, base_url, '/api/v1/dataverses/{identifier}/assignments/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/assignments/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -467,14 +467,14 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateDataverseAttributeRequest, base_url, '/api/v1/dataverses/{identifier}/attribute/{attribute}', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/attribute/{attribute}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.UpdateDataverseAttributeRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -521,7 +521,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDataverseContentsRequest, base_url, '/api/v1/dataverses/{identifier}/contents', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/contents', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -574,7 +574,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetSchemaRequest, base_url, '/api/v1/dataverses/{identifier}/datasetSchema', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/datasetSchema', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -629,7 +629,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.CreateDatasetInDataverseRequest, base_url, '/api/v1/dataverses/{identifier}/datasets', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/datasets', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -639,7 +639,7 @@ class Dataverses:
         req_content_type, data, form = utils.serialize_request_body(request, operations.CreateDatasetInDataverseRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = { **utils.get_query_params(operations.CreateDatasetInDataverseRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -688,14 +688,14 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ImportDatasetRequest, base_url, '/api/v1/dataverses/{identifier}/datasets/:import', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/datasets/:import', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.ImportDatasetRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -744,14 +744,14 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ImportDdiToDatasetRequest, base_url, '/api/v1/dataverses/{identifier}/datasets/:importddi', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/datasets/:importddi', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.ImportDdiToDatasetRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -799,7 +799,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.StartMigrationRequest, base_url, '/api/v1/dataverses/{identifier}/datasets/:startmigration', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/datasets/:startmigration', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -856,7 +856,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateDefaultContributorRoleRequest, base_url, '/api/v1/dataverses/{identifier}/defaultContributorRole/{roleAlias}', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/defaultContributorRole/{roleAlias}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -909,7 +909,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetFacetsRequest, base_url, '/api/v1/dataverses/{identifier}/facets', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/facets', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -962,7 +962,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostFacetsRequest, base_url, '/api/v1/dataverses/{identifier}/facets', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/facets', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1016,14 +1016,14 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDataverseGroupsRequest, base_url, '/api/v1/dataverses/{identifier}/groups', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/groups', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDataverseGroupsRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -1070,7 +1070,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.CreateDataverseGroupRequest, base_url, '/api/v1/dataverses/{identifier}/groups', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/groups', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1124,7 +1124,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetGroupInDataverseRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1178,7 +1178,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateGroupInDataverseRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1232,7 +1232,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteGroupInDataverseRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1287,7 +1287,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.AssignRoleRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1345,7 +1345,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateRoleAssigneeRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees/{roleAssigneeIdentifier}', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees/{roleAssigneeIdentifier}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1400,7 +1400,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteRoleAssigneeRequest, base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees/{roleAssigneeIdentifier}', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees/{roleAssigneeIdentifier}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1454,14 +1454,14 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetGuestbookResponsesRequest, base_url, '/api/v1/dataverses/{identifier}/guestbookResponses', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/guestbookResponses', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetGuestbookResponsesRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -1508,7 +1508,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDataverseLinksRequest, base_url, '/api/v1/dataverses/{identifier}/links', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/links', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1561,7 +1561,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetMetadatablockFacetsRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablockfacets', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/metadatablockfacets', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1615,7 +1615,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostMetadatablockFacetsRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablockfacets', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/metadatablockfacets', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1672,7 +1672,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateRootStatusRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablockfacets/isRoot', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/metadatablockfacets/isRoot', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1728,7 +1728,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetMetadatablockRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablocks', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/metadatablocks', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1781,7 +1781,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.CreateMetadatablockRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablocks', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/metadatablocks', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1834,7 +1834,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetMetadatablock1Request, base_url, '/api/v1/dataverses/{identifier}/metadatablocks/:isRoot', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/metadatablocks/:isRoot', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1888,7 +1888,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostMetadatablockRequest, base_url, '/api/v1/dataverses/{identifier}/metadatablocks/:isRoot', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/metadatablocks/:isRoot', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1944,7 +1944,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetRolesByIdentifierRequest, base_url, '/api/v1/dataverses/{identifier}/roles', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/roles', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1997,7 +1997,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.CreateRoleByIdentifierRequest, base_url, '/api/v1/dataverses/{identifier}/roles', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/roles', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2050,7 +2050,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetStorageQuotaRequest, base_url, '/api/v1/dataverses/{identifier}/storage/quota', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/storage/quota', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2103,7 +2103,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteStorageQuotaRequest, base_url, '/api/v1/dataverses/{identifier}/storage/quota', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/storage/quota', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2157,7 +2157,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.SetStorageQuotaRequest, base_url, '/api/v1/dataverses/{identifier}/storage/quota/{bytesAllocated}', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/storage/quota/{bytesAllocated}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2210,7 +2210,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDataverseStorageUsageRequest, base_url, '/api/v1/dataverses/{identifier}/storage/use', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/storage/use', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2264,14 +2264,14 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDataverseStorageSizeRequest, base_url, '/api/v1/dataverses/{identifier}/storagesize', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/storagesize', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDataverseStorageSizeRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -2319,7 +2319,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ValidateDatasetJSONRequest, base_url, '/api/v1/dataverses/{identifier}/validateDatasetJson', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{identifier}/validateDatasetJson', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2377,14 +2377,14 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.MoveDataverseRequest, base_url, '/api/v1/dataverses/{id}/move/{targetDataverseAlias}', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{id}/move/{targetDataverseAlias}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.MoveDataverseRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -2432,7 +2432,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.LinkDataversesRequest, base_url, '/api/v1/dataverses/{linkedDataverseAlias}/link/{linkingDataverseAlias}', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{linkedDataverseAlias}/link/{linkingDataverseAlias}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2486,7 +2486,7 @@ class Dataverses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteDataverseLinkRequest, base_url, '/api/v1/dataverses/{linkingDataverseId}/deleteLink/{linkedDataverseId}', request)
+        url = utils.generate_url(base_url, '/api/v1/dataverses/{linkingDataverseId}/deleteLink/{linkedDataverseId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())

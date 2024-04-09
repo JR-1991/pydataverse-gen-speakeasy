@@ -170,7 +170,7 @@ class Licenses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateDefaultLicenseRequest, base_url, '/api/v1/licenses/default/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/licenses/default/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -223,7 +223,7 @@ class Licenses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetLicenseRequest, base_url, '/api/v1/licenses/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/licenses/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -276,7 +276,7 @@ class Licenses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteLicenseRequest, base_url, '/api/v1/licenses/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/licenses/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -330,7 +330,7 @@ class Licenses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateLicenseActiveStateRequest, base_url, '/api/v1/licenses/{id}/:active/{activeState}', request)
+        url = utils.generate_url(base_url, '/api/v1/licenses/{id}/:active/{activeState}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -384,7 +384,7 @@ class Licenses:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateLicenseSortOrderRequest, base_url, '/api/v1/licenses/{id}/:sortOrder/{sortOrder}', request)
+        url = utils.generate_url(base_url, '/api/v1/licenses/{id}/:sortOrder/{sortOrder}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())

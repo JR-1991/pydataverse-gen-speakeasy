@@ -111,6 +111,7 @@ class PyDataverse:
                 'base_url': base_url or 'demo.dataverse.org',
             },
         ]
+    
 
         self.sdk_configuration = SDKConfiguration(
             client,
@@ -129,7 +130,7 @@ class PyDataverse:
             self.sdk_configuration.server_url = server_url
 
         # pylint: disable=protected-access
-        self.sdk_configuration._hooks = hooks
+        self.sdk_configuration.__dict__['_hooks'] = hooks
 
         self._init_sdks()
 

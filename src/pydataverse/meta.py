@@ -30,14 +30,14 @@ class Meta:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatafileMetaRequest, base_url, '/api/v1/meta/datafile/{fileId}', request)
+        url = utils.generate_url(base_url, '/api/v1/meta/datafile/{fileId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatafileMetaRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = 'text/xml'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -93,14 +93,14 @@ class Meta:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetMetadata1Request, base_url, '/api/v1/meta/dataset/{datasetId}', request)
+        url = utils.generate_url(base_url, '/api/v1/meta/dataset/{datasetId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetMetadata1Request, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = 'application/xml'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client

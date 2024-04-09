@@ -33,7 +33,7 @@ class BuiltinUsers:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.PostBuiltinUsersRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -81,7 +81,7 @@ class BuiltinUsers:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.CreateBuiltinUserRequest, base_url, '/api/v1/builtin-users/{password}/{key}', request)
+        url = utils.generate_url(base_url, '/api/v1/builtin-users/{password}/{key}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -136,7 +136,7 @@ class BuiltinUsers:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.CreateBuiltinUser1Request, base_url, '/api/v1/builtin-users/{password}/{key}/{sendEmailNotification}', request)
+        url = utils.generate_url(base_url, '/api/v1/builtin-users/{password}/{key}/{sendEmailNotification}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -190,14 +190,14 @@ class BuiltinUsers:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAPITokenByUsernameRequest, base_url, '/api/v1/builtin-users/{username}/api-token', request)
+        url = utils.generate_url(base_url, '/api/v1/builtin-users/{username}/api-token', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetAPITokenByUsernameRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client

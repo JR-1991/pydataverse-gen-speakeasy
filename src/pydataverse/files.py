@@ -73,7 +73,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetFileRequest, base_url, '/api/v1/files/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -126,7 +126,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteFileRequest, base_url, '/api/v1/files/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -179,7 +179,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetFileDataTablesRequest, base_url, '/api/v1/files/{id}/dataTables', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/dataTables', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -232,7 +232,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDownloadCountRequest, base_url, '/api/v1/files/{id}/downloadCount', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/downloadCount', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -285,7 +285,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetFileDraftRequest, base_url, '/api/v1/files/{id}/draft', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/draft', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -338,7 +338,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ExtractNcmlByIDRequest, base_url, '/api/v1/files/{id}/extractNcml', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/extractNcml', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -391,7 +391,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.CheckFileDeletionStatusRequest, base_url, '/api/v1/files/{id}/hasBeenDeleted', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/hasBeenDeleted', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -444,7 +444,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetFileMetadataRequest, base_url, '/api/v1/files/{id}/metadata', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/metadata', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -497,7 +497,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateFileMetadataRequest, base_url, '/api/v1/files/{id}/metadata', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/metadata', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -550,7 +550,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostFileMetadataCategoriesRequest, base_url, '/api/v1/files/{id}/metadata/categories', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/metadata/categories', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -603,7 +603,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDraftMetaDataRequest, base_url, '/api/v1/files/{id}/metadata/draft', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/metadata/draft', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -656,7 +656,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostTabularTagsRequest, base_url, '/api/v1/files/{id}/metadata/tabularTags', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/metadata/tabularTags', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -712,14 +712,14 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetFileMetadataToolParamsRequest, base_url, '/api/v1/files/{id}/metadata/{fmid}/toolparams/{tid}', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/metadata/{fmid}/toolparams/{tid}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetFileMetadataToolParamsRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -766,7 +766,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetFileProvFreeformRequest, base_url, '/api/v1/files/{id}/prov-freeform', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/prov-freeform', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -820,7 +820,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostFileProvFreeformRequest, base_url, '/api/v1/files/{id}/prov-freeform', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/prov-freeform', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -876,7 +876,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetFileProvJSONRequest, base_url, '/api/v1/files/{id}/prov-json', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/prov-json', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -931,7 +931,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostFileProvJSONRequest, base_url, '/api/v1/files/{id}/prov-json', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/prov-json', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -941,7 +941,7 @@ class Files:
         req_content_type, data, form = utils.serialize_request_body(request, operations.PostFileProvJSONRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = { **utils.get_query_params(operations.PostFileProvJSONRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -988,7 +988,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteFileProvJSONRequest, base_url, '/api/v1/files/{id}/prov-json', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/prov-json', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1042,14 +1042,14 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.RedetectFileRequest, base_url, '/api/v1/files/{id}/redetect', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/redetect', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.RedetectFileRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -1096,7 +1096,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ReingestFileRequest, base_url, '/api/v1/files/{id}/reingest', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/reingest', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1150,7 +1150,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ReplaceFileRequest, base_url, '/api/v1/files/{id}/replace', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/replace', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1206,7 +1206,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.RestrictFileAccessRequest, base_url, '/api/v1/files/{id}/restrict', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/restrict', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1259,7 +1259,7 @@ class Files:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostFileUningestRequest, base_url, '/api/v1/files/{id}/uningest', request)
+        url = utils.generate_url(base_url, '/api/v1/files/{id}/uningest', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())

@@ -121,7 +121,7 @@ class Notifications:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateMutedEmailNotificationRequest, base_url, '/api/v1/notifications/mutedEmails/{typeName}', request)
+        url = utils.generate_url(base_url, '/api/v1/notifications/mutedEmails/{typeName}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -174,7 +174,7 @@ class Notifications:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteMutedEmailNotificationRequest, base_url, '/api/v1/notifications/mutedEmails/{typeName}', request)
+        url = utils.generate_url(base_url, '/api/v1/notifications/mutedEmails/{typeName}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -276,7 +276,7 @@ class Notifications:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateMutedNotificationRequest, base_url, '/api/v1/notifications/mutedNotifications/{typeName}', request)
+        url = utils.generate_url(base_url, '/api/v1/notifications/mutedNotifications/{typeName}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -329,7 +329,7 @@ class Notifications:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteMutedNotificationRequest, base_url, '/api/v1/notifications/mutedNotifications/{typeName}', request)
+        url = utils.generate_url(base_url, '/api/v1/notifications/mutedNotifications/{typeName}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -382,7 +382,7 @@ class Notifications:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteNotificationRequest, base_url, '/api/v1/notifications/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/notifications/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())

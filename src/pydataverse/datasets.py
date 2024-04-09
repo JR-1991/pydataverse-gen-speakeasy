@@ -32,7 +32,7 @@ class Datasets:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetsExportRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -136,7 +136,7 @@ class Datasets:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetLocksRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -290,7 +290,7 @@ class Datasets:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.UpdateDatasetUploadRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -346,7 +346,7 @@ class Datasets:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.DeleteDatasetUploadRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -393,7 +393,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetPrivateURLDatasetVersionRequest, base_url, '/api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -446,7 +446,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetCitationByPrivateURLRequest, base_url, '/api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}/citation', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/privateUrlDatasetVersion/{privateUrlToken}/citation', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -549,7 +549,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteDatasetLinkRequest, base_url, '/api/v1/datasets/{datasetId}/deleteLink/{linkedDataverseId}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{datasetId}/deleteLink/{linkedDataverseId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -602,7 +602,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAllowedCurationLabelsRequest, base_url, '/api/v1/datasets/{identifier}/allowedCurationLabels', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/allowedCurationLabels', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -655,7 +655,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetAssignmentsRequest, base_url, '/api/v1/datasets/{identifier}/assignments', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/assignments', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -709,14 +709,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.CreateDatasetAssignmentRequest, base_url, '/api/v1/datasets/{identifier}/assignments', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/assignments', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.CreateDatasetAssignmentRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -764,7 +764,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAssignmentRequest, base_url, '/api/v1/datasets/{identifier}/assignments/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/assignments/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -817,7 +817,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetCurationLabelSet1Request, base_url, '/api/v1/datasets/{identifier}/curationLabelSet', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/curationLabelSet', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -871,14 +871,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateCurationLabelSet1Request, base_url, '/api/v1/datasets/{identifier}/curationLabelSet', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/curationLabelSet', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.UpdateCurationLabelSet1Request, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -925,7 +925,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteCurationLabelSet1Request, base_url, '/api/v1/datasets/{identifier}/curationLabelSet', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/curationLabelSet', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -978,7 +978,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ValidateChecksumRequest, base_url, '/api/v1/datasets/{identifier}/dataCaptureModule/checksumValidation', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/dataCaptureModule/checksumValidation', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1031,7 +1031,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetRsyncDataModuleRequest, base_url, '/api/v1/datasets/{identifier}/dataCaptureModule/rsync', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/dataCaptureModule/rsync', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1084,7 +1084,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetGuestbookEntryRequest, base_url, '/api/v1/datasets/{identifier}/guestbookEntryAtRequest', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/guestbookEntryAtRequest', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1137,7 +1137,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateGuestbookEntryRequest, base_url, '/api/v1/datasets/{identifier}/guestbookEntryAtRequest', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/guestbookEntryAtRequest', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1190,7 +1190,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteGuestbookEntryRequest, base_url, '/api/v1/datasets/{identifier}/guestbookEntryAtRequest', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/guestbookEntryAtRequest', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1244,7 +1244,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.LockDatasetRequest, base_url, '/api/v1/datasets/{identifier}/lock/{type}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/lock/{type}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1298,14 +1298,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetLocks1Request, base_url, '/api/v1/datasets/{identifier}/locks', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/locks', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetLocks1Request, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -1353,14 +1353,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteDatasetLocksRequest, base_url, '/api/v1/datasets/{identifier}/locks', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/locks', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.DeleteDatasetLocksRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -1407,7 +1407,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetStorageDriver1Request, base_url, '/api/v1/datasets/{identifier}/storageDriver', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/storageDriver', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1460,7 +1460,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateStorageDriver1Request, base_url, '/api/v1/datasets/{identifier}/storageDriver', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/storageDriver', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1513,7 +1513,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteStorageDriver1Request, base_url, '/api/v1/datasets/{identifier}/storageDriver', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/storageDriver', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1567,14 +1567,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetStorageSizeRequest, base_url, '/api/v1/datasets/{identifier}/storagesize', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/storagesize', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetStorageSizeRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -1621,7 +1621,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetTimestampsRequest, base_url, '/api/v1/datasets/{identifier}/timestamps', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/timestamps', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1670,14 +1670,14 @@ class Datasets:
         hook_ctx = HookContext(operation_id='getDownloadSize', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDownloadSizeRequest, base_url, '/api/v1/datasets/{identifier}/versions/{versionId}/downloadsize', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{identifier}/versions/{versionId}/downloadsize', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDownloadSizeRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -1724,7 +1724,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetRequest, base_url, '/api/v1/datasets/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1777,7 +1777,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteDatasetRequest, base_url, '/api/v1/datasets/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1834,14 +1834,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetPublishDatasetRequest, base_url, '/api/v1/datasets/{id}/actions/:publish', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/actions/:publish', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetPublishDatasetRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -1890,14 +1890,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.InitiatePublishingRequest, base_url, '/api/v1/datasets/{id}/actions/:publish', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/actions/:publish', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.InitiatePublishingRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -1946,7 +1946,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ReleaseMigratedDatasetRequest, base_url, '/api/v1/datasets/{id}/actions/:releasemigrated', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/actions/:releasemigrated', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1956,7 +1956,7 @@ class Datasets:
         req_content_type, data, form = utils.serialize_request_body(request, operations.ReleaseMigratedDatasetRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = { **utils.get_query_params(operations.ReleaseMigratedDatasetRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -2004,7 +2004,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.AddDatasetRequest, base_url, '/api/v1/datasets/{id}/add', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/add', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2061,7 +2061,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.AddFilesToDatasetRequest, base_url, '/api/v1/datasets/{id}/addFiles', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/addFiles', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2118,7 +2118,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.AddGlobusFilesToDatasetRequest, base_url, '/api/v1/datasets/{id}/addGlobusFiles', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/addGlobusFiles', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2174,7 +2174,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateCitationDateRequest, base_url, '/api/v1/datasets/{id}/citationdate', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/citationdate', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2227,7 +2227,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteCitationDateRequest, base_url, '/api/v1/datasets/{id}/citationdate', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/citationdate', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2281,14 +2281,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetCleanStorageStatusRequest, base_url, '/api/v1/datasets/{id}/cleanStorage', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/cleanStorage', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetCleanStorageStatusRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -2335,7 +2335,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetCurationStatusRequest, base_url, '/api/v1/datasets/{id}/curationStatus', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/curationStatus', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2389,14 +2389,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateCurationStatusRequest, base_url, '/api/v1/datasets/{id}/curationStatus', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/curationStatus', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.UpdateCurationStatusRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -2443,7 +2443,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteCurationStatusRequest, base_url, '/api/v1/datasets/{id}/curationStatus', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/curationStatus', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2496,7 +2496,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateDatasetMetadataRequest, base_url, '/api/v1/datasets/{id}/deleteMetadata', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/deleteMetadata', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2549,7 +2549,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteDataset1Request, base_url, '/api/v1/datasets/{id}/destroy', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/destroy', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2605,14 +2605,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetDirectoryIndexRequest, base_url, '/api/v1/datasets/{id}/dirindex', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/dirindex', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetDirectoryIndexRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -2660,14 +2660,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.EditDatasetMetadataRequest, base_url, '/api/v1/datasets/{id}/editMetadata', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/editMetadata', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.EditDatasetMetadataRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -2714,7 +2714,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.SetDatasetEmbargoRequest, base_url, '/api/v1/datasets/{id}/files/actions/:set-embargo', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/files/actions/:set-embargo', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2767,7 +2767,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UnsetEmbargoOnDatasetFilesRequest, base_url, '/api/v1/datasets/{id}/files/actions/:unset-embargo', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/files/actions/:unset-embargo', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2822,14 +2822,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetGlobusDownloadParametersRequest, base_url, '/api/v1/datasets/{id}/globusDownloadParameters', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/globusDownloadParameters', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetGlobusDownloadParametersRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -2877,14 +2877,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetGlobusUploadParametersRequest, base_url, '/api/v1/datasets/{id}/globusUploadParameters', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/globusUploadParameters', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetGlobusUploadParametersRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -2931,7 +2931,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetLinksRequest, base_url, '/api/v1/datasets/{id}/links', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/links', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2984,7 +2984,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetLogoRequest, base_url, '/api/v1/datasets/{id}/logo', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/logo', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3037,7 +3037,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DatasetCitationCountGetRequest, base_url, '/api/v1/datasets/{id}/makeDataCount/citations', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/makeDataCount/citations', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3092,14 +3092,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetMetricsRequest, base_url, '/api/v1/datasets/{id}/makeDataCount/{metric}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/makeDataCount/{metric}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetMetricsRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -3149,14 +3149,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetMetricRequest, base_url, '/api/v1/datasets/{id}/makeDataCount/{metric}/{yyyymm}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/makeDataCount/{metric}/{yyyymm}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetMetricRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -3203,7 +3203,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetMetadataRequest, base_url, '/api/v1/datasets/{id}/metadata', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/metadata', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3258,7 +3258,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateDatasetMetadata1Request, base_url, '/api/v1/datasets/{id}/metadata', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/metadata', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3268,7 +3268,7 @@ class Datasets:
         req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateDatasetMetadata1Request, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = { **utils.get_query_params(operations.UpdateDatasetMetadata1Request, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -3316,7 +3316,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateMetadataDeletionRequest, base_url, '/api/v1/datasets/{id}/metadata/delete', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/metadata/delete', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3372,7 +3372,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetRegistrationModificationRequest, base_url, '/api/v1/datasets/{id}/modifyRegistration', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/modifyRegistration', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3425,7 +3425,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ModifyDatasetRegistrationMetadataRequest, base_url, '/api/v1/datasets/{id}/modifyRegistrationMetadata', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/modifyRegistrationMetadata', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3479,7 +3479,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.MonitorGlobusDownloadRequest, base_url, '/api/v1/datasets/{id}/monitorGlobusDownload', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/monitorGlobusDownload', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3537,14 +3537,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.MoveDatasetToTargetRequest, base_url, '/api/v1/datasets/{id}/move/{targetDataverseAlias}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/move/{targetDataverseAlias}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.MoveDatasetToTargetRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -3591,7 +3591,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetPrivateURLRequest, base_url, '/api/v1/datasets/{id}/privateUrl', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/privateUrl', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3645,14 +3645,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.CreatePrivateURLRequest, base_url, '/api/v1/datasets/{id}/privateUrl', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/privateUrl', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.CreatePrivateURLRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -3699,7 +3699,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeletePrivateURLRequest, base_url, '/api/v1/datasets/{id}/privateUrl', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/privateUrl', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3753,7 +3753,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ReplaceDatasetFilesRequest, base_url, '/api/v1/datasets/{id}/replaceFiles', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/replaceFiles', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3811,7 +3811,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.SubmitGlobusDownloadRequestRequest, base_url, '/api/v1/datasets/{id}/requestGlobusDownload', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/requestGlobusDownload', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3821,7 +3821,7 @@ class Datasets:
         req_content_type, data, form = utils.serialize_request_body(request, operations.SubmitGlobusDownloadRequestRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = { **utils.get_query_params(operations.SubmitGlobusDownloadRequestRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -3869,7 +3869,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostGlobusUploadPathsRequestRequest, base_url, '/api/v1/datasets/{id}/requestGlobusUploadPaths', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/requestGlobusUploadPaths', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3925,7 +3925,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ReturnDatasetToAuthorRequest, base_url, '/api/v1/datasets/{id}/returnToAuthor', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/returnToAuthor', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3978,7 +3978,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.SubmitDatasetForReviewRequest, base_url, '/api/v1/datasets/{id}/submitForReview', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/submitForReview', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4031,7 +4031,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetThumbnailRequest, base_url, '/api/v1/datasets/{id}/thumbnail', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/thumbnail', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4085,7 +4085,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostDatasetThumbnailRequest, base_url, '/api/v1/datasets/{id}/thumbnail', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/thumbnail', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4141,7 +4141,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteDatasetThumbnailRequest, base_url, '/api/v1/datasets/{id}/thumbnail', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/thumbnail', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4194,7 +4194,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetThumbnailCandidatesRequest, base_url, '/api/v1/datasets/{id}/thumbnail/candidates', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/thumbnail/candidates', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4248,7 +4248,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostThumbnailDataRequest, base_url, '/api/v1/datasets/{id}/thumbnail/{dataFileId}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/thumbnail/{dataFileId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4304,7 +4304,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetUploadIDRequest, base_url, '/api/v1/datasets/{id}/uploadsid', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/uploadsid', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4358,14 +4358,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetUploadURLsRequest, base_url, '/api/v1/datasets/{id}/uploadurls', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/uploadurls', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetUploadURLsRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4412,7 +4412,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetUserPermissionsRequest, base_url, '/api/v1/datasets/{id}/userPermissions', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/userPermissions', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4468,14 +4468,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetVersionsRequest, base_url, '/api/v1/datasets/{id}/versions', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/versions', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetVersionsRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4525,14 +4525,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetVersionRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/versions/{versionId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetVersionRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4581,7 +4581,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateDatasetVersionRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/versions/{versionId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4638,7 +4638,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteDatasetVersionRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/versions/{versionId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4693,14 +4693,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.CheckDatasetFileDownloadPermissionRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/canDownloadAtLeastOneFile', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/versions/{versionId}/canDownloadAtLeastOneFile', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.CheckDatasetFileDownloadPermissionRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4749,14 +4749,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetCitationRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/citation', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/versions/{versionId}/citation', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetCitationRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4804,7 +4804,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetCustomLicenseRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/customlicense', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/versions/{versionId}/customlicense', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4858,7 +4858,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostDeaccessionDatasetByVersionIDRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/deaccession', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/versions/{versionId}/deaccession', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4907,14 +4907,14 @@ class Datasets:
         hook_ctx = HookContext(operation_id='getDatasetVersionFiles', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetVersionFilesRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/files', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/versions/{versionId}/files', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetVersionFilesRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4957,14 +4957,14 @@ class Datasets:
         hook_ctx = HookContext(operation_id='getDatasetFilesCount', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetFilesCountRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/files/counts', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/versions/{versionId}/files/counts', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetFilesCountRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -5012,7 +5012,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetVersionLinksetRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/linkset', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/versions/{versionId}/linkset', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -5066,7 +5066,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetVersionMetadataRequest, base_url, '/api/v1/datasets/{id}/versions/{versionId}/metadata', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/versions/{versionId}/metadata', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -5121,7 +5121,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetVersionMetadata1Request, base_url, '/api/v1/datasets/{id}/versions/{versionNumber}/metadata/{block}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/versions/{versionNumber}/metadata/{block}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -5177,14 +5177,14 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetVersionToolParamRequest, base_url, '/api/v1/datasets/{id}/versions/{version}/toolparams/{tid}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/versions/{version}/toolparams/{tid}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetVersionToolParamRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -5232,7 +5232,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetArchivalStatusRequest, base_url, '/api/v1/datasets/{id}/{version}/archivalStatus', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/{version}/archivalStatus', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -5287,7 +5287,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateDatasetArchivalStatusRequest, base_url, '/api/v1/datasets/{id}/{version}/archivalStatus', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/{version}/archivalStatus', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -5344,7 +5344,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteDatasetArchivalStatusRequest, base_url, '/api/v1/datasets/{id}/{version}/archivalStatus', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{id}/{version}/archivalStatus', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -5398,7 +5398,7 @@ class Datasets:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateDatasetLinkRequest, base_url, '/api/v1/datasets/{linkedDatasetId}/link/{linkingDataverseAlias}', request)
+        url = utils.generate_url(base_url, '/api/v1/datasets/{linkedDatasetId}/link/{linkingDataverseAlias}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())

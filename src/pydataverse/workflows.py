@@ -23,7 +23,7 @@ class Workflows:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.StartWorkflowRequest, base_url, '/api/v1/workflows/{invocationId}', request)
+        url = utils.generate_url(base_url, '/api/v1/workflows/{invocationId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())

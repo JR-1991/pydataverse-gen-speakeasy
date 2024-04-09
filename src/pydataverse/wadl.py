@@ -72,7 +72,7 @@ class Wadl:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetApplicationWadl1Request, base_url, '/api/v1/application.wadl/{path}', request)
+        url = utils.generate_url(base_url, '/api/v1/application.wadl/{path}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())

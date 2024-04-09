@@ -26,14 +26,14 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatafileBundleRequest, base_url, '/api/v1/access/datafile/bundle/{fileId}', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/bundle/{fileId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatafileBundleRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = 'application/zip'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -85,14 +85,14 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatafileRequest, base_url, '/api/v1/access/datafile/{fileId}', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/{fileId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatafileRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -139,7 +139,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatafileAuxiliaryRequest, base_url, '/api/v1/access/datafile/{fileId}/auxiliary', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/{fileId}/auxiliary', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -194,7 +194,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.AccessDatafileAuxiliaryGetRequest, base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -254,7 +254,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.AccessDatafileAuxiliaryCreateRequest, base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -312,7 +312,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.AccessDatafileAuxiliaryDeleteRequest, base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -366,7 +366,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatafileAuxiliaryInfoRequest, base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{origin}', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/{fileId}/auxiliary/{origin}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -422,14 +422,14 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatafileMetadataRequest, base_url, '/api/v1/access/datafile/{fileId}/metadata', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/{fileId}/metadata', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatafileMetadataRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = 'text/xml'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -483,14 +483,14 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatafileMetaDDIRequest, base_url, '/api/v1/access/datafile/{fileId}/metadata/ddi', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/{fileId}/metadata/ddi', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatafileMetaDDIRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = 'text/xml'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -542,7 +542,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GrantDatafileAccessRequest, base_url, '/api/v1/access/datafile/{id}/grantAccess/{identifier}', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/{id}/grantAccess/{identifier}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -595,7 +595,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatafileRequestsRequest, base_url, '/api/v1/access/datafile/{id}/listRequests', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/{id}/listRequests', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -649,7 +649,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.RejectDataAccessRequest, base_url, '/api/v1/access/datafile/{id}/rejectAccess/{identifier}', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/{id}/rejectAccess/{identifier}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -702,7 +702,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.RequestFileAccessRequest, base_url, '/api/v1/access/datafile/{id}/requestAccess', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/{id}/requestAccess', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -756,7 +756,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteFileAccessRequest, base_url, '/api/v1/access/datafile/{id}/revokeAccess/{identifier}', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/{id}/revokeAccess/{identifier}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -809,7 +809,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetUserFileAccessRequestedRequest, base_url, '/api/v1/access/datafile/{id}/userFileAccessRequested', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/{id}/userFileAccessRequested', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -862,7 +862,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetUserFilePermissionsRequest, base_url, '/api/v1/access/datafile/{id}/userPermissions', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafile/{id}/userPermissions', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -926,7 +926,7 @@ class Access:
         req_content_type, data, form = utils.serialize_request_body(request, operations.PostDataFileAccessRequest, "request_body", False, True, 'string')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = { **utils.get_query_params(operations.PostDataFileAccessRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -974,14 +974,14 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAccessDataFilesRequest, base_url, '/api/v1/access/datafiles/{fileIds}', request)
+        url = utils.generate_url(base_url, '/api/v1/access/datafiles/{fileIds}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetAccessDataFilesRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -1029,14 +1029,14 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetAccessRequest, base_url, '/api/v1/access/dataset/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/access/dataset/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetAccessRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -1086,14 +1086,14 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetVersionAccessRequest, base_url, '/api/v1/access/dataset/{id}/versions/{versionId}', request)
+        url = utils.generate_url(base_url, '/api/v1/access/dataset/{id}/versions/{versionId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetVersionAccessRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -1140,7 +1140,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDsCardImageRequest, base_url, '/api/v1/access/dsCardImage/{versionId}', request)
+        url = utils.generate_url(base_url, '/api/v1/access/dsCardImage/{versionId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1197,7 +1197,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDataverseCardImageRequest, base_url, '/api/v1/access/dvCardImage/{dataverseId}', request)
+        url = utils.generate_url(base_url, '/api/v1/access/dvCardImage/{dataverseId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1254,7 +1254,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetFileCardImageRequest, base_url, '/api/v1/access/fileCardImage/{fileId}', request)
+        url = utils.generate_url(base_url, '/api/v1/access/fileCardImage/{fileId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1311,7 +1311,7 @@ class Access:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.AllowAccessRequestRequest, base_url, '/api/v1/access/{id}/allowAccessRequest', request)
+        url = utils.generate_url(base_url, '/api/v1/access/{id}/allowAccessRequest', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())

@@ -33,7 +33,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.ArchiveAllUnarchivedVersionsRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -80,7 +80,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAdminAssigneeRequest, base_url, '/api/v1/admin/assignee/{idtf}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/assignee/{idtf}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -133,7 +133,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAssigneesDetailRequest, base_url, '/api/v1/admin/assignments/assignees/{raIdtf}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/assignments/assignees/{raIdtf}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -385,7 +385,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAuthenticatedUserRequest, base_url, '/api/v1/admin/authenticatedUsers/id/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/authenticatedUsers/id/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -438,7 +438,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ConvertRemoteToBuiltInRequest, base_url, '/api/v1/admin/authenticatedUsers/id/{id}/convertRemoteToBuiltIn', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/authenticatedUsers/id/{id}/convertRemoteToBuiltIn', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -494,7 +494,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ConvertUserAuthenticationMethodRequest, base_url, '/api/v1/admin/authenticatedUsers/id/{id}/convertShibToBuiltIn', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/authenticatedUsers/id/{id}/convertShibToBuiltIn', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -547,7 +547,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeactivateUserRequest, base_url, '/api/v1/admin/authenticatedUsers/id/{id}/deactivate', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/authenticatedUsers/id/{id}/deactivate', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -600,7 +600,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAuthenticatedUserRequest, base_url, '/api/v1/admin/authenticatedUsers/{identifier}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/authenticatedUsers/{identifier}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -653,7 +653,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAuthenticatedUser1Request, base_url, '/api/v1/admin/authenticatedUsers/{identifier}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/authenticatedUsers/{identifier}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -706,7 +706,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeactivateUser1Request, base_url, '/api/v1/admin/authenticatedUsers/{identifier}/deactivate', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/authenticatedUsers/{identifier}/deactivate', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -906,7 +906,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAuthProvidersByIDRequest, base_url, '/api/v1/admin/authenticationProviders/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/authenticationProviders/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -959,7 +959,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.RemoveAuthProvidersByIDRequest, base_url, '/api/v1/admin/authenticationProviders/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/authenticationProviders/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1012,7 +1012,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.EnableAuthProviderRequest, base_url, '/api/v1/admin/authenticationProviders/{id}/:enabled', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/authenticationProviders/{id}/:enabled', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1065,7 +1065,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAuthProviderStatusRequest, base_url, '/api/v1/admin/authenticationProviders/{id}/enabled', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/authenticationProviders/{id}/enabled', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1118,7 +1118,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateAuthProviderStatusRequest, base_url, '/api/v1/admin/authenticationProviders/{id}/enabled', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/authenticationProviders/{id}/enabled', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1269,7 +1269,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteBannerMessageRequest, base_url, '/api/v1/admin/bannerMessage/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/bannerMessage/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1322,7 +1322,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeactivateBannerMessageRequest, base_url, '/api/v1/admin/bannerMessage/{id}/deactivate', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/bannerMessage/{id}/deactivate', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1424,7 +1424,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetJobByNameRequest, base_url, '/api/v1/admin/batch/jobs/name/{jobName}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/batch/jobs/name/{jobName}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1477,7 +1477,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAdminJobByIDRequest, base_url, '/api/v1/admin/batch/jobs/{jobId}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/batch/jobs/{jobId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1579,7 +1579,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteMetricsCache1Request, base_url, '/api/v1/admin/clearMetricsCache/{name}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/clearMetricsCache/{name}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1681,7 +1681,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.AdminClearThumbnailFailureFlagRequest, base_url, '/api/v1/admin/clearThumbnailFailureFlag/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/clearThumbnailFailureFlag/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1735,7 +1735,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ComputeFileHashValueRequest, base_url, '/api/v1/admin/computeDataFileHashValue/{fileId}/algorithm/{alg}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/computeDataFileHashValue/{fileId}/algorithm/{alg}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1788,7 +1788,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetUserIDConfEmailRequest, base_url, '/api/v1/admin/confirmEmail/{userId}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/confirmEmail/{userId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1841,7 +1841,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostUserIDConfEmailRequest, base_url, '/api/v1/admin/confirmEmail/{userId}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/confirmEmail/{userId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -1950,7 +1950,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetFixMissingOriginalSizesRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -2297,7 +2297,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetFieldNameRequest, base_url, '/api/v1/admin/datasetfield/{name}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/datasetfield/{name}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2351,14 +2351,14 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PostFixMissingUnfRequest, base_url, '/api/v1/admin/datasets/integrity/{datasetVersionId}/fixmissingunf', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/datasets/integrity/{datasetVersionId}/fixmissingunf', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.PostFixMissingUnfRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -2405,7 +2405,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetThumbnailMetadataByIDRequest, base_url, '/api/v1/admin/datasets/thumbnailMetadata/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/datasets/thumbnailMetadata/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2556,7 +2556,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetRoleAssignmentsRequest, base_url, '/api/v1/admin/dataverse/{alias}/addRoleAssignmentsToChildren', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/dataverse/{alias}/addRoleAssignmentsToChildren', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2609,7 +2609,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetCurationLabelSetRequest, base_url, '/api/v1/admin/dataverse/{alias}/curationLabelSet', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/dataverse/{alias}/curationLabelSet', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2663,14 +2663,14 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateCurationLabelSetRequest, base_url, '/api/v1/admin/dataverse/{alias}/curationLabelSet', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/dataverse/{alias}/curationLabelSet', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.UpdateCurationLabelSetRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -2717,7 +2717,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteCurationLabelSetRequest, base_url, '/api/v1/admin/dataverse/{alias}/curationLabelSet', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/dataverse/{alias}/curationLabelSet', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2770,7 +2770,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetStorageDriverRequest, base_url, '/api/v1/admin/dataverse/{alias}/storageDriver', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/dataverse/{alias}/storageDriver', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2823,7 +2823,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateStorageDriverRequest, base_url, '/api/v1/admin/dataverse/{alias}/storageDriver', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/dataverse/{alias}/storageDriver', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2876,7 +2876,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteStorageDriverRequest, base_url, '/api/v1/admin/dataverse/{alias}/storageDriver', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/dataverse/{alias}/storageDriver', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -2936,7 +2936,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetTmpFileRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -3081,7 +3081,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetExternalToolRequest, base_url, '/api/v1/admin/externalTools/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/externalTools/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3134,7 +3134,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteExternalToolRequest, base_url, '/api/v1/admin/externalTools/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/externalTools/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3334,7 +3334,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetGroupAliasRequest, base_url, '/api/v1/admin/groups/domain/{groupAlias}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/groups/domain/{groupAlias}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3387,7 +3387,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateGroupAliasRequest, base_url, '/api/v1/admin/groups/domain/{groupAlias}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/groups/domain/{groupAlias}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3440,7 +3440,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteGroupAliasRequest, base_url, '/api/v1/admin/groups/domain/{groupAlias}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/groups/domain/{groupAlias}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3591,7 +3591,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetGroupByGroupIdtfRequest, base_url, '/api/v1/admin/groups/ip/{groupIdtf}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/groups/ip/{groupIdtf}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3644,7 +3644,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteGroupByGroupIdtfRequest, base_url, '/api/v1/admin/groups/ip/{groupIdtf}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/groups/ip/{groupIdtf}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3795,7 +3795,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteShibGroupRequest, base_url, '/api/v1/admin/groups/shib/{primaryKey}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/groups/shib/{primaryKey}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -3857,7 +3857,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetAdminIndexRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -3960,7 +3960,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.ClearOrphansIndexRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4016,7 +4016,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.ContinueIndexProcessingRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4070,7 +4070,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetDatasetIndexRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4117,7 +4117,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteDatasetByIDRequest, base_url, '/api/v1/admin/index/datasets/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/index/datasets/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4173,14 +4173,14 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetFileMetadata1Request, base_url, '/api/v1/admin/index/filemetadata/{dataset_id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/index/filemetadata/{dataset_id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetFileMetadata1Request, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4236,7 +4236,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.FileSearchIndexGETRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4291,7 +4291,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetAdminIndexModRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4387,7 +4387,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAdminIndexPerms1Request, base_url, '/api/v1/admin/index/perms/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/index/perms/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4448,7 +4448,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetPermsDebugInfoRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4555,7 +4555,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetAdminIndexStatusRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4611,7 +4611,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetAdminTestIndexRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4707,7 +4707,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteIndexTimestampRequest, base_url, '/api/v1/admin/index/timestamps/{dvObjectId}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/index/timestamps/{dvObjectId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4761,7 +4761,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAdminIndexTypeByIDRequest, base_url, '/api/v1/admin/index/{type}/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/index/{type}/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -4873,7 +4873,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.ListUsersRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -4927,7 +4927,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.AddMetricsFromReportRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -5024,14 +5024,14 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.AddUsageMetricsFromSushiRepoRequest, base_url, '/api/v1/admin/makeDataCount/{id}/addUsageMetricsFromSushiReport', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/makeDataCount/{id}/addUsageMetricsFromSushiReport', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.AddUsageMetricsFromSushiRepoRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -5078,7 +5078,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateDatasetCitationsRequest, base_url, '/api/v1/admin/makeDataCount/{id}/updateCitationsForDataset', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/makeDataCount/{id}/updateCitationsForDataset', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -5229,7 +5229,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.AdminMetadataExportOAISpecRequest, base_url, '/api/v1/admin/metadata/exportOAI/{specname}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/metadata/exportOAI/{specname}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -5331,7 +5331,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetMetadataReExportRequest, base_url, '/api/v1/admin/metadata/{id}/reExportDataset', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/metadata/{id}/reExportDataset', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -5384,7 +5384,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAdminPermissionsRequest, base_url, '/api/v1/admin/permissions/{dvo}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/permissions/{dvo}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -5437,7 +5437,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PublishDataverseAsCreatorRequest, base_url, '/api/v1/admin/publishDataverseAsCreator/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/publishDataverseAsCreator/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -5540,14 +5540,14 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetRegisterDataFilesByAliasRequest, base_url, '/api/v1/admin/registerDataFiles/{alias}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/registerDataFiles/{alias}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetRegisterDataFilesByAliasRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -5744,7 +5744,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAdminRoleRequest, base_url, '/api/v1/admin/roles/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/roles/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -5951,7 +5951,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.UpdateAllSavedSearchLinksRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -5999,14 +5999,14 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.MakeLinksForSavedSearchRequest, base_url, '/api/v1/admin/savedsearches/makelinks/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/savedsearches/makelinks/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.MakeLinksForSavedSearchRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -6053,7 +6053,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetSavedSearchRequest, base_url, '/api/v1/admin/savedsearches/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/savedsearches/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -6106,7 +6106,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteSavedSearchRequest, base_url, '/api/v1/admin/savedsearches/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/savedsearches/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -6208,7 +6208,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAdminSettingRequest, base_url, '/api/v1/admin/settings/{name}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/settings/{name}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -6261,7 +6261,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateAdminSettingRequest, base_url, '/api/v1/admin/settings/{name}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/settings/{name}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -6314,7 +6314,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAdminSettingRequest, base_url, '/api/v1/admin/settings/{name}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/settings/{name}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -6368,7 +6368,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateAdminSettingsLangRequest, base_url, '/api/v1/admin/settings/{name}/lang/{lang}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/settings/{name}/lang/{lang}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -6422,7 +6422,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAdminSettingsLangRequest, base_url, '/api/v1/admin/settings/{name}/lang/{lang}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/settings/{name}/lang/{lang}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -6622,7 +6622,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.FetchStorageSiteRequest, base_url, '/api/v1/admin/storageSites/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/storageSites/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -6675,7 +6675,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteStorageSiteRequest, base_url, '/api/v1/admin/storageSites/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/storageSites/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -6728,7 +6728,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdatePrimaryStorageRequest, base_url, '/api/v1/admin/storageSites/{id}/primaryStorage', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/storageSites/{id}/primaryStorage', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -6782,7 +6782,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.SubmitDatasetVersionToArchiveRequest, base_url, '/api/v1/admin/submitDatasetVersionToArchive/{id}/{version}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/submitDatasetVersionToArchive/{id}/{version}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -6835,7 +6835,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.AdminCreateSuperUserRequest, base_url, '/api/v1/admin/superuser/{identifier}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/superuser/{identifier}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -6888,7 +6888,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteAdminTemplateRequest, base_url, '/api/v1/admin/template/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/template/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -6990,7 +6990,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAdminTemplateRequest, base_url, '/api/v1/admin/templates/{alias}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/templates/{alias}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -7044,14 +7044,14 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetExternalTools1Request, base_url, '/api/v1/admin/test/datasets/{id}/externalTools', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/test/datasets/{id}/externalTools', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetExternalTools1Request, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -7100,14 +7100,14 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetExternalToolByIDRequest, base_url, '/api/v1/admin/test/files/{id}/externalTool/{toolId}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/test/files/{id}/externalTool/{toolId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetExternalToolByIDRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -7155,14 +7155,14 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetExternalTools11Request, base_url, '/api/v1/admin/test/files/{id}/externalTools', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/test/files/{id}/externalTools', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetExternalTools11Request, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -7210,14 +7210,14 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetHashValuesRequest, base_url, '/api/v1/admin/updateHashValues/{alg}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/updateHashValues/{alg}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetHashValuesRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -7264,7 +7264,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetValidateDatasetFilesRequest, base_url, '/api/v1/admin/validate/dataset/files/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/validate/dataset/files/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -7318,14 +7318,14 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ValidateDatasetRequest, base_url, '/api/v1/admin/validate/dataset/{id}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/validate/dataset/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.ValidateDatasetRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -7379,7 +7379,7 @@ class Admin:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.AdminValidateDatasetsRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -7426,7 +7426,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.ValidateDataFileHashRequest, base_url, '/api/v1/admin/validateDataFileHashValue/{fileId}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/validateDataFileHashValue/{fileId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -7675,7 +7675,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetTriggerTypeRequest, base_url, '/api/v1/admin/workflows/default/{triggerType}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/workflows/default/{triggerType}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -7728,7 +7728,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UpdateTriggerTypeRequest, base_url, '/api/v1/admin/workflows/default/{triggerType}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/workflows/default/{triggerType}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -7781,7 +7781,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteTriggerTypeRequest, base_url, '/api/v1/admin/workflows/default/{triggerType}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/workflows/default/{triggerType}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -7981,7 +7981,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetWorkflowByIdentifierRequest, base_url, '/api/v1/admin/workflows/{identifier}', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/workflows/{identifier}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -8034,7 +8034,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAdminDataFileRequest, base_url, '/api/v1/admin/{id}/registerDataFile', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/{id}/registerDataFile', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -8087,7 +8087,7 @@ class Admin:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.AdminReregisterHDLToPIDRequest, base_url, '/api/v1/admin/{id}/reregisterHDLToPID', request)
+        url = utils.generate_url(base_url, '/api/v1/admin/{id}/reregisterHDLToPID', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
