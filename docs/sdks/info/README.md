@@ -61,7 +61,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_api_terms_of_use_info()
 
 if res is not None:
@@ -92,7 +91,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_dataset_metrics_1(data_location='<value>', parent_alias='<value>')
 
@@ -132,7 +130,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_datasets_by_subject(data_location='<value>', parent_alias='<value>')
 
 if res is not None:
@@ -170,7 +167,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_monthly_subject_metrics(yyyymm='<value>', data_location='<value>', parent_alias='<value>')
 
@@ -211,7 +207,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_monthly_dataset_metrics(data_location='<value>', parent_alias='<value>')
 
 if res is not None:
@@ -249,7 +244,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_past_days_metrics(days=970072, data_location='<value>', parent_alias='<value>')
 
@@ -290,7 +284,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_monthly_dataset_metrics_1(yyyymm='<value>', data_location='<value>', parent_alias='<value>')
 
 if res is not None:
@@ -330,7 +323,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_metrics_dataverses(parent_alias='<value>')
 
 if res is not None:
@@ -367,7 +359,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_metrics_by_category(parent_alias='<value>')
 
@@ -406,7 +397,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_metrics_by_subject(parent_alias='<value>')
 
 if res is not None:
@@ -444,7 +434,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_monthly_dataverse_metrics(parent_alias='<value>')
 
 if res is not None:
@@ -481,7 +470,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_metrics_past_days(days=651880, parent_alias='<value>')
 
@@ -521,7 +509,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_monthly_metrics_for_dataverses(yyyymm='<value>', parent_alias='<value>')
 
 if res is not None:
@@ -560,7 +547,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_download_metrics(parent_alias='<value>')
 
 if res is not None:
@@ -598,7 +584,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_monthly_downloads(parent_alias='<value>')
 
 if res is not None:
@@ -635,7 +620,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_past_days_downloads(days=336932, parent_alias='<value>')
 
@@ -675,7 +659,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_download_metrics_to_month(yyyymm='<value>', parent_alias='<value>')
 
 if res is not None:
@@ -714,7 +697,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_file_downloads_metrics(parent_alias='<value>')
 
 if res is not None:
@@ -752,7 +734,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_monthly_file_downloads(parent_alias='<value>')
 
 if res is not None:
@@ -789,7 +770,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_file_downloads_to_month(yyyymm='<value>', parent_alias='<value>')
 
@@ -829,7 +809,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_file_info_metrics(parent_alias='<value>')
 
 if res is not None:
@@ -866,7 +845,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_metrics_by_file_type(parent_alias='<value>')
 
@@ -905,7 +883,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_files_by_type_monthly(parent_alias='<value>')
 
 if res is not None:
@@ -943,7 +920,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_monthly_files_metrics(parent_alias='<value>')
 
 if res is not None:
@@ -980,7 +956,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_files_metrics(days=694967, parent_alias='<value>')
 
@@ -1020,7 +995,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_monthly_files_info(yyyymm='<value>', parent_alias='<value>')
 
 if res is not None:
@@ -1058,7 +1032,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_metric_data(metric='<value>', country='<value>', parent_alias='<value>')
 
@@ -1099,7 +1072,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_monthly_data_count_metrics(metric='<value>', country='<value>', parent_alias='<value>')
 
 if res is not None:
@@ -1138,7 +1110,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_metrics_by_month(metric='<value>', yyyymm='<value>', country='<value>', parent_alias='<value>')
 
@@ -1180,7 +1151,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_metrics_tree(parent_alias='<value>')
 
 if res is not None:
@@ -1217,7 +1187,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_monthly_metrics_by_alias(yyyymm='<value>', parent_alias='<value>')
 
@@ -1257,7 +1226,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_unique_downloads(parent_alias='<value>')
 
 if res is not None:
@@ -1295,7 +1263,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_monthly_unique_downloads(parent_alias='<value>')
 
 if res is not None:
@@ -1332,7 +1299,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_monthly_unique_downloads_1(yyyymm='<value>', parent_alias='<value>')
 
@@ -1372,7 +1338,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_unique_file_downloads(parent_alias='<value>')
 
 if res is not None:
@@ -1410,7 +1375,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_monthly_unique_file_downloads(parent_alias='<value>')
 
 if res is not None:
@@ -1447,7 +1411,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_unique_file_downloads_1(yyyymm='<value>', parent_alias='<value>')
 
@@ -1487,7 +1450,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_open_api_info(output_format='<value>')
 
 if res is not None:
@@ -1525,7 +1487,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_server_info()
 
 if res is not None:
@@ -1556,7 +1517,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_dataset_publish_popup_custom_text()
 
@@ -1589,7 +1549,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_max_embargo_duration_in_months()
 
 if res is not None:
@@ -1620,7 +1579,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_incomplete_metadata_settings()
 
@@ -1653,7 +1611,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.info.get_version_info()
 
 if res is not None:
@@ -1684,7 +1641,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.info.get_zip_download_limit()
 

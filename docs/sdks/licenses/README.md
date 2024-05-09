@@ -25,7 +25,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.licenses.get_licenses()
 
 if res is not None:
@@ -56,7 +55,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.licenses.add_license()
 
@@ -89,7 +87,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.licenses.get_default_license()
 
 if res is not None:
@@ -120,7 +117,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.licenses.update_default_license(id=34621)
 
@@ -159,7 +155,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.licenses.get_license(id=179853)
 
 if res is not None:
@@ -196,7 +191,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.licenses.delete_license(id=738361)
 
@@ -235,7 +229,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.licenses.update_license_active_state(active_state=False, id=744481)
 
 if res is not None:
@@ -273,7 +266,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.licenses.update_license_sort_order(id=430322, sort_order=505916)
 

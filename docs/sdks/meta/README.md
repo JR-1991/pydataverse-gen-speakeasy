@@ -21,7 +21,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.meta.get_datafile_meta(file_id=708075, exclude='<value>', file_metadata_id=709039, include='<value>')
 
 if res.res is not None:
@@ -63,7 +62,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.meta.get_dataset_metadata_1(dataset_id=492183, exclude='<value>', include='<value>')
 

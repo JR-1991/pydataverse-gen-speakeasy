@@ -29,7 +29,7 @@ go:
   outputModelSuffix: output
   packageName: openapi
 python:
-  version: 0.7.4
+  version: 0.8.0
   additionalDependencies:
     dependencies: {}
     extraDependencies:
@@ -48,6 +48,7 @@ python:
       webhooks: models/webhooks
   inputModelSuffix: input
   maxMethodParams: 4
+  methodArguments: require-security-and-request
   outputModelSuffix: output
   packageName: pydataverse
   projectUrls: {}

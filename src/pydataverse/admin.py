@@ -2135,7 +2135,7 @@ class Admin:
 
     
     
-    def load_dataset_field_admin(self, request: Optional[str]) -> operations.LoadDatasetFieldAdminResponse:
+    def load_dataset_field_admin(self, request: Optional[str] = None) -> operations.LoadDatasetFieldAdminResponse:
         r"""Load dataset field as an admin"""
         hook_ctx = HookContext(operation_id='load_dataset_field_admin', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -2236,7 +2236,7 @@ class Admin:
 
     
     
-    def admin_load_property_files(self, request: Optional[str]) -> operations.AdminLoadPropertyFilesResponse:
+    def admin_load_property_files(self, request: Optional[str] = None) -> operations.AdminLoadPropertyFilesResponse:
         r"""Load dataset field property files as a ZIP."""
         hook_ctx = HookContext(operation_id='adminLoadPropertyFiles', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -4525,6 +4525,7 @@ class Admin:
         res = operations.GetSolrSchemaResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', '*/*'):                
                 res.res = http_res.text
             else:
@@ -5585,7 +5586,7 @@ class Admin:
 
     
     
-    def post_admin_signed_url(self, request: Optional[operations.PostAdminSignedURLRequestBody]) -> operations.PostAdminSignedURLResponse:
+    def post_admin_signed_url(self, request: Optional[operations.PostAdminSignedURLRequestBody] = None) -> operations.PostAdminSignedURLResponse:
         r"""Admin sends a request to receive a signed URL."""
         hook_ctx = HookContext(operation_id='postAdminSignedUrl', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())

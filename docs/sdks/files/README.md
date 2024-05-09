@@ -41,7 +41,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.files.get_fixity_algorithm()
 
 if res is not None:
@@ -72,7 +71,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.files.get_file(id='<value>')
 
@@ -111,7 +109,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.files.delete_file(id='<value>')
 
 if res is not None:
@@ -148,7 +145,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.files.get_file_data_tables(id='<value>')
 
@@ -187,7 +183,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.files.get_download_count(id='<value>')
 
 if res is not None:
@@ -224,7 +219,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.files.get_file_draft(id='<value>')
 
@@ -263,7 +257,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.files.extract_ncml_by_id(id='<value>')
 
 if res is not None:
@@ -300,7 +293,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.files.check_file_deletion_status(id='<value>')
 
@@ -339,7 +331,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.files.get_file_metadata(id='<value>')
 
 if res is not None:
@@ -376,7 +367,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.files.update_file_metadata(id='<value>')
 
@@ -415,7 +405,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.files.post_file_metadata_categories(id='<value>')
 
 if res is not None:
@@ -452,7 +441,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.files.get_draft_meta_data(id='<value>')
 
@@ -491,7 +479,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.files.post_tabular_tags(id='<value>')
 
 if res is not None:
@@ -528,7 +515,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.files.get_file_metadata_tool_params(fmid=27570, id='<value>', tid=343127, locale='<value>')
 
@@ -570,7 +556,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.files.get_file_prov_freeform(id='<value>')
 
 if res is not None:
@@ -607,7 +592,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.files.post_file_prov_freeform(id='<value>', request_body='<value>')
 
@@ -647,7 +631,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.files.get_file_prov_json(id='<value>')
 
 if res is not None:
@@ -684,7 +667,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.files.post_file_prov_json(id='<value>', entity_name='<value>', request_body='<value>')
 
@@ -725,7 +707,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.files.delete_file_prov_json(id='<value>')
 
 if res is not None:
@@ -762,7 +743,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.files.redetect_file(id='<value>', dry_run=False)
 
@@ -802,7 +782,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.files.reingest_file(id='<value>')
 
 if res is not None:
@@ -840,7 +819,6 @@ from pydataverse.models import operations
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.files.replace_file(id='<value>', request_body=operations.ReplaceFileRequestBody())
 
@@ -880,7 +858,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.files.restrict_file_access(id='<value>')
 
 if res is not None:
@@ -917,7 +894,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.files.post_file_uningest(id='<value>')
 

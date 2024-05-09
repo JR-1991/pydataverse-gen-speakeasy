@@ -18,7 +18,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.ingest.get_ingest_test_file(file_name='<value>', file_type='<value>')
 
 if res.res is not None:

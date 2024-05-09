@@ -20,7 +20,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.roles.create_role(dvo='<value>')
 
 if res is not None:
@@ -58,7 +57,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.roles.get_role(id='<value>')
 
 if res is not None:
@@ -95,7 +93,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.roles.delete_role(id='<value>')
 

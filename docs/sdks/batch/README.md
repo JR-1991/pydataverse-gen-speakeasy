@@ -21,7 +21,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.batch.get_batch_harvest(create_dv=False, dv='<value>', key='<value>', path='<value>')
 
 if res is not None:
@@ -61,7 +60,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.batch.get_batch_import_status(create_dv=False, dv='<value>', key='<value>', path='<value>')
 
@@ -103,7 +101,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.batch.create_batch_import(dv='<value>', key='<value>')
 
 if res is not None:
@@ -141,7 +138,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.batch.post_batch_job_import_datasets(identifier='<value>', mode='MERGE', total_size=859069, upload_folder='<value>')
 

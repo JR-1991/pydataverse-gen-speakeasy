@@ -15,7 +15,7 @@ class Inbox:
         
     
     
-    def post_inbox(self, request: Optional[str]) -> operations.PostInboxResponse:
+    def post_inbox(self, request: Optional[str] = None) -> operations.PostInboxResponse:
         r"""Create a new inbox message"""
         hook_ctx = HookContext(operation_id='postInbox', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())

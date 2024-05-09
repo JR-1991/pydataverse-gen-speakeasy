@@ -19,9 +19,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-req = operations.SearchQueryRequest()
-
-res = s.search.search_query(req)
+res = s.search.search_query(request=operations.SearchQueryRequest())
 
 if res is not None:
     # handle response

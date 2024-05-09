@@ -65,6 +65,7 @@ class Meta:
         res = operations.GetDatafileMetaResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'text/xml'):                
                 res.res = http_res.text
             else:
@@ -128,6 +129,7 @@ class Meta:
         res = operations.GetDatasetMetadata1Response(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/xml'):                
                 res.res = http_res.text
             else:

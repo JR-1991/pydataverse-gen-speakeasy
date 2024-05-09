@@ -26,7 +26,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.users.get_user_details()
 
 if res is not None:
@@ -57,7 +56,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.users.get_user_token()
 
@@ -90,7 +88,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.users.delete_user_token()
 
 if res is not None:
@@ -122,7 +119,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.users.recreate_user_token()
 
 if res is not None:
@@ -153,7 +149,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.users.merge_users(base_identifier='<value>', consumed_identifier='<value>')
 
@@ -193,7 +188,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.users.change_user_identifier(identifier='<value>', new_identifier='<value>')
 
 if res is not None:
@@ -232,7 +226,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.users.remove_user_roles(identifier='<value>')
 
 if res is not None:
@@ -270,7 +263,6 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.users.get_user_traces(identifier='<value>')
 
 if res is not None:
@@ -307,7 +299,6 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.users.get_user_trace_element(element='<value>', identifier='<value>')
 

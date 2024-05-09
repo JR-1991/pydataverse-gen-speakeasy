@@ -19,9 +19,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-req = operations.MyDataRetrieveRequest()
-
-res = s.mydata.my_data_retrieve(req)
+res = s.mydata.my_data_retrieve(request=operations.MyDataRetrieveRequest())
 
 if res.string is not None:
     # handle response
