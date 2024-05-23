@@ -19,6 +19,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.application.wadl.get_application_wadl()
 
 if res is not None:
@@ -49,6 +50,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.application.wadl.get_application_wadl_1(path='<value>')
 

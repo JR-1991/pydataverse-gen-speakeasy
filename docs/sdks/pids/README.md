@@ -21,6 +21,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.pids.get_persistent_id(persistent_id='<value>')
 
 if res is not None:
@@ -57,6 +58,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.pids.get_unreserved_persistent_ids(persistent_id='<value>')
 
@@ -95,6 +97,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.pids.delete_pid(id='<value>')
 
 if res is not None:
@@ -131,6 +134,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.pids.reserve_pid(id='<value>')
 

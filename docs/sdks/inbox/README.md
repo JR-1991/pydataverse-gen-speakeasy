@@ -18,6 +18,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.inbox.post_inbox(request='<value>')
 
 if res is not None:

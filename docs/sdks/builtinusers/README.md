@@ -21,6 +21,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.builtin_users.post_builtin_users(key='<value>', password='<value>', send_email_notification=False)
 
 if res is not None:
@@ -60,6 +61,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.builtin_users.create_builtin_user(key='<value>', password='<value>')
 
 if res is not None:
@@ -97,6 +99,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.builtin_users.create_builtin_user_1(key='<value>', password='<value>', send_email_notification=False)
 
@@ -136,6 +139,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.builtin_users.get_api_token_by_username(username='<value>', password='<value>')
 

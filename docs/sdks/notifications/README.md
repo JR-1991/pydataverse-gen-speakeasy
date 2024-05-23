@@ -25,6 +25,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.notifications.get_all_notifications()
 
 if res is not None:
@@ -56,6 +57,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.notifications.get_muted_emails()
 
 if res is not None:
@@ -86,6 +88,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.notifications.update_muted_email_notification(type_name='<value>')
 
@@ -124,6 +127,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.notifications.delete_muted_email_notification(type_name='<value>')
 
 if res is not None:
@@ -161,6 +165,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.notifications.get_muted_notifications()
 
 if res is not None:
@@ -191,6 +196,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.notifications.update_muted_notification(type_name='<value>')
 
@@ -229,6 +235,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.notifications.delete_muted_notification(type_name='<value>')
 
 if res is not None:
@@ -265,6 +272,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.notifications.delete_notification(id=927889)
 

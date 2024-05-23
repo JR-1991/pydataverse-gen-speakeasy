@@ -18,6 +18,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.mail.get_mail_notifications()
 
 if res is not None:

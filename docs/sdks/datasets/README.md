@@ -117,6 +117,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_datasets_export(exporter='<value>', persistent_id='<value>')
 
 if res is not None:
@@ -155,6 +156,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_curation_states()
 
 if res is not None:
@@ -185,6 +187,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_dataset_locks(type='<value>', user_identifier='<value>')
 
@@ -224,6 +227,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.modify_all_registrations()
 
 if res is not None:
@@ -255,6 +259,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_registration_pid_metadata()
 
 if res is not None:
@@ -285,6 +290,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.update_dataset_upload(globalid='<value>', storageidentifier='<value>', uploadid='<value>')
 
@@ -325,6 +331,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.delete_dataset_upload(globalid='<value>', storageidentifier='<value>', uploadid='<value>')
 
 if res is not None:
@@ -364,6 +371,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_private_url_dataset_version(private_url_token='<value>')
 
 if res is not None:
@@ -400,6 +408,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_citation_by_private_url(private_url_token='<value>')
 
@@ -438,6 +447,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_summary_field_names()
 
 if res is not None:
@@ -468,6 +478,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.delete_dataset_link(dataset_id='<value>', linked_dataverse_id='<value>')
 
@@ -507,6 +518,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_allowed_curation_labels(identifier='<value>')
 
 if res is not None:
@@ -544,6 +556,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_dataset_assignments(identifier='<value>')
 
 if res is not None:
@@ -580,6 +593,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.create_dataset_assignment(identifier='<value>', key='<value>')
 
@@ -619,6 +633,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.delete_assignment(id=246530, identifier='<value>')
 
 if res is not None:
@@ -657,6 +672,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_curation_label_set_1(identifier='<value>')
 
 if res is not None:
@@ -693,6 +709,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.update_curation_label_set_1(identifier='<value>', name='<value>')
 
@@ -732,6 +749,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.delete_curation_label_set_1(identifier='<value>')
 
 if res is not None:
@@ -768,6 +786,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.validate_checksum(identifier='<value>')
 
@@ -806,6 +825,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_rsync_data_module(identifier='<value>')
 
 if res is not None:
@@ -842,6 +862,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_guestbook_entry(identifier='<value>')
 
@@ -880,6 +901,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.update_guestbook_entry(identifier='<value>')
 
 if res is not None:
@@ -917,6 +939,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.delete_guestbook_entry(identifier='<value>')
 
 if res is not None:
@@ -953,6 +976,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.lock_dataset(identifier='<value>', type='<value>')
 
@@ -992,6 +1016,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_dataset_locks_1(identifier='<value>', type='<value>')
 
 if res is not None:
@@ -1029,6 +1054,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.delete_dataset_locks(identifier='<value>', type='<value>')
 
@@ -1068,6 +1094,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_storage_driver_1(identifier='<value>')
 
 if res is not None:
@@ -1104,6 +1131,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.update_storage_driver_1(identifier='<value>')
 
@@ -1142,6 +1170,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.delete_storage_driver_1(identifier='<value>')
 
 if res is not None:
@@ -1178,6 +1207,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_dataset_storage_size(identifier='<value>', include_cached=False)
 
@@ -1217,6 +1247,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_dataset_timestamps(identifier='<value>')
 
 if res is not None:
@@ -1254,6 +1285,7 @@ from pydataverse.models import operations
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_download_size(request=operations.GetDownloadSizeRequest(
     identifier='<value>',
@@ -1295,6 +1327,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_dataset(id='<value>')
 
 if res is not None:
@@ -1331,6 +1364,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.delete_dataset(id='<value>')
 
@@ -1371,6 +1405,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_publish_dataset(id='<value>', type='<value>')
 
 if res is not None:
@@ -1408,6 +1443,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.initiate_publishing(id='<value>', assure_is_indexed=False, type='<value>')
 
@@ -1447,6 +1483,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.release_migrated_dataset(id='<value>', updatepidatprovider=False, request_body='<value>')
 
@@ -1488,6 +1525,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.add_dataset(id='<value>', request_body=operations.AddDatasetRequestBody())
 
 if res is not None:
@@ -1526,6 +1564,7 @@ from pydataverse.models import operations
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.add_files_to_dataset(id='<value>', request_body=operations.AddFilesToDatasetRequestBody())
 
@@ -1566,6 +1605,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.add_globus_files_to_dataset(id='<value>', request_body=operations.AddGlobusFilesToDatasetRequestBody())
 
 if res is not None:
@@ -1604,6 +1644,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.update_citation_date(id='<value>')
 
 if res is not None:
@@ -1641,6 +1682,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.delete_citation_date(id='<value>')
 
 if res is not None:
@@ -1677,6 +1719,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_clean_storage_status(id='<value>', dryrun=False)
 
@@ -1716,6 +1759,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_curation_status(id='<value>')
 
 if res is not None:
@@ -1752,6 +1796,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.update_curation_status(id='<value>', label='<value>')
 
@@ -1791,6 +1836,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.delete_curation_status(id='<value>')
 
 if res is not None:
@@ -1827,6 +1873,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.update_dataset_metadata(id='<value>')
 
@@ -1865,6 +1912,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.delete_dataset_1(id='<value>')
 
 if res is not None:
@@ -1901,6 +1949,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_dataset_directory_index(id='<value>', folder='<value>', original=False, version='<value>')
 
@@ -1942,6 +1991,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.edit_dataset_metadata(id='<value>', replace=False)
 
 if res is not None:
@@ -1980,6 +2030,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.set_dataset_embargo(id='<value>')
 
 if res is not None:
@@ -2017,6 +2068,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.unset_embargo_on_dataset_files(id='<value>')
 
 if res is not None:
@@ -2053,6 +2105,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_globus_download_parameters(id='<value>', download_id='<value>', locale='<value>')
 
@@ -2093,6 +2146,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_globus_upload_parameters(id='<value>', locale='<value>')
 
 if res is not None:
@@ -2131,6 +2185,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_dataset_links(id='<value>')
 
 if res is not None:
@@ -2167,6 +2222,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_dataset_logo(id='<value>')
 
@@ -2205,6 +2261,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.dataset_citation_count_get(id='<value>')
 
 if res is not None:
@@ -2241,6 +2298,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_dataset_metrics(id='<value>', metric='<value>', country='<value>')
 
@@ -2280,6 +2338,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_dataset_metric(id='<value>', metric='<value>', yyyymm='<value>', country='<value>')
 
@@ -2321,6 +2380,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_dataset_metadata(id='<value>')
 
 if res is not None:
@@ -2357,6 +2417,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.update_dataset_metadata_1(id='<value>', replace=False, request_body='<value>')
 
@@ -2397,6 +2458,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.update_metadata_deletion(id='<value>', request_body='<value>')
 
 if res is not None:
@@ -2435,6 +2497,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_registration_modification(id='<value>')
 
 if res is not None:
@@ -2471,6 +2534,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.modify_dataset_registration_metadata(id='<value>')
 
@@ -2509,6 +2573,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.monitor_globus_download(id='<value>', request_body='<value>')
 
 if res is not None:
@@ -2546,6 +2611,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.move_dataset_to_target(id='<value>', target_dataverse_alias='<value>', force_move=False)
 
@@ -2586,6 +2652,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_private_url(id='<value>')
 
 if res is not None:
@@ -2622,6 +2689,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.create_private_url(id='<value>', anonymized_access=False)
 
@@ -2661,6 +2729,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.delete_private_url(id='<value>')
 
 if res is not None:
@@ -2699,6 +2768,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.replace_dataset_files(id='<value>', request_body=operations.ReplaceDatasetFilesRequestBody())
 
 if res is not None:
@@ -2736,6 +2806,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.submit_globus_download_request(id='<value>', download_id='<value>', request_body='<value>')
 
@@ -2776,6 +2847,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.post_globus_upload_paths_request(id='<value>', request_body='<value>')
 
 if res is not None:
@@ -2814,6 +2886,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.return_dataset_to_author(id='<value>')
 
 if res is not None:
@@ -2851,6 +2924,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.submit_dataset_for_review(id='<value>')
 
 if res is not None:
@@ -2887,6 +2961,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_dataset_thumbnail(id='<value>')
 
@@ -2926,6 +3001,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.post_dataset_thumbnail(id='<value>', request_body=operations.PostDatasetThumbnailRequestBody())
 
 if res is not None:
@@ -2964,6 +3040,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.delete_dataset_thumbnail(id='<value>')
 
 if res is not None:
@@ -3001,6 +3078,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_thumbnail_candidates(id='<value>')
 
 if res is not None:
@@ -3037,6 +3115,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.post_thumbnail_data(data_file_id=907375, id='<value>')
 
@@ -3078,6 +3157,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_upload_id(id='<value>')
 
 if res is not None:
@@ -3114,6 +3194,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_upload_ur_ls(id='<value>', size=272233)
 
@@ -3153,6 +3234,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_user_permissions(id='<value>')
 
 if res is not None:
@@ -3189,6 +3271,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_dataset_versions(id='<value>', exclude_files=False, limit=953940, offset=665447)
 
@@ -3230,6 +3313,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_dataset_version(id='<value>', version_id='<value>', exclude_files=False, include_deaccessioned=False)
 
 if res is not None:
@@ -3270,6 +3354,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.update_dataset_version(id='<value>', version_id='<value>', request_body='<value>')
 
 if res is not None:
@@ -3309,6 +3394,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.delete_dataset_version(id='<value>', version_id='<value>')
 
 if res is not None:
@@ -3346,6 +3432,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.check_dataset_file_download_permission(id='<value>', version_id='<value>', include_deaccessioned=False)
 
@@ -3386,6 +3473,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_citation(id='<value>', version_id='<value>', include_deaccessioned=False)
 
 if res is not None:
@@ -3425,6 +3513,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_custom_license(id='<value>', version_id='<value>')
 
 if res is not None:
@@ -3462,6 +3551,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.post_deaccession_dataset_by_version_id(id='<value>', version_id='<value>')
 
@@ -3501,6 +3591,7 @@ from pydataverse.models import operations
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_dataset_version_files(request=operations.GetDatasetVersionFilesRequest(
     id='<id>',
@@ -3543,6 +3634,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_dataset_files_count(request=operations.GetDatasetFilesCountRequest(
     id='<id>',
     version_id='<value>',
@@ -3583,6 +3675,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_dataset_version_linkset(id='<value>', version_id='<value>')
 
 if res is not None:
@@ -3620,6 +3713,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_dataset_version_metadata(id='<value>', version_id='<value>')
 
@@ -3659,6 +3753,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_dataset_version_metadata_1(block='<value>', id='<value>', version_number='<value>')
 
 if res is not None:
@@ -3697,6 +3792,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.get_dataset_version_tool_param(id='<value>', tid=660939, version='<value>', locale='<value>')
 
@@ -3738,6 +3834,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.get_dataset_archival_status(id='<value>', version='<value>')
 
 if res is not None:
@@ -3775,6 +3872,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.update_dataset_archival_status(id='<value>', version='<value>', request_body='<value>')
 
@@ -3815,6 +3913,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.datasets.delete_dataset_archival_status(id='<value>', version='<value>')
 
 if res is not None:
@@ -3852,6 +3951,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.datasets.update_dataset_link(linked_dataset_id='<value>', linking_dataverse_alias='<value>')
 

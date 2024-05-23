@@ -17,6 +17,7 @@ SERVERS = [
 ]
 """Contains the list of servers available to the SDK"""
 
+
 class ServerProtocol(str, Enum):
     HTTP = 'http'
     HTTPS = 'https'
@@ -31,9 +32,9 @@ class SDKConfiguration:
     server_defaults: List[Dict[str, str]] = field(default_factory=List)
     language: str = 'python'
     openapi_doc_version: str = '1.0'
-    sdk_version: str = '0.8.0'
-    gen_version: str = '2.326.3'
-    user_agent: str = 'speakeasy-sdk/python 0.8.0 2.326.3 1.0 pydataverse'
+    sdk_version: str = '0.8.1'
+    gen_version: str = '2.335.5'
+    user_agent: str = 'speakeasy-sdk/python 0.8.1 2.335.5 1.0 pydataverse'
     retry_config: Optional[RetryConfig] = None
 
     def __post_init__(self):

@@ -29,6 +29,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.harvest.get_harvest_clients(key='<value>')
 
 if res is not None:
@@ -65,6 +66,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.harvest.get_harvest_client(nick_name='<value>', key='<value>')
 
@@ -104,6 +106,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.harvest.update_harvest_client(nick_name='<value>', key='<value>')
 
 if res is not None:
@@ -141,6 +144,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.harvest.create_harvest_client(nick_name='<value>', key='<value>')
 
@@ -180,6 +184,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.harvest.delete_harvest_client(nick_name='<value>')
 
 if res is not None:
@@ -216,6 +221,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.harvest.run_harvest_client(nick_name='<value>', key='<value>')
 
@@ -255,6 +261,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.harvest.get_oai_sets(key='<value>')
 
 if res is not None:
@@ -292,6 +299,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.harvest.add_oai_set(key='<value>')
 
 if res is not None:
@@ -328,6 +336,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.harvest.get_oai_sets_1(specname='<value>', key='<value>')
 
@@ -367,6 +376,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.harvest.update_oai_sets(specname='<value>', key='<value>')
 
 if res is not None:
@@ -405,6 +415,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.harvest.delete_oai_sets(specname='<value>', key='<value>')
 
 if res is not None:
@@ -442,6 +453,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.harvest.get_harvest_datasets_by_spec_name(specname='<value>', key='<value>')
 

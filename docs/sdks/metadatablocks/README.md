@@ -19,6 +19,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.metadatablocks.get_metadatablocks()
 
 if res is not None:
@@ -49,6 +50,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.metadatablocks.get_metadatablock_1_1(identifier='<value>')
 

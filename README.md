@@ -40,6 +40,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, gbrecs=False)
 
 if res.body is not None:
@@ -622,6 +623,7 @@ try:
     description='User-friendly stable benchmark',
     dataverse_type='<value>',
 ))
+
 except errors.ErrorResponse as e:
     # handle exception
     raise(e)
@@ -657,6 +659,7 @@ s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
+
 res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, gbrecs=False)
 
 if res.body is not None:
@@ -681,6 +684,7 @@ s = pydataverse.PyDataverse(
     server_url="{protocol}://{base_url}",
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, gbrecs=False)
 
@@ -725,6 +729,7 @@ import pydataverse
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
+
 
 res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, gbrecs=False)
 
