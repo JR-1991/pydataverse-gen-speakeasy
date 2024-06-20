@@ -29,7 +29,7 @@ go:
   outputModelSuffix: output
   packageName: openapi
 python:
-  version: 0.8.2
+  version: 0.8.3
   additionalDependencies:
     dependencies: {}
     extraDependencies:
@@ -53,6 +53,7 @@ python:
   packageName: pydataverse
   projectUrls: {}
   responseFormat: envelope
+  templateVersion: v1
 typescript:
   version: 0.2.0
   author: Speakeasy
