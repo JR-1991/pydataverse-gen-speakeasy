@@ -32,9 +32,9 @@ class SDKConfiguration:
     server_defaults: List[Dict[str, str]] = field(default_factory=List)
     language: str = 'python'
     openapi_doc_version: str = '1.0'
-    sdk_version: str = '0.8.3'
-    gen_version: str = '2.347.4'
-    user_agent: str = 'speakeasy-sdk/python 0.8.3 2.347.4 1.0 pydataverse'
+    sdk_version: str = '0.8.4'
+    gen_version: str = '2.352.0'
+    user_agent: str = 'speakeasy-sdk/python 0.8.4 2.352.0 1.0 pydataverse'
     retry_config: Optional[RetryConfig] = None
 
     def __post_init__(self):
