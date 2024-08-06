@@ -118,7 +118,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_datasets_export(exporter='<value>', persistent_id='<value>')
+res = s.datasets.get_datasets_export()
 
 if res is not None:
     # handle response
@@ -189,7 +189,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_locks(type='<value>', user_identifier='<value>')
+res = s.datasets.get_dataset_locks()
 
 if res is not None:
     # handle response
@@ -292,7 +292,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_dataset_upload(globalid='<value>', storageidentifier='<value>', uploadid='<value>')
+res = s.datasets.update_dataset_upload()
 
 if res is not None:
     # handle response
@@ -332,7 +332,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.delete_dataset_upload(globalid='<value>', storageidentifier='<value>', uploadid='<value>')
+res = s.datasets.delete_dataset_upload()
 
 if res is not None:
     # handle response
@@ -595,7 +595,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.create_dataset_assignment(identifier='<value>', key='<value>')
+res = s.datasets.create_dataset_assignment(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -711,7 +711,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_curation_label_set_1(identifier='<value>', name='<value>')
+res = s.datasets.update_curation_label_set_1(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -1017,7 +1017,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_locks_1(identifier='<value>', type='<value>')
+res = s.datasets.get_dataset_locks_1(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -1056,7 +1056,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.delete_dataset_locks(identifier='<value>', type='<value>')
+res = s.datasets.delete_dataset_locks(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -1209,7 +1209,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_storage_size(identifier='<value>', include_cached=False)
+res = s.datasets.get_dataset_storage_size(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -1406,7 +1406,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_publish_dataset(id='<value>', type='<value>')
+res = s.datasets.get_publish_dataset(id='<value>')
 
 if res is not None:
     # handle response
@@ -1445,7 +1445,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.initiate_publishing(id='<value>', assure_is_indexed=False, type='<value>')
+res = s.datasets.initiate_publishing(id='<value>')
 
 if res is not None:
     # handle response
@@ -1485,7 +1485,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.release_migrated_dataset(id='<value>', updatepidatprovider=False, request_body='<value>')
+res = s.datasets.release_migrated_dataset(id='<value>')
 
 if res is not None:
     # handle response
@@ -1519,14 +1519,13 @@ Add a new dataset to the existing record
 
 ```python
 import pydataverse
-from pydataverse.models import operations
 
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
-res = s.datasets.add_dataset(id='<value>', request_body=operations.AddDatasetRequestBody())
+res = s.datasets.add_dataset(id='<value>')
 
 if res is not None:
     # handle response
@@ -1559,14 +1558,13 @@ Adds files to a specified dataset
 
 ```python
 import pydataverse
-from pydataverse.models import operations
 
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
-res = s.datasets.add_files_to_dataset(id='<value>', request_body=operations.AddFilesToDatasetRequestBody())
+res = s.datasets.add_files_to_dataset(id='<value>')
 
 if res is not None:
     # handle response
@@ -1599,14 +1597,13 @@ Add globus files to a specific dataset
 
 ```python
 import pydataverse
-from pydataverse.models import operations
 
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
-res = s.datasets.add_globus_files_to_dataset(id='<value>', request_body=operations.AddGlobusFilesToDatasetRequestBody())
+res = s.datasets.add_globus_files_to_dataset(id='<value>')
 
 if res is not None:
     # handle response
@@ -1721,7 +1718,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_clean_storage_status(id='<value>', dryrun=False)
+res = s.datasets.get_clean_storage_status(id='<value>')
 
 if res is not None:
     # handle response
@@ -1798,7 +1795,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_curation_status(id='<value>', label='<value>')
+res = s.datasets.update_curation_status(id='<value>')
 
 if res is not None:
     # handle response
@@ -1951,7 +1948,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_directory_index(id='<value>', folder='<value>', original=False, version='<value>')
+res = s.datasets.get_dataset_directory_index(id='<value>')
 
 if res is not None:
     # handle response
@@ -1992,7 +1989,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.edit_dataset_metadata(id='<value>', replace=False)
+res = s.datasets.edit_dataset_metadata(id='<value>')
 
 if res is not None:
     # handle response
@@ -2107,7 +2104,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_globus_download_parameters(id='<value>', download_id='<value>', locale='<value>')
+res = s.datasets.get_globus_download_parameters(id='<value>')
 
 if res is not None:
     # handle response
@@ -2147,7 +2144,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_globus_upload_parameters(id='<value>', locale='<value>')
+res = s.datasets.get_globus_upload_parameters(id='<value>')
 
 if res is not None:
     # handle response
@@ -2300,7 +2297,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_metrics(id='<value>', metric='<value>', country='<value>')
+res = s.datasets.get_dataset_metrics(id='<value>', metric='<value>')
 
 if res is not None:
     # handle response
@@ -2340,7 +2337,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_metric(id='<value>', metric='<value>', yyyymm='<value>', country='<value>')
+res = s.datasets.get_dataset_metric(id='<value>', metric='<value>', yyyymm='<value>')
 
 if res is not None:
     # handle response
@@ -2419,7 +2416,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_dataset_metadata_1(id='<value>', replace=False, request_body='<value>')
+res = s.datasets.update_dataset_metadata_1(id='<value>')
 
 if res is not None:
     # handle response
@@ -2459,7 +2456,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_metadata_deletion(id='<value>', request_body='<value>')
+res = s.datasets.update_metadata_deletion(id='<value>')
 
 if res is not None:
     # handle response
@@ -2574,7 +2571,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.monitor_globus_download(id='<value>', request_body='<value>')
+res = s.datasets.monitor_globus_download(id='<value>')
 
 if res is not None:
     # handle response
@@ -2613,7 +2610,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.move_dataset_to_target(id='<value>', target_dataverse_alias='<value>', force_move=False)
+res = s.datasets.move_dataset_to_target(id='<value>', target_dataverse_alias='<value>')
 
 if res is not None:
     # handle response
@@ -2691,7 +2688,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.create_private_url(id='<value>', anonymized_access=False)
+res = s.datasets.create_private_url(id='<value>')
 
 if res is not None:
     # handle response
@@ -2762,14 +2759,13 @@ Replace files in a specified dataset
 
 ```python
 import pydataverse
-from pydataverse.models import operations
 
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
-res = s.datasets.replace_dataset_files(id='<value>', request_body=operations.ReplaceDatasetFilesRequestBody())
+res = s.datasets.replace_dataset_files(id='<value>')
 
 if res is not None:
     # handle response
@@ -2808,7 +2804,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.submit_globus_download_request(id='<value>', download_id='<value>', request_body='<value>')
+res = s.datasets.submit_globus_download_request(id='<value>')
 
 if res is not None:
     # handle response
@@ -2848,7 +2844,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.post_globus_upload_paths_request(id='<value>', request_body='<value>')
+res = s.datasets.post_globus_upload_paths_request(id='<value>')
 
 if res is not None:
     # handle response
@@ -2995,14 +2991,13 @@ Adds a thumbnail to a specific dataset
 
 ```python
 import pydataverse
-from pydataverse.models import operations
 
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
-res = s.datasets.post_dataset_thumbnail(id='<value>', request_body=operations.PostDatasetThumbnailRequestBody())
+res = s.datasets.post_dataset_thumbnail(id='<value>')
 
 if res is not None:
     # handle response
@@ -3196,7 +3191,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_upload_ur_ls(id='<value>', size=272233)
+res = s.datasets.get_upload_ur_ls(id='<value>')
 
 if res is not None:
     # handle response
@@ -3273,7 +3268,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_versions(id='<value>', exclude_files=False, limit=953940, offset=665447)
+res = s.datasets.get_dataset_versions(id='<value>')
 
 if res is not None:
     # handle response
@@ -3314,7 +3309,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_version(id='<value>', version_id='<value>', exclude_files=False, include_deaccessioned=False)
+res = s.datasets.get_dataset_version(id='<value>', version_id='<value>')
 
 if res is not None:
     # handle response
@@ -3355,7 +3350,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_dataset_version(id='<value>', version_id='<value>', request_body='<value>')
+res = s.datasets.update_dataset_version(id='<value>', version_id='<value>')
 
 if res is not None:
     # handle response
@@ -3434,7 +3429,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.check_dataset_file_download_permission(id='<value>', version_id='<value>', include_deaccessioned=False)
+res = s.datasets.check_dataset_file_download_permission(id='<value>', version_id='<value>')
 
 if res is not None:
     # handle response
@@ -3474,7 +3469,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_citation(id='<value>', version_id='<value>', include_deaccessioned=False)
+res = s.datasets.get_citation(id='<value>', version_id='<value>')
 
 if res is not None:
     # handle response
@@ -3794,7 +3789,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_version_tool_param(id='<value>', tid=660939, version='<value>', locale='<value>')
+res = s.datasets.get_dataset_version_tool_param(id='<value>', tid=660939, version='<value>')
 
 if res is not None:
     # handle response
@@ -3874,7 +3869,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_dataset_archival_status(id='<value>', version='<value>', request_body='<value>')
+res = s.datasets.update_dataset_archival_status(id='<value>', version='<value>')
 
 if res is not None:
     # handle response

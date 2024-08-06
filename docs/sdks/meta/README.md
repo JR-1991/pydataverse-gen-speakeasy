@@ -22,7 +22,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.meta.get_datafile_meta(file_id=708075, exclude='<value>', file_metadata_id=709039, include='<value>')
+res = s.meta.get_datafile_meta(file_id=708075)
 
 if res.res is not None:
     # handle response
@@ -65,7 +65,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.meta.get_dataset_metadata_1(dataset_id=492183, exclude='<value>', include='<value>')
+res = s.meta.get_dataset_metadata_1(dataset_id=492183)
 
 if res.res is not None:
     # handle response

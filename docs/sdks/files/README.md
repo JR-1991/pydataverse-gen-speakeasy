@@ -530,7 +530,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.get_file_metadata_tool_params(fmid=27570, id='<value>', tid=343127, locale='<value>')
+res = s.files.get_file_metadata_tool_params(fmid=27570, id='<value>', tid=343127)
 
 if res is not None:
     # handle response
@@ -609,7 +609,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.post_file_prov_freeform(id='<value>', request_body='<value>')
+res = s.files.post_file_prov_freeform(id='<value>')
 
 if res is not None:
     # handle response
@@ -686,7 +686,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.post_file_prov_json(id='<value>', entity_name='<value>', request_body='<value>')
+res = s.files.post_file_prov_json(id='<value>')
 
 if res is not None:
     # handle response
@@ -764,7 +764,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.redetect_file(id='<value>', dry_run=False)
+res = s.files.redetect_file(id='<value>')
 
 if res is not None:
     # handle response
@@ -835,14 +835,13 @@ Replace an existing file with a new version
 
 ```python
 import pydataverse
-from pydataverse.models import operations
 
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
-res = s.files.replace_file(id='<value>', request_body=operations.ReplaceFileRequestBody())
+res = s.files.replace_file(id='<value>')
 
 if res is not None:
     # handle response

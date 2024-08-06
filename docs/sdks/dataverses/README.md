@@ -295,7 +295,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.post_dataverse_assignments(identifier='<value>', key='<value>')
+res = s.dataverses.post_dataverse_assignments(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -373,7 +373,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.update_dataverse_attribute(attribute='<value>', identifier='<value>', value='<value>')
+res = s.dataverses.update_dataverse_attribute(attribute='<value>', identifier='<value>')
 
 if res is not None:
     # handle response
@@ -489,7 +489,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.create_dataset_in_dataverse(identifier='<value>', do_not_validate='<value>', request_body='<value>')
+res = s.dataverses.create_dataset_in_dataverse(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -529,7 +529,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.import_dataset(identifier='<value>', pid='<value>', release='<value>')
+res = s.dataverses.import_dataset(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -569,7 +569,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.import_ddi_to_dataset(identifier='<value>', pid='<value>', release='<value>')
+res = s.dataverses.import_ddi_to_dataset(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -609,7 +609,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.start_migration(identifier='<value>', request_body='<value>')
+res = s.dataverses.start_migration(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -763,7 +763,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.get_dataverse_groups(identifier='<value>', key='<value>')
+res = s.dataverses.get_dataverse_groups(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -957,9 +957,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.assign_role(alias_in_owner='<value>', identifier='<value>', request_body=[
-    '<value>',
-])
+res = s.dataverses.assign_role(alias_in_owner='<value>', identifier='<value>')
 
 if res is not None:
     # handle response
@@ -1079,7 +1077,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.get_guestbook_responses(identifier='<value>', guestbook_id=630521)
+res = s.dataverses.get_guestbook_responses(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -1194,9 +1192,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.post_metadatablock_facets(identifier='<value>', request_body=[
-    '<value>',
-])
+res = s.dataverses.post_metadatablock_facets(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -1235,7 +1231,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.update_root_status(identifier='<value>', request_body='<value>')
+res = s.dataverses.update_root_status(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -1388,7 +1384,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.post_metadatablock(identifier='<value>', request_body='<value>')
+res = s.dataverses.post_metadatablock(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -1656,7 +1652,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.get_dataverse_storage_size(identifier='<value>', include_cached=False)
+res = s.dataverses.get_dataverse_storage_size(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -1695,7 +1691,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.validate_dataset_json(identifier='<value>', request_body='<value>')
+res = s.dataverses.validate_dataset_json(identifier='<value>')
 
 if res is not None:
     # handle response
@@ -1734,7 +1730,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.move_dataverse(id='<value>', target_dataverse_alias='<value>', force_move=False)
+res = s.dataverses.move_dataverse(id='<value>', target_dataverse_alias='<value>')
 
 if res is not None:
     # handle response

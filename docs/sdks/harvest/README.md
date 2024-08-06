@@ -30,7 +30,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.harvest.get_harvest_clients(key='<value>')
+res = s.harvest.get_harvest_clients()
 
 if res is not None:
     # handle response
@@ -68,7 +68,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.harvest.get_harvest_client(nick_name='<value>', key='<value>')
+res = s.harvest.get_harvest_client(nick_name='<value>')
 
 if res is not None:
     # handle response
@@ -107,7 +107,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.harvest.update_harvest_client(nick_name='<value>', key='<value>')
+res = s.harvest.update_harvest_client(nick_name='<value>')
 
 if res is not None:
     # handle response
@@ -146,7 +146,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.harvest.create_harvest_client(nick_name='<value>', key='<value>')
+res = s.harvest.create_harvest_client(nick_name='<value>')
 
 if res is not None:
     # handle response
@@ -223,7 +223,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.harvest.run_harvest_client(nick_name='<value>', key='<value>')
+res = s.harvest.run_harvest_client(nick_name='<value>')
 
 if res is not None:
     # handle response
@@ -262,7 +262,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.harvest.get_oai_sets(key='<value>')
+res = s.harvest.get_oai_sets()
 
 if res is not None:
     # handle response
@@ -300,7 +300,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.harvest.add_oai_set(key='<value>')
+res = s.harvest.add_oai_set()
 
 if res is not None:
     # handle response
@@ -338,7 +338,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.harvest.get_oai_sets_1(specname='<value>', key='<value>')
+res = s.harvest.get_oai_sets_1(specname='<value>')
 
 if res is not None:
     # handle response
@@ -377,7 +377,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.harvest.update_oai_sets(specname='<value>', key='<value>')
+res = s.harvest.update_oai_sets(specname='<value>')
 
 if res is not None:
     # handle response
@@ -416,7 +416,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.harvest.delete_oai_sets(specname='<value>', key='<value>')
+res = s.harvest.delete_oai_sets(specname='<value>')
 
 if res is not None:
     # handle response
@@ -455,7 +455,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.harvest.get_harvest_datasets_by_spec_name(specname='<value>', key='<value>')
+res = s.harvest.get_harvest_datasets_by_spec_name(specname='<value>')
 
 if res is not None:
     # handle response

@@ -42,7 +42,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_datafile_bundle(file_id='<value>', file_metadata_id=536869, gbrecs=False)
+res = s.access.get_datafile_bundle(file_id='<value>')
 
 if res.body is not None:
     # handle response
@@ -82,7 +82,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_datafile(file_id='<value>', gbrecs=False)
+res = s.access.get_datafile(file_id='<value>')
 
 if res is not None:
     # handle response
@@ -193,14 +193,13 @@ Create a new auxiliary data file for a particular data file
 
 ```python
 import pydataverse
-from pydataverse.models import operations
 
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
-res = s.access.access_datafile_auxiliary_create(file_id=7002, format_tag='<value>', format_version='<value>', request_body=operations.AccessDatafileAuxiliaryCreateRequestBody())
+res = s.access.access_datafile_auxiliary_create(file_id=7002, format_tag='<value>', format_version='<value>')
 
 if res is not None:
     # handle response
@@ -320,7 +319,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_datafile_metadata(file_id='<value>', exclude='<value>', file_metadata_id=321038, include='<value>')
+res = s.access.get_datafile_metadata(file_id='<value>')
 
 if res.res is not None:
     # handle response
@@ -361,7 +360,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_datafile_meta_ddi(file_id='<value>', exclude='<value>', file_metadata_id=344355, include='<value>')
+res = s.access.get_datafile_meta_ddi(file_id='<value>')
 
 if res.res is not None:
     # handle response
@@ -671,7 +670,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.post_data_file_access(gbrecs=False, request_body='<value>')
+res = s.access.post_data_file_access()
 
 if res is not None:
     # handle response
@@ -710,7 +709,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_access_data_files(file_ids='<value>', gbrecs=False)
+res = s.access.get_access_data_files(file_ids='<value>')
 
 if res is not None:
     # handle response
@@ -749,7 +748,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_dataset_access(id='<value>', gbrecs=False)
+res = s.access.get_dataset_access(id='<value>')
 
 if res is not None:
     # handle response
@@ -788,7 +787,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_dataset_version_access(id='<value>', version_id='<value>', gbrecs=False, key='<value>')
+res = s.access.get_dataset_version_access(id='<value>', version_id='<value>')
 
 if res is not None:
     # handle response

@@ -21,7 +21,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.roles.create_role(dvo='<value>')
+res = s.roles.create_role()
 
 if res is not None:
     # handle response

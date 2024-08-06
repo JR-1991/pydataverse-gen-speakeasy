@@ -94,7 +94,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_dataset_metrics_1(data_location='<value>', parent_alias='<value>')
+res = s.info.get_dataset_metrics_1()
 
 if res is not None:
     # handle response
@@ -133,7 +133,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_datasets_by_subject(data_location='<value>', parent_alias='<value>')
+res = s.info.get_datasets_by_subject()
 
 if res is not None:
     # handle response
@@ -172,7 +172,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_monthly_subject_metrics(yyyymm='<value>', data_location='<value>', parent_alias='<value>')
+res = s.info.get_monthly_subject_metrics(yyyymm='<value>')
 
 if res is not None:
     # handle response
@@ -212,7 +212,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_monthly_dataset_metrics(data_location='<value>', parent_alias='<value>')
+res = s.info.get_monthly_dataset_metrics()
 
 if res is not None:
     # handle response
@@ -251,7 +251,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_past_days_metrics(days=970072, data_location='<value>', parent_alias='<value>')
+res = s.info.get_past_days_metrics(days=970072)
 
 if res is not None:
     # handle response
@@ -291,7 +291,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_monthly_dataset_metrics_1(yyyymm='<value>', data_location='<value>', parent_alias='<value>')
+res = s.info.get_monthly_dataset_metrics_1(yyyymm='<value>')
 
 if res is not None:
     # handle response
@@ -331,7 +331,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_metrics_dataverses(parent_alias='<value>')
+res = s.info.get_metrics_dataverses()
 
 if res is not None:
     # handle response
@@ -369,7 +369,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_metrics_by_category(parent_alias='<value>')
+res = s.info.get_metrics_by_category()
 
 if res is not None:
     # handle response
@@ -407,7 +407,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_metrics_by_subject(parent_alias='<value>')
+res = s.info.get_metrics_by_subject()
 
 if res is not None:
     # handle response
@@ -445,7 +445,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_monthly_dataverse_metrics(parent_alias='<value>')
+res = s.info.get_monthly_dataverse_metrics()
 
 if res is not None:
     # handle response
@@ -483,7 +483,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_metrics_past_days(days=651880, parent_alias='<value>')
+res = s.info.get_metrics_past_days(days=651880)
 
 if res is not None:
     # handle response
@@ -522,7 +522,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_monthly_metrics_for_dataverses(yyyymm='<value>', parent_alias='<value>')
+res = s.info.get_monthly_metrics_for_dataverses(yyyymm='<value>')
 
 if res is not None:
     # handle response
@@ -561,7 +561,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_download_metrics(parent_alias='<value>')
+res = s.info.get_download_metrics()
 
 if res is not None:
     # handle response
@@ -599,7 +599,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_monthly_downloads(parent_alias='<value>')
+res = s.info.get_monthly_downloads()
 
 if res is not None:
     # handle response
@@ -637,7 +637,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_past_days_downloads(days=336932, parent_alias='<value>')
+res = s.info.get_past_days_downloads(days=336932)
 
 if res is not None:
     # handle response
@@ -676,7 +676,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_download_metrics_to_month(yyyymm='<value>', parent_alias='<value>')
+res = s.info.get_download_metrics_to_month(yyyymm='<value>')
 
 if res is not None:
     # handle response
@@ -715,7 +715,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_file_downloads_metrics(parent_alias='<value>')
+res = s.info.get_file_downloads_metrics()
 
 if res is not None:
     # handle response
@@ -753,7 +753,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_monthly_file_downloads(parent_alias='<value>')
+res = s.info.get_monthly_file_downloads()
 
 if res is not None:
     # handle response
@@ -791,7 +791,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_file_downloads_to_month(yyyymm='<value>', parent_alias='<value>')
+res = s.info.get_file_downloads_to_month(yyyymm='<value>')
 
 if res is not None:
     # handle response
@@ -830,7 +830,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_file_info_metrics(parent_alias='<value>')
+res = s.info.get_file_info_metrics()
 
 if res is not None:
     # handle response
@@ -868,7 +868,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_metrics_by_file_type(parent_alias='<value>')
+res = s.info.get_metrics_by_file_type()
 
 if res is not None:
     # handle response
@@ -906,7 +906,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_files_by_type_monthly(parent_alias='<value>')
+res = s.info.get_files_by_type_monthly()
 
 if res is not None:
     # handle response
@@ -944,7 +944,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_monthly_files_metrics(parent_alias='<value>')
+res = s.info.get_monthly_files_metrics()
 
 if res is not None:
     # handle response
@@ -982,7 +982,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_files_metrics(days=694967, parent_alias='<value>')
+res = s.info.get_files_metrics(days=694967)
 
 if res is not None:
     # handle response
@@ -1021,7 +1021,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_monthly_files_info(yyyymm='<value>', parent_alias='<value>')
+res = s.info.get_monthly_files_info(yyyymm='<value>')
 
 if res is not None:
     # handle response
@@ -1060,7 +1060,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_metric_data(metric='<value>', country='<value>', parent_alias='<value>')
+res = s.info.get_metric_data(metric='<value>')
 
 if res is not None:
     # handle response
@@ -1100,7 +1100,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_monthly_data_count_metrics(metric='<value>', country='<value>', parent_alias='<value>')
+res = s.info.get_monthly_data_count_metrics(metric='<value>')
 
 if res is not None:
     # handle response
@@ -1140,7 +1140,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_metrics_by_month(metric='<value>', yyyymm='<value>', country='<value>', parent_alias='<value>')
+res = s.info.get_metrics_by_month(metric='<value>', yyyymm='<value>')
 
 if res is not None:
     # handle response
@@ -1181,7 +1181,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_metrics_tree(parent_alias='<value>')
+res = s.info.get_metrics_tree()
 
 if res is not None:
     # handle response
@@ -1219,7 +1219,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_monthly_metrics_by_alias(yyyymm='<value>', parent_alias='<value>')
+res = s.info.get_monthly_metrics_by_alias(yyyymm='<value>')
 
 if res is not None:
     # handle response
@@ -1258,7 +1258,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_unique_downloads(parent_alias='<value>')
+res = s.info.get_unique_downloads()
 
 if res is not None:
     # handle response
@@ -1296,7 +1296,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_monthly_unique_downloads(parent_alias='<value>')
+res = s.info.get_monthly_unique_downloads()
 
 if res is not None:
     # handle response
@@ -1334,7 +1334,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_monthly_unique_downloads_1(yyyymm='<value>', parent_alias='<value>')
+res = s.info.get_monthly_unique_downloads_1(yyyymm='<value>')
 
 if res is not None:
     # handle response
@@ -1373,7 +1373,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_unique_file_downloads(parent_alias='<value>')
+res = s.info.get_unique_file_downloads()
 
 if res is not None:
     # handle response
@@ -1411,7 +1411,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_monthly_unique_file_downloads(parent_alias='<value>')
+res = s.info.get_monthly_unique_file_downloads()
 
 if res is not None:
     # handle response
@@ -1449,7 +1449,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.info.get_unique_file_downloads_1(yyyymm='<value>', parent_alias='<value>')
+res = s.info.get_unique_file_downloads_1(yyyymm='<value>')
 
 if res is not None:
     # handle response

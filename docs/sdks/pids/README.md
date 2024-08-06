@@ -22,7 +22,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.pids.get_persistent_id(persistent_id='<value>')
+res = s.pids.get_persistent_id()
 
 if res is not None:
     # handle response
@@ -60,7 +60,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.pids.get_unreserved_persistent_ids(persistent_id='<value>')
+res = s.pids.get_unreserved_persistent_ids()
 
 if res is not None:
     # handle response

@@ -22,7 +22,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.builtin_users.post_builtin_users(key='<value>', password='<value>', send_email_notification=False)
+res = s.builtin_users.post_builtin_users()
 
 if res is not None:
     # handle response
@@ -141,7 +141,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.builtin_users.get_api_token_by_username(username='<value>', password='<value>')
+res = s.builtin_users.get_api_token_by_username(username='<value>')
 
 if res is not None:
     # handle response

@@ -19,7 +19,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.inbox.post_inbox(request='<value>')
+res = s.inbox.post_inbox()
 
 if res is not None:
     # handle response

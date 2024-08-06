@@ -174,7 +174,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.archive_all_unarchived_versions(latestonly=False, limit=452296, listonly=False)
+res = s.admin.archive_all_unarchived_versions()
 
 if res is not None:
     # handle response
@@ -1509,7 +1509,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_fix_missing_original_sizes(limit=413519)
+res = s.admin.get_fix_missing_original_sizes()
 
 if res is not None:
     # handle response
@@ -1643,7 +1643,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.load_dataset_field_admin(request='<value>')
+res = s.admin.load_dataset_field_admin()
 
 if res is not None:
     # handle response
@@ -1713,7 +1713,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.admin_load_property_files(request='<value>')
+res = s.admin.admin_load_property_files()
 
 if res is not None:
     # handle response
@@ -1789,7 +1789,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.post_fix_missing_unf(dataset_version_id='<value>', force_recalculate=False)
+res = s.admin.post_fix_missing_unf(dataset_version_id='<value>')
 
 if res is not None:
     # handle response
@@ -2006,7 +2006,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.update_curation_label_set(alias='<value>', name='<value>')
+res = s.admin.update_curation_label_set(alias='<value>')
 
 if res is not None:
     # handle response
@@ -2197,7 +2197,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_tmp_file(fully_qualified_path_to_file='<value>')
+res = s.admin.get_tmp_file()
 
 if res is not None:
     # handle response
@@ -2827,7 +2827,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_admin_index(num_partitions=966288, partition_id_to_process=875880, preview_only=False)
+res = s.admin.get_admin_index()
 
 if res is not None:
     # handle response
@@ -2899,7 +2899,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.clear_orphans_index(sync='<value>')
+res = s.admin.clear_orphans_index()
 
 if res is not None:
     # handle response
@@ -2937,7 +2937,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.continue_index_processing(num_partitions=385791, partition_id_to_process=791191, preview_only=False)
+res = s.admin.continue_index_processing()
 
 if res is not None:
     # handle response
@@ -2977,7 +2977,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_dataset_index(persistent_id='<value>')
+res = s.admin.get_dataset_index()
 
 if res is not None:
     # handle response
@@ -3053,7 +3053,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_file_metadata1(dataset_id=442844, max_results=115835, order='<value>', sort='<value>')
+res = s.admin.get_file_metadata1(dataset_id=442844)
 
 if res is not None:
     # handle response
@@ -3094,7 +3094,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.file_search_index_get(persistent_id='<value>', q='<value>', semantic_version='<value>')
+res = s.admin.file_search_index_get()
 
 if res is not None:
     # handle response
@@ -3134,7 +3134,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_admin_index_mod(partitions=500680, which=91223)
+res = s.admin.get_admin_index_mod()
 
 if res is not None:
     # handle response
@@ -3243,7 +3243,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_perms_debug_info(id=680308, key='<value>')
+res = s.admin.get_perms_debug_info()
 
 if res is not None:
     # handle response
@@ -3314,7 +3314,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_admin_index_status(sync='<value>')
+res = s.admin.get_admin_index_status()
 
 if res is not None:
     # handle response
@@ -3352,9 +3352,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_admin_test_index(fq=[
-    '<value>',
-], key='<value>', q='<value>')
+res = s.admin.get_admin_test_index()
 
 if res is not None:
     # handle response
@@ -3535,7 +3533,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.list_users(items_per_page=526212, search_term='<value>', selected_page=540061, sort_key='<value>')
+res = s.admin.list_users()
 
 if res is not None:
     # handle response
@@ -3576,7 +3574,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.add_metrics_from_report(report_on_disk='<value>')
+res = s.admin.add_metrics_from_report()
 
 if res is not None:
     # handle response
@@ -3646,7 +3644,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.add_usage_metrics_from_sushi_repo(id='<value>', report_on_disk='<value>')
+res = s.admin.add_usage_metrics_from_sushi_repo(id='<value>')
 
 if res is not None:
     # handle response
@@ -4003,7 +4001,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_register_data_files_by_alias(alias='<value>', sleep=973941)
+res = s.admin.get_register_data_files_by_alias(alias='<value>')
 
 if res is not None:
     # handle response
@@ -4036,14 +4034,13 @@ Admin sends a request to receive a signed URL.
 
 ```python
 import pydataverse
-from pydataverse.models import operations
 
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
-res = s.admin.post_admin_signed_url(request=operations.PostAdminSignedURLRequestBody())
+res = s.admin.post_admin_signed_url()
 
 if res is not None:
     # handle response
@@ -4279,7 +4276,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.update_all_saved_search_links(debug=False)
+res = s.admin.update_all_saved_search_links()
 
 if res is not None:
     # handle response
@@ -4317,7 +4314,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.make_links_for_saved_search(id=882350, debug=False)
+res = s.admin.make_links_for_saved_search(id=882350)
 
 if res is not None:
     # handle response
@@ -5051,7 +5048,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_external_tools_1(id='<value>', type='<value>')
+res = s.admin.get_external_tools_1(id='<value>')
 
 if res is not None:
     # handle response
@@ -5090,7 +5087,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_external_tool_by_id(id='<value>', tool_id='<value>', type='<value>')
+res = s.admin.get_external_tool_by_id(id='<value>', tool_id='<value>')
 
 if res is not None:
     # handle response
@@ -5130,7 +5127,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_external_tools_1_1(id='<value>', type='<value>')
+res = s.admin.get_external_tools_1_1(id='<value>')
 
 if res is not None:
     # handle response
@@ -5169,7 +5166,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_hash_values(alg='<value>', num=972785)
+res = s.admin.get_hash_values(alg='<value>')
 
 if res is not None:
     # handle response
@@ -5246,7 +5243,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.validate_dataset(id='<value>', variables=False)
+res = s.admin.validate_dataset(id='<value>')
 
 if res is not None:
     # handle response
@@ -5285,7 +5282,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.admin_validate_datasets(variables=False)
+res = s.admin.admin_validate_datasets()
 
 if res is not None:
     # handle response

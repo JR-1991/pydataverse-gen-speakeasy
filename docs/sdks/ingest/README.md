@@ -19,7 +19,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.ingest.get_ingest_test_file(file_name='<value>', file_type='<value>')
+res = s.ingest.get_ingest_test_file()
 
 if res.res is not None:
     # handle response

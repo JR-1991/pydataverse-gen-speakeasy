@@ -22,7 +22,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.batch.get_batch_harvest(create_dv=False, dv='<value>', key='<value>', path='<value>')
+res = s.batch.get_batch_harvest()
 
 if res is not None:
     # handle response
@@ -63,7 +63,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.batch.get_batch_import_status(create_dv=False, dv='<value>', key='<value>', path='<value>')
+res = s.batch.get_batch_import_status()
 
 if res is not None:
     # handle response
@@ -104,7 +104,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.batch.create_batch_import(dv='<value>', key='<value>')
+res = s.batch.create_batch_import()
 
 if res is not None:
     # handle response
@@ -143,7 +143,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.batch.post_batch_job_import_datasets(identifier='<value>', mode='MERGE', total_size=859069, upload_folder='<value>')
+res = s.batch.post_batch_job_import_datasets(identifier='<value>')
 
 if res is not None:
     # handle response

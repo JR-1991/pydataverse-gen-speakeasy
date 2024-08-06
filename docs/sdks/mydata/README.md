@@ -13,14 +13,13 @@ Retrieve specific set of my data based on the provided filters
 
 ```python
 import pydataverse
-from pydataverse.models import operations
 
 s = pydataverse.PyDataverse(
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
-res = s.mydata.my_data_retrieve(request=operations.MyDataRetrieveRequest())
+res = s.mydata.my_data_retrieve()
 
 if res.string is not None:
     # handle response
