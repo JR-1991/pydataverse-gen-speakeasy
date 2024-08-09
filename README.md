@@ -722,7 +722,7 @@ This SDK supports the following security scheme globally:
 | -------------- | -------------- | -------------- |
 | `api_key_auth` | apiKey         | API key        |
 
-To authenticate with the API the `null` parameter must be set when initializing the SDK client instance. For example:
+To authenticate with the API the `api_key_auth` parameter must be set when initializing the SDK client instance. For example:
 ```python
 import pydataverse
 
