@@ -29,6 +29,8 @@ if res is not None:
 ```
 
 
+
+
 ### Response
 
 **[operations.GetApplicationWadlResponse](../../models/operations/getapplicationwadlresponse.md)**
@@ -59,6 +61,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 

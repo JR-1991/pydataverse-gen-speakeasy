@@ -28,6 +28,8 @@ if res is not None:
 ```
 
 
+
+
 ### Response
 
 **[operations.LogoutUserResponse](../../models/operations/logoutuserresponse.md)**

@@ -28,6 +28,8 @@ if res is not None:
 ```
 
 
+
+
 ### Response
 
 **[operations.GetMailNotificationsResponse](../../models/operations/getmailnotificationsresponse.md)**
