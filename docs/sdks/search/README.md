@@ -1,6 +1,8 @@
 # Search
 (*search*)
 
+## Overview
+
 ### Available Operations
 
 * [search_query](#search_query) - Executes a search query with various parameters and returns the matching records.
@@ -27,18 +29,16 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
 | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
 | `request`                                                                      | [operations.SearchQueryRequest](../../models/operations/searchqueryrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
-
 ### Response
 
 **[operations.SearchQueryResponse](../../models/operations/searchqueryresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

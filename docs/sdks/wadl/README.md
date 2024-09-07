@@ -1,6 +1,8 @@
 # Wadl
 (*application.wadl*)
 
+## Overview
+
 ### Available Operations
 
 * [get_application_wadl](#get_application_wadl) - Retrieves the application WADL
@@ -28,17 +30,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetApplicationWadlResponse](../../models/operations/getapplicationwadlresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_application_wadl_1
 
@@ -54,7 +55,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.application.wadl.get_application_wadl_1(path='<value>')
+res = s.application.wadl.get_application_wadl_1(path='/usr/obj')
 
 if res is not None:
     # handle response
@@ -62,18 +63,16 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `path`             | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetApplicationWadl1Response](../../models/operations/getapplicationwadl1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

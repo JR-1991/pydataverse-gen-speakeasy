@@ -1,6 +1,8 @@
 # Mydata
 (*mydata*)
 
+## Overview
+
 ### Available Operations
 
 * [my_data_retrieve](#my_data_retrieve) - Retrieve specific set of my data based on the provided filters
@@ -27,18 +29,16 @@ if res.string is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
 | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
 | `request`                                                                            | [operations.MyDataRetrieveRequest](../../models/operations/mydataretrieverequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
-
 ### Response
 
 **[operations.MyDataRetrieveResponse](../../models/operations/mydataretrieveresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

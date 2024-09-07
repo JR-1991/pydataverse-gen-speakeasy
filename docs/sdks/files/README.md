@@ -1,6 +1,8 @@
 # Files
 (*files*)
 
+## Overview
+
 ### Available Operations
 
 * [get_fixity_algorithm](#get_fixity_algorithm) - Retrieve the fixity algorithm of a file
@@ -50,17 +52,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetFixityAlgorithmResponse](../../models/operations/getfixityalgorithmresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_file
 
@@ -76,7 +77,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.get_file(id='<value>')
+res = s.files.get_file(id='<id>')
 
 if res is not None:
     # handle response
@@ -84,23 +85,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetFileResponse](../../models/operations/getfileresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_file
 
@@ -116,7 +116,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.delete_file(id='<value>')
+res = s.files.delete_file(id='<id>')
 
 if res is not None:
     # handle response
@@ -124,23 +124,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteFileResponse](../../models/operations/deletefileresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_file_data_tables
 
@@ -156,7 +155,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.get_file_data_tables(id='<value>')
+res = s.files.get_file_data_tables(id='<id>')
 
 if res is not None:
     # handle response
@@ -164,23 +163,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetFileDataTablesResponse](../../models/operations/getfiledatatablesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_download_count
 
@@ -196,7 +194,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.get_download_count(id='<value>')
+res = s.files.get_download_count(id='<id>')
 
 if res is not None:
     # handle response
@@ -204,23 +202,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDownloadCountResponse](../../models/operations/getdownloadcountresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_file_draft
 
@@ -236,7 +233,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.get_file_draft(id='<value>')
+res = s.files.get_file_draft(id='<id>')
 
 if res is not None:
     # handle response
@@ -244,23 +241,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetFileDraftResponse](../../models/operations/getfiledraftresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## extract_ncml_by_id
 
@@ -276,7 +272,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.extract_ncml_by_id(id='<value>')
+res = s.files.extract_ncml_by_id(id='<id>')
 
 if res is not None:
     # handle response
@@ -284,23 +280,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.ExtractNcmlByIDResponse](../../models/operations/extractncmlbyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## check_file_deletion_status
 
@@ -316,7 +311,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.check_file_deletion_status(id='<value>')
+res = s.files.check_file_deletion_status(id='<id>')
 
 if res is not None:
     # handle response
@@ -324,23 +319,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.CheckFileDeletionStatusResponse](../../models/operations/checkfiledeletionstatusresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_file_metadata
 
@@ -356,7 +350,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.get_file_metadata(id='<value>')
+res = s.files.get_file_metadata(id='<id>')
 
 if res is not None:
     # handle response
@@ -364,23 +358,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetFileMetadataResponse](../../models/operations/getfilemetadataresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_file_metadata
 
@@ -396,7 +389,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.update_file_metadata(id='<value>')
+res = s.files.update_file_metadata(id='<id>')
 
 if res is not None:
     # handle response
@@ -404,23 +397,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateFileMetadataResponse](../../models/operations/updatefilemetadataresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_file_metadata_categories
 
@@ -436,7 +428,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.post_file_metadata_categories(id='<value>')
+res = s.files.post_file_metadata_categories(id='<id>')
 
 if res is not None:
     # handle response
@@ -444,23 +436,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.PostFileMetadataCategoriesResponse](../../models/operations/postfilemetadatacategoriesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_draft_meta_data
 
@@ -476,7 +467,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.get_draft_meta_data(id='<value>')
+res = s.files.get_draft_meta_data(id='<id>')
 
 if res is not None:
     # handle response
@@ -484,23 +475,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDraftMetaDataResponse](../../models/operations/getdraftmetadataresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_tabular_tags
 
@@ -516,7 +506,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.post_tabular_tags(id='<value>')
+res = s.files.post_tabular_tags(id='<id>')
 
 if res is not None:
     # handle response
@@ -524,23 +514,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.PostTabularTagsResponse](../../models/operations/posttabulartagsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_file_metadata_tool_params
 
@@ -556,15 +545,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.get_file_metadata_tool_params(fmid=27570, id='<value>', tid=343127)
+res = s.files.get_file_metadata_tool_params(fmid=27570, id='<id>', tid=343127)
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -575,15 +562,16 @@ if res is not None:
 | `tid`              | *int*              | :heavy_check_mark: | N/A                |
 | `locale`           | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetFileMetadataToolParamsResponse](../../models/operations/getfilemetadatatoolparamsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_file_prov_freeform
 
@@ -599,7 +587,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.get_file_prov_freeform(id='<value>')
+res = s.files.get_file_prov_freeform(id='<id>')
 
 if res is not None:
     # handle response
@@ -607,23 +595,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetFileProvFreeformResponse](../../models/operations/getfileprovfreeformresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_file_prov_freeform
 
@@ -639,15 +626,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.post_file_prov_freeform(id='<value>')
+res = s.files.post_file_prov_freeform(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -656,15 +641,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.PostFileProvFreeformResponse](../../models/operations/postfileprovfreeformresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_file_prov_json
 
@@ -680,7 +666,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.get_file_prov_json(id='<value>')
+res = s.files.get_file_prov_json(id='<id>')
 
 if res is not None:
     # handle response
@@ -688,23 +674,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetFileProvJSONResponse](../../models/operations/getfileprovjsonresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_file_prov_json
 
@@ -720,15 +705,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.post_file_prov_json(id='<value>')
+res = s.files.post_file_prov_json(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -738,15 +721,16 @@ if res is not None:
 | `entity_name`      | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.PostFileProvJSONResponse](../../models/operations/postfileprovjsonresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_file_prov_json
 
@@ -762,7 +746,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.delete_file_prov_json(id='<value>')
+res = s.files.delete_file_prov_json(id='<id>')
 
 if res is not None:
     # handle response
@@ -770,23 +754,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteFileProvJSONResponse](../../models/operations/deletefileprovjsonresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## redetect_file
 
@@ -802,15 +785,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.redetect_file(id='<value>')
+res = s.files.redetect_file(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -819,15 +800,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `dry_run`          | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.RedetectFileResponse](../../models/operations/redetectfileresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## reingest_file
 
@@ -843,7 +825,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.reingest_file(id='<value>')
+res = s.files.reingest_file(id='<id>')
 
 if res is not None:
     # handle response
@@ -851,23 +833,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.ReingestFileResponse](../../models/operations/reingestfileresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## replace_file
 
@@ -883,15 +864,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.replace_file(id='<value>')
+res = s.files.replace_file(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -900,15 +879,16 @@ if res is not None:
 | `id`                                                                                             | *str*                                                                                            | :heavy_check_mark:                                                                               | N/A                                                                                              |
 | `request_body`                                                                                   | [Optional[operations.ReplaceFileRequestBody]](../../models/operations/replacefilerequestbody.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
 
-
 ### Response
 
 **[operations.ReplaceFileResponse](../../models/operations/replacefileresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## restrict_file_access
 
@@ -924,7 +904,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.restrict_file_access(id='<value>')
+res = s.files.restrict_file_access(id='<id>')
 
 if res is not None:
     # handle response
@@ -932,23 +912,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.RestrictFileAccessResponse](../../models/operations/restrictfileaccessresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_file_uningest
 
@@ -964,7 +943,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.post_file_uningest(id='<value>')
+res = s.files.post_file_uningest(id='<id>')
 
 if res is not None:
     # handle response
@@ -972,18 +951,16 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.PostFileUningestResponse](../../models/operations/postfileuningestresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

@@ -1,6 +1,8 @@
 # BuiltinUsers
 (*builtin_users*)
 
+## Overview
+
 ### Available Operations
 
 * [post_builtin_users](#post_builtin_users) - Create a new builtin user
@@ -30,8 +32,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                 | Type                      | Required                  | Description               |
@@ -40,15 +40,16 @@ if res is not None:
 | `password`                | *Optional[str]*           | :heavy_minus_sign:        | N/A                       |
 | `send_email_notification` | *Optional[bool]*          | :heavy_minus_sign:        | N/A                       |
 
-
 ### Response
 
 **[operations.PostBuiltinUsersResponse](../../models/operations/postbuiltinusersresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_builtin_user
 
@@ -64,15 +65,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.builtin_users.create_builtin_user(key='<value>', password='<value>')
+res = s.builtin_users.create_builtin_user(key='<key>', password='bT1J7kLnkhyBrOW')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -81,15 +80,16 @@ if res is not None:
 | `key`              | *str*              | :heavy_check_mark: | N/A                |
 | `password`         | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.CreateBuiltinUserResponse](../../models/operations/createbuiltinuserresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_builtin_user_1
 
@@ -105,15 +105,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.builtin_users.create_builtin_user_1(key='<value>', password='<value>', send_email_notification=False)
+res = s.builtin_users.create_builtin_user_1(key='<key>', password='XGntXDnk7mNelX8', send_email_notification=True)
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -123,15 +121,16 @@ if res is not None:
 | `password`                | *str*                     | :heavy_check_mark:        | N/A                       |
 | `send_email_notification` | *bool*                    | :heavy_check_mark:        | N/A                       |
 
-
 ### Response
 
 **[operations.CreateBuiltinUser1Response](../../models/operations/createbuiltinuser1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_api_token_by_username
 
@@ -147,15 +146,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.builtin_users.get_api_token_by_username(username='<value>')
+res = s.builtin_users.get_api_token_by_username(username='Lou48')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -164,10 +161,10 @@ if res is not None:
 | `username`         | *str*              | :heavy_check_mark: | N/A                |
 | `password`         | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetAPITokenByUsernameResponse](../../models/operations/getapitokenbyusernameresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

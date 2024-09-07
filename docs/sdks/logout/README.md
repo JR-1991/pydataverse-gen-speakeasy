@@ -1,6 +1,8 @@
 # Logout
 (*logout*)
 
+## Overview
+
 ### Available Operations
 
 * [logout_user](#logout_user) - Log out the current user
@@ -27,12 +29,10 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.LogoutUserResponse](../../models/operations/logoutuserresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

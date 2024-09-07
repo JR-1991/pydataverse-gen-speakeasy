@@ -1,6 +1,8 @@
 # Pids
 (*pids*)
 
+## Overview
+
 ### Available Operations
 
 * [get_persistent_id](#get_persistent_id) - Retrieve a specific persistent identifier
@@ -30,23 +32,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `persistent_id`    | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetPersistentIDResponse](../../models/operations/getpersistentidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_unreserved_persistent_ids
 
@@ -70,23 +71,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `persistent_id`    | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetUnreservedPersistentIdsResponse](../../models/operations/getunreservedpersistentidsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_pid
 
@@ -102,7 +102,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.pids.delete_pid(id='<value>')
+res = s.pids.delete_pid(id='<id>')
 
 if res is not None:
     # handle response
@@ -110,23 +110,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeletePidResponse](../../models/operations/deletepidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## reserve_pid
 
@@ -142,7 +141,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.pids.reserve_pid(id='<value>')
+res = s.pids.reserve_pid(id='<id>')
 
 if res is not None:
     # handle response
@@ -150,18 +149,16 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.ReservePidResponse](../../models/operations/reservepidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

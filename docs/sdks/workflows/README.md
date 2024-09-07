@@ -1,6 +1,8 @@
 # Workflows
 (*workflows*)
 
+## Overview
+
 ### Available Operations
 
 * [start_workflow](#start_workflow) - Initiate a workflow using the given invocation id
@@ -27,18 +29,16 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `invocation_id`    | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.StartWorkflowResponse](../../models/operations/startworkflowresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

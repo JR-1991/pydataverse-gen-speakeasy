@@ -1,6 +1,8 @@
 # Datatags
 (*datatags*)
 
+## Overview
+
 ### Available Operations
 
 * [post_receive_tags](#post_receive_tags) - Create a new datatag and associate it with the specified unique cache ID
@@ -27,18 +29,16 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `unique_cache_id`  | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.PostReceiveTagsResponse](../../models/operations/postreceivetagsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

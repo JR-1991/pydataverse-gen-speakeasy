@@ -1,6 +1,8 @@
 # Info
 (*info*)
 
+## Overview
+
 ### Available Operations
 
 * [get_api_terms_of_use_info](#get_api_terms_of_use_info) - Retrieve the terms of use of the API
@@ -70,17 +72,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetAPITermsOfUseInfoResponse](../../models/operations/getapitermsofuseinforesponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_metrics_1
 
@@ -104,8 +105,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -113,15 +112,16 @@ if res is not None:
 | `data_location`    | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetMetrics1Response](../../models/operations/getdatasetmetrics1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_datasets_by_subject
 
@@ -145,8 +145,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -154,15 +152,16 @@ if res is not None:
 | `data_location`    | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetsBySubjectResponse](../../models/operations/getdatasetsbysubjectresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_monthly_subject_metrics
 
@@ -186,8 +185,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -196,15 +193,16 @@ if res is not None:
 | `data_location`    | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMonthlySubjectMetricsResponse](../../models/operations/getmonthlysubjectmetricsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_monthly_dataset_metrics
 
@@ -228,8 +226,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -237,15 +233,16 @@ if res is not None:
 | `data_location`    | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMonthlyDatasetMetricsResponse](../../models/operations/getmonthlydatasetmetricsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_past_days_metrics
 
@@ -269,8 +266,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -279,15 +274,16 @@ if res is not None:
 | `data_location`    | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetPastDaysMetricsResponse](../../models/operations/getpastdaysmetricsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_monthly_dataset_metrics_1
 
@@ -311,8 +307,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -321,15 +315,16 @@ if res is not None:
 | `data_location`    | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMonthlyDatasetMetrics1Response](../../models/operations/getmonthlydatasetmetrics1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_metrics_dataverses
 
@@ -353,23 +348,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMetricsDataversesResponse](../../models/operations/getmetricsdataversesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_metrics_by_category
 
@@ -393,23 +387,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMetricsByCategoryResponse](../../models/operations/getmetricsbycategoryresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_metrics_by_subject
 
@@ -433,23 +426,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMetricsBySubjectResponse](../../models/operations/getmetricsbysubjectresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_monthly_dataverse_metrics
 
@@ -473,23 +465,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMonthlyDataverseMetricsResponse](../../models/operations/getmonthlydataversemetricsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_metrics_past_days
 
@@ -513,8 +504,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -522,15 +511,16 @@ if res is not None:
 | `days`             | *int*              | :heavy_check_mark: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMetricsPastDaysResponse](../../models/operations/getmetricspastdaysresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_monthly_metrics_for_dataverses
 
@@ -554,8 +544,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -563,15 +551,16 @@ if res is not None:
 | `yyyymm`           | *str*              | :heavy_check_mark: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMonthlyMetricsForDataversesResponse](../../models/operations/getmonthlymetricsfordataversesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_download_metrics
 
@@ -595,23 +584,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDownloadMetricsResponse](../../models/operations/getdownloadmetricsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_monthly_downloads
 
@@ -635,23 +623,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMonthlyDownloadsResponse](../../models/operations/getmonthlydownloadsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_past_days_downloads
 
@@ -675,8 +662,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -684,15 +669,16 @@ if res is not None:
 | `days`             | *int*              | :heavy_check_mark: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetPastDaysDownloadsResponse](../../models/operations/getpastdaysdownloadsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_download_metrics_to_month
 
@@ -716,8 +702,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -725,15 +709,16 @@ if res is not None:
 | `yyyymm`           | *str*              | :heavy_check_mark: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDownloadMetricsToMonthResponse](../../models/operations/getdownloadmetricstomonthresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_file_downloads_metrics
 
@@ -757,23 +742,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetFileDownloadsMetricsResponse](../../models/operations/getfiledownloadsmetricsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_monthly_file_downloads
 
@@ -797,23 +781,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMonthlyFileDownloadsResponse](../../models/operations/getmonthlyfiledownloadsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_file_downloads_to_month
 
@@ -837,8 +820,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -846,15 +827,16 @@ if res is not None:
 | `yyyymm`           | *str*              | :heavy_check_mark: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetFileDownloadsToMonthResponse](../../models/operations/getfiledownloadstomonthresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_file_info_metrics
 
@@ -878,23 +860,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetFileInfoMetricsResponse](../../models/operations/getfileinfometricsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_metrics_by_file_type
 
@@ -918,23 +899,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMetricsByFileTypeResponse](../../models/operations/getmetricsbyfiletyperesponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_files_by_type_monthly
 
@@ -958,23 +938,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetFilesByTypeMonthlyResponse](../../models/operations/getfilesbytypemonthlyresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_monthly_files_metrics
 
@@ -998,23 +977,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMonthlyFilesMetricsResponse](../../models/operations/getmonthlyfilesmetricsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_files_metrics
 
@@ -1038,8 +1016,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1047,15 +1023,16 @@ if res is not None:
 | `days`             | *int*              | :heavy_check_mark: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetFilesMetricsResponse](../../models/operations/getfilesmetricsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_monthly_files_info
 
@@ -1079,8 +1056,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1088,15 +1063,16 @@ if res is not None:
 | `yyyymm`           | *str*              | :heavy_check_mark: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMonthlyFilesInfoResponse](../../models/operations/getmonthlyfilesinforesponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_metric_data
 
@@ -1120,8 +1096,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1130,15 +1104,16 @@ if res is not None:
 | `country`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMetricDataResponse](../../models/operations/getmetricdataresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_monthly_data_count_metrics
 
@@ -1162,8 +1137,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1172,15 +1145,16 @@ if res is not None:
 | `country`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMonthlyDataCountMetricsResponse](../../models/operations/getmonthlydatacountmetricsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_metrics_by_month
 
@@ -1204,8 +1178,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1215,15 +1187,16 @@ if res is not None:
 | `country`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMetricsByMonthResponse](../../models/operations/getmetricsbymonthresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_metrics_tree
 
@@ -1247,23 +1220,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMetricsTreeResponse](../../models/operations/getmetricstreeresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_monthly_metrics_by_alias
 
@@ -1287,8 +1259,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1296,15 +1266,16 @@ if res is not None:
 | `yyyymm`           | *str*              | :heavy_check_mark: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMonthlyMetricsByAliasResponse](../../models/operations/getmonthlymetricsbyaliasresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_unique_downloads
 
@@ -1328,23 +1299,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetUniqueDownloadsResponse](../../models/operations/getuniquedownloadsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_monthly_unique_downloads
 
@@ -1368,23 +1338,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMonthlyUniqueDownloadsResponse](../../models/operations/getmonthlyuniquedownloadsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_monthly_unique_downloads_1
 
@@ -1408,8 +1377,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1417,15 +1384,16 @@ if res is not None:
 | `yyyymm`           | *str*              | :heavy_check_mark: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMonthlyUniqueDownloads1Response](../../models/operations/getmonthlyuniquedownloads1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_unique_file_downloads
 
@@ -1449,23 +1417,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetUniqueFileDownloadsResponse](../../models/operations/getuniquefiledownloadsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_monthly_unique_file_downloads
 
@@ -1489,23 +1456,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetMonthlyUniqueFileDownloadsResponse](../../models/operations/getmonthlyuniquefiledownloadsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_unique_file_downloads_1
 
@@ -1529,8 +1495,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1538,15 +1502,16 @@ if res is not None:
 | `yyyymm`           | *str*              | :heavy_check_mark: | N/A                |
 | `parent_alias`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetUniqueFileDownloads1Response](../../models/operations/getuniquefiledownloads1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_open_api_info
 
@@ -1570,23 +1535,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `output_format`    | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetOpenAPIInfoResponse](../../models/operations/getopenapiinforesponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_server_info
 
@@ -1610,17 +1574,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetServerInfoResponse](../../models/operations/getserverinforesponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_publish_popup_custom_text
 
@@ -1644,17 +1607,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetDatasetPublishPopupCustomTextResponse](../../models/operations/getdatasetpublishpopupcustomtextresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_max_embargo_duration_in_months
 
@@ -1678,17 +1640,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetMaxEmbargoDurationInMonthsResponse](../../models/operations/getmaxembargodurationinmonthsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_incomplete_metadata_settings
 
@@ -1712,17 +1673,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetIncompleteMetadataSettingsResponse](../../models/operations/getincompletemetadatasettingsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_version_info
 
@@ -1746,17 +1706,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetVersionInfoResponse](../../models/operations/getversioninforesponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_zip_download_limit
 
@@ -1780,12 +1739,10 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetZipDownloadLimitResponse](../../models/operations/getzipdownloadlimitresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

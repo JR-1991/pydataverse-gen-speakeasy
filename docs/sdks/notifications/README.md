@@ -1,6 +1,8 @@
 # Notifications
 (*notifications*)
 
+## Overview
+
 ### Available Operations
 
 * [get_all_notifications](#get_all_notifications) - Retrieve all notifications
@@ -34,17 +36,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetAllNotificationsResponse](../../models/operations/getallnotificationsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_muted_emails
 
@@ -68,17 +69,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetMutedEmailsResponse](../../models/operations/getmutedemailsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_muted_email_notification
 
@@ -102,23 +102,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `type_name`        | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateMutedEmailNotificationResponse](../../models/operations/updatemutedemailnotificationresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_muted_email_notification
 
@@ -142,23 +141,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `type_name`        | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteMutedEmailNotificationResponse](../../models/operations/deletemutedemailnotificationresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_muted_notifications
 
@@ -182,17 +180,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetMutedNotificationsResponse](../../models/operations/getmutednotificationsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_muted_notification
 
@@ -216,23 +213,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `type_name`        | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateMutedNotificationResponse](../../models/operations/updatemutednotificationresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_muted_notification
 
@@ -256,23 +252,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `type_name`        | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteMutedNotificationResponse](../../models/operations/deletemutednotificationresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_notification
 
@@ -296,18 +291,16 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteNotificationResponse](../../models/operations/deletenotificationresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

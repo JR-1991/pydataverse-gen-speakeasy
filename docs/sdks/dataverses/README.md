@@ -1,6 +1,8 @@
 # Dataverses
 (*dataverses*)
 
+## Overview
+
 ### Available Operations
 
 * [create_dataverse](#create_dataverse) - Create a new Dataverse
@@ -72,17 +74,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.CreateDataverseResponse](../../models/operations/createdataverseresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataverse
 
@@ -106,23 +107,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDataverseResponse](../../models/operations/getdataverseresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_dataverse_1
 
@@ -153,8 +153,6 @@ if res.dataverse_response is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
@@ -162,16 +160,17 @@ if res.dataverse_response is not None:
 | `identifier`                                                               | *str*                                                                      | :heavy_check_mark:                                                         | N/A                                                                        |
 | `dataverse_request`                                                        | [components.DataverseRequest](../../models/components/dataverserequest.md) | :heavy_check_mark:                                                         | N/A                                                                        |
 
-
 ### Response
 
 **[operations.CreateDataverse1Response](../../models/operations/createdataverse1response.md)**
+
 ### Errors
 
 | Error Object         | Status Code          | Content Type         |
 | -------------------- | -------------------- | -------------------- |
 | errors.ErrorResponse | 400                  | application/json     |
 | errors.SDKError      | 4xx-5xx              | */*                  |
+
 
 ## delete_dataverse
 
@@ -195,23 +194,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteDataverseResponse](../../models/operations/deletedataverseresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## publish_dataverse_by_id
 
@@ -235,23 +233,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.PublishDataverseByIDResponse](../../models/operations/publishdataversebyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataverse_assignments
 
@@ -275,23 +272,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDataverseAssignmentsResponse](../../models/operations/getdataverseassignmentsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_dataverse_assignments
 
@@ -315,8 +311,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -324,15 +318,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.PostDataverseAssignmentsResponse](../../models/operations/postdataverseassignmentsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_dataverse_assignment
 
@@ -356,8 +351,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -365,15 +358,16 @@ if res is not None:
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteDataverseAssignmentResponse](../../models/operations/deletedataverseassignmentresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_dataverse_attribute
 
@@ -397,8 +391,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -407,15 +399,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `value`            | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateDataverseAttributeResponse](../../models/operations/updatedataverseattributeresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataverse_contents
 
@@ -439,23 +432,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDataverseContentsResponse](../../models/operations/getdataversecontentsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_schema
 
@@ -479,23 +471,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetSchemaResponse](../../models/operations/getdatasetschemaresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_dataset_in_dataverse
 
@@ -519,8 +510,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -529,15 +518,16 @@ if res is not None:
 | `do_not_validate`  | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.CreateDatasetInDataverseResponse](../../models/operations/createdatasetindataverseresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## import_dataset
 
@@ -561,8 +551,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -571,15 +559,16 @@ if res is not None:
 | `pid`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `release`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.ImportDatasetResponse](../../models/operations/importdatasetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## import_ddi_to_dataset
 
@@ -603,8 +592,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -613,15 +600,16 @@ if res is not None:
 | `pid`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `release`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.ImportDdiToDatasetResponse](../../models/operations/importdditodatasetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## start_migration
 
@@ -645,8 +633,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -654,15 +640,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.StartMigrationResponse](../../models/operations/startmigrationresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_default_contributor_role
 
@@ -686,8 +673,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -695,15 +680,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `role_alias`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateDefaultContributorRoleResponse](../../models/operations/updatedefaultcontributorroleresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_facets
 
@@ -727,23 +713,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetFacetsResponse](../../models/operations/getfacetsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_facets
 
@@ -767,23 +752,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.PostFacetsResponse](../../models/operations/postfacetsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataverse_groups
 
@@ -807,8 +791,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -816,15 +798,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDataverseGroupsResponse](../../models/operations/getdataversegroupsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_dataverse_group
 
@@ -848,23 +831,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.CreateDataverseGroupResponse](../../models/operations/createdataversegroupresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_group_in_dataverse
 
@@ -888,8 +870,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -897,15 +877,16 @@ if res is not None:
 | `alias_in_owner`   | *str*              | :heavy_check_mark: | N/A                |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetGroupInDataverseResponse](../../models/operations/getgroupindataverseresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_group_in_dataverse
 
@@ -929,8 +910,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -938,15 +917,16 @@ if res is not None:
 | `alias_in_owner`   | *str*              | :heavy_check_mark: | N/A                |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateGroupInDataverseResponse](../../models/operations/updategroupindataverseresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_group_in_dataverse
 
@@ -970,8 +950,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -979,15 +957,16 @@ if res is not None:
 | `alias_in_owner`   | *str*              | :heavy_check_mark: | N/A                |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteGroupInDataverseResponse](../../models/operations/deletegroupindataverseresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## assign_role
 
@@ -1011,8 +990,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1021,15 +998,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `request_body`     | List[*str*]        | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.AssignRoleResponse](../../models/operations/assignroleresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_role_assignee
 
@@ -1053,8 +1031,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                  | Type                       | Required                   | Description                |
@@ -1063,15 +1039,16 @@ if res is not None:
 | `identifier`               | *str*                      | :heavy_check_mark:         | N/A                        |
 | `role_assignee_identifier` | *str*                      | :heavy_check_mark:         | N/A                        |
 
-
 ### Response
 
 **[operations.UpdateRoleAssigneeResponse](../../models/operations/updateroleassigneeresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_role_assignee
 
@@ -1095,8 +1072,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                  | Type                       | Required                   | Description                |
@@ -1105,15 +1080,16 @@ if res is not None:
 | `identifier`               | *str*                      | :heavy_check_mark:         | N/A                        |
 | `role_assignee_identifier` | *str*                      | :heavy_check_mark:         | N/A                        |
 
-
 ### Response
 
 **[operations.DeleteRoleAssigneeResponse](../../models/operations/deleteroleassigneeresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_guestbook_responses
 
@@ -1137,8 +1113,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1146,15 +1120,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `guestbook_id`     | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetGuestbookResponsesResponse](../../models/operations/getguestbookresponsesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataverse_links
 
@@ -1178,23 +1153,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDataverseLinksResponse](../../models/operations/getdataverselinksresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_metadatablock_facets
 
@@ -1218,23 +1192,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetMetadatablockFacetsResponse](../../models/operations/getmetadatablockfacetsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_metadatablock_facets
 
@@ -1258,8 +1231,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1267,15 +1238,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `request_body`     | List[*str*]        | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.PostMetadatablockFacetsResponse](../../models/operations/postmetadatablockfacetsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_root_status
 
@@ -1299,8 +1271,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1308,15 +1278,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateRootStatusResponse](../../models/operations/updaterootstatusresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_metadatablock
 
@@ -1340,23 +1311,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetMetadatablockResponse](../../models/operations/getmetadatablockresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_metadatablock
 
@@ -1380,23 +1350,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.CreateMetadatablockResponse](../../models/operations/createmetadatablockresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_metadatablock_1
 
@@ -1420,23 +1389,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetMetadatablock1Response](../../models/operations/getmetadatablock1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_metadatablock
 
@@ -1460,8 +1428,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1469,15 +1435,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.PostMetadatablockResponse](../../models/operations/postmetadatablockresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_roles_by_identifier
 
@@ -1501,23 +1468,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetRolesByIdentifierResponse](../../models/operations/getrolesbyidentifierresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_role_by_identifier
 
@@ -1541,23 +1507,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.CreateRoleByIdentifierResponse](../../models/operations/createrolebyidentifierresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_storage_quota
 
@@ -1581,23 +1546,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetStorageQuotaResponse](../../models/operations/getstoragequotaresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_storage_quota
 
@@ -1621,23 +1585,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteStorageQuotaResponse](../../models/operations/deletestoragequotaresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## set_storage_quota
 
@@ -1661,8 +1624,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1670,15 +1631,16 @@ if res is not None:
 | `bytes_allocated`  | *int*              | :heavy_check_mark: | N/A                |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.SetStorageQuotaResponse](../../models/operations/setstoragequotaresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataverse_storage_usage
 
@@ -1702,23 +1664,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDataverseStorageUsageResponse](../../models/operations/getdataversestorageusageresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataverse_storage_size
 
@@ -1742,8 +1703,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1751,15 +1710,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `include_cached`   | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDataverseStorageSizeResponse](../../models/operations/getdataversestoragesizeresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## validate_dataset_json
 
@@ -1783,8 +1743,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1792,15 +1750,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.ValidateDatasetJSONResponse](../../models/operations/validatedatasetjsonresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## move_dataverse
 
@@ -1816,15 +1775,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.move_dataverse(id='<value>', target_dataverse_alias='<value>')
+res = s.dataverses.move_dataverse(id='<id>', target_dataverse_alias='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -1834,15 +1791,16 @@ if res is not None:
 | `target_dataverse_alias` | *str*                    | :heavy_check_mark:       | N/A                      |
 | `force_move`             | *Optional[bool]*         | :heavy_minus_sign:       | N/A                      |
 
-
 ### Response
 
 **[operations.MoveDataverseResponse](../../models/operations/movedataverseresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## link_dataverses
 
@@ -1866,8 +1824,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                 | Type                      | Required                  | Description               |
@@ -1875,15 +1831,16 @@ if res is not None:
 | `linked_dataverse_alias`  | *str*                     | :heavy_check_mark:        | N/A                       |
 | `linking_dataverse_alias` | *str*                     | :heavy_check_mark:        | N/A                       |
 
-
 ### Response
 
 **[operations.LinkDataversesResponse](../../models/operations/linkdataversesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_dataverse_link
 
@@ -1907,8 +1864,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter              | Type                   | Required               | Description            |
@@ -1916,10 +1871,10 @@ if res is not None:
 | `linked_dataverse_id`  | *str*                  | :heavy_check_mark:     | N/A                    |
 | `linking_dataverse_id` | *str*                  | :heavy_check_mark:     | N/A                    |
 
-
 ### Response
 
 **[operations.DeleteDataverseLinkResponse](../../models/operations/deletedataverselinkresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

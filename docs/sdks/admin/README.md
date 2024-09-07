@@ -1,6 +1,8 @@
 # Admin
 (*admin*)
 
+## Overview
+
 ### Available Operations
 
 * [archive_all_unarchived_versions](#archive_all_unarchived_versions) - Archives all unarchived dataset versions. Allows options to limit the number of versions archived, archive only the latest versions, or simply list the versions that would be archived without actually doing it.
@@ -182,8 +184,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -192,15 +192,16 @@ if res is not None:
 | `limit`            | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 | `listonly`         | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.ArchiveAllUnarchivedVersionsResponse](../../models/operations/archiveallunarchivedversionsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_assignee
 
@@ -224,23 +225,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `idtf`             | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetAdminAssigneeResponse](../../models/operations/getadminassigneeresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_assignees_detail
 
@@ -264,23 +264,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `ra_idtf`          | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetAssigneesDetailResponse](../../models/operations/getassigneesdetailresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## ~~get_authenticated_users~~
 
@@ -306,17 +305,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetAuthenticatedUsersResponse](../../models/operations/getauthenticatedusersresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_authenticated_user
 
@@ -340,17 +338,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.CreateAuthenticatedUserResponse](../../models/operations/createauthenticateduserresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## convert_user_to_o_auth
 
@@ -374,17 +371,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.ConvertUserToOAuthResponse](../../models/operations/convertusertooauthresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## convert_auth_users
 
@@ -408,17 +404,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.ConvertAuthUsersResponse](../../models/operations/convertauthusersresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_authenticated_user
 
@@ -442,23 +437,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteAuthenticatedUserResponse](../../models/operations/deleteauthenticateduserresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## convert_remote_to_built_in
 
@@ -482,23 +476,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.ConvertRemoteToBuiltInResponse](../../models/operations/convertremotetobuiltinresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## ~~convert_user_authentication_method~~
 
@@ -524,23 +517,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.ConvertUserAuthenticationMethodResponse](../../models/operations/convertuserauthenticationmethodresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## deactivate_user
 
@@ -564,23 +556,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeactivateUserResponse](../../models/operations/deactivateuserresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_authenticated_user
 
@@ -604,23 +595,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetAuthenticatedUserResponse](../../models/operations/getauthenticateduserresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_authenticated_user_1
 
@@ -644,23 +634,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteAuthenticatedUser1Response](../../models/operations/deleteauthenticateduser1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## deactivate_user_1
 
@@ -684,23 +673,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeactivateUser1Response](../../models/operations/deactivateuser1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_auth_provider_factories
 
@@ -724,17 +712,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetAuthProviderFactoriesResponse](../../models/operations/getauthproviderfactoriesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_auth_providers
 
@@ -758,17 +745,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetAuthProvidersResponse](../../models/operations/getauthprovidersresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## add_auth_provider
 
@@ -792,17 +778,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.AddAuthProviderResponse](../../models/operations/addauthproviderresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_auth_providers_by_id
 
@@ -818,7 +803,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_auth_providers_by_id(id='<value>')
+res = s.admin.get_auth_providers_by_id(id='<id>')
 
 if res is not None:
     # handle response
@@ -826,23 +811,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetAuthProvidersByIDResponse](../../models/operations/getauthprovidersbyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## remove_auth_providers_by_id
 
@@ -858,7 +842,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.remove_auth_providers_by_id(id='<value>')
+res = s.admin.remove_auth_providers_by_id(id='<id>')
 
 if res is not None:
     # handle response
@@ -866,23 +850,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.RemoveAuthProvidersByIDResponse](../../models/operations/removeauthprovidersbyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## enable_auth_provider
 
@@ -898,7 +881,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.enable_auth_provider(id='<value>')
+res = s.admin.enable_auth_provider(id='<id>')
 
 if res is not None:
     # handle response
@@ -906,23 +889,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.EnableAuthProviderResponse](../../models/operations/enableauthproviderresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_auth_provider_status
 
@@ -938,7 +920,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_auth_provider_status(id='<value>')
+res = s.admin.get_auth_provider_status(id='<id>')
 
 if res is not None:
     # handle response
@@ -946,23 +928,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetAuthProviderStatusResponse](../../models/operations/getauthproviderstatusresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_auth_provider_status
 
@@ -978,7 +959,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.update_auth_provider_status(id='<value>')
+res = s.admin.update_auth_provider_status(id='<id>')
 
 if res is not None:
     # handle response
@@ -986,23 +967,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateAuthProviderStatusResponse](../../models/operations/updateauthproviderstatusresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_banner_message
 
@@ -1026,17 +1006,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetBannerMessageResponse](../../models/operations/getbannermessageresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_banner_message
 
@@ -1060,17 +1039,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.PostBannerMessageResponse](../../models/operations/postbannermessageresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_banner_message
 
@@ -1094,23 +1072,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteBannerMessageResponse](../../models/operations/deletebannermessageresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## deactivate_banner_message
 
@@ -1134,23 +1111,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeactivateBannerMessageResponse](../../models/operations/deactivatebannermessageresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_batch_jobs
 
@@ -1174,17 +1150,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetBatchJobsResponse](../../models/operations/getbatchjobsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_job_by_name
 
@@ -1208,23 +1183,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `job_name`         | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetJobByNameResponse](../../models/operations/getjobbynameresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_job_by_id
 
@@ -1248,23 +1222,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `job_id`           | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetAdminJobByIDResponse](../../models/operations/getadminjobbyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_metrics_cache
 
@@ -1288,17 +1261,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.DeleteMetricsCacheResponse](../../models/operations/deletemetricscacheresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_metrics_cache_1
 
@@ -1322,23 +1294,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `name`             | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteMetricsCache1Response](../../models/operations/deletemetricscache1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_thumbnail_failure_flag
 
@@ -1362,17 +1333,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.DeleteThumbnailFailureFlagResponse](../../models/operations/deletethumbnailfailureflagresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## admin_clear_thumbnail_failure_flag
 
@@ -1388,7 +1358,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.admin_clear_thumbnail_failure_flag(id='<value>')
+res = s.admin.admin_clear_thumbnail_failure_flag(id='<id>')
 
 if res is not None:
     # handle response
@@ -1396,23 +1366,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.AdminClearThumbnailFailureFlagResponse](../../models/operations/adminclearthumbnailfailureflagresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## compute_file_hash_value
 
@@ -1436,8 +1405,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1445,15 +1412,16 @@ if res is not None:
 | `alg`              | *str*              | :heavy_check_mark: | N/A                |
 | `file_id`          | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.ComputeFileHashValueResponse](../../models/operations/computefilehashvalueresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_user_id_conf_email
 
@@ -1477,23 +1445,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `user_id`          | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetUserIDConfEmailResponse](../../models/operations/getuseridconfemailresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_user_id_conf_email
 
@@ -1517,23 +1484,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `user_id`          | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.PostUserIDConfEmailResponse](../../models/operations/postuseridconfemailresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## admin_convert_user_encryption
 
@@ -1557,17 +1523,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.AdminConvertUserEncryptionResponse](../../models/operations/adminconvertuserencryptionresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_fix_missing_original_sizes
 
@@ -1591,23 +1556,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `limit`            | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetFixMissingOriginalSizesResponse](../../models/operations/getfixmissingoriginalsizesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## fix_missing_original_types
 
@@ -1631,17 +1595,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.FixMissingOriginalTypesResponse](../../models/operations/fixmissingoriginaltypesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_dataset_field
 
@@ -1665,17 +1628,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetAdminDatasetFieldResponse](../../models/operations/getadmindatasetfieldresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_controlled_vocabulary
 
@@ -1699,17 +1661,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetControlledVocabularyResponse](../../models/operations/getcontrolledvocabularyresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## load_dataset_field_admin
 
@@ -1733,23 +1694,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
 | `request`                                  | [str](../../models/.md)                    | :heavy_check_mark:                         | The request object to use for the request. |
 
-
 ### Response
 
 **[operations.LoadDatasetFieldAdminResponse](../../models/operations/loaddatasetfieldadminresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_na_controlled_vocab_value
 
@@ -1773,17 +1733,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetNAControlledVocabValueResponse](../../models/operations/getnacontrolledvocabvalueresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## admin_load_property_files
 
@@ -1807,23 +1766,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
 | `request`                                  | [str](../../models/.md)                    | :heavy_check_mark:                         | The request object to use for the request. |
 
-
 ### Response
 
 **[operations.AdminLoadPropertyFilesResponse](../../models/operations/adminloadpropertyfilesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_field_name
 
@@ -1847,23 +1805,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `name`             | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetFieldNameResponse](../../models/operations/getdatasetfieldnameresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_fix_missing_unf
 
@@ -1887,8 +1844,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1896,15 +1851,16 @@ if res is not None:
 | `dataset_version_id` | *str*                | :heavy_check_mark:   | N/A                  |
 | `force_recalculate`  | *Optional[bool]*     | :heavy_minus_sign:   | N/A                  |
 
-
 ### Response
 
 **[operations.PostFixMissingUnfResponse](../../models/operations/postfixmissingunfresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_thumbnail_metadata_by_id
 
@@ -1928,23 +1884,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetThumbnailMetadataByIDResponse](../../models/operations/getthumbnailmetadatabyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_curation_label_sets
 
@@ -1968,17 +1923,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetCurationLabelSetsResponse](../../models/operations/getcurationlabelsetsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_storage_drivers
 
@@ -2002,17 +1956,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetStorageDriversResponse](../../models/operations/getstoragedriversresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_role_assignments
 
@@ -2036,23 +1989,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `alias`            | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetRoleAssignmentsResponse](../../models/operations/getroleassignmentsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_curation_label_set
 
@@ -2076,23 +2028,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `alias`            | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetCurationLabelSetResponse](../../models/operations/getcurationlabelsetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_curation_label_set
 
@@ -2116,8 +2067,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -2125,15 +2074,16 @@ if res is not None:
 | `alias`            | *str*              | :heavy_check_mark: | N/A                |
 | `name`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateCurationLabelSetResponse](../../models/operations/updatecurationlabelsetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_curation_label_set
 
@@ -2157,23 +2107,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `alias`            | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteCurationLabelSetResponse](../../models/operations/deletecurationlabelsetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_storage_driver
 
@@ -2197,23 +2146,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `alias`            | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetStorageDriverResponse](../../models/operations/getstoragedriverresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_storage_driver
 
@@ -2237,23 +2185,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `alias`            | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateStorageDriverResponse](../../models/operations/updatestoragedriverresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_storage_driver
 
@@ -2277,23 +2224,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `alias`            | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteStorageDriverResponse](../../models/operations/deletestoragedriverresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_tmp_file
 
@@ -2317,23 +2263,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                      | Type                           | Required                       | Description                    |
 | ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ |
 | `fully_qualified_path_to_file` | *Optional[str]*                | :heavy_minus_sign:             | N/A                            |
 
-
 ### Response
 
 **[operations.GetTmpFileResponse](../../models/operations/gettmpfileresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_external_tools
 
@@ -2357,17 +2302,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetExternalToolsResponse](../../models/operations/getexternaltoolsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_external_tool
 
@@ -2391,17 +2335,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.CreateExternalToolResponse](../../models/operations/createexternaltoolresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_external_tool
 
@@ -2425,23 +2368,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetExternalToolResponse](../../models/operations/getexternaltoolresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_external_tool
 
@@ -2465,23 +2407,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteExternalToolResponse](../../models/operations/deleteexternaltoolresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_admin_feedback
 
@@ -2505,17 +2446,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.PostAdminFeedbackResponse](../../models/operations/postadminfeedbackresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_groups_domain
 
@@ -2539,17 +2479,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetAdminGroupsDomainResponse](../../models/operations/getadmingroupsdomainresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_admin_groups_domain
 
@@ -2573,17 +2512,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.PostAdminGroupsDomainResponse](../../models/operations/postadmingroupsdomainresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_group_alias
 
@@ -2607,23 +2545,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `group_alias`      | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetGroupAliasResponse](../../models/operations/getgroupaliasresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_group_alias
 
@@ -2647,23 +2584,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `group_alias`      | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateGroupAliasResponse](../../models/operations/updategroupaliasresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_group_alias
 
@@ -2687,23 +2623,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `group_alias`      | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteGroupAliasResponse](../../models/operations/deletegroupaliasresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_groups_ip
 
@@ -2727,17 +2662,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetAdminGroupsIPResponse](../../models/operations/getadmingroupsipresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_admin_groups_ip
 
@@ -2761,17 +2695,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.PostAdminGroupsIPResponse](../../models/operations/postadmingroupsipresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_group_by_group_idtf
 
@@ -2795,23 +2728,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `group_idtf`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetGroupByGroupIdtfResponse](../../models/operations/getgroupbygroupidtfresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_group_by_group_idtf
 
@@ -2835,23 +2767,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `group_idtf`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteGroupByGroupIdtfResponse](../../models/operations/deletegroupbygroupidtfresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_shib_group_info
 
@@ -2875,17 +2806,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetShibGroupInfoResponse](../../models/operations/getshibgroupinforesponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_shib_group
 
@@ -2909,17 +2839,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.CreateShibGroupResponse](../../models/operations/createshibgroupresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_shib_group
 
@@ -2943,23 +2872,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `primary_key`      | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteShibGroupResponse](../../models/operations/deleteshibgroupresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_index
 
@@ -2983,8 +2911,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                 | Type                      | Required                  | Description               |
@@ -2993,15 +2919,16 @@ if res is not None:
 | `partition_id_to_process` | *Optional[int]*           | :heavy_minus_sign:        | N/A                       |
 | `preview_only`            | *Optional[bool]*          | :heavy_minus_sign:        | N/A                       |
 
-
 ### Response
 
 **[operations.GetAdminIndexResponse](../../models/operations/getadminindexresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## clear_admin_index
 
@@ -3025,17 +2952,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.ClearAdminIndexResponse](../../models/operations/clearadminindexresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## clear_orphans_index
 
@@ -3059,23 +2985,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `sync`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.ClearOrphansIndexResponse](../../models/operations/clearorphansindexresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## continue_index_processing
 
@@ -3099,8 +3024,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                 | Type                      | Required                  | Description               |
@@ -3109,15 +3032,16 @@ if res is not None:
 | `partition_id_to_process` | *Optional[int]*           | :heavy_minus_sign:        | N/A                       |
 | `preview_only`            | *Optional[bool]*          | :heavy_minus_sign:        | N/A                       |
 
-
 ### Response
 
 **[operations.ContinueIndexProcessingResponse](../../models/operations/continueindexprocessingresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_index
 
@@ -3141,23 +3065,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `persistent_id`    | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetIndexResponse](../../models/operations/getdatasetindexresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_dataset_by_id
 
@@ -3181,23 +3104,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteDatasetByIDResponse](../../models/operations/deletedatasetbyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_file_metadata1
 
@@ -3221,8 +3143,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -3232,15 +3152,16 @@ if res is not None:
 | `order`            | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `sort`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetFileMetadata1Response](../../models/operations/getfilemetadata1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## file_search_index_get
 
@@ -3264,8 +3185,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -3274,15 +3193,16 @@ if res is not None:
 | `q`                | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `semantic_version` | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.FileSearchIndexGETResponse](../../models/operations/filesearchindexgetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_index_mod
 
@@ -3306,8 +3226,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -3315,15 +3233,16 @@ if res is not None:
 | `partitions`       | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 | `which`            | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetAdminIndexModResponse](../../models/operations/getadminindexmodresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_index_perms
 
@@ -3347,17 +3266,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetAdminIndexPermsResponse](../../models/operations/getadminindexpermsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_index_perms_1
 
@@ -3381,23 +3299,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetAdminIndexPerms1Response](../../models/operations/getadminindexperms1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_perms_debug_info
 
@@ -3421,8 +3338,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -3430,15 +3345,16 @@ if res is not None:
 | `id`               | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetPermsDebugInfoResponse](../../models/operations/getpermsdebuginforesponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_solr_schema
 
@@ -3462,17 +3378,16 @@ if res.res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetSolrSchemaResponse](../../models/operations/getsolrschemaresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_index_status
 
@@ -3496,23 +3411,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `sync`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetAdminIndexStatusResponse](../../models/operations/getadminindexstatusresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_test_index
 
@@ -3536,8 +3450,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -3546,15 +3458,16 @@ if res is not None:
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `q`                | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetAdminTestIndexResponse](../../models/operations/getadmintestindexresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_admin_index_timestamps
 
@@ -3578,17 +3491,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.DeleteAdminIndexTimestampsResponse](../../models/operations/deleteadminindextimestampsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_index_timestamp
 
@@ -3612,23 +3524,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `dv_object_id`     | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteIndexTimestampResponse](../../models/operations/deleteindextimestampresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_index_type_by_id
 
@@ -3652,8 +3563,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -3661,15 +3570,16 @@ if res is not None:
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 | `type`             | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetAdminIndexTypeByIDResponse](../../models/operations/getadminindextypebyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_orcid_status
 
@@ -3693,17 +3603,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetOrcidStatusResponse](../../models/operations/getorcidstatusresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## list_users
 
@@ -3727,8 +3636,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -3738,15 +3645,16 @@ if res is not None:
 | `selected_page`    | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 | `sort_key`         | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.ListUsersResponse](../../models/operations/listusersresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## add_metrics_from_report
 
@@ -3770,23 +3678,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `report_on_disk`   | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.AddMetricsFromReportResponse](../../models/operations/addmetricsfromreportresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## admin_send_to_hub
 
@@ -3810,17 +3717,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.AdminSendToHubResponse](../../models/operations/adminsendtohubresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## add_usage_metrics_from_sushi_repo
 
@@ -3836,15 +3742,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.add_usage_metrics_from_sushi_repo(id='<value>')
+res = s.admin.add_usage_metrics_from_sushi_repo(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3853,15 +3757,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `report_on_disk`   | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.AddUsageMetricsFromSushiRepoResponse](../../models/operations/addusagemetricsfromsushireporesponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_dataset_citations
 
@@ -3877,7 +3782,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.update_dataset_citations(id='<value>')
+res = s.admin.update_dataset_citations(id='<id>')
 
 if res is not None:
     # handle response
@@ -3885,23 +3790,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateDatasetCitationsResponse](../../models/operations/updatedatasetcitationsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_export_timestamps
 
@@ -3925,17 +3829,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetExportTimestampsResponse](../../models/operations/getexporttimestampsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_metadata_export_all
 
@@ -3959,17 +3862,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetMetadataExportAllResponse](../../models/operations/getmetadataexportallresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## admin_metadata_export_oai_spec
 
@@ -3993,23 +3895,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `specname`         | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.AdminMetadataExportOAISpecResponse](../../models/operations/adminmetadataexportoaispecresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## re_export_all_metadata
 
@@ -4033,17 +3934,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.ReExportAllMetadataResponse](../../models/operations/reexportallmetadataresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_metadata_re_export
 
@@ -4059,7 +3959,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_metadata_re_export(id='<value>')
+res = s.admin.get_metadata_re_export(id='<id>')
 
 if res is not None:
     # handle response
@@ -4067,23 +3967,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetMetadataReExportResponse](../../models/operations/getmetadatareexportresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_permissions
 
@@ -4107,23 +4006,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `dvo`              | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetAdminPermissionsResponse](../../models/operations/getadminpermissionsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## publish_dataverse_as_creator
 
@@ -4147,23 +4045,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.PublishDataverseAsCreatorResponse](../../models/operations/publishdataverseascreatorresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_register_data_file_all
 
@@ -4187,17 +4084,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetRegisterDataFileAllResponse](../../models/operations/getregisterdatafileallresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_register_data_files_by_alias
 
@@ -4221,8 +4117,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -4230,15 +4124,16 @@ if res is not None:
 | `alias`            | *str*              | :heavy_check_mark: | N/A                |
 | `sleep`            | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetRegisterDataFilesByAliasResponse](../../models/operations/getregisterdatafilesbyaliasresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_admin_signed_url
 
@@ -4262,23 +4157,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | `request`                                                                                            | [operations.PostAdminSignedURLRequestBody](../../models/operations/postadminsignedurlrequestbody.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 
-
 ### Response
 
 **[operations.PostAdminSignedURLResponse](../../models/operations/postadminsignedurlresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_roles
 
@@ -4302,17 +4196,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetAdminRolesResponse](../../models/operations/getadminrolesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_admin_role
 
@@ -4336,17 +4229,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.CreateAdminRoleResponse](../../models/operations/createadminroleresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_admin_role
 
@@ -4362,7 +4254,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.delete_admin_role(id='<value>')
+res = s.admin.delete_admin_role(id='<id>')
 
 if res is not None:
     # handle response
@@ -4370,23 +4262,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteAdminRoleResponse](../../models/operations/deleteadminroleresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_saved_searches
 
@@ -4410,17 +4301,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetSavedSearchesResponse](../../models/operations/getsavedsearchesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## add_saved_search
 
@@ -4444,17 +4334,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.AddSavedSearchResponse](../../models/operations/addsavedsearchresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_saved_searches_list
 
@@ -4478,17 +4367,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetSavedSearchesListResponse](../../models/operations/getsavedsearcheslistresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_all_saved_search_links
 
@@ -4512,23 +4400,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `debug`            | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateAllSavedSearchLinksResponse](../../models/operations/updateallsavedsearchlinksresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## make_links_for_saved_search
 
@@ -4552,8 +4439,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -4561,15 +4446,16 @@ if res is not None:
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 | `debug`            | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.MakeLinksForSavedSearchResponse](../../models/operations/makelinksforsavedsearchresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_saved_search
 
@@ -4593,23 +4479,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetSavedSearchResponse](../../models/operations/getsavedsearchresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_saved_search
 
@@ -4633,23 +4518,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteSavedSearchResponse](../../models/operations/deletesavedsearchresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_settings
 
@@ -4673,17 +4557,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetAdminSettingsResponse](../../models/operations/getadminsettingsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_setting
 
@@ -4707,23 +4590,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `name`             | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetAdminSettingResponse](../../models/operations/getadminsettingresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_admin_setting
 
@@ -4747,23 +4629,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `name`             | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateAdminSettingResponse](../../models/operations/updateadminsettingresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_admin_setting
 
@@ -4787,23 +4668,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `name`             | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteAdminSettingResponse](../../models/operations/deleteadminsettingresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_admin_settings_lang
 
@@ -4827,8 +4707,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -4836,15 +4714,16 @@ if res is not None:
 | `lang`             | *str*              | :heavy_check_mark: | N/A                |
 | `name`             | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateAdminSettingsLangResponse](../../models/operations/updateadminsettingslangresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_admin_settings_lang
 
@@ -4868,8 +4747,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -4877,15 +4754,16 @@ if res is not None:
 | `lang`             | *str*              | :heavy_check_mark: | N/A                |
 | `name`             | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteAdminSettingsLangResponse](../../models/operations/deleteadminsettingslangresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## generate_sitemap
 
@@ -4909,17 +4787,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GenerateSitemapResponse](../../models/operations/generatesitemapresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_storage_sites
 
@@ -4943,17 +4820,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetStorageSitesResponse](../../models/operations/getstoragesitesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_storage_site
 
@@ -4977,17 +4853,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.CreateStorageSiteResponse](../../models/operations/createstoragesiteresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## fetch_storage_site
 
@@ -5011,23 +4886,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.FetchStorageSiteResponse](../../models/operations/fetchstoragesiteresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_storage_site
 
@@ -5051,23 +4925,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteStorageSiteResponse](../../models/operations/deletestoragesiteresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_primary_storage
 
@@ -5091,23 +4964,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdatePrimaryStorageResponse](../../models/operations/updateprimarystorageresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## submit_dataset_version_to_archive
 
@@ -5123,15 +4995,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.submit_dataset_version_to_archive(id='<value>', version='<value>')
+res = s.admin.submit_dataset_version_to_archive(id='<id>', version='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -5140,15 +5010,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `version`          | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.SubmitDatasetVersionToArchiveResponse](../../models/operations/submitdatasetversiontoarchiveresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## admin_create_super_user
 
@@ -5172,23 +5043,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.AdminCreateSuperUserResponse](../../models/operations/admincreatesuperuserresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_admin_template
 
@@ -5212,23 +5082,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteAdminTemplateResponse](../../models/operations/deleteadmintemplateresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_templates
 
@@ -5252,17 +5121,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetAdminTemplatesResponse](../../models/operations/getadmintemplatesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_template
 
@@ -5286,23 +5154,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `alias`            | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetAdminTemplateResponse](../../models/operations/getadmintemplateresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_external_tools_1
 
@@ -5318,15 +5185,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_external_tools_1(id='<value>')
+res = s.admin.get_external_tools_1(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -5335,15 +5200,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `type`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetExternalTools1Response](../../models/operations/getexternaltools1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_external_tool_by_id
 
@@ -5359,15 +5225,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_external_tool_by_id(id='<value>', tool_id='<value>')
+res = s.admin.get_external_tool_by_id(id='<id>', tool_id='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -5377,15 +5241,16 @@ if res is not None:
 | `tool_id`          | *str*              | :heavy_check_mark: | N/A                |
 | `type`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetExternalToolByIDResponse](../../models/operations/getexternaltoolbyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_external_tools_1_1
 
@@ -5401,15 +5266,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_external_tools_1_1(id='<value>')
+res = s.admin.get_external_tools_1_1(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -5418,15 +5281,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `type`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetExternalTools11Response](../../models/operations/getexternaltools11response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_hash_values
 
@@ -5450,8 +5314,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -5459,15 +5321,16 @@ if res is not None:
 | `alg`              | *str*              | :heavy_check_mark: | N/A                |
 | `num`              | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetHashValuesResponse](../../models/operations/gethashvaluesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_validate_dataset_files
 
@@ -5483,7 +5346,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_validate_dataset_files(id='<value>')
+res = s.admin.get_validate_dataset_files(id='<id>')
 
 if res is not None:
     # handle response
@@ -5491,23 +5354,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetValidateDatasetFilesResponse](../../models/operations/getvalidatedatasetfilesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## validate_dataset
 
@@ -5523,15 +5385,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.validate_dataset(id='<value>')
+res = s.admin.validate_dataset(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -5540,15 +5400,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `variables`        | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.ValidateDatasetResponse](../../models/operations/validatedatasetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## admin_validate_datasets
 
@@ -5572,23 +5433,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `variables`        | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.AdminValidateDatasetsResponse](../../models/operations/adminvalidatedatasetsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## validate_data_file_hash
 
@@ -5612,23 +5472,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `file_id`          | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.ValidateDataFileHashResponse](../../models/operations/validatedatafilehashresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## validate_admin_password
 
@@ -5652,17 +5511,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.ValidateAdminPasswordResponse](../../models/operations/validateadminpasswordresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_workflows
 
@@ -5686,17 +5544,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetAdminWorkflowsResponse](../../models/operations/getadminworkflowsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_admin_workflow
 
@@ -5720,17 +5577,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.CreateAdminWorkflowResponse](../../models/operations/createadminworkflowresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_default_workflow
 
@@ -5754,17 +5610,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetDefaultWorkflowResponse](../../models/operations/getdefaultworkflowresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_trigger_type
 
@@ -5788,23 +5643,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `trigger_type`     | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetTriggerTypeResponse](../../models/operations/gettriggertyperesponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_trigger_type
 
@@ -5828,23 +5682,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `trigger_type`     | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateTriggerTypeResponse](../../models/operations/updatetriggertyperesponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_trigger_type
 
@@ -5868,23 +5721,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `trigger_type`     | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteTriggerTypeResponse](../../models/operations/deletetriggertyperesponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_ip_whitelist
 
@@ -5908,17 +5760,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetIPWhitelistResponse](../../models/operations/getipwhitelistresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_ip_whitelist
 
@@ -5942,17 +5793,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.UpdateIPWhitelistResponse](../../models/operations/updateipwhitelistresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_ip_whitelist
 
@@ -5976,17 +5826,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.DeleteIPWhitelistResponse](../../models/operations/deleteipwhitelistresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_workflow_by_identifier
 
@@ -6010,23 +5859,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetWorkflowByIdentifierResponse](../../models/operations/getworkflowbyidentifierresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_admin_data_file
 
@@ -6042,7 +5890,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_admin_data_file(id='<value>')
+res = s.admin.get_admin_data_file(id='<id>')
 
 if res is not None:
     # handle response
@@ -6050,23 +5898,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetAdminDataFileResponse](../../models/operations/getadmindatafileresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## admin_reregister_hdl_to_pid
 
@@ -6082,7 +5929,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.admin_reregister_hdl_to_pid(id='<value>')
+res = s.admin.admin_reregister_hdl_to_pid(id='<id>')
 
 if res is not None:
     # handle response
@@ -6090,18 +5937,16 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.AdminReregisterHDLToPIDResponse](../../models/operations/adminreregisterhdltopidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

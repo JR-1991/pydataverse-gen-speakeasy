@@ -1,5 +1,2 @@
 # Application
 (*application*)
-
-### Available Operations
-

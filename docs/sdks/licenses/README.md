@@ -1,6 +1,8 @@
 # Licenses
 (*licenses*)
 
+## Overview
+
 ### Available Operations
 
 * [get_licenses](#get_licenses) - Retrieve all the licenses
@@ -34,17 +36,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetLicensesResponse](../../models/operations/getlicensesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## add_license
 
@@ -68,17 +69,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.AddLicenseResponse](../../models/operations/addlicenseresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_default_license
 
@@ -102,17 +102,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetDefaultLicenseResponse](../../models/operations/getdefaultlicenseresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_default_license
 
@@ -136,23 +135,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateDefaultLicenseResponse](../../models/operations/updatedefaultlicenseresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_license
 
@@ -176,23 +174,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetLicenseResponse](../../models/operations/getlicenseresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_license
 
@@ -216,23 +213,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteLicenseResponse](../../models/operations/deletelicenseresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_license_active_state
 
@@ -248,15 +244,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.licenses.update_license_active_state(active_state=False, id=744481)
+res = s.licenses.update_license_active_state(active_state=True, id=805411)
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -265,15 +259,16 @@ if res is not None:
 | `active_state`     | *bool*             | :heavy_check_mark: | N/A                |
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateLicenseActiveStateResponse](../../models/operations/updatelicenseactivestateresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_license_sort_order
 
@@ -297,8 +292,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -306,10 +299,10 @@ if res is not None:
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 | `sort_order`       | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateLicenseSortOrderResponse](../../models/operations/updatelicensesortorderresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

@@ -1,6 +1,8 @@
 # Users
 (*users*)
 
+## Overview
+
 ### Available Operations
 
 * [get_user_details](#get_user_details) - Retrieve the details of the logged-in user
@@ -35,17 +37,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetUserDetailsResponse](../../models/operations/getuserdetailsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_user_token
 
@@ -69,17 +70,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetUserTokenResponse](../../models/operations/getusertokenresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_user_token
 
@@ -103,17 +103,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.DeleteUserTokenResponse](../../models/operations/deleteusertokenresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## recreate_user_token
 
@@ -137,17 +136,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.RecreateUserTokenResponse](../../models/operations/recreateusertokenresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## merge_users
 
@@ -171,8 +169,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter             | Type                  | Required              | Description           |
@@ -180,15 +176,16 @@ if res is not None:
 | `base_identifier`     | *str*                 | :heavy_check_mark:    | N/A                   |
 | `consumed_identifier` | *str*                 | :heavy_check_mark:    | N/A                   |
 
-
 ### Response
 
 **[operations.MergeUsersResponse](../../models/operations/mergeusersresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## change_user_identifier
 
@@ -212,8 +209,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -221,15 +216,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `new_identifier`   | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.ChangeUserIdentifierResponse](../../models/operations/changeuseridentifierresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## remove_user_roles
 
@@ -253,23 +249,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.RemoveUserRolesResponse](../../models/operations/removeuserrolesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_user_traces
 
@@ -293,23 +288,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetUserTracesResponse](../../models/operations/getusertracesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_user_trace_element
 
@@ -333,8 +327,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -342,10 +334,10 @@ if res is not None:
 | `element`          | *str*              | :heavy_check_mark: | N/A                |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetUserTraceElementResponse](../../models/operations/getusertraceelementresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

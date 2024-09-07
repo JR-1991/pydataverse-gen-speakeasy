@@ -1,6 +1,8 @@
 # Datasets
 (*datasets*)
 
+## Overview
+
 ### Available Operations
 
 * [get_datasets_export](#get_datasets_export) - Retrieves export information of a dataset given its exporter and persistent ID
@@ -126,8 +128,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -135,15 +135,16 @@ if res is not None:
 | `exporter`         | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `persistent_id`    | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetsExportResponse](../../models/operations/getdatasetsexportresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_curation_states
 
@@ -167,17 +168,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetCurationStatesResponse](../../models/operations/getcurationstatesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_locks
 
@@ -201,8 +201,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -210,15 +208,16 @@ if res is not None:
 | `type`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `user_identifier`  | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetLocksResponse](../../models/operations/getdatasetlocksresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## modify_all_registrations
 
@@ -242,17 +241,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.ModifyAllRegistrationsResponse](../../models/operations/modifyallregistrationsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_registration_pid_metadata
 
@@ -276,17 +274,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetRegistrationPIDMetadataResponse](../../models/operations/getregistrationpidmetadataresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_dataset_upload
 
@@ -310,8 +307,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter           | Type                | Required            | Description         |
@@ -320,15 +315,16 @@ if res is not None:
 | `storageidentifier` | *Optional[str]*     | :heavy_minus_sign:  | N/A                 |
 | `uploadid`          | *Optional[str]*     | :heavy_minus_sign:  | N/A                 |
 
-
 ### Response
 
 **[operations.UpdateDatasetUploadResponse](../../models/operations/updatedatasetuploadresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_dataset_upload
 
@@ -352,8 +348,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter           | Type                | Required            | Description         |
@@ -362,15 +356,16 @@ if res is not None:
 | `storageidentifier` | *Optional[str]*     | :heavy_minus_sign:  | N/A                 |
 | `uploadid`          | *Optional[str]*     | :heavy_minus_sign:  | N/A                 |
 
-
 ### Response
 
 **[operations.DeleteDatasetUploadResponse](../../models/operations/deletedatasetuploadresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_private_url_dataset_version
 
@@ -394,23 +389,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter           | Type                | Required            | Description         |
 | ------------------- | ------------------- | ------------------- | ------------------- |
 | `private_url_token` | *str*               | :heavy_check_mark:  | N/A                 |
 
-
 ### Response
 
 **[operations.GetPrivateURLDatasetVersionResponse](../../models/operations/getprivateurldatasetversionresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_citation_by_private_url
 
@@ -434,23 +428,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter           | Type                | Required            | Description         |
 | ------------------- | ------------------- | ------------------- | ------------------- |
 | `private_url_token` | *str*               | :heavy_check_mark:  | N/A                 |
 
-
 ### Response
 
 **[operations.GetCitationByPrivateURLResponse](../../models/operations/getcitationbyprivateurlresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_summary_field_names
 
@@ -474,17 +467,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetSummaryFieldNamesResponse](../../models/operations/getsummaryfieldnamesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_dataset_link
 
@@ -508,8 +500,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter             | Type                  | Required              | Description           |
@@ -517,15 +507,16 @@ if res is not None:
 | `dataset_id`          | *str*                 | :heavy_check_mark:    | N/A                   |
 | `linked_dataverse_id` | *str*                 | :heavy_check_mark:    | N/A                   |
 
-
 ### Response
 
 **[operations.DeleteDatasetLinkResponse](../../models/operations/deletedatasetlinkresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_allowed_curation_labels
 
@@ -549,23 +540,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetAllowedCurationLabelsResponse](../../models/operations/getallowedcurationlabelsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_assignments
 
@@ -589,23 +579,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetAssignmentsResponse](../../models/operations/getdatasetassignmentsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_dataset_assignment
 
@@ -629,8 +618,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -638,15 +625,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.CreateDatasetAssignmentResponse](../../models/operations/createdatasetassignmentresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_assignment
 
@@ -670,8 +658,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -679,15 +665,16 @@ if res is not None:
 | `id`               | *int*              | :heavy_check_mark: | N/A                |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteAssignmentResponse](../../models/operations/deleteassignmentresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_curation_label_set_1
 
@@ -711,23 +698,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetCurationLabelSet1Response](../../models/operations/getcurationlabelset1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_curation_label_set_1
 
@@ -751,8 +737,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -760,15 +744,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `name`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateCurationLabelSet1Response](../../models/operations/updatecurationlabelset1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_curation_label_set_1
 
@@ -792,23 +777,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteCurationLabelSet1Response](../../models/operations/deletecurationlabelset1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## validate_checksum
 
@@ -832,23 +816,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.ValidateChecksumResponse](../../models/operations/validatechecksumresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_rsync_data_module
 
@@ -872,23 +855,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetRsyncDataModuleResponse](../../models/operations/getrsyncdatamoduleresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_guestbook_entry
 
@@ -912,23 +894,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetGuestbookEntryResponse](../../models/operations/getguestbookentryresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_guestbook_entry
 
@@ -952,23 +933,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateGuestbookEntryResponse](../../models/operations/updateguestbookentryresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_guestbook_entry
 
@@ -992,23 +972,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteGuestbookEntryResponse](../../models/operations/deleteguestbookentryresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## lock_dataset
 
@@ -1032,8 +1011,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1041,15 +1018,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `type`             | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.LockDatasetResponse](../../models/operations/lockdatasetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_locks_1
 
@@ -1073,8 +1051,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1082,15 +1058,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `type`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetLocks1Response](../../models/operations/getdatasetlocks1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_dataset_locks
 
@@ -1114,8 +1091,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1123,15 +1098,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `type`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteDatasetLocksResponse](../../models/operations/deletedatasetlocksresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_storage_driver_1
 
@@ -1155,23 +1131,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetStorageDriver1Response](../../models/operations/getstoragedriver1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_storage_driver_1
 
@@ -1195,23 +1170,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateStorageDriver1Response](../../models/operations/updatestoragedriver1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_storage_driver_1
 
@@ -1235,23 +1209,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteStorageDriver1Response](../../models/operations/deletestoragedriver1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_storage_size
 
@@ -1275,8 +1248,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -1284,15 +1255,16 @@ if res is not None:
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 | `include_cached`   | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetStorageSizeResponse](../../models/operations/getdatasetstoragesizeresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_timestamps
 
@@ -1316,23 +1288,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetTimestampsResponse](../../models/operations/getdatasettimestampsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_download_size
 
@@ -1360,23 +1331,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
 | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | `request`                                                                              | [operations.GetDownloadSizeRequest](../../models/operations/getdownloadsizerequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
-
 ### Response
 
 **[operations.GetDownloadSizeResponse](../../models/operations/getdownloadsizeresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset
 
@@ -1392,7 +1362,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset(id='<value>')
+res = s.datasets.get_dataset(id='<id>')
 
 if res is not None:
     # handle response
@@ -1400,23 +1370,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetResponse](../../models/operations/getdatasetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_dataset
 
@@ -1432,7 +1401,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.delete_dataset(id='<value>')
+res = s.datasets.delete_dataset(id='<id>')
 
 if res is not None:
     # handle response
@@ -1440,23 +1409,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteDatasetResponse](../../models/operations/deletedatasetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## ~~get_publish_dataset~~
 
@@ -1474,15 +1442,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_publish_dataset(id='<value>')
+res = s.datasets.get_publish_dataset(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -1491,15 +1457,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `type`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetPublishDatasetResponse](../../models/operations/getpublishdatasetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## initiate_publishing
 
@@ -1515,15 +1482,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.initiate_publishing(id='<value>')
+res = s.datasets.initiate_publishing(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -1533,15 +1498,16 @@ if res is not None:
 | `assure_is_indexed` | *Optional[bool]*    | :heavy_minus_sign:  | N/A                 |
 | `type`              | *Optional[str]*     | :heavy_minus_sign:  | N/A                 |
 
-
 ### Response
 
 **[operations.InitiatePublishingResponse](../../models/operations/initiatepublishingresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## release_migrated_dataset
 
@@ -1557,15 +1523,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.release_migrated_dataset(id='<value>')
+res = s.datasets.release_migrated_dataset(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -1575,15 +1539,16 @@ if res is not None:
 | `updatepidatprovider` | *Optional[bool]*      | :heavy_minus_sign:    | N/A                   |
 | `request_body`        | *Optional[str]*       | :heavy_minus_sign:    | N/A                   |
 
-
 ### Response
 
 **[operations.ReleaseMigratedDatasetResponse](../../models/operations/releasemigrateddatasetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## add_dataset
 
@@ -1599,15 +1564,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.add_dataset(id='<value>')
+res = s.datasets.add_dataset(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -1616,15 +1579,16 @@ if res is not None:
 | `id`                                                                                           | *str*                                                                                          | :heavy_check_mark:                                                                             | N/A                                                                                            |
 | `request_body`                                                                                 | [Optional[operations.AddDatasetRequestBody]](../../models/operations/adddatasetrequestbody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
 
-
 ### Response
 
 **[operations.AddDatasetResponse](../../models/operations/adddatasetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## add_files_to_dataset
 
@@ -1640,15 +1604,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.add_files_to_dataset(id='<value>')
+res = s.datasets.add_files_to_dataset(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -1657,15 +1619,16 @@ if res is not None:
 | `id`                                                                                                         | *str*                                                                                                        | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
 | `request_body`                                                                                               | [Optional[operations.AddFilesToDatasetRequestBody]](../../models/operations/addfilestodatasetrequestbody.md) | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |
 
-
 ### Response
 
 **[operations.AddFilesToDatasetResponse](../../models/operations/addfilestodatasetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## add_globus_files_to_dataset
 
@@ -1681,15 +1644,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.add_globus_files_to_dataset(id='<value>')
+res = s.datasets.add_globus_files_to_dataset(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -1698,15 +1659,16 @@ if res is not None:
 | `id`                                                                                                                     | *str*                                                                                                                    | :heavy_check_mark:                                                                                                       | N/A                                                                                                                      |
 | `request_body`                                                                                                           | [Optional[operations.AddGlobusFilesToDatasetRequestBody]](../../models/operations/addglobusfilestodatasetrequestbody.md) | :heavy_minus_sign:                                                                                                       | N/A                                                                                                                      |
 
-
 ### Response
 
 **[operations.AddGlobusFilesToDatasetResponse](../../models/operations/addglobusfilestodatasetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_citation_date
 
@@ -1722,7 +1684,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_citation_date(id='<value>')
+res = s.datasets.update_citation_date(id='<id>')
 
 if res is not None:
     # handle response
@@ -1730,23 +1692,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateCitationDateResponse](../../models/operations/updatecitationdateresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_citation_date
 
@@ -1762,7 +1723,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.delete_citation_date(id='<value>')
+res = s.datasets.delete_citation_date(id='<id>')
 
 if res is not None:
     # handle response
@@ -1770,23 +1731,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteCitationDateResponse](../../models/operations/deletecitationdateresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_clean_storage_status
 
@@ -1802,15 +1762,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_clean_storage_status(id='<value>')
+res = s.datasets.get_clean_storage_status(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -1819,15 +1777,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `dryrun`           | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetCleanStorageStatusResponse](../../models/operations/getcleanstoragestatusresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_curation_status
 
@@ -1843,7 +1802,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_curation_status(id='<value>')
+res = s.datasets.get_curation_status(id='<id>')
 
 if res is not None:
     # handle response
@@ -1851,23 +1810,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetCurationStatusResponse](../../models/operations/getcurationstatusresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_curation_status
 
@@ -1883,15 +1841,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_curation_status(id='<value>')
+res = s.datasets.update_curation_status(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -1900,15 +1856,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `label`            | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateCurationStatusResponse](../../models/operations/updatecurationstatusresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_curation_status
 
@@ -1924,7 +1881,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.delete_curation_status(id='<value>')
+res = s.datasets.delete_curation_status(id='<id>')
 
 if res is not None:
     # handle response
@@ -1932,23 +1889,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteCurationStatusResponse](../../models/operations/deletecurationstatusresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_dataset_metadata
 
@@ -1964,7 +1920,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_dataset_metadata(id='<value>')
+res = s.datasets.update_dataset_metadata(id='<id>')
 
 if res is not None:
     # handle response
@@ -1972,23 +1928,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateDatasetMetadataResponse](../../models/operations/updatedatasetmetadataresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_dataset_1
 
@@ -2004,7 +1959,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.delete_dataset_1(id='<value>')
+res = s.datasets.delete_dataset_1(id='<id>')
 
 if res is not None:
     # handle response
@@ -2012,23 +1967,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteDataset1Response](../../models/operations/deletedataset1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_directory_index
 
@@ -2044,15 +1998,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_directory_index(id='<value>')
+res = s.datasets.get_dataset_directory_index(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -2063,15 +2015,16 @@ if res is not None:
 | `original`         | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 | `version`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetDirectoryIndexResponse](../../models/operations/getdatasetdirectoryindexresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## edit_dataset_metadata
 
@@ -2087,15 +2040,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.edit_dataset_metadata(id='<value>')
+res = s.datasets.edit_dataset_metadata(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -2104,15 +2055,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `replace`          | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.EditDatasetMetadataResponse](../../models/operations/editdatasetmetadataresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## set_dataset_embargo
 
@@ -2128,7 +2080,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.set_dataset_embargo(id='<value>')
+res = s.datasets.set_dataset_embargo(id='<id>')
 
 if res is not None:
     # handle response
@@ -2136,23 +2088,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.SetDatasetEmbargoResponse](../../models/operations/setdatasetembargoresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## unset_embargo_on_dataset_files
 
@@ -2168,7 +2119,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.unset_embargo_on_dataset_files(id='<value>')
+res = s.datasets.unset_embargo_on_dataset_files(id='<id>')
 
 if res is not None:
     # handle response
@@ -2176,23 +2127,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.UnsetEmbargoOnDatasetFilesResponse](../../models/operations/unsetembargoondatasetfilesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_globus_download_parameters
 
@@ -2208,15 +2158,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_globus_download_parameters(id='<value>')
+res = s.datasets.get_globus_download_parameters(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -2226,15 +2174,16 @@ if res is not None:
 | `download_id`      | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `locale`           | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetGlobusDownloadParametersResponse](../../models/operations/getglobusdownloadparametersresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_globus_upload_parameters
 
@@ -2250,15 +2199,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_globus_upload_parameters(id='<value>')
+res = s.datasets.get_globus_upload_parameters(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -2267,15 +2214,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `locale`           | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetGlobusUploadParametersResponse](../../models/operations/getglobusuploadparametersresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_links
 
@@ -2291,7 +2239,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_links(id='<value>')
+res = s.datasets.get_dataset_links(id='<id>')
 
 if res is not None:
     # handle response
@@ -2299,23 +2247,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetLinksResponse](../../models/operations/getdatasetlinksresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_logo
 
@@ -2331,7 +2278,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_logo(id='<value>')
+res = s.datasets.get_dataset_logo(id='<id>')
 
 if res is not None:
     # handle response
@@ -2339,23 +2286,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetLogoResponse](../../models/operations/getdatasetlogoresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## dataset_citation_count_get
 
@@ -2371,7 +2317,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.dataset_citation_count_get(id='<value>')
+res = s.datasets.dataset_citation_count_get(id='<id>')
 
 if res is not None:
     # handle response
@@ -2379,23 +2325,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DatasetCitationCountGetResponse](../../models/operations/datasetcitationcountgetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_metrics
 
@@ -2411,15 +2356,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_metrics(id='<value>', metric='<value>')
+res = s.datasets.get_dataset_metrics(id='<id>', metric='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -2429,15 +2372,16 @@ if res is not None:
 | `metric`           | *str*              | :heavy_check_mark: | N/A                |
 | `country`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetMetricsResponse](../../models/operations/getdatasetmetricsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_metric
 
@@ -2453,15 +2397,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_metric(id='<value>', metric='<value>', yyyymm='<value>')
+res = s.datasets.get_dataset_metric(id='<id>', metric='<value>', yyyymm='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -2472,15 +2414,16 @@ if res is not None:
 | `yyyymm`           | *str*              | :heavy_check_mark: | N/A                |
 | `country`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetMetricResponse](../../models/operations/getdatasetmetricresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_metadata
 
@@ -2496,7 +2439,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_metadata(id='<value>')
+res = s.datasets.get_dataset_metadata(id='<id>')
 
 if res is not None:
     # handle response
@@ -2504,23 +2447,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetMetadataResponse](../../models/operations/getdatasetmetadataresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_dataset_metadata_1
 
@@ -2536,15 +2478,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_dataset_metadata_1(id='<value>')
+res = s.datasets.update_dataset_metadata_1(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -2554,15 +2494,16 @@ if res is not None:
 | `replace`          | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateDatasetMetadata1Response](../../models/operations/updatedatasetmetadata1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_metadata_deletion
 
@@ -2578,15 +2519,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_metadata_deletion(id='<value>')
+res = s.datasets.update_metadata_deletion(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -2595,15 +2534,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateMetadataDeletionResponse](../../models/operations/updatemetadatadeletionresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_registration_modification
 
@@ -2619,7 +2559,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_registration_modification(id='<value>')
+res = s.datasets.get_registration_modification(id='<id>')
 
 if res is not None:
     # handle response
@@ -2627,23 +2567,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetRegistrationModificationResponse](../../models/operations/getregistrationmodificationresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## modify_dataset_registration_metadata
 
@@ -2659,7 +2598,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.modify_dataset_registration_metadata(id='<value>')
+res = s.datasets.modify_dataset_registration_metadata(id='<id>')
 
 if res is not None:
     # handle response
@@ -2667,23 +2606,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.ModifyDatasetRegistrationMetadataResponse](../../models/operations/modifydatasetregistrationmetadataresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## monitor_globus_download
 
@@ -2699,15 +2637,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.monitor_globus_download(id='<value>')
+res = s.datasets.monitor_globus_download(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -2716,15 +2652,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.MonitorGlobusDownloadResponse](../../models/operations/monitorglobusdownloadresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## move_dataset_to_target
 
@@ -2740,15 +2677,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.move_dataset_to_target(id='<value>', target_dataverse_alias='<value>')
+res = s.datasets.move_dataset_to_target(id='<id>', target_dataverse_alias='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -2758,15 +2693,16 @@ if res is not None:
 | `target_dataverse_alias` | *str*                    | :heavy_check_mark:       | N/A                      |
 | `force_move`             | *Optional[bool]*         | :heavy_minus_sign:       | N/A                      |
 
-
 ### Response
 
 **[operations.MoveDatasetToTargetResponse](../../models/operations/movedatasettotargetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_private_url
 
@@ -2782,7 +2718,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_private_url(id='<value>')
+res = s.datasets.get_private_url(id='<id>')
 
 if res is not None:
     # handle response
@@ -2790,23 +2726,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetPrivateURLResponse](../../models/operations/getprivateurlresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_private_url
 
@@ -2822,15 +2757,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.create_private_url(id='<value>')
+res = s.datasets.create_private_url(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -2839,15 +2772,16 @@ if res is not None:
 | `id`                | *str*               | :heavy_check_mark:  | N/A                 |
 | `anonymized_access` | *Optional[bool]*    | :heavy_minus_sign:  | N/A                 |
 
-
 ### Response
 
 **[operations.CreatePrivateURLResponse](../../models/operations/createprivateurlresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_private_url
 
@@ -2863,7 +2797,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.delete_private_url(id='<value>')
+res = s.datasets.delete_private_url(id='<id>')
 
 if res is not None:
     # handle response
@@ -2871,23 +2805,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeletePrivateURLResponse](../../models/operations/deleteprivateurlresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## replace_dataset_files
 
@@ -2903,15 +2836,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.replace_dataset_files(id='<value>')
+res = s.datasets.replace_dataset_files(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -2920,15 +2851,16 @@ if res is not None:
 | `id`                                                                                                             | *str*                                                                                                            | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
 | `request_body`                                                                                                   | [Optional[operations.ReplaceDatasetFilesRequestBody]](../../models/operations/replacedatasetfilesrequestbody.md) | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
 
-
 ### Response
 
 **[operations.ReplaceDatasetFilesResponse](../../models/operations/replacedatasetfilesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## submit_globus_download_request
 
@@ -2944,15 +2876,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.submit_globus_download_request(id='<value>')
+res = s.datasets.submit_globus_download_request(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -2962,15 +2892,16 @@ if res is not None:
 | `download_id`      | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.SubmitGlobusDownloadRequestResponse](../../models/operations/submitglobusdownloadrequestresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_globus_upload_paths_request
 
@@ -2986,15 +2917,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.post_globus_upload_paths_request(id='<value>')
+res = s.datasets.post_globus_upload_paths_request(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3003,15 +2932,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.PostGlobusUploadPathsRequestResponse](../../models/operations/postglobusuploadpathsrequestresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## return_dataset_to_author
 
@@ -3027,7 +2957,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.return_dataset_to_author(id='<value>')
+res = s.datasets.return_dataset_to_author(id='<id>')
 
 if res is not None:
     # handle response
@@ -3035,23 +2965,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.ReturnDatasetToAuthorResponse](../../models/operations/returndatasettoauthorresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## submit_dataset_for_review
 
@@ -3067,7 +2996,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.submit_dataset_for_review(id='<value>')
+res = s.datasets.submit_dataset_for_review(id='<id>')
 
 if res is not None:
     # handle response
@@ -3075,23 +3004,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.SubmitDatasetForReviewResponse](../../models/operations/submitdatasetforreviewresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_thumbnail
 
@@ -3107,7 +3035,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_thumbnail(id='<value>')
+res = s.datasets.get_dataset_thumbnail(id='<id>')
 
 if res is not None:
     # handle response
@@ -3115,23 +3043,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetThumbnailResponse](../../models/operations/getdatasetthumbnailresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_dataset_thumbnail
 
@@ -3147,15 +3074,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.post_dataset_thumbnail(id='<value>')
+res = s.datasets.post_dataset_thumbnail(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3164,15 +3089,16 @@ if res is not None:
 | `id`                                                                                                               | *str*                                                                                                              | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
 | `request_body`                                                                                                     | [Optional[operations.PostDatasetThumbnailRequestBody]](../../models/operations/postdatasetthumbnailrequestbody.md) | :heavy_minus_sign:                                                                                                 | N/A                                                                                                                |
 
-
 ### Response
 
 **[operations.PostDatasetThumbnailResponse](../../models/operations/postdatasetthumbnailresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_dataset_thumbnail
 
@@ -3188,7 +3114,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.delete_dataset_thumbnail(id='<value>')
+res = s.datasets.delete_dataset_thumbnail(id='<id>')
 
 if res is not None:
     # handle response
@@ -3196,23 +3122,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteDatasetThumbnailResponse](../../models/operations/deletedatasetthumbnailresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_thumbnail_candidates
 
@@ -3228,7 +3153,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_thumbnail_candidates(id='<value>')
+res = s.datasets.get_thumbnail_candidates(id='<id>')
 
 if res is not None:
     # handle response
@@ -3236,23 +3161,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetThumbnailCandidatesResponse](../../models/operations/getthumbnailcandidatesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_thumbnail_data
 
@@ -3268,15 +3192,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.post_thumbnail_data(data_file_id=907375, id='<value>')
+res = s.datasets.post_thumbnail_data(data_file_id=907375, id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3285,15 +3207,16 @@ if res is not None:
 | `data_file_id`     | *int*              | :heavy_check_mark: | N/A                |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.PostThumbnailDataResponse](../../models/operations/postthumbnaildataresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## ~~get_upload_id~~
 
@@ -3311,7 +3234,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_upload_id(id='<value>')
+res = s.datasets.get_upload_id(id='<id>')
 
 if res is not None:
     # handle response
@@ -3319,23 +3242,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetUploadIDResponse](../../models/operations/getuploadidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_upload_ur_ls
 
@@ -3351,15 +3273,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_upload_ur_ls(id='<value>')
+res = s.datasets.get_upload_ur_ls(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3368,15 +3288,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `size`             | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetUploadURLsResponse](../../models/operations/getuploadurlsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_user_permissions
 
@@ -3392,7 +3313,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_user_permissions(id='<value>')
+res = s.datasets.get_user_permissions(id='<id>')
 
 if res is not None:
     # handle response
@@ -3400,23 +3321,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetUserPermissionsResponse](../../models/operations/getuserpermissionsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_versions
 
@@ -3432,15 +3352,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_versions(id='<value>')
+res = s.datasets.get_dataset_versions(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3451,15 +3369,16 @@ if res is not None:
 | `limit`            | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 | `offset`           | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetVersionsResponse](../../models/operations/getdatasetversionsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_version
 
@@ -3475,15 +3394,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_version(id='<value>', version_id='<value>')
+res = s.datasets.get_dataset_version(id='<id>', version_id='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3494,15 +3411,16 @@ if res is not None:
 | `exclude_files`         | *Optional[bool]*        | :heavy_minus_sign:      | N/A                     |
 | `include_deaccessioned` | *Optional[bool]*        | :heavy_minus_sign:      | N/A                     |
 
-
 ### Response
 
 **[operations.GetDatasetVersionResponse](../../models/operations/getdatasetversionresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_dataset_version
 
@@ -3518,15 +3436,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_dataset_version(id='<value>', version_id='<value>')
+res = s.datasets.update_dataset_version(id='<id>', version_id='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3536,15 +3452,16 @@ if res is not None:
 | `version_id`       | *str*              | :heavy_check_mark: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateDatasetVersionResponse](../../models/operations/updatedatasetversionresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_dataset_version
 
@@ -3560,15 +3477,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.delete_dataset_version(id='<value>', version_id='<value>')
+res = s.datasets.delete_dataset_version(id='<id>', version_id='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3577,15 +3492,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `version_id`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteDatasetVersionResponse](../../models/operations/deletedatasetversionresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## check_dataset_file_download_permission
 
@@ -3601,15 +3517,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.check_dataset_file_download_permission(id='<value>', version_id='<value>')
+res = s.datasets.check_dataset_file_download_permission(id='<id>', version_id='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3619,15 +3533,16 @@ if res is not None:
 | `version_id`            | *str*                   | :heavy_check_mark:      | N/A                     |
 | `include_deaccessioned` | *Optional[bool]*        | :heavy_minus_sign:      | N/A                     |
 
-
 ### Response
 
 **[operations.CheckDatasetFileDownloadPermissionResponse](../../models/operations/checkdatasetfiledownloadpermissionresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_citation
 
@@ -3643,15 +3558,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_citation(id='<value>', version_id='<value>')
+res = s.datasets.get_citation(id='<id>', version_id='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3661,15 +3574,16 @@ if res is not None:
 | `version_id`            | *str*                   | :heavy_check_mark:      | N/A                     |
 | `include_deaccessioned` | *Optional[bool]*        | :heavy_minus_sign:      | N/A                     |
 
-
 ### Response
 
 **[operations.GetCitationResponse](../../models/operations/getcitationresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_custom_license
 
@@ -3685,15 +3599,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_custom_license(id='<value>', version_id='<value>')
+res = s.datasets.get_custom_license(id='<id>', version_id='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3702,15 +3614,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `version_id`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetCustomLicenseResponse](../../models/operations/getcustomlicenseresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_deaccession_dataset_by_version_id
 
@@ -3726,15 +3639,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.post_deaccession_dataset_by_version_id(id='<value>', version_id='<value>')
+res = s.datasets.post_deaccession_dataset_by_version_id(id='<id>', version_id='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3743,15 +3654,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `version_id`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.PostDeaccessionDatasetByVersionIDResponse](../../models/operations/postdeaccessiondatasetbyversionidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_version_files
 
@@ -3779,23 +3691,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | `request`                                                                                            | [operations.GetDatasetVersionFilesRequest](../../models/operations/getdatasetversionfilesrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 
-
 ### Response
 
 **[operations.GetDatasetVersionFilesResponse](../../models/operations/getdatasetversionfilesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_files_count
 
@@ -3823,23 +3734,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | `request`                                                                                        | [operations.GetDatasetFilesCountRequest](../../models/operations/getdatasetfilescountrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
 
-
 ### Response
 
 **[operations.GetDatasetFilesCountResponse](../../models/operations/getdatasetfilescountresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_version_linkset
 
@@ -3855,15 +3765,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_version_linkset(id='<value>', version_id='<value>')
+res = s.datasets.get_dataset_version_linkset(id='<id>', version_id='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3872,15 +3780,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `version_id`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetVersionLinksetResponse](../../models/operations/getdatasetversionlinksetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_version_metadata
 
@@ -3896,15 +3805,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_version_metadata(id='<value>', version_id='<value>')
+res = s.datasets.get_dataset_version_metadata(id='<id>', version_id='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3913,15 +3820,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `version_id`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetVersionMetadataResponse](../../models/operations/getdatasetversionmetadataresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_version_metadata_1
 
@@ -3937,15 +3845,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_version_metadata_1(block='<value>', id='<value>', version_number='<value>')
+res = s.datasets.get_dataset_version_metadata_1(block='<value>', id='<id>', version_number='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3955,15 +3861,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `version_number`   | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetVersionMetadata1Response](../../models/operations/getdatasetversionmetadata1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_version_tool_param
 
@@ -3979,15 +3886,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_version_tool_param(id='<value>', tid=660939, version='<value>')
+res = s.datasets.get_dataset_version_tool_param(id='<id>', tid=660939, version='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -3998,15 +3903,16 @@ if res is not None:
 | `version`          | *str*              | :heavy_check_mark: | N/A                |
 | `locale`           | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetVersionToolParamResponse](../../models/operations/getdatasetversiontoolparamresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_archival_status
 
@@ -4022,15 +3928,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_archival_status(id='<value>', version='<value>')
+res = s.datasets.get_dataset_archival_status(id='<id>', version='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -4039,15 +3943,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `version`          | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetArchivalStatusResponse](../../models/operations/getdatasetarchivalstatusresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_dataset_archival_status
 
@@ -4063,15 +3968,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_dataset_archival_status(id='<value>', version='<value>')
+res = s.datasets.update_dataset_archival_status(id='<id>', version='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -4081,15 +3984,16 @@ if res is not None:
 | `version`          | *str*              | :heavy_check_mark: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateDatasetArchivalStatusResponse](../../models/operations/updatedatasetarchivalstatusresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_dataset_archival_status
 
@@ -4105,15 +4009,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.delete_dataset_archival_status(id='<value>', version='<value>')
+res = s.datasets.delete_dataset_archival_status(id='<id>', version='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -4122,15 +4024,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `version`          | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteDatasetArchivalStatusResponse](../../models/operations/deletedatasetarchivalstatusresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_dataset_link
 
@@ -4154,8 +4057,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                 | Type                      | Required                  | Description               |
@@ -4163,10 +4064,10 @@ if res is not None:
 | `linked_dataset_id`       | *str*                     | :heavy_check_mark:        | N/A                       |
 | `linking_dataverse_alias` | *str*                     | :heavy_check_mark:        | N/A                       |
 
-
 ### Response
 
 **[operations.UpdateDatasetLinkResponse](../../models/operations/updatedatasetlinkresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

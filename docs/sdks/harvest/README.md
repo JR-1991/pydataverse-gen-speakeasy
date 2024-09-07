@@ -1,6 +1,8 @@
 # Harvest
 (*harvest*)
 
+## Overview
+
 ### Available Operations
 
 * [get_harvest_clients](#get_harvest_clients) - Retrieve all harvest clients based on the provided key
@@ -38,23 +40,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetHarvestClientsResponse](../../models/operations/getharvestclientsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_harvest_client
 
@@ -78,8 +79,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -87,15 +86,16 @@ if res is not None:
 | `nick_name`        | *str*              | :heavy_check_mark: | N/A                |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetHarvestClientResponse](../../models/operations/getharvestclientresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_harvest_client
 
@@ -119,8 +119,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -128,15 +126,16 @@ if res is not None:
 | `nick_name`        | *str*              | :heavy_check_mark: | N/A                |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateHarvestClientResponse](../../models/operations/updateharvestclientresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_harvest_client
 
@@ -160,8 +159,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -169,15 +166,16 @@ if res is not None:
 | `nick_name`        | *str*              | :heavy_check_mark: | N/A                |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.CreateHarvestClientResponse](../../models/operations/createharvestclientresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_harvest_client
 
@@ -201,23 +199,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `nick_name`        | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteHarvestClientResponse](../../models/operations/deleteharvestclientresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## run_harvest_client
 
@@ -241,8 +238,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -250,15 +245,16 @@ if res is not None:
 | `nick_name`        | *str*              | :heavy_check_mark: | N/A                |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.RunHarvestClientResponse](../../models/operations/runharvestclientresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_oai_sets
 
@@ -282,23 +278,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetOaiSetsResponse](../../models/operations/getoaisetsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## add_oai_set
 
@@ -322,23 +317,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.AddOaiSetResponse](../../models/operations/addoaisetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_oai_sets_1
 
@@ -362,8 +356,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -371,15 +363,16 @@ if res is not None:
 | `specname`         | *str*              | :heavy_check_mark: | N/A                |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetOaiSets1Response](../../models/operations/getoaisets1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_oai_sets
 
@@ -403,8 +396,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -412,15 +403,16 @@ if res is not None:
 | `specname`         | *str*              | :heavy_check_mark: | N/A                |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.UpdateOaiSetsResponse](../../models/operations/updateoaisetsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_oai_sets
 
@@ -444,8 +436,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -453,15 +443,16 @@ if res is not None:
 | `specname`         | *str*              | :heavy_check_mark: | N/A                |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteOaiSetsResponse](../../models/operations/deleteoaisetsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_harvest_datasets_by_spec_name
 
@@ -485,8 +476,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -494,10 +483,10 @@ if res is not None:
 | `specname`         | *str*              | :heavy_check_mark: | N/A                |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetHarvestDatasetsBySpecNameResponse](../../models/operations/getharvestdatasetsbyspecnameresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

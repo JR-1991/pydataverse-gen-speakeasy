@@ -1,6 +1,8 @@
 # Roles
 (*roles*)
 
+## Overview
+
 ### Available Operations
 
 * [create_role](#create_role) - Create a new role in the system
@@ -29,23 +31,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `dvo`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.CreateRoleResponse](../../models/operations/createroleresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_role
 
@@ -61,7 +62,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.roles.get_role(id='<value>')
+res = s.roles.get_role(id='<id>')
 
 if res is not None:
     # handle response
@@ -69,23 +70,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetRoleResponse](../../models/operations/getroleresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_role
 
@@ -101,7 +101,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.roles.delete_role(id='<value>')
+res = s.roles.delete_role(id='<id>')
 
 if res is not None:
     # handle response
@@ -109,18 +109,16 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteRoleResponse](../../models/operations/deleteroleresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

@@ -1,6 +1,8 @@
 # Access
 (*access*)
 
+## Overview
+
 ### Available Operations
 
 * [get_datafile_bundle](#get_datafile_bundle) - Retrieve a zip of the datafile bundle identified by the file ID.
@@ -50,8 +52,6 @@ if res.body is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -60,15 +60,16 @@ if res.body is not None:
 | `file_metadata_id` | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 | `gbrecs`           | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatafileBundleResponse](../../models/operations/getdatafilebundleresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_datafile
 
@@ -92,8 +93,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -101,15 +100,16 @@ if res is not None:
 | `file_id`          | *str*              | :heavy_check_mark: | N/A                |
 | `gbrecs`           | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatafileResponse](../../models/operations/getdatafileresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_datafile_auxiliary
 
@@ -133,23 +133,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `file_id`          | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatafileAuxiliaryResponse](../../models/operations/getdatafileauxiliaryresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## access_datafile_auxiliary_get
 
@@ -173,8 +172,6 @@ if res.res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -183,15 +180,16 @@ if res.res is not None:
 | `format_tag`       | *str*              | :heavy_check_mark: | N/A                |
 | `format_version`   | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.AccessDatafileAuxiliaryGetResponse](../../models/operations/accessdatafileauxiliarygetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## access_datafile_auxiliary_create
 
@@ -215,8 +213,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
@@ -226,15 +222,16 @@ if res is not None:
 | `format_version`                                                                                                                     | *str*                                                                                                                                | :heavy_check_mark:                                                                                                                   | N/A                                                                                                                                  |
 | `request_body`                                                                                                                       | [Optional[operations.AccessDatafileAuxiliaryCreateRequestBody]](../../models/operations/accessdatafileauxiliarycreaterequestbody.md) | :heavy_minus_sign:                                                                                                                   | N/A                                                                                                                                  |
 
-
 ### Response
 
 **[operations.AccessDatafileAuxiliaryCreateResponse](../../models/operations/accessdatafileauxiliarycreateresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## access_datafile_auxiliary_delete
 
@@ -258,8 +255,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -268,15 +263,16 @@ if res is not None:
 | `format_tag`       | *str*              | :heavy_check_mark: | N/A                |
 | `format_version`   | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.AccessDatafileAuxiliaryDeleteResponse](../../models/operations/accessdatafileauxiliarydeleteresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_datafile_auxiliary_info
 
@@ -300,8 +296,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -309,15 +303,16 @@ if res is not None:
 | `file_id`          | *str*              | :heavy_check_mark: | N/A                |
 | `origin`           | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatafileAuxiliaryInfoResponse](../../models/operations/getdatafileauxiliaryinforesponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_datafile_metadata
 
@@ -341,8 +336,6 @@ if res.res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -352,15 +345,16 @@ if res.res is not None:
 | `file_metadata_id` | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 | `include`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatafileMetadataResponse](../../models/operations/getdatafilemetadataresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_datafile_meta_ddi
 
@@ -384,8 +378,6 @@ if res.res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -395,15 +387,16 @@ if res.res is not None:
 | `file_metadata_id` | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 | `include`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatafileMetaDDIResponse](../../models/operations/getdatafilemetaddiresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## grant_datafile_access
 
@@ -419,15 +412,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.grant_datafile_access(id='<value>', identifier='<value>')
+res = s.access.grant_datafile_access(id='<id>', identifier='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -436,15 +427,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GrantDatafileAccessResponse](../../models/operations/grantdatafileaccessresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_datafile_requests
 
@@ -460,7 +452,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_datafile_requests(id='<value>')
+res = s.access.get_datafile_requests(id='<id>')
 
 if res is not None:
     # handle response
@@ -468,23 +460,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatafileRequestsResponse](../../models/operations/getdatafilerequestsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## reject_data_access
 
@@ -500,15 +491,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.reject_data_access(id='<value>', identifier='<value>')
+res = s.access.reject_data_access(id='<id>', identifier='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -517,15 +506,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.RejectDataAccessResponse](../../models/operations/rejectdataaccessresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## request_file_access
 
@@ -541,7 +531,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.request_file_access(id='<value>')
+res = s.access.request_file_access(id='<id>')
 
 if res is not None:
     # handle response
@@ -549,23 +539,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.RequestFileAccessResponse](../../models/operations/requestfileaccessresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_file_access
 
@@ -581,15 +570,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.delete_file_access(id='<value>', identifier='<value>')
+res = s.access.delete_file_access(id='<id>', identifier='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -598,15 +585,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.DeleteFileAccessResponse](../../models/operations/deletefileaccessresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_user_file_access_requested
 
@@ -622,7 +610,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_user_file_access_requested(id='<value>')
+res = s.access.get_user_file_access_requested(id='<id>')
 
 if res is not None:
     # handle response
@@ -630,23 +618,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetUserFileAccessRequestedResponse](../../models/operations/getuserfileaccessrequestedresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_user_file_permissions
 
@@ -662,7 +649,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_user_file_permissions(id='<value>')
+res = s.access.get_user_file_permissions(id='<id>')
 
 if res is not None:
     # handle response
@@ -670,23 +657,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetUserFilePermissionsResponse](../../models/operations/getuserfilepermissionsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_data_file_access
 
@@ -710,8 +696,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -719,15 +703,16 @@ if res is not None:
 | `gbrecs`           | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.PostDataFileAccessResponse](../../models/operations/postdatafileaccessresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_access_data_files
 
@@ -751,8 +736,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -760,15 +743,16 @@ if res is not None:
 | `file_ids`         | *str*              | :heavy_check_mark: | N/A                |
 | `gbrecs`           | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetAccessDataFilesResponse](../../models/operations/getaccessdatafilesresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_access
 
@@ -784,15 +768,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_dataset_access(id='<value>')
+res = s.access.get_dataset_access(id='<id>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -801,15 +783,16 @@ if res is not None:
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `gbrecs`           | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetAccessResponse](../../models/operations/getdatasetaccessresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_version_access
 
@@ -825,15 +808,13 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_dataset_version_access(id='<value>', version_id='<value>')
+res = s.access.get_dataset_version_access(id='<id>', version_id='<value>')
 
 if res is not None:
     # handle response
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -844,15 +825,16 @@ if res is not None:
 | `gbrecs`           | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetVersionAccessResponse](../../models/operations/getdatasetversionaccessresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_ds_card_image
 
@@ -876,23 +858,22 @@ if res.res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `version_id`       | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDsCardImageResponse](../../models/operations/getdscardimageresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataverse_card_image
 
@@ -916,23 +897,22 @@ if res.res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `dataverse_id`     | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetDataverseCardImageResponse](../../models/operations/getdataversecardimageresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_file_card_image
 
@@ -956,23 +936,22 @@ if res.res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `file_id`          | *int*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetFileCardImageResponse](../../models/operations/getfilecardimageresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## allow_access_request
 
@@ -988,7 +967,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.allow_access_request(id='<value>')
+res = s.access.allow_access_request(id='<id>')
 
 if res is not None:
     # handle response
@@ -996,18 +975,16 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.AllowAccessRequestResponse](../../models/operations/allowaccessrequestresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

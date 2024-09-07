@@ -1,6 +1,8 @@
 # Meta
 (*meta*)
 
+## Overview
+
 ### Available Operations
 
 * [~~get_datafile_meta~~](#get_datafile_meta) - Get metadata of a specific datafile by file id :warning: **Deprecated**
@@ -30,8 +32,6 @@ if res.res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -41,15 +41,16 @@ if res.res is not None:
 | `file_metadata_id` | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 | `include`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatafileMetaResponse](../../models/operations/getdatafilemetaresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## ~~get_dataset_metadata_1~~
 
@@ -75,8 +76,6 @@ if res.res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -85,10 +84,10 @@ if res.res is not None:
 | `exclude`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `include`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetDatasetMetadata1Response](../../models/operations/getdatasetmetadata1response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

@@ -1,6 +1,8 @@
 # Batch
 (*batch*)
 
+## Overview
+
 ### Available Operations
 
 * [get_batch_harvest](#get_batch_harvest) - Retrieves information about a batch harvest based on provided parameters
@@ -30,8 +32,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -41,15 +41,16 @@ if res is not None:
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `path`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetBatchHarvestResponse](../../models/operations/getbatchharvestresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_batch_import_status
 
@@ -73,8 +74,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -84,15 +83,16 @@ if res is not None:
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `path`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetBatchImportStatusResponse](../../models/operations/getbatchimportstatusresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_batch_import
 
@@ -116,8 +116,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -125,15 +123,16 @@ if res is not None:
 | `dv`               | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `key`              | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.CreateBatchImportResponse](../../models/operations/createbatchimportresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## post_batch_job_import_datasets
 
@@ -157,8 +156,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -168,10 +165,10 @@ if res is not None:
 | `total_size`       | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 | `upload_folder`    | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.PostBatchJobImportDatasetsResponse](../../models/operations/postbatchjobimportdatasetsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

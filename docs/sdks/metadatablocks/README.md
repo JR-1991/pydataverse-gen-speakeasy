@@ -1,6 +1,8 @@
 # Metadatablocks
 (*metadatablocks*)
 
+## Overview
+
 ### Available Operations
 
 * [get_metadatablocks](#get_metadatablocks) - Retrieve metadata blocks available in the system
@@ -28,17 +30,16 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetMetadatablocksResponse](../../models/operations/getmetadatablocksresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_metadatablock_1_1
 
@@ -62,18 +63,16 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `identifier`       | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.GetMetadatablock11Response](../../models/operations/getmetadatablock11response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

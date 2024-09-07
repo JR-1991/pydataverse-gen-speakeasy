@@ -1,6 +1,8 @@
 # Mail
 (*mail*)
 
+## Overview
+
 ### Available Operations
 
 * [get_mail_notifications](#get_mail_notifications) - Retrieve a list of mail notifications
@@ -27,12 +29,10 @@ if res is not None:
 
 ```
 
-
-
-
 ### Response
 
 **[operations.GetMailNotificationsResponse](../../models/operations/getmailnotificationsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

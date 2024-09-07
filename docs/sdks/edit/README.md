@@ -1,6 +1,8 @@
 # Edit
 (*edit*)
 
+## Overview
+
 ### Available Operations
 
 * [edit_file](#edit_file) - Edits the content of a specified file
@@ -27,8 +29,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -36,10 +36,10 @@ if res is not None:
 | `file_id`          | *str*              | :heavy_check_mark: | N/A                |
 | `request_body`     | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.EditFileResponse](../../models/operations/editfileresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

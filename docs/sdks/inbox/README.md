@@ -1,6 +1,8 @@
 # Inbox
 (*inbox*)
 
+## Overview
+
 ### Available Operations
 
 * [post_inbox](#post_inbox) - Create a new inbox message
@@ -27,18 +29,16 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
 | `request`                                  | [str](../../models/.md)                    | :heavy_check_mark:                         | The request object to use for the request. |
 
-
 ### Response
 
 **[operations.PostInboxResponse](../../models/operations/postinboxresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
