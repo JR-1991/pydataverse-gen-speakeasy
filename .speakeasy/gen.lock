@@ -3,10 +3,10 @@ id: faa73a4f-3f6c-47a0-809e-515af47dce1e
 management:
   docChecksum: 804482d470c512b1fb80b46abf333521
   docVersion: "1.0"
-  speakeasyVersion: 1.392.1
-  generationVersion: 2.411.9
-  releaseVersion: 0.9.6
-  configChecksum: 0b988255fae65eec6a1f0d8163857ce5
+  speakeasyVersion: 1.396.6
+  generationVersion: 2.415.6
+  releaseVersion: 0.9.7
+  configChecksum: d0ab3e5a90a741d30da98a685e6338e0
   repoURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
   repoSubDirectory: .
   installationURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
@@ -14,7 +14,7 @@ features:
   python:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.4
-    core: 4.8.7
+    core: 4.8.9
     deprecations: 2.81.1
     flattening: 2.81.1
     globalSecurity: 2.83.7
@@ -1425,6 +1425,9 @@ examples:
         path:
           fileId: "<value>"
         query: {}
+      responses:
+        "200":
+          application/zip: "0xbdF80C1aeb"
   getDatafile:
     speakeasy-default-get-datafile:
       parameters:
@@ -1443,6 +1446,9 @@ examples:
           fileId: "<value>"
           formatTag: "<value>"
           formatVersion: "<value>"
+      responses:
+        "200":
+          '*/*': "<value>"
   accessDatafileAuxiliaryCreate:
     speakeasy-default-access-datafile-auxiliary-create:
       parameters:
@@ -1469,12 +1475,18 @@ examples:
         path:
           fileId: "<value>"
         query: {}
+      responses:
+        "200":
+          text/xml: "<value>"
   getDatafileMetaDDI:
     speakeasy-default-get-datafile-meta-DDI:
       parameters:
         path:
           fileId: "<value>"
         query: {}
+      responses:
+        "200":
+          text/xml: "<value>"
   grantDatafileAccess:
     speakeasy-default-grant-datafile-access:
       parameters:
@@ -1539,16 +1551,25 @@ examples:
       parameters:
         path:
           versionId: 856190
+      responses:
+        "200":
+          image/png: "<value>"
   getDataverseCardImage:
     speakeasy-default-get-dataverse-card-image:
       parameters:
         path:
           dataverseId: 305707
+      responses:
+        "200":
+          image/png: "<value>"
   getFileCardImage:
     speakeasy-default-get-file-card-image:
       parameters:
         path:
           fileId: 259222
+      responses:
+        "200":
+          image/png: "<value>"
   allowAccessRequest:
     speakeasy-default-allow-access-request:
       parameters:
@@ -1863,7 +1884,10 @@ examples:
   getPermsDebugInfo:
     speakeasy-default-get-perms-debug-info: {}
   getSolrSchema:
-    speakeasy-default-get-solr-schema: {}
+    speakeasy-default-get-solr-schema:
+      responses:
+        "200":
+          '*/*': "<value>"
   getAdminIndexStatus:
     speakeasy-default-get-admin-index-status: {}
   getAdminTestIndex:
@@ -3305,7 +3329,10 @@ examples:
   getZipDownloadLimit:
     speakeasy-default-get-zip-download-limit: {}
   getIngestTestFile:
-    speakeasy-default-get-ingest-test-file: {}
+    speakeasy-default-get-ingest-test-file:
+      responses:
+        "200":
+          text/plain: "<value>"
   getLicenses:
     speakeasy-default-get-licenses: {}
   addLicense:
@@ -3349,12 +3376,18 @@ examples:
         path:
           fileId: 708075
         query: {}
+      responses:
+        "200":
+          text/xml: "<value>"
   getDatasetMetadata_1:
     speakeasy-default-get-dataset-metadata-1:
       parameters:
         path:
           datasetId: 492183
         query: {}
+      responses:
+        "200":
+          application/xml: "<value>"
   getMetadatablocks:
     speakeasy-default-get-metadatablocks: {}
   getMetadatablock_1_1:
@@ -3363,7 +3396,10 @@ examples:
         path:
           identifier: "<value>"
   myDataRetrieve:
-    speakeasy-default-my-data-retrieve: {}
+    speakeasy-default-my-data-retrieve:
+      responses:
+        "200":
+          application/json: "<value>"
   getAllNotifications:
     speakeasy-default-get-all-notifications: {}
   getMutedEmails:

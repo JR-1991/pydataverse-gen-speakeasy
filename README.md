@@ -73,6 +73,9 @@ if res.body is not None:
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
 
+<details open>
+<summary>Available methods</summary>
+
 ### [access](docs/sdks/access/README.md)
 
 * [get_datafile_bundle](docs/sdks/access/README.md#get_datafile_bundle) - Retrieve a zip of the datafile bundle identified by the file ID.
@@ -259,8 +262,10 @@ if res.body is not None:
 * [get_admin_data_file](docs/sdks/admin/README.md#get_admin_data_file) - Retrieve data file details registered by a specific admin
 * [admin_reregister_hdl_to_pid](docs/sdks/admin/README.md#admin_reregister_hdl_to_pid) - Admin reruns the HDL to PID registration for a specific admin ID.
 
+### [application](docs/sdks/application/README.md)
 
-### [application.wadl](docs/sdks/wadl/README.md)
+
+#### [application.wadl](docs/sdks/wadl/README.md)
 
 * [get_application_wadl](docs/sdks/wadl/README.md#get_application_wadl) - Retrieves the application WADL
 * [get_application_wadl_1](docs/sdks/wadl/README.md#get_application_wadl_1) - Retrieve the application WADL
@@ -555,7 +560,7 @@ if res.body is not None:
 
 * [get_mail_notifications](docs/sdks/mail/README.md#get_mail_notifications) - Retrieve a list of mail notifications
 
-### [meta](docs/sdks/meta/README.md)
+### [~~meta~~](docs/sdks/meta/README.md)
 
 * [~~get_datafile_meta~~](docs/sdks/meta/README.md#get_datafile_meta) - Get metadata of a specific datafile by file id :warning: **Deprecated**
 * [~~get_dataset_metadata_1~~](docs/sdks/meta/README.md#get_dataset_metadata_1) - Retrieves the metadata of a specific dataset by its ID :warning: **Deprecated**
@@ -587,6 +592,7 @@ if res.body is not None:
 * [delete_pid](docs/sdks/pids/README.md#delete_pid) - Delete a specific persistent identifier (PID)
 * [reserve_pid](docs/sdks/pids/README.md#reserve_pid) - Reserve a specific PID
 
+
 ### [roles](docs/sdks/roles/README.md)
 
 * [create_role](docs/sdks/roles/README.md#create_role) - Create a new role in the system
@@ -612,6 +618,8 @@ if res.body is not None:
 ### [workflows](docs/sdks/workflows/README.md)
 
 * [start_workflow](docs/sdks/workflows/README.md#start_workflow) - Initiate a workflow using the given invocation id
+
+</details>
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Error Handling [errors] -->
