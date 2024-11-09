@@ -638,10 +638,10 @@ By default, an API error will raise a errors.SDKError exception, which has the f
 
 When custom error responses are specified for an operation, the SDK may also raise their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_dataverse_1` method may raise the following exceptions:
 
-| Error Type           | Status Code          | Content Type         |
-| -------------------- | -------------------- | -------------------- |
-| errors.ErrorResponse | 400                  | application/json     |
-| errors.SDKError      | 4XX, 5XX             | \*/\*                |
+| Error Type           | Status Code | Content Type     |
+| -------------------- | ----------- | ---------------- |
+| errors.ErrorResponse | 400         | application/json |
+| errors.SDKError      | 4XX, 5XX    | \*/\*            |
 
 ### Example
 
@@ -680,36 +680,9 @@ if res.dataverse_response is not None:
 <!-- Start Server Selection [server] -->
 ## Server Selection
 
-### Select Server by Index
+### Server Variables
 
-You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
-
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `{protocol}://{base_url}` | `protocol` (default is `https`), `base_url` (default is `demo.dataverse.org`) |
-
-#### Example
-
-```python
-import pydataverse
-
-s = pydataverse.PyDataverse(
-    server_idx=0,
-    api_key_auth="<YOUR_API_KEY_HERE>",
-)
-
-
-res = s.access.get_datafile_bundle(file_id='<value>')
-
-if res.body is not None:
-    # handle response
-    pass
-
-```
-
-#### Variables
-
-Some of the server options above contain variables. If you want to set the values of those variables, the following optional parameters are available when initializing the SDK client instance:
+The default server `{protocol}://{base_url}` contains variables and is set to `https://demo.dataverse.org` by default. To override default values, the following parameters are available when initializing the SDK client instance:
  * `protocol: models.ServerProtocol`
  * `base_url: str`
 
@@ -720,7 +693,7 @@ The default server can also be overridden globally by passing a URL to the `serv
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    server_url="{protocol}://{base_url}",
+    server_url="https://demo.dataverse.org",
     api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
@@ -757,9 +730,9 @@ s = pydataverse.PyDataverse(client=http_client)
 
 This SDK supports the following security scheme globally:
 
-| Name           | Type           | Scheme         |
-| -------------- | -------------- | -------------- |
-| `api_key_auth` | apiKey         | API key        |
+| Name           | Type   | Scheme  |
+| -------------- | ------ | ------- |
+| `api_key_auth` | apiKey | API key |
 
 To authenticate with the API the `api_key_auth` parameter must be set when initializing the SDK client instance. For example:
 ```python
