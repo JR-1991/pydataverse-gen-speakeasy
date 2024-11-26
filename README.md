@@ -57,7 +57,7 @@ pip install git+https://github.com/JR-1991/pydataverse-gen-speakeasy.git
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 
@@ -650,7 +650,7 @@ import pydataverse
 from pydataverse.models import components, errors
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 res = None
@@ -693,8 +693,8 @@ The default server can also be overridden globally by passing a URL to the `serv
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    server_url="https://demo.dataverse.org",
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    server_url='https://demo.dataverse.org',
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 
@@ -739,7 +739,7 @@ To authenticate with the API the `api_key_auth` parameter must be set when initi
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 

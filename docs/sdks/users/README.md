@@ -25,7 +25,7 @@ Retrieve the details of the logged-in user
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 
@@ -57,7 +57,7 @@ Retrieves a user's authentication token
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 
@@ -89,7 +89,7 @@ Deletes a user's authentication token
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 
@@ -121,7 +121,7 @@ Recreates the authentication token for a given user
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 
@@ -153,7 +153,7 @@ Merge the user with consumedIdentifier into the user with baseIdentifier
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 
@@ -192,7 +192,7 @@ Change the identifier of a given user
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 
@@ -231,7 +231,7 @@ Remove roles from a specific user
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 
@@ -269,7 +269,7 @@ Retrieve a user's traces
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 
@@ -307,7 +307,7 @@ Retrieve a specific trace element for a given user
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 

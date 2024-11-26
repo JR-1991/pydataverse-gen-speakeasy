@@ -19,7 +19,7 @@ Create a new role in the system
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 
@@ -57,7 +57,7 @@ Retrieve details of a specific role by id
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 
@@ -95,7 +95,7 @@ Delete a specific role by id
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 

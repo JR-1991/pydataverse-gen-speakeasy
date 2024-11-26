@@ -18,7 +18,7 @@ import pydataverse
 from pydataverse.models import operations
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 

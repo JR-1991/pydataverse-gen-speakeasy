@@ -17,7 +17,7 @@ Retrieve details of a specific test file in the ingest process by filename and f
 import pydataverse
 
 s = pydataverse.PyDataverse(
-    api_key_auth="<YOUR_API_KEY_HERE>",
+    api_key_auth='<YOUR_API_KEY_HERE>',
 )
 
 
