@@ -3,10 +3,10 @@ id: faa73a4f-3f6c-47a0-809e-515af47dce1e
 management:
   docChecksum: 804482d470c512b1fb80b46abf333521
   docVersion: "1.0"
-  speakeasyVersion: 1.455.7
-  generationVersion: 2.480.1
-  releaseVersion: 0.9.13
-  configChecksum: 549f9aa2af9b6b72b0efdbf2c5cebfd8
+  speakeasyVersion: 1.468.2
+  generationVersion: 2.493.4
+  releaseVersion: 0.9.14
+  configChecksum: b827988746f8042f39a08582a5d9f84d
   repoURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
   repoSubDirectory: .
   installationURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
@@ -25,7 +25,6 @@ features:
     sdkHooks: 0.1.0
 generatedFiles:
   - .gitattributes
-  - CONTRIBUTING.md
   - USAGE.md
   - docs/models/components/contact.md
   - docs/models/components/dataverse.md
@@ -2745,6 +2744,11 @@ examples:
           identifier: "<value>"
       requestBody:
         application/json: {"name": "<value>", "alias": "<value>", "affiliation": "<value>", "description": "User-friendly stable benchmark", "dataverseType": "<value>"}
+      responses:
+        "201":
+          application/json: {}
+        "400":
+          application/json: {}
   deleteDataverse:
     speakeasy-default-delete-dataverse:
       parameters:
