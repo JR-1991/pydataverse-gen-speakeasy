@@ -5,8 +5,8 @@ management:
   docVersion: "1.0"
   speakeasyVersion: 1.468.2
   generationVersion: 2.493.4
-  releaseVersion: 0.9.14
-  configChecksum: b827988746f8042f39a08582a5d9f84d
+  releaseVersion: 0.9.15
+  configChecksum: f303e06fac0386e8b54798e968b9f50d
   repoURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
   repoSubDirectory: .
   installationURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
