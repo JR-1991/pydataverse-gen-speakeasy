@@ -30,7 +30,7 @@ go:
   outputModelSuffix: output
   packageName: openapi
 python:
-  version: 0.9.15
+  version: 0.9.16
   additionalDependencies:
     dependencies: {}
     extraDependencies:

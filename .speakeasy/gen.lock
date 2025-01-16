@@ -3,10 +3,10 @@ id: faa73a4f-3f6c-47a0-809e-515af47dce1e
 management:
   docChecksum: 804482d470c512b1fb80b46abf333521
   docVersion: "1.0"
-  speakeasyVersion: 1.468.2
-  generationVersion: 2.493.4
-  releaseVersion: 0.9.15
-  configChecksum: f303e06fac0386e8b54798e968b9f50d
+  speakeasyVersion: 1.468.8
+  generationVersion: 2.493.19
+  releaseVersion: 0.9.16
+  configChecksum: 31c2eff8c98e8c901cf8fddb46e46687
   repoURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
   repoSubDirectory: .
   installationURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
@@ -14,7 +14,7 @@ features:
   python:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.4
-    core: 4.8.20
+    core: 4.8.21
     deprecations: 2.81.1
     flattening: 2.81.1
     globalSecurity: 2.83.7
