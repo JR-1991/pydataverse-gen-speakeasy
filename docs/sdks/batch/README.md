@@ -145,7 +145,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.batch.post_batch_job_import_datasets(identifier='<value>')
+res = s.batch.post_batch_job_import_datasets(identifier='<value>', mode='MERGE')
 
 if res is not None:
     # handle response

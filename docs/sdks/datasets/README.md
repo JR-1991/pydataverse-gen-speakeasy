@@ -482,7 +482,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.delete_dataset_link(dataset_id='<value>', linked_dataverse_id='<value>')
+res = s.datasets.delete_dataset_link(dataset_id='<id>', linked_dataverse_id='<id>')
 
 if res is not None:
     # handle response
@@ -1291,7 +1291,7 @@ s = pydataverse.PyDataverse(
 
 res = s.datasets.get_download_size(request=operations.GetDownloadSizeRequest(
     identifier='<value>',
-    version_id='<value>',
+    version_id='<id>',
 ))
 
 if res is not None:
@@ -1487,7 +1487,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.release_migrated_dataset(id='<id>')
+res = s.datasets.release_migrated_dataset(id='<id>', updatepidatprovider=False)
 
 if res is not None:
     # handle response
@@ -2418,7 +2418,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_dataset_metadata_1(id='<id>')
+res = s.datasets.update_dataset_metadata_1(id='<id>', replace=False)
 
 if res is not None:
     # handle response
@@ -2690,7 +2690,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.create_private_url(id='<id>')
+res = s.datasets.create_private_url(id='<id>', anonymized_access=False)
 
 if res is not None:
     # handle response
@@ -3311,7 +3311,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_version(id='<id>', version_id='<value>')
+res = s.datasets.get_dataset_version(id='<id>', version_id='<id>')
 
 if res is not None:
     # handle response
@@ -3352,7 +3352,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_dataset_version(id='<id>', version_id='<value>')
+res = s.datasets.update_dataset_version(id='<id>', version_id='<id>')
 
 if res is not None:
     # handle response
@@ -3392,7 +3392,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.delete_dataset_version(id='<id>', version_id='<value>')
+res = s.datasets.delete_dataset_version(id='<id>', version_id='<id>')
 
 if res is not None:
     # handle response
@@ -3431,7 +3431,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.check_dataset_file_download_permission(id='<id>', version_id='<value>')
+res = s.datasets.check_dataset_file_download_permission(id='<id>', version_id='<id>')
 
 if res is not None:
     # handle response
@@ -3471,7 +3471,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_citation(id='<id>', version_id='<value>')
+res = s.datasets.get_citation(id='<id>', version_id='<id>')
 
 if res is not None:
     # handle response
@@ -3511,7 +3511,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_custom_license(id='<id>', version_id='<value>')
+res = s.datasets.get_custom_license(id='<id>', version_id='<id>')
 
 if res is not None:
     # handle response
@@ -3550,7 +3550,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.post_deaccession_dataset_by_version_id(id='<id>', version_id='<value>')
+res = s.datasets.post_deaccession_dataset_by_version_id(id='<id>', version_id='<id>')
 
 if res is not None:
     # handle response
@@ -3592,7 +3592,7 @@ s = pydataverse.PyDataverse(
 
 res = s.datasets.get_dataset_version_files(request=operations.GetDatasetVersionFilesRequest(
     id='<id>',
-    version_id='<value>',
+    version_id='<id>',
 ))
 
 if res is not None:
@@ -3634,7 +3634,7 @@ s = pydataverse.PyDataverse(
 
 res = s.datasets.get_dataset_files_count(request=operations.GetDatasetFilesCountRequest(
     id='<id>',
-    version_id='<value>',
+    version_id='<id>',
 ))
 
 if res is not None:
@@ -3673,7 +3673,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_version_linkset(id='<id>', version_id='<value>')
+res = s.datasets.get_dataset_version_linkset(id='<id>', version_id='<id>')
 
 if res is not None:
     # handle response
@@ -3712,7 +3712,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.get_dataset_version_metadata(id='<id>', version_id='<value>')
+res = s.datasets.get_dataset_version_metadata(id='<id>', version_id='<id>')
 
 if res is not None:
     # handle response
@@ -3950,7 +3950,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datasets.update_dataset_link(linked_dataset_id='<value>', linking_dataverse_alias='<value>')
+res = s.datasets.update_dataset_link(linked_dataset_id='<id>', linking_dataverse_alias='<value>')
 
 if res is not None:
     # handle response

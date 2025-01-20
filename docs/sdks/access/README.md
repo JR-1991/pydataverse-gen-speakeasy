@@ -44,7 +44,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_datafile_bundle(file_id='<value>')
+res = s.access.get_datafile_bundle(file_id='<id>')
 
 if res.body is not None:
     # handle response
@@ -84,7 +84,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_datafile(file_id='<value>')
+res = s.access.get_datafile(file_id='<id>')
 
 if res is not None:
     # handle response
@@ -123,7 +123,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_datafile_auxiliary(file_id='<value>')
+res = s.access.get_datafile_auxiliary(file_id='<id>')
 
 if res is not None:
     # handle response
@@ -161,7 +161,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.access_datafile_auxiliary_get(file_id='<value>', format_tag='<value>', format_version='<value>')
+res = s.access.access_datafile_auxiliary_get(file_id='<id>', format_tag='<value>', format_version='<value>')
 
 if res.res is not None:
     # handle response
@@ -282,7 +282,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_datafile_auxiliary_info(file_id='<value>', origin='<value>')
+res = s.access.get_datafile_auxiliary_info(file_id='<id>', origin='<value>')
 
 if res is not None:
     # handle response
@@ -321,7 +321,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_datafile_metadata(file_id='<value>')
+res = s.access.get_datafile_metadata(file_id='<id>')
 
 if res.res is not None:
     # handle response
@@ -362,7 +362,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_datafile_meta_ddi(file_id='<value>')
+res = s.access.get_datafile_meta_ddi(file_id='<id>')
 
 if res.res is not None:
     # handle response
@@ -789,7 +789,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_dataset_version_access(id='<id>', version_id='<value>')
+res = s.access.get_dataset_version_access(id='<id>', version_id='<id>')
 
 if res is not None:
     # handle response

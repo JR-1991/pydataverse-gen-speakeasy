@@ -1186,7 +1186,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_admin_job_by_id(job_id='<value>')
+res = s.admin.get_admin_job_by_id(job_id='<id>')
 
 if res is not None:
     # handle response
@@ -1364,7 +1364,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.compute_file_hash_value(alg='<value>', file_id='<value>')
+res = s.admin.compute_file_hash_value(alg='<value>', file_id='<id>')
 
 if res is not None:
     # handle response
@@ -1791,7 +1791,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.post_fix_missing_unf(dataset_version_id='<value>')
+res = s.admin.post_fix_missing_unf(dataset_version_id='<id>')
 
 if res is not None:
     # handle response
@@ -5089,7 +5089,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.get_external_tool_by_id(id='<id>', tool_id='<value>')
+res = s.admin.get_external_tool_by_id(id='<id>', tool_id='<id>')
 
 if res is not None:
     # handle response
@@ -5322,7 +5322,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.admin.validate_data_file_hash(file_id='<value>')
+res = s.admin.validate_data_file_hash(file_id='<id>')
 
 if res is not None:
     # handle response

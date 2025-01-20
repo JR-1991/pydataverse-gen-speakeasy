@@ -238,7 +238,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.licenses.update_license_active_state(active_state=True, id=805411)
+res = s.licenses.update_license_active_state(active_state=False, id=678440)
 
 if res is not None:
     # handle response
@@ -277,7 +277,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.licenses.update_license_sort_order(id=430322, sort_order=505916)
+res = s.licenses.update_license_sort_order(id=430322, sort_order=888742)
 
 if res is not None:
     # handle response

@@ -21,7 +21,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.edit.edit_file(file_id='<value>')
+res = s.edit.edit_file(file_id='<id>')
 
 if res is not None:
     # handle response

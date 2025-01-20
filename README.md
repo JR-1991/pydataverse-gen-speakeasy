@@ -68,7 +68,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_datafile_bundle(file_id='<value>')
+res = s.access.get_datafile_bundle(file_id='<id>')
 
 if res.body is not None:
     # handle response
@@ -666,7 +666,7 @@ try:
     name='<value>',
     alias='<value>',
     affiliation='<value>',
-    description='User-friendly stable benchmark',
+    description='appreciate thongs bobble midst whoever nor hospitalization throughout gleefully atop',
     dataverse_type='<value>',
 ), identifier='<value>')
 
@@ -705,7 +705,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_datafile_bundle(file_id='<value>')
+res = s.access.get_datafile_bundle(file_id='<id>')
 
 if res.body is not None:
     # handle response
@@ -750,7 +750,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_datafile_bundle(file_id='<value>')
+res = s.access.get_datafile_bundle(file_id='<id>')
 
 if res.body is not None:
     # handle response

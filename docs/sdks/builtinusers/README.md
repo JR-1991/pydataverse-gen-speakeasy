@@ -64,7 +64,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.builtin_users.create_builtin_user(key='<key>', password='bT1J7kLnkhyBrOW')
+res = s.builtin_users.create_builtin_user(key='<key>', password='b1J7nhyrOmVWeE0')
 
 if res is not None:
     # handle response
@@ -103,7 +103,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.builtin_users.create_builtin_user_1(key='<key>', password='XGntXDnk7mNelX8', send_email_notification=True)
+res = s.builtin_users.create_builtin_user_1(key='<key>', password='XntD7meX8n5cDD0', send_email_notification=True)
 
 if res is not None:
     # handle response
@@ -143,7 +143,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.builtin_users.get_api_token_by_username(username='Lou48')
+res = s.builtin_users.get_api_token_by_username(username='Lou_Considine')
 
 if res is not None:
     # handle response

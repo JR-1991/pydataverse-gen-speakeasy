@@ -141,7 +141,7 @@ res = s.dataverses.create_dataverse_1(dataverse_request=components.DataverseRequ
     name='<value>',
     alias='<value>',
     affiliation='<value>',
-    description='User-friendly stable benchmark',
+    description='appreciate thongs bobble midst whoever nor hospitalization throughout gleefully atop',
     dataverse_type='<value>',
 ), identifier='<value>')
 
@@ -1811,7 +1811,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.dataverses.delete_dataverse_link(linked_dataverse_id='<value>', linking_dataverse_id='<value>')
+res = s.dataverses.delete_dataverse_link(linked_dataverse_id='<id>', linking_dataverse_id='<id>')
 
 if res is not None:
     # handle response

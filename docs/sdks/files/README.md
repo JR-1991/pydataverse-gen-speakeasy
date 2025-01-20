@@ -532,7 +532,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.files.get_file_metadata_tool_params(fmid=27570, id='<id>', tid=343127)
+res = s.files.get_file_metadata_tool_params(fmid=27570, id='<id>', tid=57707)
 
 if res is not None:
     # handle response

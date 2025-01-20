@@ -3,10 +3,10 @@ id: faa73a4f-3f6c-47a0-809e-515af47dce1e
 management:
   docChecksum: 804482d470c512b1fb80b46abf333521
   docVersion: "1.0"
-  speakeasyVersion: 1.468.8
-  generationVersion: 2.493.19
-  releaseVersion: 0.9.16
-  configChecksum: 31c2eff8c98e8c901cf8fddb46e46687
+  speakeasyVersion: 1.469.2
+  generationVersion: 2.493.23
+  releaseVersion: 0.9.17
+  configChecksum: 5bbb2a904e0f5434361184d1f1f57f2c
   repoURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
   repoSubDirectory: .
   installationURL: https://github.com/JR-1991/pydataverse-gen-speakeasy.git
@@ -1422,27 +1422,27 @@ examples:
     speakeasy-default-get-datafile-bundle:
       parameters:
         path:
-          fileId: "<value>"
+          fileId: "<id>"
         query: {}
       responses:
         "200":
-          application/zip: "0xbdF80C1aeb"
+          application/zip: "0xbF01e7DD5b"
   getDatafile:
     speakeasy-default-get-datafile:
       parameters:
         path:
-          fileId: "<value>"
+          fileId: "<id>"
         query: {}
   getDatafileAuxiliary:
     speakeasy-default-get-datafile-auxiliary:
       parameters:
         path:
-          fileId: "<value>"
+          fileId: "<id>"
   accessDatafileAuxiliaryGet:
     speakeasy-default-access-datafile-auxiliary-get:
       parameters:
         path:
-          fileId: "<value>"
+          fileId: "<id>"
           formatTag: "<value>"
           formatVersion: "<value>"
       responses:
@@ -1466,13 +1466,13 @@ examples:
     speakeasy-default-get-datafile-auxiliary-info:
       parameters:
         path:
-          fileId: "<value>"
+          fileId: "<id>"
           origin: "<value>"
   getDatafileMetadata:
     speakeasy-default-get-datafile-metadata:
       parameters:
         path:
-          fileId: "<value>"
+          fileId: "<id>"
         query: {}
       responses:
         "200":
@@ -1481,7 +1481,7 @@ examples:
     speakeasy-default-get-datafile-meta-DDI:
       parameters:
         path:
-          fileId: "<value>"
+          fileId: "<id>"
         query: {}
       responses:
         "200":
@@ -1524,8 +1524,7 @@ examples:
       parameters:
         path:
           id: "<id>"
-  postDataFileAccess:
-    speakeasy-default-post-data-file-access: {}
+  postDataFileAccess: {}
   getAccessDataFiles:
     speakeasy-default-get-access-data-files:
       parameters:
@@ -1543,7 +1542,7 @@ examples:
       parameters:
         path:
           id: "<id>"
-          versionId: "<value>"
+          versionId: "<id>"
         query: {}
   getDsCardImage:
     speakeasy-default-get-ds-card-image:
@@ -1574,8 +1573,7 @@ examples:
       parameters:
         path:
           id: "<id>"
-  archiveAllUnarchivedVersions:
-    speakeasy-default-archive-all-unarchived-versions: {}
+  archiveAllUnarchivedVersions: {}
   getAdminAssignee:
     speakeasy-default-get-admin-assignee:
       parameters:
@@ -1586,14 +1584,10 @@ examples:
       parameters:
         path:
           raIdtf: "<value>"
-  getAuthenticatedUsers:
-    speakeasy-default-get-authenticated-users: {}
-  createAuthenticatedUser:
-    speakeasy-default-create-authenticated-user: {}
-  convertUserToOAuth:
-    speakeasy-default-convert-user-to-O-auth: {}
-  convertAuthUsers:
-    speakeasy-default-convert-auth-users: {}
+  getAuthenticatedUsers: {}
+  createAuthenticatedUser: {}
+  convertUserToOAuth: {}
+  convertAuthUsers: {}
   deleteAuthenticatedUser:
     speakeasy-default-delete-authenticated-user:
       parameters:
@@ -1629,12 +1623,9 @@ examples:
       parameters:
         path:
           identifier: "<value>"
-  getAuthProviderFactories:
-    speakeasy-default-get-auth-provider-factories: {}
-  getAuthProviders:
-    speakeasy-default-get-auth-providers: {}
-  addAuthProvider:
-    speakeasy-default-add-auth-provider: {}
+  getAuthProviderFactories: {}
+  getAuthProviders: {}
+  addAuthProvider: {}
   getAuthProvidersById:
     speakeasy-default-get-auth-providers-by-id:
       parameters:
@@ -1660,10 +1651,8 @@ examples:
       parameters:
         path:
           id: "<id>"
-  getBannerMessage:
-    speakeasy-default-get-banner-message: {}
-  postBannerMessage:
-    speakeasy-default-post-banner-message: {}
+  getBannerMessage: {}
+  postBannerMessage: {}
   deleteBannerMessage:
     speakeasy-default-delete-banner-message:
       parameters:
@@ -1674,8 +1663,7 @@ examples:
       parameters:
         path:
           id: 723548
-  getBatchJobs:
-    speakeasy-default-get-batch-jobs: {}
+  getBatchJobs: {}
   getJobByName:
     speakeasy-default-get-job-by-name:
       parameters:
@@ -1685,16 +1673,14 @@ examples:
     speakeasy-default-get-admin-job-by-id:
       parameters:
         path:
-          jobId: "<value>"
-  deleteMetricsCache:
-    speakeasy-default-delete-metrics-cache: {}
+          jobId: "<id>"
+  deleteMetricsCache: {}
   deleteMetricsCache_1:
     speakeasy-default-delete-metrics-cache-1:
       parameters:
         path:
           name: "<value>"
-  deleteThumbnailFailureFlag:
-    speakeasy-default-delete-thumbnail-failure-flag: {}
+  deleteThumbnailFailureFlag: {}
   adminClearThumbnailFailureFlag:
     speakeasy-default-admin-clear-thumbnail-failure-flag:
       parameters:
@@ -1705,7 +1691,7 @@ examples:
       parameters:
         path:
           alg: "<value>"
-          fileId: "<value>"
+          fileId: "<id>"
   getUserIdConfEmail:
     speakeasy-default-get-user-id-conf-email:
       parameters:
@@ -1716,22 +1702,14 @@ examples:
       parameters:
         path:
           userId: 163013
-  admin_convertUserEncryption:
-    speakeasy-default-admin-convert-user-encryption: {}
-  getFixMissingOriginalSizes:
-    speakeasy-default-get-fix-missing-original-sizes: {}
-  fixMissingOriginalTypes:
-    speakeasy-default-fix-missing-original-types: {}
-  getAdminDatasetField:
-    speakeasy-default-get-admin-dataset-field: {}
-  getControlledVocabulary:
-    speakeasy-default-get-controlled-vocabulary: {}
-  load_dataset_field_admin:
-    speakeasy-default-load-dataset-field-admin: {}
-  getNAControlledVocabValue:
-    speakeasy-default-get-NA-controlled-vocab-value: {}
-  adminLoadPropertyFiles:
-    speakeasy-default-admin-load-property-files: {}
+  admin_convertUserEncryption: {}
+  getFixMissingOriginalSizes: {}
+  fixMissingOriginalTypes: {}
+  getAdminDatasetField: {}
+  getControlledVocabulary: {}
+  load_dataset_field_admin: {}
+  getNAControlledVocabValue: {}
+  adminLoadPropertyFiles: {}
   getDatasetFieldName:
     speakeasy-default-get-dataset-field-name:
       parameters:
@@ -1741,17 +1719,15 @@ examples:
     speakeasy-default-post-fix-missing-unf:
       parameters:
         path:
-          datasetVersionId: "<value>"
+          datasetVersionId: "<id>"
         query: {}
   getThumbnailMetadataById:
     speakeasy-default-get-thumbnail-metadata-by-id:
       parameters:
         path:
           id: 860637
-  getCurationLabelSets:
-    speakeasy-default-get-curation-label-sets: {}
-  getStorageDrivers:
-    speakeasy-default-get-storage-drivers: {}
+  getCurationLabelSets: {}
+  getStorageDrivers: {}
   getRoleAssignments:
     speakeasy-default-get-role-assignments:
       parameters:
@@ -1788,12 +1764,9 @@ examples:
       parameters:
         path:
           alias: "<value>"
-  getTmpFile:
-    speakeasy-default-get-tmp-file: {}
-  getExternalTools:
-    speakeasy-default-get-external-tools: {}
-  createExternalTool:
-    speakeasy-default-create-external-tool: {}
+  getTmpFile: {}
+  getExternalTools: {}
+  createExternalTool: {}
   getExternalTool:
     speakeasy-default-get-external-tool:
       parameters:
@@ -1804,12 +1777,9 @@ examples:
       parameters:
         path:
           id: 423055
-  postAdminFeedback:
-    speakeasy-default-post-admin-feedback: {}
-  getAdminGroupsDomain:
-    speakeasy-default-get-admin-groups-domain: {}
-  postAdminGroupsDomain:
-    speakeasy-default-post-admin-groups-domain: {}
+  postAdminFeedback: {}
+  getAdminGroupsDomain: {}
+  postAdminGroupsDomain: {}
   getGroupAlias:
     speakeasy-default-get-group-alias:
       parameters:
@@ -1825,10 +1795,8 @@ examples:
       parameters:
         path:
           groupAlias: "<value>"
-  getAdminGroupsIP:
-    speakeasy-default-get-admin-groups-IP: {}
-  postAdminGroupsIP:
-    speakeasy-default-post-admin-groups-IP: {}
+  getAdminGroupsIP: {}
+  postAdminGroupsIP: {}
   getGroupByGroupIdtf:
     speakeasy-default-get-group-by-group-idtf:
       parameters:
@@ -1839,25 +1807,18 @@ examples:
       parameters:
         path:
           groupIdtf: "<value>"
-  getShibGroupInfo:
-    speakeasy-default-get-shib-group-info: {}
-  createShibGroup:
-    speakeasy-default-create-shib-group: {}
+  getShibGroupInfo: {}
+  createShibGroup: {}
   deleteShibGroup:
     speakeasy-default-delete-shib-group:
       parameters:
         path:
           primaryKey: "<value>"
-  getAdminIndex:
-    speakeasy-default-get-admin-index: {}
-  clearAdminIndex:
-    speakeasy-default-clear-admin-index: {}
-  clearOrphansIndex:
-    speakeasy-default-clear-orphans-index: {}
-  continueIndexProcessing:
-    speakeasy-default-continue-index-processing: {}
-  getDatasetIndex:
-    speakeasy-default-get-dataset-index: {}
+  getAdminIndex: {}
+  clearAdminIndex: {}
+  clearOrphansIndex: {}
+  continueIndexProcessing: {}
+  getDatasetIndex: {}
   deleteDatasetById:
     speakeasy-default-delete-dataset-by-id:
       parameters:
@@ -1869,30 +1830,23 @@ examples:
         path:
           dataset_id: 442844
         query: {}
-  fileSearchIndexGET:
-    speakeasy-default-file-search-index-GET: {}
-  getAdminIndexMod:
-    speakeasy-default-get-admin-index-mod: {}
-  getAdminIndexPerms:
-    speakeasy-default-get-admin-index-perms: {}
+  fileSearchIndexGET: {}
+  getAdminIndexMod: {}
+  getAdminIndexPerms: {}
   getAdminIndexPerms_1:
     speakeasy-default-get-admin-index-perms-1:
       parameters:
         path:
           id: 536096
-  getPermsDebugInfo:
-    speakeasy-default-get-perms-debug-info: {}
+  getPermsDebugInfo: {}
   getSolrSchema:
     speakeasy-default-get-solr-schema:
       responses:
         "200":
           '*/*': "<value>"
-  getAdminIndexStatus:
-    speakeasy-default-get-admin-index-status: {}
-  getAdminTestIndex:
-    speakeasy-default-get-admin-test-index: {}
-  deleteAdminIndexTimestamps:
-    speakeasy-default-delete-admin-index-timestamps: {}
+  getAdminIndexStatus: {}
+  getAdminTestIndex: {}
+  deleteAdminIndexTimestamps: {}
   deleteIndexTimestamp:
     speakeasy-default-delete-index-timestamp:
       parameters:
@@ -1904,14 +1858,10 @@ examples:
         path:
           id: 292538
           type: "<value>"
-  getOrcidStatus:
-    speakeasy-default-get-orcid-status: {}
-  listUsers:
-    speakeasy-default-list-users: {}
-  addMetricsFromReport:
-    speakeasy-default-add-metrics-from-report: {}
-  adminSendToHub:
-    speakeasy-default-admin-send-to-hub: {}
+  getOrcidStatus: {}
+  listUsers: {}
+  addMetricsFromReport: {}
+  adminSendToHub: {}
   addUsageMetricsFromSushiRepo:
     speakeasy-default-add-usage-metrics-from-sushi-repo:
       parameters:
@@ -1923,17 +1873,14 @@ examples:
       parameters:
         path:
           id: "<id>"
-  getExportTimestamps:
-    speakeasy-default-get-export-timestamps: {}
-  getMetadataExportAll:
-    speakeasy-default-get-metadata-export-all: {}
+  getExportTimestamps: {}
+  getMetadataExportAll: {}
   adminMetadataExportOAISpec:
     speakeasy-default-admin-metadata-export-OAI-spec:
       parameters:
         path:
           specname: "<value>"
-  reExportAllMetadata:
-    speakeasy-default-re-export-all-metadata: {}
+  reExportAllMetadata: {}
   getMetadataReExport:
     speakeasy-default-get-metadata-re-export:
       parameters:
@@ -1949,33 +1896,25 @@ examples:
       parameters:
         path:
           id: 453435
-  getRegisterDataFileAll:
-    speakeasy-default-get-register-data-file-all: {}
+  getRegisterDataFileAll: {}
   getRegisterDataFilesByAlias:
     speakeasy-default-get-register-data-files-by-alias:
       parameters:
         path:
           alias: "<value>"
         query: {}
-  postAdminSignedUrl:
-    speakeasy-default-post-admin-signed-url: {}
-  getAdminRoles:
-    speakeasy-default-get-admin-roles: {}
-  createAdminRole:
-    speakeasy-default-create-admin-role: {}
+  postAdminSignedUrl: {}
+  getAdminRoles: {}
+  createAdminRole: {}
   deleteAdminRole:
     speakeasy-default-delete-admin-role:
       parameters:
         path:
           id: "<id>"
-  getSavedSearches:
-    speakeasy-default-get-saved-searches: {}
-  addSavedSearch:
-    speakeasy-default-add-saved-search: {}
-  getSavedSearchesList:
-    speakeasy-default-get-saved-searches-list: {}
-  updateAllSavedSearchLinks:
-    speakeasy-default-update-all-saved-search-links: {}
+  getSavedSearches: {}
+  addSavedSearch: {}
+  getSavedSearchesList: {}
+  updateAllSavedSearchLinks: {}
   makeLinksForSavedSearch:
     speakeasy-default-make-links-for-saved-search:
       parameters:
@@ -1992,8 +1931,7 @@ examples:
       parameters:
         path:
           id: 364122
-  getAdminSettings:
-    speakeasy-default-get-admin-settings: {}
+  getAdminSettings: {}
   getAdminSetting:
     speakeasy-default-get-admin-setting:
       parameters:
@@ -2021,12 +1959,9 @@ examples:
         path:
           lang: "<value>"
           name: "<value>"
-  generateSitemap:
-    speakeasy-default-generate-sitemap: {}
-  getStorageSites:
-    speakeasy-default-get-storage-sites: {}
-  createStorageSite:
-    speakeasy-default-create-storage-site: {}
+  generateSitemap: {}
+  getStorageSites: {}
+  createStorageSite: {}
   fetchStorageSite:
     speakeasy-default-fetch-storage-site:
       parameters:
@@ -2058,8 +1993,7 @@ examples:
       parameters:
         path:
           id: 195565
-  getAdminTemplates:
-    speakeasy-default-get-admin-templates: {}
+  getAdminTemplates: {}
   getAdminTemplate:
     speakeasy-default-get-admin-template:
       parameters:
@@ -2076,7 +2010,7 @@ examples:
       parameters:
         path:
           id: "<id>"
-          toolId: "<value>"
+          toolId: "<id>"
         query: {}
   getExternalTools_1_1:
     speakeasy-default-get-external-tools-1-1:
@@ -2101,21 +2035,16 @@ examples:
         path:
           id: "<id>"
         query: {}
-  adminValidateDatasets:
-    speakeasy-default-admin-validate-datasets: {}
+  adminValidateDatasets: {}
   ValidateDataFileHash:
     speakeasy-default-validate-data-file-hash:
       parameters:
         path:
-          fileId: "<value>"
-  validateAdminPassword:
-    speakeasy-default-validate-admin-password: {}
-  getAdminWorkflows:
-    speakeasy-default-get-admin-workflows: {}
-  createAdminWorkflow:
-    speakeasy-default-create-admin-workflow: {}
-  getDefaultWorkflow:
-    speakeasy-default-get-default-workflow: {}
+          fileId: "<id>"
+  validateAdminPassword: {}
+  getAdminWorkflows: {}
+  createAdminWorkflow: {}
+  getDefaultWorkflow: {}
   getTriggerType:
     speakeasy-default-get-trigger-type:
       parameters:
@@ -2131,12 +2060,9 @@ examples:
       parameters:
         path:
           triggerType: "<value>"
-  getIPWhitelist:
-    speakeasy-default-get-IP-whitelist: {}
-  updateIPWhitelist:
-    speakeasy-default-update-IP-whitelist: {}
-  deleteIPWhitelist:
-    speakeasy-default-delete-IP-whitelist: {}
+  getIPWhitelist: {}
+  updateIPWhitelist: {}
+  deleteIPWhitelist: {}
   getWorkflowByIdentifier:
     speakeasy-default-get-workflow-by-identifier:
       parameters:
@@ -2152,60 +2078,49 @@ examples:
       parameters:
         path:
           id: "<id>"
-  getApplicationWadl:
-    speakeasy-default-get-application-wadl: {}
+  getApplicationWadl: {}
   getApplicationWadl_1:
     speakeasy-default-get-application-wadl-1:
       parameters:
         path:
           path: "/usr/obj"
-  getBatchHarvest:
-    speakeasy-default-get-batch-harvest: {}
-  getBatchImportStatus:
-    speakeasy-default-get-batch-import-status: {}
-  createBatchImport:
-    speakeasy-default-create-batch-import: {}
+  getBatchHarvest: {}
+  getBatchImportStatus: {}
+  createBatchImport: {}
   postBatchJobImportDatasets:
     speakeasy-default-post-batch-job-import-datasets:
       parameters:
         path:
           identifier: "<value>"
-        query: {}
-  postBuiltinUsers:
-    speakeasy-default-post-builtin-users: {}
+        query:
+          mode: "MERGE"
+  postBuiltinUsers: {}
   createBuiltinUser:
     speakeasy-default-create-builtin-user:
       parameters:
         path:
           key: "<key>"
-          password: "bT1J7kLnkhyBrOW"
+          password: "b1J7nhyrOmVWeE0"
   createBuiltinUser_1:
     speakeasy-default-create-builtin-user-1:
       parameters:
         path:
           key: "<key>"
-          password: "XGntXDnk7mNelX8"
+          password: "XntD7meX8n5cDD0"
           sendEmailNotification: true
   getApiTokenByUsername:
     speakeasy-default-get-api-token-by-username:
       parameters:
         path:
-          username: "Lou48"
+          username: "Lou_Considine"
         query: {}
-  getDatasetsExport:
-    speakeasy-default-get-datasets-export: {}
-  getCurationStates:
-    speakeasy-default-get-curation-states: {}
-  getDatasetLocks:
-    speakeasy-default-get-dataset-locks: {}
-  modifyAllRegistrations:
-    speakeasy-default-modify-all-registrations: {}
-  getRegistrationPIDMetadata:
-    speakeasy-default-get-registration-PID-metadata: {}
-  updateDatasetUpload:
-    speakeasy-default-update-dataset-upload: {}
-  deleteDatasetUpload:
-    speakeasy-default-delete-dataset-upload: {}
+  getDatasetsExport: {}
+  getCurationStates: {}
+  getDatasetLocks: {}
+  modifyAllRegistrations: {}
+  getRegistrationPIDMetadata: {}
+  updateDatasetUpload: {}
+  deleteDatasetUpload: {}
   getPrivateUrlDatasetVersion:
     speakeasy-default-get-private-url-dataset-version:
       parameters:
@@ -2216,14 +2131,13 @@ examples:
       parameters:
         path:
           privateUrlToken: "<value>"
-  getSummaryFieldNames:
-    speakeasy-default-get-summary-field-names: {}
+  getSummaryFieldNames: {}
   deleteDatasetLink:
     speakeasy-default-delete-dataset-link:
       parameters:
         path:
-          datasetId: "<value>"
-          linkedDataverseId: "<value>"
+          datasetId: "<id>"
+          linkedDataverseId: "<id>"
   getAllowedCurationLabels:
     speakeasy-default-get-allowed-curation-labels:
       parameters:
@@ -2336,7 +2250,7 @@ examples:
       parameters:
         path:
           identifier: "<value>"
-          versionId: "<value>"
+          versionId: "<id>"
         query: {}
   getDataset:
     speakeasy-default-get-dataset:
@@ -2365,7 +2279,8 @@ examples:
       parameters:
         path:
           id: "<id>"
-        query: {}
+        query:
+          updatepidatprovider: false
   addDataset:
     speakeasy-default-add-dataset:
       parameters:
@@ -2497,7 +2412,8 @@ examples:
       parameters:
         path:
           id: "<id>"
-        query: {}
+        query:
+          replace: false
   updateMetadataDeletion:
     speakeasy-default-update-metadata-deletion:
       parameters:
@@ -2535,7 +2451,8 @@ examples:
       parameters:
         path:
           id: "<id>"
-        query: {}
+        query:
+          anonymizedAccess: false
   deletePrivateUrl:
     speakeasy-default-delete-private-url:
       parameters:
@@ -2620,72 +2537,72 @@ examples:
       parameters:
         path:
           id: "<id>"
-          versionId: "<value>"
+          versionId: "<id>"
         query: {}
   updateDatasetVersion:
     speakeasy-default-update-dataset-version:
       parameters:
         path:
           id: "<id>"
-          versionId: "<value>"
+          versionId: "<id>"
   deleteDatasetVersion:
     speakeasy-default-delete-dataset-version:
       parameters:
         path:
           id: "<id>"
-          versionId: "<value>"
+          versionId: "<id>"
   checkDatasetFileDownloadPermission:
     speakeasy-default-check-dataset-file-download-permission:
       parameters:
         path:
           id: "<id>"
-          versionId: "<value>"
+          versionId: "<id>"
         query: {}
   getCitation:
     speakeasy-default-get-citation:
       parameters:
         path:
           id: "<id>"
-          versionId: "<value>"
+          versionId: "<id>"
         query: {}
   getCustomLicense:
     speakeasy-default-get-custom-license:
       parameters:
         path:
           id: "<id>"
-          versionId: "<value>"
+          versionId: "<id>"
   postDeaccessionDatasetByVersionId:
     speakeasy-default-post-deaccession-dataset-by-version-id:
       parameters:
         path:
           id: "<id>"
-          versionId: "<value>"
+          versionId: "<id>"
   getDatasetVersionFiles:
     speakeasy-default-get-dataset-version-files:
       parameters:
         path:
           id: "<id>"
-          versionId: "<value>"
+          versionId: "<id>"
         query: {}
   getDatasetFilesCount:
     speakeasy-default-get-dataset-files-count:
       parameters:
         path:
           id: "<id>"
-          versionId: "<value>"
+          versionId: "<id>"
         query: {}
   getDatasetVersionLinkset:
     speakeasy-default-get-dataset-version-linkset:
       parameters:
         path:
           id: "<id>"
-          versionId: "<value>"
+          versionId: "<id>"
   getDatasetVersionMetadata:
     speakeasy-default-get-dataset-version-metadata:
       parameters:
         path:
           id: "<id>"
-          versionId: "<value>"
+          versionId: "<id>"
   getDatasetVersionMetadata_1:
     speakeasy-default-get-dataset-version-metadata-1:
       parameters:
@@ -2723,15 +2640,14 @@ examples:
     speakeasy-default-update-dataset-link:
       parameters:
         path:
-          linkedDatasetId: "<value>"
+          linkedDatasetId: "<id>"
           linkingDataverseAlias: "<value>"
   postReceiveTags:
     speakeasy-default-post-receive-tags:
       parameters:
         path:
-          uniqueCacheId: "<value>"
-  createDataverse:
-    speakeasy-default-create-dataverse: {}
+          uniqueCacheId: "<id>"
+  createDataverse: {}
   getDataverse:
     speakeasy-default-get-dataverse:
       parameters:
@@ -2743,7 +2659,7 @@ examples:
         path:
           identifier: "<value>"
       requestBody:
-        application/json: {"name": "<value>", "alias": "<value>", "affiliation": "<value>", "description": "User-friendly stable benchmark", "dataverseType": "<value>"}
+        application/json: {"name": "<value>", "alias": "<value>", "affiliation": "<value>", "description": "appreciate thongs bobble midst whoever nor hospitalization throughout gleefully atop", "dataverseType": "<value>"}
       responses:
         "201":
           application/json: {}
@@ -2986,15 +2902,14 @@ examples:
     speakeasy-default-delete-dataverse-link:
       parameters:
         path:
-          linkedDataverseId: "<value>"
-          linkingDataverseId: "<value>"
+          linkedDataverseId: "<id>"
+          linkingDataverseId: "<id>"
   editFile:
     speakeasy-default-edit-file:
       parameters:
         path:
-          fileId: "<value>"
-  getFixityAlgorithm:
-    speakeasy-default-get-fixity-algorithm: {}
+          fileId: "<id>"
+  getFixityAlgorithm: {}
   getFile:
     speakeasy-default-get-file:
       parameters:
@@ -3061,7 +2976,7 @@ examples:
         path:
           fmid: 27570
           id: "<id>"
-          tid: 343127
+          tid: 57707
         query: {}
   getFileProvFreeform:
     speakeasy-default-get-file-prov-freeform:
@@ -3115,8 +3030,7 @@ examples:
       parameters:
         path:
           id: "<id>"
-  getHarvestClients:
-    speakeasy-default-get-harvest-clients: {}
+  getHarvestClients: {}
   getHarvestClient:
     speakeasy-default-get-harvest-client:
       parameters:
@@ -3146,10 +3060,8 @@ examples:
         path:
           nickName: "<value>"
         query: {}
-  getOaiSets:
-    speakeasy-default-get-oai-sets: {}
-  addOaiSet:
-    speakeasy-default-add-oai-set: {}
+  getOaiSets: {}
+  addOaiSet: {}
   getOaiSets_1:
     speakeasy-default-get-oai-sets-1:
       parameters:
@@ -3174,22 +3086,17 @@ examples:
         path:
           specname: "<value>"
         query: {}
-  postInbox:
-    speakeasy-default-post-inbox: {}
-  getApiTermsOfUseInfo:
-    speakeasy-default-get-api-terms-of-use-info: {}
-  getDatasetMetrics_1:
-    speakeasy-default-get-dataset-metrics-1: {}
-  getDatasetsBySubject:
-    speakeasy-default-get-datasets-by-subject: {}
+  postInbox: {}
+  getApiTermsOfUseInfo: {}
+  getDatasetMetrics_1: {}
+  getDatasetsBySubject: {}
   getMonthlySubjectMetrics:
     speakeasy-default-get-monthly-subject-metrics:
       parameters:
         path:
           yyyymm: "<value>"
         query: {}
-  getMonthlyDatasetMetrics:
-    speakeasy-default-get-monthly-dataset-metrics: {}
+  getMonthlyDatasetMetrics: {}
   getPastDaysMetrics:
     speakeasy-default-get-past-days-metrics:
       parameters:
@@ -3202,14 +3109,10 @@ examples:
         path:
           yyyymm: "<value>"
         query: {}
-  getMetricsDataverses:
-    speakeasy-default-get-metrics-dataverses: {}
-  getMetricsByCategory:
-    speakeasy-default-get-metrics-by-category: {}
-  getMetricsBySubject:
-    speakeasy-default-get-metrics-by-subject: {}
-  getMonthlyDataverseMetrics:
-    speakeasy-default-get-monthly-dataverse-metrics: {}
+  getMetricsDataverses: {}
+  getMetricsByCategory: {}
+  getMetricsBySubject: {}
+  getMonthlyDataverseMetrics: {}
   getMetricsPastDays:
     speakeasy-default-get-metrics-past-days:
       parameters:
@@ -3222,10 +3125,8 @@ examples:
         path:
           yyyymm: "<value>"
         query: {}
-  getDownloadMetrics:
-    speakeasy-default-get-download-metrics: {}
-  getMonthlyDownloads:
-    speakeasy-default-get-monthly-downloads: {}
+  getDownloadMetrics: {}
+  getMonthlyDownloads: {}
   getPastDaysDownloads:
     speakeasy-default-get-past-days-downloads:
       parameters:
@@ -3238,24 +3139,18 @@ examples:
         path:
           yyyymm: "<value>"
         query: {}
-  getFileDownloadsMetrics:
-    speakeasy-default-get-file-downloads-metrics: {}
-  getMonthlyFileDownloads:
-    speakeasy-default-get-monthly-file-downloads: {}
+  getFileDownloadsMetrics: {}
+  getMonthlyFileDownloads: {}
   getFileDownloadsToMonth:
     speakeasy-default-get-file-downloads-to-month:
       parameters:
         path:
           yyyymm: "<value>"
         query: {}
-  getFileInfoMetrics:
-    speakeasy-default-get-file-info-metrics: {}
-  getMetricsByFileType:
-    speakeasy-default-get-metrics-by-file-type: {}
-  getFilesByTypeMonthly:
-    speakeasy-default-get-files-by-type-monthly: {}
-  getMonthlyFilesMetrics:
-    speakeasy-default-get-monthly-files-metrics: {}
+  getFileInfoMetrics: {}
+  getMetricsByFileType: {}
+  getFilesByTypeMonthly: {}
+  getMonthlyFilesMetrics: {}
   getFilesMetrics:
     speakeasy-default-get-files-metrics:
       parameters:
@@ -3287,28 +3182,23 @@ examples:
           metric: "<value>"
           yyyymm: "<value>"
         query: {}
-  getMetricsTree:
-    speakeasy-default-get-metrics-tree: {}
+  getMetricsTree: {}
   getMonthlyMetricsByAlias:
     speakeasy-default-get-monthly-metrics-by-alias:
       parameters:
         path:
           yyyymm: "<value>"
         query: {}
-  getUniqueDownloads:
-    speakeasy-default-get-unique-downloads: {}
-  getMonthlyUniqueDownloads:
-    speakeasy-default-get-monthly-unique-downloads: {}
+  getUniqueDownloads: {}
+  getMonthlyUniqueDownloads: {}
   getMonthlyUniqueDownloads_1:
     speakeasy-default-get-monthly-unique-downloads-1:
       parameters:
         path:
           yyyymm: "<value>"
         query: {}
-  getUniqueFileDownloads:
-    speakeasy-default-get-unique-file-downloads: {}
-  getMonthlyUniqueFileDownloads:
-    speakeasy-default-get-monthly-unique-file-downloads: {}
+  getUniqueFileDownloads: {}
+  getMonthlyUniqueFileDownloads: {}
   getUniqueFileDownloads_1:
     speakeasy-default-get-unique-file-downloads-1:
       parameters:
@@ -3320,29 +3210,20 @@ examples:
       parameters:
         path:
           outputFormat: "<value>"
-  getServerInfo:
-    speakeasy-default-get-server-info: {}
-  getDatasetPublishPopupCustomText:
-    speakeasy-default-get-dataset-publish-popup-custom-text: {}
-  getMaxEmbargoDurationInMonths:
-    speakeasy-default-get-max-embargo-duration-in-months: {}
-  getIncompleteMetadataSettings:
-    speakeasy-default-get-incomplete-metadata-settings: {}
-  getVersionInfo:
-    speakeasy-default-get-version-info: {}
-  getZipDownloadLimit:
-    speakeasy-default-get-zip-download-limit: {}
+  getServerInfo: {}
+  getDatasetPublishPopupCustomText: {}
+  getMaxEmbargoDurationInMonths: {}
+  getIncompleteMetadataSettings: {}
+  getVersionInfo: {}
+  getZipDownloadLimit: {}
   getIngestTestFile:
     speakeasy-default-get-ingest-test-file:
       responses:
         "200":
           text/plain: "<value>"
-  getLicenses:
-    speakeasy-default-get-licenses: {}
-  addLicense:
-    speakeasy-default-add-license: {}
-  get_default_license:
-    speakeasy-default-get-default-license: {}
+  getLicenses: {}
+  addLicense: {}
+  get_default_license: {}
   updateDefaultLicense:
     speakeasy-default-update-default-license:
       parameters:
@@ -3362,18 +3243,16 @@ examples:
     speakeasy-default-update-license-active-state:
       parameters:
         path:
-          activeState: true
-          id: 805411
+          activeState: false
+          id: 678440
   updateLicenseSortOrder:
     speakeasy-default-update-license-sort-order:
       parameters:
         path:
           id: 430322
-          sortOrder: 505916
-  logoutUser:
-    speakeasy-default-logout-user: {}
-  getMailNotifications:
-    speakeasy-default-get-mail-notifications: {}
+          sortOrder: 888742
+  logoutUser: {}
+  getMailNotifications: {}
   getDatafileMeta:
     speakeasy-default-get-datafile-meta:
       parameters:
@@ -3392,8 +3271,7 @@ examples:
       responses:
         "200":
           application/xml: "<value>"
-  getMetadatablocks:
-    speakeasy-default-get-metadatablocks: {}
+  getMetadatablocks: {}
   getMetadatablock_1_1:
     speakeasy-default-get-metadatablock-1-1:
       parameters:
@@ -3404,10 +3282,8 @@ examples:
       responses:
         "200":
           application/json: "<value>"
-  getAllNotifications:
-    speakeasy-default-get-all-notifications: {}
-  getMutedEmails:
-    speakeasy-default-get-muted-emails: {}
+  getAllNotifications: {}
+  getMutedEmails: {}
   updateMutedEmailNotification:
     speakeasy-default-update-muted-email-notification:
       parameters:
@@ -3418,8 +3294,7 @@ examples:
       parameters:
         path:
           typeName: "<value>"
-  getMutedNotifications:
-    speakeasy-default-get-muted-notifications: {}
+  getMutedNotifications: {}
   updateMutedNotification:
     speakeasy-default-update-muted-notification:
       parameters:
@@ -3435,10 +3310,8 @@ examples:
       parameters:
         path:
           id: 927889
-  getPersistentId:
-    speakeasy-default-get-persistent-id: {}
-  getUnreservedPersistentIds:
-    speakeasy-default-get-unreserved-persistent-ids: {}
+  getPersistentId: {}
+  getUnreservedPersistentIds: {}
   deletePid:
     speakeasy-default-delete-pid:
       parameters:
@@ -3449,8 +3322,7 @@ examples:
       parameters:
         path:
           id: "<id>"
-  createRole:
-    speakeasy-default-create-role: {}
+  createRole: {}
   getRole:
     speakeasy-default-get-role:
       parameters:
@@ -3461,16 +3333,11 @@ examples:
       parameters:
         path:
           id: "<id>"
-  searchQuery:
-    speakeasy-default-search-query: {}
-  getUserDetails:
-    speakeasy-default-get-user-details: {}
-  getUserToken:
-    speakeasy-default-get-user-token: {}
-  deleteUserToken:
-    speakeasy-default-delete-user-token: {}
-  recreateUserToken:
-    speakeasy-default-recreate-user-token: {}
+  searchQuery: {}
+  getUserDetails: {}
+  getUserToken: {}
+  deleteUserToken: {}
+  recreateUserToken: {}
   mergeUsers:
     speakeasy-default-merge-users:
       parameters:
@@ -3503,5 +3370,6 @@ examples:
     speakeasy-default-start-workflow:
       parameters:
         path:
-          invocationId: "<value>"
+          invocationId: "<id>"
+examplesVersion: 1.0.0
 generatedTests: {}

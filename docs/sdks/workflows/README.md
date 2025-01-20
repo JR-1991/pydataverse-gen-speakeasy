@@ -21,7 +21,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.workflows.start_workflow(invocation_id='<value>')
+res = s.workflows.start_workflow(invocation_id='<id>')
 
 if res is not None:
     # handle response

@@ -7,7 +7,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.access.get_datafile_bundle(file_id='<value>')
+res = s.access.get_datafile_bundle(file_id='<id>')
 
 if res.body is not None:
     # handle response

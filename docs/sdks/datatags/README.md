@@ -21,7 +21,7 @@ s = pydataverse.PyDataverse(
 )
 
 
-res = s.datatags.post_receive_tags(unique_cache_id='<value>')
+res = s.datatags.post_receive_tags(unique_cache_id='<id>')
 
 if res is not None:
     # handle response
